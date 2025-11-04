@@ -349,10 +349,6 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a new Compute Cloud@Customer upgrade schedule.
-
         ## Example Usage
 
         ```python
@@ -405,10 +401,6 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  args: AtCustomerCccUpgradeScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a new Compute Cloud@Customer upgrade schedule.
-
         ## Example Usage
 
         ```python

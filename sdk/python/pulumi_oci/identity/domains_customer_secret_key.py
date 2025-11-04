@@ -1188,10 +1188,6 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's customer secret key.
-
         ## Example Usage
 
         ## Import
@@ -1304,10 +1300,6 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                  args: DomainsCustomerSecretKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's customer secret key.
-
         ## Example Usage
 
         ## Import

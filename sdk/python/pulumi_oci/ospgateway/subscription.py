@@ -554,9 +554,7 @@ class Subscription(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Update plan of the subscription.
+        ## Example Usage
 
         ## Import
 
@@ -585,9 +583,7 @@ class Subscription(pulumi.CustomResource):
                  args: SubscriptionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Update plan of the subscription.
+        ## Example Usage
 
         ## Import
 

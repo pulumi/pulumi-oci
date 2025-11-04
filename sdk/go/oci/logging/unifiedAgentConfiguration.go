@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-//
-// Create unified agent configuration registration.
+// ## Example Usage
 //
 // ## Import
 //

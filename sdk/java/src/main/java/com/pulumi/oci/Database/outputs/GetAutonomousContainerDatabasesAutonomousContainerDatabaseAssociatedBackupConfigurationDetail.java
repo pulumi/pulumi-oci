@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -18,12 +19,17 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
      */
     private List<String> backupDestinationAttachHistories;
     /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    private String backupRetentionPolicyOnTerminate;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
     private String dbrsPolicyId;
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     private String id;
@@ -32,6 +38,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
      * 
      */
     private String internetProxy;
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    private Boolean isRetentionLockEnabled;
     /**
      * @return Number of days between the current and earliest point of recoverability covered by automatic backups.
      * 
@@ -72,6 +83,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
         return this.backupDestinationAttachHistories;
     }
     /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
@@ -79,7 +97,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
         return this.dbrsPolicyId;
     }
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public String id() {
@@ -91,6 +109,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
      */
     public String internetProxy() {
         return this.internetProxy;
+    }
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
     }
     /**
      * @return Number of days between the current and earliest point of recoverability covered by automatic backups.
@@ -145,9 +170,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
     @CustomType.Builder
     public static final class Builder {
         private List<String> backupDestinationAttachHistories;
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private String internetProxy;
+        private Boolean isRetentionLockEnabled;
         private Integer recoveryWindowInDays;
         private Integer spaceUtilizedInGbs;
         private String timeAtWhichStorageDetailsAreUpdated;
@@ -158,9 +185,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupDestinationAttachHistories = defaults.backupDestinationAttachHistories;
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
     	      this.spaceUtilizedInGbs = defaults.spaceUtilizedInGbs;
     	      this.timeAtWhichStorageDetailsAreUpdated = defaults.timeAtWhichStorageDetailsAreUpdated;
@@ -179,6 +208,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
         }
         public Builder backupDestinationAttachHistories(String... backupDestinationAttachHistories) {
             return backupDestinationAttachHistories(List.of(backupDestinationAttachHistories));
+        }
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
         }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
@@ -202,6 +239,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail", "internetProxy");
             }
             this.internetProxy = internetProxy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
             return this;
         }
         @CustomType.Setter
@@ -255,9 +300,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAss
         public GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail build() {
             final var _resultValue = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail();
             _resultValue.backupDestinationAttachHistories = backupDestinationAttachHistories;
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.recoveryWindowInDays = recoveryWindowInDays;
             _resultValue.spaceUtilizedInGbs = spaceUtilizedInGbs;
             _resultValue.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;

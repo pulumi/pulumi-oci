@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public Input<string>? UserName { get; set; }
 
         /// <summary>
-        /// (Updatable) The user password.
+        /// (Updatable) The database user password.
         /// </summary>
         [Input("userPassword")]
         public Input<Inputs.DatabaseToolsConnectionProxyClientUserPasswordGetArgs>? UserPassword { get; set; }

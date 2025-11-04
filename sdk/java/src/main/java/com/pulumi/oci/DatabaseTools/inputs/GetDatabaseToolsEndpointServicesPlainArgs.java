@@ -18,14 +18,14 @@ public final class GetDatabaseToolsEndpointServicesPlainArgs extends com.pulumi.
     public static final GetDatabaseToolsEndpointServicesPlainArgs Empty = new GetDatabaseToolsEndpointServicesPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -113,7 +113,7 @@ public final class GetDatabaseToolsEndpointServicesPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 

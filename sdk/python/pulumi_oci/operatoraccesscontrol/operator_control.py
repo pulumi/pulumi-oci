@@ -592,9 +592,7 @@ class OperatorControl(pulumi.CustomResource):
                  system_message: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-        Creates an Operator Control.
+        ## Example Usage
 
         ## Import
 
@@ -631,9 +629,7 @@ class OperatorControl(pulumi.CustomResource):
                  args: OperatorControlArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-        Creates an Operator Control.
+        ## Example Usage
 
         ## Import
 

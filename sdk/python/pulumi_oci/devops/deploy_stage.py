@@ -2230,9 +2230,7 @@ class DeployStage(pulumi.CustomResource):
                  wait_criteria: Optional[pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment stage.
+        ## Example Usage
 
         ## Import
 
@@ -2315,9 +2313,7 @@ class DeployStage(pulumi.CustomResource):
                  args: DeployStageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment stage.
+        ## Example Usage
 
         ## Import
 

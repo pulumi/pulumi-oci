@@ -21,9 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
- * 
- * Update plan of the subscription.
+ * ## Example Usage
  * 
  * ## Import
  * 

@@ -130,14 +130,14 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
-     * The compute model of the Exadata infrastructure.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Import(name="computeModel")
     private @Nullable Output<String> computeModel;
 
     /**
-     * @return The compute model of the Exadata infrastructure.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Optional<Output<String>> computeModel() {
@@ -841,7 +841,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         }
 
         /**
-         * @param computeModel The compute model of the Exadata infrastructure.
+         * @param computeModel The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         }
 
         /**
-         * @param computeModel The compute model of the Exadata infrastructure.
+         * @param computeModel The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * 
          * @return builder
          * 

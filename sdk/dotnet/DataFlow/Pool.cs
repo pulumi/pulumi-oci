@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
-    /// This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
-    /// 
-    /// Create a pool to be used by dataflow runs or applications.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-//
-// Create a processor job for document analysis.
-//
 // ## Example Usage
 //
 // ```go

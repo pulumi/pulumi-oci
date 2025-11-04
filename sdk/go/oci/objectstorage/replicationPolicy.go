@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-//
-// Creates a replication policy for the specified bucket.
-//
 // ## Example Usage
 //
 // ```go

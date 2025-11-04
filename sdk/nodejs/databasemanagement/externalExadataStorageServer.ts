@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the Exadata storage server specified by exadataStorageServerId.
+ * ## Example Usage
  *
  * ## Import
  *

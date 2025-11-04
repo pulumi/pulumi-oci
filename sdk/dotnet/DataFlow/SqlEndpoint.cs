@@ -10,13 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
-    /// This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-    /// ## Note
-    /// 
-    /// Resource Discovery is not supported for this resource.
-    /// 
-    /// Create a new Sql Endpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

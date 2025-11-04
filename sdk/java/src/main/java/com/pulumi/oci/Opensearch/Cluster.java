@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opensearch.ClusterArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterState;
+import com.pulumi.oci.Opensearch.outputs.ClusterCertificateConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterMaintenanceDetails;
 import com.pulumi.oci.Opensearch.outputs.ClusterOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterReverseConnectionEndpoint;
@@ -22,18 +23,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
- * 
- * Creates a new OpensearchCluster.
- * 
- * ## Prerequisites
- * 
- * The below policies must be created in compartment before creating OpensearchCluster
- * 
- * ##### {Compartment-Name} - Name of  your compartment
- * 
- * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
- * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -59,6 +49,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> availabilityDomains() {
         return this.availabilityDomains;
+    }
+    /**
+     * (Updatable) Custom certificate config for customer provided certs.
+     * 
+     */
+    @Export(name="certificateConfig", refs={ClusterCertificateConfig.class}, tree="[0]")
+    private Output<ClusterCertificateConfig> certificateConfig;
+
+    /**
+     * @return (Updatable) Custom certificate config for customer provided certs.
+     * 
+     */
+    public Output<ClusterCertificateConfig> certificateConfig() {
+        return this.certificateConfig;
     }
     /**
      * The OCID of the compartment to create the cluster in.
@@ -369,6 +373,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.masterNodeHostType;
     }
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    @Export(name="nsgId", refs={String.class}, tree="[0]")
+    private Output<String> nsgId;
+
+    /**
+     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    public Output<String> nsgId() {
+        return this.nsgId;
+    }
+    /**
      * The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
@@ -605,6 +623,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> searchNodeStorageGb() {
         return this.searchNodeStorageGb;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * (Updatable) The name of the master user that are used to manage security config

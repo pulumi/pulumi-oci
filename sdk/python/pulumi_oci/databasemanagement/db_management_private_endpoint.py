@@ -431,10 +431,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new Database Management private endpoint.
-
         ## Example Usage
 
         ```python
@@ -488,10 +484,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                  args: DbManagementPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new Database Management private endpoint.
-
         ## Example Usage
 
         ```python

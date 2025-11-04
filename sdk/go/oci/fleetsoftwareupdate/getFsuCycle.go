@@ -64,30 +64,30 @@ type LookupFsuCycleResult struct {
 	BatchingStrategies []GetFsuCycleBatchingStrategy `pulumi:"batchingStrategies"`
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType string `pulumi:"collectionType"`
-	// Compartment Identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollections []GetFsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollections"`
-	// Exadata Fleet Update Cycle display name.
+	// The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName string `pulumi:"displayName"`
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId string `pulumi:"executingFsuActionId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 	FsuCollectionId string `pulumi:"fsuCollectionId"`
 	FsuCycleId      string `pulumi:"fsuCycleId"`
-	// Goal version or image details for the Exadata Fleet Update Cycle.
+	// Details of goal 'GUEST_OS' software version.
 	GoalVersionDetails []GetFsuCycleGoalVersionDetail `pulumi:"goalVersionDetails"`
-	// OCID identifier for the Exadata Fleet Update Cycle.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
 	Id string `pulumi:"id"`
-	// List of identifiers of patches to ignore.
+	// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// Ignore patch conflicts or missing patches between the source and goal homes.
+	// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches bool `pulumi:"isIgnorePatches"`
-	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction string `pulumi:"lastCompletedAction"`
@@ -97,7 +97,7 @@ type LookupFsuCycleResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes []GetFsuCycleNextActionToExecute `pulumi:"nextActionToExecutes"`
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState string `pulumi:"rollbackCycleState"`
@@ -168,7 +168,7 @@ func (o LookupFsuCycleResultOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.CollectionType }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 func (o LookupFsuCycleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -183,12 +183,12 @@ func (o LookupFsuCycleResultOutput) DiagnosticsCollections() GetFsuCycleDiagnost
 	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleDiagnosticsCollection { return v.DiagnosticsCollections }).(GetFsuCycleDiagnosticsCollectionArrayOutput)
 }
 
-// Exadata Fleet Update Cycle display name.
+// The user-friendly name for the Exadata Fleet Update Cycle.
 func (o LookupFsuCycleResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Action that is currently in execution, if applicable.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 func (o LookupFsuCycleResultOutput) ExecutingFsuActionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
@@ -198,7 +198,7 @@ func (o LookupFsuCycleResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 func (o LookupFsuCycleResultOutput) FsuCollectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.FsuCollectionId }).(pulumi.StringOutput)
 }
@@ -207,27 +207,27 @@ func (o LookupFsuCycleResultOutput) FsuCycleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.FsuCycleId }).(pulumi.StringOutput)
 }
 
-// Goal version or image details for the Exadata Fleet Update Cycle.
+// Details of goal 'GUEST_OS' software version.
 func (o LookupFsuCycleResultOutput) GoalVersionDetails() GetFsuCycleGoalVersionDetailArrayOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleGoalVersionDetail { return v.GoalVersionDetails }).(GetFsuCycleGoalVersionDetailArrayOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Cycle.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
 func (o LookupFsuCycleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of identifiers of patches to ignore.
+// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o LookupFsuCycleResultOutput) IsIgnoreMissingPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) []string { return v.IsIgnoreMissingPatches }).(pulumi.StringArrayOutput)
 }
 
-// Ignore patch conflicts or missing patches between the source and goal homes.
+// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o LookupFsuCycleResultOutput) IsIgnorePatches() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) bool { return v.IsIgnorePatches }).(pulumi.BoolOutput)
 }
 
-// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+// Ensure that database services are online on the same VMs before and after the maintenance update.
 func (o LookupFsuCycleResultOutput) IsKeepPlacement() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) bool { return v.IsKeepPlacement }).(pulumi.BoolOutput)
 }
@@ -252,7 +252,7 @@ func (o LookupFsuCycleResultOutput) MaxDrainTimeoutInSeconds() pulumi.IntOutput 
 	return o.ApplyT(func(v LookupFsuCycleResult) int { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntOutput)
 }
 
-// In this array all the possible actions will be listed. The first element is the suggested Action.
+// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 func (o LookupFsuCycleResultOutput) NextActionToExecutes() GetFsuCycleNextActionToExecuteArrayOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleNextActionToExecute { return v.NextActionToExecutes }).(GetFsuCycleNextActionToExecuteArrayOutput)
 }

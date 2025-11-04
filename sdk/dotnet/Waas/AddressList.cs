@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas
 {
     /// <summary>
-    /// This resource provides the Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-    /// 
-    /// Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

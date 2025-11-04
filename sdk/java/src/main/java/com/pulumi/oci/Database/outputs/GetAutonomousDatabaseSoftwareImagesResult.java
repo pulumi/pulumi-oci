@@ -26,7 +26,7 @@ public final class GetAutonomousDatabaseSoftwareImagesResult {
      */
     private String compartmentId;
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -42,7 +42,7 @@ public final class GetAutonomousDatabaseSoftwareImagesResult {
      */
     private String imageShapeFamily;
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     private @Nullable String state;
@@ -63,7 +63,7 @@ public final class GetAutonomousDatabaseSoftwareImagesResult {
         return this.compartmentId;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     public Optional<String> displayName() {
@@ -87,7 +87,7 @@ public final class GetAutonomousDatabaseSoftwareImagesResult {
         return this.imageShapeFamily;
     }
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     public Optional<String> state() {

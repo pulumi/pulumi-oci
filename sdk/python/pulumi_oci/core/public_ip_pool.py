@@ -235,10 +235,6 @@ class PublicIpPool(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a public IP pool.
-
         ## Example Usage
 
         ```python
@@ -282,10 +278,6 @@ class PublicIpPool(pulumi.CustomResource):
                  args: PublicIpPoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a public IP pool.
-
         ## Example Usage
 
         ```python

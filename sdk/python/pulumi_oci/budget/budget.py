@@ -651,10 +651,6 @@ class Budget(pulumi.CustomResource):
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new budget.
-
         ## Example Usage
 
         ```python
@@ -718,10 +714,6 @@ class Budget(pulumi.CustomResource):
                  args: BudgetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new budget.
-
         ## Example Usage
 
         ```python

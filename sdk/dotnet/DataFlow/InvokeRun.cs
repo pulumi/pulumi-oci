@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
-    /// This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
-    /// 
-    /// Creates a run for an application.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

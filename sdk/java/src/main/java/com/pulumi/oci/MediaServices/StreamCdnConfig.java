@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Creates a new CDN Configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

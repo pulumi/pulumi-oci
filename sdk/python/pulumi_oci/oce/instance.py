@@ -755,10 +755,6 @@ class Instance(pulumi.CustomResource):
                  waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-        Creates a new OceInstance.
-
         ## Example Usage
 
         ```python
@@ -828,10 +824,6 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-        Creates a new OceInstance.
-
         ## Example Usage
 
         ```python

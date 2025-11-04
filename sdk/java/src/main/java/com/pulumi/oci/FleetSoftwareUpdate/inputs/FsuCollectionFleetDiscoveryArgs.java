@@ -34,14 +34,14 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
     }
 
     /**
-     * OCIDs of Fleet Software Update Discovery.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     @Import(name="fsuDiscoveryId")
     private @Nullable Output<String> fsuDiscoveryId;
 
     /**
-     * @return OCIDs of Fleet Software Update Discovery.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     public Optional<Output<String>> fsuDiscoveryId() {
@@ -49,14 +49,14 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
     }
 
     /**
-     * Oracle Cloud Infrastructure Search Service query string.
+     * [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     @Import(name="query")
     private @Nullable Output<String> query;
 
     /**
-     * @return Oracle Cloud Infrastructure Search Service query string.
+     * @return [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     public Optional<Output<String>> query() {
@@ -64,14 +64,14 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
     }
 
     /**
-     * Possible fleet discovery strategies.
+     * Supported fleet discovery strategies.
      * 
      */
     @Import(name="strategy", required=true)
     private Output<String> strategy;
 
     /**
-     * @return Possible fleet discovery strategies.
+     * @return Supported fleet discovery strategies.
      * 
      */
     public Output<String> strategy() {
@@ -79,14 +79,14 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
     }
 
     /**
-     * OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     @Import(name="targets")
     private @Nullable Output<List<String>> targets;
 
     /**
-     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     public Optional<Output<List<String>>> targets() {
@@ -153,7 +153,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param fsuDiscoveryId OCIDs of Fleet Software Update Discovery.
+         * @param fsuDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param fsuDiscoveryId OCIDs of Fleet Software Update Discovery.
+         * @param fsuDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param query Oracle Cloud Infrastructure Search Service query string.
+         * @param query [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param query Oracle Cloud Infrastructure Search Service query string.
+         * @param query [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param strategy Possible fleet discovery strategies.
+         * @param strategy Supported fleet discovery strategies.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param strategy Possible fleet discovery strategies.
+         * @param strategy Supported fleet discovery strategies.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param targets OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+         * @param targets The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param targets OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+         * @param targets The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class FsuCollectionFleetDiscoveryArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param targets OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+         * @param targets The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
          * 
          * @return builder
          * 

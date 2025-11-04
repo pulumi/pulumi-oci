@@ -415,10 +415,6 @@ class AlertPolicy(pulumi.CustomResource):
                  severity: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new user-defined alert policy.
-
         ## Example Usage
 
         ```python
@@ -474,10 +470,6 @@ class AlertPolicy(pulumi.CustomResource):
                  args: AlertPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new user-defined alert policy.
-
         ## Example Usage
 
         ```python

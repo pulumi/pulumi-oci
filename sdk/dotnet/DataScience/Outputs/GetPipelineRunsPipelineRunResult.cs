@@ -64,6 +64,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         public readonly ImmutableArray<Outputs.GetPipelineRunsPipelineRunLogDetailResult> LogDetails;
         public readonly string OpcParentRptUrl;
         /// <summary>
+        /// Parameters override used in the pipeline run.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> ParametersOverride;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
         /// </summary>
         public readonly string PipelineId;
@@ -83,6 +87,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Array of StepRun object for each step.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepRunResult> StepRuns;
+        /// <summary>
+        /// The storage mount override details to mount to the instance running the pipeline step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsListResult> StorageMountConfigurationOverrideDetailsLists;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
@@ -134,6 +142,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string opcParentRptUrl,
 
+            ImmutableDictionary<string, string> parametersOverride,
+
             string pipelineId,
 
             string projectId,
@@ -143,6 +153,8 @@ namespace Pulumi.Oci.DataScience.Outputs
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult> stepOverrideDetails,
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepRunResult> stepRuns,
+
+            ImmutableArray<Outputs.GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsListResult> storageMountConfigurationOverrideDetailsLists,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -168,11 +180,13 @@ namespace Pulumi.Oci.DataScience.Outputs
             LogConfigurationOverrideDetails = logConfigurationOverrideDetails;
             LogDetails = logDetails;
             OpcParentRptUrl = opcParentRptUrl;
+            ParametersOverride = parametersOverride;
             PipelineId = pipelineId;
             ProjectId = projectId;
             State = state;
             StepOverrideDetails = stepOverrideDetails;
             StepRuns = stepRuns;
+            StorageMountConfigurationOverrideDetailsLists = storageMountConfigurationOverrideDetailsLists;
             SystemTags = systemTags;
             TimeAccepted = timeAccepted;
             TimeFinished = timeFinished;

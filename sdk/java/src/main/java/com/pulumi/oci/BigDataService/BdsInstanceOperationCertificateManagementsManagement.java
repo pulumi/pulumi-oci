@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Configuring TLS/SSL for various ODH services running on the BDS cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

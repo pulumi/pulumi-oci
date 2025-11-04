@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new external database connector.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -86,7 +82,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ConnectionStatus { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Oracle Database connection string.
+        /// (Updatable) The Oracle AI Database connection string.
         /// </summary>
         [Output("connectionString")]
         public Output<Outputs.ExternalDatabaseConnectorConnectionString> ConnectionString { get; private set; } = null!;
@@ -214,7 +210,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.ExternalDatabaseConnectorConnectionCredentialsArgs> ConnectionCredentials { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Oracle Database connection string.
+        /// (Updatable) The Oracle AI Database connection string.
         /// </summary>
         [Input("connectionString", required: true)]
         public Input<Inputs.ExternalDatabaseConnectorConnectionStringArgs> ConnectionString { get; set; } = null!;
@@ -298,7 +294,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ConnectionStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) The Oracle Database connection string.
+        /// (Updatable) The Oracle AI Database connection string.
         /// </summary>
         [Input("connectionString")]
         public Input<Inputs.ExternalDatabaseConnectorConnectionStringGetArgs>? ConnectionString { get; set; }

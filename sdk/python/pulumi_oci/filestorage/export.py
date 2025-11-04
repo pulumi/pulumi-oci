@@ -366,11 +366,6 @@ class Export(pulumi.CustomResource):
                  path: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new export in the specified export set, path, and
-        file system.
-
         ## Example Usage
 
         ```python
@@ -442,11 +437,6 @@ class Export(pulumi.CustomResource):
                  args: ExportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new export in the specified export set, path, and
-        file system.
-
         ## Example Usage
 
         ```python

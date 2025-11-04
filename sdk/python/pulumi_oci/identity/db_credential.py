@@ -216,10 +216,6 @@ class DbCredential(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new DB credential for the specified user.
-
         ## Example Usage
 
         ```python
@@ -253,10 +249,6 @@ class DbCredential(pulumi.CustomResource):
                  args: DbCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new DB credential for the specified user.
-
         ## Example Usage
 
         ```python

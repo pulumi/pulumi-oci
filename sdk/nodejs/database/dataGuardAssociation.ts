@@ -7,17 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
- * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
- *
- * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
- * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
- * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
- * resource in the Console. For more information, see
- * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
- *
  * ## Example Usage
  *
  * ```typescript
@@ -209,7 +198,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     declare public readonly isActiveDataGuardEnabled: pulumi.Output<boolean | undefined>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     declare public readonly licenseModel: pulumi.Output<string | undefined>;
     /**
@@ -230,7 +219,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     declare public readonly nodeCount: pulumi.Output<number | undefined>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
@@ -578,7 +567,7 @@ export interface DataGuardAssociationState {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     licenseModel?: pulumi.Input<string>;
     /**
@@ -599,7 +588,7 @@ export interface DataGuardAssociationState {
     nodeCount?: pulumi.Input<number>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -799,7 +788,7 @@ export interface DataGuardAssociationArgs {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     licenseModel?: pulumi.Input<string>;
     /**
@@ -816,7 +805,7 @@ export interface DataGuardAssociationArgs {
     nodeCount?: pulumi.Input<number>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

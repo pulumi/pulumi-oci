@@ -653,9 +653,7 @@ class HostInsight(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
+        ## Example Usage
 
         ## Import
 
@@ -690,9 +688,7 @@ class HostInsight(pulumi.CustomResource):
                  args: HostInsightArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
+        ## Example Usage
 
         ## Import
 

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
-//
-// Creates a new OpensearchCluster Pipeline.
-//
 // ## Example Usage
 //
 // ```go

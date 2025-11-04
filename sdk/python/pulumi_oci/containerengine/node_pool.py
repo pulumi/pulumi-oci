@@ -762,10 +762,6 @@ class NodePool(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new node pool.
-
         ## Example Usage
 
         ```python
@@ -886,10 +882,6 @@ class NodePool(pulumi.CustomResource):
                  args: NodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new node pool.
-
         ## Example Usage
 
         ```python

@@ -16,11 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
- * through a CreateSecurityZoneDetails resource.
- * 
  * ## Example Usage
  * 
  * <pre>

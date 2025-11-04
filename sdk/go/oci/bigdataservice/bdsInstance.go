@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// Creates a new BDS instance.
-//
 // ## Example Usage
 //
 // ## Import

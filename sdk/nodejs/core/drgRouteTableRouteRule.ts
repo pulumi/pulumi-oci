@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
- *
- * Adds one static route rule to the specified DRG route table.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -55,7 +55,7 @@ class GetPrivateEndpointsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -127,7 +127,9 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
 
     Lists private endpoints according to the specified filter.
-    - For `compartmentId`, lists all private endpoint in the matching compartment.
+    For more information, see
+    [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+    - For `compartmentId`, lists all private endpoints in the matching compartment.
     - For `privateEndpointId`, lists the matching private endpoint.
 
     ## Example Usage
@@ -175,7 +177,9 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
     This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
 
     Lists private endpoints according to the specified filter.
-    - For `compartmentId`, lists all private endpoint in the matching compartment.
+    For more information, see
+    [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+    - For `compartmentId`, lists all private endpoints in the matching compartment.
     - For `privateEndpointId`, lists the matching private endpoint.
 
     ## Example Usage

@@ -12,21 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
-//
-// Upgrades the specified Oracle Database instance.
-//
-// Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
-//
-//	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-//	To avoid a force new create of the dbHome on the next apply, add the following to the resource
-//	```	lifecycle {
-//	   	ignore_changes = [
-//	   		db_home.0.db_version,
-//	   	]
-//	}
-//	```
-//
 // ## Example Usage
 //
 // ## Import
@@ -75,7 +60,7 @@ type DatabaseUpgrade struct {
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds pulumi.IntOutput `pulumi:"lastBackupDurationInSeconds"`
@@ -181,7 +166,7 @@ type databaseUpgradeState struct {
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds *int `pulumi:"lastBackupDurationInSeconds"`
@@ -252,7 +237,7 @@ type DatabaseUpgradeState struct {
 	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds pulumi.IntPtrInput
@@ -494,7 +479,7 @@ func (o DatabaseUpgradeOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DatabaseUpgradeOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }

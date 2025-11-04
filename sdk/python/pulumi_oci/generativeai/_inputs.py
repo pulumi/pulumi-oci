@@ -111,6 +111,8 @@ __all__ = [
     'GetDedicatedAiClustersFilterArgsDict',
     'GetEndpointsFilterArgs',
     'GetEndpointsFilterArgsDict',
+    'GetGenerativeAiPrivateEndpointsFilterArgs',
+    'GetGenerativeAiPrivateEndpointsFilterArgsDict',
     'GetModelsFilterArgs',
     'GetModelsFilterArgsDict',
 ]
@@ -2761,17 +2763,33 @@ if not MYPY:
         """
         (Updatable) Whether to enable the content moderation feature.
         """
+        mode: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Enum for the modes of operation for inference protection.
+        """
+        model_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the model used for the feature.
+        """
 elif False:
     EndpointContentModerationConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class EndpointContentModerationConfigArgs:
     def __init__(__self__, *,
-                 is_enabled: pulumi.Input[_builtins.bool]):
+                 is_enabled: pulumi.Input[_builtins.bool],
+                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether to enable the content moderation feature.
+        :param pulumi.Input[_builtins.str] mode: (Updatable) Enum for the modes of operation for inference protection.
+        :param pulumi.Input[_builtins.str] model_id: (Updatable) The OCID of the model used for the feature.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
@@ -2784,6 +2802,30 @@ class EndpointContentModerationConfigArgs:
     @is_enabled.setter
     def is_enabled(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Enum for the modes of operation for inference protection.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the model used for the feature.
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "model_id", value)
 
 
 if not MYPY:
@@ -3616,6 +3658,53 @@ elif False:
 
 @pulumi.input_type
 class GetEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetGenerativeAiPrivateEndpointsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetGenerativeAiPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetGenerativeAiPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

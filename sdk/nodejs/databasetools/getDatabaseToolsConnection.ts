@@ -97,6 +97,14 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly relatedResources: outputs.DatabaseTools.GetDatabaseToolsConnectionRelatedResource[];
     /**
+     * Specifies the Database Tools Runtime endpoint.
+     */
+    readonly runtimeEndpoint: string;
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     */
+    readonly runtimeIdentity: string;
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
     readonly runtimeSupport: string;
@@ -113,7 +121,7 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly timeCreated: string;
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      */
     readonly timeUpdated: string;
     /**
@@ -129,7 +137,7 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly userName: string;
     /**
-     * The user password.
+     * The database user password.
      */
     readonly userPasswords: outputs.DatabaseTools.GetDatabaseToolsConnectionUserPassword[];
 }

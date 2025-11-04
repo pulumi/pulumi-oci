@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
- *
- * Returns the created schedule.
- *
  * ## Example Usage
  *
  * ```typescript

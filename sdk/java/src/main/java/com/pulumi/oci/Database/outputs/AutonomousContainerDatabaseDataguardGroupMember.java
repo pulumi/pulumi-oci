@@ -29,7 +29,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
      */
     private @Nullable String automaticFailoverTarget;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     private @Nullable String autonomousContainerDatabaseId;
@@ -44,7 +44,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
      */
     private @Nullable Integer fastStartFailOverLagLimitInSeconds;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     private @Nullable Boolean isAutomaticFailoverEnabled;
@@ -64,7 +64,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
      */
     private @Nullable String redoTransportMode;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private @Nullable String role;
@@ -122,7 +122,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
         return Optional.ofNullable(this.automaticFailoverTarget);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Optional<String> autonomousContainerDatabaseId() {
@@ -143,7 +143,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
         return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     public Optional<Boolean> isAutomaticFailoverEnabled() {
@@ -171,7 +171,7 @@ public final class AutonomousContainerDatabaseDataguardGroupMember {
         return Optional.ofNullable(this.redoTransportMode);
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Optional<String> role() {

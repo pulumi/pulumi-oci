@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? ConsumerGroup { get; set; }
 
         /// <summary>
-        /// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        /// (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? SessionMode { get; set; }
 
         /// <summary>
-        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         /// </summary>
         [Input("syntaxFormat")]
         public Input<string>? SyntaxFormat { get; set; }

@@ -167,11 +167,6 @@ class RuleSet(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new rule set associated with the specified load balancer. For more information, see
-        [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
-
         ## Example Usage
 
         ```python
@@ -238,11 +233,6 @@ class RuleSet(pulumi.CustomResource):
                  args: RuleSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new rule set associated with the specified load balancer. For more information, see
-        [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
-
         ## Example Usage
 
         ```python

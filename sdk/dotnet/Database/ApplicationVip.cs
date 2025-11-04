@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

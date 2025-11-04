@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
- *
- * **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
- * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
- *
  * ## Example Usage
  *
  * ```typescript
@@ -27,10 +22,12 @@ import * as utilities from "../utilities";
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+ *             backupRetentionPolicyOnTerminate: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
  *             dbrsPolicyId: testPolicy.id,
  *             id: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
  *             internetProxy: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
  *             isRemote: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+ *             isRetentionLockEnabled: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
  *             remoteRegion: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
@@ -151,7 +148,7 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      */
     declare public /*out*/ readonly peerLifecycleState: pulumi.Output<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     declare public /*out*/ readonly peerRole: pulumi.Output<string>;
     /**
@@ -159,7 +156,7 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      */
     declare public readonly protectionMode: pulumi.Output<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
@@ -343,7 +340,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      */
     peerLifecycleState?: pulumi.Input<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     peerRole?: pulumi.Input<string>;
     /**
@@ -351,7 +348,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      */
     protectionMode?: pulumi.Input<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     role?: pulumi.Input<string>;
     /**

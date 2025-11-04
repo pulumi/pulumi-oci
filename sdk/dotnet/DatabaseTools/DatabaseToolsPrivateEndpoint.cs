@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools
 {
     /// <summary>
-    /// This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-    /// 
-    /// Creates a new Database Tools private endpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,6 +47,7 @@ namespace Pulumi.Oci.DatabaseTools
     ///         },
     ///         NsgIds = databaseToolsPrivateEndpointNsgIds,
     ///         PrivateEndpointIp = databaseToolsPrivateEndpointPrivateEndpointIp,
+    ///         SecurityAttributes = databaseToolsPrivateEndpointSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -150,6 +147,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         [Output("reverseConnectionConfigurations")]
         public Output<ImmutableArray<Outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> ReverseConnectionConfigurations { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Database Tools private endpoint.
@@ -315,6 +318,18 @@ namespace Pulumi.Oci.DatabaseTools
         [Input("privateEndpointIp")]
         public Input<string>? PrivateEndpointIp { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
         /// 
@@ -451,6 +466,18 @@ namespace Pulumi.Oci.DatabaseTools
         {
             get => _reverseConnectionConfigurations ?? (_reverseConnectionConfigurations = new InputList<Inputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationGetArgs>());
             set => _reverseConnectionConfigurations = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

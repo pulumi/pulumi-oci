@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AutomaticDrConfigurationArgs, AutomaticDrConfigurationState } from "./automaticDrConfiguration";
+export type AutomaticDrConfiguration = import("./automaticDrConfiguration").AutomaticDrConfiguration;
+export const AutomaticDrConfiguration: typeof import("./automaticDrConfiguration").AutomaticDrConfiguration = null as any;
+utilities.lazyLoad(exports, ["AutomaticDrConfiguration"], () => require("./automaticDrConfiguration"));
+
 export { DrPlanArgs, DrPlanState } from "./drPlan";
 export type DrPlan = import("./drPlan").DrPlan;
 export const DrPlan: typeof import("./drPlan").DrPlan = null as any;
@@ -19,6 +24,16 @@ export { DrProtectionGroupArgs, DrProtectionGroupState } from "./drProtectionGro
 export type DrProtectionGroup = import("./drProtectionGroup").DrProtectionGroup;
 export const DrProtectionGroup: typeof import("./drProtectionGroup").DrProtectionGroup = null as any;
 utilities.lazyLoad(exports, ["DrProtectionGroup"], () => require("./drProtectionGroup"));
+
+export { GetAutomaticDrConfigurationArgs, GetAutomaticDrConfigurationResult, GetAutomaticDrConfigurationOutputArgs } from "./getAutomaticDrConfiguration";
+export const getAutomaticDrConfiguration: typeof import("./getAutomaticDrConfiguration").getAutomaticDrConfiguration = null as any;
+export const getAutomaticDrConfigurationOutput: typeof import("./getAutomaticDrConfiguration").getAutomaticDrConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getAutomaticDrConfiguration","getAutomaticDrConfigurationOutput"], () => require("./getAutomaticDrConfiguration"));
+
+export { GetAutomaticDrConfigurationsArgs, GetAutomaticDrConfigurationsResult, GetAutomaticDrConfigurationsOutputArgs } from "./getAutomaticDrConfigurations";
+export const getAutomaticDrConfigurations: typeof import("./getAutomaticDrConfigurations").getAutomaticDrConfigurations = null as any;
+export const getAutomaticDrConfigurationsOutput: typeof import("./getAutomaticDrConfigurations").getAutomaticDrConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutomaticDrConfigurations","getAutomaticDrConfigurationsOutput"], () => require("./getAutomaticDrConfigurations"));
 
 export { GetDrPlanArgs, GetDrPlanResult, GetDrPlanOutputArgs } from "./getDrPlan";
 export const getDrPlan: typeof import("./getDrPlan").getDrPlan = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:DisasterRecovery/automaticDrConfiguration:AutomaticDrConfiguration":
+                return new AutomaticDrConfiguration(name, <any>undefined, { urn })
             case "oci:DisasterRecovery/drPlan:DrPlan":
                 return new DrPlan(name, <any>undefined, { urn })
             case "oci:DisasterRecovery/drPlanExecution:DrPlanExecution":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "DisasterRecovery/automaticDrConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "DisasterRecovery/drPlan", _module)
 pulumi.runtime.registerResourceModule("oci", "DisasterRecovery/drPlanExecution", _module)
 pulumi.runtime.registerResourceModule("oci", "DisasterRecovery/drProtectionGroup", _module)

@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDeta
 import com.pulumi.oci.DataScience.inputs.PipelineRunLogDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepRunArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -213,6 +214,21 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Parameters override used in the pipeline run.
+     * 
+     */
+    @Import(name="parametersOverride")
+    private @Nullable Output<Map<String,String>> parametersOverride;
+
+    /**
+     * @return Parameters override used in the pipeline run.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> parametersOverride() {
+        return Optional.ofNullable(this.parametersOverride);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
@@ -285,6 +301,21 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<PipelineRunStepRunArgs>>> stepRuns() {
         return Optional.ofNullable(this.stepRuns);
+    }
+
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    @Import(name="storageMountConfigurationOverrideDetailsLists")
+    private @Nullable Output<List<PipelineRunStorageMountConfigurationOverrideDetailsListArgs>> storageMountConfigurationOverrideDetailsLists;
+
+    /**
+     * @return The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Optional<Output<List<PipelineRunStorageMountConfigurationOverrideDetailsListArgs>>> storageMountConfigurationOverrideDetailsLists() {
+        return Optional.ofNullable(this.storageMountConfigurationOverrideDetailsLists);
     }
 
     /**
@@ -384,11 +415,13 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
         this.logConfigurationOverrideDetails = $.logConfigurationOverrideDetails;
         this.logDetails = $.logDetails;
         this.opcParentRptUrl = $.opcParentRptUrl;
+        this.parametersOverride = $.parametersOverride;
         this.pipelineId = $.pipelineId;
         this.projectId = $.projectId;
         this.state = $.state;
         this.stepOverrideDetails = $.stepOverrideDetails;
         this.stepRuns = $.stepRuns;
+        this.storageMountConfigurationOverrideDetailsLists = $.storageMountConfigurationOverrideDetailsLists;
         this.systemTags = $.systemTags;
         this.timeAccepted = $.timeAccepted;
         this.timeFinished = $.timeFinished;
@@ -696,6 +729,27 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param parametersOverride Parameters override used in the pipeline run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parametersOverride(@Nullable Output<Map<String,String>> parametersOverride) {
+            $.parametersOverride = parametersOverride;
+            return this;
+        }
+
+        /**
+         * @param parametersOverride Parameters override used in the pipeline run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parametersOverride(Map<String,String> parametersOverride) {
+            return parametersOverride(Output.of(parametersOverride));
+        }
+
+        /**
          * @param pipelineId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
          * 
          * @return builder
@@ -818,6 +872,37 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder stepRuns(PipelineRunStepRunArgs... stepRuns) {
             return stepRuns(List.of(stepRuns));
+        }
+
+        /**
+         * @param storageMountConfigurationOverrideDetailsLists The storage mount override details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationOverrideDetailsLists(@Nullable Output<List<PipelineRunStorageMountConfigurationOverrideDetailsListArgs>> storageMountConfigurationOverrideDetailsLists) {
+            $.storageMountConfigurationOverrideDetailsLists = storageMountConfigurationOverrideDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param storageMountConfigurationOverrideDetailsLists The storage mount override details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationOverrideDetailsLists(List<PipelineRunStorageMountConfigurationOverrideDetailsListArgs> storageMountConfigurationOverrideDetailsLists) {
+            return storageMountConfigurationOverrideDetailsLists(Output.of(storageMountConfigurationOverrideDetailsLists));
+        }
+
+        /**
+         * @param storageMountConfigurationOverrideDetailsLists The storage mount override details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageMountConfigurationOverrideDetailsLists(PipelineRunStorageMountConfigurationOverrideDetailsListArgs... storageMountConfigurationOverrideDetailsLists) {
+            return storageMountConfigurationOverrideDetailsLists(List.of(storageMountConfigurationOverrideDetailsLists));
         }
 
         /**

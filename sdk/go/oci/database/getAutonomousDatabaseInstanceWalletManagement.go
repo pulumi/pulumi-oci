@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
 //
-// Gets the wallet details for the specified Autonomous Database.
+// Gets the wallet details for the specified Autonomous AI Database.
 //
 // ## Example Usage
 //
@@ -64,7 +64,7 @@ type LookupAutonomousDatabaseInstanceWalletManagementResult struct {
 	Id                   string `pulumi:"id"`
 	// Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate bool `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated string `pulumi:"timeRotated"`
@@ -122,7 +122,7 @@ func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ShouldRota
 	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) bool { return v.ShouldRotate }).(pulumi.BoolOutput)
 }
 
-// The current lifecycle state of the Autonomous Database wallet.
+// The current lifecycle state of the Autonomous AI Database wallet.
 func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.State }).(pulumi.StringOutput)
 }

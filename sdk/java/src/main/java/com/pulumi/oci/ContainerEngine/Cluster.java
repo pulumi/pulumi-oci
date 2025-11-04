@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
- * 
- * Create a new cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

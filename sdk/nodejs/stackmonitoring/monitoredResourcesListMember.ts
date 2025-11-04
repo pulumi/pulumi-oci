@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
- *
  * ## Example Usage
  *
  * ```typescript

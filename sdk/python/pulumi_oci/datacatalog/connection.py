@@ -451,10 +451,6 @@ class Connection(pulumi.CustomResource):
                  type_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new connection.
-
         ## Example Usage
 
         ```python
@@ -501,10 +497,6 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new connection.
-
         ## Example Usage
 
         ```python

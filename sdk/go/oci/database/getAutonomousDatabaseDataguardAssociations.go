@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
 //
-// *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+// *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
 //
 // ## Example Usage
 //
@@ -61,7 +61,7 @@ type GetAutonomousDatabaseDataguardAssociationsArgs struct {
 type GetAutonomousDatabaseDataguardAssociationsResult struct {
 	// The list of autonomous_database_dataguard_associations.
 	AutonomousDatabaseDataguardAssociations []GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation `pulumi:"autonomousDatabaseDataguardAssociations"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 	AutonomousDatabaseId string                                             `pulumi:"autonomousDatabaseId"`
 	Filters              []GetAutonomousDatabaseDataguardAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -110,7 +110,7 @@ func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) AutonomousDataba
 	}).(GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseDataguardAssociationsResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }

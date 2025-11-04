@@ -577,9 +577,7 @@ class Repository(pulumi.CustomResource):
                  repository_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new repository.
+        ## Example Usage
 
         ## Import
 
@@ -612,9 +610,7 @@ class Repository(pulumi.CustomResource):
                  args: RepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new repository.
+        ## Example Usage
 
         ## Import
 

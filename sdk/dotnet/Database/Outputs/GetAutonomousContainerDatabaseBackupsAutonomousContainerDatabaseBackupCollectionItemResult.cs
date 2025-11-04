@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
-        /// List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        /// List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult> AutonomousDatabases;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         public readonly string Id;
         /// <summary>

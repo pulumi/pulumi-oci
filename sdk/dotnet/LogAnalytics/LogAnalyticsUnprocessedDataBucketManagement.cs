@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Log Analytics Unprocessed Data Bucket Management resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// This API configures a bucket to store unprocessed payloads.
-    /// While processing there could be reasons a payload cannot be processed (mismatched structure, corrupted archive format, etc),
-    /// if configured the payload would be uploaded to the bucket for verification.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

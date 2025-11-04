@@ -66,7 +66,7 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
 	ApplyRate                                         string `pulumi:"applyRate"`
 	AutonomousContainerDatabaseDataguardAssociationId string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds int `pulumi:"fastStartFailOverLagLimitInSeconds"`
@@ -89,11 +89,11 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	PeerDbUniqueName                  string `pulumi:"peerDbUniqueName"`
 	// The current state of the Autonomous Container Database.
 	PeerLifecycleState string `pulumi:"peerLifecycleState"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	PeerRole string `pulumi:"peerRole"`
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode string `pulumi:"protectionMode"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role                           string `pulumi:"role"`
 	StandbyMaintenanceBufferInDays int    `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of Autonomous Data Guard.
@@ -160,7 +160,7 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Auton
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
 		return v.AutonomousContainerDatabaseId
@@ -250,7 +250,7 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerL
 	}).(pulumi.StringOutput)
 }
 
-// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerRole() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.PeerRole }).(pulumi.StringOutput)
 }
@@ -260,7 +260,7 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Prote
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.Role }).(pulumi.StringOutput)
 }

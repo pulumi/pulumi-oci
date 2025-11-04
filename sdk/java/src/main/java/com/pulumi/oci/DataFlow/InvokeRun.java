@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
- * 
- * Creates a run for an application.
- * 
  * ## Example Usage
  * 
  * <pre>

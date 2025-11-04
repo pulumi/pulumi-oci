@@ -135,11 +135,11 @@ def get_task_schedules(filters: Optional[Sequence[Union['GetTaskSchedulesFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedules = oci.Jms.get_task_schedules(fleet_id=test_fleet["id"],
-        id=task_schedule_id,
-        managed_instance_id=test_managed_instance["id"],
-        name=task_schedule_name,
-        task_schedule_name_contains=task_schedule_task_schedule_name_contains)
+    test_task_schedules = oci.Jms.get_task_schedules(fleet_id="example-fleet-ocid",
+        id="example-task-schedule-ocid",
+        managed_instance_id="example-managed-instance-ocid",
+        name="JFR",
+        task_schedule_name_contains="JFR")
     ```
 
 
@@ -185,11 +185,11 @@ def get_task_schedules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedules = oci.Jms.get_task_schedules(fleet_id=test_fleet["id"],
-        id=task_schedule_id,
-        managed_instance_id=test_managed_instance["id"],
-        name=task_schedule_name,
-        task_schedule_name_contains=task_schedule_task_schedule_name_contains)
+    test_task_schedules = oci.Jms.get_task_schedules(fleet_id="example-fleet-ocid",
+        id="example-task-schedule-ocid",
+        managed_instance_id="example-managed-instance-ocid",
+        name="JFR",
+        task_schedule_name_contains="JFR")
     ```
 
 

@@ -23,6 +23,13 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterArgs Empty = new ClusterArgs();
 
+    @Import(name="attachDatastoreClusterIds")
+    private @Nullable Output<List<String>> attachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> attachDatastoreClusterIds() {
+        return Optional.ofNullable(this.attachDatastoreClusterIds);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
@@ -83,15 +90,22 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.definedTags);
     }
 
+    @Import(name="detachDatastoreClusterIds")
+    private @Nullable Output<List<String>> detachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> detachDatastoreClusterIds() {
+        return Optional.ofNullable(this.detachDatastoreClusterIds);
+    }
+
     /**
-     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -295,10 +309,12 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     private ClusterArgs() {}
 
     private ClusterArgs(ClusterArgs $) {
+        this.attachDatastoreClusterIds = $.attachDatastoreClusterIds;
         this.capacityReservationId = $.capacityReservationId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.datastores = $.datastores;
         this.definedTags = $.definedTags;
+        this.detachDatastoreClusterIds = $.detachDatastoreClusterIds;
         this.displayName = $.displayName;
         this.esxiHostsCount = $.esxiHostsCount;
         this.esxiSoftwareVersion = $.esxiSoftwareVersion;
@@ -330,6 +346,19 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ClusterArgs defaults) {
             $ = new ClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder attachDatastoreClusterIds(@Nullable Output<List<String>> attachDatastoreClusterIds) {
+            $.attachDatastoreClusterIds = attachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder attachDatastoreClusterIds(List<String> attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(Output.of(attachDatastoreClusterIds));
+        }
+
+        public Builder attachDatastoreClusterIds(String... attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(List.of(attachDatastoreClusterIds));
         }
 
         /**
@@ -426,8 +455,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
             return definedTags(Output.of(definedTags));
         }
 
+        public Builder detachDatastoreClusterIds(@Nullable Output<List<String>> detachDatastoreClusterIds) {
+            $.detachDatastoreClusterIds = detachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder detachDatastoreClusterIds(List<String> detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(Output.of(detachDatastoreClusterIds));
+        }
+
+        public Builder detachDatastoreClusterIds(String... detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(List.of(detachDatastoreClusterIds));
+        }
+
         /**
-         * @param displayName (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+         * @param displayName (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -438,7 +480,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+         * @param displayName (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
          * 
          * @return builder
          * 

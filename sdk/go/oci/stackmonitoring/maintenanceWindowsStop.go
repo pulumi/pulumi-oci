@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Stop a maintenance window before the end time is reached.
-//
 // ## Example Usage
 //
 // ```go

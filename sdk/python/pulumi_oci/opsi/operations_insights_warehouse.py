@@ -444,12 +444,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
                  storage_allocated_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
-        There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
-        header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
-
         ## Example Usage
 
         ```python
@@ -499,12 +493,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
-        There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
-        header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
-
         ## Example Usage
 
         ```python

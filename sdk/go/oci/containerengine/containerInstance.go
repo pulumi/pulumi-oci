@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-//
-// Creates a container instance and deploys the containers on it.
-//
 // ## Example Usage
 //
 // ```go

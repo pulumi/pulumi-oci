@@ -30,9 +30,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+        /// </summary>
+        public readonly int DetachedModeTimeoutInSeconds;
+        /// <summary>
         /// A filter to return only functions with display names that match the display name string. Matching is exact.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionFailureDestinationResult> FailureDestinations;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -74,6 +82,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionSuccessDestinationResult> SuccessDestinations;
+        /// <summary>
         /// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -100,7 +112,11 @@ namespace Pulumi.Oci.Functions.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            int detachedModeTimeoutInSeconds,
+
             string displayName,
+
+            ImmutableArray<Outputs.GetFunctionsFunctionFailureDestinationResult> failureDestinations,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -122,6 +138,8 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string state,
 
+            ImmutableArray<Outputs.GetFunctionsFunctionSuccessDestinationResult> successDestinations,
+
             string timeCreated,
 
             string timeUpdated,
@@ -134,7 +152,9 @@ namespace Pulumi.Oci.Functions.Outputs
             CompartmentId = compartmentId;
             Config = config;
             DefinedTags = definedTags;
+            DetachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
             DisplayName = displayName;
+            FailureDestinations = failureDestinations;
             FreeformTags = freeformTags;
             Id = id;
             Image = image;
@@ -145,6 +165,7 @@ namespace Pulumi.Oci.Functions.Outputs
             Shape = shape;
             SourceDetails = sourceDetails;
             State = state;
+            SuccessDestinations = successDestinations;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             TimeoutInSeconds = timeoutInSeconds;

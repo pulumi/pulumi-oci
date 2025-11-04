@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
-    /// This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
-    /// 
-    /// Create Capacity Request.
-    ///   Updates the OccCapacityRequest by evaluating a sequence of instructions.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

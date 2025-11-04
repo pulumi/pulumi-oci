@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-//
-// Creates a data source.
-//
 // ## Example Usage
 //
 // ## Import

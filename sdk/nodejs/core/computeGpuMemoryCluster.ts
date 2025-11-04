@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
- *
- * Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
- *
  * ## Example Usage
  *
  * ```typescript

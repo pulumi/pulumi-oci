@@ -299,10 +299,6 @@ class DiscoverySchedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates the discovery schedule.
-
         ## Example Usage
 
         ```python
@@ -348,10 +344,6 @@ class DiscoverySchedule(pulumi.CustomResource):
                  args: DiscoveryScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates the discovery schedule.
-
         ## Example Usage
 
         ```python

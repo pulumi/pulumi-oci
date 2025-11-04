@@ -61,7 +61,7 @@ type GetAutonomousContainerDatabaseDataguardAssociationsArgs struct {
 type GetAutonomousContainerDatabaseDataguardAssociationsResult struct {
 	// The list of autonomous_container_database_dataguard_associations.
 	AutonomousContainerDatabaseDataguardAssociations []GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation `pulumi:"autonomousContainerDatabaseDataguardAssociations"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string                                                      `pulumi:"autonomousContainerDatabaseId"`
 	Filters                       []GetAutonomousContainerDatabaseDataguardAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -110,7 +110,7 @@ func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) Autonom
 	}).(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseDataguardAssociationsResult) string {
 		return v.AutonomousContainerDatabaseId

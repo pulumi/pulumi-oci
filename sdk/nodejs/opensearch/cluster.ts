@@ -7,18 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
- *
- * Creates a new OpensearchCluster.
- *
- * ## Prerequisites
- *
- * The below policies must be created in compartment before creating OpensearchCluster
- *
- * ##### {Compartment-Name} - Name of  your compartment
- *
- * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
- * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+ * ## Example Usage
  *
  * ## Import
  *
@@ -60,6 +49,10 @@ export class Cluster extends pulumi.CustomResource {
      * The availability domains to distribute the cluser nodes across.
      */
     declare public /*out*/ readonly availabilityDomains: pulumi.Output<string[]>;
+    /**
+     * (Updatable) Custom certificate config for customer provided certs.
+     */
+    declare public readonly certificateConfig: pulumi.Output<outputs.Opensearch.ClusterCertificateConfig>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
@@ -149,6 +142,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly masterNodeHostType: pulumi.Output<string>;
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     */
+    declare public readonly nsgId: pulumi.Output<string>;
+    /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
     declare public /*out*/ readonly opendashboardFqdn: pulumi.Output<string>;
@@ -216,6 +213,10 @@ export class Cluster extends pulumi.CustomResource {
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
     declare public readonly searchNodeStorageGb: pulumi.Output<number>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -299,6 +300,7 @@ export class Cluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
             resourceInputs["availabilityDomains"] = state?.availabilityDomains;
+            resourceInputs["certificateConfig"] = state?.certificateConfig;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["configureOutboundClusterTrigger"] = state?.configureOutboundClusterTrigger;
             resourceInputs["dataNodeCount"] = state?.dataNodeCount;
@@ -321,6 +323,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostOcpuCount"] = state?.masterNodeHostOcpuCount;
             resourceInputs["masterNodeHostShape"] = state?.masterNodeHostShape;
             resourceInputs["masterNodeHostType"] = state?.masterNodeHostType;
+            resourceInputs["nsgId"] = state?.nsgId;
             resourceInputs["opendashboardFqdn"] = state?.opendashboardFqdn;
             resourceInputs["opendashboardNodeCount"] = state?.opendashboardNodeCount;
             resourceInputs["opendashboardNodeHostMemoryGb"] = state?.opendashboardNodeHostMemoryGb;
@@ -338,6 +341,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["searchNodeHostShape"] = state?.searchNodeHostShape;
             resourceInputs["searchNodeHostType"] = state?.searchNodeHostType;
             resourceInputs["searchNodeStorageGb"] = state?.searchNodeStorageGb;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["securityMasterUserName"] = state?.securityMasterUserName;
             resourceInputs["securityMasterUserPasswordHash"] = state?.securityMasterUserPasswordHash;
             resourceInputs["securityMode"] = state?.securityMode;
@@ -413,6 +417,7 @@ export class Cluster extends pulumi.CustomResource {
             if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
+            resourceInputs["certificateConfig"] = args?.certificateConfig;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["configureOutboundClusterTrigger"] = args?.configureOutboundClusterTrigger;
             resourceInputs["dataNodeCount"] = args?.dataNodeCount;
@@ -433,6 +438,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostOcpuCount"] = args?.masterNodeHostOcpuCount;
             resourceInputs["masterNodeHostShape"] = args?.masterNodeHostShape;
             resourceInputs["masterNodeHostType"] = args?.masterNodeHostType;
+            resourceInputs["nsgId"] = args?.nsgId;
             resourceInputs["opendashboardNodeCount"] = args?.opendashboardNodeCount;
             resourceInputs["opendashboardNodeHostMemoryGb"] = args?.opendashboardNodeHostMemoryGb;
             resourceInputs["opendashboardNodeHostOcpuCount"] = args?.opendashboardNodeHostOcpuCount;
@@ -445,6 +451,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["searchNodeHostShape"] = args?.searchNodeHostShape;
             resourceInputs["searchNodeHostType"] = args?.searchNodeHostType;
             resourceInputs["searchNodeStorageGb"] = args?.searchNodeStorageGb;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["securityMasterUserName"] = args?.securityMasterUserName;
             resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
             resourceInputs["securityMode"] = args?.securityMode;
@@ -485,6 +492,10 @@ export interface ClusterState {
      * The availability domains to distribute the cluser nodes across.
      */
     availabilityDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Custom certificate config for customer provided certs.
+     */
+    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
@@ -574,6 +585,10 @@ export interface ClusterState {
      */
     masterNodeHostType?: pulumi.Input<string>;
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     */
+    nsgId?: pulumi.Input<string>;
+    /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
     opendashboardFqdn?: pulumi.Input<string>;
@@ -641,6 +656,10 @@ export interface ClusterState {
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
     searchNodeStorageGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -715,6 +734,10 @@ export interface ClusterState {
  * The set of arguments for constructing a Cluster resource.
  */
 export interface ClusterArgs {
+    /**
+     * (Updatable) Custom certificate config for customer provided certs.
+     */
+    certificateConfig?: pulumi.Input<inputs.Opensearch.ClusterCertificateConfig>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
@@ -796,6 +819,10 @@ export interface ClusterArgs {
      */
     masterNodeHostType: pulumi.Input<string>;
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     */
+    nsgId?: pulumi.Input<string>;
+    /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
     opendashboardNodeCount: pulumi.Input<number>;
@@ -843,6 +870,10 @@ export interface ClusterArgs {
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
     searchNodeStorageGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */

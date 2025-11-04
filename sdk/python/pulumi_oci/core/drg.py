@@ -269,21 +269,6 @@ class Drg(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Drg resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
-        see [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
-        the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
-        the DRG attachment, or other Networking Service components. If you're not sure which compartment
-        to use, put the DRG in the same compartment as the VCN. For more information about compartments
-        and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the DRG, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python
@@ -327,21 +312,6 @@ class Drg(pulumi.CustomResource):
                  args: DrgArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
-        see [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
-        the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
-        the DRG attachment, or other Networking Service components. If you're not sure which compartment
-        to use, put the DRG in the same compartment as the VCN. For more information about compartments
-        and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the DRG, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python

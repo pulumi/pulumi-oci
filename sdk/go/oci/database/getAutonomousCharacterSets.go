@@ -57,9 +57,9 @@ type GetAutonomousCharacterSetsArgs struct {
 	// Specifies whether this request pertains to database character sets or national character sets.
 	CharacterSetType *string                            `pulumi:"characterSetType"`
 	Filters          []GetAutonomousCharacterSetsFilter `pulumi:"filters"`
-	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+	// Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
 	IsDedicated *bool `pulumi:"isDedicated"`
-	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
 	//
 	// :
 	IsShared *bool `pulumi:"isShared"`
@@ -91,9 +91,9 @@ type GetAutonomousCharacterSetsOutputArgs struct {
 	// Specifies whether this request pertains to database character sets or national character sets.
 	CharacterSetType pulumi.StringPtrInput                      `pulumi:"characterSetType"`
 	Filters          GetAutonomousCharacterSetsFilterArrayInput `pulumi:"filters"`
-	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+	// Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
 	IsDedicated pulumi.BoolPtrInput `pulumi:"isDedicated"`
-	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
 	//
 	// :
 	IsShared pulumi.BoolPtrInput `pulumi:"isShared"`

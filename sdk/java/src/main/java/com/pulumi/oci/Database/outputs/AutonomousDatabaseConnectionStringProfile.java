@@ -18,7 +18,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
      */
     private @Nullable String consumerGroup;
     /**
-     * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -43,7 +43,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
      */
     private @Nullable String sessionMode;
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     private @Nullable String syntaxFormat;
@@ -67,7 +67,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
         return Optional.ofNullable(this.consumerGroup);
     }
     /**
-     * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public Optional<String> displayName() {
@@ -102,7 +102,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
         return Optional.ofNullable(this.sessionMode);
     }
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     public Optional<String> syntaxFormat() {

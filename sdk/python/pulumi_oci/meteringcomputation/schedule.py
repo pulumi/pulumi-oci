@@ -481,10 +481,6 @@ class Schedule(pulumi.CustomResource):
                  time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created schedule.
-
         ## Example Usage
 
         ```python
@@ -565,10 +561,6 @@ class Schedule(pulumi.CustomResource):
                  args: ScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created schedule.
-
         ## Example Usage
 
         ```python

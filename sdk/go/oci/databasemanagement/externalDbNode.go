@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the external DB node specified by `externalDbNodeId`.
+// ## Example Usage
 //
 // ## Import
 //

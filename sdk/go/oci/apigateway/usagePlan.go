@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
-//
-// Creates a new usage plan.
-//
 // ## Example Usage
 //
 // ```go

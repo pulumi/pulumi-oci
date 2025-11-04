@@ -460,10 +460,6 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates the Exadata storage server connector after validating the connection information.
-
         ## Example Usage
 
         ```python
@@ -519,10 +515,6 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  args: ExternalExadataStorageConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates the Exadata storage server connector after validating the connection information.
-
         ## Example Usage
 
         ```python

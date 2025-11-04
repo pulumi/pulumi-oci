@@ -575,7 +575,7 @@ type DatabaseToolsConnectionProxyClient struct {
 	Roles []string `pulumi:"roles"`
 	// (Updatable) The user name.
 	UserName *string `pulumi:"userName"`
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword *DatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPassword"`
 }
 
@@ -597,7 +597,7 @@ type DatabaseToolsConnectionProxyClientArgs struct {
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
 	// (Updatable) The user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword DatabaseToolsConnectionProxyClientUserPasswordPtrInput `pulumi:"userPassword"`
 }
 
@@ -693,7 +693,7 @@ func (o DatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringPtrOut
 	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user password.
+// (Updatable) The database user password.
 func (o DatabaseToolsConnectionProxyClientOutput) UserPassword() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) *DatabaseToolsConnectionProxyClientUserPassword {
 		return v.UserPassword
@@ -754,7 +754,7 @@ func (o DatabaseToolsConnectionProxyClientPtrOutput) UserName() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user password.
+// (Updatable) The database user password.
 func (o DatabaseToolsConnectionProxyClientPtrOutput) UserPassword() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) *DatabaseToolsConnectionProxyClientUserPassword {
 		if v == nil {
@@ -1242,6 +1242,130 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) ValueType() pulumi.StringP
 		}
 		return &v.ValueType
 	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsIdentityLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsIdentityLockInput is an input type that accepts DatabaseToolsIdentityLockArgs and DatabaseToolsIdentityLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsIdentityLockInput` via:
+//
+//	DatabaseToolsIdentityLockArgs{...}
+type DatabaseToolsIdentityLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsIdentityLockOutput() DatabaseToolsIdentityLockOutput
+	ToDatabaseToolsIdentityLockOutputWithContext(context.Context) DatabaseToolsIdentityLockOutput
+}
+
+type DatabaseToolsIdentityLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsIdentityLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsIdentityLockArgs) ToDatabaseToolsIdentityLockOutput() DatabaseToolsIdentityLockOutput {
+	return i.ToDatabaseToolsIdentityLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsIdentityLockArgs) ToDatabaseToolsIdentityLockOutputWithContext(ctx context.Context) DatabaseToolsIdentityLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsIdentityLockOutput)
+}
+
+// DatabaseToolsIdentityLockArrayInput is an input type that accepts DatabaseToolsIdentityLockArray and DatabaseToolsIdentityLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsIdentityLockArrayInput` via:
+//
+//	DatabaseToolsIdentityLockArray{ DatabaseToolsIdentityLockArgs{...} }
+type DatabaseToolsIdentityLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsIdentityLockArrayOutput() DatabaseToolsIdentityLockArrayOutput
+	ToDatabaseToolsIdentityLockArrayOutputWithContext(context.Context) DatabaseToolsIdentityLockArrayOutput
+}
+
+type DatabaseToolsIdentityLockArray []DatabaseToolsIdentityLockInput
+
+func (DatabaseToolsIdentityLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsIdentityLockArray) ToDatabaseToolsIdentityLockArrayOutput() DatabaseToolsIdentityLockArrayOutput {
+	return i.ToDatabaseToolsIdentityLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsIdentityLockArray) ToDatabaseToolsIdentityLockArrayOutputWithContext(ctx context.Context) DatabaseToolsIdentityLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsIdentityLockArrayOutput)
+}
+
+type DatabaseToolsIdentityLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsIdentityLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsIdentityLockOutput) ToDatabaseToolsIdentityLockOutput() DatabaseToolsIdentityLockOutput {
+	return o
+}
+
+func (o DatabaseToolsIdentityLockOutput) ToDatabaseToolsIdentityLockOutputWithContext(ctx context.Context) DatabaseToolsIdentityLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsIdentityLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsIdentityLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsIdentityLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsIdentityLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsIdentityLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsIdentityLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsIdentityLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsIdentityLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsIdentityLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsIdentityLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsIdentityLockArrayOutput) ToDatabaseToolsIdentityLockArrayOutput() DatabaseToolsIdentityLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsIdentityLockArrayOutput) ToDatabaseToolsIdentityLockArrayOutputWithContext(ctx context.Context) DatabaseToolsIdentityLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsIdentityLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsIdentityLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsIdentityLock {
+		return vs[0].([]DatabaseToolsIdentityLock)[vs[1].(int)]
+	}).(DatabaseToolsIdentityLockOutput)
 }
 
 type DatabaseToolsPrivateEndpointLock struct {
@@ -2028,7 +2152,7 @@ type GetDatabaseToolsConnectionProxyClient struct {
 	Roles []string `pulumi:"roles"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPasswords"`
 }
 
@@ -2050,7 +2174,7 @@ type GetDatabaseToolsConnectionProxyClientArgs struct {
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
 	// The database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
 }
 
@@ -2120,7 +2244,7 @@ func (o GetDatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringOut
 	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) string { return v.UserName }).(pulumi.StringOutput)
 }
 
-// The user password.
+// The database user password.
 func (o GetDatabaseToolsConnectionProxyClientOutput) UserPasswords() GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) []GetDatabaseToolsConnectionProxyClientUserPassword {
 		return v.UserPasswords
@@ -2564,7 +2688,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString string `pulumi:"connectionString"`
@@ -2588,7 +2712,11 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	ProxyClients []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource `pulumi:"relatedResources"`
-	// A filter to return only resources with one of the specified runtimeSupport values.
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint string `pulumi:"runtimeEndpoint"`
+	// A filter to return only resources with one of the specified runtimeIdentity values.
+	RuntimeIdentity string `pulumi:"runtimeIdentity"`
+	// A filter to return only resources with one of the specified type values.
 	RuntimeSupport string `pulumi:"runtimeSupport"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
@@ -2596,7 +2724,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only resources their type matches the specified type.
 	Type string `pulumi:"type"`
@@ -2604,7 +2732,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	Url string `pulumi:"url"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword `pulumi:"userPasswords"`
 }
 
@@ -2622,7 +2750,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput inter
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.StringMapInput `pulumi:"advancedProperties"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
@@ -2646,7 +2774,11 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	ProxyClients GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
-	// A filter to return only resources with one of the specified runtimeSupport values.
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint pulumi.StringInput `pulumi:"runtimeEndpoint"`
+	// A filter to return only resources with one of the specified runtimeIdentity values.
+	RuntimeIdentity pulumi.StringInput `pulumi:"runtimeIdentity"`
+	// A filter to return only resources with one of the specified type values.
 	RuntimeSupport pulumi.StringInput `pulumi:"runtimeSupport"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2654,7 +2786,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only resources their type matches the specified type.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -2662,7 +2794,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	Url pulumi.StringInput `pulumi:"url"`
 	// The database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput `pulumi:"userPasswords"`
 }
 
@@ -2724,7 +2856,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.StringMapOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
 		return v.CompartmentId
@@ -2804,7 +2936,21 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput)
 }
 
-// A filter to return only resources with one of the specified runtimeSupport values.
+// Specifies the Database Tools Runtime endpoint.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) RuntimeEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
+		return v.RuntimeEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified runtimeIdentity values.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) RuntimeIdentity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
+		return v.RuntimeIdentity
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) RuntimeSupport() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
 		return v.RuntimeSupport
@@ -2828,7 +2974,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -2848,7 +2994,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.UserName }).(pulumi.StringOutput)
 }
 
-// The user password.
+// The database user password.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) UserPasswords() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword {
 		return v.UserPasswords
@@ -3351,7 +3497,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient
 	Roles []string `pulumi:"roles"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword `pulumi:"userPasswords"`
 }
 
@@ -3373,7 +3519,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
 	// The database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
 }
 
@@ -3449,7 +3595,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyCli
 	}).(pulumi.StringOutput)
 }
 
-// The user password.
+// The database user password.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) UserPasswords() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword {
 		return v.UserPasswords
@@ -4009,7 +4155,7 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionAr
 }
 
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -4047,7 +4193,7 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemI
 }
 
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -4124,7 +4270,7 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	return o
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.CompartmentId
@@ -4333,6 +4479,684 @@ func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsEndpointServicesFilter {
 		return vs[0].([]GetDatabaseToolsEndpointServicesFilter)[vs[1].(int)]
 	}).(GetDatabaseToolsEndpointServicesFilterOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection struct {
+	Items []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs{...}
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs struct {
+	Items GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput)
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray{ GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs{...} }
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionInput
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput) Items() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection) []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection {
+		return vs[0].([]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the credential object created in the Oracle Database.
+	CredentialKey string `pulumi:"credentialKey"`
+	// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools identity.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock `pulumi:"locks"`
+	// A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs{...}
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the credential object created in the Oracle Database.
+	CredentialKey pulumi.StringInput `pulumi:"credentialKey"`
+	// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools identity.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayInput `pulumi:"locks"`
+	// A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput)
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray{ GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs{...} }
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemInput
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the credential object created in the Oracle Database.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) CredentialKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.CredentialKey }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools identity.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) Locks() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput)
+}
+
+// A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem {
+		return vs[0].([]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs{...}
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray and GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray{ GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs{...} }
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput
+	ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray []GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockInput
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput() GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput) ToGetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsIdentitiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsIdentitiesFilterInput is an input type that accepts GetDatabaseToolsIdentitiesFilterArgs and GetDatabaseToolsIdentitiesFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesFilterInput` via:
+//
+//	GetDatabaseToolsIdentitiesFilterArgs{...}
+type GetDatabaseToolsIdentitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesFilterOutput() GetDatabaseToolsIdentitiesFilterOutput
+	ToGetDatabaseToolsIdentitiesFilterOutputWithContext(context.Context) GetDatabaseToolsIdentitiesFilterOutput
+}
+
+type GetDatabaseToolsIdentitiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsIdentitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesFilterArgs) ToGetDatabaseToolsIdentitiesFilterOutput() GetDatabaseToolsIdentitiesFilterOutput {
+	return i.ToGetDatabaseToolsIdentitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesFilterArgs) ToGetDatabaseToolsIdentitiesFilterOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesFilterOutput)
+}
+
+// GetDatabaseToolsIdentitiesFilterArrayInput is an input type that accepts GetDatabaseToolsIdentitiesFilterArray and GetDatabaseToolsIdentitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentitiesFilterArrayInput` via:
+//
+//	GetDatabaseToolsIdentitiesFilterArray{ GetDatabaseToolsIdentitiesFilterArgs{...} }
+type GetDatabaseToolsIdentitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentitiesFilterArrayOutput() GetDatabaseToolsIdentitiesFilterArrayOutput
+	ToGetDatabaseToolsIdentitiesFilterArrayOutputWithContext(context.Context) GetDatabaseToolsIdentitiesFilterArrayOutput
+}
+
+type GetDatabaseToolsIdentitiesFilterArray []GetDatabaseToolsIdentitiesFilterInput
+
+func (GetDatabaseToolsIdentitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentitiesFilterArray) ToGetDatabaseToolsIdentitiesFilterArrayOutput() GetDatabaseToolsIdentitiesFilterArrayOutput {
+	return i.ToGetDatabaseToolsIdentitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentitiesFilterArray) ToGetDatabaseToolsIdentitiesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentitiesFilterArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentitiesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesFilterOutput) ToGetDatabaseToolsIdentitiesFilterOutput() GetDatabaseToolsIdentitiesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesFilterOutput) ToGetDatabaseToolsIdentitiesFilterOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsIdentitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsIdentitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsIdentitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentitiesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentitiesFilterArrayOutput) ToGetDatabaseToolsIdentitiesFilterArrayOutput() GetDatabaseToolsIdentitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesFilterArrayOutput) ToGetDatabaseToolsIdentitiesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentitiesFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsIdentitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentitiesFilter {
+		return vs[0].([]GetDatabaseToolsIdentitiesFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsIdentitiesFilterOutput)
+}
+
+type GetDatabaseToolsIdentityLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The Database Tools identity type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsIdentityLockInput is an input type that accepts GetDatabaseToolsIdentityLockArgs and GetDatabaseToolsIdentityLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentityLockInput` via:
+//
+//	GetDatabaseToolsIdentityLockArgs{...}
+type GetDatabaseToolsIdentityLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentityLockOutput() GetDatabaseToolsIdentityLockOutput
+	ToGetDatabaseToolsIdentityLockOutputWithContext(context.Context) GetDatabaseToolsIdentityLockOutput
+}
+
+type GetDatabaseToolsIdentityLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The Database Tools identity type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsIdentityLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentityLockArgs) ToGetDatabaseToolsIdentityLockOutput() GetDatabaseToolsIdentityLockOutput {
+	return i.ToGetDatabaseToolsIdentityLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentityLockArgs) ToGetDatabaseToolsIdentityLockOutputWithContext(ctx context.Context) GetDatabaseToolsIdentityLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentityLockOutput)
+}
+
+// GetDatabaseToolsIdentityLockArrayInput is an input type that accepts GetDatabaseToolsIdentityLockArray and GetDatabaseToolsIdentityLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsIdentityLockArrayInput` via:
+//
+//	GetDatabaseToolsIdentityLockArray{ GetDatabaseToolsIdentityLockArgs{...} }
+type GetDatabaseToolsIdentityLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsIdentityLockArrayOutput() GetDatabaseToolsIdentityLockArrayOutput
+	ToGetDatabaseToolsIdentityLockArrayOutputWithContext(context.Context) GetDatabaseToolsIdentityLockArrayOutput
+}
+
+type GetDatabaseToolsIdentityLockArray []GetDatabaseToolsIdentityLockInput
+
+func (GetDatabaseToolsIdentityLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsIdentityLockArray) ToGetDatabaseToolsIdentityLockArrayOutput() GetDatabaseToolsIdentityLockArrayOutput {
+	return i.ToGetDatabaseToolsIdentityLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsIdentityLockArray) ToGetDatabaseToolsIdentityLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentityLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsIdentityLockArrayOutput)
+}
+
+type GetDatabaseToolsIdentityLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentityLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentityLockOutput) ToGetDatabaseToolsIdentityLockOutput() GetDatabaseToolsIdentityLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentityLockOutput) ToGetDatabaseToolsIdentityLockOutputWithContext(ctx context.Context) GetDatabaseToolsIdentityLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsIdentityLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentityLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsIdentityLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentityLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsIdentityLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentityLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The Database Tools identity type.
+func (o GetDatabaseToolsIdentityLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsIdentityLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsIdentityLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsIdentityLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsIdentityLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsIdentityLockArrayOutput) ToGetDatabaseToolsIdentityLockArrayOutput() GetDatabaseToolsIdentityLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentityLockArrayOutput) ToGetDatabaseToolsIdentityLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsIdentityLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsIdentityLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsIdentityLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentityLock {
+		return vs[0].([]GetDatabaseToolsIdentityLock)[vs[1].(int)]
+	}).(GetDatabaseToolsIdentityLockOutput)
 }
 
 type GetDatabaseToolsPrivateEndpointLock struct {
@@ -4756,7 +5580,7 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionAr
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns []string `pulumi:"additionalFqdns"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -4784,6 +5608,8 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	PrivateEndpointVnicId string `pulumi:"privateEndpointVnicId"`
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
+	// Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
@@ -4812,7 +5638,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemI
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns pulumi.StringArrayInput `pulumi:"additionalFqdns"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -4840,6 +5666,8 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	PrivateEndpointVnicId pulumi.StringInput `pulumi:"privateEndpointVnicId"`
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput `pulumi:"reverseConnectionConfigurations"`
+	// Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
@@ -4912,7 +5740,7 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.StringArrayOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.CompartmentId
@@ -5006,6 +5834,13 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration {
 		return v.ReverseConnectionConfigurations
 	}).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput)
+}
+
+// Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -5523,6 +6358,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionRelatedResourcePtrInput)(nil)).Elem(), DatabaseToolsConnectionRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordPtrInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsIdentityLockInput)(nil)).Elem(), DatabaseToolsIdentityLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsIdentityLockArrayInput)(nil)).Elem(), DatabaseToolsIdentityLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
@@ -5573,6 +6410,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesFilterInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesFilterArrayInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesFilterInput)(nil)).Elem(), GetDatabaseToolsIdentitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesFilterArrayInput)(nil)).Elem(), GetDatabaseToolsIdentitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentityLockInput)(nil)).Elem(), GetDatabaseToolsIdentityLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentityLockArrayInput)(nil)).Elem(), GetDatabaseToolsIdentityLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
@@ -5607,6 +6454,8 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseToolsConnectionRelatedResourcePtrOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsIdentityLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsIdentityLockArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})
@@ -5657,6 +6506,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentityLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsIdentityLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})

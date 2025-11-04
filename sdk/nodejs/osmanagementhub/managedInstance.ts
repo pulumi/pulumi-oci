@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Updates the specified managed instance information, such as description, ONS topic, and associated management station.
+ * ## Example Usage
  *
  * ## Import
  *

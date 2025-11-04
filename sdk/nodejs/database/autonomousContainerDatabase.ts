@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
- *
  * ## Example Usage
  *
  * ## Import
@@ -53,9 +49,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
      */
     declare public /*out*/ readonly associatedBackupConfigurationDetails: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+     */
     declare public readonly autonomousContainerDatabaseBackupId: pulumi.Output<string>;
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     declare public readonly autonomousExadataInfrastructureId: pulumi.Output<string>;
     /**
@@ -67,7 +66,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
-     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      */
     declare public /*out*/ readonly availableCpus: pulumi.Output<number>;
     /**
@@ -87,7 +86,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
@@ -95,7 +94,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly customerContacts: pulumi.Output<outputs.Database.AutonomousContainerDatabaseCustomerContact[]>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     declare public readonly databaseSoftwareImageId: pulumi.Output<string>;
     /**
@@ -111,7 +110,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly dbName: pulumi.Output<string>;
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     declare public readonly dbSplitThreshold: pulumi.Output<number>;
     declare public readonly dbUniqueName: pulumi.Output<string>;
@@ -128,11 +127,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     declare public readonly distributionAffinity: pulumi.Output<string>;
     /**
-     * DST Time-zone File version of the Autonomous Container Database.
+     * DST Time-Zone File version of the Autonomous Container Database.
      */
     declare public /*out*/ readonly dstFileVersion: pulumi.Output<string>;
     /**
@@ -152,11 +151,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly infrastructureType: pulumi.Output<string>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
     declare public readonly isAutomaticFailoverEnabled: pulumi.Output<boolean>;
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     declare public /*out*/ readonly isDataGuardEnabled: pulumi.Output<boolean>;
     /**
@@ -172,27 +171,24 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly keyHistoryEntries: pulumi.Output<outputs.Database.AutonomousContainerDatabaseKeyHistoryEntry[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     declare public readonly keyStoreId: pulumi.Output<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
     declare public /*out*/ readonly keyStoreWalletName: pulumi.Output<string>;
-    /**
-     * The OCID of the key version that is used in rotate key operations.
-     */
     declare public readonly keyVersionId: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      */
     declare public /*out*/ readonly largestProvisionableAutonomousDatabaseInCpus: pulumi.Output<number>;
     /**
@@ -216,7 +212,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.AutonomousContainerDatabaseMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    declare public /*out*/ readonly memoryPerComputeUnitInGbs: pulumi.Output<number>;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     declare public /*out*/ readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
@@ -239,6 +239,9 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * (Updatable) Database Patch model preference.
      */
     declare public readonly patchModel: pulumi.Output<string>;
+    /**
+     * Backup options for the standby Autonomous Container Database.
+     */
     declare public readonly peerAutonomousContainerDatabaseBackupConfig: pulumi.Output<outputs.Database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -249,7 +252,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly peerAutonomousContainerDatabaseDisplayName: pulumi.Output<string>;
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     declare public readonly peerAutonomousExadataInfrastructureId: pulumi.Output<string>;
     /**
@@ -257,7 +260,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly peerAutonomousVmClusterId: pulumi.Output<string>;
     /**
-     * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     declare public readonly peerCloudAutonomousVmClusterId: pulumi.Output<string>;
     declare public readonly peerDbUniqueName: pulumi.Output<string>;
@@ -266,7 +269,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly protectionMode: pulumi.Output<string>;
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      */
     declare public /*out*/ readonly provisionableCpuses: pulumi.Output<number[]>;
     /**
@@ -274,9 +277,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly provisionedCpus: pulumi.Output<number>;
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     declare public /*out*/ readonly reclaimableCpus: pulumi.Output<number>;
     /**
@@ -289,27 +290,19 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     declare public readonly reinstateTrigger: pulumi.Output<number | undefined>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     declare public /*out*/ readonly role: pulumi.Output<string>;
-    /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     declare public readonly rotateKeyTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      */
     declare public readonly serviceLevelAgreementType: pulumi.Output<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      */
     declare public readonly source: pulumi.Output<string>;
     /**
@@ -322,6 +315,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly switchoverTrigger: pulumi.Output<number | undefined>;
     /**
@@ -413,6 +410,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["listOneOffPatches"] = state?.listOneOffPatches;
             resourceInputs["maintenanceWindowDetails"] = state?.maintenanceWindowDetails;
             resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["memoryPerComputeUnitInGbs"] = state?.memoryPerComputeUnitInGbs;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
             resourceInputs["netServicesArchitecture"] = state?.netServicesArchitecture;
             resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
@@ -519,6 +517,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listOneOffPatches"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
+            resourceInputs["memoryPerComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["patchId"] = undefined /*out*/;
@@ -548,9 +547,12 @@ export interface AutonomousContainerDatabaseState {
      * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
      */
     associatedBackupConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail>[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+     */
     autonomousContainerDatabaseBackupId?: pulumi.Input<string>;
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     autonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -562,7 +564,7 @@ export interface AutonomousContainerDatabaseState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      */
     availableCpus?: pulumi.Input<number>;
     /**
@@ -582,7 +584,7 @@ export interface AutonomousContainerDatabaseState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     computeModel?: pulumi.Input<string>;
     /**
@@ -590,7 +592,7 @@ export interface AutonomousContainerDatabaseState {
      */
     customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseCustomerContact>[]>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**
@@ -606,7 +608,7 @@ export interface AutonomousContainerDatabaseState {
      */
     dbName?: pulumi.Input<string>;
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
@@ -623,11 +625,11 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
     /**
-     * DST Time-zone File version of the Autonomous Container Database.
+     * DST Time-Zone File version of the Autonomous Container Database.
      */
     dstFileVersion?: pulumi.Input<string>;
     /**
@@ -647,11 +649,11 @@ export interface AutonomousContainerDatabaseState {
      */
     infrastructureType?: pulumi.Input<string>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -667,27 +669,24 @@ export interface AutonomousContainerDatabaseState {
      */
     keyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseKeyHistoryEntry>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     keyStoreId?: pulumi.Input<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
     keyStoreWalletName?: pulumi.Input<string>;
-    /**
-     * The OCID of the key version that is used in rotate key operations.
-     */
     keyVersionId?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      */
     largestProvisionableAutonomousDatabaseInCpus?: pulumi.Input<number>;
     /**
@@ -711,7 +710,11 @@ export interface AutonomousContainerDatabaseState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    memoryPerComputeUnitInGbs?: pulumi.Input<number>;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -734,6 +737,9 @@ export interface AutonomousContainerDatabaseState {
      * (Updatable) Database Patch model preference.
      */
     patchModel?: pulumi.Input<string>;
+    /**
+     * Backup options for the standby Autonomous Container Database.
+     */
     peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -744,7 +750,7 @@ export interface AutonomousContainerDatabaseState {
      */
     peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     peerAutonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -752,7 +758,7 @@ export interface AutonomousContainerDatabaseState {
      */
     peerAutonomousVmClusterId?: pulumi.Input<string>;
     /**
-     * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
     peerDbUniqueName?: pulumi.Input<string>;
@@ -761,7 +767,7 @@ export interface AutonomousContainerDatabaseState {
      */
     protectionMode?: pulumi.Input<string>;
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      */
     provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
     /**
@@ -769,9 +775,7 @@ export interface AutonomousContainerDatabaseState {
      */
     provisionedCpus?: pulumi.Input<number>;
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     reclaimableCpus?: pulumi.Input<number>;
     /**
@@ -784,27 +788,19 @@ export interface AutonomousContainerDatabaseState {
     reinstateTrigger?: pulumi.Input<number>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     reservedCpus?: pulumi.Input<number>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     role?: pulumi.Input<string>;
-    /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      */
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      */
     source?: pulumi.Input<string>;
     /**
@@ -817,6 +813,10 @@ export interface AutonomousContainerDatabaseState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     switchoverTrigger?: pulumi.Input<number>;
     /**
@@ -857,9 +857,12 @@ export interface AutonomousContainerDatabaseState {
  * The set of arguments for constructing a AutonomousContainerDatabase resource.
  */
 export interface AutonomousContainerDatabaseArgs {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+     */
     autonomousContainerDatabaseBackupId?: pulumi.Input<string>;
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     autonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -883,7 +886,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseCustomerContact>[]>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**
@@ -891,7 +894,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     dbName?: pulumi.Input<string>;
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
@@ -908,7 +911,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
     /**
@@ -924,7 +927,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
@@ -932,12 +935,9 @@ export interface AutonomousContainerDatabaseArgs {
      */
     isDstFileUpdateEnabled?: pulumi.Input<boolean>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     keyStoreId?: pulumi.Input<string>;
-    /**
-     * The OCID of the key version that is used in rotate key operations.
-     */
     keyVersionId?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -959,6 +959,9 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) Database Patch model preference.
      */
     patchModel: pulumi.Input<string>;
+    /**
+     * Backup options for the standby Autonomous Container Database.
+     */
     peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -969,7 +972,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     peerAutonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -977,7 +980,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     peerAutonomousVmClusterId?: pulumi.Input<string>;
     /**
-     * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
     peerDbUniqueName?: pulumi.Input<string>;
@@ -989,19 +992,13 @@ export interface AutonomousContainerDatabaseArgs {
      * (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
      */
     reinstateTrigger?: pulumi.Input<number>;
-    /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      */
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      */
     source?: pulumi.Input<string>;
     /**
@@ -1010,6 +1007,10 @@ export interface AutonomousContainerDatabaseArgs {
     standbyMaintenanceBufferInDays?: pulumi.Input<number>;
     /**
      * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     switchoverTrigger?: pulumi.Input<number>;
     /**

@@ -23,8 +23,6 @@ namespace Pulumi.Oci.ResourceScheduler.Inputs
 
         /// <summary>
         /// (Updatable) This is additional information that helps to identity the resource for the schedule.
-        /// 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// { "id": "&lt;OCID_of_bucket&gt;" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         /// </summary>
         public InputMap<string> Metadata

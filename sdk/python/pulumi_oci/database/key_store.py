@@ -119,6 +119,8 @@ class KeyStoreArgs:
 class _KeyStoreState:
     def __init__(__self__, *,
                  associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]]] = None,
+                 associated_long_term_backup_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 associated_long_term_backups: Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  confirm_details_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -132,6 +134,8 @@ class _KeyStoreState:
         """
         Input properties used for looking up and filtering KeyStore resources.
         :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the key store.
+        :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
@@ -144,6 +148,10 @@ class _KeyStoreState:
         """
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
+        if associated_long_term_backup_count is not None:
+            pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        if associated_long_term_backups is not None:
+            pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if confirm_details_trigger is not None:
@@ -176,6 +184,30 @@ class _KeyStoreState:
     @associated_databases.setter
     def associated_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]]]):
         pulumi.set(self, "associated_databases", value)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @associated_long_term_backup_count.setter
+    def associated_long_term_backup_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "associated_long_term_backup_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]]]:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
+
+    @associated_long_term_backups.setter
+    def associated_long_term_backups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]]]):
+        pulumi.set(self, "associated_long_term_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -309,10 +341,6 @@ class KeyStore(pulumi.CustomResource):
                  type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Key Store.
-
         ## Example Usage
 
         ```python
@@ -358,10 +386,6 @@ class KeyStore(pulumi.CustomResource):
                  args: KeyStoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Key Store.
-
         ## Example Usage
 
         ```python
@@ -435,6 +459,8 @@ class KeyStore(pulumi.CustomResource):
                 raise TypeError("Missing required property 'type_details'")
             __props__.__dict__["type_details"] = type_details
             __props__.__dict__["associated_databases"] = None
+            __props__.__dict__["associated_long_term_backup_count"] = None
+            __props__.__dict__["associated_long_term_backups"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -450,6 +476,8 @@ class KeyStore(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]]] = None,
+            associated_long_term_backup_count: Optional[pulumi.Input[_builtins.int]] = None,
+            associated_long_term_backups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             confirm_details_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -468,6 +496,8 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]] associated_databases: List of databases associated with the key store.
+        :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
@@ -483,6 +513,8 @@ class KeyStore(pulumi.CustomResource):
         __props__ = _KeyStoreState.__new__(_KeyStoreState)
 
         __props__.__dict__["associated_databases"] = associated_databases
+        __props__.__dict__["associated_long_term_backup_count"] = associated_long_term_backup_count
+        __props__.__dict__["associated_long_term_backups"] = associated_long_term_backups
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["confirm_details_trigger"] = confirm_details_trigger
         __props__.__dict__["defined_tags"] = defined_tags
@@ -502,6 +534,22 @@ class KeyStore(pulumi.CustomResource):
         List of databases associated with the key store.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> pulumi.Output[Sequence['outputs.KeyStoreAssociatedLongTermBackup']]:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

@@ -335,10 +335,6 @@ class Project(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a new project.
-
         ## Example Usage
 
         ```python
@@ -381,10 +377,6 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a new project.
-
         ## Example Usage
 
         ```python

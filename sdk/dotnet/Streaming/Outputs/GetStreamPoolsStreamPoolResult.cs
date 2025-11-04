@@ -58,6 +58,10 @@ namespace Pulumi.Oci.Streaming.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult> PrivateEndpointSettings;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.Streaming.Outputs
 
             ImmutableArray<Outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult> privateEndpointSettings,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string timeCreated)
@@ -105,6 +111,7 @@ namespace Pulumi.Oci.Streaming.Outputs
             LifecycleStateDetails = lifecycleStateDetails;
             Name = name;
             PrivateEndpointSettings = privateEndpointSettings;
+            SecurityAttributes = securityAttributes;
             State = state;
             TimeCreated = timeCreated;
         }

@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
- * 
- * Creates an autoscaling configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

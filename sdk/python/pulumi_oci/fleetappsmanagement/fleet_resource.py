@@ -474,10 +474,6 @@ class FleetResource(pulumi.CustomResource):
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add resource to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python
@@ -517,10 +513,6 @@ class FleetResource(pulumi.CustomResource):
                  args: FleetResourceInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add resource to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python

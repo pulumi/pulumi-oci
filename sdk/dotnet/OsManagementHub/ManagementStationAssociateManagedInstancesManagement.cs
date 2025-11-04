@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Management Station Associate Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Associates managed instances to the specified management station
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

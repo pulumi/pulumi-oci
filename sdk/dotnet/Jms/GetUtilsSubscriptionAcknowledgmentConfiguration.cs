@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Jms
         /// });
         /// ```
         /// </summary>
-        public static Task<GetUtilsSubscriptionAcknowledgmentConfigurationResult> InvokeAsync(GetUtilsSubscriptionAcknowledgmentConfigurationArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetUtilsSubscriptionAcknowledgmentConfigurationResult> InvokeAsync(GetUtilsSubscriptionAcknowledgmentConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUtilsSubscriptionAcknowledgmentConfigurationResult>("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args ?? new GetUtilsSubscriptionAcknowledgmentConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Jms
         /// });
         /// ```
         /// </summary>
-        public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> Invoke(GetUtilsSubscriptionAcknowledgmentConfigurationInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> Invoke(GetUtilsSubscriptionAcknowledgmentConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUtilsSubscriptionAcknowledgmentConfigurationResult>("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args ?? new GetUtilsSubscriptionAcknowledgmentConfigurationInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -99,14 +99,8 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
-        [Input("compartmentId")]
-        public string? CompartmentId { get; set; }
-
-        /// <summary>
-        /// Flag to determine whether the subscription was acknowledged or not.
-        /// </summary>
-        [Input("isAcknowledged")]
-        public bool? IsAcknowledged { get; set; }
+        [Input("compartmentId", required: true)]
+        public string CompartmentId { get; set; } = null!;
 
         public GetUtilsSubscriptionAcknowledgmentConfigurationArgs()
         {
@@ -119,14 +113,8 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
-        [Input("compartmentId")]
-        public Input<string>? CompartmentId { get; set; }
-
-        /// <summary>
-        /// Flag to determine whether the subscription was acknowledged or not.
-        /// </summary>
-        [Input("isAcknowledged")]
-        public Input<bool>? IsAcknowledged { get; set; }
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
 
         public GetUtilsSubscriptionAcknowledgmentConfigurationInvokeArgs()
         {
@@ -143,9 +131,6 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string AcknowledgedBy;
         public readonly string CompartmentId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
         public readonly string Id;
         /// <summary>
         /// Flag to determine whether the subscription was acknowledged or not.

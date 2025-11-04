@@ -314,10 +314,6 @@ class ReplicationPolicy(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a replication policy for the specified bucket.
-
         ## Example Usage
 
         ```python
@@ -359,10 +355,6 @@ class ReplicationPolicy(pulumi.CustomResource):
                  args: ReplicationPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a replication policy for the specified bucket.
-
         ## Example Usage
 
         ```python

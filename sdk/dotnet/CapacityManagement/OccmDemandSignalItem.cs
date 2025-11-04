@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
-    /// This resource provides the Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
-    /// 
-    /// This API will create a demand signal item representing a resource request. This needs to be grouped under a demand signal.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

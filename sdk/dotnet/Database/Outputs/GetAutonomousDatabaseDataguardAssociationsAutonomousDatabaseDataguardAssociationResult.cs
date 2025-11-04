@@ -26,11 +26,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
-        /// The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+        /// The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `IsAutomaticFailoverEnabled = true`.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         /// </summary>
         public readonly bool IsAutomaticFailoverEnabled;
         /// <summary>
@@ -38,15 +38,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous AI Database.
         /// </summary>
         public readonly string PeerAutonomousDatabaseId;
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// The current state of the Autonomous AI Database.
         /// </summary>
         public readonly string PeerAutonomousDatabaseLifeCycleState;
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string PeerRole;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ProtectionMode;
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
         /// <summary>

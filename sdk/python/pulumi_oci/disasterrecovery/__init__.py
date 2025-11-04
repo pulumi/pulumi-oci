@@ -6,9 +6,12 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .automatic_dr_configuration import *
 from .dr_plan import *
 from .dr_plan_execution import *
 from .dr_protection_group import *
+from .get_automatic_dr_configuration import *
+from .get_automatic_dr_configurations import *
 from .get_dr_plan import *
 from .get_dr_plan_execution import *
 from .get_dr_plan_executions import *

@@ -22,10 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Add a user&#39;s own customer secret key.
- * 
  * ## Example Usage
  * 
  * ## Import

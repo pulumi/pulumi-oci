@@ -160,6 +160,13 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        /// * Ipv4 CIDR blocks must be valid.
+        /// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        /// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+        /// </summary>
+        public readonly ImmutableArray<string> Ipv4cidrBlocks;
+        /// <summary>
         /// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
         /// </summary>
         public readonly string Ipv6cidrBlock;
@@ -233,6 +240,8 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            ImmutableArray<string> ipv4cidrBlocks,
+
             string ipv6cidrBlock,
 
             ImmutableArray<string> ipv6cidrBlocks,
@@ -270,6 +279,7 @@ namespace Pulumi.Oci.Core
             DnsLabel = dnsLabel;
             FreeformTags = freeformTags;
             Id = id;
+            Ipv4cidrBlocks = ipv4cidrBlocks;
             Ipv6cidrBlock = ipv6cidrBlock;
             Ipv6cidrBlocks = ipv6cidrBlocks;
             Ipv6virtualRouterIp = ipv6virtualRouterIp;

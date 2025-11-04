@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
- *
- * Synchronize a mirrored repository to the latest version from external providers.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -13,42 +13,54 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
     /**
-     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-     * 
-     */
-    private @Nullable String cpuBaseline;
-    /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private @Nullable String memoryInGbsParameterized;
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     private @Nullable Double ocpus;
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private @Nullable String ocpusParameterized;
 
     private PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails() {}
     /**
-     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-     * 
-     */
-    public Optional<String> cpuBaseline() {
-        return Optional.ofNullable(this.cpuBaseline);
-    }
-    /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<String> memoryInGbsParameterized() {
+        return Optional.ofNullable(this.memoryInGbsParameterized);
+    }
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     public Optional<Double> ocpus() {
         return Optional.ofNullable(this.ocpus);
+    }
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<String> ocpusParameterized() {
+        return Optional.ofNullable(this.ocpusParameterized);
     }
 
     public static Builder builder() {
@@ -60,27 +72,29 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String cpuBaseline;
         private @Nullable Double memoryInGbs;
+        private @Nullable String memoryInGbsParameterized;
         private @Nullable Double ocpus;
+        private @Nullable String ocpusParameterized;
         public Builder() {}
         public Builder(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.memoryInGbsParameterized = defaults.memoryInGbsParameterized;
     	      this.ocpus = defaults.ocpus;
+    	      this.ocpusParameterized = defaults.ocpusParameterized;
         }
 
-        @CustomType.Setter
-        public Builder cpuBaseline(@Nullable String cpuBaseline) {
-
-            this.cpuBaseline = cpuBaseline;
-            return this;
-        }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
 
             this.memoryInGbs = memoryInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder memoryInGbsParameterized(@Nullable String memoryInGbsParameterized) {
+
+            this.memoryInGbsParameterized = memoryInGbsParameterized;
             return this;
         }
         @CustomType.Setter
@@ -89,11 +103,18 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder ocpusParameterized(@Nullable String ocpusParameterized) {
+
+            this.ocpusParameterized = ocpusParameterized;
+            return this;
+        }
         public PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails build() {
             final var _resultValue = new PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails();
-            _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.memoryInGbsParameterized = memoryInGbsParameterized;
             _resultValue.ocpus = ocpus;
+            _resultValue.ocpusParameterized = ocpusParameterized;
             return _resultValue;
         }
     }

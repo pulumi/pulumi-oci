@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Creates an external MySQL connector resource.
- * 
  * ## Example Usage
  * 
  * <pre>

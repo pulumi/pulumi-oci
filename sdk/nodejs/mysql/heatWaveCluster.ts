@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
- *
- * Updates the HeatWave cluster.
- *
  * ## Example Usage
  *
  * ```typescript

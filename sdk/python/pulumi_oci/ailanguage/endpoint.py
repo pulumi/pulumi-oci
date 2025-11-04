@@ -21,6 +21,7 @@ class EndpointArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  model_id: pulumi.Input[_builtins.str],
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -34,6 +35,7 @@ class EndpointArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] alias: (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the an endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
@@ -42,6 +44,8 @@ class EndpointArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_id", model_id)
+        if alias is not None:
+            pulumi.set(__self__, "alias", alias)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -80,6 +84,18 @@ class EndpointArgs:
     @model_id.setter
     def model_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        """
+        return pulumi.get(self, "alias")
+
+    @alias.setter
+    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "alias", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -145,6 +161,7 @@ class EndpointArgs:
 @pulumi.input_type
 class _EndpointState:
     def __init__(__self__, *,
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -160,6 +177,7 @@ class _EndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Endpoint resources.
+        :param pulumi.Input[_builtins.str] alias: (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the an endpoint.
@@ -178,6 +196,8 @@ class _EndpointState:
         :param pulumi.Input[_builtins.str] time_created: The time the the endpoint was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the endpoint was updated. An RFC3339 formatted datetime string.
         """
+        if alias is not None:
+            pulumi.set(__self__, "alias", alias)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -204,6 +224,18 @@ class _EndpointState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        """
+        return pulumi.get(self, "alias")
+
+    @alias.setter
+    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "alias", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -372,6 +404,7 @@ class Endpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -381,10 +414,6 @@ class Endpoint(pulumi.CustomResource):
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new endpoint and deploy the trained model
-
         ## Example Usage
 
         ```python
@@ -394,6 +423,7 @@ class Endpoint(pulumi.CustomResource):
         test_endpoint = oci.ailanguage.Endpoint("test_endpoint",
             compartment_id=compartment_id,
             model_id=test_model["id"],
+            alias=endpoint_alias,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -415,6 +445,7 @@ class Endpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] alias: (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the an endpoint.
@@ -434,10 +465,6 @@ class Endpoint(pulumi.CustomResource):
                  args: EndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new endpoint and deploy the trained model
-
         ## Example Usage
 
         ```python
@@ -447,6 +474,7 @@ class Endpoint(pulumi.CustomResource):
         test_endpoint = oci.ailanguage.Endpoint("test_endpoint",
             compartment_id=compartment_id,
             model_id=test_model["id"],
+            alias=endpoint_alias,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -481,6 +509,7 @@ class Endpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -497,6 +526,7 @@ class Endpoint(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EndpointArgs.__new__(EndpointArgs)
 
+            __props__.__dict__["alias"] = alias
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -524,6 +554,7 @@ class Endpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            alias: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -544,6 +575,7 @@ class Endpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] alias: (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the an endpoint.
@@ -566,6 +598,7 @@ class Endpoint(pulumi.CustomResource):
 
         __props__ = _EndpointState.__new__(_EndpointState)
 
+        __props__.__dict__["alias"] = alias
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -580,6 +613,14 @@ class Endpoint(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Endpoint(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        """
+        return pulumi.get(self, "alias")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

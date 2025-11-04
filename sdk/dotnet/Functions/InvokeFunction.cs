@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions
 {
     /// <summary>
-    /// This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-    /// 
-    /// Invokes a function
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

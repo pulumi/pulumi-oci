@@ -71,7 +71,7 @@ class GetAutonomousDatabaseSoftwareImagesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -100,7 +100,7 @@ class GetAutonomousDatabaseSoftwareImagesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "state")
 
@@ -129,7 +129,7 @@ def get_autonomous_database_software_images(compartment_id: Optional[_builtins.s
     """
     This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of the Autonomous Database Software Images in the specified compartment.
+    Gets a list of the Autonomous AI Database Software Images in the specified compartment.
 
     ## Example Usage
 
@@ -175,7 +175,7 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
     """
     This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of the Autonomous Database Software Images in the specified compartment.
+    Gets a list of the Autonomous AI Database Software Images in the specified compartment.
 
     ## Example Usage
 

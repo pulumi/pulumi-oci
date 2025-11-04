@@ -487,10 +487,6 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  udp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
-
         ## Example Usage
 
         ```python
@@ -568,10 +564,6 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  args: NetworkSecurityGroupSecurityRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
-
         ## Example Usage
 
         ```python

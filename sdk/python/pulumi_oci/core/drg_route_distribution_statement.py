@@ -186,10 +186,6 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  priority: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one route distribution statement to the specified route distribution.
-
         ## Example Usage
 
         ```python
@@ -233,10 +229,6 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  args: DrgRouteDistributionStatementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one route distribution statement to the specified route distribution.
-
         ## Example Usage
 
         ```python

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
-//
 // ## Example Usage
 //
 // ```go

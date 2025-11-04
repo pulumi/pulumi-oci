@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
- * 
- * Attaches a service instance to the fusion pod.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates an external DB system discovery resource and initiates the discovery process.
- *
- *   Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
- *
  * ## Example Usage
  *
  * ## Import

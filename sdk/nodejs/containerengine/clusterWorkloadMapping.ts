@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
- *
- * Create the specified workloadMapping for a cluster.
- *
  * ## Example Usage
  *
  * ```typescript

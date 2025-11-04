@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Creates a job.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

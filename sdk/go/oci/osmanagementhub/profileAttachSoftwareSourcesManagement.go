@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Profile Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Attaches the specified software sources to a profile.
-//
 // ## Example Usage
 //
 // ```go

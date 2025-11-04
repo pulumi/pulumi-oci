@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Creates a CatalogItem.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

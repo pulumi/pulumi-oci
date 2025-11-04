@@ -391,10 +391,6 @@ class Subscriber(pulumi.CustomResource):
                  usage_plans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new subscriber.
-
         ## Example Usage
 
         ```python
@@ -450,10 +446,6 @@ class Subscriber(pulumi.CustomResource):
                  args: SubscriberArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new subscriber.
-
         ## Example Usage
 
         ```python

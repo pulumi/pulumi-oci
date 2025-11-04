@@ -19,14 +19,14 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
     public static final GetDatabaseToolsConnectionsArgs Empty = new GetDatabaseToolsConnectionsArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -56,14 +56,14 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
     }
 
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
     @Import(name="relatedResourceIdentifier")
     private @Nullable Output<String> relatedResourceIdentifier;
 
     /**
-     * @return A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
     public Optional<Output<String>> relatedResourceIdentifier() {
@@ -71,14 +71,29 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
     }
 
     /**
-     * A filter to return only resources with one of the specified runtimeSupport values.
+     * A filter to return only resources with one of the specified runtimeIdentity values.
+     * 
+     */
+    @Import(name="runtimeIdentities")
+    private @Nullable Output<List<String>> runtimeIdentities;
+
+    /**
+     * @return A filter to return only resources with one of the specified runtimeIdentity values.
+     * 
+     */
+    public Optional<Output<List<String>>> runtimeIdentities() {
+        return Optional.ofNullable(this.runtimeIdentities);
+    }
+
+    /**
+     * A filter to return only resources with one of the specified type values.
      * 
      */
     @Import(name="runtimeSupports")
     private @Nullable Output<List<String>> runtimeSupports;
 
     /**
-     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * @return A filter to return only resources with one of the specified type values.
      * 
      */
     public Optional<Output<List<String>>> runtimeSupports() {
@@ -122,6 +137,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.relatedResourceIdentifier = $.relatedResourceIdentifier;
+        this.runtimeIdentities = $.runtimeIdentities;
         this.runtimeSupports = $.runtimeSupports;
         this.state = $.state;
         this.types = $.types;
@@ -146,7 +162,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -157,7 +173,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -201,7 +217,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param relatedResourceIdentifier A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+         * @param relatedResourceIdentifier The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
          * 
          * @return builder
          * 
@@ -212,7 +228,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param relatedResourceIdentifier A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+         * @param relatedResourceIdentifier The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
          * 
          * @return builder
          * 
@@ -222,7 +238,38 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param runtimeSupports A filter to return only resources with one of the specified runtimeSupport values.
+         * @param runtimeIdentities A filter to return only resources with one of the specified runtimeIdentity values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeIdentities(@Nullable Output<List<String>> runtimeIdentities) {
+            $.runtimeIdentities = runtimeIdentities;
+            return this;
+        }
+
+        /**
+         * @param runtimeIdentities A filter to return only resources with one of the specified runtimeIdentity values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeIdentities(List<String> runtimeIdentities) {
+            return runtimeIdentities(Output.of(runtimeIdentities));
+        }
+
+        /**
+         * @param runtimeIdentities A filter to return only resources with one of the specified runtimeIdentity values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeIdentities(String... runtimeIdentities) {
+            return runtimeIdentities(List.of(runtimeIdentities));
+        }
+
+        /**
+         * @param runtimeSupports A filter to return only resources with one of the specified type values.
          * 
          * @return builder
          * 
@@ -233,7 +280,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param runtimeSupports A filter to return only resources with one of the specified runtimeSupport values.
+         * @param runtimeSupports A filter to return only resources with one of the specified type values.
          * 
          * @return builder
          * 
@@ -243,7 +290,7 @@ public final class GetDatabaseToolsConnectionsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param runtimeSupports A filter to return only resources with one of the specified runtimeSupport values.
+         * @param runtimeSupports A filter to return only resources with one of the specified type values.
          * 
          * @return builder
          * 

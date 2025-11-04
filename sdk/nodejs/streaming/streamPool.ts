@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
- *
- * Starts the provisioning of a new stream pool.
- * To track the progress of the provisioning, you can periodically call GetStreamPool.
- * In the response, the `lifecycleState` parameter of the object tells you its current state.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -40,6 +34,7 @@ import * as utilities from "../utilities";
  *         privateEndpointIp: streamPoolPrivateEndpointSettingsPrivateEndpointIp,
  *         subnetId: testSubnet.id,
  *     },
+ *     securityAttributes: streamPoolSecurityAttributes,
  * });
  * ```
  *
@@ -120,6 +115,14 @@ export class StreamPool extends pulumi.CustomResource {
      */
     declare public readonly privateEndpointSettings: pulumi.Output<outputs.Streaming.StreamPoolPrivateEndpointSettings>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the stream pool.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -151,6 +154,7 @@ export class StreamPool extends pulumi.CustomResource {
             resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
             resourceInputs["name"] = state?.name;
             resourceInputs["privateEndpointSettings"] = state?.privateEndpointSettings;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
@@ -165,6 +169,7 @@ export class StreamPool extends pulumi.CustomResource {
             resourceInputs["kafkaSettings"] = args?.kafkaSettings;
             resourceInputs["name"] = args?.name;
             resourceInputs["privateEndpointSettings"] = args?.privateEndpointSettings;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["endpointFqdn"] = undefined /*out*/;
             resourceInputs["isPrivate"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
@@ -221,6 +226,14 @@ export interface StreamPoolState {
      */
     privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The current state of the stream pool.
      */
     state?: pulumi.Input<string>;
@@ -262,4 +275,12 @@ export interface StreamPoolArgs {
      * Optional parameters if a private stream pool is requested.
      */
     privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

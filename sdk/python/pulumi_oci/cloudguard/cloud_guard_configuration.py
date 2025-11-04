@@ -185,11 +185,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
-        The reporting region cannot be updated once created.
-
         ## Example Usage
 
         ## Import
@@ -214,11 +209,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  args: CloudGuardConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
-        The reporting region cannot be updated once created.
-
         ## Example Usage
 
         ## Import

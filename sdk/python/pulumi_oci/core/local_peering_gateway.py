@@ -413,10 +413,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new local peering gateway (LPG) for the specified VCN.
-
         ## Example Usage
 
         ```python
@@ -470,10 +466,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
                  args: LocalPeeringGatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new local peering gateway (LPG) for the specified VCN.
-
         ## Example Usage
 
         ```python

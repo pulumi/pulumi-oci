@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
-//
-// Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
-// confidential information in bucket names.
-//
 // ## Example Usage
 //
 // ```go

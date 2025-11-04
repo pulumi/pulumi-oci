@@ -1400,14 +1400,6 @@ class ShardedDatabase(pulumi.CustomResource):
                  validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-
-        Creates a Sharded Database.
-
-          Patch operation to add, remove or update shards to the sharded database topology. In single patch
-        operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
-        and remove in single operation is not allowed.
-
         ## Example Usage
 
         ## Import
@@ -1465,14 +1457,6 @@ class ShardedDatabase(pulumi.CustomResource):
                  args: ShardedDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-
-        Creates a Sharded Database.
-
-          Patch operation to add, remove or update shards to the sharded database topology. In single patch
-        operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
-        and remove in single operation is not allowed.
-
         ## Example Usage
 
         ## Import

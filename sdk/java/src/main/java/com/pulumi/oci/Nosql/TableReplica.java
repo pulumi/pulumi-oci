@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
- * 
- * Add a replica for this table. The table&#39;s schema must be frozen prior to this operation.
- * 
  * ## Example Usage
  * 
  * <pre>

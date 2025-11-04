@@ -283,10 +283,6 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  metric_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a nodeReplaceConfigurations to the cluster.
-
         ## Example Usage
 
         ```python
@@ -330,10 +326,6 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  args: BdsInstanceNodeReplaceConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a nodeReplaceConfigurations to the cluster.
-
         ## Example Usage
 
         ```python

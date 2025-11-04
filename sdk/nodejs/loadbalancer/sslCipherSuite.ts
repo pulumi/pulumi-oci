@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Creates a custom SSL cipher suite.
- *
  * ## Example Usage
  *
  * ```typescript

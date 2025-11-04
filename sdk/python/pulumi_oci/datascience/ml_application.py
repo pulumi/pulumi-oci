@@ -300,10 +300,6 @@ class MlApplication(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new MlApplication.
-
         ## Example Usage
 
         ```python
@@ -349,10 +345,6 @@ class MlApplication(pulumi.CustomResource):
                  args: MlApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new MlApplication.
-
         ## Example Usage
 
         ```python

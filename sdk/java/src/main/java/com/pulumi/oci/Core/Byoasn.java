@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Byoasn resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a BYOASN Resource
- * 
  * ## Example Usage
  * 
  * <pre>

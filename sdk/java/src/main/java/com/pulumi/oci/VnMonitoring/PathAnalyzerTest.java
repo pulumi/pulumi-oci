@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
- * 
- * Creates a new `PathAnalyzerTest` resource.
- * 
  * ## Example Usage
  * 
  * <pre>

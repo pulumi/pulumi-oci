@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
- * 
- * Creates a new usage plan.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -12,14 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates an instance pool.
-//
-// To determine whether capacity is available for a specific shape before you create an instance pool,
-// use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
-// operation.
-//
 // ## Example Usage
 //
 // ```go

@@ -1322,6 +1322,956 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashC
 	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationOutput)
 }
 
+type GetFileStorageObjectStorageLinkSyncJobsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsFilterInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsFilterArgs and GetFileStorageObjectStorageLinkSyncJobsFilterOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsFilterInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsFilterArgs{...}
+type GetFileStorageObjectStorageLinkSyncJobsFilterInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsFilterOutput() GetFileStorageObjectStorageLinkSyncJobsFilterOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsFilterOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFileStorageObjectStorageLinkSyncJobsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsFilterArgs) ToGetFileStorageObjectStorageLinkSyncJobsFilterOutput() GetFileStorageObjectStorageLinkSyncJobsFilterOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsFilterArgs) ToGetFileStorageObjectStorageLinkSyncJobsFilterOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsFilterOutput)
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsFilterArrayInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsFilterArray and GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsFilterArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsFilterArray{ GetFileStorageObjectStorageLinkSyncJobsFilterArgs{...} }
+type GetFileStorageObjectStorageLinkSyncJobsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput() GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsFilterArray []GetFileStorageObjectStorageLinkSyncJobsFilterInput
+
+func (GetFileStorageObjectStorageLinkSyncJobsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsFilterArray) ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput() GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsFilterArray) ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterOutput) ToGetFileStorageObjectStorageLinkSyncJobsFilterOutput() GetFileStorageObjectStorageLinkSyncJobsFilterOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterOutput) ToGetFileStorageObjectStorageLinkSyncJobsFilterOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput() GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsFilterArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinkSyncJobsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinkSyncJobsFilter {
+		return vs[0].([]GetFileStorageObjectStorageLinkSyncJobsFilter)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinkSyncJobsFilterOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection struct {
+	Items []GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem `pulumi:"items"`
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs and GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs{...}
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs struct {
+	Items GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput)
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray and GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray{ GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs{...} }
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray []GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput) Items() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection) []GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem {
+		return v.Items
+	}).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection {
+		return vs[0].([]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollection)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem struct {
+	// Bytes transferred during the sync. This value changes while the sync is still in progress.
+	BytesTransferred string `pulumi:"bytesTransferred"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the sync job.
+	Id string `pulumi:"id"`
+	// The flag is an identifier to tell whether this specific job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+	IsOverwrite bool `pulumi:"isOverwrite"`
+	// The type of the sync job.
+	JobType string `pulumi:"jobType"`
+	// A message that describes the current state of the sync job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+	LustreFileSystemPath string `pulumi:"lustreFileSystemPath"`
+	// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+	ObjectStoragePath string `pulumi:"objectStoragePath"`
+	// Count of total files that transferred successfully.
+	ObjectsTransferred string `pulumi:"objectsTransferred"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+	ParentId string `pulumi:"parentId"`
+	// Count of files or objects that failed to export or import due to errors.
+	SkippedErrorCount string `pulumi:"skippedErrorCount"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the job finished, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time the job was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// Total object count for scanned files for import or export as part of this sync job.
+	TotalObjectsScanned string `pulumi:"totalObjectsScanned"`
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs and GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs{...}
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs struct {
+	// Bytes transferred during the sync. This value changes while the sync is still in progress.
+	BytesTransferred pulumi.StringInput `pulumi:"bytesTransferred"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the sync job.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The flag is an identifier to tell whether this specific job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+	IsOverwrite pulumi.BoolInput `pulumi:"isOverwrite"`
+	// The type of the sync job.
+	JobType pulumi.StringInput `pulumi:"jobType"`
+	// A message that describes the current state of the sync job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+	LustreFileSystemPath pulumi.StringInput `pulumi:"lustreFileSystemPath"`
+	// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+	ObjectStoragePath pulumi.StringInput `pulumi:"objectStoragePath"`
+	// Count of total files that transferred successfully.
+	ObjectsTransferred pulumi.StringInput `pulumi:"objectsTransferred"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+	ParentId pulumi.StringInput `pulumi:"parentId"`
+	// Count of files or objects that failed to export or import due to errors.
+	SkippedErrorCount pulumi.StringInput `pulumi:"skippedErrorCount"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the job finished, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time the job was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// Total object count for scanned files for import or export as part of this sync job.
+	TotalObjectsScanned pulumi.StringInput `pulumi:"totalObjectsScanned"`
+}
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput)
+}
+
+// GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayInput is an input type that accepts GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray and GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray{ GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs{...} }
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput
+	ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray []GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemInput
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput {
+	return o
+}
+
+// Bytes transferred during the sync. This value changes while the sync is still in progress.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) BytesTransferred() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.BytesTransferred }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the sync job.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The flag is an identifier to tell whether this specific job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) IsOverwrite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) bool { return v.IsOverwrite }).(pulumi.BoolOutput)
+}
+
+// The type of the sync job.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) JobType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.JobType }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the sync job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) LustreFileSystemPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string {
+		return v.LustreFileSystemPath
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string {
+		return v.ObjectStoragePath
+	}).(pulumi.StringOutput)
+}
+
+// Count of total files that transferred successfully.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ObjectsTransferred() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string {
+		return v.ObjectsTransferred
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) ParentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.ParentId }).(pulumi.StringOutput)
+}
+
+// Count of files or objects that failed to export or import due to errors.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) SkippedErrorCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string {
+		return v.SkippedErrorCount
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the job finished, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time the job was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// Total object count for scanned files for import or export as part of this sync job.
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput) TotalObjectsScanned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem) string {
+		return v.TotalObjectsScanned
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput() GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput) ToGetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem {
+		return vs[0].([]GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItem)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput)
+}
+
+type GetFileStorageObjectStorageLinksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFileStorageObjectStorageLinksFilterInput is an input type that accepts GetFileStorageObjectStorageLinksFilterArgs and GetFileStorageObjectStorageLinksFilterOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksFilterInput` via:
+//
+//	GetFileStorageObjectStorageLinksFilterArgs{...}
+type GetFileStorageObjectStorageLinksFilterInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksFilterOutput() GetFileStorageObjectStorageLinksFilterOutput
+	ToGetFileStorageObjectStorageLinksFilterOutputWithContext(context.Context) GetFileStorageObjectStorageLinksFilterOutput
+}
+
+type GetFileStorageObjectStorageLinksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFileStorageObjectStorageLinksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksFilterArgs) ToGetFileStorageObjectStorageLinksFilterOutput() GetFileStorageObjectStorageLinksFilterOutput {
+	return i.ToGetFileStorageObjectStorageLinksFilterOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksFilterArgs) ToGetFileStorageObjectStorageLinksFilterOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksFilterOutput)
+}
+
+// GetFileStorageObjectStorageLinksFilterArrayInput is an input type that accepts GetFileStorageObjectStorageLinksFilterArray and GetFileStorageObjectStorageLinksFilterArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksFilterArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinksFilterArray{ GetFileStorageObjectStorageLinksFilterArgs{...} }
+type GetFileStorageObjectStorageLinksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksFilterArrayOutput() GetFileStorageObjectStorageLinksFilterArrayOutput
+	ToGetFileStorageObjectStorageLinksFilterArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinksFilterArrayOutput
+}
+
+type GetFileStorageObjectStorageLinksFilterArray []GetFileStorageObjectStorageLinksFilterInput
+
+func (GetFileStorageObjectStorageLinksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksFilterArray) ToGetFileStorageObjectStorageLinksFilterArrayOutput() GetFileStorageObjectStorageLinksFilterArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksFilterArray) ToGetFileStorageObjectStorageLinksFilterArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksFilterArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksFilterOutput) ToGetFileStorageObjectStorageLinksFilterOutput() GetFileStorageObjectStorageLinksFilterOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksFilterOutput) ToGetFileStorageObjectStorageLinksFilterOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksFilterOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksFilterArrayOutput) ToGetFileStorageObjectStorageLinksFilterArrayOutput() GetFileStorageObjectStorageLinksFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksFilterArrayOutput) ToGetFileStorageObjectStorageLinksFilterArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksFilterArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinksFilter {
+		return vs[0].([]GetFileStorageObjectStorageLinksFilter)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinksFilterOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollection struct {
+	Items []GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem `pulumi:"items"`
+}
+
+// GetFileStorageObjectStorageLinksObjectStorageLinkCollectionInput is an input type that accepts GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs and GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksObjectStorageLinkCollectionInput` via:
+//
+//	GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs{...}
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutputWithContext(context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs struct {
+	Items GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput {
+	return i.ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput)
+}
+
+// GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayInput is an input type that accepts GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray and GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray{ GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs{...} }
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray []GetFileStorageObjectStorageLinksObjectStorageLinkCollectionInput
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksObjectStorageLinkCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput) Items() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollection) []GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem {
+		return v.Items
+	}).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksObjectStorageLinkCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinksObjectStorageLinkCollection {
+		return vs[0].([]GetFileStorageObjectStorageLinksObjectStorageLinkCollection)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
+	CurrentJobId string `pulumi:"currentJobId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+	FileSystemPath string `pulumi:"fileSystemPath"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+	Id string `pulumi:"id"`
+	// The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+	IsOverwrite bool `pulumi:"isOverwrite"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
+	LastJobId string `pulumi:"lastJobId"`
+	// A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
+	LustreFileSystemId string `pulumi:"lustreFileSystemId"`
+	// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+	ObjectStoragePrefix          string `pulumi:"objectStoragePrefix"`
+	StartExportToObjectTrigger   int    `pulumi:"startExportToObjectTrigger"`
+	StartImportFromObjectTrigger int    `pulumi:"startImportFromObjectTrigger"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State                       string `pulumi:"state"`
+	StopExportToObjectTrigger   int    `pulumi:"stopExportToObjectTrigger"`
+	StopImportFromObjectTrigger int    `pulumi:"stopImportFromObjectTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput is an input type that accepts GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs and GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput` via:
+//
+//	GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs{...}
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutputWithContext(context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
+	CurrentJobId pulumi.StringInput `pulumi:"currentJobId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+	FileSystemPath pulumi.StringInput `pulumi:"fileSystemPath"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+	IsOverwrite pulumi.BoolInput `pulumi:"isOverwrite"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
+	LastJobId pulumi.StringInput `pulumi:"lastJobId"`
+	// A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
+	LustreFileSystemId pulumi.StringInput `pulumi:"lustreFileSystemId"`
+	// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+	ObjectStoragePrefix          pulumi.StringInput `pulumi:"objectStoragePrefix"`
+	StartExportToObjectTrigger   pulumi.IntInput    `pulumi:"startExportToObjectTrigger"`
+	StartImportFromObjectTrigger pulumi.IntInput    `pulumi:"startImportFromObjectTrigger"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State                       pulumi.StringInput `pulumi:"state"`
+	StopExportToObjectTrigger   pulumi.IntInput    `pulumi:"stopExportToObjectTrigger"`
+	StopImportFromObjectTrigger pulumi.IntInput    `pulumi:"stopImportFromObjectTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput {
+	return i.ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput)
+}
+
+// GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput is an input type that accepts GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray and GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput` via:
+//
+//	GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray{ GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs{...} }
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput
+	ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutputWithContext(context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray []GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput {
+	return i.ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) CurrentJobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.CurrentJobId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) FileSystemPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string {
+		return v.FileSystemPath
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) IsOverwrite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) bool { return v.IsOverwrite }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) LastJobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.LastJobId }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) LustreFileSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string {
+		return v.LustreFileSystemId
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) ObjectStoragePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string {
+		return v.ObjectStoragePrefix
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) StartExportToObjectTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) int {
+		return v.StartExportToObjectTrigger
+	}).(pulumi.IntOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) StartImportFromObjectTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) int {
+		return v.StartImportFromObjectTrigger
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) StopExportToObjectTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) int {
+		return v.StopExportToObjectTrigger
+	}).(pulumi.IntOutput)
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) StopImportFromObjectTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) int {
+		return v.StopImportFromObjectTrigger
+	}).(pulumi.IntOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput() GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput) ToGetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem {
+		return vs[0].([]GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItem)[vs[1].(int)]
+	}).(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowArray{})
@@ -1341,6 +2291,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilterInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilterArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksFilterInput)(nil)).Elem(), GetFileStorageObjectStorageLinksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksFilterArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemRootSquashConfigurationOutput{})
@@ -1359,4 +2321,16 @@ func init() {
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsFilterOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksFilterOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutput{})
 }

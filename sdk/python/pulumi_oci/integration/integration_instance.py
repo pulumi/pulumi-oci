@@ -40,13 +40,14 @@ class IntegrationInstanceArgs:
                  is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IntegrationInstance resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
-        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[_builtins.bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -63,6 +64,10 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+               "oracle-zpr.sensitivity.value" = "low"
+               "oracle-zpr.sensitivity.mode" = "enforce"
+               }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
@@ -103,6 +108,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -136,7 +143,7 @@ class IntegrationInstanceArgs:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -337,6 +344,21 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "network_endpoint_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        "oracle-zpr.sensitivity.value" = "low"
+        "oracle-zpr.sensitivity.mode" = "enforce"
+        }`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -395,6 +417,7 @@ class _IntegrationInstanceState:
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
                  private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  state_message: Optional[pulumi.Input[_builtins.str]] = None,
@@ -420,7 +443,7 @@ class _IntegrationInstanceState:
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[_builtins.str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[_builtins.bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[_builtins.bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
@@ -429,6 +452,10 @@ class _IntegrationInstanceState:
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+               "oracle-zpr.sensitivity.value" = "low"
+               "oracle-zpr.sensitivity.mode" = "enforce"
+               }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
@@ -494,6 +521,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if private_endpoint_outbound_connections is not None:
             pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -724,7 +753,7 @@ class _IntegrationInstanceState:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -829,6 +858,21 @@ class _IntegrationInstanceState:
         pulumi.set(self, "private_endpoint_outbound_connections", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        "oracle-zpr.sensitivity.value" = "low"
+        "oracle-zpr.sensitivity.mode" = "enforce"
+        }`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -930,14 +974,11 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-        Creates a new Integration Instance.
-
         ## Example Usage
 
         ```python
@@ -978,6 +1019,10 @@ class IntegrationInstance(pulumi.CustomResource):
                     "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 }],
                 "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+            },
+            security_attributes={
+                "oracle-zpr.sensitivity.value": "low",
+                "oracle-zpr.sensitivity.mode": "enforce",
             },
             shape=integration_instance_shape,
             state=integration_instance_target_state)
@@ -1005,13 +1050,17 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[_builtins.bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[_builtins.bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+               "oracle-zpr.sensitivity.value" = "low"
+               "oracle-zpr.sensitivity.mode" = "enforce"
+               }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
@@ -1026,10 +1075,6 @@ class IntegrationInstance(pulumi.CustomResource):
                  args: IntegrationInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-
-        Creates a new Integration Instance.
-
         ## Example Usage
 
         ```python
@@ -1070,6 +1115,10 @@ class IntegrationInstance(pulumi.CustomResource):
                     "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 }],
                 "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+            },
+            security_attributes={
+                "oracle-zpr.sensitivity.value": "low",
+                "oracle-zpr.sensitivity.mode": "enforce",
             },
             shape=integration_instance_shape,
             state=integration_instance_target_state)
@@ -1117,6 +1166,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -1157,6 +1207,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'message_packs'")
             __props__.__dict__["message_packs"] = message_packs
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
@@ -1210,6 +1261,7 @@ class IntegrationInstance(pulumi.CustomResource):
             message_packs: Optional[pulumi.Input[_builtins.int]] = None,
             network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
             private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             state_message: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1240,7 +1292,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[_builtins.str] instance_url: The Integration Instance URL.
-        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[_builtins.bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[_builtins.bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
@@ -1249,6 +1301,10 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+               "oracle-zpr.sensitivity.value" = "low"
+               "oracle-zpr.sensitivity.mode" = "enforce"
+               }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
@@ -1291,6 +1347,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["message_packs"] = message_packs
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["private_endpoint_outbound_connections"] = private_endpoint_outbound_connections
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["state_message"] = state_message
@@ -1444,7 +1501,7 @@ class IntegrationInstance(pulumi.CustomResource):
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -1511,6 +1568,17 @@ class IntegrationInstance(pulumi.CustomResource):
         Base representation for Outbound Connection (Reverse Connection).
         """
         return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        "oracle-zpr.sensitivity.value" = "low"
+        "oracle-zpr.sensitivity.mode" = "enforce"
+        }`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

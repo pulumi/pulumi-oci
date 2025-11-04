@@ -11,18 +11,13 @@ import com.pulumi.oci.Core.PrivateIpArgs;
 import com.pulumi.oci.Core.inputs.PrivateIpState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a secondary private IP for the specified VNIC.
- * For more information about secondary private IPs, see
- * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -48,11 +43,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPrivateIp = new PrivateIp("testPrivateIp", PrivateIpArgs.builder()
+ *             .cidrPrefixLength(privateIpCidrPrefixLength)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(privateIpDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .hostnameLabel(privateIpHostnameLabel)
  *             .ipAddress(privateIpIpAddress)
+ *             .ipv4subnetCidrAtCreation(privateIpIpv4subnetCidrAtCreation)
  *             .lifetime(privateIpLifetime)
  *             .routeTableId(testRouteTable.id())
  *             .subnetId(testSubnet.id())
@@ -89,6 +86,20 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+     * 
+     */
+    @Export(name="cidrPrefixLength", refs={Integer.class}, tree="[0]")
+    private Output<Integer> cidrPrefixLength;
+
+    /**
+     * @return An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+     * 
+     */
+    public Output<Integer> cidrPrefixLength() {
+        return this.cidrPrefixLength;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
@@ -197,6 +208,20 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
         return this.ipState;
     }
     /**
+     * Any one of the IPv4 CIDRs allocated to the subnet.
+     * 
+     */
+    @Export(name="ipv4subnetCidrAtCreation", refs={String.class}, tree="[0]")
+    private Output<String> ipv4subnetCidrAtCreation;
+
+    /**
+     * @return Any one of the IPv4 CIDRs allocated to the subnet.
+     * 
+     */
+    public Output<String> ipv4subnetCidrAtCreation() {
+        return this.ipv4subnetCidrAtCreation;
+    }
+    /**
      * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
      */
@@ -217,7 +242,7 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
         return this.isReserved;
     }
     /**
-     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * (Updatable) Lifetime of the IP address. There are two types of IPs:
      * * Ephemeral
      * * Reserved
      * 
@@ -226,7 +251,7 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
     private Output<String> lifetime;
 
     /**
-     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPs:
      * * Ephemeral
      * * Reserved
      * 

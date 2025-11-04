@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Desktops
 {
     /// <summary>
-    /// This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
-    /// 
-    /// Creates a desktop pool with the given configuration parameters.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

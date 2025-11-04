@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -17,6 +18,16 @@ public final class GetFsuCycleUpgradeDetail {
      */
     private String collectionType;
     /**
+     * @return Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    private Boolean isIgnorePostUpgradeErrors;
+    /**
+     * @return Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    private Boolean isIgnorePrerequisites;
+    /**
      * @return Enables or disables the recompilation of invalid objects.
      * 
      */
@@ -26,6 +37,11 @@ public final class GetFsuCycleUpgradeDetail {
      * 
      */
     private Boolean isTimeZoneUpgrade;
+    /**
+     * @return Service drain timeout specified in seconds.
+     * 
+     */
+    private Integer maxDrainTimeoutInSeconds;
 
     private GetFsuCycleUpgradeDetail() {}
     /**
@@ -34,6 +50,20 @@ public final class GetFsuCycleUpgradeDetail {
      */
     public String collectionType() {
         return this.collectionType;
+    }
+    /**
+     * @return Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    public Boolean isIgnorePostUpgradeErrors() {
+        return this.isIgnorePostUpgradeErrors;
+    }
+    /**
+     * @return Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    public Boolean isIgnorePrerequisites() {
+        return this.isIgnorePrerequisites;
     }
     /**
      * @return Enables or disables the recompilation of invalid objects.
@@ -49,6 +79,13 @@ public final class GetFsuCycleUpgradeDetail {
     public Boolean isTimeZoneUpgrade() {
         return this.isTimeZoneUpgrade;
     }
+    /**
+     * @return Service drain timeout specified in seconds.
+     * 
+     */
+    public Integer maxDrainTimeoutInSeconds() {
+        return this.maxDrainTimeoutInSeconds;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -60,14 +97,20 @@ public final class GetFsuCycleUpgradeDetail {
     @CustomType.Builder
     public static final class Builder {
         private String collectionType;
+        private Boolean isIgnorePostUpgradeErrors;
+        private Boolean isIgnorePrerequisites;
         private Boolean isRecompileInvalidObjects;
         private Boolean isTimeZoneUpgrade;
+        private Integer maxDrainTimeoutInSeconds;
         public Builder() {}
         public Builder(GetFsuCycleUpgradeDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.collectionType = defaults.collectionType;
+    	      this.isIgnorePostUpgradeErrors = defaults.isIgnorePostUpgradeErrors;
+    	      this.isIgnorePrerequisites = defaults.isIgnorePrerequisites;
     	      this.isRecompileInvalidObjects = defaults.isRecompileInvalidObjects;
     	      this.isTimeZoneUpgrade = defaults.isTimeZoneUpgrade;
+    	      this.maxDrainTimeoutInSeconds = defaults.maxDrainTimeoutInSeconds;
         }
 
         @CustomType.Setter
@@ -76,6 +119,22 @@ public final class GetFsuCycleUpgradeDetail {
               throw new MissingRequiredPropertyException("GetFsuCycleUpgradeDetail", "collectionType");
             }
             this.collectionType = collectionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIgnorePostUpgradeErrors(Boolean isIgnorePostUpgradeErrors) {
+            if (isIgnorePostUpgradeErrors == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleUpgradeDetail", "isIgnorePostUpgradeErrors");
+            }
+            this.isIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIgnorePrerequisites(Boolean isIgnorePrerequisites) {
+            if (isIgnorePrerequisites == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleUpgradeDetail", "isIgnorePrerequisites");
+            }
+            this.isIgnorePrerequisites = isIgnorePrerequisites;
             return this;
         }
         @CustomType.Setter
@@ -94,11 +153,22 @@ public final class GetFsuCycleUpgradeDetail {
             this.isTimeZoneUpgrade = isTimeZoneUpgrade;
             return this;
         }
+        @CustomType.Setter
+        public Builder maxDrainTimeoutInSeconds(Integer maxDrainTimeoutInSeconds) {
+            if (maxDrainTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleUpgradeDetail", "maxDrainTimeoutInSeconds");
+            }
+            this.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
+            return this;
+        }
         public GetFsuCycleUpgradeDetail build() {
             final var _resultValue = new GetFsuCycleUpgradeDetail();
             _resultValue.collectionType = collectionType;
+            _resultValue.isIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            _resultValue.isIgnorePrerequisites = isIgnorePrerequisites;
             _resultValue.isRecompileInvalidObjects = isRecompileInvalidObjects;
             _resultValue.isTimeZoneUpgrade = isTimeZoneUpgrade;
+            _resultValue.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
             return _resultValue;
         }
     }

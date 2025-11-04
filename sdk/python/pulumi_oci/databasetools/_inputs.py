@@ -31,6 +31,8 @@ __all__ = [
     'DatabaseToolsConnectionRelatedResourceArgsDict',
     'DatabaseToolsConnectionUserPasswordArgs',
     'DatabaseToolsConnectionUserPasswordArgsDict',
+    'DatabaseToolsIdentityLockArgs',
+    'DatabaseToolsIdentityLockArgsDict',
     'DatabaseToolsPrivateEndpointLockArgs',
     'DatabaseToolsPrivateEndpointLockArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs',
@@ -41,6 +43,8 @@ __all__ = [
     'GetDatabaseToolsConnectionsFilterArgsDict',
     'GetDatabaseToolsEndpointServicesFilterArgs',
     'GetDatabaseToolsEndpointServicesFilterArgsDict',
+    'GetDatabaseToolsIdentitiesFilterArgs',
+    'GetDatabaseToolsIdentitiesFilterArgsDict',
     'GetDatabaseToolsPrivateEndpointsFilterArgs',
     'GetDatabaseToolsPrivateEndpointsFilterArgsDict',
 ]
@@ -328,7 +332,7 @@ if not MYPY:
         """
         user_password: NotRequired[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgsDict']]
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
 elif False:
     DatabaseToolsConnectionProxyClientArgsDict: TypeAlias = Mapping[str, Any]
@@ -344,7 +348,7 @@ class DatabaseToolsConnectionProxyClientArgs:
         :param pulumi.Input[_builtins.str] proxy_authentication_type: (Updatable) The proxy authentication type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The user name.
-        :param pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs'] user_password: (Updatable) The user password.
+        :param pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs'] user_password: (Updatable) The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
         if roles is not None:
@@ -394,7 +398,7 @@ class DatabaseToolsConnectionProxyClientArgs:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']]:
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 
@@ -565,6 +569,97 @@ class DatabaseToolsConnectionUserPasswordArgs:
     @value_type.setter
     def value_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "value_type", value)
+
+
+if not MYPY:
+    class DatabaseToolsIdentityLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    DatabaseToolsIdentityLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseToolsIdentityLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:
@@ -800,6 +895,53 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
         """
         A filter to return only resources that match the entire specified name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDatabaseToolsIdentitiesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDatabaseToolsIdentitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDatabaseToolsIdentitiesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

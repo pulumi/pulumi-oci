@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of the Autonomous Database Software Images in the specified compartment.
+        /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of the Autonomous Database Software Images in the specified compartment.
+        /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of the Autonomous Database Software Images in the specified compartment.
+        /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        /// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseSoftwareImagesFilterResult> Filters;
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ImageShapeFamily;
         /// <summary>
-        /// The current state of the Autonomous Database Software Image.
+        /// The current state of the Autonomous AI Database Software Image.
         /// </summary>
         public readonly string? State;
 

@@ -26,10 +26,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
- * 
- * Creates a new database system.
- * 
  * ## Example Usage
  * 
  * <pre>

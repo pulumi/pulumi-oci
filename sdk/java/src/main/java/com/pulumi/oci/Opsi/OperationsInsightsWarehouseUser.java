@@ -17,11 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
- * This resource will be created in root compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

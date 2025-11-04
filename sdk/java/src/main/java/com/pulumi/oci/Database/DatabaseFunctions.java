@@ -3070,7 +3070,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -3112,7 +3112,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -3154,7 +3154,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -3196,7 +3196,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -3238,7 +3238,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the details of the specified Autonomous Database.
+     * Gets the details of the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -3280,7 +3280,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      * 
      * ## Example Usage
      * 
@@ -3322,7 +3322,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      * 
      * ## Example Usage
      * 
@@ -3364,7 +3364,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      * 
      * ## Example Usage
      * 
@@ -3406,7 +3406,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      * 
      * ## Example Usage
      * 
@@ -3448,7 +3448,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database backup.
+     * Gets information about the specified Autonomous AI Database backup.
      * 
      * ## Example Usage
      * 
@@ -3490,7 +3490,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3518,8 +3518,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3536,7 +3539,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3564,8 +3567,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3582,7 +3588,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3610,8 +3616,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3628,7 +3637,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3656,8 +3665,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3674,7 +3686,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3702,8 +3714,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3720,7 +3735,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3748,8 +3763,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -3766,7 +3784,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
      * 
@@ -3794,8 +3812,11 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
      *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .backupDestinationId(testBackupDestination.id())
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
      *             .build());
@@ -4027,7 +4048,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4069,7 +4090,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4111,7 +4132,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4153,7 +4174,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4195,7 +4216,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4237,7 +4258,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4279,7 +4300,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4321,7 +4342,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4363,7 +4384,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4405,7 +4426,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the wallet details for the specified Autonomous Database.
+     * Gets the wallet details for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4447,7 +4468,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4489,7 +4510,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4531,7 +4552,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4573,7 +4594,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4615,7 +4636,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -4657,7 +4678,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
      * 
@@ -4699,7 +4720,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
      * 
@@ -4741,7 +4762,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
      * 
@@ -4783,7 +4804,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
      * 
@@ -4825,7 +4846,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      * 
      * ## Example Usage
      * 
@@ -4867,7 +4888,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -4906,7 +4927,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -4945,7 +4966,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -4984,7 +5005,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -5023,7 +5044,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -5062,7 +5083,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -5101,7 +5122,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets the Autonomous Database regional wallet details.
+     * Gets the Autonomous AI Database regional wallet details.
      * 
      * ## Example Usage
      * 
@@ -5140,7 +5161,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
      * 
      * ## Example Usage
      * 
@@ -5182,7 +5203,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
      * 
      * ## Example Usage
      * 
@@ -5224,7 +5245,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
      * 
      * ## Example Usage
      * 
@@ -5266,7 +5287,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
      * 
      * ## Example Usage
      * 
@@ -5308,7 +5329,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
      * 
      * ## Example Usage
      * 
@@ -5350,7 +5371,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      * 
      * ## Example Usage
      * 
@@ -5392,7 +5413,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      * 
      * ## Example Usage
      * 
@@ -5434,7 +5455,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      * 
      * ## Example Usage
      * 
@@ -5476,7 +5497,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      * 
      * ## Example Usage
      * 
@@ -5518,7 +5539,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified Autonomous Database Software Image.
+     * Gets information about the specified Autonomous AI Database Software Image.
      * 
      * ## Example Usage
      * 
@@ -5560,7 +5581,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      * 
      * ## Example Usage
      * 
@@ -5605,7 +5626,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      * 
      * ## Example Usage
      * 
@@ -5650,7 +5671,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      * 
      * ## Example Usage
      * 
@@ -5695,7 +5716,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      * 
      * ## Example Usage
      * 
@@ -5740,7 +5761,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
      * 
      * ## Example Usage
      * 
@@ -5787,7 +5808,7 @@ public final class DatabaseFunctions {
      * 
      * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -5800,7 +5821,7 @@ public final class DatabaseFunctions {
      * 
      * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -5813,7 +5834,7 @@ public final class DatabaseFunctions {
      * 
      * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -5826,7 +5847,7 @@ public final class DatabaseFunctions {
      * 
      * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -5839,7 +5860,7 @@ public final class DatabaseFunctions {
      * 
      * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Creates and downloads a wallet for the specified Autonomous Database.
+     * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -5848,9 +5869,22 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      * 
      * ## Example Usage
      * 
@@ -5902,9 +5936,22 @@ public final class DatabaseFunctions {
         return getAutonomousDatabases(args, InvokeOptions.Empty);
     }
     /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      * 
      * ## Example Usage
      * 
@@ -5956,9 +6003,22 @@ public final class DatabaseFunctions {
         return getAutonomousDatabasesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      * 
      * ## Example Usage
      * 
@@ -6010,9 +6070,22 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      * 
      * ## Example Usage
      * 
@@ -6064,9 +6137,22 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabases:getAutonomousDatabases", TypeShape.of(GetAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * ## 
+     * 
+     * ***
+     * ## subcategory: &#34;Database&#34;
+     * 
+     * layout: &#34;oci&#34;
+     * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
+     * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
+     * description: |-
+     *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+     * ---
+     * 
+     * # Data Source: oci.Database.getAutonomousDatabases
      * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of Autonomous Databases based on the query parameters specified.
+     * Gets a list of Autonomous AI Databases based on the query parameters specified.
      * 
      * ## Example Usage
      * 
@@ -6120,7 +6206,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -6166,7 +6252,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -6212,7 +6298,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -6258,7 +6344,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -6304,7 +6390,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
      * 
      * ## Example Usage
      * 
@@ -6350,8 +6436,8 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * 
@@ -6393,8 +6479,8 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * 
@@ -6436,8 +6522,8 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * 
@@ -6479,8 +6565,8 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * 
@@ -6522,8 +6608,8 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+     * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+     * Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * 
@@ -6565,7 +6651,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      * 
      * ## Example Usage
      * 
@@ -6608,7 +6694,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      * 
      * ## Example Usage
      * 
@@ -6651,7 +6737,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      * 
      * ## Example Usage
      * 
@@ -6694,7 +6780,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      * 
      * ## Example Usage
      * 
@@ -6737,7 +6823,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous AI Database versions.
      * 
      * ## Example Usage
      * 
@@ -10785,7 +10871,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -10827,7 +10913,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -10869,7 +10955,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -10911,7 +10997,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -10953,7 +11039,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -11210,7 +11296,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -11255,7 +11341,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -11300,7 +11386,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -11345,7 +11431,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 
@@ -11390,7 +11476,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
      * 

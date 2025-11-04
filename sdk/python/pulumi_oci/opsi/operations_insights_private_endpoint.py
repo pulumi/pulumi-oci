@@ -461,11 +461,6 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a private endpoint resource for the tenant in Ops Insights.
-        This resource will be created in customer compartment.
-
         ## Example Usage
 
         ```python
@@ -520,11 +515,6 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
                  args: OperationsInsightsPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a private endpoint resource for the tenant in Ops Insights.
-        This resource will be created in customer compartment.
-
         ## Example Usage
 
         ```python

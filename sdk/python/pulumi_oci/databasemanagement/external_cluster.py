@@ -461,9 +461,7 @@ class ExternalCluster(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster specified by `externalClusterId`.
+        ## Example Usage
 
         ## Import
 
@@ -491,9 +489,7 @@ class ExternalCluster(pulumi.CustomResource):
                  args: ExternalClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster specified by `externalClusterId`.
+        ## Example Usage
 
         ## Import
 

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-//
-// Creates a new Blockchain Platform.
-//
 // ## Example Usage
 //
 // ```go

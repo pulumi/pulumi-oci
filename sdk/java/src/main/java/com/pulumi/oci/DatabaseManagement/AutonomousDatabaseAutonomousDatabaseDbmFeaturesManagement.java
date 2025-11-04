@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Enables a Database Management feature for the specified Autonomous Database.
- * 
  * ## Example Usage
  * 
  */

@@ -541,10 +541,6 @@ class AwrHubSource(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
-
-        Register Awr Hub source
-
         ## Example Usage
 
         ```python
@@ -596,10 +592,6 @@ class AwrHubSource(pulumi.CustomResource):
                  args: AwrHubSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
-
-        Register Awr Hub source
-
         ## Example Usage
 
         ```python

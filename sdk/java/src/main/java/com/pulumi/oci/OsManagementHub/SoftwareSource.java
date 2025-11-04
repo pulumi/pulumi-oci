@@ -20,9 +20,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Creates a new software source.
+ * ## Example Usage
  * 
  * ## Import
  * 

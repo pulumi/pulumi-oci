@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudMigrations
 {
     /// <summary>
-    /// This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-    /// 
-    /// Creates a migration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

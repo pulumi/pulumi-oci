@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Platform Configuration resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-//
-// Creates a new PlatformConfiguration.
-//
 // ## Example Usage
 //
 // ```go

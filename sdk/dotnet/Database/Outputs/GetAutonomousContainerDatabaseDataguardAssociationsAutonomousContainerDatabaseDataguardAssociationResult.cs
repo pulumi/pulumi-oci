@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PeerLifecycleState;
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string PeerRole;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ProtectionMode;
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
         public readonly int StandbyMaintenanceBufferInDays;

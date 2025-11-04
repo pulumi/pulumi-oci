@@ -375,12 +375,6 @@ class OccDemandSignal(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
-
-        Creates a OccDemandSignal.
-
-          Updates the data of an OccDemandSignal.
-
         ## Example Usage
 
         ## Import
@@ -408,12 +402,6 @@ class OccDemandSignal(pulumi.CustomResource):
                  args: OccDemandSignalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
-
-        Creates a OccDemandSignal.
-
-          Updates the data of an OccDemandSignal.
-
         ## Example Usage
 
         ## Import

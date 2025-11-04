@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a Data Safe security policy deployment in the Data Safe Console.
- * 
  * ## Example Usage
  * 
  * <pre>

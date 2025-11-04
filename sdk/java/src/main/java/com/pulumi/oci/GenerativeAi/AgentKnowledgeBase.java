@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * Creates a knowledge base.
- * 
  * ## Example Usage
  * 
  * <pre>

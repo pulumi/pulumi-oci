@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
- *
- * Creates a new resolver endpoint in the same compartment as the resolver.
- *
  * ## Example Usage
  *
  * ```typescript

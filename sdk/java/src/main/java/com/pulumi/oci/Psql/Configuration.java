@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
- * 
- * Creates a new configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

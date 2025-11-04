@@ -2677,6 +2677,7 @@ class GetMountTargetsMountTargetResult(dict):
                  private_ip_ids: Sequence[_builtins.str],
                  requested_throughput: _builtins.str,
                  reserved_storage_capacity: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -2700,6 +2701,7 @@ class GetMountTargetsMountTargetResult(dict):
         :param Sequence[_builtins.str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
         :param _builtins.str requested_throughput: * New throughput for mount target at the end of billing cycle in Gbps.
         :param _builtins.str reserved_storage_capacity: * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
@@ -2726,6 +2728,7 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "private_ip_ids", private_ip_ids)
         pulumi.set(__self__, "requested_throughput", requested_throughput)
         pulumi.set(__self__, "reserved_storage_capacity", reserved_storage_capacity)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -2882,6 +2885,14 @@ class GetMountTargetsMountTargetResult(dict):
         * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "reserved_storage_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

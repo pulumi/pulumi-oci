@@ -383,10 +383,6 @@ class DeployPipeline(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment pipeline.
-
         ## Example Usage
 
         ```python
@@ -440,10 +436,6 @@ class DeployPipeline(pulumi.CustomResource):
                  args: DeployPipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment pipeline.
-
         ## Example Usage
 
         ```python

@@ -16,7 +16,7 @@ public final class GetPrivateEndpointReachableIpResult {
      */
     private String id;
     /**
-     * @return An IP address for the Resource Manager service to use for connection to the private resource.
+     * @return Reachable IP address associated with the private endpoint.
      * 
      */
     private String ipAddress;
@@ -32,7 +32,7 @@ public final class GetPrivateEndpointReachableIpResult {
         return this.id;
     }
     /**
-     * @return An IP address for the Resource Manager service to use for connection to the private resource.
+     * @return Reachable IP address associated with the private endpoint.
      * 
      */
     public String ipAddress() {

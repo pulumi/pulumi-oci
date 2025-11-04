@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new compute host group in the specified compartment and availability domain.
- * 
  * ## Example Usage
  * 
  * <pre>

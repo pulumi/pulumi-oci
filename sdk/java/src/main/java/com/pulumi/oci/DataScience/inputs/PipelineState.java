@@ -182,6 +182,21 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Parameters used in the pipeline.
+     * 
+     */
+    @Import(name="parameters")
+    private @Nullable Output<Map<String,String>> parameters;
+
+    /**
+     * @return (Updatable) Parameters used in the pipeline.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> parameters() {
+        return Optional.ofNullable(this.parameters);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
      */
@@ -307,6 +322,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.infrastructureConfigurationDetails = $.infrastructureConfigurationDetails;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logConfigurationDetails = $.logConfigurationDetails;
+        this.parameters = $.parameters;
         this.projectId = $.projectId;
         this.state = $.state;
         this.stepArtifacts = $.stepArtifacts;
@@ -552,6 +568,27 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder logConfigurationDetails(PipelineLogConfigurationDetailsArgs logConfigurationDetails) {
             return logConfigurationDetails(Output.of(logConfigurationDetails));
+        }
+
+        /**
+         * @param parameters (Updatable) Parameters used in the pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(@Nullable Output<Map<String,String>> parameters) {
+            $.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * @param parameters (Updatable) Parameters used in the pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(Map<String,String> parameters) {
+            return parameters(Output.of(parameters));
         }
 
         /**

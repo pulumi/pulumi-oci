@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer
 {
     /// <summary>
-    /// This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-    /// 
-    /// Creates a network load balancer.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

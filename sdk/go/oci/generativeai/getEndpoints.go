@@ -30,10 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := generativeai.GetEndpoints(ctx, &generativeai.GetEndpointsArgs{
-//				CompartmentId: compartmentId,
-//				DisplayName:   pulumi.StringRef(endpointDisplayName),
-//				Id:            pulumi.StringRef(endpointId),
-//				State:         pulumi.StringRef(endpointState),
+//				CompartmentId:                 compartmentId,
+//				DisplayName:                   pulumi.StringRef(endpointDisplayName),
+//				GenerativeAiPrivateEndpointId: pulumi.StringRef(testGenerativeAiPrivateEndpoint.Id),
+//				Id:                            pulumi.StringRef(endpointId),
+//				State:                         pulumi.StringRef(endpointState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +61,8 @@ type GetEndpointsArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetEndpointsFilter `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	GenerativeAiPrivateEndpointId *string `pulumi:"generativeAiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
@@ -68,13 +71,13 @@ type GetEndpointsArgs struct {
 
 // A collection of values returned by getEndpoints.
 type GetEndpointsResult struct {
-	CompartmentId string `pulumi:"compartmentId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.
-	DisplayName *string `pulumi:"displayName"`
+	CompartmentId string  `pulumi:"compartmentId"`
+	DisplayName   *string `pulumi:"displayName"`
 	// The list of endpoint_collection.
-	EndpointCollections []GetEndpointsEndpointCollection `pulumi:"endpointCollections"`
-	Filters             []GetEndpointsFilter             `pulumi:"filters"`
-	Id                  *string                          `pulumi:"id"`
+	EndpointCollections           []GetEndpointsEndpointCollection `pulumi:"endpointCollections"`
+	Filters                       []GetEndpointsFilter             `pulumi:"filters"`
+	GenerativeAiPrivateEndpointId *string                          `pulumi:"generativeAiPrivateEndpointId"`
+	Id                            *string                          `pulumi:"id"`
 	// The current state of the endpoint.
 	State *string `pulumi:"state"`
 }
@@ -95,6 +98,8 @@ type GetEndpointsOutputArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetEndpointsFilterArrayInput `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	GenerativeAiPrivateEndpointId pulumi.StringPtrInput `pulumi:"generativeAiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
@@ -124,7 +129,6 @@ func (o GetEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable.
 func (o GetEndpointsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEndpointsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -136,6 +140,10 @@ func (o GetEndpointsResultOutput) EndpointCollections() GetEndpointsEndpointColl
 
 func (o GetEndpointsResultOutput) Filters() GetEndpointsFilterArrayOutput {
 	return o.ApplyT(func(v GetEndpointsResult) []GetEndpointsFilter { return v.Filters }).(GetEndpointsFilterArrayOutput)
+}
+
+func (o GetEndpointsResultOutput) GenerativeAiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEndpointsResult) *string { return v.GenerativeAiPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetEndpointsResultOutput) Id() pulumi.StringPtrOutput {

@@ -68,6 +68,21 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
+     * A list of datastore clusters.
+     * 
+     */
+    @Import(name="datastoreClusterIds")
+    private @Nullable Output<List<String>> datastoreClusterIds;
+
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public Optional<Output<List<String>>> datastoreClusterIds() {
+        return Optional.ofNullable(this.datastoreClusterIds);
+    }
+
+    /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
@@ -83,14 +98,14 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -246,6 +261,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         this.actualEsxiHostsCount = $.actualEsxiHostsCount;
         this.capacityReservationId = $.capacityReservationId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.datastoreClusterIds = $.datastoreClusterIds;
         this.datastores = $.datastores;
         this.displayName = $.displayName;
         this.esxiHostsCount = $.esxiHostsCount;
@@ -341,6 +357,37 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(@Nullable Output<List<String>> datastoreClusterIds) {
+            $.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            return datastoreClusterIds(Output.of(datastoreClusterIds));
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
+        }
+
+        /**
          * @param datastores A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
          * 
          * @return builder
@@ -372,7 +419,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param displayName A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+         * @param displayName A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -383,7 +430,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param displayName A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+         * @param displayName A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
          * 
          * @return builder
          * 

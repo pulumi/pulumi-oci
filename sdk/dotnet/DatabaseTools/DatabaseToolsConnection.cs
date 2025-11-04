@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools
 {
     /// <summary>
-    /// This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-    /// 
-    /// Creates a new Database Tools connection.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -98,6 +96,18 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<Outputs.DatabaseToolsConnectionRelatedResource> RelatedResource { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies the Database Tools Runtime endpoint.
+        /// </summary>
+        [Output("runtimeEndpoint")]
+        public Output<string> RuntimeEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// </summary>
+        [Output("runtimeIdentity")]
+        public Output<string> RuntimeIdentity { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies whether this connection is supported by the Database Tools Runtime.
         /// </summary>
         [Output("runtimeSupport")]
@@ -122,13 +132,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        /// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The DatabaseToolsConnection type.
+        /// (Updatable) The Database Tools connection type.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -146,7 +156,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> UserName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The user password.
+        /// (Updatable) The database user password.
         /// </summary>
         [Output("userPassword")]
         public Output<Outputs.DatabaseToolsConnectionUserPassword> UserPassword { get; private set; } = null!;
@@ -294,13 +304,19 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceArgs>? RelatedResource { get; set; }
 
         /// <summary>
+        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// </summary>
+        [Input("runtimeIdentity")]
+        public Input<string>? RuntimeIdentity { get; set; }
+
+        /// <summary>
         /// Specifies whether this connection is supported by the Database Tools Runtime.
         /// </summary>
         [Input("runtimeSupport")]
         public Input<string>? RuntimeSupport { get; set; }
 
         /// <summary>
-        /// (Updatable) The DatabaseToolsConnection type.
+        /// (Updatable) The Database Tools connection type.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -318,7 +334,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> UserName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The user password.
+        /// (Updatable) The database user password.
         /// </summary>
         [Input("userPassword", required: true)]
         public Input<Inputs.DatabaseToolsConnectionUserPasswordArgs> UserPassword { get; set; } = null!;
@@ -434,6 +450,18 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceGetArgs>? RelatedResource { get; set; }
 
         /// <summary>
+        /// Specifies the Database Tools Runtime endpoint.
+        /// </summary>
+        [Input("runtimeEndpoint")]
+        public Input<string>? RuntimeEndpoint { get; set; }
+
+        /// <summary>
+        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// </summary>
+        [Input("runtimeIdentity")]
+        public Input<string>? RuntimeIdentity { get; set; }
+
+        /// <summary>
         /// Specifies whether this connection is supported by the Database Tools Runtime.
         /// </summary>
         [Input("runtimeSupport")]
@@ -464,13 +492,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        /// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The DatabaseToolsConnection type.
+        /// (Updatable) The Database Tools connection type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -488,7 +516,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? UserName { get; set; }
 
         /// <summary>
-        /// (Updatable) The user password.
+        /// (Updatable) The database user password.
         /// </summary>
         [Input("userPassword")]
         public Input<Inputs.DatabaseToolsConnectionUserPasswordGetArgs>? UserPassword { get; set; }

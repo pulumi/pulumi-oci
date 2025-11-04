@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a public IP pool.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

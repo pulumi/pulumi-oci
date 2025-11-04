@@ -722,9 +722,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  subnet_ipv6cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Creates a network load balancer.
+        ## Example Usage
 
         ## Import
 
@@ -782,9 +780,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  args: NetworkLoadBalancerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Creates a network load balancer.
+        ## Example Usage
 
         ## Import
 

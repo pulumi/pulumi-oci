@@ -27,7 +27,7 @@ class GetPipelineRunResult:
     """
     A collection of values returned by getPipelineRun.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_override_details=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_override_details=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, parameters_override=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, storage_mount_configuration_override_details_lists=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,6 +70,9 @@ class GetPipelineRunResult:
         if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
             raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
         pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
+        if parameters_override and not isinstance(parameters_override, dict):
+            raise TypeError("Expected argument 'parameters_override' to be a dict")
+        pulumi.set(__self__, "parameters_override", parameters_override)
         if pipeline_id and not isinstance(pipeline_id, str):
             raise TypeError("Expected argument 'pipeline_id' to be a str")
         pulumi.set(__self__, "pipeline_id", pipeline_id)
@@ -88,6 +91,9 @@ class GetPipelineRunResult:
         if step_runs and not isinstance(step_runs, list):
             raise TypeError("Expected argument 'step_runs' to be a list")
         pulumi.set(__self__, "step_runs", step_runs)
+        if storage_mount_configuration_override_details_lists and not isinstance(storage_mount_configuration_override_details_lists, list):
+            raise TypeError("Expected argument 'storage_mount_configuration_override_details_lists' to be a list")
+        pulumi.set(__self__, "storage_mount_configuration_override_details_lists", storage_mount_configuration_override_details_lists)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -214,6 +220,14 @@ class GetPipelineRunResult:
         return pulumi.get(self, "opc_parent_rpt_url")
 
     @_builtins.property
+    @pulumi.getter(name="parametersOverride")
+    def parameters_override(self) -> Mapping[str, _builtins.str]:
+        """
+        Parameters override used in the pipeline run.
+        """
+        return pulumi.get(self, "parameters_override")
+
+    @_builtins.property
     @pulumi.getter(name="pipelineId")
     def pipeline_id(self) -> _builtins.str:
         """
@@ -257,6 +271,14 @@ class GetPipelineRunResult:
         Array of StepRun object for each step.
         """
         return pulumi.get(self, "step_runs")
+
+    @_builtins.property
+    @pulumi.getter(name="storageMountConfigurationOverrideDetailsLists")
+    def storage_mount_configuration_override_details_lists(self) -> Sequence['outputs.GetPipelineRunStorageMountConfigurationOverrideDetailsListResult']:
+        """
+        The storage mount override details to mount to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "storage_mount_configuration_override_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -319,12 +341,14 @@ class AwaitableGetPipelineRunResult(GetPipelineRunResult):
             log_configuration_override_details=self.log_configuration_override_details,
             log_details=self.log_details,
             opc_parent_rpt_url=self.opc_parent_rpt_url,
+            parameters_override=self.parameters_override,
             pipeline_id=self.pipeline_id,
             pipeline_run_id=self.pipeline_run_id,
             project_id=self.project_id,
             state=self.state,
             step_override_details=self.step_override_details,
             step_runs=self.step_runs,
+            storage_mount_configuration_override_details_lists=self.storage_mount_configuration_override_details_lists,
             system_tags=self.system_tags,
             time_accepted=self.time_accepted,
             time_finished=self.time_finished,
@@ -371,12 +395,14 @@ def get_pipeline_run(pipeline_run_id: Optional[_builtins.str] = None,
         log_configuration_override_details=pulumi.get(__ret__, 'log_configuration_override_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
         opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
+        parameters_override=pulumi.get(__ret__, 'parameters_override'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_run_id=pulumi.get(__ret__, 'pipeline_run_id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         step_override_details=pulumi.get(__ret__, 'step_override_details'),
         step_runs=pulumi.get(__ret__, 'step_runs'),
+        storage_mount_configuration_override_details_lists=pulumi.get(__ret__, 'storage_mount_configuration_override_details_lists'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
@@ -420,12 +446,14 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[_builtins.str
         log_configuration_override_details=pulumi.get(__response__, 'log_configuration_override_details'),
         log_details=pulumi.get(__response__, 'log_details'),
         opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
+        parameters_override=pulumi.get(__response__, 'parameters_override'),
         pipeline_id=pulumi.get(__response__, 'pipeline_id'),
         pipeline_run_id=pulumi.get(__response__, 'pipeline_run_id'),
         project_id=pulumi.get(__response__, 'project_id'),
         state=pulumi.get(__response__, 'state'),
         step_override_details=pulumi.get(__response__, 'step_override_details'),
         step_runs=pulumi.get(__response__, 'step_runs'),
+        storage_mount_configuration_override_details_lists=pulumi.get(__response__, 'storage_mount_configuration_override_details_lists'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_accepted=pulumi.get(__response__, 'time_accepted'),
         time_finished=pulumi.get(__response__, 'time_finished'),

@@ -434,6 +434,219 @@ func (o ApplicationTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+type FunctionFailureDestination struct {
+	// (Updatable) The ID of the channel in the queue.
+	ChannelId *string `pulumi:"channelId"`
+	// (Updatable) The type of destination for the response to a failed detached function invocation.
+	Kind string `pulumi:"kind"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId *string `pulumi:"queueId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId *string `pulumi:"streamId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId *string `pulumi:"topicId"`
+}
+
+// FunctionFailureDestinationInput is an input type that accepts FunctionFailureDestinationArgs and FunctionFailureDestinationOutput values.
+// You can construct a concrete instance of `FunctionFailureDestinationInput` via:
+//
+//	FunctionFailureDestinationArgs{...}
+type FunctionFailureDestinationInput interface {
+	pulumi.Input
+
+	ToFunctionFailureDestinationOutput() FunctionFailureDestinationOutput
+	ToFunctionFailureDestinationOutputWithContext(context.Context) FunctionFailureDestinationOutput
+}
+
+type FunctionFailureDestinationArgs struct {
+	// (Updatable) The ID of the channel in the queue.
+	ChannelId pulumi.StringPtrInput `pulumi:"channelId"`
+	// (Updatable) The type of destination for the response to a failed detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringPtrInput `pulumi:"queueId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (FunctionFailureDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionFailureDestination)(nil)).Elem()
+}
+
+func (i FunctionFailureDestinationArgs) ToFunctionFailureDestinationOutput() FunctionFailureDestinationOutput {
+	return i.ToFunctionFailureDestinationOutputWithContext(context.Background())
+}
+
+func (i FunctionFailureDestinationArgs) ToFunctionFailureDestinationOutputWithContext(ctx context.Context) FunctionFailureDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionFailureDestinationOutput)
+}
+
+func (i FunctionFailureDestinationArgs) ToFunctionFailureDestinationPtrOutput() FunctionFailureDestinationPtrOutput {
+	return i.ToFunctionFailureDestinationPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionFailureDestinationArgs) ToFunctionFailureDestinationPtrOutputWithContext(ctx context.Context) FunctionFailureDestinationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionFailureDestinationOutput).ToFunctionFailureDestinationPtrOutputWithContext(ctx)
+}
+
+// FunctionFailureDestinationPtrInput is an input type that accepts FunctionFailureDestinationArgs, FunctionFailureDestinationPtr and FunctionFailureDestinationPtrOutput values.
+// You can construct a concrete instance of `FunctionFailureDestinationPtrInput` via:
+//
+//	        FunctionFailureDestinationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionFailureDestinationPtrInput interface {
+	pulumi.Input
+
+	ToFunctionFailureDestinationPtrOutput() FunctionFailureDestinationPtrOutput
+	ToFunctionFailureDestinationPtrOutputWithContext(context.Context) FunctionFailureDestinationPtrOutput
+}
+
+type functionFailureDestinationPtrType FunctionFailureDestinationArgs
+
+func FunctionFailureDestinationPtr(v *FunctionFailureDestinationArgs) FunctionFailureDestinationPtrInput {
+	return (*functionFailureDestinationPtrType)(v)
+}
+
+func (*functionFailureDestinationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionFailureDestination)(nil)).Elem()
+}
+
+func (i *functionFailureDestinationPtrType) ToFunctionFailureDestinationPtrOutput() FunctionFailureDestinationPtrOutput {
+	return i.ToFunctionFailureDestinationPtrOutputWithContext(context.Background())
+}
+
+func (i *functionFailureDestinationPtrType) ToFunctionFailureDestinationPtrOutputWithContext(ctx context.Context) FunctionFailureDestinationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionFailureDestinationPtrOutput)
+}
+
+type FunctionFailureDestinationOutput struct{ *pulumi.OutputState }
+
+func (FunctionFailureDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionFailureDestination)(nil)).Elem()
+}
+
+func (o FunctionFailureDestinationOutput) ToFunctionFailureDestinationOutput() FunctionFailureDestinationOutput {
+	return o
+}
+
+func (o FunctionFailureDestinationOutput) ToFunctionFailureDestinationOutputWithContext(ctx context.Context) FunctionFailureDestinationOutput {
+	return o
+}
+
+func (o FunctionFailureDestinationOutput) ToFunctionFailureDestinationPtrOutput() FunctionFailureDestinationPtrOutput {
+	return o.ToFunctionFailureDestinationPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionFailureDestinationOutput) ToFunctionFailureDestinationPtrOutputWithContext(ctx context.Context) FunctionFailureDestinationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionFailureDestination) *FunctionFailureDestination {
+		return &v
+	}).(FunctionFailureDestinationPtrOutput)
+}
+
+// (Updatable) The ID of the channel in the queue.
+func (o FunctionFailureDestinationOutput) ChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionFailureDestination) *string { return v.ChannelId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of destination for the response to a failed detached function invocation.
+func (o FunctionFailureDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionFailureDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o FunctionFailureDestinationOutput) QueueId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionFailureDestination) *string { return v.QueueId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o FunctionFailureDestinationOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionFailureDestination) *string { return v.StreamId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o FunctionFailureDestinationOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionFailureDestination) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type FunctionFailureDestinationPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionFailureDestinationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionFailureDestination)(nil)).Elem()
+}
+
+func (o FunctionFailureDestinationPtrOutput) ToFunctionFailureDestinationPtrOutput() FunctionFailureDestinationPtrOutput {
+	return o
+}
+
+func (o FunctionFailureDestinationPtrOutput) ToFunctionFailureDestinationPtrOutputWithContext(ctx context.Context) FunctionFailureDestinationPtrOutput {
+	return o
+}
+
+func (o FunctionFailureDestinationPtrOutput) Elem() FunctionFailureDestinationOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) FunctionFailureDestination {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionFailureDestination
+		return ret
+	}).(FunctionFailureDestinationOutput)
+}
+
+// (Updatable) The ID of the channel in the queue.
+func (o FunctionFailureDestinationPtrOutput) ChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChannelId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of destination for the response to a failed detached function invocation.
+func (o FunctionFailureDestinationPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o FunctionFailureDestinationPtrOutput) QueueId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueueId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o FunctionFailureDestinationPtrOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StreamId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o FunctionFailureDestinationPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionFailureDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
 type FunctionProvisionedConcurrencyConfig struct {
 	// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 	Count *int `pulumi:"count"`
@@ -593,7 +806,7 @@ func (o FunctionProvisionedConcurrencyConfigPtrOutput) Strategy() pulumi.StringP
 type FunctionSourceDetails struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId string `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// Type of the Function Source. Possible values: PBF.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -611,7 +824,7 @@ type FunctionSourceDetailsInput interface {
 type FunctionSourceDetailsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
-	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+	// Type of the Function Source. Possible values: PBF.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -697,7 +910,7 @@ func (o FunctionSourceDetailsOutput) PbfListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v FunctionSourceDetails) string { return v.PbfListingId }).(pulumi.StringOutput)
 }
 
-// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+// Type of the Function Source. Possible values: PBF.
 func (o FunctionSourceDetailsOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v FunctionSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -736,13 +949,226 @@ func (o FunctionSourceDetailsPtrOutput) PbfListingId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+// Type of the Function Source. Possible values: PBF.
 func (o FunctionSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FunctionSourceDetails) *string {
 		if v == nil {
 			return nil
 		}
 		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionSuccessDestination struct {
+	// (Updatable) The ID of the channel in the queue.
+	ChannelId *string `pulumi:"channelId"`
+	// (Updatable) The type of destination for the response to a successful detached function invocation.
+	Kind string `pulumi:"kind"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId *string `pulumi:"queueId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId *string `pulumi:"streamId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId *string `pulumi:"topicId"`
+}
+
+// FunctionSuccessDestinationInput is an input type that accepts FunctionSuccessDestinationArgs and FunctionSuccessDestinationOutput values.
+// You can construct a concrete instance of `FunctionSuccessDestinationInput` via:
+//
+//	FunctionSuccessDestinationArgs{...}
+type FunctionSuccessDestinationInput interface {
+	pulumi.Input
+
+	ToFunctionSuccessDestinationOutput() FunctionSuccessDestinationOutput
+	ToFunctionSuccessDestinationOutputWithContext(context.Context) FunctionSuccessDestinationOutput
+}
+
+type FunctionSuccessDestinationArgs struct {
+	// (Updatable) The ID of the channel in the queue.
+	ChannelId pulumi.StringPtrInput `pulumi:"channelId"`
+	// (Updatable) The type of destination for the response to a successful detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringPtrInput `pulumi:"queueId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (FunctionSuccessDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i FunctionSuccessDestinationArgs) ToFunctionSuccessDestinationOutput() FunctionSuccessDestinationOutput {
+	return i.ToFunctionSuccessDestinationOutputWithContext(context.Background())
+}
+
+func (i FunctionSuccessDestinationArgs) ToFunctionSuccessDestinationOutputWithContext(ctx context.Context) FunctionSuccessDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSuccessDestinationOutput)
+}
+
+func (i FunctionSuccessDestinationArgs) ToFunctionSuccessDestinationPtrOutput() FunctionSuccessDestinationPtrOutput {
+	return i.ToFunctionSuccessDestinationPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionSuccessDestinationArgs) ToFunctionSuccessDestinationPtrOutputWithContext(ctx context.Context) FunctionSuccessDestinationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSuccessDestinationOutput).ToFunctionSuccessDestinationPtrOutputWithContext(ctx)
+}
+
+// FunctionSuccessDestinationPtrInput is an input type that accepts FunctionSuccessDestinationArgs, FunctionSuccessDestinationPtr and FunctionSuccessDestinationPtrOutput values.
+// You can construct a concrete instance of `FunctionSuccessDestinationPtrInput` via:
+//
+//	        FunctionSuccessDestinationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionSuccessDestinationPtrInput interface {
+	pulumi.Input
+
+	ToFunctionSuccessDestinationPtrOutput() FunctionSuccessDestinationPtrOutput
+	ToFunctionSuccessDestinationPtrOutputWithContext(context.Context) FunctionSuccessDestinationPtrOutput
+}
+
+type functionSuccessDestinationPtrType FunctionSuccessDestinationArgs
+
+func FunctionSuccessDestinationPtr(v *FunctionSuccessDestinationArgs) FunctionSuccessDestinationPtrInput {
+	return (*functionSuccessDestinationPtrType)(v)
+}
+
+func (*functionSuccessDestinationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i *functionSuccessDestinationPtrType) ToFunctionSuccessDestinationPtrOutput() FunctionSuccessDestinationPtrOutput {
+	return i.ToFunctionSuccessDestinationPtrOutputWithContext(context.Background())
+}
+
+func (i *functionSuccessDestinationPtrType) ToFunctionSuccessDestinationPtrOutputWithContext(ctx context.Context) FunctionSuccessDestinationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSuccessDestinationPtrOutput)
+}
+
+type FunctionSuccessDestinationOutput struct{ *pulumi.OutputState }
+
+func (FunctionSuccessDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o FunctionSuccessDestinationOutput) ToFunctionSuccessDestinationOutput() FunctionSuccessDestinationOutput {
+	return o
+}
+
+func (o FunctionSuccessDestinationOutput) ToFunctionSuccessDestinationOutputWithContext(ctx context.Context) FunctionSuccessDestinationOutput {
+	return o
+}
+
+func (o FunctionSuccessDestinationOutput) ToFunctionSuccessDestinationPtrOutput() FunctionSuccessDestinationPtrOutput {
+	return o.ToFunctionSuccessDestinationPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionSuccessDestinationOutput) ToFunctionSuccessDestinationPtrOutputWithContext(ctx context.Context) FunctionSuccessDestinationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionSuccessDestination) *FunctionSuccessDestination {
+		return &v
+	}).(FunctionSuccessDestinationPtrOutput)
+}
+
+// (Updatable) The ID of the channel in the queue.
+func (o FunctionSuccessDestinationOutput) ChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSuccessDestination) *string { return v.ChannelId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of destination for the response to a successful detached function invocation.
+func (o FunctionSuccessDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionSuccessDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o FunctionSuccessDestinationOutput) QueueId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSuccessDestination) *string { return v.QueueId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o FunctionSuccessDestinationOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSuccessDestination) *string { return v.StreamId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o FunctionSuccessDestinationOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSuccessDestination) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type FunctionSuccessDestinationPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionSuccessDestinationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o FunctionSuccessDestinationPtrOutput) ToFunctionSuccessDestinationPtrOutput() FunctionSuccessDestinationPtrOutput {
+	return o
+}
+
+func (o FunctionSuccessDestinationPtrOutput) ToFunctionSuccessDestinationPtrOutputWithContext(ctx context.Context) FunctionSuccessDestinationPtrOutput {
+	return o
+}
+
+func (o FunctionSuccessDestinationPtrOutput) Elem() FunctionSuccessDestinationOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) FunctionSuccessDestination {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionSuccessDestination
+		return ret
+	}).(FunctionSuccessDestinationOutput)
+}
+
+// (Updatable) The ID of the channel in the queue.
+func (o FunctionSuccessDestinationPtrOutput) ChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChannelId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of destination for the response to a successful detached function invocation.
+func (o FunctionSuccessDestinationPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o FunctionSuccessDestinationPtrOutput) QueueId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueueId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o FunctionSuccessDestinationPtrOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StreamId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o FunctionSuccessDestinationPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSuccessDestination) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1223,6 +1649,8 @@ type GetApplicationsApplication struct {
 	ImagePolicyConfigs []GetApplicationsApplicationImagePolicyConfig `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
 	Shape string `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
@@ -1267,6 +1695,8 @@ type GetApplicationsApplicationArgs struct {
 	ImagePolicyConfigs GetApplicationsApplicationImagePolicyConfigArrayInput `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
@@ -1374,6 +1804,11 @@ func (o GetApplicationsApplicationOutput) ImagePolicyConfigs() GetApplicationsAp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 func (o GetApplicationsApplicationOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetApplicationsApplicationOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -1848,6 +2283,139 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 	}).(GetApplicationsFilterOutput)
 }
 
+type GetFunctionFailureDestination struct {
+	// The ID of the channel in the queue.
+	ChannelId string `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind string `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId string `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId string `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetFunctionFailureDestinationInput is an input type that accepts GetFunctionFailureDestinationArgs and GetFunctionFailureDestinationOutput values.
+// You can construct a concrete instance of `GetFunctionFailureDestinationInput` via:
+//
+//	GetFunctionFailureDestinationArgs{...}
+type GetFunctionFailureDestinationInput interface {
+	pulumi.Input
+
+	ToGetFunctionFailureDestinationOutput() GetFunctionFailureDestinationOutput
+	ToGetFunctionFailureDestinationOutputWithContext(context.Context) GetFunctionFailureDestinationOutput
+}
+
+type GetFunctionFailureDestinationArgs struct {
+	// The ID of the channel in the queue.
+	ChannelId pulumi.StringInput `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringInput `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetFunctionFailureDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionFailureDestination)(nil)).Elem()
+}
+
+func (i GetFunctionFailureDestinationArgs) ToGetFunctionFailureDestinationOutput() GetFunctionFailureDestinationOutput {
+	return i.ToGetFunctionFailureDestinationOutputWithContext(context.Background())
+}
+
+func (i GetFunctionFailureDestinationArgs) ToGetFunctionFailureDestinationOutputWithContext(ctx context.Context) GetFunctionFailureDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionFailureDestinationOutput)
+}
+
+// GetFunctionFailureDestinationArrayInput is an input type that accepts GetFunctionFailureDestinationArray and GetFunctionFailureDestinationArrayOutput values.
+// You can construct a concrete instance of `GetFunctionFailureDestinationArrayInput` via:
+//
+//	GetFunctionFailureDestinationArray{ GetFunctionFailureDestinationArgs{...} }
+type GetFunctionFailureDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionFailureDestinationArrayOutput() GetFunctionFailureDestinationArrayOutput
+	ToGetFunctionFailureDestinationArrayOutputWithContext(context.Context) GetFunctionFailureDestinationArrayOutput
+}
+
+type GetFunctionFailureDestinationArray []GetFunctionFailureDestinationInput
+
+func (GetFunctionFailureDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionFailureDestination)(nil)).Elem()
+}
+
+func (i GetFunctionFailureDestinationArray) ToGetFunctionFailureDestinationArrayOutput() GetFunctionFailureDestinationArrayOutput {
+	return i.ToGetFunctionFailureDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionFailureDestinationArray) ToGetFunctionFailureDestinationArrayOutputWithContext(ctx context.Context) GetFunctionFailureDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionFailureDestinationArrayOutput)
+}
+
+type GetFunctionFailureDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionFailureDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionFailureDestination)(nil)).Elem()
+}
+
+func (o GetFunctionFailureDestinationOutput) ToGetFunctionFailureDestinationOutput() GetFunctionFailureDestinationOutput {
+	return o
+}
+
+func (o GetFunctionFailureDestinationOutput) ToGetFunctionFailureDestinationOutputWithContext(ctx context.Context) GetFunctionFailureDestinationOutput {
+	return o
+}
+
+// The ID of the channel in the queue.
+func (o GetFunctionFailureDestinationOutput) ChannelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionFailureDestination) string { return v.ChannelId }).(pulumi.StringOutput)
+}
+
+// The type of destination for the response to a successful detached function invocation.
+func (o GetFunctionFailureDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionFailureDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o GetFunctionFailureDestinationOutput) QueueId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionFailureDestination) string { return v.QueueId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o GetFunctionFailureDestinationOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionFailureDestination) string { return v.StreamId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o GetFunctionFailureDestinationOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionFailureDestination) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetFunctionFailureDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionFailureDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionFailureDestination)(nil)).Elem()
+}
+
+func (o GetFunctionFailureDestinationArrayOutput) ToGetFunctionFailureDestinationArrayOutput() GetFunctionFailureDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionFailureDestinationArrayOutput) ToGetFunctionFailureDestinationArrayOutputWithContext(ctx context.Context) GetFunctionFailureDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionFailureDestinationArrayOutput) Index(i pulumi.IntInput) GetFunctionFailureDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionFailureDestination {
+		return vs[0].([]GetFunctionFailureDestination)[vs[1].(int)]
+	}).(GetFunctionFailureDestinationOutput)
+}
+
 type GetFunctionProvisionedConcurrencyConfig struct {
 	// Configuration specifying a constant amount of provisioned concurrency.
 	Count int `pulumi:"count"`
@@ -2058,6 +2626,139 @@ func (o GetFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunction
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetail {
 		return vs[0].([]GetFunctionSourceDetail)[vs[1].(int)]
 	}).(GetFunctionSourceDetailOutput)
+}
+
+type GetFunctionSuccessDestination struct {
+	// The ID of the channel in the queue.
+	ChannelId string `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind string `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId string `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId string `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetFunctionSuccessDestinationInput is an input type that accepts GetFunctionSuccessDestinationArgs and GetFunctionSuccessDestinationOutput values.
+// You can construct a concrete instance of `GetFunctionSuccessDestinationInput` via:
+//
+//	GetFunctionSuccessDestinationArgs{...}
+type GetFunctionSuccessDestinationInput interface {
+	pulumi.Input
+
+	ToGetFunctionSuccessDestinationOutput() GetFunctionSuccessDestinationOutput
+	ToGetFunctionSuccessDestinationOutputWithContext(context.Context) GetFunctionSuccessDestinationOutput
+}
+
+type GetFunctionSuccessDestinationArgs struct {
+	// The ID of the channel in the queue.
+	ChannelId pulumi.StringInput `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringInput `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetFunctionSuccessDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i GetFunctionSuccessDestinationArgs) ToGetFunctionSuccessDestinationOutput() GetFunctionSuccessDestinationOutput {
+	return i.ToGetFunctionSuccessDestinationOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSuccessDestinationArgs) ToGetFunctionSuccessDestinationOutputWithContext(ctx context.Context) GetFunctionSuccessDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSuccessDestinationOutput)
+}
+
+// GetFunctionSuccessDestinationArrayInput is an input type that accepts GetFunctionSuccessDestinationArray and GetFunctionSuccessDestinationArrayOutput values.
+// You can construct a concrete instance of `GetFunctionSuccessDestinationArrayInput` via:
+//
+//	GetFunctionSuccessDestinationArray{ GetFunctionSuccessDestinationArgs{...} }
+type GetFunctionSuccessDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionSuccessDestinationArrayOutput() GetFunctionSuccessDestinationArrayOutput
+	ToGetFunctionSuccessDestinationArrayOutputWithContext(context.Context) GetFunctionSuccessDestinationArrayOutput
+}
+
+type GetFunctionSuccessDestinationArray []GetFunctionSuccessDestinationInput
+
+func (GetFunctionSuccessDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i GetFunctionSuccessDestinationArray) ToGetFunctionSuccessDestinationArrayOutput() GetFunctionSuccessDestinationArrayOutput {
+	return i.ToGetFunctionSuccessDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSuccessDestinationArray) ToGetFunctionSuccessDestinationArrayOutputWithContext(ctx context.Context) GetFunctionSuccessDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSuccessDestinationArrayOutput)
+}
+
+type GetFunctionSuccessDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSuccessDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o GetFunctionSuccessDestinationOutput) ToGetFunctionSuccessDestinationOutput() GetFunctionSuccessDestinationOutput {
+	return o
+}
+
+func (o GetFunctionSuccessDestinationOutput) ToGetFunctionSuccessDestinationOutputWithContext(ctx context.Context) GetFunctionSuccessDestinationOutput {
+	return o
+}
+
+// The ID of the channel in the queue.
+func (o GetFunctionSuccessDestinationOutput) ChannelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSuccessDestination) string { return v.ChannelId }).(pulumi.StringOutput)
+}
+
+// The type of destination for the response to a successful detached function invocation.
+func (o GetFunctionSuccessDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSuccessDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o GetFunctionSuccessDestinationOutput) QueueId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSuccessDestination) string { return v.QueueId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o GetFunctionSuccessDestinationOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSuccessDestination) string { return v.StreamId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o GetFunctionSuccessDestinationOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSuccessDestination) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetFunctionSuccessDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSuccessDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o GetFunctionSuccessDestinationArrayOutput) ToGetFunctionSuccessDestinationArrayOutput() GetFunctionSuccessDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionSuccessDestinationArrayOutput) ToGetFunctionSuccessDestinationArrayOutputWithContext(ctx context.Context) GetFunctionSuccessDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionSuccessDestinationArrayOutput) Index(i pulumi.IntInput) GetFunctionSuccessDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSuccessDestination {
+		return vs[0].([]GetFunctionSuccessDestination)[vs[1].(int)]
+	}).(GetFunctionSuccessDestinationOutput)
 }
 
 type GetFunctionTraceConfig struct {
@@ -2272,8 +2973,12 @@ type GetFunctionsFunction struct {
 	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+	DetachedModeTimeoutInSeconds int `pulumi:"detachedModeTimeoutInSeconds"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
 	DisplayName string `pulumi:"displayName"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestinations []GetFunctionsFunctionFailureDestination `pulumi:"failureDestinations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
@@ -2294,6 +2999,8 @@ type GetFunctionsFunction struct {
 	SourceDetails []GetFunctionsFunctionSourceDetail `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State string `pulumi:"state"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestinations []GetFunctionsFunctionSuccessDestination `pulumi:"successDestinations"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -2324,8 +3031,12 @@ type GetFunctionsFunctionArgs struct {
 	Config pulumi.StringMapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+	DetachedModeTimeoutInSeconds pulumi.IntInput `pulumi:"detachedModeTimeoutInSeconds"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestinations GetFunctionsFunctionFailureDestinationArrayInput `pulumi:"failureDestinations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
@@ -2346,6 +3057,8 @@ type GetFunctionsFunctionArgs struct {
 	SourceDetails GetFunctionsFunctionSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State pulumi.StringInput `pulumi:"state"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestinations GetFunctionsFunctionSuccessDestinationArrayInput `pulumi:"successDestinations"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -2427,9 +3140,19 @@ func (o GetFunctionsFunctionOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+func (o GetFunctionsFunctionOutput) DetachedModeTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) int { return v.DetachedModeTimeoutInSeconds }).(pulumi.IntOutput)
+}
+
 // A filter to return only functions with display names that match the display name string. Matching is exact.
 func (o GetFunctionsFunctionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+func (o GetFunctionsFunctionOutput) FailureDestinations() GetFunctionsFunctionFailureDestinationArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionFailureDestination { return v.FailureDestinations }).(GetFunctionsFunctionFailureDestinationArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2484,6 +3207,11 @@ func (o GetFunctionsFunctionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.State }).(pulumi.StringOutput)
 }
 
+// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+func (o GetFunctionsFunctionOutput) SuccessDestinations() GetFunctionsFunctionSuccessDestinationArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionSuccessDestination { return v.SuccessDestinations }).(GetFunctionsFunctionSuccessDestinationArrayOutput)
+}
+
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 func (o GetFunctionsFunctionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -2522,6 +3250,139 @@ func (o GetFunctionsFunctionArrayOutput) Index(i pulumi.IntInput) GetFunctionsFu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunction {
 		return vs[0].([]GetFunctionsFunction)[vs[1].(int)]
 	}).(GetFunctionsFunctionOutput)
+}
+
+type GetFunctionsFunctionFailureDestination struct {
+	// The ID of the channel in the queue.
+	ChannelId string `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind string `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId string `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId string `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetFunctionsFunctionFailureDestinationInput is an input type that accepts GetFunctionsFunctionFailureDestinationArgs and GetFunctionsFunctionFailureDestinationOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionFailureDestinationInput` via:
+//
+//	GetFunctionsFunctionFailureDestinationArgs{...}
+type GetFunctionsFunctionFailureDestinationInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionFailureDestinationOutput() GetFunctionsFunctionFailureDestinationOutput
+	ToGetFunctionsFunctionFailureDestinationOutputWithContext(context.Context) GetFunctionsFunctionFailureDestinationOutput
+}
+
+type GetFunctionsFunctionFailureDestinationArgs struct {
+	// The ID of the channel in the queue.
+	ChannelId pulumi.StringInput `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringInput `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetFunctionsFunctionFailureDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionFailureDestination)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionFailureDestinationArgs) ToGetFunctionsFunctionFailureDestinationOutput() GetFunctionsFunctionFailureDestinationOutput {
+	return i.ToGetFunctionsFunctionFailureDestinationOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionFailureDestinationArgs) ToGetFunctionsFunctionFailureDestinationOutputWithContext(ctx context.Context) GetFunctionsFunctionFailureDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionFailureDestinationOutput)
+}
+
+// GetFunctionsFunctionFailureDestinationArrayInput is an input type that accepts GetFunctionsFunctionFailureDestinationArray and GetFunctionsFunctionFailureDestinationArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionFailureDestinationArrayInput` via:
+//
+//	GetFunctionsFunctionFailureDestinationArray{ GetFunctionsFunctionFailureDestinationArgs{...} }
+type GetFunctionsFunctionFailureDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionFailureDestinationArrayOutput() GetFunctionsFunctionFailureDestinationArrayOutput
+	ToGetFunctionsFunctionFailureDestinationArrayOutputWithContext(context.Context) GetFunctionsFunctionFailureDestinationArrayOutput
+}
+
+type GetFunctionsFunctionFailureDestinationArray []GetFunctionsFunctionFailureDestinationInput
+
+func (GetFunctionsFunctionFailureDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionFailureDestination)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionFailureDestinationArray) ToGetFunctionsFunctionFailureDestinationArrayOutput() GetFunctionsFunctionFailureDestinationArrayOutput {
+	return i.ToGetFunctionsFunctionFailureDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionFailureDestinationArray) ToGetFunctionsFunctionFailureDestinationArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionFailureDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionFailureDestinationArrayOutput)
+}
+
+type GetFunctionsFunctionFailureDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionFailureDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionFailureDestination)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionFailureDestinationOutput) ToGetFunctionsFunctionFailureDestinationOutput() GetFunctionsFunctionFailureDestinationOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionFailureDestinationOutput) ToGetFunctionsFunctionFailureDestinationOutputWithContext(ctx context.Context) GetFunctionsFunctionFailureDestinationOutput {
+	return o
+}
+
+// The ID of the channel in the queue.
+func (o GetFunctionsFunctionFailureDestinationOutput) ChannelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionFailureDestination) string { return v.ChannelId }).(pulumi.StringOutput)
+}
+
+// The type of destination for the response to a successful detached function invocation.
+func (o GetFunctionsFunctionFailureDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionFailureDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o GetFunctionsFunctionFailureDestinationOutput) QueueId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionFailureDestination) string { return v.QueueId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o GetFunctionsFunctionFailureDestinationOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionFailureDestination) string { return v.StreamId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o GetFunctionsFunctionFailureDestinationOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionFailureDestination) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionFailureDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionFailureDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionFailureDestination)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionFailureDestinationArrayOutput) ToGetFunctionsFunctionFailureDestinationArrayOutput() GetFunctionsFunctionFailureDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionFailureDestinationArrayOutput) ToGetFunctionsFunctionFailureDestinationArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionFailureDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionFailureDestinationArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionFailureDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionFailureDestination {
+		return vs[0].([]GetFunctionsFunctionFailureDestination)[vs[1].(int)]
+	}).(GetFunctionsFunctionFailureDestinationOutput)
 }
 
 type GetFunctionsFunctionProvisionedConcurrencyConfig struct {
@@ -2734,6 +3595,139 @@ func (o GetFunctionsFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetail {
 		return vs[0].([]GetFunctionsFunctionSourceDetail)[vs[1].(int)]
 	}).(GetFunctionsFunctionSourceDetailOutput)
+}
+
+type GetFunctionsFunctionSuccessDestination struct {
+	// The ID of the channel in the queue.
+	ChannelId string `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind string `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId string `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId string `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetFunctionsFunctionSuccessDestinationInput is an input type that accepts GetFunctionsFunctionSuccessDestinationArgs and GetFunctionsFunctionSuccessDestinationOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSuccessDestinationInput` via:
+//
+//	GetFunctionsFunctionSuccessDestinationArgs{...}
+type GetFunctionsFunctionSuccessDestinationInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSuccessDestinationOutput() GetFunctionsFunctionSuccessDestinationOutput
+	ToGetFunctionsFunctionSuccessDestinationOutputWithContext(context.Context) GetFunctionsFunctionSuccessDestinationOutput
+}
+
+type GetFunctionsFunctionSuccessDestinationArgs struct {
+	// The ID of the channel in the queue.
+	ChannelId pulumi.StringInput `pulumi:"channelId"`
+	// The type of destination for the response to a successful detached function invocation.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+	QueueId pulumi.StringInput `pulumi:"queueId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetFunctionsFunctionSuccessDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSuccessDestinationArgs) ToGetFunctionsFunctionSuccessDestinationOutput() GetFunctionsFunctionSuccessDestinationOutput {
+	return i.ToGetFunctionsFunctionSuccessDestinationOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSuccessDestinationArgs) ToGetFunctionsFunctionSuccessDestinationOutputWithContext(ctx context.Context) GetFunctionsFunctionSuccessDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSuccessDestinationOutput)
+}
+
+// GetFunctionsFunctionSuccessDestinationArrayInput is an input type that accepts GetFunctionsFunctionSuccessDestinationArray and GetFunctionsFunctionSuccessDestinationArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionSuccessDestinationArrayInput` via:
+//
+//	GetFunctionsFunctionSuccessDestinationArray{ GetFunctionsFunctionSuccessDestinationArgs{...} }
+type GetFunctionsFunctionSuccessDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionSuccessDestinationArrayOutput() GetFunctionsFunctionSuccessDestinationArrayOutput
+	ToGetFunctionsFunctionSuccessDestinationArrayOutputWithContext(context.Context) GetFunctionsFunctionSuccessDestinationArrayOutput
+}
+
+type GetFunctionsFunctionSuccessDestinationArray []GetFunctionsFunctionSuccessDestinationInput
+
+func (GetFunctionsFunctionSuccessDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionSuccessDestinationArray) ToGetFunctionsFunctionSuccessDestinationArrayOutput() GetFunctionsFunctionSuccessDestinationArrayOutput {
+	return i.ToGetFunctionsFunctionSuccessDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionSuccessDestinationArray) ToGetFunctionsFunctionSuccessDestinationArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSuccessDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSuccessDestinationArrayOutput)
+}
+
+type GetFunctionsFunctionSuccessDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSuccessDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSuccessDestinationOutput) ToGetFunctionsFunctionSuccessDestinationOutput() GetFunctionsFunctionSuccessDestinationOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSuccessDestinationOutput) ToGetFunctionsFunctionSuccessDestinationOutputWithContext(ctx context.Context) GetFunctionsFunctionSuccessDestinationOutput {
+	return o
+}
+
+// The ID of the channel in the queue.
+func (o GetFunctionsFunctionSuccessDestinationOutput) ChannelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSuccessDestination) string { return v.ChannelId }).(pulumi.StringOutput)
+}
+
+// The type of destination for the response to a successful detached function invocation.
+func (o GetFunctionsFunctionSuccessDestinationOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSuccessDestination) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+func (o GetFunctionsFunctionSuccessDestinationOutput) QueueId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSuccessDestination) string { return v.QueueId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+func (o GetFunctionsFunctionSuccessDestinationOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSuccessDestination) string { return v.StreamId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+func (o GetFunctionsFunctionSuccessDestinationOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSuccessDestination) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionSuccessDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionSuccessDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionSuccessDestination)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionSuccessDestinationArrayOutput) ToGetFunctionsFunctionSuccessDestinationArrayOutput() GetFunctionsFunctionSuccessDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSuccessDestinationArrayOutput) ToGetFunctionsFunctionSuccessDestinationArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionSuccessDestinationArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionSuccessDestinationArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionSuccessDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSuccessDestination {
+		return vs[0].([]GetFunctionsFunctionSuccessDestination)[vs[1].(int)]
+	}).(GetFunctionsFunctionSuccessDestinationOutput)
 }
 
 type GetFunctionsFunctionTraceConfig struct {
@@ -6923,7 +7917,7 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 	Category string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
-	// A string that describeds whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold
 	Mode string `pulumi:"mode"`
 	// month qualifier
 	Qualifier string `pulumi:"qualifier"`
@@ -6955,7 +7949,7 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 	Category pulumi.StringInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A string that describeds whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold
 	Mode pulumi.StringInput `pulumi:"mode"`
 	// month qualifier
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
@@ -7046,7 +8040,7 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	}).(pulumi.StringOutput)
 }
 
-// A string that describeds whether the change is applied hot or cold
+// A string that describes whether the change is applied hot or cold
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Mode
@@ -7110,7 +8104,7 @@ type GetFusionEnvironmentScheduledActivityAction struct {
 	Category string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
-	// A string that describeds whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold
 	Mode string `pulumi:"mode"`
 	// month qualifier
 	Qualifier string `pulumi:"qualifier"`
@@ -7142,7 +8136,7 @@ type GetFusionEnvironmentScheduledActivityActionArgs struct {
 	Category pulumi.StringInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A string that describeds whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold
 	Mode pulumi.StringInput `pulumi:"mode"`
 	// month qualifier
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
@@ -7225,7 +8219,7 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) Description() pulumi.
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A string that describeds whether the change is applied hot or cold
+// A string that describes whether the change is applied hot or cold
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Mode }).(pulumi.StringOutput)
 }
@@ -8330,6 +9324,8 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled bool `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// BYOK key info
@@ -8401,6 +9397,8 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	IdcsDomainUrl pulumi.StringInput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolInput `pulumi:"isBreakGlassEnabled"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled pulumi.BoolInput `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// BYOK key info
@@ -8557,6 +9555,11 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IdcsDomainUr
 // If it's true, then the Break Glass feature is enabled
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }
 
 // BYOK key id
@@ -11874,10 +12877,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), ApplicationImagePolicyConfigKeyDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigPtrInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionFailureDestinationInput)(nil)).Elem(), FunctionFailureDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionFailureDestinationPtrInput)(nil)).Elem(), FunctionFailureDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigPtrInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceDetailsPtrInput)(nil)).Elem(), FunctionSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSuccessDestinationInput)(nil)).Elem(), FunctionSuccessDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSuccessDestinationPtrInput)(nil)).Elem(), FunctionSuccessDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigPtrInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigInput)(nil)).Elem(), GetApplicationImagePolicyConfigArgs{})
@@ -11896,20 +12903,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationTraceConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterInput)(nil)).Elem(), GetApplicationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterArrayInput)(nil)).Elem(), GetApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionFailureDestinationInput)(nil)).Elem(), GetFunctionFailureDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionFailureDestinationArrayInput)(nil)).Elem(), GetFunctionFailureDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailInput)(nil)).Elem(), GetFunctionSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSuccessDestinationInput)(nil)).Elem(), GetFunctionSuccessDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSuccessDestinationArrayInput)(nil)).Elem(), GetFunctionSuccessDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigInput)(nil)).Elem(), GetFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFilterInput)(nil)).Elem(), GetFunctionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFilterArrayInput)(nil)).Elem(), GetFunctionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionInput)(nil)).Elem(), GetFunctionsFunctionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionArrayInput)(nil)).Elem(), GetFunctionsFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionFailureDestinationInput)(nil)).Elem(), GetFunctionsFunctionFailureDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionFailureDestinationArrayInput)(nil)).Elem(), GetFunctionsFunctionFailureDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSourceDetailArrayInput)(nil)).Elem(), GetFunctionsFunctionSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSuccessDestinationInput)(nil)).Elem(), GetFunctionsFunctionSuccessDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSuccessDestinationArrayInput)(nil)).Elem(), GetFunctionsFunctionSuccessDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArgs{})
@@ -12064,10 +13079,14 @@ func init() {
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailArrayOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionFailureDestinationOutput{})
+	pulumi.RegisterOutputType(FunctionFailureDestinationPtrOutput{})
 	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionSourceDetailsOutput{})
 	pulumi.RegisterOutputType(FunctionSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FunctionSuccessDestinationOutput{})
+	pulumi.RegisterOutputType(FunctionSuccessDestinationPtrOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigOutput{})
@@ -12086,20 +13105,28 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationsApplicationTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionFailureDestinationOutput{})
+	pulumi.RegisterOutputType(GetFunctionFailureDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetFunctionSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionSuccessDestinationOutput{})
+	pulumi.RegisterOutputType(GetFunctionSuccessDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFilterOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionFailureDestinationOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionFailureDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSuccessDestinationOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionSuccessDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemOutput{})

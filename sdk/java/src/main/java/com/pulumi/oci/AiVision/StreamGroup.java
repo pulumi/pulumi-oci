@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
- * 
- * Registration of new streamGroup
- * 
  * ## Example Usage
  * 
  * <pre>

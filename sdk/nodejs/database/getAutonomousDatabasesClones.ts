@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
  *
- * Lists the Autonomous Database clones for the specified Autonomous Database.
+ * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
  *
  * ## Example Usage
  *
@@ -75,7 +75,7 @@ export interface GetAutonomousDatabasesClonesResult {
      */
     readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabase[];
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      */
     readonly cloneType?: string;
     /**
@@ -83,7 +83,7 @@ export interface GetAutonomousDatabasesClonesResult {
      */
     readonly compartmentId: string;
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Database.GetAutonomousDatabasesClonesFilter[];
@@ -92,14 +92,14 @@ export interface GetAutonomousDatabasesClonesResult {
      */
     readonly id: string;
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
  *
- * Lists the Autonomous Database clones for the specified Autonomous Database.
+ * Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
  *
  * ## Example Usage
  *

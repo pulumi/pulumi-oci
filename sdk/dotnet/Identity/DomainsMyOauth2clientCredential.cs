@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a user's own OAuth2 client credential.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

@@ -531,10 +531,6 @@ class MonitoredResourceType(pulumi.CustomResource):
                  source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource type.
-
         ## Example Usage
 
         ```python
@@ -601,10 +597,6 @@ class MonitoredResourceType(pulumi.CustomResource):
                  args: MonitoredResourceTypeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource type.
-
         ## Example Usage
 
         ```python

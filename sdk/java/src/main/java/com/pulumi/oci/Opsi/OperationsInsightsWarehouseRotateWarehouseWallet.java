@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
- * 
  * ## Example Usage
  * 
  * <pre>

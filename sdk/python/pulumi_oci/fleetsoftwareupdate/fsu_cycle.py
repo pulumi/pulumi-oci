@@ -39,20 +39,20 @@ class FsuCycleArgs:
                  upgrade_details: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']] = None):
         """
         The set of arguments for constructing a FsuCycle resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[_builtins.str] fsu_collection_id: OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
+        :param pulumi.Input[_builtins.str] fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         :param pulumi.Input['FsuCycleGoalVersionDetailsArgs'] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
         :param pulumi.Input['FsuCycleApplyActionScheduleArgs'] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleBatchingStrategyArgs'] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['FsuCycleDiagnosticsCollectionArgs'] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Exadata Fleet Update Cycle display name.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of patch IDs to ignore.
-        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
-        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
-        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
+        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Timeout for session draining for database services specified in seconds.
         :param pulumi.Input['FsuCycleStageActionScheduleArgs'] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleUpgradeDetailsArgs'] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
         """
@@ -89,7 +89,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -101,7 +101,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="fsuCollectionId")
     def fsu_collection_id(self) -> pulumi.Input[_builtins.str]:
         """
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         """
         return pulumi.get(self, "fsu_collection_id")
 
@@ -185,7 +185,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Exadata Fleet Update Cycle display name.
+        (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "display_name")
 
@@ -209,7 +209,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) List of patch IDs to ignore.
+        (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -221,7 +221,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Ignore all patches between the source and target homes during patching.
+        (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -233,7 +233,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="isKeepPlacement")
     def is_keep_placement(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         """
         return pulumi.get(self, "is_keep_placement")
 
@@ -245,7 +245,7 @@ class FsuCycleArgs:
     @pulumi.getter(name="maxDrainTimeoutInSeconds")
     def max_drain_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Service drain timeout specified in seconds.
+        (Updatable) Timeout for session draining for database services specified in seconds.
         """
         return pulumi.get(self, "max_drain_timeout_in_seconds")
 
@@ -314,22 +314,22 @@ class _FsuCycleState:
         :param pulumi.Input['FsuCycleApplyActionScheduleArgs'] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleBatchingStrategyArgs'] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
         :param pulumi.Input[_builtins.str] collection_type: Type of Exadata Fleet Update collection being upgraded.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['FsuCycleDiagnosticsCollectionArgs'] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Exadata Fleet Update Cycle display name.
-        :param pulumi.Input[_builtins.str] executing_fsu_action_id: OCID identifier for the Action that is currently in execution, if applicable.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
+        :param pulumi.Input[_builtins.str] executing_fsu_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] fsu_collection_id: OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        :param pulumi.Input[_builtins.str] fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         :param pulumi.Input['FsuCycleGoalVersionDetailsArgs'] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of patch IDs to ignore.
-        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
-        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         :param pulumi.Input[_builtins.str] last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
         :param pulumi.Input[_builtins.str] last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
-        :param pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]] next_action_to_executes: In this array all the possible actions will be listed. The first element is the suggested Action.
+        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Timeout for session draining for database services specified in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]] next_action_to_executes: All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         :param pulumi.Input[_builtins.str] rollback_cycle_state: Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
         :param pulumi.Input['FsuCycleStageActionScheduleArgs'] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata Fleet Update Cycle.
@@ -437,7 +437,7 @@ class _FsuCycleState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -473,7 +473,7 @@ class _FsuCycleState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Exadata Fleet Update Cycle display name.
+        (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "display_name")
 
@@ -485,7 +485,7 @@ class _FsuCycleState:
     @pulumi.getter(name="executingFsuActionId")
     def executing_fsu_action_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        OCID identifier for the Action that is currently in execution, if applicable.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         """
         return pulumi.get(self, "executing_fsu_action_id")
 
@@ -509,7 +509,7 @@ class _FsuCycleState:
     @pulumi.getter(name="fsuCollectionId")
     def fsu_collection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         """
         return pulumi.get(self, "fsu_collection_id")
 
@@ -533,7 +533,7 @@ class _FsuCycleState:
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) List of patch IDs to ignore.
+        (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -545,7 +545,7 @@ class _FsuCycleState:
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Ignore all patches between the source and target homes during patching.
+        (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -557,7 +557,7 @@ class _FsuCycleState:
     @pulumi.getter(name="isKeepPlacement")
     def is_keep_placement(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         """
         return pulumi.get(self, "is_keep_placement")
 
@@ -605,7 +605,7 @@ class _FsuCycleState:
     @pulumi.getter(name="maxDrainTimeoutInSeconds")
     def max_drain_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Service drain timeout specified in seconds.
+        (Updatable) Timeout for session draining for database services specified in seconds.
         """
         return pulumi.get(self, "max_drain_timeout_in_seconds")
 
@@ -617,7 +617,7 @@ class _FsuCycleState:
     @pulumi.getter(name="nextActionToExecutes")
     def next_action_to_executes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]]]:
         """
-        In this array all the possible actions will be listed. The first element is the suggested Action.
+        All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         """
         return pulumi.get(self, "next_action_to_executes")
 
@@ -758,10 +758,6 @@ class FsuCycle(pulumi.CustomResource):
                  upgrade_details: Optional[pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
-
-        Creates a new Exadata Fleet Update Cycle.
-
         ## Example Usage
 
         ```python
@@ -773,6 +769,16 @@ class FsuCycle(pulumi.CustomResource):
             fsu_collection_id=test_fsu_collection["id"],
             goal_version_details={
                 "type": fsu_cycle_goal_version_details_type,
+                "components": [{
+                    "component_type": fsu_cycle_goal_version_details_components_component_type,
+                    "goal_version_details": {
+                        "goal_software_image_id": test_image["id"],
+                        "goal_type": fsu_cycle_goal_version_details_components_goal_version_details_goal_type,
+                        "goal_version": fsu_cycle_goal_version_details_components_goal_version_details_goal_version,
+                    },
+                    "home_policy": fsu_cycle_goal_version_details_components_home_policy,
+                    "new_home_prefix": fsu_cycle_goal_version_details_components_new_home_prefix,
+                }],
                 "home_policy": fsu_cycle_goal_version_details_home_policy,
                 "new_home_prefix": fsu_cycle_goal_version_details_new_home_prefix,
                 "software_image_id": test_image["id"],
@@ -809,8 +815,11 @@ class FsuCycle(pulumi.CustomResource):
             },
             upgrade_details={
                 "collection_type": fsu_cycle_upgrade_details_collection_type,
+                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors,
+                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites,
                 "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
                 "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
+                "max_drain_timeout_in_seconds": fsu_cycle_upgrade_details_max_drain_timeout_in_seconds,
             })
         ```
 
@@ -826,17 +835,17 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Exadata Fleet Update Cycle display name.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] fsu_collection_id: OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        :param pulumi.Input[_builtins.str] fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         :param pulumi.Input[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict']] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of patch IDs to ignore.
-        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
-        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
-        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
+        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Timeout for session draining for database services specified in seconds.
         :param pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
         :param pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
@@ -848,10 +857,6 @@ class FsuCycle(pulumi.CustomResource):
                  args: FsuCycleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
-
-        Creates a new Exadata Fleet Update Cycle.
-
         ## Example Usage
 
         ```python
@@ -863,6 +868,16 @@ class FsuCycle(pulumi.CustomResource):
             fsu_collection_id=test_fsu_collection["id"],
             goal_version_details={
                 "type": fsu_cycle_goal_version_details_type,
+                "components": [{
+                    "component_type": fsu_cycle_goal_version_details_components_component_type,
+                    "goal_version_details": {
+                        "goal_software_image_id": test_image["id"],
+                        "goal_type": fsu_cycle_goal_version_details_components_goal_version_details_goal_type,
+                        "goal_version": fsu_cycle_goal_version_details_components_goal_version_details_goal_version,
+                    },
+                    "home_policy": fsu_cycle_goal_version_details_components_home_policy,
+                    "new_home_prefix": fsu_cycle_goal_version_details_components_new_home_prefix,
+                }],
                 "home_policy": fsu_cycle_goal_version_details_home_policy,
                 "new_home_prefix": fsu_cycle_goal_version_details_new_home_prefix,
                 "software_image_id": test_image["id"],
@@ -899,8 +914,11 @@ class FsuCycle(pulumi.CustomResource):
             },
             upgrade_details={
                 "collection_type": fsu_cycle_upgrade_details_collection_type,
+                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors,
+                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites,
                 "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
                 "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
+                "max_drain_timeout_in_seconds": fsu_cycle_upgrade_details_max_drain_timeout_in_seconds,
             })
         ```
 
@@ -1036,22 +1054,22 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
         :param pulumi.Input[_builtins.str] collection_type: Type of Exadata Fleet Update collection being upgraded.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Exadata Fleet Update Cycle display name.
-        :param pulumi.Input[_builtins.str] executing_fsu_action_id: OCID identifier for the Action that is currently in execution, if applicable.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
+        :param pulumi.Input[_builtins.str] executing_fsu_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] fsu_collection_id: OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        :param pulumi.Input[_builtins.str] fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         :param pulumi.Input[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict']] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of patch IDs to ignore.
-        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore all patches between the source and target homes during patching.
-        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] is_ignore_missing_patches: (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_ignore_patches: (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
+        :param pulumi.Input[_builtins.bool] is_keep_placement: (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         :param pulumi.Input[_builtins.str] last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
         :param pulumi.Input[_builtins.str] last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict']]]] next_action_to_executes: In this array all the possible actions will be listed. The first element is the suggested Action.
+        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Timeout for session draining for database services specified in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict']]]] next_action_to_executes: All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         :param pulumi.Input[_builtins.str] rollback_cycle_state: Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
         :param pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata Fleet Update Cycle.
@@ -1124,7 +1142,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1148,7 +1166,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Exadata Fleet Update Cycle display name.
+        (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "display_name")
 
@@ -1156,7 +1174,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="executingFsuActionId")
     def executing_fsu_action_id(self) -> pulumi.Output[_builtins.str]:
         """
-        OCID identifier for the Action that is currently in execution, if applicable.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         """
         return pulumi.get(self, "executing_fsu_action_id")
 
@@ -1172,7 +1190,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="fsuCollectionId")
     def fsu_collection_id(self) -> pulumi.Output[_builtins.str]:
         """
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         """
         return pulumi.get(self, "fsu_collection_id")
 
@@ -1188,7 +1206,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) List of patch IDs to ignore.
+        (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -1196,7 +1214,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Ignore all patches between the source and target homes during patching.
+        (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -1204,7 +1222,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="isKeepPlacement")
     def is_keep_placement(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         """
         return pulumi.get(self, "is_keep_placement")
 
@@ -1236,7 +1254,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="maxDrainTimeoutInSeconds")
     def max_drain_timeout_in_seconds(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) Service drain timeout specified in seconds.
+        (Updatable) Timeout for session draining for database services specified in seconds.
         """
         return pulumi.get(self, "max_drain_timeout_in_seconds")
 
@@ -1244,7 +1262,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="nextActionToExecutes")
     def next_action_to_executes(self) -> pulumi.Output[Sequence['outputs.FsuCycleNextActionToExecute']]:
         """
-        In this array all the possible actions will be listed. The first element is the suggested Action.
+        All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         """
         return pulumi.get(self, "next_action_to_executes")
 

@@ -10,30 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
-    /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("test_autonomous_database_backup", new()
-    ///     {
-    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
-    ///         DisplayName = autonomousDatabaseBackupDisplayName,
-    ///         IsLongTermBackup = autonomousDatabaseBackupIsLongTermBackup,
-    ///         RetentionPeriodInDays = autonomousDatabaseBackupRetentionPeriodInDays,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -47,7 +24,7 @@ namespace Pulumi.Oci.Database
     public partial class AutonomousDatabaseBackup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         [Output("autonomousDatabaseId")]
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
@@ -71,7 +48,7 @@ namespace Pulumi.Oci.Database
         public Output<double> DatabaseSizeInTbs { get; private set; } = null!;
 
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -81,6 +58,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// The infrastructure type this resource belongs to.
+        /// </summary>
+        [Output("infrastructureType")]
+        public Output<string> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the backup is user-initiated or automatic.
@@ -95,7 +78,7 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsLongTermBackup { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether the backup can be used to restore the associated Autonomous Database.
+        /// Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         /// </summary>
         [Output("isRestorable")]
         public Output<bool> IsRestorable { get; private set; } = null!;
@@ -119,7 +102,7 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Output("kmsKeyVersionId")]
         public Output<string> KmsKeyVersionId { get; private set; } = null!;
@@ -129,6 +112,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the region in which backup is taken in.
+        /// </summary>
+        [Output("region")]
+        public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Retention period, in days, for long-term backups
@@ -145,6 +134,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("sizeInTbs")]
         public Output<double> SizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// Source Autonomous Database details.
+        /// </summary>
+        [Output("sourceDatabaseDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseBackupSourceDatabaseDetail>> SourceDatabaseDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the backup.
@@ -229,7 +224,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousDatabaseBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         [Input("autonomousDatabaseId", required: true)]
         public Input<string> AutonomousDatabaseId { get; set; } = null!;
@@ -271,7 +266,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousDatabaseBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
@@ -295,7 +290,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? DatabaseSizeInTbs { get; set; }
 
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -305,6 +300,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// The infrastructure type this resource belongs to.
+        /// </summary>
+        [Input("infrastructureType")]
+        public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
         /// Indicates whether the backup is user-initiated or automatic.
@@ -319,7 +320,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsLongTermBackup { get; set; }
 
         /// <summary>
-        /// Indicates whether the backup can be used to restore the associated Autonomous Database.
+        /// Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         /// </summary>
         [Input("isRestorable")]
         public Input<bool>? IsRestorable { get; set; }
@@ -343,7 +344,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
@@ -353,6 +354,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// Name of the region in which backup is taken in.
+        /// </summary>
+        [Input("region")]
+        public Input<string>? Region { get; set; }
 
         /// <summary>
         /// (Updatable) Retention period, in days, for long-term backups
@@ -369,6 +376,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("sizeInTbs")]
         public Input<double>? SizeInTbs { get; set; }
+
+        [Input("sourceDatabaseDetails")]
+        private InputList<Inputs.AutonomousDatabaseBackupSourceDatabaseDetailGetArgs>? _sourceDatabaseDetails;
+
+        /// <summary>
+        /// Source Autonomous Database details.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseBackupSourceDatabaseDetailGetArgs> SourceDatabaseDetails
+        {
+            get => _sourceDatabaseDetails ?? (_sourceDatabaseDetails = new InputList<Inputs.AutonomousDatabaseBackupSourceDatabaseDetailGetArgs>());
+            set => _sourceDatabaseDetails = value;
+        }
 
         /// <summary>
         /// The current state of the backup.

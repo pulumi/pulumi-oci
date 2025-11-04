@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create Approval Workflow Assignment
- *
  * ## Example Usage
  *
  * ## Import

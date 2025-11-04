@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
- *
- * Create unified agent configuration registration.
+ * ## Example Usage
  *
  * ## Import
  *

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.RecoveryMod
 {
     /// <summary>
-    /// This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-    /// 
-    /// Creates a new Recovery Service Subnet.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

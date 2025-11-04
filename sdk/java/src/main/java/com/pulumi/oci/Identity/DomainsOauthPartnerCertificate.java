@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create an OAuth Partner Certificate
- * 
  * ## Example Usage
  * 
  * <pre>

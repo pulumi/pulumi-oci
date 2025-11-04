@@ -323,10 +323,6 @@ class SavedQuery(pulumi.CustomResource):
                  query: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a SavedQuery resource.
-
         ## Example Usage
 
         ```python
@@ -376,10 +372,6 @@ class SavedQuery(pulumi.CustomResource):
                  args: SavedQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a SavedQuery resource.
-
         ## Example Usage
 
         ```python

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
- *
- * Creates a new backup.
- *
  * ## Example Usage
  *
  * ```typescript

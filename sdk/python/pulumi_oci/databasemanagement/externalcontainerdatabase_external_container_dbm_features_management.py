@@ -205,10 +205,6 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  feature_details: Optional[pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified external container database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -228,10 +224,6 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  args: ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified external container database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

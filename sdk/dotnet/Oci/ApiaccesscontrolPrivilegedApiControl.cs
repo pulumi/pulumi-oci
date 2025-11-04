@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Privileged Api Control resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-    /// 
-    /// Creates a PrivilegedApiControl.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

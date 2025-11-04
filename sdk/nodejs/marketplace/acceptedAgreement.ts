@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
- *
- * Accepts a terms of use agreement for a specific package version of a listing. You must accept all
- * terms of use for a package before you can deploy the package.
- *
  * ## Example Usage
  *
  * ```typescript

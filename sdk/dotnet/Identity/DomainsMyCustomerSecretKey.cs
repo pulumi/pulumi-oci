@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Add a user's own customer secret key.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

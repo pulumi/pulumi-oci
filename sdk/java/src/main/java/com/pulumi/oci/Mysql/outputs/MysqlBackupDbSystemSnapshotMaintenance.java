@@ -12,12 +12,72 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MysqlBackupDbSystemSnapshotMaintenance {
     /**
+     * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    private @Nullable String maintenanceScheduleType;
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    private @Nullable String targetVersion;
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    private @Nullable String timeScheduled;
+    /**
+     * @return The preferred version to target when performing an automatic MySQL upgrade.
+     * 
+     */
+    private @Nullable String versionPreference;
+    /**
+     * @return The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    private @Nullable String versionTrackPreference;
+    /**
      * @return The start time of the maintenance window.
      * 
      */
     private @Nullable String windowStartTime;
 
     private MysqlBackupDbSystemSnapshotMaintenance() {}
+    /**
+     * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    public Optional<String> maintenanceScheduleType() {
+        return Optional.ofNullable(this.maintenanceScheduleType);
+    }
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    public Optional<String> targetVersion() {
+        return Optional.ofNullable(this.targetVersion);
+    }
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public Optional<String> timeScheduled() {
+        return Optional.ofNullable(this.timeScheduled);
+    }
+    /**
+     * @return The preferred version to target when performing an automatic MySQL upgrade.
+     * 
+     */
+    public Optional<String> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
+    }
+    /**
+     * @return The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    public Optional<String> versionTrackPreference() {
+        return Optional.ofNullable(this.versionTrackPreference);
+    }
     /**
      * @return The start time of the maintenance window.
      * 
@@ -35,13 +95,53 @@ public final class MysqlBackupDbSystemSnapshotMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String maintenanceScheduleType;
+        private @Nullable String targetVersion;
+        private @Nullable String timeScheduled;
+        private @Nullable String versionPreference;
+        private @Nullable String versionTrackPreference;
         private @Nullable String windowStartTime;
         public Builder() {}
         public Builder(MysqlBackupDbSystemSnapshotMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.maintenanceScheduleType = defaults.maintenanceScheduleType;
+    	      this.targetVersion = defaults.targetVersion;
+    	      this.timeScheduled = defaults.timeScheduled;
+    	      this.versionPreference = defaults.versionPreference;
+    	      this.versionTrackPreference = defaults.versionTrackPreference;
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder maintenanceScheduleType(@Nullable String maintenanceScheduleType) {
+
+            this.maintenanceScheduleType = maintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetVersion(@Nullable String targetVersion) {
+
+            this.targetVersion = targetVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduled(@Nullable String timeScheduled) {
+
+            this.timeScheduled = timeScheduled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionPreference(@Nullable String versionPreference) {
+
+            this.versionPreference = versionPreference;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionTrackPreference(@Nullable String versionTrackPreference) {
+
+            this.versionTrackPreference = versionTrackPreference;
+            return this;
+        }
         @CustomType.Setter
         public Builder windowStartTime(@Nullable String windowStartTime) {
 
@@ -50,6 +150,11 @@ public final class MysqlBackupDbSystemSnapshotMaintenance {
         }
         public MysqlBackupDbSystemSnapshotMaintenance build() {
             final var _resultValue = new MysqlBackupDbSystemSnapshotMaintenance();
+            _resultValue.maintenanceScheduleType = maintenanceScheduleType;
+            _resultValue.targetVersion = targetVersion;
+            _resultValue.timeScheduled = timeScheduled;
+            _resultValue.versionPreference = versionPreference;
+            _resultValue.versionTrackPreference = versionTrackPreference;
             _resultValue.windowStartTime = windowStartTime;
             return _resultValue;
         }

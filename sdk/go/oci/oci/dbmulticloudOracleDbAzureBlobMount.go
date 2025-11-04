@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
-//
-// Creates Oracle DB Azure Blob Mount resource.
-//
 // ## Example Usage
 //
 // ```go

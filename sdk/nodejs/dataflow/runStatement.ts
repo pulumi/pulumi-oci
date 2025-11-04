@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
- *
- * Executes a statement for a Session run.
- *
  * ## Example Usage
  *
  * ```typescript

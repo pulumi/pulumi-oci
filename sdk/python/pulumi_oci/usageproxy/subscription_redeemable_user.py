@@ -187,10 +187,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-        Adds the list of redeemable user summary for a subscription ID.
-
         ## Example Usage
 
         ```python
@@ -234,10 +230,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
                  args: SubscriptionRedeemableUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-        Adds the list of redeemable user summary for a subscription ID.
-
         ## Example Usage
 
         ```python

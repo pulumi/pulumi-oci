@@ -117,6 +117,10 @@ export interface GetRedisClusterResult {
      */
     readonly replicasFqdn: string;
     /**
+     * Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
      */
     readonly shardCount: number;

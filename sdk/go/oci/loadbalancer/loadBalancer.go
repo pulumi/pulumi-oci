@@ -12,37 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
-//
-// Creates a new load balancer in the specified compartment. For general information about load balancers,
-// see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
-//
-// For the purposes of access control, you must provide the OCID of the compartment where you want
-// the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-// or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-// For information about access control and compartments, see
-// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-//
-// You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-//
-// For information about Availability Domains, see
-// [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-// To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-// in the Identity and Access Management Service API.
-//
-// All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-// unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-// in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-// or by viewing the resource in the Console. Fore more information, see
-// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-//
-// When you create a load balancer, the system assigns an IP address.
-// To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
-//
-// ## Supported Aliases
-//
-// * `ociLoadBalancer`
-//
 // ## Example Usage
 //
 // ```go
@@ -128,7 +97,7 @@ type LoadBalancer struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringOutput `pulumi:"ipMode"`
-	// Applies to IPV6 LB creation only.
+	// (Updatable) Applies to IPV6 LB creation only.
 	//
 	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 	//
@@ -184,7 +153,7 @@ type LoadBalancer struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringOutput `pulumi:"requestIdHeader"`
-	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
@@ -270,7 +239,7 @@ type loadBalancerState struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
-	// Applies to IPV6 LB creation only.
+	// (Updatable) Applies to IPV6 LB creation only.
 	//
 	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 	//
@@ -326,7 +295,7 @@ type loadBalancerState struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader *string `pulumi:"requestIdHeader"`
-	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
@@ -371,7 +340,7 @@ type LoadBalancerState struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
-	// Applies to IPV6 LB creation only.
+	// (Updatable) Applies to IPV6 LB creation only.
 	//
 	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 	//
@@ -427,7 +396,7 @@ type LoadBalancerState struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringPtrInput
-	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapInput
@@ -469,7 +438,7 @@ type loadBalancerArgs struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
-	// Applies to IPV6 LB creation only.
+	// (Updatable) Applies to IPV6 LB creation only.
 	//
 	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 	//
@@ -525,7 +494,7 @@ type loadBalancerArgs struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader *string `pulumi:"requestIdHeader"`
-	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
@@ -558,7 +527,7 @@ type LoadBalancerArgs struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
-	// Applies to IPV6 LB creation only.
+	// (Updatable) Applies to IPV6 LB creation only.
 	//
 	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 	//
@@ -614,7 +583,7 @@ type LoadBalancerArgs struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringPtrInput
-	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapInput
@@ -760,7 +729,7 @@ func (o LoadBalancerOutput) IpMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.IpMode }).(pulumi.StringOutput)
 }
 
-// Applies to IPV6 LB creation only.
+// (Updatable) Applies to IPV6 LB creation only.
 //
 // Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 //
@@ -834,7 +803,7 @@ func (o LoadBalancerOutput) RequestIdHeader() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.RequestIdHeader }).(pulumi.StringOutput)
 }
 
-// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 func (o LoadBalancerOutput) ReservedIps() LoadBalancerReservedIpArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerReservedIpArrayOutput { return v.ReservedIps }).(LoadBalancerReservedIpArrayOutput)
 }

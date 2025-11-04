@@ -5,6 +5,7 @@ package com.pulumi.oci.Opensearch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opensearch.inputs.ClusterCertificateConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterReverseConnectionEndpointArgs;
@@ -35,6 +36,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> availabilityDomains() {
         return Optional.ofNullable(this.availabilityDomains);
+    }
+
+    /**
+     * (Updatable) Custom certificate config for customer provided certs.
+     * 
+     */
+    @Import(name="certificateConfig")
+    private @Nullable Output<ClusterCertificateConfigArgs> certificateConfig;
+
+    /**
+     * @return (Updatable) Custom certificate config for customer provided certs.
+     * 
+     */
+    public Optional<Output<ClusterCertificateConfigArgs>> certificateConfig() {
+        return Optional.ofNullable(this.certificateConfig);
     }
 
     /**
@@ -368,6 +384,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    @Import(name="nsgId")
+    private @Nullable Output<String> nsgId;
+
+    /**
+     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    public Optional<Output<String>> nsgId() {
+        return Optional.ofNullable(this.nsgId);
+    }
+
+    /**
      * The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
@@ -623,6 +654,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * (Updatable) The name of the master user that are used to manage security config
      * 
      */
@@ -872,6 +918,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
 
     private ClusterState(ClusterState $) {
         this.availabilityDomains = $.availabilityDomains;
+        this.certificateConfig = $.certificateConfig;
         this.compartmentId = $.compartmentId;
         this.configureOutboundClusterTrigger = $.configureOutboundClusterTrigger;
         this.dataNodeCount = $.dataNodeCount;
@@ -894,6 +941,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.masterNodeHostOcpuCount = $.masterNodeHostOcpuCount;
         this.masterNodeHostShape = $.masterNodeHostShape;
         this.masterNodeHostType = $.masterNodeHostType;
+        this.nsgId = $.nsgId;
         this.opendashboardFqdn = $.opendashboardFqdn;
         this.opendashboardNodeCount = $.opendashboardNodeCount;
         this.opendashboardNodeHostMemoryGb = $.opendashboardNodeHostMemoryGb;
@@ -911,6 +959,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.searchNodeHostShape = $.searchNodeHostShape;
         this.searchNodeHostType = $.searchNodeHostType;
         this.searchNodeStorageGb = $.searchNodeStorageGb;
+        this.securityAttributes = $.securityAttributes;
         this.securityMasterUserName = $.securityMasterUserName;
         this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
         this.securityMode = $.securityMode;
@@ -976,6 +1025,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder availabilityDomains(String... availabilityDomains) {
             return availabilityDomains(List.of(availabilityDomains));
+        }
+
+        /**
+         * @param certificateConfig (Updatable) Custom certificate config for customer provided certs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateConfig(@Nullable Output<ClusterCertificateConfigArgs> certificateConfig) {
+            $.certificateConfig = certificateConfig;
+            return this;
+        }
+
+        /**
+         * @param certificateConfig (Updatable) Custom certificate config for customer provided certs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateConfig(ClusterCertificateConfigArgs certificateConfig) {
+            return certificateConfig(Output.of(certificateConfig));
         }
 
         /**
@@ -1451,6 +1521,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param nsgId The OCID of the NSG where the private endpoint vnic will be attached.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgId(@Nullable Output<String> nsgId) {
+            $.nsgId = nsgId;
+            return this;
+        }
+
+        /**
+         * @param nsgId The OCID of the NSG where the private endpoint vnic will be attached.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgId(String nsgId) {
+            return nsgId(Output.of(nsgId));
+        }
+
+        /**
          * @param opendashboardFqdn The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
          * 
          * @return builder
@@ -1825,6 +1916,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder searchNodeStorageGb(Integer searchNodeStorageGb) {
             return searchNodeStorageGb(Output.of(searchNodeStorageGb));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

@@ -18,6 +18,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult> AssociatedDatabases;
         /// <summary>
+        /// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        /// </summary>
+        public readonly int AssociatedLongTermBackupCount;
+        /// <summary>
+        /// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedLongTermBackupResult> AssociatedLongTermBackups;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
@@ -63,6 +71,10 @@ namespace Pulumi.Oci.Database.Outputs
         private GetKeyStoresKeyStoreResult(
             ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult> associatedDatabases,
 
+            int associatedLongTermBackupCount,
+
+            ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedLongTermBackupResult> associatedLongTermBackups,
+
             string compartmentId,
 
             int confirmDetailsTrigger,
@@ -86,6 +98,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<Outputs.GetKeyStoresKeyStoreTypeDetailResult> typeDetails)
         {
             AssociatedDatabases = associatedDatabases;
+            AssociatedLongTermBackupCount = associatedLongTermBackupCount;
+            AssociatedLongTermBackups = associatedLongTermBackups;
             CompartmentId = compartmentId;
             ConfirmDetailsTrigger = confirmDetailsTrigger;
             DefinedTags = definedTags;

@@ -26,7 +26,7 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
      */
     private String autonomousContainerDatabaseId;
     /**
-     * @return List of Autonomous Databases that is part of this Autonomous Container Database Backup
+     * @return List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
      * 
      */
     private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase> autonomousDatabases;
@@ -51,7 +51,7 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     private String id;
@@ -122,7 +122,7 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * @return List of Autonomous Databases that is part of this Autonomous Container Database Backup
+     * @return List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
      * 
      */
     public List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase> autonomousDatabases() {
@@ -157,7 +157,7 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     public String id() {

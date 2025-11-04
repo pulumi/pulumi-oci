@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmConfig
 {
     /// <summary>
-    /// This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
-    /// 
-    /// Creates a new configuration item.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

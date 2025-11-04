@@ -103,7 +103,7 @@ export interface GetIntegrationInstanceResult {
     readonly instanceUrl: string;
     readonly integrationInstanceId: string;
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      */
     readonly integrationInstanceType: string;
     /**
@@ -138,6 +138,14 @@ export interface GetIntegrationInstanceResult {
      * Base representation for Outbound Connection (Reverse Connection).
      */
     readonly privateEndpointOutboundConnections: outputs.Integration.GetIntegrationInstancePrivateEndpointOutboundConnection[];
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * "oracle-zpr.sensitivity.value" = "low"
+     * "oracle-zpr.sensitivity.mode" = "enforce"
+     * }
+     * `
+     */
+    readonly securityAttributes: {[key: string]: string};
     /**
      * Shape
      */

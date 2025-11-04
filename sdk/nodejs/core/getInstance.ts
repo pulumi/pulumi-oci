@@ -131,6 +131,10 @@ export interface GetInstanceResult {
      */
     readonly ipxeScript: string;
     /**
+     * Whether AI enterprise is enabled on the instance.
+     */
+    readonly isAiEnterpriseEnabled: boolean;
+    /**
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      */
     readonly isCrossNumaNode: boolean;

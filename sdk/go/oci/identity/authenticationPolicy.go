@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-//
-// # Updates authentication policy for the specified tenancy
-//
 // ## Example Usage
 //
 // ```go

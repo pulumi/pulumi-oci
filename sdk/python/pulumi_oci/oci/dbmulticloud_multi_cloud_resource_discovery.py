@@ -397,10 +397,6 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
                  resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Discovers Multicloud Resource and their associated resources based on the information provided.
-
         ## Example Usage
 
         ```python
@@ -450,10 +446,6 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
                  args: DbmulticloudMultiCloudResourceDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Discovers Multicloud Resource and their associated resources based on the information provided.
-
         ## Example Usage
 
         ```python

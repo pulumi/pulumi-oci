@@ -365,10 +365,6 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new private reverse connection endpoint.
-
         ## Example Usage
 
         ```python
@@ -416,10 +412,6 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  args: CatalogPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new private reverse connection endpoint.
-
         ## Example Usage
 
         ```python

@@ -79,7 +79,7 @@ class _AutonomousDatabaseRegionalWalletManagementState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous Database wallet.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous AI Database wallet.
         :param pulumi.Input[_builtins.str] time_rotated: The date and time the wallet was last rotated.
         """
         if grace_period is not None:
@@ -123,7 +123,7 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
         """
         return pulumi.get(self, "state")
 
@@ -154,10 +154,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  should_rotate: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the Autonomous Database regional wallet.
-
         ## Example Usage
 
         ```python
@@ -189,10 +185,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  args: Optional[AutonomousDatabaseRegionalWalletManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the Autonomous Database regional wallet.
-
         ## Example Usage
 
         ```python
@@ -265,7 +257,7 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous Database wallet.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous AI Database wallet.
         :param pulumi.Input[_builtins.str] time_rotated: The date and time the wallet was last rotated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -302,7 +294,7 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
         """
         return pulumi.get(self, "state")
 

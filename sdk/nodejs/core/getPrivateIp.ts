@@ -49,6 +49,10 @@ export interface GetPrivateIpResult {
      */
     readonly availabilityDomain: string;
     /**
+     * The secondary IPv4 CIDR prefix length.
+     */
+    readonly cidrPrefixLength: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
      */
     readonly compartmentId: string;
@@ -80,6 +84,10 @@ export interface GetPrivateIpResult {
      * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
      */
     readonly ipState: string;
+    /**
+     * Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+     */
+    readonly ipv4subnetCidrAtCreation: string;
     /**
      * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      */

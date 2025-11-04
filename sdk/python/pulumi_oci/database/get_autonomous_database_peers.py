@@ -87,7 +87,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
 
-    Lists the Autonomous Database peers for the specified Autonomous Database.
+    Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
 
-    Lists the Autonomous Database peers for the specified Autonomous Database.
+    Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
 
     ## Example Usage
 

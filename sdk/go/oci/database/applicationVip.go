@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
-//
 // ## Example Usage
 //
 // ```go

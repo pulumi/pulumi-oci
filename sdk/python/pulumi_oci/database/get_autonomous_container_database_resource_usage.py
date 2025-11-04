@@ -85,7 +85,7 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -133,7 +133,7 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        Valid list of provisionable CPUs for Autonomous Database.
+        Valid list of provisionable CPUs for Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 

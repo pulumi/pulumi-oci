@@ -412,10 +412,6 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
                  private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Blob Container resource.
-
         ## Example Usage
 
         ```python
@@ -467,10 +463,6 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
                  args: DbmulticloudOracleDbAzureBlobContainerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Blob Container resource.
-
         ## Example Usage
 
         ```python

@@ -14,6 +14,8 @@ import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
 import com.pulumi.oci.Jms.inputs.GetAnnouncementsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsPlainArgs;
@@ -123,6 +125,7 @@ import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfiguration
 import com.pulumi.oci.Jms.outputs.GetAgentInstallersResult;
 import com.pulumi.oci.Jms.outputs.GetAnnouncementsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationResult;
+import com.pulumi.oci.Jms.outputs.GetFleetAgentConfigurationResult;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetContainersResult;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultResult;
@@ -1222,6 +1225,216 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetFleetAdvancedFeatureConfigurationResult> getFleetAdvancedFeatureConfigurationPlain(GetFleetAdvancedFeatureConfigurationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", TypeShape.of(GetFleetAdvancedFeatureConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve a Fleet Agent Configuration for the specified Fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetAgentConfigurationResult> getFleetAgentConfiguration(GetFleetAgentConfigurationArgs args) {
+        return getFleetAgentConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve a Fleet Agent Configuration for the specified Fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetAgentConfigurationResult> getFleetAgentConfigurationPlain(GetFleetAgentConfigurationPlainArgs args) {
+        return getFleetAgentConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve a Fleet Agent Configuration for the specified Fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetAgentConfigurationResult> getFleetAgentConfiguration(GetFleetAgentConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetAgentConfiguration:getFleetAgentConfiguration", TypeShape.of(GetFleetAgentConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve a Fleet Agent Configuration for the specified Fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetAgentConfigurationResult> getFleetAgentConfiguration(GetFleetAgentConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetAgentConfiguration:getFleetAgentConfiguration", TypeShape.of(GetFleetAgentConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Retrieve a Fleet Agent Configuration for the specified Fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetAgentConfigurationResult> getFleetAgentConfigurationPlain(GetFleetAgentConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetAgentConfiguration:getFleetAgentConfiguration", TypeShape.of(GetFleetAgentConfigurationResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
@@ -12281,11 +12494,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .id(taskScheduleId)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(taskScheduleName)
-     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .fleetId("example-fleet-ocid")
+     *             .id("example-task-schedule-ocid")
+     *             .managedInstanceId("example-managed-instance-ocid")
+     *             .name("JFR")
+     *             .taskScheduleNameContains("JFR")
      *             .build());
      * 
      *     }
@@ -12327,11 +12540,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .id(taskScheduleId)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(taskScheduleName)
-     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .fleetId("example-fleet-ocid")
+     *             .id("example-task-schedule-ocid")
+     *             .managedInstanceId("example-managed-instance-ocid")
+     *             .name("JFR")
+     *             .taskScheduleNameContains("JFR")
      *             .build());
      * 
      *     }
@@ -12373,11 +12586,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .id(taskScheduleId)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(taskScheduleName)
-     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .fleetId("example-fleet-ocid")
+     *             .id("example-task-schedule-ocid")
+     *             .managedInstanceId("example-managed-instance-ocid")
+     *             .name("JFR")
+     *             .taskScheduleNameContains("JFR")
      *             .build());
      * 
      *     }
@@ -12419,11 +12632,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .id(taskScheduleId)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(taskScheduleName)
-     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .fleetId("example-fleet-ocid")
+     *             .id("example-task-schedule-ocid")
+     *             .managedInstanceId("example-managed-instance-ocid")
+     *             .name("JFR")
+     *             .taskScheduleNameContains("JFR")
      *             .build());
      * 
      *     }
@@ -12465,11 +12678,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .id(taskScheduleId)
-     *             .managedInstanceId(testManagedInstance.id())
-     *             .name(taskScheduleName)
-     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .fleetId("example-fleet-ocid")
+     *             .id("example-task-schedule-ocid")
+     *             .managedInstanceId("example-managed-instance-ocid")
+     *             .name("JFR")
+     *             .taskScheduleNameContains("JFR")
      *             .build());
      * 
      *     }
@@ -13733,90 +13946,6 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysisPlain(GetUtilsPerformanceTuningAnalysisPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsPerformanceTuningAnalysis:getUtilsPerformanceTuningAnalysis", TypeShape.of(GetUtilsPerformanceTuningAnalysisResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
-     * 
-     * Returns the configuration for subscription acknowledgment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Jms.JmsFunctions;
-     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfiguration() {
-        return getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.Empty, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
-     * 
-     * Returns the configuration for subscription acknowledgment.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Jms.JmsFunctions;
-     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfigurationPlain() {
-        return getUtilsSubscriptionAcknowledgmentConfigurationPlain(GetUtilsSubscriptionAcknowledgmentConfigurationPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.

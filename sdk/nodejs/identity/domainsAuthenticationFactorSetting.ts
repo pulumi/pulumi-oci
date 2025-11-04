@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Replace Authentication Factor Settings
+ * ## Example Usage
  *
  * ## Import
  *

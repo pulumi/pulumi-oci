@@ -12,14 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
-//
-// Updates the recommendation that corresponds to the specified OCID.
-// Use this operation to implement the following actions:
-//
-//   - Postpone recommendation
-//   - Dismiss recommendation
-//   - Reactivate recommendation
+// ## Example Usage
 //
 // ## Import
 //

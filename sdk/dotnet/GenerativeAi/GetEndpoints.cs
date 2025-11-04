@@ -30,6 +30,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = endpointDisplayName,
+        ///         GenerativeAiPrivateEndpointId = testGenerativeAiPrivateEndpoint.Id,
         ///         Id = endpointId,
         ///         State = endpointState,
         ///     });
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = endpointDisplayName,
+        ///         GenerativeAiPrivateEndpointId = testGenerativeAiPrivateEndpoint.Id,
         ///         Id = endpointId,
         ///         State = endpointState,
         ///     });
@@ -88,6 +90,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = endpointDisplayName,
+        ///         GenerativeAiPrivateEndpointId = testGenerativeAiPrivateEndpoint.Id,
         ///         Id = endpointId,
         ///         State = endpointState,
         ///     });
@@ -121,6 +124,12 @@ namespace Pulumi.Oci.GenerativeAi
             get => _filters ?? (_filters = new List<Inputs.GetEndpointsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        /// </summary>
+        [Input("generativeAiPrivateEndpointId")]
+        public string? GenerativeAiPrivateEndpointId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
@@ -163,6 +172,12 @@ namespace Pulumi.Oci.GenerativeAi
         }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        /// </summary>
+        [Input("generativeAiPrivateEndpointId")]
+        public Input<string>? GenerativeAiPrivateEndpointId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
         /// </summary>
         [Input("id")]
@@ -185,15 +200,13 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class GetEndpointsResult
     {
         public readonly string CompartmentId;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.
-        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
         /// The list of endpoint_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEndpointsEndpointCollectionResult> EndpointCollections;
         public readonly ImmutableArray<Outputs.GetEndpointsFilterResult> Filters;
+        public readonly string? GenerativeAiPrivateEndpointId;
         public readonly string? Id;
         /// <summary>
         /// The current state of the endpoint.
@@ -210,6 +223,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             ImmutableArray<Outputs.GetEndpointsFilterResult> filters,
 
+            string? generativeAiPrivateEndpointId,
+
             string? id,
 
             string? state)
@@ -218,6 +233,7 @@ namespace Pulumi.Oci.GenerativeAi
             DisplayName = displayName;
             EndpointCollections = endpointCollections;
             Filters = filters;
+            GenerativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
             Id = id;
             State = state;
         }

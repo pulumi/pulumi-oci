@@ -346,10 +346,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create and activate external metastore configuration.
-
         ## Example Usage
 
         ```python
@@ -394,10 +390,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
                  args: BdsInstanceMetastoreConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create and activate external metastore configuration.
-
         ## Example Usage
 
         ```python

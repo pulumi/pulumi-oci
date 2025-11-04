@@ -20,12 +20,17 @@ public final class FsuCollectionFleetDiscoveryFilter {
      */
     private @Nullable String entityType;
     /**
-     * @return Related resource Ids to include in the discovery.  All must match the specified entityType.
+     * @return List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+     * 
+     */
+    private @Nullable List<String> exadataReleases;
+    /**
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
      * 
      */
     private @Nullable List<String> identifiers;
     /**
-     * @return INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+     * @return INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
      * 
      */
     private @Nullable String mode;
@@ -40,17 +45,17 @@ public final class FsuCollectionFleetDiscoveryFilter {
      */
     private @Nullable String operator;
     /**
-     * @return Freeform tags to include in the discovery.
+     * @return [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     private @Nullable List<FsuCollectionFleetDiscoveryFilterTag> tags;
     /**
-     * @return Type of filters supported for Database targets discovery.
+     * @return Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     private String type;
     /**
-     * @return List of Versions strings to include in the discovery.
+     * @return List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     private @Nullable List<String> versions;
@@ -64,14 +69,21 @@ public final class FsuCollectionFleetDiscoveryFilter {
         return Optional.ofNullable(this.entityType);
     }
     /**
-     * @return Related resource Ids to include in the discovery.  All must match the specified entityType.
+     * @return List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+     * 
+     */
+    public List<String> exadataReleases() {
+        return this.exadataReleases == null ? List.of() : this.exadataReleases;
+    }
+    /**
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
      * 
      */
     public List<String> identifiers() {
         return this.identifiers == null ? List.of() : this.identifiers;
     }
     /**
-     * @return INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+     * @return INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
      * 
      */
     public Optional<String> mode() {
@@ -92,21 +104,21 @@ public final class FsuCollectionFleetDiscoveryFilter {
         return Optional.ofNullable(this.operator);
     }
     /**
-     * @return Freeform tags to include in the discovery.
+     * @return [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public List<FsuCollectionFleetDiscoveryFilterTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
-     * @return Type of filters supported for Database targets discovery.
+     * @return Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return List of Versions strings to include in the discovery.
+     * @return List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public List<String> versions() {
@@ -123,6 +135,7 @@ public final class FsuCollectionFleetDiscoveryFilter {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String entityType;
+        private @Nullable List<String> exadataReleases;
         private @Nullable List<String> identifiers;
         private @Nullable String mode;
         private @Nullable List<String> names;
@@ -134,6 +147,7 @@ public final class FsuCollectionFleetDiscoveryFilter {
         public Builder(FsuCollectionFleetDiscoveryFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityType = defaults.entityType;
+    	      this.exadataReleases = defaults.exadataReleases;
     	      this.identifiers = defaults.identifiers;
     	      this.mode = defaults.mode;
     	      this.names = defaults.names;
@@ -148,6 +162,15 @@ public final class FsuCollectionFleetDiscoveryFilter {
 
             this.entityType = entityType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder exadataReleases(@Nullable List<String> exadataReleases) {
+
+            this.exadataReleases = exadataReleases;
+            return this;
+        }
+        public Builder exadataReleases(String... exadataReleases) {
+            return exadataReleases(List.of(exadataReleases));
         }
         @CustomType.Setter
         public Builder identifiers(@Nullable List<String> identifiers) {
@@ -208,6 +231,7 @@ public final class FsuCollectionFleetDiscoveryFilter {
         public FsuCollectionFleetDiscoveryFilter build() {
             final var _resultValue = new FsuCollectionFleetDiscoveryFilter();
             _resultValue.entityType = entityType;
+            _resultValue.exadataReleases = exadataReleases;
             _resultValue.identifiers = identifiers;
             _resultValue.mode = mode;
             _resultValue.names = names;

@@ -20,6 +20,9 @@ __all__ = [
     'ClusterNetworkConfiguration',
     'ClusterUpgradeLicense',
     'ClusterVsphereUpgradeObject',
+    'DatastoreBlockVolumeDetail',
+    'DatastoreBlockVolumeDetailAttachment',
+    'EsxiHostDatastoreAttachment',
     'SddcDatastore',
     'SddcHcxOnPremLicense',
     'SddcInitialConfiguration',
@@ -39,7 +42,19 @@ __all__ = [
     'GetClustersClusterCollectionItemUpgradeLicenseResult',
     'GetClustersClusterCollectionItemVsphereUpgradeObjectResult',
     'GetClustersFilterResult',
+    'GetDatastoreBlockVolumeDetailResult',
+    'GetDatastoreBlockVolumeDetailAttachmentResult',
+    'GetDatastoreClustersDatastoreClusterCollectionResult',
+    'GetDatastoreClustersDatastoreClusterCollectionItemResult',
+    'GetDatastoreClustersFilterResult',
+    'GetDatastoresDatastoreCollectionResult',
+    'GetDatastoresDatastoreCollectionItemResult',
+    'GetDatastoresDatastoreCollectionItemBlockVolumeDetailResult',
+    'GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentResult',
+    'GetDatastoresFilterResult',
+    'GetExsiHostDatastoreAttachmentResult',
     'GetExsiHostsEsxiHostCollectionResult',
+    'GetExsiHostsEsxiHostCollectionDatastoreAttachmentResult',
     'GetExsiHostsFilterResult',
     'GetSddcDatastoreResult',
     'GetSddcHcxOnPremLicenseResult',
@@ -466,6 +481,201 @@ class ClusterVsphereUpgradeObject(dict):
 
 
 @pulumi.output_type
+class DatastoreBlockVolumeDetail(dict):
+    def __init__(__self__, *,
+                 attachments: Optional[Sequence['outputs.DatastoreBlockVolumeDetailAttachment']] = None,
+                 id: Optional[_builtins.str] = None,
+                 iqn: Optional[_builtins.str] = None):
+        """
+        :param Sequence['DatastoreBlockVolumeDetailAttachmentArgs'] attachments: List of BlockVolumeAttachment objects containing information about attachment details
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        :param _builtins.str iqn: An IQN of the Block Storage Volume.
+        """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if iqn is not None:
+            pulumi.set(__self__, "iqn", iqn)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Optional[Sequence['outputs.DatastoreBlockVolumeDetailAttachment']]:
+        """
+        List of BlockVolumeAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def iqn(self) -> Optional[_builtins.str]:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "iqn")
+
+
+@pulumi.output_type
+class DatastoreBlockVolumeDetailAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "esxiHostId":
+            suggest = "esxi_host_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastoreBlockVolumeDetailAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastoreBlockVolumeDetailAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastoreBlockVolumeDetailAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 esxi_host_id: Optional[_builtins.str] = None,
+                 ip_address: Optional[_builtins.str] = None,
+                 port: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str esxi_host_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        :param _builtins.str ip_address: The IP address of block volume attachment.
+        :param _builtins.int port: The port of block volume attachment.
+        """
+        if esxi_host_id is not None:
+            pulumi.set(__self__, "esxi_host_id", esxi_host_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter(name="esxiHostId")
+    def esxi_host_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        """
+        return pulumi.get(self, "esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[_builtins.str]:
+        """
+        The IP address of block volume attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port of block volume attachment.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class EsxiHostDatastoreAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockVolumeId":
+            suggest = "block_volume_id"
+        elif key == "datastoreId":
+            suggest = "datastore_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "volumeIqn":
+            suggest = "volume_iqn"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EsxiHostDatastoreAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EsxiHostDatastoreAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EsxiHostDatastoreAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_volume_id: Optional[_builtins.str] = None,
+                 datastore_id: Optional[_builtins.str] = None,
+                 ip_address: Optional[_builtins.str] = None,
+                 port: Optional[_builtins.int] = None,
+                 volume_iqn: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str block_volume_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        :param _builtins.str datastore_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        :param _builtins.str ip_address: The IP address of datastore attachment.
+        :param _builtins.int port: The port of datastore attachment.
+        :param _builtins.str volume_iqn: An IQN of the Block Storage Volume.
+        """
+        if block_volume_id is not None:
+            pulumi.set(__self__, "block_volume_id", block_volume_id)
+        if datastore_id is not None:
+            pulumi.set(__self__, "datastore_id", datastore_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if volume_iqn is not None:
+            pulumi.set(__self__, "volume_iqn", volume_iqn)
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreId")
+    def datastore_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        """
+        return pulumi.get(self, "datastore_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[_builtins.str]:
+        """
+        The IP address of datastore attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port of datastore attachment.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeIqn")
+    def volume_iqn(self) -> Optional[_builtins.str]:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "volume_iqn")
+
+
+@pulumi.output_type
 class SddcDatastore(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -637,6 +847,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             suggest = "actual_esxi_hosts_count"
         elif key == "capacityReservationId":
             suggest = "capacity_reservation_id"
+        elif key == "datastoreClusterIds":
+            suggest = "datastore_cluster_ids"
         elif key == "displayName":
             suggest = "display_name"
         elif key == "initialCommitment":
@@ -671,6 +883,7 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
                  vsphere_type: _builtins.str,
                  actual_esxi_hosts_count: Optional[_builtins.int] = None,
                  capacity_reservation_id: Optional[_builtins.str] = None,
+                 datastore_cluster_ids: Optional[Sequence[_builtins.str]] = None,
                  datastores: Optional[Sequence['outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore']] = None,
                  display_name: Optional[_builtins.str] = None,
                  initial_commitment: Optional[_builtins.str] = None,
@@ -688,8 +901,9 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         :param _builtins.str vsphere_type: vSphere Cluster types.
         :param _builtins.int actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
-        :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -707,6 +921,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if datastore_cluster_ids is not None:
+            pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if datastores is not None:
             pulumi.set(__self__, "datastores", datastores)
         if display_name is not None:
@@ -769,6 +985,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Optional[Sequence['outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore']]:
         """
@@ -780,7 +1004,7 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1468,11 +1692,14 @@ class GetClustersClusterCollectionResult(dict):
 class GetClustersClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  actual_esxi_hosts_count: _builtins.int,
+                 attach_datastore_cluster_ids: Sequence[_builtins.str],
                  capacity_reservation_id: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_availability_domain: _builtins.str,
+                 datastore_cluster_ids: Sequence[_builtins.str],
                  datastores: Sequence['outputs.GetClustersClusterCollectionItemDatastoreResult'],
                  defined_tags: Mapping[str, _builtins.str],
+                 detach_datastore_cluster_ids: Sequence[_builtins.str],
                  display_name: _builtins.str,
                  esxi_hosts_count: _builtins.int,
                  esxi_software_version: _builtins.str,
@@ -1497,6 +1724,7 @@ class GetClustersClusterCollectionItemResult(dict):
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         :param _builtins.str compute_availability_domain: The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+        :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['GetClustersClusterCollectionItemDatastoreArgs'] datastores: Datastores used for the Cluster.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -1521,11 +1749,14 @@ class GetClustersClusterCollectionItemResult(dict):
         :param _builtins.str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+        pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "datastores", datastores)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
         pulumi.set(__self__, "esxi_software_version", esxi_software_version)
@@ -1553,6 +1784,11 @@ class GetClustersClusterCollectionItemResult(dict):
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> _builtins.str:
         """
@@ -1577,6 +1813,14 @@ class GetClustersClusterCollectionItemResult(dict):
         return pulumi.get(self, "compute_availability_domain")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Sequence['outputs.GetClustersClusterCollectionItemDatastoreResult']:
         """
@@ -1591,6 +1835,11 @@ class GetClustersClusterCollectionItemResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -2007,8 +2256,664 @@ class GetClustersFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDatastoreBlockVolumeDetailResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetDatastoreBlockVolumeDetailAttachmentResult'],
+                 id: _builtins.str,
+                 iqn: _builtins.str):
+        """
+        :param Sequence['GetDatastoreBlockVolumeDetailAttachmentArgs'] attachments: List of BlockVolumeAttachment objects containing information about attachment details
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        :param _builtins.str iqn: An IQN of the Block Storage Volume.
+        """
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iqn", iqn)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetDatastoreBlockVolumeDetailAttachmentResult']:
+        """
+        List of BlockVolumeAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def iqn(self) -> _builtins.str:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "iqn")
+
+
+@pulumi.output_type
+class GetDatastoreBlockVolumeDetailAttachmentResult(dict):
+    def __init__(__self__, *,
+                 esxi_host_id: _builtins.str,
+                 ip_address: _builtins.str,
+                 port: _builtins.int):
+        """
+        :param _builtins.str esxi_host_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        :param _builtins.str ip_address: The IP address of block volume attachment.
+        :param _builtins.int port: The port of block volume attachment.
+        """
+        pulumi.set(__self__, "esxi_host_id", esxi_host_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter(name="esxiHostId")
+    def esxi_host_id(self) -> _builtins.str:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        """
+        return pulumi.get(self, "esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        """
+        The IP address of block volume attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port of block volume attachment.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetDatastoreClustersDatastoreClusterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatastoreClustersDatastoreClusterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatastoreClustersDatastoreClusterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatastoreClustersDatastoreClusterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str,
+                 capacity_in_gbs: _builtins.float,
+                 cluster_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 datastore_cluster_type: _builtins.str,
+                 datastore_ids: Sequence[_builtins.str],
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 esxi_host_ids: Sequence[_builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 sddc_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain of the Datastore Cluster.
+        :param _builtins.float capacity_in_gbs: Total size of all datastores associated with the datastore cluster in GB.
+        :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str datastore_cluster_type: Type of the datastore cluster.
+        :param Sequence[_builtins.str] datastore_ids: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastores that belong to the Datastore Cluster
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Sequence[_builtins.str] esxi_host_ids: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi hosts to attach the datastore to. All ESXi hosts must belong to the same VMware cluster.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore cluster.
+        :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore cluster is associated with.
+        :param _builtins.str state: The lifecycle state of the resource.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_created: The date and time the Datastore Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Datastore Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "capacity_in_gbs", capacity_in_gbs)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "datastore_cluster_type", datastore_cluster_type)
+        pulumi.set(__self__, "datastore_ids", datastore_ids)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "esxi_host_ids", esxi_host_ids)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "sddc_id", sddc_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain of the Datastore Cluster.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityInGbs")
+    def capacity_in_gbs(self) -> _builtins.float:
+        """
+        Total size of all datastores associated with the datastore cluster in GB.
+        """
+        return pulumi.get(self, "capacity_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterType")
+    def datastore_cluster_type(self) -> _builtins.str:
+        """
+        Type of the datastore cluster.
+        """
+        return pulumi.get(self, "datastore_cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreIds")
+    def datastore_ids(self) -> Sequence[_builtins.str]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastores that belong to the Datastore Cluster
+        """
+        return pulumi.get(self, "datastore_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="esxiHostIds")
+    def esxi_host_ids(self) -> Sequence[_builtins.str]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi hosts to attach the datastore to. All ESXi hosts must belong to the same VMware cluster.
+        """
+        return pulumi.get(self, "esxi_host_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="sddcId")
+    def sddc_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore cluster is associated with.
+        """
+        return pulumi.get(self, "sddc_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Datastore Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Datastore Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDatastoreClustersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatastoresDatastoreCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatastoresDatastoreCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatastoresDatastoreCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatastoresDatastoreCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str,
+                 block_volume_details: Sequence['outputs.GetDatastoresDatastoreCollectionItemBlockVolumeDetailResult'],
+                 block_volume_ids: Sequence[_builtins.str],
+                 capacity_in_gbs: _builtins.float,
+                 cluster_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 sddc_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain of the Datastore.
+        :param Sequence['GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs'] block_volume_details: The list of Block Volume details that belong to the datastore.
+        :param Sequence[_builtins.str] block_volume_ids: The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
+        :param _builtins.float capacity_in_gbs: Total size of the datastore in GB.
+        :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore is associated with.
+        :param _builtins.str state: The lifecycle state of the resource.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_created: The date and time the Datastore was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Datastore was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "block_volume_details", block_volume_details)
+        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
+        pulumi.set(__self__, "capacity_in_gbs", capacity_in_gbs)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "sddc_id", sddc_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain of the Datastore.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeDetails")
+    def block_volume_details(self) -> Sequence['outputs.GetDatastoresDatastoreCollectionItemBlockVolumeDetailResult']:
+        """
+        The list of Block Volume details that belong to the datastore.
+        """
+        return pulumi.get(self, "block_volume_details")
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeIds")
+    def block_volume_ids(self) -> Sequence[_builtins.str]:
+        """
+        The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
+        """
+        return pulumi.get(self, "block_volume_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityInGbs")
+    def capacity_in_gbs(self) -> _builtins.float:
+        """
+        Total size of the datastore in GB.
+        """
+        return pulumi.get(self, "capacity_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="sddcId")
+    def sddc_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore is associated with.
+        """
+        return pulumi.get(self, "sddc_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Datastore was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Datastore was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDatastoresDatastoreCollectionItemBlockVolumeDetailResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentResult'],
+                 id: _builtins.str,
+                 iqn: _builtins.str):
+        """
+        :param Sequence['GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs'] attachments: List of BlockVolumeAttachment objects containing information about attachment details
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        :param _builtins.str iqn: An IQN of the Block Storage Volume.
+        """
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iqn", iqn)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentResult']:
+        """
+        List of BlockVolumeAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def iqn(self) -> _builtins.str:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "iqn")
+
+
+@pulumi.output_type
+class GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentResult(dict):
+    def __init__(__self__, *,
+                 esxi_host_id: _builtins.str,
+                 ip_address: _builtins.str,
+                 port: _builtins.int):
+        """
+        :param _builtins.str esxi_host_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        :param _builtins.str ip_address: The IP address of block volume attachment.
+        :param _builtins.int port: The port of block volume attachment.
+        """
+        pulumi.set(__self__, "esxi_host_id", esxi_host_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter(name="esxiHostId")
+    def esxi_host_id(self) -> _builtins.str:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        """
+        return pulumi.get(self, "esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        """
+        The IP address of block volume attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port of block volume attachment.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetDatastoresFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExsiHostDatastoreAttachmentResult(dict):
+    def __init__(__self__, *,
+                 block_volume_id: _builtins.str,
+                 datastore_id: _builtins.str,
+                 ip_address: _builtins.str,
+                 port: _builtins.int,
+                 volume_iqn: _builtins.str):
+        """
+        :param _builtins.str block_volume_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        :param _builtins.str datastore_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        :param _builtins.str ip_address: The IP address of datastore attachment.
+        :param _builtins.int port: The port of datastore attachment.
+        :param _builtins.str volume_iqn: An IQN of the Block Storage Volume.
+        """
+        pulumi.set(__self__, "block_volume_id", block_volume_id)
+        pulumi.set(__self__, "datastore_id", datastore_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "volume_iqn", volume_iqn)
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreId")
+    def datastore_id(self) -> _builtins.str:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        """
+        return pulumi.get(self, "datastore_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        """
+        The IP address of datastore attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port of datastore attachment.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeIqn")
+    def volume_iqn(self) -> _builtins.str:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "volume_iqn")
+
+
+@pulumi.output_type
 class GetExsiHostsEsxiHostCollectionResult(dict):
     def __init__(__self__, *,
+                 attach_datastore_cluster_ids: Sequence[_builtins.str],
                  billing_contract_end_date: _builtins.str,
                  billing_donor_host_id: _builtins.str,
                  capacity_reservation_id: _builtins.str,
@@ -2018,7 +2923,10 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  compute_instance_id: _builtins.str,
                  current_commitment: _builtins.str,
                  current_sku: _builtins.str,
+                 datastore_attachments: Sequence['outputs.GetExsiHostsEsxiHostCollectionDatastoreAttachmentResult'],
+                 datastore_cluster_ids: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
+                 detach_datastore_cluster_ids: Sequence[_builtins.str],
                  display_name: _builtins.str,
                  esxi_software_version: _builtins.str,
                  failed_esxi_host_id: _builtins.str,
@@ -2050,6 +2958,8 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
         :param _builtins.str current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.str current_sku: (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
+        :param Sequence['GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs'] datastore_attachments: List of DatastoreAttachment objects containing information about attachment details
+        :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str esxi_software_version: The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -2073,6 +2983,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param _builtins.str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
+        pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
         pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -2082,7 +2993,10 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
         pulumi.set(__self__, "current_commitment", current_commitment)
         pulumi.set(__self__, "current_sku", current_sku)
+        pulumi.set(__self__, "datastore_attachments", datastore_attachments)
+        pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_software_version", esxi_software_version)
         pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
@@ -2104,6 +3018,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
         pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+
+    @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="billingContractEndDate")
@@ -2180,12 +3099,33 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         return pulumi.get(self, "current_sku")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreAttachments")
+    def datastore_attachments(self) -> Sequence['outputs.GetExsiHostsEsxiHostCollectionDatastoreAttachmentResult']:
+        """
+        List of DatastoreAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "datastore_attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -2361,6 +3301,68 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
 
 
 @pulumi.output_type
+class GetExsiHostsEsxiHostCollectionDatastoreAttachmentResult(dict):
+    def __init__(__self__, *,
+                 block_volume_id: _builtins.str,
+                 datastore_id: _builtins.str,
+                 ip_address: _builtins.str,
+                 port: _builtins.int,
+                 volume_iqn: _builtins.str):
+        """
+        :param _builtins.str block_volume_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        :param _builtins.str datastore_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        :param _builtins.str ip_address: The IP address of datastore attachment.
+        :param _builtins.int port: The port of datastore attachment.
+        :param _builtins.str volume_iqn: An IQN of the Block Storage Volume.
+        """
+        pulumi.set(__self__, "block_volume_id", block_volume_id)
+        pulumi.set(__self__, "datastore_id", datastore_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "volume_iqn", volume_iqn)
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreId")
+    def datastore_id(self) -> _builtins.str:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        """
+        return pulumi.get(self, "datastore_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        """
+        The IP address of datastore attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port of datastore attachment.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeIqn")
+    def volume_iqn(self) -> _builtins.str:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "volume_iqn")
+
+
+@pulumi.output_type
 class GetExsiHostsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -2491,6 +3493,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
                  actual_esxi_hosts_count: _builtins.int,
                  capacity_reservation_id: _builtins.str,
                  compute_availability_domain: _builtins.str,
+                 datastore_cluster_ids: Sequence[_builtins.str],
                  datastores: Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationDatastoreResult'],
                  display_name: _builtins.str,
                  esxi_hosts_count: _builtins.int,
@@ -2506,8 +3509,9 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         :param _builtins.int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param _builtins.str compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+        :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
-        :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param _builtins.int esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
@@ -2521,6 +3525,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "datastores", datastores)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
@@ -2558,6 +3563,14 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         return pulumi.get(self, "compute_availability_domain")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationDatastoreResult']:
         """
@@ -2569,7 +3582,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2938,6 +3951,7 @@ class GetSddcsSddcCollectionResult(dict):
                  reserving_hcx_on_premise_license_keys: Sequence[_builtins.str],
                  ssh_authorized_keys: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_hcx_billing_cycle_end: _builtins.str,
                  time_hcx_license_status_updated: _builtins.str,
@@ -2956,32 +3970,48 @@ class GetSddcsSddcCollectionResult(dict):
                  workload_network_cidr: _builtins.str):
         """
         :param _builtins.int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+        :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param _builtins.int clusters_count: The number of Clusters in the SDDC.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+        :param Sequence['GetSddcsSddcCollectionDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-        :param _builtins.int esxi_hosts_count: (**Deprecated**) The number of ESXi hosts in the SDDC.
+        :param _builtins.int esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         :param _builtins.str esxi_software_version: In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hcx_fqdn: The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param _builtins.str hcx_mode: HCX configuration of the SDDC.
         :param Sequence['GetSddcsSddcCollectionHcxOnPremLicenseArgs'] hcx_on_prem_licenses: The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+        :param _builtins.str hcx_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+        :param Sequence['GetSddcsSddcCollectionInitialConfigurationArgs'] initial_configurations: Details of SDDC initial configuration
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param _builtins.str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         :param _builtins.bool is_hcx_enabled: (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
         :param _builtins.bool is_hcx_enterprise_enabled: (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
         :param _builtins.bool is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
         :param _builtins.bool is_shielded_instance_enabled: (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
         :param _builtins.bool is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
+        :param _builtins.str nsx_edge_uplink1vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        :param _builtins.str nsx_edge_uplink2vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        :param _builtins.str nsx_edge_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
         :param _builtins.str nsx_manager_fqdn: The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param _builtins.str nsx_manager_username: The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
+        :param _builtins.str nsx_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+        :param _builtins.str provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        :param _builtins.str provisioning_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        :param _builtins.str replication_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
         :param _builtins.str state: The lifecycle state of the resource.
         :param _builtins.str time_created: The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
+        :param _builtins.str vmotion_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
         :param _builtins.str vmware_software_version: In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+        :param _builtins.str vsan_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+        :param _builtins.str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        :param _builtins.str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -3030,6 +4060,7 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
         pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
         pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
@@ -3060,6 +4091,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="capacityReservationId")
     @_utilities.deprecated("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
@@ -3091,6 +4125,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter
     @_utilities.deprecated("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
     def datastores(self) -> Sequence['outputs.GetSddcsSddcCollectionDatastoreResult']:
+        """
+        A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        """
         return pulumi.get(self, "datastores")
 
     @_builtins.property
@@ -3114,7 +4151,7 @@ class GetSddcsSddcCollectionResult(dict):
     @_utilities.deprecated("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
     def esxi_hosts_count(self) -> _builtins.int:
         """
-        (**Deprecated**) The number of ESXi hosts in the SDDC.
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         """
         return pulumi.get(self, "esxi_hosts_count")
 
@@ -3184,6 +4221,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="hcxVlanId")
     @_utilities.deprecated("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def hcx_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+        """
         return pulumi.get(self, "hcx_vlan_id")
 
     @_builtins.property
@@ -3197,6 +4237,9 @@ class GetSddcsSddcCollectionResult(dict):
     @_builtins.property
     @pulumi.getter(name="initialConfigurations")
     def initial_configurations(self) -> Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationResult']:
+        """
+        Details of SDDC initial configuration
+        """
         return pulumi.get(self, "initial_configurations")
 
     @_builtins.property
@@ -3227,6 +4270,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="instanceDisplayNamePrefix")
     @_utilities.deprecated("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
     def instance_display_name_prefix(self) -> _builtins.str:
+        """
+        A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+        """
         return pulumi.get(self, "instance_display_name_prefix")
 
     @_builtins.property
@@ -3275,12 +4321,18 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def nsx_edge_uplink1vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
     @_utilities.deprecated("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def nsx_edge_uplink2vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @_builtins.property
@@ -3292,6 +4344,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxEdgeVtepVlanId")
     @_utilities.deprecated("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def nsx_edge_vtep_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+        """
         return pulumi.get(self, "nsx_edge_vtep_vlan_id")
 
     @_builtins.property
@@ -3331,18 +4386,27 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxVtepVlanId")
     @_utilities.deprecated("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def nsx_vtep_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+        """
         return pulumi.get(self, "nsx_vtep_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="provisioningSubnetId")
     @_utilities.deprecated("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def provisioning_subnet_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        """
         return pulumi.get(self, "provisioning_subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
     @_utilities.deprecated("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def provisioning_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @_builtins.property
@@ -3354,6 +4418,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="replicationVlanId")
     @_utilities.deprecated("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def replication_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        """
         return pulumi.get(self, "replication_vlan_id")
 
     @_builtins.property
@@ -3373,6 +4440,11 @@ class GetSddcsSddcCollectionResult(dict):
         The lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -3434,6 +4506,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vmotionVlanId")
     @_utilities.deprecated("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def vmotion_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+        """
         return pulumi.get(self, "vmotion_vlan_id")
 
     @_builtins.property
@@ -3448,6 +4523,9 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vsanVlanId")
     @_utilities.deprecated("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def vsan_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+        """
         return pulumi.get(self, "vsan_vlan_id")
 
     @_builtins.property
@@ -3466,12 +4544,18 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vsphereVlanId")
     @_utilities.deprecated("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def vsphere_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "vsphere_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="workloadNetworkCidr")
     @_utilities.deprecated("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
     def workload_network_cidr(self) -> _builtins.str:
+        """
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+        """
         return pulumi.get(self, "workload_network_cidr")
 
 
@@ -3481,6 +4565,10 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
                  block_volume_ids: Sequence[_builtins.str],
                  capacity: _builtins.float,
                  datastore_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param _builtins.str datastore_type: Type of the datastore.
+        """
         pulumi.set(__self__, "block_volume_ids", block_volume_ids)
         pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "datastore_type", datastore_type)
@@ -3488,6 +4576,9 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
     @_builtins.property
     @pulumi.getter(name="blockVolumeIds")
     def block_volume_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
         return pulumi.get(self, "block_volume_ids")
 
     @_builtins.property
@@ -3498,6 +4589,9 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
     @_builtins.property
     @pulumi.getter(name="datastoreType")
     def datastore_type(self) -> _builtins.str:
+        """
+        Type of the datastore.
+        """
         return pulumi.get(self, "datastore_type")
 
 
@@ -3545,11 +4639,17 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
 class GetSddcsSddcCollectionInitialConfigurationResult(dict):
     def __init__(__self__, *,
                  initial_cluster_configurations: Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResult']):
+        """
+        :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs'] initial_cluster_configurations: The configurations for Clusters initially created in the SDDC.
+        """
         pulumi.set(__self__, "initial_cluster_configurations", initial_cluster_configurations)
 
     @_builtins.property
     @pulumi.getter(name="initialClusterConfigurations")
     def initial_cluster_configurations(self) -> Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResult']:
+        """
+        The configurations for Clusters initially created in the SDDC.
+        """
         return pulumi.get(self, "initial_cluster_configurations")
 
 
@@ -3559,6 +4659,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
                  actual_esxi_hosts_count: _builtins.int,
                  capacity_reservation_id: _builtins.str,
                  compute_availability_domain: _builtins.str,
+                 datastore_cluster_ids: Sequence[_builtins.str],
                  datastores: Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult'],
                  display_name: _builtins.str,
                  esxi_hosts_count: _builtins.int,
@@ -3572,16 +4673,25 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
                  workload_network_cidr: _builtins.str):
         """
         :param _builtins.int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+        :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param _builtins.str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+        :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
+        :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-        :param _builtins.int esxi_hosts_count: (**Deprecated**) The number of ESXi hosts in the SDDC.
+        :param _builtins.int esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+        :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param _builtins.str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         :param _builtins.bool is_shielded_instance_enabled: (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
+        :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs'] network_configurations: The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        :param _builtins.str vsphere_type: vSphere Cluster types.
+        :param _builtins.str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "datastores", datastores)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
@@ -3605,6 +4715,9 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
@@ -3616,8 +4729,19 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         return pulumi.get(self, "compute_availability_domain")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult']:
+        """
+        A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        """
         return pulumi.get(self, "datastores")
 
     @_builtins.property
@@ -3632,13 +4756,16 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
     @pulumi.getter(name="esxiHostsCount")
     def esxi_hosts_count(self) -> _builtins.int:
         """
-        (**Deprecated**) The number of ESXi hosts in the SDDC.
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         """
         return pulumi.get(self, "esxi_hosts_count")
 
     @_builtins.property
     @pulumi.getter(name="initialCommitment")
     def initial_commitment(self) -> _builtins.str:
+        """
+        The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        """
         return pulumi.get(self, "initial_commitment")
 
     @_builtins.property
@@ -3660,6 +4787,9 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> _builtins.str:
+        """
+        A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+        """
         return pulumi.get(self, "instance_display_name_prefix")
 
     @_builtins.property
@@ -3673,16 +4803,25 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
     @_builtins.property
     @pulumi.getter(name="networkConfigurations")
     def network_configurations(self) -> Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult']:
+        """
+        The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        """
         return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="vsphereType")
     def vsphere_type(self) -> _builtins.str:
+        """
+        vSphere Cluster types.
+        """
         return pulumi.get(self, "vsphere_type")
 
     @_builtins.property
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> _builtins.str:
+        """
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+        """
         return pulumi.get(self, "workload_network_cidr")
 
 
@@ -3691,17 +4830,27 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatas
     def __init__(__self__, *,
                  block_volume_ids: Sequence[_builtins.str],
                  datastore_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        :param _builtins.str datastore_type: Type of the datastore.
+        """
         pulumi.set(__self__, "block_volume_ids", block_volume_ids)
         pulumi.set(__self__, "datastore_type", datastore_type)
 
     @_builtins.property
     @pulumi.getter(name="blockVolumeIds")
     def block_volume_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
         return pulumi.get(self, "block_volume_ids")
 
     @_builtins.property
     @pulumi.getter(name="datastoreType")
     def datastore_type(self) -> _builtins.str:
+        """
+        Type of the datastore.
+        """
         return pulumi.get(self, "datastore_type")
 
 
@@ -3719,6 +4868,19 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetwo
                  vmotion_vlan_id: _builtins.str,
                  vsan_vlan_id: _builtins.str,
                  vsphere_vlan_id: _builtins.str):
+        """
+        :param _builtins.str hcx_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+        :param _builtins.str nsx_edge_uplink1vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        :param _builtins.str nsx_edge_uplink2vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        :param _builtins.str nsx_edge_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+        :param _builtins.str nsx_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+        :param _builtins.str provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        :param _builtins.str provisioning_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        :param _builtins.str replication_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        :param _builtins.str vmotion_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+        :param _builtins.str vsan_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+        :param _builtins.str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
         pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
         pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
@@ -3734,56 +4896,89 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetwo
     @_builtins.property
     @pulumi.getter(name="hcxVlanId")
     def hcx_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+        """
         return pulumi.get(self, "hcx_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
     def nsx_edge_uplink1vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
     def nsx_edge_uplink2vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="nsxEdgeVtepVlanId")
     def nsx_edge_vtep_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+        """
         return pulumi.get(self, "nsx_edge_vtep_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="nsxVtepVlanId")
     def nsx_vtep_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+        """
         return pulumi.get(self, "nsx_vtep_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="provisioningSubnetId")
     def provisioning_subnet_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        """
         return pulumi.get(self, "provisioning_subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="provisioningVlanId")
     def provisioning_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        """
         return pulumi.get(self, "provisioning_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="replicationVlanId")
     def replication_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        """
         return pulumi.get(self, "replication_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="vmotionVlanId")
     def vmotion_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+        """
         return pulumi.get(self, "vmotion_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="vsanVlanId")
     def vsan_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+        """
         return pulumi.get(self, "vsan_vlan_id")
 
     @_builtins.property
     @pulumi.getter(name="vsphereVlanId")
     def vsphere_vlan_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        """
         return pulumi.get(self, "vsphere_vlan_id")
 
 

@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Create a maintenance window in Fleet Application Management.
- * 
  * ## Example Usage
  * 
  * <pre>

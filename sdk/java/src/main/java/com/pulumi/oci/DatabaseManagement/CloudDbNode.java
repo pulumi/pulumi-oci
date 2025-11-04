@@ -16,9 +16,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the cloud DB node specified by `cloudDbNodeId`.
+ * ## Example Usage
  * 
  * ## Import
  * 

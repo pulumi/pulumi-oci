@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationAssociatedDatabase;
+import com.pulumi.oci.Database.outputs.GetBackupDestinationAssociatedLongTermBackup;
 import com.pulumi.oci.Database.outputs.GetBackupDestinationMountTypeDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -20,6 +21,16 @@ public final class GetBackupDestinationResult {
      * 
      */
     private List<GetBackupDestinationAssociatedDatabase> associatedDatabases;
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    private Integer associatedLongTermBackupCount;
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    private List<GetBackupDestinationAssociatedLongTermBackup> associatedLongTermBackups;
     private String backupDestinationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -129,6 +140,20 @@ public final class GetBackupDestinationResult {
      */
     public List<GetBackupDestinationAssociatedDatabase> associatedDatabases() {
         return this.associatedDatabases;
+    }
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    public Integer associatedLongTermBackupCount() {
+        return this.associatedLongTermBackupCount;
+    }
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    public List<GetBackupDestinationAssociatedLongTermBackup> associatedLongTermBackups() {
+        return this.associatedLongTermBackups;
     }
     public String backupDestinationId() {
         return this.backupDestinationId;
@@ -284,6 +309,8 @@ public final class GetBackupDestinationResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetBackupDestinationAssociatedDatabase> associatedDatabases;
+        private Integer associatedLongTermBackupCount;
+        private List<GetBackupDestinationAssociatedLongTermBackup> associatedLongTermBackups;
         private String backupDestinationId;
         private String compartmentId;
         private String connectionString;
@@ -309,6 +336,8 @@ public final class GetBackupDestinationResult {
         public Builder(GetBackupDestinationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedDatabases = defaults.associatedDatabases;
+    	      this.associatedLongTermBackupCount = defaults.associatedLongTermBackupCount;
+    	      this.associatedLongTermBackups = defaults.associatedLongTermBackups;
     	      this.backupDestinationId = defaults.backupDestinationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionString = defaults.connectionString;
@@ -342,6 +371,25 @@ public final class GetBackupDestinationResult {
         }
         public Builder associatedDatabases(GetBackupDestinationAssociatedDatabase... associatedDatabases) {
             return associatedDatabases(List.of(associatedDatabases));
+        }
+        @CustomType.Setter
+        public Builder associatedLongTermBackupCount(Integer associatedLongTermBackupCount) {
+            if (associatedLongTermBackupCount == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationResult", "associatedLongTermBackupCount");
+            }
+            this.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedLongTermBackups(List<GetBackupDestinationAssociatedLongTermBackup> associatedLongTermBackups) {
+            if (associatedLongTermBackups == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationResult", "associatedLongTermBackups");
+            }
+            this.associatedLongTermBackups = associatedLongTermBackups;
+            return this;
+        }
+        public Builder associatedLongTermBackups(GetBackupDestinationAssociatedLongTermBackup... associatedLongTermBackups) {
+            return associatedLongTermBackups(List.of(associatedLongTermBackups));
         }
         @CustomType.Setter
         public Builder backupDestinationId(String backupDestinationId) {
@@ -523,6 +571,8 @@ public final class GetBackupDestinationResult {
         public GetBackupDestinationResult build() {
             final var _resultValue = new GetBackupDestinationResult();
             _resultValue.associatedDatabases = associatedDatabases;
+            _resultValue.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            _resultValue.associatedLongTermBackups = associatedLongTermBackups;
             _resultValue.backupDestinationId = backupDestinationId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionString = connectionString;

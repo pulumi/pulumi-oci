@@ -34,6 +34,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string? StepName;
         /// <summary>
+        /// Name used when creating the steprun.
+        /// </summary>
+        public readonly string? StepRunName;
+        /// <summary>
         /// The type of step.
         /// </summary>
         public readonly string? StepType;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string? stepName,
 
+            string? stepRunName,
+
             string? stepType,
 
             string? timeFinished,
@@ -69,6 +75,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             LifecycleDetails = lifecycleDetails;
             State = state;
             StepName = stepName;
+            StepRunName = stepRunName;
             StepType = stepType;
             TimeFinished = timeFinished;
             TimeStarted = timeStarted;

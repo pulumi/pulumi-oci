@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
- * To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -159,7 +154,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public readonly computeCount: pulumi.Output<number>;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
@@ -545,7 +540,7 @@ export interface ExadataInfrastructureState {
      */
     computeCount?: pulumi.Input<number>;
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     computeModel?: pulumi.Input<string>;
     /**

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Repository Protected Branch Management resource in Oracle Cloud Infrastructure Devops service.
- *
- * Creates a restriction on a branch that prevents certain actions on it.
- *
  * ## Example Usage
  *
  * ```typescript

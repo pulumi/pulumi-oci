@@ -129,7 +129,7 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[_buil
     """
     This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
     ## Example Usage
 
@@ -175,7 +175,7 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
     """
     This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+    Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
     ## Example Usage
 

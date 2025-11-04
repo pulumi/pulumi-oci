@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
- *
- * Create a FusionEnvironment admin user
- *
  * ## Example Usage
  *
  * ```typescript

@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform":
+		r = &AiDataPlatformAiDataPlatform{}
 	case "oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance":
 		r = &ApiPlatformApiPlatformInstance{}
 	case "oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl":
@@ -43,12 +45,32 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbGcpIdentityConnector{}
 	case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
 		r = &DbmulticloudOracleDbGcpKeyRing{}
+	case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
+		r = &IotDigitalTwinAdapter{}
+	case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
+		r = &IotDigitalTwinInstance{}
+	case "oci:oci/iotDigitalTwinModel:IotDigitalTwinModel":
+		r = &IotDigitalTwinModel{}
+	case "oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship":
+		r = &IotDigitalTwinRelationship{}
+	case "oci:oci/iotIotDomain:IotIotDomain":
+		r = &IotIotDomain{}
+	case "oci:oci/iotIotDomainGroup:IotIotDomainGroup":
+		r = &IotIotDomainGroup{}
 	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
 		r = &ManagedKafkaKafkaCluster{}
 	case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
 		r = &ManagedKafkaKafkaClusterConfig{}
 	case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
 		r = &ManagedKafkaKafkaClusterSuperusersManagement{}
+	case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
+		r = &ResourceAnalyticsMonitoredRegion{}
+	case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
+		r = &ResourceAnalyticsResourceAnalyticsInstance{}
+	case "oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement":
+		r = &ResourceAnalyticsResourceAnalyticsInstanceOacManagement{}
+	case "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment":
+		r = &ResourceAnalyticsTenancyAttachment{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -62,6 +84,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/aiDataPlatformAiDataPlatform",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/apiPlatformApiPlatformInstance",
@@ -119,6 +146,36 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"oci/iotDigitalTwinAdapter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotDigitalTwinInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotDigitalTwinModel",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotDigitalTwinRelationship",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotDomain",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotDomainGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"oci/managedKafkaKafkaCluster",
 		&module{version},
 	)
@@ -130,6 +187,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/managedKafkaKafkaClusterSuperusersManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/resourceAnalyticsMonitoredRegion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/resourceAnalyticsResourceAnalyticsInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/resourceAnalyticsTenancyAttachment",
 		&module{version},
 	)
 }

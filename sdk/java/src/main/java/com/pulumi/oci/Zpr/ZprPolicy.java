@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
- * 
- * Creates a ZprPolicy.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -15,11 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Db System Cloud Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Enables Database Management service for all the components of the specified
- * cloud DB system (except databases).
- * 
  * ## Example Usage
  * 
  * <pre>

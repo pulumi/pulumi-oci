@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int CustomActionTimeoutInMins;
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         public readonly string DatabaseSoftwareImageId;
         /// <summary>
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int PatchFailureCount;
         /// <summary>
-        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         /// </summary>
         public readonly string PatchId;
         public readonly string PatchType;
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> PeerMaintenanceRunIds;
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string State;
         /// <summary>

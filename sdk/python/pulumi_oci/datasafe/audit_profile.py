@@ -644,10 +644,6 @@ class AuditProfile(pulumi.CustomResource):
                  target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
-
         ## Example Usage
 
         ```python
@@ -709,10 +705,6 @@ class AuditProfile(pulumi.CustomResource):
                  args: AuditProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
-
         ## Example Usage
 
         ```python

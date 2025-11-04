@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
- * 
- * Returns usage for the given account.
- * 
  * ## Example Usage
  * 
  * <pre>

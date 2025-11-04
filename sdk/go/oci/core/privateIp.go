@@ -11,12 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a secondary private IP for the specified VNIC.
-// For more information about secondary private IPs, see
-// [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-//
 // ## Example Usage
 //
 // ```go
@@ -32,6 +26,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.NewPrivateIp(ctx, "test_private_ip", &core.PrivateIpArgs{
+//				CidrPrefixLength: pulumi.Any(privateIpCidrPrefixLength),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -39,13 +34,14 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				HostnameLabel: pulumi.Any(privateIpHostnameLabel),
-//				IpAddress:     pulumi.Any(privateIpIpAddress),
-//				Lifetime:      pulumi.Any(privateIpLifetime),
-//				RouteTableId:  pulumi.Any(testRouteTable.Id),
-//				SubnetId:      pulumi.Any(testSubnet.Id),
-//				VlanId:        pulumi.Any(testVlan.Id),
-//				VnicId:        pulumi.Any(testVnicAttachment.VnicId),
+//				HostnameLabel:            pulumi.Any(privateIpHostnameLabel),
+//				IpAddress:                pulumi.Any(privateIpIpAddress),
+//				Ipv4subnetCidrAtCreation: pulumi.Any(privateIpIpv4subnetCidrAtCreation),
+//				Lifetime:                 pulumi.Any(privateIpLifetime),
+//				RouteTableId:             pulumi.Any(testRouteTable.Id),
+//				SubnetId:                 pulumi.Any(testSubnet.Id),
+//				VlanId:                   pulumi.Any(testVlan.Id),
+//				VnicId:                   pulumi.Any(testVnicAttachment.VnicId),
 //			})
 //			if err != nil {
 //				return err
@@ -68,6 +64,8 @@ type PrivateIp struct {
 
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+	CidrPrefixLength pulumi.IntOutput `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -86,10 +84,12 @@ type PrivateIp struct {
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
 	IpState pulumi.StringOutput `pulumi:"ipState"`
+	// Any one of the IPv4 CIDRs allocated to the subnet.
+	Ipv4subnetCidrAtCreation pulumi.StringOutput `pulumi:"ipv4subnetCidrAtCreation"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  pulumi.BoolOutput `pulumi:"isPrimary"`
 	IsReserved pulumi.BoolOutput `pulumi:"isReserved"`
-	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// (Updatable) Lifetime of the IP address. There are two types of IPs:
 	// * Ephemeral
 	// * Reserved
 	Lifetime pulumi.StringOutput `pulumi:"lifetime"`
@@ -142,6 +142,8 @@ func GetPrivateIp(ctx *pulumi.Context,
 type privateIpState struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+	CidrPrefixLength *int `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -160,10 +162,12 @@ type privateIpState struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
 	IpState *string `pulumi:"ipState"`
+	// Any one of the IPv4 CIDRs allocated to the subnet.
+	Ipv4subnetCidrAtCreation *string `pulumi:"ipv4subnetCidrAtCreation"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  *bool `pulumi:"isPrimary"`
 	IsReserved *bool `pulumi:"isReserved"`
-	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// (Updatable) Lifetime of the IP address. There are two types of IPs:
 	// * Ephemeral
 	// * Reserved
 	Lifetime *string `pulumi:"lifetime"`
@@ -187,6 +191,8 @@ type privateIpState struct {
 type PrivateIpState struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
+	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+	CidrPrefixLength pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -205,10 +211,12 @@ type PrivateIpState struct {
 	IpAddress pulumi.StringPtrInput
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
 	IpState pulumi.StringPtrInput
+	// Any one of the IPv4 CIDRs allocated to the subnet.
+	Ipv4subnetCidrAtCreation pulumi.StringPtrInput
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  pulumi.BoolPtrInput
 	IsReserved pulumi.BoolPtrInput
-	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// (Updatable) Lifetime of the IP address. There are two types of IPs:
 	// * Ephemeral
 	// * Reserved
 	Lifetime pulumi.StringPtrInput
@@ -234,6 +242,8 @@ func (PrivateIpState) ElementType() reflect.Type {
 }
 
 type privateIpArgs struct {
+	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+	CidrPrefixLength *int `pulumi:"cidrPrefixLength"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -248,7 +258,9 @@ type privateIpArgs struct {
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
-	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// Any one of the IPv4 CIDRs allocated to the subnet.
+	Ipv4subnetCidrAtCreation *string `pulumi:"ipv4subnetCidrAtCreation"`
+	// (Updatable) Lifetime of the IP address. There are two types of IPs:
 	// * Ephemeral
 	// * Reserved
 	Lifetime *string `pulumi:"lifetime"`
@@ -269,6 +281,8 @@ type privateIpArgs struct {
 
 // The set of arguments for constructing a PrivateIp resource.
 type PrivateIpArgs struct {
+	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+	CidrPrefixLength pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -283,7 +297,9 @@ type PrivateIpArgs struct {
 	HostnameLabel pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
-	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// Any one of the IPv4 CIDRs allocated to the subnet.
+	Ipv4subnetCidrAtCreation pulumi.StringPtrInput
+	// (Updatable) Lifetime of the IP address. There are two types of IPs:
 	// * Ephemeral
 	// * Reserved
 	Lifetime pulumi.StringPtrInput
@@ -394,6 +410,11 @@ func (o PrivateIpOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+func (o PrivateIpOutput) CidrPrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v *PrivateIp) pulumi.IntOutput { return v.CidrPrefixLength }).(pulumi.IntOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 func (o PrivateIpOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -433,6 +454,11 @@ func (o PrivateIpOutput) IpState() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.StringOutput { return v.IpState }).(pulumi.StringOutput)
 }
 
+// Any one of the IPv4 CIDRs allocated to the subnet.
+func (o PrivateIpOutput) Ipv4subnetCidrAtCreation() pulumi.StringOutput {
+	return o.ApplyT(func(v *PrivateIp) pulumi.StringOutput { return v.Ipv4subnetCidrAtCreation }).(pulumi.StringOutput)
+}
+
 // Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 func (o PrivateIpOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
@@ -442,7 +468,7 @@ func (o PrivateIpOutput) IsReserved() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.BoolOutput { return v.IsReserved }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+// (Updatable) Lifetime of the IP address. There are two types of IPs:
 // * Ephemeral
 // * Reserved
 func (o PrivateIpOutput) Lifetime() pulumi.StringOutput {

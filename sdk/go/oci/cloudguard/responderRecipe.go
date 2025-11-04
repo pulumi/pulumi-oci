@@ -12,10 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a responder recipe (ResponderRecipe resource), from values passed in a
-// CreateResponderRecipeDetails resource.
+// ## Example Usage
 //
 // ## Import
 //

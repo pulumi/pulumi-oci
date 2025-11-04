@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Updates the wallet for the specified Autonomous Database.
-//
 // ## Example Usage
 //
 // ```go
@@ -59,7 +55,7 @@ type AutonomousDatabaseInstanceWalletManagement struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated pulumi.StringOutput `pulumi:"timeRotated"`
@@ -107,7 +103,7 @@ type autonomousDatabaseInstanceWalletManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate *bool `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State *string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated *string `pulumi:"timeRotated"`
@@ -123,7 +119,7 @@ type AutonomousDatabaseInstanceWalletManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrInput
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State pulumi.StringPtrInput
 	// The date and time the wallet was last rotated.
 	TimeRotated pulumi.StringPtrInput
@@ -263,7 +259,7 @@ func (o AutonomousDatabaseInstanceWalletManagementOutput) ShouldRotate() pulumi.
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.BoolPtrOutput { return v.ShouldRotate }).(pulumi.BoolPtrOutput)
 }
 
-// The current lifecycle state of the Autonomous Database wallet.
+// The current lifecycle state of the Autonomous AI Database wallet.
 func (o AutonomousDatabaseInstanceWalletManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

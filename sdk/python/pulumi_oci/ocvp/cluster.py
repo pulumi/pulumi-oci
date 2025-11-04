@@ -25,9 +25,11 @@ class ClusterArgs:
                  esxi_hosts_count: pulumi.Input[_builtins.int],
                  network_configuration: pulumi.Input['ClusterNetworkConfigurationArgs'],
                  sddc_id: pulumi.Input[_builtins.str],
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -49,7 +51,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -70,12 +72,16 @@ class ClusterArgs:
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
         pulumi.set(__self__, "network_configuration", network_configuration)
         pulumi.set(__self__, "sddc_id", sddc_id)
+        if attach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if datastores is not None:
             pulumi.set(__self__, "datastores", datastores)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if detach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if esxi_software_version is not None:
@@ -148,6 +154,15 @@ class ClusterArgs:
         pulumi.set(self, "sddc_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @attach_datastore_cluster_ids.setter
+    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -184,10 +199,19 @@ class ClusterArgs:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @detach_datastore_cluster_ids.setter
+    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "detach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -314,11 +338,14 @@ class ClusterArgs:
 class _ClusterState:
     def __init__(__self__, *,
                  actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -343,9 +370,10 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
@@ -375,16 +403,22 @@ class _ClusterState:
         """
         if actual_esxi_hosts_count is not None:
             pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+        if attach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_availability_domain is not None:
             pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        if datastore_cluster_ids is not None:
+            pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if datastores is not None:
             pulumi.set(__self__, "datastores", datastores)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if detach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if esxi_hosts_count is not None:
@@ -434,6 +468,15 @@ class _ClusterState:
         pulumi.set(self, "actual_esxi_hosts_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @attach_datastore_cluster_ids.setter
+    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -470,6 +513,18 @@ class _ClusterState:
         pulumi.set(self, "compute_availability_domain", value)
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]]]:
         """
@@ -494,10 +549,19 @@ class _ClusterState:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @detach_datastore_cluster_ids.setter
+    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "detach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -736,10 +800,12 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -755,59 +821,7 @@ class Cluster(pulumi.CustomResource):
                  workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-        Create a vSphere Cluster in software-defined data center (SDDC).
-
-        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
-        creation of the Cluster.
-
-        **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster = oci.ocvp.Cluster("test_cluster",
-            compute_availability_domain=cluster_compute_availability_domain,
-            esxi_hosts_count=cluster_esxi_hosts_count,
-            network_configuration={
-                "nsx_edge_vtep_vlan_id": test_vlan["id"],
-                "nsx_vtep_vlan_id": test_vlan["id"],
-                "provisioning_subnet_id": test_subnet["id"],
-                "vmotion_vlan_id": test_vlan["id"],
-                "vsan_vlan_id": test_vlan["id"],
-                "hcx_vlan_id": test_vlan["id"],
-                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
-                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
-                "provisioning_vlan_id": test_vlan["id"],
-                "replication_vlan_id": test_vlan["id"],
-                "vsphere_vlan_id": test_vlan["id"],
-            },
-            sddc_id=test_sddc["id"],
-            capacity_reservation_id=test_capacity_reservation["id"],
-            datastores=[{
-                "block_volume_ids": cluster_datastores_block_volume_ids,
-                "datastore_type": cluster_datastores_datastore_type,
-            }],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=cluster_display_name,
-            esxi_software_version=cluster_esxi_software_version,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            initial_commitment=cluster_initial_commitment,
-            initial_host_ocpu_count=cluster_initial_host_ocpu_count,
-            initial_host_shape_name=test_shape["name"],
-            instance_display_name_prefix=cluster_instance_display_name_prefix,
-            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
-            vmware_software_version=cluster_vmware_software_version,
-            workload_network_cidr=cluster_workload_network_cidr)
-        ```
 
         ## Import
 
@@ -823,7 +837,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
@@ -852,59 +866,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-        Create a vSphere Cluster in software-defined data center (SDDC).
-
-        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
-        creation of the Cluster.
-
-        **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster = oci.ocvp.Cluster("test_cluster",
-            compute_availability_domain=cluster_compute_availability_domain,
-            esxi_hosts_count=cluster_esxi_hosts_count,
-            network_configuration={
-                "nsx_edge_vtep_vlan_id": test_vlan["id"],
-                "nsx_vtep_vlan_id": test_vlan["id"],
-                "provisioning_subnet_id": test_subnet["id"],
-                "vmotion_vlan_id": test_vlan["id"],
-                "vsan_vlan_id": test_vlan["id"],
-                "hcx_vlan_id": test_vlan["id"],
-                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
-                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
-                "provisioning_vlan_id": test_vlan["id"],
-                "replication_vlan_id": test_vlan["id"],
-                "vsphere_vlan_id": test_vlan["id"],
-            },
-            sddc_id=test_sddc["id"],
-            capacity_reservation_id=test_capacity_reservation["id"],
-            datastores=[{
-                "block_volume_ids": cluster_datastores_block_volume_ids,
-                "datastore_type": cluster_datastores_datastore_type,
-            }],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=cluster_display_name,
-            esxi_software_version=cluster_esxi_software_version,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            initial_commitment=cluster_initial_commitment,
-            initial_host_ocpu_count=cluster_initial_host_ocpu_count,
-            initial_host_shape_name=test_shape["name"],
-            instance_display_name_prefix=cluster_instance_display_name_prefix,
-            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
-            vmware_software_version=cluster_vmware_software_version,
-            workload_network_cidr=cluster_workload_network_cidr)
-        ```
 
         ## Import
 
@@ -929,10 +891,12 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -955,12 +919,14 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterArgs.__new__(ClusterArgs)
 
+            __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
             __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
             if compute_availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'compute_availability_domain'")
             __props__.__dict__["compute_availability_domain"] = compute_availability_domain
             __props__.__dict__["datastores"] = datastores
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["detach_datastore_cluster_ids"] = detach_datastore_cluster_ids
             __props__.__dict__["display_name"] = display_name
             if esxi_hosts_count is None and not opts.urn:
                 raise TypeError("Missing required property 'esxi_hosts_count'")
@@ -982,6 +948,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["workload_network_cidr"] = workload_network_cidr
             __props__.__dict__["actual_esxi_hosts_count"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["datastore_cluster_ids"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -999,11 +966,14 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
+            attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+            datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
             esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1033,9 +1003,10 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
@@ -1068,11 +1039,14 @@ class Cluster(pulumi.CustomResource):
         __props__ = _ClusterState.__new__(_ClusterState)
 
         __props__.__dict__["actual_esxi_hosts_count"] = actual_esxi_hosts_count
+        __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_availability_domain"] = compute_availability_domain
+        __props__.__dict__["datastore_cluster_ids"] = datastore_cluster_ids
         __props__.__dict__["datastores"] = datastores
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["detach_datastore_cluster_ids"] = detach_datastore_cluster_ids
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["esxi_hosts_count"] = esxi_hosts_count
         __props__.__dict__["esxi_software_version"] = esxi_software_version
@@ -1100,6 +1074,11 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1124,6 +1103,14 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "compute_availability_domain")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> pulumi.Output[Sequence['outputs.ClusterDatastore']]:
         """
@@ -1140,10 +1127,15 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 

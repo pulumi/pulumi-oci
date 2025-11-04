@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model Group Artifact resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates artifact for the Model Group.
- * 
  * ## Example Usage
  * 
  * <pre>

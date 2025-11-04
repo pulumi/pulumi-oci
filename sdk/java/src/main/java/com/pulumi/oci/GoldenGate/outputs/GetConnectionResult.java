@@ -85,10 +85,20 @@ public final class GetConnectionResult {
     private String clientId;
     private String clientSecret;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     private String clientSecretSecretId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    private String clusterId;
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    private String clusterPlacementGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
@@ -328,6 +338,11 @@ public final class GetConnectionResult {
      */
     private String secretAccessKeySecretId;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Security Protocol to be provided for the following connection types:
      * * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
      * * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -357,7 +372,7 @@ public final class GetConnectionResult {
      */
     private Boolean shouldUseJndi;
     /**
-     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     private Boolean shouldUseResourcePrincipal;
@@ -441,6 +456,11 @@ public final class GetConnectionResult {
      * 
      */
     private String subnetId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
@@ -621,11 +641,25 @@ public final class GetConnectionResult {
         return this.clientSecret;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public String clientSecretSecretId() {
         return this.clientSecretSecretId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    public String clusterId() {
+        return this.clusterId;
+    }
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -974,6 +1008,13 @@ public final class GetConnectionResult {
         return this.secretAccessKeySecretId;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Security Protocol to be provided for the following connection types:
      * * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
      * * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -1015,7 +1056,7 @@ public final class GetConnectionResult {
         return this.shouldUseJndi;
     }
     /**
-     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     public Boolean shouldUseResourcePrincipal() {
@@ -1138,6 +1179,13 @@ public final class GetConnectionResult {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1294,6 +1342,8 @@ public final class GetConnectionResult {
         private String clientId;
         private String clientSecret;
         private String clientSecretSecretId;
+        private String clusterId;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private String connectionFactory;
         private String connectionId;
@@ -1348,6 +1398,7 @@ public final class GetConnectionResult {
         private String sasTokenSecretId;
         private String secretAccessKey;
         private String secretAccessKeySecretId;
+        private Map<String,String> securityAttributes;
         private String securityProtocol;
         private String servers;
         private String serviceAccountKeyFile;
@@ -1374,6 +1425,7 @@ public final class GetConnectionResult {
         private List<GetConnectionStorage> storages;
         private String streamPoolId;
         private String subnetId;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String technologyType;
         private String tenancyId;
@@ -1413,6 +1465,8 @@ public final class GetConnectionResult {
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
     	      this.clientSecretSecretId = defaults.clientSecretSecretId;
+    	      this.clusterId = defaults.clusterId;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionFactory = defaults.connectionFactory;
     	      this.connectionId = defaults.connectionId;
@@ -1467,6 +1521,7 @@ public final class GetConnectionResult {
     	      this.sasTokenSecretId = defaults.sasTokenSecretId;
     	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.secretAccessKeySecretId = defaults.secretAccessKeySecretId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.securityProtocol = defaults.securityProtocol;
     	      this.servers = defaults.servers;
     	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
@@ -1493,6 +1548,7 @@ public final class GetConnectionResult {
     	      this.storages = defaults.storages;
     	      this.streamPoolId = defaults.streamPoolId;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.technologyType = defaults.technologyType;
     	      this.tenancyId = defaults.tenancyId;
@@ -1636,6 +1692,22 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "clientSecretSecretId");
             }
             this.clientSecretSecretId = clientSecretSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterId(String clusterId) {
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "clusterId");
+            }
+            this.clusterId = clusterId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -2080,6 +2152,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityProtocol(String securityProtocol) {
             if (securityProtocol == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "securityProtocol");
@@ -2291,6 +2371,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "systemTags");
@@ -2482,6 +2570,8 @@ public final class GetConnectionResult {
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;
             _resultValue.clientSecretSecretId = clientSecretSecretId;
+            _resultValue.clusterId = clusterId;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionFactory = connectionFactory;
             _resultValue.connectionId = connectionId;
@@ -2536,6 +2626,7 @@ public final class GetConnectionResult {
             _resultValue.sasTokenSecretId = sasTokenSecretId;
             _resultValue.secretAccessKey = secretAccessKey;
             _resultValue.secretAccessKeySecretId = secretAccessKeySecretId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.securityProtocol = securityProtocol;
             _resultValue.servers = servers;
             _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
@@ -2562,6 +2653,7 @@ public final class GetConnectionResult {
             _resultValue.storages = storages;
             _resultValue.streamPoolId = streamPoolId;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.technologyType = technologyType;
             _resultValue.tenancyId = tenancyId;

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Enable Stack Monitoring for the external container database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

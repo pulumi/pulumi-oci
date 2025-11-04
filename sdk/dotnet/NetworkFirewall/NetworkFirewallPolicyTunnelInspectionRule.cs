@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
-    /// This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-    /// 
-    /// Creates a new tunnel inspection rule for the network firewall policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

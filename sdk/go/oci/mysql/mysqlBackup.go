@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-//
-// Create a backup of a DB System.
-//
 // ## Example Usage
 //
 // ```go

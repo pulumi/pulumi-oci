@@ -6,8 +6,10 @@ package com.pulumi.oci.Functions;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.inputs.FunctionFailureDestinationArgs;
 import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
 import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
+import com.pulumi.oci.Functions.inputs.FunctionSuccessDestinationArgs;
 import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -71,6 +73,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Timeout for detached function invocations. Value in seconds.
+     * 
+     */
+    @Import(name="detachedModeTimeoutInSeconds")
+    private @Nullable Output<Integer> detachedModeTimeoutInSeconds;
+
+    /**
+     * @return (Updatable) Timeout for detached function invocations. Value in seconds.
+     * 
+     */
+    public Optional<Output<Integer>> detachedModeTimeoutInSeconds() {
+        return Optional.ofNullable(this.detachedModeTimeoutInSeconds);
+    }
+
+    /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      * 
      */
@@ -83,6 +100,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    @Import(name="failureDestination")
+    private @Nullable Output<FunctionFailureDestinationArgs> failureDestination;
+
+    /**
+     * @return (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    public Optional<Output<FunctionFailureDestinationArgs>> failureDestination() {
+        return Optional.ofNullable(this.failureDestination);
     }
 
     /**
@@ -176,6 +208,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    @Import(name="successDestination")
+    private @Nullable Output<FunctionSuccessDestinationArgs> successDestination;
+
+    /**
+     * @return (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    public Optional<Output<FunctionSuccessDestinationArgs>> successDestination() {
+        return Optional.ofNullable(this.successDestination);
+    }
+
+    /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
@@ -211,13 +258,16 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         this.applicationId = $.applicationId;
         this.config = $.config;
         this.definedTags = $.definedTags;
+        this.detachedModeTimeoutInSeconds = $.detachedModeTimeoutInSeconds;
         this.displayName = $.displayName;
+        this.failureDestination = $.failureDestination;
         this.freeformTags = $.freeformTags;
         this.image = $.image;
         this.imageDigest = $.imageDigest;
         this.memoryInMbs = $.memoryInMbs;
         this.provisionedConcurrencyConfig = $.provisionedConcurrencyConfig;
         this.sourceDetails = $.sourceDetails;
+        this.successDestination = $.successDestination;
         this.timeoutInSeconds = $.timeoutInSeconds;
         this.traceConfig = $.traceConfig;
     }
@@ -308,6 +358,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param detachedModeTimeoutInSeconds (Updatable) Timeout for detached function invocations. Value in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detachedModeTimeoutInSeconds(@Nullable Output<Integer> detachedModeTimeoutInSeconds) {
+            $.detachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
+            return this;
+        }
+
+        /**
+         * @param detachedModeTimeoutInSeconds (Updatable) Timeout for detached function invocations. Value in seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detachedModeTimeoutInSeconds(Integer detachedModeTimeoutInSeconds) {
+            return detachedModeTimeoutInSeconds(Output.of(detachedModeTimeoutInSeconds));
+        }
+
+        /**
          * @param displayName The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
          * 
          * @return builder
@@ -326,6 +397,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param failureDestination (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failureDestination(@Nullable Output<FunctionFailureDestinationArgs> failureDestination) {
+            $.failureDestination = failureDestination;
+            return this;
+        }
+
+        /**
+         * @param failureDestination (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failureDestination(FunctionFailureDestinationArgs failureDestination) {
+            return failureDestination(Output.of(failureDestination));
         }
 
         /**
@@ -452,6 +544,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sourceDetails(FunctionSourceDetailsArgs sourceDetails) {
             return sourceDetails(Output.of(sourceDetails));
+        }
+
+        /**
+         * @param successDestination (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder successDestination(@Nullable Output<FunctionSuccessDestinationArgs> successDestination) {
+            $.successDestination = successDestination;
+            return this;
+        }
+
+        /**
+         * @param successDestination (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder successDestination(FunctionSuccessDestinationArgs successDestination) {
+            return successDestination(Output.of(successDestination));
         }
 
         /**

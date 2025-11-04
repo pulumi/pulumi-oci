@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
- *
- * Creates an association between service catalog and a resource.
- *
  * ## Example Usage
  *
  * ```typescript

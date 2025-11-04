@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
- *
- * Creates a new MediaWorkflowConfiguration.
- *
  * ## Example Usage
  *
  * ```typescript

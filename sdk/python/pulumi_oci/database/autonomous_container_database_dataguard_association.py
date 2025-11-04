@@ -286,9 +286,9 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[_builtins.str] peer_lifecycle_state: The current state of the Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.str] state: The current state of Autonomous Data Guard.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous DataGuard association was created.
@@ -558,7 +558,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
     @pulumi.getter(name="peerRole")
     def peer_role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "peer_role")
 
@@ -582,7 +582,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -684,11 +684,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
-
         ## Example Usage
 
         ```python
@@ -704,10 +699,12 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_autonomous_container_database_backup_config={
                 "backup_destination_details": [{
                     "type": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "backup_retention_policy_on_terminate": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
                     "is_remote": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "is_retention_lock_enabled": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
                     "remote_region": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
@@ -755,11 +752,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseDataguardAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
-
         ## Example Usage
 
         ```python
@@ -775,10 +767,12 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_autonomous_container_database_backup_config={
                 "backup_destination_details": [{
                     "type": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "backup_retention_policy_on_terminate": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
                     "is_remote": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "is_retention_lock_enabled": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
                     "remote_region": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
@@ -932,9 +926,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[_builtins.str] peer_lifecycle_state: The current state of the Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.str] state: The current state of Autonomous Data Guard.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous DataGuard association was created.
@@ -1115,7 +1109,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
     @pulumi.getter(name="peerRole")
     def peer_role(self) -> pulumi.Output[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "peer_role")
 
@@ -1131,7 +1125,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
     @pulumi.getter
     def role(self) -> pulumi.Output[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 

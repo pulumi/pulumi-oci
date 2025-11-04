@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
- *
- * Create a task schedule using the information provided.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -18,91 +14,91 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTaskSchedule = new oci.jms.TaskSchedule("test_task_schedule", {
- *     executionRecurrences: taskScheduleExecutionRecurrences,
- *     fleetId: testFleet.id,
+ *     fleetId: fleetOcid,
+ *     executionRecurrences: "DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z",
  *     taskDetails: {
- *         taskType: taskScheduleTaskDetailsTaskType,
+ *         taskType: "ADD_INSTALLATION_SITE",
  *         addInstallationSiteTaskRequest: {
  *             installationSites: [{
- *                 artifactContentType: taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesArtifactContentType,
- *                 forceInstall: taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesForceInstall,
- *                 headlessMode: taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesHeadlessMode,
- *                 installationPath: taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesInstallationPath,
- *                 managedInstanceId: testManagedInstance.id,
- *                 releaseVersion: taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesReleaseVersion,
+ *                 artifactContentType: "JDK",
+ *                 forceInstall: false,
+ *                 headlessMode: false,
+ *                 installationPath: "/example/install/path",
+ *                 managedInstanceId: "example-managed-instance-ocid",
+ *                 releaseVersion: "17.0.0",
  *             }],
- *             postInstallationActions: taskScheduleTaskDetailsAddInstallationSiteTaskRequestPostInstallationActions,
+ *             postInstallationActions: [],
  *         },
  *         cryptoTaskRequest: {
- *             recordingDurationInMinutes: taskScheduleTaskDetailsCryptoTaskRequestRecordingDurationInMinutes,
+ *             recordingDurationInMinutes: 10,
  *             targets: [{
- *                 applicationInstallationKey: taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationInstallationKey,
- *                 applicationKey: taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationKey,
- *                 containerKey: taskScheduleTaskDetailsCryptoTaskRequestTargetsContainerKey,
- *                 jreKey: taskScheduleTaskDetailsCryptoTaskRequestTargetsJreKey,
- *                 managedInstanceId: testManagedInstance.id,
+ *                 applicationInstallationKey: "example-application-installation-key",
+ *                 applicationKey: "example-application-key",
+ *                 containerKey: "example-container-key",
+ *                 jreKey: "example-jre-key",
+ *                 managedInstanceId: "example-managed-instance-ocid",
  *             }],
- *             waitingPeriodInMinutes: taskScheduleTaskDetailsCryptoTaskRequestWaitingPeriodInMinutes,
+ *             waitingPeriodInMinutes: 10,
  *         },
  *         deployedApplicationMigrationTaskRequest: {
  *             targets: [{
- *                 deployedApplicationInstallationKey: taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsDeployedApplicationInstallationKey,
- *                 excludePackagePrefixes: taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsExcludePackagePrefixes,
- *                 includePackagePrefixes: taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsIncludePackagePrefixes,
- *                 managedInstanceId: testManagedInstance.id,
- *                 sourceJdkVersion: taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsSourceJdkVersion,
- *                 targetJdkVersion: taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsTargetJdkVersion,
+ *                 deployedApplicationInstallationKey: "example-application-installation-key",
+ *                 excludePackagePrefixes: [],
+ *                 includePackagePrefixes: [],
+ *                 managedInstanceId: "example-managed-instance-ocid",
+ *                 sourceJdkVersion: "11",
+ *                 targetJdkVersion: "21",
  *             }],
  *         },
  *         javaMigrationTaskRequest: {
  *             targets: [{
- *                 applicationInstallationKey: taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsApplicationInstallationKey,
- *                 excludePackagePrefixes: taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsExcludePackagePrefixes,
- *                 includePackagePrefixes: taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsIncludePackagePrefixes,
- *                 managedInstanceId: testManagedInstance.id,
- *                 sourceJdkVersion: taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsSourceJdkVersion,
- *                 targetJdkVersion: taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsTargetJdkVersion,
+ *                 applicationInstallationKey: "example-application-installation-key",
+ *                 excludePackagePrefixes: [],
+ *                 includePackagePrefixes: [],
+ *                 managedInstanceId: "example-managed-instance-ocid",
+ *                 sourceJdkVersion: "11",
+ *                 targetJdkVersion: "21",
  *             }],
  *         },
  *         jfrTaskRequest: {
- *             jfcProfileName: testProfile.name,
- *             jfcV1: taskScheduleTaskDetailsJfrTaskRequestJfcV1,
- *             jfcV2: taskScheduleTaskDetailsJfrTaskRequestJfcV2,
- *             recordingDurationInMinutes: taskScheduleTaskDetailsJfrTaskRequestRecordingDurationInMinutes,
- *             recordingSizeInMb: taskScheduleTaskDetailsJfrTaskRequestRecordingSizeInMb,
+ *             jfcProfileName: "jfcV1",
+ *             jfcV1: "jfcV1",
+ *             jfcV2: "jfvV2",
+ *             recordingDurationInMinutes: 10,
+ *             recordingSizeInMb: 10,
  *             targets: [{
- *                 applicationInstallationKey: taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationInstallationKey,
- *                 applicationKey: taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationKey,
- *                 containerKey: taskScheduleTaskDetailsJfrTaskRequestTargetsContainerKey,
- *                 jreKey: taskScheduleTaskDetailsJfrTaskRequestTargetsJreKey,
- *                 managedInstanceId: testManagedInstance.id,
+ *                 applicationInstallationKey: "example-application-installation-key",
+ *                 applicationKey: "example-application-key",
+ *                 containerKey: "example-container-key",
+ *                 jreKey: "example-jre-key",
+ *                 managedInstanceId: "example-managed-instance-ocid",
  *             }],
- *             waitingPeriodInMinutes: taskScheduleTaskDetailsJfrTaskRequestWaitingPeriodInMinutes,
+ *             waitingPeriodInMinutes: 10,
  *         },
  *         performanceTuningTaskRequest: {
- *             recordingDurationInMinutes: taskScheduleTaskDetailsPerformanceTuningTaskRequestRecordingDurationInMinutes,
+ *             recordingDurationInMinutes: 10,
  *             targets: [{
- *                 applicationInstallationKey: taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationInstallationKey,
- *                 applicationKey: taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationKey,
- *                 containerKey: taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsContainerKey,
- *                 jreKey: taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsJreKey,
- *                 managedInstanceId: testManagedInstance.id,
+ *                 applicationInstallationKey: "example-application-installation-key",
+ *                 applicationKey: "example-application-key",
+ *                 containerKey: "example-container-key",
+ *                 jreKey: "example-jre-key",
+ *                 managedInstanceId: "example-managed-instance-ocid",
  *             }],
- *             waitingPeriodInMinutes: taskScheduleTaskDetailsPerformanceTuningTaskRequestWaitingPeriodInMinutes,
+ *             waitingPeriodInMinutes: 10,
  *         },
  *         removeInstallationSiteTaskRequest: {
  *             installationSites: [{
- *                 installationKey: taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSitesInstallationKey,
- *                 managedInstanceId: testManagedInstance.id,
+ *                 installationKey: "example-jvm-installation-key",
+ *                 managedInstanceId: "example-managed-instance-ocid",
  *             }],
  *         },
  *         scanJavaServerTaskRequest: {
- *             managedInstanceIds: taskScheduleTaskDetailsScanJavaServerTaskRequestManagedInstanceIds,
+ *             managedInstanceIds: [],
  *         },
  *         scanLibraryTaskRequest: {
- *             dynamicScanDurationInMinutes: taskScheduleTaskDetailsScanLibraryTaskRequestDynamicScanDurationInMinutes,
- *             isDynamicScan: taskScheduleTaskDetailsScanLibraryTaskRequestIsDynamicScan,
- *             managedInstanceIds: taskScheduleTaskDetailsScanLibraryTaskRequestManagedInstanceIds,
+ *             dynamicScanDurationInMinutes: 10,
+ *             isDynamicScan: false,
+ *             managedInstanceIds: [],
  *         },
  *     },
  * });

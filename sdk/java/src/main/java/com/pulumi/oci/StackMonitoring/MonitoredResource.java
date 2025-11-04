@@ -23,12 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Creates a new monitored resource for the given resource type with the details and submits
- * a work request for promoting the resource to agent. Once the resource is successfully
- * added to agent, resource state will be marked active.
- * 
  * ## Example Usage
  * 
  * <pre>

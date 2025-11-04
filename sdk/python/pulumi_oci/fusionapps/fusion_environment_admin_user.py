@@ -267,10 +267,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Create a FusionEnvironment admin user
-
         ## Example Usage
 
         ```python
@@ -314,10 +310,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  args: FusionEnvironmentAdminUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Create a FusionEnvironment admin user
-
         ## Example Usage
 
         ```python

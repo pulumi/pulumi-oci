@@ -78,6 +78,13 @@ export interface GetSubnetResult {
      */
     readonly id: string;
     /**
+     * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * * Ipv4 CIDR blocks must be valid.
+     * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     */
+    readonly ipv4cidrBlocks: string[];
+    /**
      * For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      */
     readonly ipv6cidrBlock: string;

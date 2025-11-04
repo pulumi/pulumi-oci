@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates the peer target database under the primary target database in Data Safe.
-//
 // ## Example Usage
 //
 // ```go

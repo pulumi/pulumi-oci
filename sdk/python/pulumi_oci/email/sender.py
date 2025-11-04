@@ -284,10 +284,6 @@ class Sender(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a sender for a tenancy in a given compartment.
-
         ## Example Usage
 
         ```python
@@ -331,10 +327,6 @@ class Sender(pulumi.CustomResource):
                  args: SenderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a sender for a tenancy in a given compartment.
-
         ## Example Usage
 
         ```python

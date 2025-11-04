@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision
 {
     /// <summary>
-    /// This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
-    /// 
-    /// Registration of new streamSource
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

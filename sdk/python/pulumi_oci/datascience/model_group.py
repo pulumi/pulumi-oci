@@ -595,10 +595,6 @@ class ModelGroup(pulumi.CustomResource):
                  version_label: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
-
-        Create a new Model Group resource.
-
         ## Example Usage
 
         ```python
@@ -702,10 +698,6 @@ class ModelGroup(pulumi.CustomResource):
                  args: ModelGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
-
-        Create a new Model Group resource.
-
         ## Example Usage
 
         ```python

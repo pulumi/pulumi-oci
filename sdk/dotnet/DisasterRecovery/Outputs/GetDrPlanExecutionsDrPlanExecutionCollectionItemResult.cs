@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult
     {
         /// <summary>
+        /// The details of the event that started the automatic DR plan execution.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult> AutomaticExecutionDetails;
+        /// <summary>
         /// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
@@ -49,6 +53,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `False`
+        /// </summary>
+        public readonly bool IsAutomatic;
         /// <summary>
         /// A message describing the DR plan execution's current state in more detail.
         /// </summary>
@@ -100,6 +108,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
         [OutputConstructor]
         private GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(
+            ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult> automaticExecutionDetails,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -117,6 +127,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult> groupExecutions,
 
             string id,
+
+            bool isAutomatic,
 
             string lifeCycleDetails,
 
@@ -142,6 +154,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string timeUpdated)
         {
+            AutomaticExecutionDetails = automaticExecutionDetails;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
@@ -151,6 +164,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             FreeformTags = freeformTags;
             GroupExecutions = groupExecutions;
             Id = id;
+            IsAutomatic = isAutomatic;
             LifeCycleDetails = lifeCycleDetails;
             LogLocations = logLocations;
             PeerDrProtectionGroupId = peerDrProtectionGroupId;

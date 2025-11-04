@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -36,7 +37,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     private Double databaseSizeInTbs;
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     private String dbVersion;
@@ -46,10 +47,15 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     private String displayName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     private String id;
+    /**
+     * @return A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    private String infrastructureType;
     /**
      * @return Indicates whether the backup is user-initiated or automatic.
      * 
@@ -57,12 +63,12 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     private Boolean isAutomatic;
     private Boolean isLongTermBackup;
     /**
-     * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * @return Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     private Boolean isRestorable;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * @return A filter to return only resources that have the given key store id.
      * 
      */
     private String keyStoreId;
@@ -77,7 +83,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     private String kmsKeyId;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     private String kmsKeyVersionId;
@@ -86,6 +92,11 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Name of the region in which backup is taken in.
+     * 
+     */
+    private String region;
     /**
      * @return Retention period, in days, for long-term backups
      * 
@@ -96,6 +107,11 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      * 
      */
     private Double sizeInTbs;
+    /**
+     * @return Source Autonomous Database details.
+     * 
+     */
+    private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail> sourceDatabaseDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -157,7 +173,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         return this.databaseSizeInTbs;
     }
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public String dbVersion() {
@@ -171,11 +187,18 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         return this.displayName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    public String infrastructureType() {
+        return this.infrastructureType;
     }
     /**
      * @return Indicates whether the backup is user-initiated or automatic.
@@ -188,14 +211,14 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         return this.isLongTermBackup;
     }
     /**
-     * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * @return Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     public Boolean isRestorable() {
         return this.isRestorable;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * @return A filter to return only resources that have the given key store id.
      * 
      */
     public String keyStoreId() {
@@ -216,7 +239,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         return this.kmsKeyId;
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public String kmsKeyVersionId() {
@@ -228,6 +251,13 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Name of the region in which backup is taken in.
+     * 
+     */
+    public String region() {
+        return this.region;
     }
     /**
      * @return Retention period, in days, for long-term backups
@@ -242,6 +272,13 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      */
     public Double sizeInTbs() {
         return this.sizeInTbs;
+    }
+    /**
+     * @return Source Autonomous Database details.
+     * 
+     */
+    public List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail> sourceDatabaseDetails() {
+        return this.sourceDatabaseDetails;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -302,6 +339,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         private String dbVersion;
         private String displayName;
         private String id;
+        private String infrastructureType;
         private Boolean isAutomatic;
         private Boolean isLongTermBackup;
         private Boolean isRestorable;
@@ -310,8 +348,10 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
+        private String region;
         private Integer retentionPeriodInDays;
         private Double sizeInTbs;
+        private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail> sourceDatabaseDetails;
         private String state;
         private String timeAvailableTill;
         private String timeEnded;
@@ -328,6 +368,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     	      this.dbVersion = defaults.dbVersion;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.infrastructureType = defaults.infrastructureType;
     	      this.isAutomatic = defaults.isAutomatic;
     	      this.isLongTermBackup = defaults.isLongTermBackup;
     	      this.isRestorable = defaults.isRestorable;
@@ -336,8 +377,10 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.region = defaults.region;
     	      this.retentionPeriodInDays = defaults.retentionPeriodInDays;
     	      this.sizeInTbs = defaults.sizeInTbs;
+    	      this.sourceDatabaseDetails = defaults.sourceDatabaseDetails;
     	      this.state = defaults.state;
     	      this.timeAvailableTill = defaults.timeAvailableTill;
     	      this.timeEnded = defaults.timeEnded;
@@ -406,6 +449,14 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder infrastructureType(String infrastructureType) {
+            if (infrastructureType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "infrastructureType");
+            }
+            this.infrastructureType = infrastructureType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
             if (isAutomatic == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "isAutomatic");
@@ -470,6 +521,14 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder region(String region) {
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "region");
+            }
+            this.region = region;
+            return this;
+        }
+        @CustomType.Setter
         public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
             if (retentionPeriodInDays == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "retentionPeriodInDays");
@@ -484,6 +543,17 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             }
             this.sizeInTbs = sizeInTbs;
             return this;
+        }
+        @CustomType.Setter
+        public Builder sourceDatabaseDetails(List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail> sourceDatabaseDetails) {
+            if (sourceDatabaseDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackup", "sourceDatabaseDetails");
+            }
+            this.sourceDatabaseDetails = sourceDatabaseDetails;
+            return this;
+        }
+        public Builder sourceDatabaseDetails(GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetail... sourceDatabaseDetails) {
+            return sourceDatabaseDetails(List.of(sourceDatabaseDetails));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -542,6 +612,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             _resultValue.dbVersion = dbVersion;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.infrastructureType = infrastructureType;
             _resultValue.isAutomatic = isAutomatic;
             _resultValue.isLongTermBackup = isLongTermBackup;
             _resultValue.isRestorable = isRestorable;
@@ -550,8 +621,10 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.region = region;
             _resultValue.retentionPeriodInDays = retentionPeriodInDays;
             _resultValue.sizeInTbs = sizeInTbs;
+            _resultValue.sourceDatabaseDetails = sourceDatabaseDetails;
             _resultValue.state = state;
             _resultValue.timeAvailableTill = timeAvailableTill;
             _resultValue.timeEnded = timeEnded;

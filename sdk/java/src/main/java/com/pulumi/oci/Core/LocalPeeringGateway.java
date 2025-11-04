@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new local peering gateway (LPG) for the specified VCN.
- * 
  * ## Example Usage
  * 
  * <pre>

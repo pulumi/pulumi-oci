@@ -14,14 +14,14 @@ public final class GetAutonomousDatabaseBackupPlainArgs extends com.pulumi.resou
     public static final GetAutonomousDatabaseBackupPlainArgs Empty = new GetAutonomousDatabaseBackupPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     @Import(name="autonomousDatabaseBackupId", required=true)
     private String autonomousDatabaseBackupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     public String autonomousDatabaseBackupId() {
@@ -53,7 +53,7 @@ public final class GetAutonomousDatabaseBackupPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param autonomousDatabaseBackupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * @param autonomousDatabaseBackupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          * 
          * @return builder
          * 

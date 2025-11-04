@@ -5,12 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Non Container Database Management resource in Oracle Cloud Infrastructure Database service.
- *
- * Enable Database Management Service for the external non-container database.
- * For more information about the Database Management Service, see
- * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
- *
  * ## Example Usage
  *
  * ## Import

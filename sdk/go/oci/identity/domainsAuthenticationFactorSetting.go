@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Replace Authentication Factor Settings
+// ## Example Usage
 //
 // ## Import
 //

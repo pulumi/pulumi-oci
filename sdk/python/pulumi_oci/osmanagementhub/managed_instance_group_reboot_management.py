@@ -140,10 +140,6 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reboots all managed instances in the specified group.
-
         ## Example Usage
 
         ```python
@@ -180,10 +176,6 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
                  args: ManagedInstanceGroupRebootManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reboots all managed instances in the specified group.
-
         ## Example Usage
 
         ```python

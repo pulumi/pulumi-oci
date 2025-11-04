@@ -56,7 +56,7 @@ public final class GetCloudExadataInfrastructureResult {
      */
     private Integer computeCount;
     /**
-     * @return The compute model of the Exadata infrastructure.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     private String computeModel;
@@ -280,7 +280,7 @@ public final class GetCloudExadataInfrastructureResult {
         return this.computeCount;
     }
     /**
-     * @return The compute model of the Exadata infrastructure.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public String computeModel() {

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

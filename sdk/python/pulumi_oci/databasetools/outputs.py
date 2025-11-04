@@ -24,6 +24,7 @@ __all__ = [
     'DatabaseToolsConnectionProxyClientUserPassword',
     'DatabaseToolsConnectionRelatedResource',
     'DatabaseToolsConnectionUserPassword',
+    'DatabaseToolsIdentityLock',
     'DatabaseToolsPrivateEndpointLock',
     'DatabaseToolsPrivateEndpointReverseConnectionConfiguration',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp',
@@ -49,6 +50,11 @@ __all__ = [
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult',
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult',
     'GetDatabaseToolsEndpointServicesFilterResult',
+    'GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionResult',
+    'GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemResult',
+    'GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockResult',
+    'GetDatabaseToolsIdentitiesFilterResult',
+    'GetDatabaseToolsIdentityLockResult',
     'GetDatabaseToolsPrivateEndpointLockResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult',
@@ -327,7 +333,7 @@ class DatabaseToolsConnectionProxyClient(dict):
         :param _builtins.str proxy_authentication_type: (Updatable) The proxy authentication type.
         :param Sequence[_builtins.str] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
         :param _builtins.str user_name: (Updatable) The user name.
-        :param 'DatabaseToolsConnectionProxyClientUserPasswordArgs' user_password: (Updatable) The user password.
+        :param 'DatabaseToolsConnectionProxyClientUserPasswordArgs' user_password: (Updatable) The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
         if roles is not None:
@@ -365,7 +371,7 @@ class DatabaseToolsConnectionProxyClient(dict):
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional['outputs.DatabaseToolsConnectionProxyClientUserPassword']:
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 
@@ -520,6 +526,79 @@ class DatabaseToolsConnectionUserPassword(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DatabaseToolsIdentityLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsIdentityLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsIdentityLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsIdentityLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -827,7 +906,7 @@ class GetDatabaseToolsConnectionProxyClientResult(dict):
         :param _builtins.str proxy_authentication_type: The proxy authentication type.
         :param Sequence[_builtins.str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
         :param _builtins.str user_name: The database user name.
-        :param Sequence['GetDatabaseToolsConnectionProxyClientUserPasswordArgs'] user_passwords: The user password.
+        :param Sequence['GetDatabaseToolsConnectionProxyClientUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
         pulumi.set(__self__, "roles", roles)
@@ -862,7 +941,7 @@ class GetDatabaseToolsConnectionProxyClientResult(dict):
     @pulumi.getter(name="userPasswords")
     def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionProxyClientUserPasswordResult']:
         """
-        The user password.
+        The database user password.
         """
         return pulumi.get(self, "user_passwords")
 
@@ -982,6 +1061,8 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  private_endpoint_id: _builtins.str,
                  proxy_clients: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult'],
                  related_resources: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult'],
+                 runtime_endpoint: _builtins.str,
+                 runtime_identity: _builtins.str,
                  runtime_support: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -993,7 +1074,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
         """
         :param Mapping[str, _builtins.str] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param _builtins.str connection_string: The connect descriptor or Easy Connect Naming method used to connect to the database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
@@ -1005,15 +1086,17 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         :param _builtins.str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs'] proxy_clients: The proxy client information.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs'] related_resources: A related resource
-        :param _builtins.str runtime_support: A filter to return only resources with one of the specified runtimeSupport values.
+        :param _builtins.str runtime_endpoint: Specifies the Database Tools Runtime endpoint.
+        :param _builtins.str runtime_identity: A filter to return only resources with one of the specified runtimeIdentity values.
+        :param _builtins.str runtime_support: A filter to return only resources with one of the specified type values.
         :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        :param _builtins.str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         :param _builtins.str type: A filter to return only resources their type matches the specified type.
         :param _builtins.str url: The JDBC URL used to connect to the Generic JDBC database system.
         :param _builtins.str user_name: The database user name.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The user password.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "advanced_properties", advanced_properties)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1028,6 +1111,8 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "proxy_clients", proxy_clients)
         pulumi.set(__self__, "related_resources", related_resources)
+        pulumi.set(__self__, "runtime_endpoint", runtime_endpoint)
+        pulumi.set(__self__, "runtime_identity", runtime_identity)
         pulumi.set(__self__, "runtime_support", runtime_support)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1050,7 +1135,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1143,10 +1228,26 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         return pulumi.get(self, "related_resources")
 
     @_builtins.property
+    @pulumi.getter(name="runtimeEndpoint")
+    def runtime_endpoint(self) -> _builtins.str:
+        """
+        Specifies the Database Tools Runtime endpoint.
+        """
+        return pulumi.get(self, "runtime_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified runtimeIdentity values.
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupport")
     def runtime_support(self) -> _builtins.str:
         """
-        A filter to return only resources with one of the specified runtimeSupport values.
+        A filter to return only resources with one of the specified type values.
         """
         return pulumi.get(self, "runtime_support")
 
@@ -1178,7 +1279,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -1210,7 +1311,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="userPasswords")
     def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']:
         """
-        The user password.
+        The database user password.
         """
         return pulumi.get(self, "user_passwords")
 
@@ -1375,7 +1476,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClien
         :param _builtins.str proxy_authentication_type: The proxy authentication type.
         :param Sequence[_builtins.str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
         :param _builtins.str user_name: The database user name.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs'] user_passwords: The user password.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
         pulumi.set(__self__, "roles", roles)
@@ -1410,7 +1511,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClien
     @pulumi.getter(name="userPasswords")
     def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordResult']:
         """
-        The user password.
+        The database user password.
         """
         return pulumi.get(self, "user_passwords")
 
@@ -1557,7 +1658,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A description of the Database Tools Endpoint Service.
         :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
@@ -1587,7 +1688,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1714,6 +1815,308 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 credential_key: _builtins.str,
+                 database_tools_connection_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str credential_key: The name of the credential object created in the Oracle Database.
+        :param _builtins.str database_tools_connection_id: A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools identity.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param _builtins.str state: A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "credential_key", credential_key)
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialKey")
+    def credential_key(self) -> _builtins.str:
+        """
+        The name of the credential object created in the Oracle Database.
+        """
+        return pulumi.get(self, "credential_key")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools identity.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsIdentitiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseToolsIdentityLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The Database Tools identity type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools identity was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The Database Tools identity type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDatabaseToolsPrivateEndpointLockResult(dict):
     def __init__(__self__, *,
                  message: _builtins.str,
@@ -1830,6 +2233,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
                  private_endpoint_ip: _builtins.str,
                  private_endpoint_vnic_id: _builtins.str,
                  reverse_connection_configurations: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult'],
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -1838,7 +2242,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
                  vcn_id: _builtins.str):
         """
         :param Sequence[_builtins.str] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
-        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A description of the Database Tools private endpoint.
         :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
@@ -1852,6 +2256,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         :param _builtins.str private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param _builtins.str private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
         :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs'] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param Mapping[str, _builtins.str] security_attributes: Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param _builtins.str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1874,6 +2279,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
         pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1893,7 +2299,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2000,6 +2406,14 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

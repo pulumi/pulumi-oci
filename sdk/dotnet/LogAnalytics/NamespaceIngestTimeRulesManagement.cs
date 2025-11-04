@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// Enables the specified ingest time rule.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-//
-// Create a maintenance window in Fleet Application Management.
-//
 // ## Example Usage
 //
 // ```go

@@ -688,10 +688,6 @@ class Provision(pulumi.CustomResource):
                  tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a Provision.
-
         ## Example Usage
 
         ```python
@@ -751,10 +747,6 @@ class Provision(pulumi.CustomResource):
                  args: ProvisionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a Provision.
-
         ## Example Usage
 
         ```python

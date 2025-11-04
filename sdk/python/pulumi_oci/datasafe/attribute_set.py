@@ -379,10 +379,6 @@ class AttributeSet(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates an attribute set.
-
         ## Example Usage
 
         ```python
@@ -432,10 +428,6 @@ class AttributeSet(pulumi.CustomResource):
                  args: AttributeSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates an attribute set.
-
         ## Example Usage
 
         ```python

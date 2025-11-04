@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new build pipeline.
- * 
  * ## Example Usage
  * 
  * <pre>

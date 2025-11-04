@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the external listener specified by `externalListenerId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

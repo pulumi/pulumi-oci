@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Create an API key on behalf of the specified user.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

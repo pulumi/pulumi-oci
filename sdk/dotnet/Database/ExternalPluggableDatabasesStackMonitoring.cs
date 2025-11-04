@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Externalpluggabledatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Enable Stack Monitoring for the external pluggable database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

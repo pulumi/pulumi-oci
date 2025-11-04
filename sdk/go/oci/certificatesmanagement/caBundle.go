@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-//
-// Creates a new CA bundle according to the details of the request.
-//
 // ## Example Usage
 //
 // ```go

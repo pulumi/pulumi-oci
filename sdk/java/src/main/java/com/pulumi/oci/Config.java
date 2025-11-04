@@ -37,6 +37,13 @@ public final class Config {
         return Codegen.booleanProp("disableAutoRetries").config(config).get();
     }
 /**
+ * (Optional) flags to enable Dual Stack endpoint.
+ * 
+ */
+    public Optional<Boolean> dualStackEndpointEnabled() {
+        return Codegen.booleanProp("dualStackEndpointEnabled").config(config).get();
+    }
+/**
  * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */

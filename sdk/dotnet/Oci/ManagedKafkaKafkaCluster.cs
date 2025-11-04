@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
-    /// 
-    /// Creates a KafkaCluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

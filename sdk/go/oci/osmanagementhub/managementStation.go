@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Creates a management station using the proxy and mirror configuration information provided.
-//
 // ## Example Usage
 //
 // ```go

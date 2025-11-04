@@ -27,7 +27,7 @@ class GetAutonomousDatabaseBackupResult:
     """
     A collection of values returned by getAutonomousDatabaseBackup.
     """
-    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, backup_destination_details=None, compartment_id=None, database_size_in_tbs=None, db_version=None, display_name=None, id=None, is_automatic=None, is_long_term_backup=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, retention_period_in_days=None, size_in_tbs=None, state=None, time_available_till=None, time_ended=None, time_started=None, type=None, vault_id=None):
+    def __init__(__self__, autonomous_database_backup_id=None, autonomous_database_id=None, backup_destination_details=None, compartment_id=None, database_size_in_tbs=None, db_version=None, display_name=None, id=None, infrastructure_type=None, is_automatic=None, is_long_term_backup=None, is_restorable=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_version_id=None, lifecycle_details=None, region=None, retention_period_in_days=None, size_in_tbs=None, source_database_details=None, state=None, time_available_till=None, time_ended=None, time_started=None, type=None, vault_id=None):
         if autonomous_database_backup_id and not isinstance(autonomous_database_backup_id, str):
             raise TypeError("Expected argument 'autonomous_database_backup_id' to be a str")
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
@@ -52,6 +52,9 @@ class GetAutonomousDatabaseBackupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if infrastructure_type and not isinstance(infrastructure_type, str):
+            raise TypeError("Expected argument 'infrastructure_type' to be a str")
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         if is_automatic and not isinstance(is_automatic, bool):
             raise TypeError("Expected argument 'is_automatic' to be a bool")
         pulumi.set(__self__, "is_automatic", is_automatic)
@@ -76,12 +79,18 @@ class GetAutonomousDatabaseBackupResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if region and not isinstance(region, str):
+            raise TypeError("Expected argument 'region' to be a str")
+        pulumi.set(__self__, "region", region)
         if retention_period_in_days and not isinstance(retention_period_in_days, int):
             raise TypeError("Expected argument 'retention_period_in_days' to be a int")
         pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
         if size_in_tbs and not isinstance(size_in_tbs, float):
             raise TypeError("Expected argument 'size_in_tbs' to be a float")
         pulumi.set(__self__, "size_in_tbs", size_in_tbs)
+        if source_database_details and not isinstance(source_database_details, list):
+            raise TypeError("Expected argument 'source_database_details' to be a list")
+        pulumi.set(__self__, "source_database_details", source_database_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -110,7 +119,7 @@ class GetAutonomousDatabaseBackupResult:
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -142,7 +151,7 @@ class GetAutonomousDatabaseBackupResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -158,9 +167,17 @@ class GetAutonomousDatabaseBackupResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type this resource belongs to.
+        """
+        return pulumi.get(self, "infrastructure_type")
 
     @_builtins.property
     @pulumi.getter(name="isAutomatic")
@@ -179,7 +196,7 @@ class GetAutonomousDatabaseBackupResult:
     @pulumi.getter(name="isRestorable")
     def is_restorable(self) -> _builtins.bool:
         """
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
+        Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         """
         return pulumi.get(self, "is_restorable")
 
@@ -211,7 +228,7 @@ class GetAutonomousDatabaseBackupResult:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -222,6 +239,14 @@ class GetAutonomousDatabaseBackupResult:
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Name of the region in which backup is taken in.
+        """
+        return pulumi.get(self, "region")
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
@@ -238,6 +263,14 @@ class GetAutonomousDatabaseBackupResult:
         The backup size in terrabytes (TB).
         """
         return pulumi.get(self, "size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDatabaseDetails")
+    def source_database_details(self) -> Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailResult']:
+        """
+        Source Autonomous Database details.
+        """
+        return pulumi.get(self, "source_database_details")
 
     @_builtins.property
     @pulumi.getter
@@ -302,6 +335,7 @@ class AwaitableGetAutonomousDatabaseBackupResult(GetAutonomousDatabaseBackupResu
             db_version=self.db_version,
             display_name=self.display_name,
             id=self.id,
+            infrastructure_type=self.infrastructure_type,
             is_automatic=self.is_automatic,
             is_long_term_backup=self.is_long_term_backup,
             is_restorable=self.is_restorable,
@@ -310,8 +344,10 @@ class AwaitableGetAutonomousDatabaseBackupResult(GetAutonomousDatabaseBackupResu
             kms_key_id=self.kms_key_id,
             kms_key_version_id=self.kms_key_version_id,
             lifecycle_details=self.lifecycle_details,
+            region=self.region,
             retention_period_in_days=self.retention_period_in_days,
             size_in_tbs=self.size_in_tbs,
+            source_database_details=self.source_database_details,
             state=self.state,
             time_available_till=self.time_available_till,
             time_ended=self.time_ended,
@@ -325,7 +361,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
     """
     This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
 
-    Gets information about the specified Autonomous Database backup.
+    Gets information about the specified Autonomous AI Database backup.
 
     ## Example Usage
 
@@ -337,7 +373,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
     ```
 
 
-    :param _builtins.str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+    :param _builtins.str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
     """
     __args__ = dict()
     __args__['autonomousDatabaseBackupId'] = autonomous_database_backup_id
@@ -353,6 +389,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
         db_version=pulumi.get(__ret__, 'db_version'),
         display_name=pulumi.get(__ret__, 'display_name'),
         id=pulumi.get(__ret__, 'id'),
+        infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
         is_automatic=pulumi.get(__ret__, 'is_automatic'),
         is_long_term_backup=pulumi.get(__ret__, 'is_long_term_backup'),
         is_restorable=pulumi.get(__ret__, 'is_restorable'),
@@ -361,8 +398,10 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        region=pulumi.get(__ret__, 'region'),
         retention_period_in_days=pulumi.get(__ret__, 'retention_period_in_days'),
         size_in_tbs=pulumi.get(__ret__, 'size_in_tbs'),
+        source_database_details=pulumi.get(__ret__, 'source_database_details'),
         state=pulumi.get(__ret__, 'state'),
         time_available_till=pulumi.get(__ret__, 'time_available_till'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
@@ -374,7 +413,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
     """
     This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
 
-    Gets information about the specified Autonomous Database backup.
+    Gets information about the specified Autonomous AI Database backup.
 
     ## Example Usage
 
@@ -386,7 +425,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
     ```
 
 
-    :param _builtins.str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+    :param _builtins.str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
     """
     __args__ = dict()
     __args__['autonomousDatabaseBackupId'] = autonomous_database_backup_id
@@ -401,6 +440,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
         db_version=pulumi.get(__response__, 'db_version'),
         display_name=pulumi.get(__response__, 'display_name'),
         id=pulumi.get(__response__, 'id'),
+        infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
         is_automatic=pulumi.get(__response__, 'is_automatic'),
         is_long_term_backup=pulumi.get(__response__, 'is_long_term_backup'),
         is_restorable=pulumi.get(__response__, 'is_restorable'),
@@ -409,8 +449,10 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        region=pulumi.get(__response__, 'region'),
         retention_period_in_days=pulumi.get(__response__, 'retention_period_in_days'),
         size_in_tbs=pulumi.get(__response__, 'size_in_tbs'),
+        source_database_details=pulumi.get(__response__, 'source_database_details'),
         state=pulumi.get(__response__, 'state'),
         time_available_till=pulumi.get(__response__, 'time_available_till'),
         time_ended=pulumi.get(__response__, 'time_ended'),

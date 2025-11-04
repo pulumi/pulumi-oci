@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
- *
- * Updates the Autonomous Database regional wallet.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -66,7 +62,7 @@ export class AutonomousDatabaseRegionalWalletManagement extends pulumi.CustomRes
      */
     declare public readonly shouldRotate: pulumi.Output<boolean | undefined>;
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -120,7 +116,7 @@ export interface AutonomousDatabaseRegionalWalletManagementState {
      */
     shouldRotate?: pulumi.Input<boolean>;
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      */
     state?: pulumi.Input<string>;
     /**

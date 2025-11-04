@@ -13,6 +13,36 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class MysqlBackupDbSystemSnapshotMaintenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+        /// </summary>
+        [Input("maintenanceScheduleType")]
+        public Input<string>? MaintenanceScheduleType { get; set; }
+
+        /// <summary>
+        /// The version that is expected to be targeted during the next scheduled maintenance run.
+        /// </summary>
+        [Input("targetVersion")]
+        public Input<string>? TargetVersion { get; set; }
+
+        /// <summary>
+        /// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        [Input("timeScheduled")]
+        public Input<string>? TimeScheduled { get; set; }
+
+        /// <summary>
+        /// The preferred version to target when performing an automatic MySQL upgrade.
+        /// </summary>
+        [Input("versionPreference")]
+        public Input<string>? VersionPreference { get; set; }
+
+        /// <summary>
+        /// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+        /// </summary>
+        [Input("versionTrackPreference")]
+        public Input<string>? VersionTrackPreference { get; set; }
+
+        /// <summary>
         /// The start time of the maintenance window.
         /// </summary>
         [Input("windowStartTime")]

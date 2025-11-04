@@ -147,7 +147,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        Compartment Identifier.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -171,7 +171,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "display_name")
 
@@ -179,7 +179,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="executingFsuActionId")
     def executing_fsu_action_id(self) -> _builtins.str:
         """
-        OCID identifier for the Action that is currently in execution, if applicable.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         """
         return pulumi.get(self, "executing_fsu_action_id")
 
@@ -195,7 +195,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="fsuCollectionId")
     def fsu_collection_id(self) -> _builtins.str:
         """
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "fsu_collection_id")
 
@@ -208,7 +208,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="goalVersionDetails")
     def goal_version_details(self) -> Sequence['outputs.GetFsuCycleGoalVersionDetailResult']:
         """
-        Goal version or image details for the Exadata Fleet Update Cycle.
+        Details of goal 'GUEST_OS' software version.
         """
         return pulumi.get(self, "goal_version_details")
 
@@ -216,7 +216,7 @@ class GetFsuCycleResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID identifier for the Exadata Fleet Update Cycle.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "id")
 
@@ -224,7 +224,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> Sequence[_builtins.str]:
         """
-        List of identifiers of patches to ignore.
+        List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -232,7 +232,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> _builtins.bool:
         """
-        Ignore patch conflicts or missing patches between the source and goal homes.
+        Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -240,7 +240,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="isKeepPlacement")
     def is_keep_placement(self) -> _builtins.bool:
         """
-        Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        Ensure that database services are online on the same VMs before and after the maintenance update.
         """
         return pulumi.get(self, "is_keep_placement")
 
@@ -280,7 +280,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="nextActionToExecutes")
     def next_action_to_executes(self) -> Sequence['outputs.GetFsuCycleNextActionToExecuteResult']:
         """
-        In this array all the possible actions will be listed. The first element is the suggested Action.
+        All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         """
         return pulumi.get(self, "next_action_to_executes")
 

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
- *
  * ## Example Usage
  *
  * ```typescript

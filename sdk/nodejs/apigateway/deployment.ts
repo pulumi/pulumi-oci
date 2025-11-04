@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Deployment resource in Oracle Cloud Infrastructure API Gateway service.
- *
- * Creates a new deployment.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -268,10 +268,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Imports the specified custom content from the input in zip format.
-
         ## Example Usage
 
         ```python
@@ -307,10 +303,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
                  args: LogAnalyticsImportCustomContentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Imports the specified custom content from the input in zip format.
-
         ## Example Usage
 
         ```python

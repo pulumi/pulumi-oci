@@ -377,10 +377,6 @@ class Property(pulumi.CustomResource):
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a business-specific metadata property in Fleet Application Management.
-
         ## Example Usage
 
         ```python
@@ -422,10 +418,6 @@ class Property(pulumi.CustomResource):
                  args: PropertyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a business-specific metadata property in Fleet Application Management.
-
         ## Example Usage
 
         ```python

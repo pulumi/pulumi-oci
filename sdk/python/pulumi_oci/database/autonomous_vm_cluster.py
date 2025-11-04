@@ -366,6 +366,7 @@ class _AutonomousVmClusterState:
                  maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]]] = None,
                  maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowArgs']]]] = None,
                  max_acds_lowest_scaled_value: Optional[pulumi.Input[_builtins.int]] = None,
+                 memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -415,6 +416,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
+        :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -500,6 +502,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         if max_acds_lowest_scaled_value is not None:
             pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
+        if memory_per_compute_unit_in_gbs is not None:
+            pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs is not None:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if memory_size_in_gbs is not None:
@@ -882,6 +886,18 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "max_acds_lowest_scaled_value", value)
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "memory_per_compute_unit_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -1173,10 +1189,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  vm_cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
-
         ## Example Usage
 
         ```python
@@ -1260,10 +1272,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  args: AutonomousVmClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
-
         ## Example Usage
 
         ```python
@@ -1400,6 +1408,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_windows"] = None
             __props__.__dict__["max_acds_lowest_scaled_value"] = None
+            __props__.__dict__["memory_per_compute_unit_in_gbs"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["node_count"] = None
@@ -1455,6 +1464,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]]] = None,
             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowArgs', 'AutonomousVmClusterMaintenanceWindowArgsDict']]]]] = None,
             max_acds_lowest_scaled_value: Optional[pulumi.Input[_builtins.int]] = None,
+            memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1509,6 +1519,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowArgs', 'AutonomousVmClusterMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
+        :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -1569,6 +1580,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["maintenance_window_details"] = maintenance_window_details
         __props__.__dict__["maintenance_windows"] = maintenance_windows
         __props__.__dict__["max_acds_lowest_scaled_value"] = max_acds_lowest_scaled_value
+        __props__.__dict__["memory_per_compute_unit_in_gbs"] = memory_per_compute_unit_in_gbs
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
@@ -1812,6 +1824,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The lowest value to which maximum number of ACDs can be scaled down.
         """
         return pulumi.get(self, "max_acds_lowest_scaled_value")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> pulumi.Output[_builtins.float]:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")

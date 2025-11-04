@@ -26,7 +26,7 @@ class GetSubnetResult:
     """
     A collection of values returned by getSubnet.
     """
-    def __init__(__self__, availability_domain=None, cidr_block=None, compartment_id=None, defined_tags=None, dhcp_options_id=None, display_name=None, dns_label=None, freeform_tags=None, id=None, ipv6cidr_block=None, ipv6cidr_blocks=None, ipv6virtual_router_ip=None, prohibit_internet_ingress=None, prohibit_public_ip_on_vnic=None, route_table_id=None, security_list_ids=None, state=None, subnet_domain_name=None, subnet_id=None, time_created=None, vcn_id=None, virtual_router_ip=None, virtual_router_mac=None):
+    def __init__(__self__, availability_domain=None, cidr_block=None, compartment_id=None, defined_tags=None, dhcp_options_id=None, display_name=None, dns_label=None, freeform_tags=None, id=None, ipv4cidr_blocks=None, ipv6cidr_block=None, ipv6cidr_blocks=None, ipv6virtual_router_ip=None, prohibit_internet_ingress=None, prohibit_public_ip_on_vnic=None, route_table_id=None, security_list_ids=None, state=None, subnet_domain_name=None, subnet_id=None, time_created=None, vcn_id=None, virtual_router_ip=None, virtual_router_mac=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -54,6 +54,9 @@ class GetSubnetResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ipv4cidr_blocks and not isinstance(ipv4cidr_blocks, list):
+            raise TypeError("Expected argument 'ipv4cidr_blocks' to be a list")
+        pulumi.set(__self__, "ipv4cidr_blocks", ipv4cidr_blocks)
         if ipv6cidr_block and not isinstance(ipv6cidr_block, str):
             raise TypeError("Expected argument 'ipv6cidr_block' to be a str")
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
@@ -168,6 +171,17 @@ class GetSubnetResult:
         The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4cidrBlocks")
+    def ipv4cidr_blocks(self) -> Sequence[_builtins.str]:
+        """
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        * Ipv4 CIDR blocks must be valid.
+        * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+        """
+        return pulumi.get(self, "ipv4cidr_blocks")
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")
@@ -294,6 +308,7 @@ class AwaitableGetSubnetResult(GetSubnetResult):
             dns_label=self.dns_label,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            ipv4cidr_blocks=self.ipv4cidr_blocks,
             ipv6cidr_block=self.ipv6cidr_block,
             ipv6cidr_blocks=self.ipv6cidr_blocks,
             ipv6virtual_router_ip=self.ipv6virtual_router_ip,
@@ -344,6 +359,7 @@ def get_subnet(subnet_id: Optional[_builtins.str] = None,
         dns_label=pulumi.get(__ret__, 'dns_label'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        ipv4cidr_blocks=pulumi.get(__ret__, 'ipv4cidr_blocks'),
         ipv6cidr_block=pulumi.get(__ret__, 'ipv6cidr_block'),
         ipv6cidr_blocks=pulumi.get(__ret__, 'ipv6cidr_blocks'),
         ipv6virtual_router_ip=pulumi.get(__ret__, 'ipv6virtual_router_ip'),
@@ -391,6 +407,7 @@ def get_subnet_output(subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
         dns_label=pulumi.get(__response__, 'dns_label'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        ipv4cidr_blocks=pulumi.get(__response__, 'ipv4cidr_blocks'),
         ipv6cidr_block=pulumi.get(__response__, 'ipv6cidr_block'),
         ipv6cidr_blocks=pulumi.get(__response__, 'ipv6cidr_blocks'),
         ipv6virtual_router_ip=pulumi.get(__response__, 'ipv6virtual_router_ip'),

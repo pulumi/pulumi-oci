@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Management Station Refresh Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Refreshes the list of software sources mirrored by the management station.
-//
 // ## Example Usage
 //
 // ```go

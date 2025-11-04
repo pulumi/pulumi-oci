@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Compliance Policy Rule resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a compliance policy rule.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
- * 
- * Creates a new product license.
- * 
  * ## Example Usage
  * 
  * <pre>

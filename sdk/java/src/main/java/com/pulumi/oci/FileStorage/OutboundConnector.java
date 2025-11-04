@@ -20,29 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
- * 
- * Creates a new outbound connector in the specified compartment.
- * You can associate an outbound connector with a mount target only when
- * they exist in the same availability domain.
- * 
- * For information about access control and compartments, see
- * [Overview of the IAM
- * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
- * 
- * For information about availability domains, see [Regions and
- * Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
- * To get a list of availability domains, use the
- * `ListAvailabilityDomains` operation in the Identity and Access
- * Management Service API.
- * 
- * All Oracle Cloud Infrastructure Services resources, including
- * outbound connectors, get an Oracle-assigned, unique ID called an
- * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
- * When you create a resource, you can find its OCID in the response.
- * You can also retrieve a resource&#39;s OCID by using a List API operation on that resource
- * type, or by viewing the resource in the Console.
- * 
  * ## Example Usage
  * 
  * <pre>

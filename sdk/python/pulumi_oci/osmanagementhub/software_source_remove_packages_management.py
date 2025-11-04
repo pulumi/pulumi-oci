@@ -120,14 +120,6 @@ class SoftwareSourceRemovePackagesManagement(pulumi.CustomResource):
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes packages from a software source. This operation can only be done for custom software sources that are not created using filters.
-        Packages can be of the format:
-          * name (for example: git). This removes all versions of the package.
-          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
-          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
-
         ## Example Usage
 
         ```python
@@ -163,14 +155,6 @@ class SoftwareSourceRemovePackagesManagement(pulumi.CustomResource):
                  args: SoftwareSourceRemovePackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes packages from a software source. This operation can only be done for custom software sources that are not created using filters.
-        Packages can be of the format:
-          * name (for example: git). This removes all versions of the package.
-          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
-          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
-
         ## Example Usage
 
         ```python

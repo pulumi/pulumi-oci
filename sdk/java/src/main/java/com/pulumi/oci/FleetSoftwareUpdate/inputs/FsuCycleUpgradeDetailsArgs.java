@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,6 +34,36 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    @Import(name="isIgnorePostUpgradeErrors")
+    private @Nullable Output<Boolean> isIgnorePostUpgradeErrors;
+
+    /**
+     * @return (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    public Optional<Output<Boolean>> isIgnorePostUpgradeErrors() {
+        return Optional.ofNullable(this.isIgnorePostUpgradeErrors);
+    }
+
+    /**
+     * (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    @Import(name="isIgnorePrerequisites")
+    private @Nullable Output<Boolean> isIgnorePrerequisites;
+
+    /**
+     * @return (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    public Optional<Output<Boolean>> isIgnorePrerequisites() {
+        return Optional.ofNullable(this.isIgnorePrerequisites);
+    }
+
+    /**
      * (Updatable) Enables or disables the recompilation of invalid objects.
      * 
      */
@@ -50,9 +81,6 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
     /**
      * (Updatable) Enables or disables time zone upgrade.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isTimeZoneUpgrade")
     private @Nullable Output<Boolean> isTimeZoneUpgrade;
@@ -60,20 +88,41 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
     /**
      * @return (Updatable) Enables or disables time zone upgrade.
      * 
+     */
+    public Optional<Output<Boolean>> isTimeZoneUpgrade() {
+        return Optional.ofNullable(this.isTimeZoneUpgrade);
+    }
+
+    /**
+     * (Updatable) Service drain timeout specified in seconds.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Boolean>> isTimeZoneUpgrade() {
-        return Optional.ofNullable(this.isTimeZoneUpgrade);
+    @Import(name="maxDrainTimeoutInSeconds")
+    private @Nullable Output<Integer> maxDrainTimeoutInSeconds;
+
+    /**
+     * @return (Updatable) Service drain timeout specified in seconds.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> maxDrainTimeoutInSeconds() {
+        return Optional.ofNullable(this.maxDrainTimeoutInSeconds);
     }
 
     private FsuCycleUpgradeDetailsArgs() {}
 
     private FsuCycleUpgradeDetailsArgs(FsuCycleUpgradeDetailsArgs $) {
         this.collectionType = $.collectionType;
+        this.isIgnorePostUpgradeErrors = $.isIgnorePostUpgradeErrors;
+        this.isIgnorePrerequisites = $.isIgnorePrerequisites;
         this.isRecompileInvalidObjects = $.isRecompileInvalidObjects;
         this.isTimeZoneUpgrade = $.isTimeZoneUpgrade;
+        this.maxDrainTimeoutInSeconds = $.maxDrainTimeoutInSeconds;
     }
 
     public static Builder builder() {
@@ -116,6 +165,48 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param isIgnorePostUpgradeErrors (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIgnorePostUpgradeErrors(@Nullable Output<Boolean> isIgnorePostUpgradeErrors) {
+            $.isIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            return this;
+        }
+
+        /**
+         * @param isIgnorePostUpgradeErrors (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIgnorePostUpgradeErrors(Boolean isIgnorePostUpgradeErrors) {
+            return isIgnorePostUpgradeErrors(Output.of(isIgnorePostUpgradeErrors));
+        }
+
+        /**
+         * @param isIgnorePrerequisites (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIgnorePrerequisites(@Nullable Output<Boolean> isIgnorePrerequisites) {
+            $.isIgnorePrerequisites = isIgnorePrerequisites;
+            return this;
+        }
+
+        /**
+         * @param isIgnorePrerequisites (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIgnorePrerequisites(Boolean isIgnorePrerequisites) {
+            return isIgnorePrerequisites(Output.of(isIgnorePrerequisites));
+        }
+
+        /**
          * @param isRecompileInvalidObjects (Updatable) Enables or disables the recompilation of invalid objects.
          * 
          * @return builder
@@ -139,9 +230,6 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
         /**
          * @param isTimeZoneUpgrade (Updatable) Enables or disables time zone upgrade.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -153,14 +241,38 @@ public final class FsuCycleUpgradeDetailsArgs extends com.pulumi.resources.Resou
         /**
          * @param isTimeZoneUpgrade (Updatable) Enables or disables time zone upgrade.
          * 
+         * @return builder
+         * 
+         */
+        public Builder isTimeZoneUpgrade(Boolean isTimeZoneUpgrade) {
+            return isTimeZoneUpgrade(Output.of(isTimeZoneUpgrade));
+        }
+
+        /**
+         * @param maxDrainTimeoutInSeconds (Updatable) Service drain timeout specified in seconds.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder isTimeZoneUpgrade(Boolean isTimeZoneUpgrade) {
-            return isTimeZoneUpgrade(Output.of(isTimeZoneUpgrade));
+        public Builder maxDrainTimeoutInSeconds(@Nullable Output<Integer> maxDrainTimeoutInSeconds) {
+            $.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
+            return this;
+        }
+
+        /**
+         * @param maxDrainTimeoutInSeconds (Updatable) Service drain timeout specified in seconds.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDrainTimeoutInSeconds(Integer maxDrainTimeoutInSeconds) {
+            return maxDrainTimeoutInSeconds(Output.of(maxDrainTimeoutInSeconds));
         }
 
         public FsuCycleUpgradeDetailsArgs build() {

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
-//
-// Creates a new subscriber.
-//
 // ## Example Usage
 //
 // ```go

@@ -13,18 +13,22 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['EsxiHostArgs', 'EsxiHost']
 
 @pulumi.input_type
 class EsxiHostArgs:
     def __init__(__self__, *,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  current_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -42,7 +46,7 @@ class EsxiHostArgs:
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
                
                If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
                
@@ -59,6 +63,8 @@ class EsxiHostArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if attach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if billing_donor_host_id is not None:
             warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
@@ -77,6 +83,8 @@ class EsxiHostArgs:
             pulumi.set(__self__, "current_sku", current_sku)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if detach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if esxi_software_version is not None:
@@ -107,6 +115,15 @@ class EsxiHostArgs:
             pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
         if sddc_id is not None:
             pulumi.set(__self__, "sddc_id", sddc_id)
+
+    @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @attach_datastore_cluster_ids.setter
+    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="billingDonorHostId")
@@ -183,10 +200,19 @@ class EsxiHostArgs:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @detach_datastore_cluster_ids.setter
+    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "detach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
         If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
 
@@ -303,6 +329,7 @@ class EsxiHostArgs:
 @pulumi.input_type
 class _EsxiHostState:
     def __init__(__self__, *,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  billing_contract_end_date: Optional[pulumi.Input[_builtins.str]] = None,
                  billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -312,7 +339,10 @@ class _EsxiHostState:
                  compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  current_commitment: Optional[pulumi.Input[_builtins.str]] = None,
                  current_sku: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -344,8 +374,10 @@ class _EsxiHostState:
         :param pulumi.Input[_builtins.str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[_builtins.str] current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
+        :param pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]] datastore_attachments: List of DatastoreAttachment objects containing information about attachment details
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
                
                If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
                
@@ -373,6 +405,8 @@ class _EsxiHostState:
         :param pulumi.Input[_builtins.str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param pulumi.Input[_builtins.str] vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
+        if attach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if billing_contract_end_date is not None:
             pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
         if billing_donor_host_id is not None:
@@ -397,8 +431,14 @@ class _EsxiHostState:
             pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
         if current_sku is not None:
             pulumi.set(__self__, "current_sku", current_sku)
+        if datastore_attachments is not None:
+            pulumi.set(__self__, "datastore_attachments", datastore_attachments)
+        if datastore_cluster_ids is not None:
+            pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if detach_datastore_cluster_ids is not None:
+            pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if esxi_software_version is not None:
@@ -451,6 +491,15 @@ class _EsxiHostState:
             pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
         if vmware_software_version is not None:
             pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+
+    @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
+
+    @attach_datastore_cluster_ids.setter
+    def attach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attach_datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="billingContractEndDate")
@@ -563,6 +612,30 @@ class _EsxiHostState:
         pulumi.set(self, "current_sku", value)
 
     @_builtins.property
+    @pulumi.getter(name="datastoreAttachments")
+    def datastore_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]:
+        """
+        List of DatastoreAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "datastore_attachments")
+
+    @datastore_attachments.setter
+    def datastore_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EsxiHostDatastoreAttachmentArgs']]]]):
+        pulumi.set(self, "datastore_attachments", value)
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -575,10 +648,19 @@ class _EsxiHostState:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @detach_datastore_cluster_ids.setter
+    def detach_datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "detach_datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
         If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
 
@@ -830,12 +912,14 @@ class EsxiHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  current_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -863,7 +947,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
                
                If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
                
@@ -910,12 +994,14 @@ class EsxiHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  current_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -934,12 +1020,14 @@ class EsxiHost(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EsxiHostArgs.__new__(EsxiHostArgs)
 
+            __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
             __props__.__dict__["billing_donor_host_id"] = billing_donor_host_id
             __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
             __props__.__dict__["cluster_id"] = cluster_id
             __props__.__dict__["compute_availability_domain"] = compute_availability_domain
             __props__.__dict__["current_sku"] = current_sku
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["detach_datastore_cluster_ids"] = detach_datastore_cluster_ids
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["esxi_software_version"] = esxi_software_version
             __props__.__dict__["failed_esxi_host_id"] = failed_esxi_host_id
@@ -953,6 +1041,8 @@ class EsxiHost(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["compute_instance_id"] = None
             __props__.__dict__["current_commitment"] = None
+            __props__.__dict__["datastore_attachments"] = None
+            __props__.__dict__["datastore_cluster_ids"] = None
             __props__.__dict__["grace_period_end_date"] = None
             __props__.__dict__["is_billing_continuation_in_progress"] = None
             __props__.__dict__["is_billing_swapping_in_progress"] = None
@@ -974,6 +1064,7 @@ class EsxiHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             billing_contract_end_date: Optional[pulumi.Input[_builtins.str]] = None,
             billing_donor_host_id: Optional[pulumi.Input[_builtins.str]] = None,
             capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -983,7 +1074,10 @@ class EsxiHost(pulumi.CustomResource):
             compute_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
             current_commitment: Optional[pulumi.Input[_builtins.str]] = None,
             current_sku: Optional[pulumi.Input[_builtins.str]] = None,
+            datastore_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EsxiHostDatastoreAttachmentArgs', 'EsxiHostDatastoreAttachmentArgsDict']]]]] = None,
+            datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             esxi_software_version: Optional[pulumi.Input[_builtins.str]] = None,
             failed_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1020,8 +1114,10 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[_builtins.str] current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EsxiHostDatastoreAttachmentArgs', 'EsxiHostDatastoreAttachmentArgsDict']]]] datastore_attachments: List of DatastoreAttachment objects containing information about attachment details
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
                
                If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
                
@@ -1053,6 +1149,7 @@ class EsxiHost(pulumi.CustomResource):
 
         __props__ = _EsxiHostState.__new__(_EsxiHostState)
 
+        __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
         __props__.__dict__["billing_contract_end_date"] = billing_contract_end_date
         __props__.__dict__["billing_donor_host_id"] = billing_donor_host_id
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
@@ -1062,7 +1159,10 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["compute_instance_id"] = compute_instance_id
         __props__.__dict__["current_commitment"] = current_commitment
         __props__.__dict__["current_sku"] = current_sku
+        __props__.__dict__["datastore_attachments"] = datastore_attachments
+        __props__.__dict__["datastore_cluster_ids"] = datastore_cluster_ids
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["detach_datastore_cluster_ids"] = detach_datastore_cluster_ids
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["esxi_software_version"] = esxi_software_version
         __props__.__dict__["failed_esxi_host_id"] = failed_esxi_host_id
@@ -1084,6 +1184,11 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["upgraded_replacement_esxi_host_id"] = upgraded_replacement_esxi_host_id
         __props__.__dict__["vmware_software_version"] = vmware_software_version
         return EsxiHost(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="billingContractEndDate")
@@ -1160,6 +1265,22 @@ class EsxiHost(pulumi.CustomResource):
         return pulumi.get(self, "current_sku")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreAttachments")
+    def datastore_attachments(self) -> pulumi.Output[Sequence['outputs.EsxiHostDatastoreAttachment']]:
+        """
+        List of DatastoreAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "datastore_attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
@@ -1168,10 +1289,15 @@ class EsxiHost(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
         If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
 

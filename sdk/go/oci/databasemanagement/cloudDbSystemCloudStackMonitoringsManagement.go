@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Db System Cloud Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Enables Stack Monitoring for all the components of the specified
-// cloud DB system (except databases).
-//
 // ## Example Usage
 //
 // ```go

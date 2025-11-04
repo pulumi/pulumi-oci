@@ -756,10 +756,6 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
                  time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-
-        Creates a PrivilegedApiRequest.
-
         ## Example Usage
 
         ```python
@@ -824,10 +820,6 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
                  args: ApiaccesscontrolPrivilegedApiRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-
-        Creates a PrivilegedApiRequest.
-
         ## Example Usage
 
         ```python

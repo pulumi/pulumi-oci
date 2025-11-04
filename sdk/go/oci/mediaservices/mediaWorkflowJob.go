@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-//
-// Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
-//
 // ## Example Usage
 //
 // ```go

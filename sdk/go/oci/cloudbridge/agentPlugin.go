@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
-//
-// Updates the plugin.
-//
 // ## Example Usage
 //
 // ```go

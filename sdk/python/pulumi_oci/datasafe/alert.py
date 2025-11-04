@@ -541,9 +541,7 @@ class Alert(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the status of the specified alert.
+        ## Example Usage
 
         ## Import
 
@@ -573,9 +571,7 @@ class Alert(pulumi.CustomResource):
                  args: AlertArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the status of the specified alert.
+        ## Example Usage
 
         ## Import
 

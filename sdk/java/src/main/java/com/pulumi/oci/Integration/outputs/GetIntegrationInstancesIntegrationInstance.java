@@ -93,7 +93,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private String instanceUrl;
     /**
-     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      * 
      */
     private String integrationInstanceType;
@@ -137,6 +137,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
+    /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    private Map<String,String> securityAttributes;
     /**
      * @return Shape
      * 
@@ -279,7 +287,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.instanceUrl;
     }
     /**
-     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
      * 
      */
     public String integrationInstanceType() {
@@ -340,6 +348,16 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     public List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections() {
         return this.privateEndpointOutboundConnections;
+    }
+    /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * @return Shape
@@ -421,6 +439,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private Integer messagePacks;
         private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
         private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
+        private Map<String,String> securityAttributes;
         private String shape;
         private String state;
         private String stateMessage;
@@ -458,6 +477,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.privateEndpointOutboundConnections = defaults.privateEndpointOutboundConnections;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
@@ -712,6 +732,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return privateEndpointOutboundConnections(List.of(privateEndpointOutboundConnections));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "shape");
@@ -789,6 +817,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.messagePacks = messagePacks;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.privateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.stateMessage = stateMessage;

@@ -19,11 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
- * 
- * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
- * and creates a new WorkRequest.
- * 
  * ## Example Usage
  * 
  * <pre>

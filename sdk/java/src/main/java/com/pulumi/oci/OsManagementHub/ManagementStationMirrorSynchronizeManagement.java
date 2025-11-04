@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Management Station Mirror Synchronize Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Synchronize the specified software source mirrors on the management station.
- * 
  * ## Example Usage
  * 
  * <pre>

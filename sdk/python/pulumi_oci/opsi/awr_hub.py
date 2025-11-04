@@ -363,11 +363,6 @@ class AwrHub(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a AWR hub resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
         ## Example Usage
 
         ```python
@@ -415,11 +410,6 @@ class AwrHub(pulumi.CustomResource):
                  args: AwrHubArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a AWR hub resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
         ## Example Usage
 
         ```python

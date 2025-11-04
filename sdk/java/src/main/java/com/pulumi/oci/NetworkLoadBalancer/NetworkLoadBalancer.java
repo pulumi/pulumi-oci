@@ -20,9 +20,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
- * 
- * Creates a network load balancer.
+ * ## Example Usage
  * 
  * ## Import
  * 

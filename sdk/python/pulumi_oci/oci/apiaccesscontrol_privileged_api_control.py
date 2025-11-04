@@ -527,10 +527,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Privileged Api Control resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-
-        Creates a PrivilegedApiControl.
-
         ## Example Usage
 
         ```python
@@ -592,10 +588,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  args: ApiaccesscontrolPrivilegedApiControlArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Privileged Api Control resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-
-        Creates a PrivilegedApiControl.
-
         ## Example Usage
 
         ```python

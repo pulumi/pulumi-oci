@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Creates a named credential.
-//
 // ## Example Usage
 //
 // ```go

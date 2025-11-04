@@ -77,7 +77,9 @@ type GetAutonomousVmClusterResourceUsageResult struct {
 	Id string `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
 	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	MemoryPerComputeUnitInGbs float64 `pulumi:"memoryPerComputeUnitInGbs"`
+	// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
@@ -190,7 +192,12 @@ func (o GetAutonomousVmClusterResourceUsageResultOutput) IsLocalBackupEnabled() 
 	return o.ApplyT(func(v GetAutonomousVmClusterResourceUsageResult) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
 }
 
-// The amount of memory (in GBs) to be enabled per each CPU core.
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+func (o GetAutonomousVmClusterResourceUsageResultOutput) MemoryPerComputeUnitInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAutonomousVmClusterResourceUsageResult) float64 { return v.MemoryPerComputeUnitInGbs }).(pulumi.Float64Output)
+}
+
+// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 func (o GetAutonomousVmClusterResourceUsageResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterResourceUsageResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }

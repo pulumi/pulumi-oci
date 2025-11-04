@@ -13,6 +13,4873 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id string `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote               bool `pulumi:"isRemote"`
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion string `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type string `pulumi:"type"`
+	// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+	VpcPassword string `pulumi:"vpcPassword"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+	VpcUser string `pulumi:"vpcUser"`
+}
+
+// GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput` via:
+//
+//	GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput
+	ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput
+}
+
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote               pulumi.BoolInput `pulumi:"isRemote"`
+	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type pulumi.StringInput `pulumi:"type"`
+	// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+	VpcPassword pulumi.StringInput `pulumi:"vpcPassword"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+	VpcUser pulumi.StringInput `pulumi:"vpcUser"`
+}
+
+func (GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return i.ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+// GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+	ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+}
+
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray []GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput
+
+func (GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the backup destination is cross-region or local region.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
+// The name of the remote region where the remote automatic incremental backups will be stored.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.RemoteRegion }).(pulumi.StringOutput)
+}
+
+// Type of the database backup destination.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcPassword }).(pulumi.StringOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcUser }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
+		return vs[0].([]GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+type GetDatabaseDatabaseEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword string `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetDatabaseDatabaseEncryptionKeyLocationDetailInput is an input type that accepts GetDatabaseDatabaseEncryptionKeyLocationDetailArgs and GetDatabaseDatabaseEncryptionKeyLocationDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseEncryptionKeyLocationDetailInput` via:
+//
+//	GetDatabaseDatabaseEncryptionKeyLocationDetailArgs{...}
+type GetDatabaseDatabaseEncryptionKeyLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailOutput
+	ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutputWithContext(context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailOutput
+}
+
+type GetDatabaseDatabaseEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetDatabaseDatabaseEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseEncryptionKeyLocationDetailArgs) ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailOutput {
+	return i.ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseEncryptionKeyLocationDetailArgs) ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+// GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput is an input type that accepts GetDatabaseDatabaseEncryptionKeyLocationDetailArray and GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseEncryptionKeyLocationDetailArray{ GetDatabaseDatabaseEncryptionKeyLocationDetailArgs{...} }
+type GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput
+	ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput
+}
+
+type GetDatabaseDatabaseEncryptionKeyLocationDetailArray []GetDatabaseDatabaseEncryptionKeyLocationDetailInput
+
+func (GetDatabaseDatabaseEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseEncryptionKeyLocationDetailArray) ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseEncryptionKeyLocationDetailArray) ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetDatabaseDatabaseEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the HSM password as you would in RDBMS for External HSM.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
+}
+
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) ToGetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseEncryptionKeyLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseEncryptionKeyLocationDetail {
+		return vs[0].([]GetDatabaseDatabaseEncryptionKeyLocationDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+type GetDatabaseDatabaseManagementConfig struct {
+	// The status of the Database Management service.
+	ManagementStatus string `pulumi:"managementStatus"`
+	// The Database Management type.
+	ManagementType string `pulumi:"managementType"`
+}
+
+// GetDatabaseDatabaseManagementConfigInput is an input type that accepts GetDatabaseDatabaseManagementConfigArgs and GetDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetDatabaseDatabaseManagementConfigArgs{...}
+type GetDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagementConfigOutput() GetDatabaseDatabaseManagementConfigOutput
+	ToGetDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetDatabaseDatabaseManagementConfigOutput
+}
+
+type GetDatabaseDatabaseManagementConfigArgs struct {
+	// The status of the Database Management service.
+	ManagementStatus pulumi.StringInput `pulumi:"managementStatus"`
+	// The Database Management type.
+	ManagementType pulumi.StringInput `pulumi:"managementType"`
+}
+
+func (GetDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagementConfigArgs) ToGetDatabaseDatabaseManagementConfigOutput() GetDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagementConfigArgs) ToGetDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetDatabaseDatabaseManagementConfigArray and GetDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetDatabaseDatabaseManagementConfigArray{ GetDatabaseDatabaseManagementConfigArgs{...} }
+type GetDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagementConfigArrayOutput() GetDatabaseDatabaseManagementConfigArrayOutput
+	ToGetDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetDatabaseDatabaseManagementConfigArray []GetDatabaseDatabaseManagementConfigInput
+
+func (GetDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagementConfigArray) ToGetDatabaseDatabaseManagementConfigArrayOutput() GetDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagementConfigArray) ToGetDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagementConfigOutput) ToGetDatabaseDatabaseManagementConfigOutput() GetDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagementConfigOutput) ToGetDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The status of the Database Management service.
+func (o GetDatabaseDatabaseManagementConfigOutput) ManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagementConfig) string { return v.ManagementStatus }).(pulumi.StringOutput)
+}
+
+// The Database Management type.
+func (o GetDatabaseDatabaseManagementConfigOutput) ManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagementConfig) string { return v.ManagementType }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagementConfigArrayOutput) ToGetDatabaseDatabaseManagementConfigArrayOutput() GetDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagementConfigArrayOutput) ToGetDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword string `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput is an input type that accepts GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs and GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput` via:
+//
+//	GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{...}
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput
+	ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput
+}
+
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return i.ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput)
+}
+
+// GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput is an input type that accepts GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray and GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray{ GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{...} }
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput
+	ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput
+}
+
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray []GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput
+
+func (GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+// Provide the HSM password as you would in RDBMS for External HSM.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
+}
+
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
+		return vs[0].([]GetDatabaseDatabaseSourceEncryptionKeyLocationDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput)
+}
+
+type GetDatabaseDatabaseStorageSizeDetail struct {
+	// The DATA storage size, in gigabytes, that is applicable for the database.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The RECO storage size, in gigabytes, that is applicable for the database.
+	RecoStorageSizeInGbs int `pulumi:"recoStorageSizeInGbs"`
+	// The REDO Log storage size, in gigabytes, that is applicable for the database.
+	RedoLogStorageSizeInGbs int `pulumi:"redoLogStorageSizeInGbs"`
+}
+
+// GetDatabaseDatabaseStorageSizeDetailInput is an input type that accepts GetDatabaseDatabaseStorageSizeDetailArgs and GetDatabaseDatabaseStorageSizeDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseStorageSizeDetailInput` via:
+//
+//	GetDatabaseDatabaseStorageSizeDetailArgs{...}
+type GetDatabaseDatabaseStorageSizeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseStorageSizeDetailOutput() GetDatabaseDatabaseStorageSizeDetailOutput
+	ToGetDatabaseDatabaseStorageSizeDetailOutputWithContext(context.Context) GetDatabaseDatabaseStorageSizeDetailOutput
+}
+
+type GetDatabaseDatabaseStorageSizeDetailArgs struct {
+	// The DATA storage size, in gigabytes, that is applicable for the database.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The RECO storage size, in gigabytes, that is applicable for the database.
+	RecoStorageSizeInGbs pulumi.IntInput `pulumi:"recoStorageSizeInGbs"`
+	// The REDO Log storage size, in gigabytes, that is applicable for the database.
+	RedoLogStorageSizeInGbs pulumi.IntInput `pulumi:"redoLogStorageSizeInGbs"`
+}
+
+func (GetDatabaseDatabaseStorageSizeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseStorageSizeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseStorageSizeDetailArgs) ToGetDatabaseDatabaseStorageSizeDetailOutput() GetDatabaseDatabaseStorageSizeDetailOutput {
+	return i.ToGetDatabaseDatabaseStorageSizeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseStorageSizeDetailArgs) ToGetDatabaseDatabaseStorageSizeDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseStorageSizeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseStorageSizeDetailOutput)
+}
+
+// GetDatabaseDatabaseStorageSizeDetailArrayInput is an input type that accepts GetDatabaseDatabaseStorageSizeDetailArray and GetDatabaseDatabaseStorageSizeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseStorageSizeDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseStorageSizeDetailArray{ GetDatabaseDatabaseStorageSizeDetailArgs{...} }
+type GetDatabaseDatabaseStorageSizeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseStorageSizeDetailArrayOutput() GetDatabaseDatabaseStorageSizeDetailArrayOutput
+	ToGetDatabaseDatabaseStorageSizeDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseStorageSizeDetailArrayOutput
+}
+
+type GetDatabaseDatabaseStorageSizeDetailArray []GetDatabaseDatabaseStorageSizeDetailInput
+
+func (GetDatabaseDatabaseStorageSizeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseStorageSizeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseStorageSizeDetailArray) ToGetDatabaseDatabaseStorageSizeDetailArrayOutput() GetDatabaseDatabaseStorageSizeDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseStorageSizeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseStorageSizeDetailArray) ToGetDatabaseDatabaseStorageSizeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseStorageSizeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseStorageSizeDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseStorageSizeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseStorageSizeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseStorageSizeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseStorageSizeDetailOutput) ToGetDatabaseDatabaseStorageSizeDetailOutput() GetDatabaseDatabaseStorageSizeDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseStorageSizeDetailOutput) ToGetDatabaseDatabaseStorageSizeDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseStorageSizeDetailOutput {
+	return o
+}
+
+// The DATA storage size, in gigabytes, that is applicable for the database.
+func (o GetDatabaseDatabaseStorageSizeDetailOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseStorageSizeDetail) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The RECO storage size, in gigabytes, that is applicable for the database.
+func (o GetDatabaseDatabaseStorageSizeDetailOutput) RecoStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseStorageSizeDetail) int { return v.RecoStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The REDO Log storage size, in gigabytes, that is applicable for the database.
+func (o GetDatabaseDatabaseStorageSizeDetailOutput) RedoLogStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseStorageSizeDetail) int { return v.RedoLogStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetDatabaseDatabaseStorageSizeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseStorageSizeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseStorageSizeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseStorageSizeDetailArrayOutput) ToGetDatabaseDatabaseStorageSizeDetailArrayOutput() GetDatabaseDatabaseStorageSizeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseStorageSizeDetailArrayOutput) ToGetDatabaseDatabaseStorageSizeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseStorageSizeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseStorageSizeDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseStorageSizeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseStorageSizeDetail {
+		return vs[0].([]GetDatabaseDatabaseStorageSizeDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseStorageSizeDetailOutput)
+}
+
+type GetDatabaseDbBackupConfig struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled bool `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow string `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay string `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow string `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy string `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails []GetDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays int `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup bool `pulumi:"runImmediateFullBackup"`
+}
+
+// GetDatabaseDbBackupConfigInput is an input type that accepts GetDatabaseDbBackupConfigArgs and GetDatabaseDbBackupConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseDbBackupConfigInput` via:
+//
+//	GetDatabaseDbBackupConfigArgs{...}
+type GetDatabaseDbBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDbBackupConfigOutput() GetDatabaseDbBackupConfigOutput
+	ToGetDatabaseDbBackupConfigOutputWithContext(context.Context) GetDatabaseDbBackupConfigOutput
+}
+
+type GetDatabaseDbBackupConfigArgs struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled pulumi.BoolInput `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow pulumi.StringInput `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay pulumi.StringInput `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow pulumi.StringInput `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy pulumi.StringInput `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays pulumi.IntInput `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup pulumi.BoolInput `pulumi:"runImmediateFullBackup"`
+}
+
+func (GetDatabaseDbBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDbBackupConfigArgs) ToGetDatabaseDbBackupConfigOutput() GetDatabaseDbBackupConfigOutput {
+	return i.ToGetDatabaseDbBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDbBackupConfigArgs) ToGetDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDbBackupConfigOutput)
+}
+
+// GetDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabaseDbBackupConfigArray and GetDatabaseDbBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDbBackupConfigArrayInput` via:
+//
+//	GetDatabaseDbBackupConfigArray{ GetDatabaseDbBackupConfigArgs{...} }
+type GetDatabaseDbBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDbBackupConfigArrayOutput() GetDatabaseDbBackupConfigArrayOutput
+	ToGetDatabaseDbBackupConfigArrayOutputWithContext(context.Context) GetDatabaseDbBackupConfigArrayOutput
+}
+
+type GetDatabaseDbBackupConfigArray []GetDatabaseDbBackupConfigInput
+
+func (GetDatabaseDbBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDbBackupConfigArray) ToGetDatabaseDbBackupConfigArrayOutput() GetDatabaseDbBackupConfigArrayOutput {
+	return i.ToGetDatabaseDbBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDbBackupConfigArray) ToGetDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDbBackupConfigArrayOutput)
+}
+
+type GetDatabaseDbBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDbBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDbBackupConfigOutput) ToGetDatabaseDbBackupConfigOutput() GetDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigOutput) ToGetDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigOutput {
+	return o
+}
+
+// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+func (o GetDatabaseDbBackupConfigOutput) AutoBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) bool { return v.AutoBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabaseDbBackupConfigOutput) AutoBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) string { return v.AutoBackupWindow }).(pulumi.StringOutput)
+}
+
+// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+func (o GetDatabaseDbBackupConfigOutput) AutoFullBackupDay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) string { return v.AutoFullBackupDay }).(pulumi.StringOutput)
+}
+
+// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
+}
+
+// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+func (o GetDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
+}
+
+// Backup destination details.
+func (o GetDatabaseDbBackupConfigOutput) BackupDestinationDetails() GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) []GetDatabaseDbBackupConfigBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+func (o GetDatabaseDbBackupConfigOutput) RecoveryWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) int { return v.RecoveryWindowInDays }).(pulumi.IntOutput)
+}
+
+// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+func (o GetDatabaseDbBackupConfigOutput) RunImmediateFullBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfig) bool { return v.RunImmediateFullBackup }).(pulumi.BoolOutput)
+}
+
+type GetDatabaseDbBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDbBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDbBackupConfigArrayOutput) ToGetDatabaseDbBackupConfigArrayOutput() GetDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigArrayOutput) ToGetDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseDbBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDbBackupConfig {
+		return vs[0].([]GetDatabaseDbBackupConfig)[vs[1].(int)]
+	}).(GetDatabaseDbBackupConfigOutput)
+}
+
+type GetDatabaseDbBackupConfigBackupDestinationDetail struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id string `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote               bool `pulumi:"isRemote"`
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion string `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type string `pulumi:"type"`
+	// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+	VpcPassword string `pulumi:"vpcPassword"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+	VpcUser string `pulumi:"vpcUser"`
+}
+
+// GetDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabaseDbBackupConfigBackupDestinationDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDbBackupConfigBackupDestinationDetailInput` via:
+//
+//	GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+type GetDatabaseDbBackupConfigBackupDestinationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDbBackupConfigBackupDestinationDetailOutput
+	ToGetDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailOutput
+}
+
+type GetDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote               pulumi.BoolInput `pulumi:"isRemote"`
+	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type pulumi.StringInput `pulumi:"type"`
+	// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+	VpcPassword pulumi.StringInput `pulumi:"vpcPassword"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+	VpcUser pulumi.StringInput `pulumi:"vpcUser"`
+}
+
+func (GetDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return i.ToGetDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+// GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
+//
+//	GetDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+type GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+	ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+}
+
+type GetDatabaseDbBackupConfigBackupDestinationDetailArray []GetDatabaseDbBackupConfigBackupDestinationDetailInput
+
+func (GetDatabaseDbBackupConfigBackupDestinationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return i.ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+type GetDatabaseDbBackupConfigBackupDestinationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDbBackupConfigBackupDestinationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the backup destination is cross-region or local region.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
+// The name of the remote region where the remote automatic incremental backups will be stored.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.RemoteRegion }).(pulumi.StringOutput)
+}
+
+// Type of the database backup destination.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcPassword }).(pulumi.StringOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcUser }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDbBackupConfigBackupDestinationDetail {
+		return vs[0].([]GetDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
+	}).(GetDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesFilterInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesFilterArgs and GetDatabaseMaintenanceRunHistoriesFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesFilterInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesFilterArgs{...}
+type GetDatabaseMaintenanceRunHistoriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput
+	ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArgs) ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArgs) ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesFilterOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesFilterArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesFilterArray and GetDatabaseMaintenanceRunHistoriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesFilterArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesFilterArray{ GetDatabaseMaintenanceRunHistoriesFilterArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArray []GetDatabaseMaintenanceRunHistoriesFilterInput
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArray) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArray) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesFilterArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesFilter {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesFilter)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesFilterOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory struct {
+	// The OCID of the current execution window.
+	CurrentExecutionWindow string `pulumi:"currentExecutionWindow"`
+	// List of database server history details.
+	DbServersHistoryDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail `pulumi:"dbServersHistoryDetails"`
+	// The list of granular maintenance history details.
+	GranularMaintenanceHistories []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory `pulumi:"granularMaintenanceHistories"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Details of a maintenance run.
+	MaintenanceRunDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail `pulumi:"maintenanceRunDetails"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs struct {
+	// The OCID of the current execution window.
+	CurrentExecutionWindow pulumi.StringInput `pulumi:"currentExecutionWindow"`
+	// List of database server history details.
+	DbServersHistoryDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput `pulumi:"dbServersHistoryDetails"`
+	// The list of granular maintenance history details.
+	GranularMaintenanceHistories GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput `pulumi:"granularMaintenanceHistories"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of a maintenance run.
+	MaintenanceRunDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput `pulumi:"maintenanceRunDetails"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return o
+}
+
+// The OCID of the current execution window.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) CurrentExecutionWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) string {
+		return v.CurrentExecutionWindow
+	}).(pulumi.StringOutput)
+}
+
+// List of database server history details.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) DbServersHistoryDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail {
+		return v.DbServersHistoryDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+// The list of granular maintenance history details.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) GranularMaintenanceHistories() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory {
+		return v.GranularMaintenanceHistories
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of a maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) MaintenanceRunDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
+		return v.MaintenanceRunDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) DbServerPatchingDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return v.DbServerPatchingDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) int {
+		return v.EstimatedPatchDuration
+	}).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingEnded
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory struct {
+	// The list of execution actions for this granular maintenance history.
+	ExecutionActions []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction `pulumi:"executionActions"`
+	// Details of an execution window.
+	ExecutionWindows []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow `pulumi:"executionWindows"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs struct {
+	// The list of execution actions for this granular maintenance history.
+	ExecutionActions GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput `pulumi:"executionActions"`
+	// Details of an execution window.
+	ExecutionWindows GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput `pulumi:"executionWindows"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return o
+}
+
+// The list of execution actions for this granular maintenance history.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ExecutionActions() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction {
+		return v.ExecutionActions
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput)
+}
+
+// Details of an execution window.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ExecutionWindows() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow {
+		return v.ExecutionWindows
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistory)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction struct {
+	// List of action members of this execution action.
+	ActionMembers []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams map[string]string `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType string `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder int `pulumi:"executionActionOrder"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+	ExecutionWindowId string `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// The state of the maintenance run history.
+	State string `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs struct {
+	// List of action members of this execution action.
+	ActionMembers GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams pulumi.StringMapInput `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder pulumi.IntInput `pulumi:"executionActionOrder"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+	ExecutionWindowId pulumi.StringInput `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// The state of the maintenance run history.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return o
+}
+
+// List of action members of this execution action.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionMembers() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember {
+		return v.ActionMembers
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput)
+}
+
+// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionParams() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.ActionParams
+	}).(pulumi.StringMapOutput)
+}
+
+// The action type of the execution action being performed
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.ActionType
+	}).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The priority order of the execution action.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ExecutionActionOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.ExecutionActionOrder
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ExecutionWindowId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.ExecutionWindowId
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.LifecycleSubstate
+	}).(pulumi.StringOutput)
+}
+
+// The state of the maintenance run history.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the execution window was created.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution window was updated.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember struct {
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId string `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder int `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status string `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs struct {
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status pulumi.StringInput `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return o
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) string {
+		return v.MemberId
+	}).(pulumi.StringOutput)
+}
+
+// The priority order of the execution action member.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.MemberOrder
+	}).(pulumi.IntOutput)
+}
+
+// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+// * SCHEDULED
+// * IN_PROGRESS
+// * FAILED
+// * CANCELED
+// * DURATION_EXCEEDED
+// * RESCHEDULED
+// * SUCCEEDED
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+	ExecutionResourceId string `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration bool `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// The state of the maintenance run history.
+	State string `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins int `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+	ExecutionResourceId pulumi.StringInput `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration pulumi.BoolInput `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// The state of the maintenance run history.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins pulumi.IntInput `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ExecutionResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.ExecutionResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) IsEnforcedDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) bool {
+		return v.IsEnforcedDuration
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.LifecycleSubstate
+	}).(pulumi.StringOutput)
+}
+
+// The state of the maintenance run history.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the execution window was created.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution window was updated.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDurationInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.WindowDurationInMins
+	}).(pulumi.IntOutput)
+}
+
+// The execution window is of PLANNED or UNPLANNED type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.WindowType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins int `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime string `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular bool `pulumi:"isMaintenanceRunGranular"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount int `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+	PatchId string `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime string `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime string `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The state of the maintenance run history.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion string `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// The type of the target resource.
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion string `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins pulumi.IntInput `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime pulumi.StringInput `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolInput `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular pulumi.BoolInput `pulumi:"isMaintenanceRunGranular"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime pulumi.StringInput `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime pulumi.StringInput `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
+	// The state of the maintenance run history.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion pulumi.StringInput `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	// The type of the target resource.
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion pulumi.StringInput `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CurrentCustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// The name of the current infrastruture component that is getting patched.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentPatchingComponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.CurrentPatchingComponent
+	}).(pulumi.StringOutput)
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.DatabaseSoftwareImageId
+	}).(pulumi.StringOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated start time of the next infrastruture component patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.EstimatedComponentPatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedPatchingTimes() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return v.EstimatedPatchingTimes
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsDstFileUpdateEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// If `FALSE`, the maintenance run doesn't support granular maintenance.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) IsMaintenanceRunGranular() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsMaintenanceRunGranular
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Maintenance sub-type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceSubtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.MaintenanceSubtype
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.MaintenanceType
+	}).(pulumi.StringOutput)
+}
+
+// Contain the patch failure count.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchFailureCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.PatchFailureCount
+	}).(pulumi.IntOutput)
+}
+
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PeerMaintenanceRunId
+	}).(pulumi.StringOutput)
+}
+
+// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) []string {
+		return v.PeerMaintenanceRunIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The state of the maintenance run history.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The target software version for the database server patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetDbServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The target resource ID.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The type of the target resource.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetResourceType
+	}).(pulumi.StringOutput)
+}
+
+// The target Cell version that is to be patched to.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetStorageServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedDbServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedNetworkSwitchesPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedStorageServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.TotalEstimatedPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray{ GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) DbServerPatchingDetails() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return v.DbServerPatchingDetails
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{ GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) int {
+		return v.EstimatedPatchDuration
+	}).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingEnded
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory struct {
+	// The list of execution actions for this granular maintenance history.
+	ExecutionActions []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction `pulumi:"executionActions"`
+	// Details of an execution window.
+	ExecutionWindows []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow `pulumi:"executionWindows"`
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs{...}
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs struct {
+	// The list of execution actions for this granular maintenance history.
+	ExecutionActions GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput `pulumi:"executionActions"`
+	// Details of an execution window.
+	ExecutionWindows GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput `pulumi:"executionWindows"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray{ GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs{...} }
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryInput
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return o
+}
+
+// The list of execution actions for this granular maintenance history.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ExecutionActions() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory) []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction {
+		return v.ExecutionActions
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput)
+}
+
+// Details of an execution window.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput) ExecutionWindows() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory) []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow {
+		return v.ExecutionWindows
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction struct {
+	// List of action members of this execution action.
+	ActionMembers []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams map[string]string `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType string `pulumi:"actionType"`
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder int `pulumi:"executionActionOrder"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+	ExecutionWindowId string `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State string `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{...}
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs struct {
+	// List of action members of this execution action.
+	ActionMembers GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams pulumi.StringMapInput `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder pulumi.IntInput `pulumi:"executionActionOrder"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+	ExecutionWindowId pulumi.StringInput `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray{ GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{...} }
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return o
+}
+
+// List of action members of this execution action.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionMembers() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember {
+		return v.ActionMembers
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput)
+}
+
+// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionParams() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.ActionParams
+	}).(pulumi.StringMapOutput)
+}
+
+// The action type of the execution action being performed
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.ActionType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The priority order of the execution action.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ExecutionActionOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.ExecutionActionOrder
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) ExecutionWindowId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.ExecutionWindowId
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.LifecycleSubstate
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the execution window was created.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution window was updated.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionAction)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember struct {
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId string `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder int `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status string `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{...}
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs struct {
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status pulumi.StringInput `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray{ GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{...} }
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return o
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) string {
+		return v.MemberId
+	}).(pulumi.StringOutput)
+}
+
+// The priority order of the execution action member.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.MemberOrder
+	}).(pulumi.IntOutput)
+}
+
+// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+// * SCHEDULED
+// * IN_PROGRESS
+// * FAILED
+// * CANCELED
+// * DURATION_EXCEEDED
+// * RESCHEDULED
+// * SUCCEEDED
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMember)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow struct {
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+	ExecutionResourceId string `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration bool `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State string `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins int `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{...}
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs struct {
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+	ExecutionResourceId pulumi.StringInput `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration pulumi.BoolInput `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins pulumi.IntInput `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray and GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray{ GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{...} }
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return o
+}
+
+// The OCID of the compartment.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) ExecutionResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.ExecutionResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) IsEnforcedDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) bool {
+		return v.IsEnforcedDuration
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.LifecycleSubstate
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the execution window was created.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution window was updated.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.TotalTimeTakenInMins
+	}).(pulumi.IntOutput)
+}
+
+// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDurationInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
+		return v.WindowDurationInMins
+	}).(pulumi.IntOutput)
+}
+
+// The execution window is of PLANNED or UNPLANNED type.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.WindowType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) ToGetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail struct {
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins int `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime string `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular bool `pulumi:"isMaintenanceRunGranular"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
+	// Maintenance type.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount int `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+	PatchId string `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime string `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime string `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion string `pulumi:"targetDbServerVersion"`
+	// The ID of the target resource on which the maintenance run occurs.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// The type of the target resource on which the maintenance run occurs.
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion string `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins pulumi.IntInput `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime pulumi.StringInput `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolInput `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular pulumi.BoolInput `pulumi:"isMaintenanceRunGranular"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
+	// Maintenance type.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime pulumi.StringInput `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime pulumi.StringInput `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion pulumi.StringInput `pulumi:"targetDbServerVersion"`
+	// The ID of the target resource on which the maintenance run occurs.
+	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	// The type of the target resource on which the maintenance run occurs.
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion pulumi.StringInput `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray{ GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+// The OCID of the compartment.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CurrentCustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// The name of the current infrastruture component that is getting patched.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentPatchingComponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.CurrentPatchingComponent }).(pulumi.StringOutput)
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated start time of the next infrastruture component patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.EstimatedComponentPatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedPatchingTimes() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return v.EstimatedPatchingTimes
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
+}
+
+// If `FALSE`, the maintenance run doesn't support granular maintenance.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) IsMaintenanceRunGranular() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) bool { return v.IsMaintenanceRunGranular }).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Maintenance sub-type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceSubtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.MaintenanceSubtype }).(pulumi.StringOutput)
+}
+
+// Maintenance type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.MaintenanceType }).(pulumi.StringOutput)
+}
+
+// Contain the patch failure count.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchFailureCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.PatchFailureCount }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingEndTime }).(pulumi.StringOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingStartTime }).(pulumi.StringOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingStatus }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) []string { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
+}
+
+// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target software version for the database server patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The ID of the target resource on which the maintenance run occurs.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetResourceId }).(pulumi.StringOutput)
+}
+
+// The type of the target resource on which the maintenance run occurs.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetResourceType }).(pulumi.StringOutput)
+}
+
+// The target Cell version that is to be patched to.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetStorageServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...}
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{ GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...} }
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedDbServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedNetworkSwitchesPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedStorageServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.TotalEstimatedPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabasePdbConversionHistoryEntriesFilterInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesFilterArgs and GetDatabasePdbConversionHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesFilterInput` via:
+//
+//	GetDatabasePdbConversionHistoryEntriesFilterArgs{...}
+type GetDatabasePdbConversionHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabasePdbConversionHistoryEntriesFilterOutput() GetDatabasePdbConversionHistoryEntriesFilterOutput
+	ToGetDatabasePdbConversionHistoryEntriesFilterOutputWithContext(context.Context) GetDatabasePdbConversionHistoryEntriesFilterOutput
+}
+
+type GetDatabasePdbConversionHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabasePdbConversionHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesFilterArgs) ToGetDatabasePdbConversionHistoryEntriesFilterOutput() GetDatabasePdbConversionHistoryEntriesFilterOutput {
+	return i.ToGetDatabasePdbConversionHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesFilterArgs) ToGetDatabasePdbConversionHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasePdbConversionHistoryEntriesFilterOutput)
+}
+
+// GetDatabasePdbConversionHistoryEntriesFilterArrayInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesFilterArray and GetDatabasePdbConversionHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesFilterArrayInput` via:
+//
+//	GetDatabasePdbConversionHistoryEntriesFilterArray{ GetDatabasePdbConversionHistoryEntriesFilterArgs{...} }
+type GetDatabasePdbConversionHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutput() GetDatabasePdbConversionHistoryEntriesFilterArrayOutput
+	ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDatabasePdbConversionHistoryEntriesFilterArrayOutput
+}
+
+type GetDatabasePdbConversionHistoryEntriesFilterArray []GetDatabasePdbConversionHistoryEntriesFilterInput
+
+func (GetDatabasePdbConversionHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasePdbConversionHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesFilterArray) ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutput() GetDatabasePdbConversionHistoryEntriesFilterArrayOutput {
+	return i.ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesFilterArray) ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasePdbConversionHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterOutput) ToGetDatabasePdbConversionHistoryEntriesFilterOutput() GetDatabasePdbConversionHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterOutput) ToGetDatabasePdbConversionHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasePdbConversionHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasePdbConversionHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterArrayOutput) ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutput() GetDatabasePdbConversionHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterArrayOutput) ToGetDatabasePdbConversionHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDatabasePdbConversionHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasePdbConversionHistoryEntriesFilter {
+		return vs[0].([]GetDatabasePdbConversionHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDatabasePdbConversionHistoryEntriesFilterOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry struct {
+	// The operations used to convert a non-container database to a pluggable database.
+	// * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+	// * Use `CONVERT` to convert a non-container database into a pluggable database.
+	// * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+	// * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+	Action string `pulumi:"action"`
+	// Additional container database parameter.
+	AdditionalCdbParams string `pulumi:"additionalCdbParams"`
+	// The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	CdbName string `pulumi:"cdbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state for the conversion operation.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	SourceDatabaseId string `pulumi:"sourceDatabaseId"`
+	// A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
+	State string `pulumi:"state"`
+	// The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+	// * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
+	Target string `pulumi:"target"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	TargetDatabaseId string `pulumi:"targetDatabaseId"`
+	// The date and time when the database conversion operation ended.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the database conversion operation started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs and GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput values.
+// You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput` via:
+//
+//	GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...}
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput
+	ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutputWithContext(context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput
+}
+
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs struct {
+	// The operations used to convert a non-container database to a pluggable database.
+	// * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+	// * Use `CONVERT` to convert a non-container database into a pluggable database.
+	// * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+	// * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Additional container database parameter.
+	AdditionalCdbParams pulumi.StringInput `pulumi:"additionalCdbParams"`
+	// The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+	CdbName pulumi.StringInput `pulumi:"cdbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state for the conversion operation.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	SourceDatabaseId pulumi.StringInput `pulumi:"sourceDatabaseId"`
+	// A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+	// * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
+	Target pulumi.StringInput `pulumi:"target"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	TargetDatabaseId pulumi.StringInput `pulumi:"targetDatabaseId"`
+	// The date and time when the database conversion operation ended.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the database conversion operation started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput {
+	return i.ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput)
+}
+
+// GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray and GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput` via:
+//
+//	GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray{ GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...} }
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput
+	ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutputWithContext(context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput
+}
+
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray []GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput
+
+func (GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput {
+	return i.ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput {
+	return o
+}
+
+// The operations used to convert a non-container database to a pluggable database.
+// * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+// * Use `CONVERT` to convert a non-container database into a pluggable database.
+// * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+// * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Additional container database parameter.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) AdditionalCdbParams() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string {
+		return v.AdditionalCdbParams
+	}).(pulumi.StringOutput)
+}
+
+// The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) CdbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.CdbName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state for the conversion operation.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) SourceDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string {
+		return v.SourceDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+// * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.Target }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) TargetDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string {
+		return v.TargetDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the database conversion operation ended.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the database conversion operation started.
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput() GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput) ToGetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry {
+		return vs[0].([]GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry)[vs[1].(int)]
+	}).(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput)
+}
+
 type GetDatabaseSoftwareImagesDatabaseSoftwareImage struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -849,7 +5716,7 @@ type GetDatabasesDatabase struct {
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyMigration bool   `pulumi:"kmsKeyMigration"`
 	KmsKeyRotation  int    `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds int `pulumi:"lastBackupDurationInSeconds"`
@@ -938,7 +5805,7 @@ type GetDatabasesDatabaseArgs struct {
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyMigration pulumi.BoolInput   `pulumi:"kmsKeyMigration"`
 	KmsKeyRotation  pulumi.IntInput    `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds pulumi.IntInput `pulumi:"lastBackupDurationInSeconds"`
@@ -1143,7 +6010,7 @@ func (o GetDatabasesDatabaseOutput) KmsKeyRotation() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) int { return v.KmsKeyRotation }).(pulumi.IntOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o GetDatabasesDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -1670,7 +6537,7 @@ type GetDatabasesDatabaseDatabase struct {
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
@@ -1734,7 +6601,7 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
@@ -1886,7 +6753,7 @@ func (o GetDatabasesDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o GetDatabasesDatabaseDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -1982,7 +6849,7 @@ type GetDatabasesDatabaseDatabaseDbBackupConfig struct {
 	AutoFullBackupDay string `pulumi:"autoFullBackupDay"`
 	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
 	AutoFullBackupWindow string `pulumi:"autoFullBackupWindow"`
-	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 	BackupDeletionPolicy string `pulumi:"backupDeletionPolicy"`
 	// Backup destination details.
 	BackupDestinationDetails []GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
@@ -2012,7 +6879,7 @@ type GetDatabasesDatabaseDatabaseDbBackupConfigArgs struct {
 	AutoFullBackupDay pulumi.StringInput `pulumi:"autoFullBackupDay"`
 	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
 	AutoFullBackupWindow pulumi.StringInput `pulumi:"autoFullBackupWindow"`
-	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 	BackupDeletionPolicy pulumi.StringInput `pulumi:"backupDeletionPolicy"`
 	// Backup destination details.
 	BackupDestinationDetails GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
@@ -2093,7 +6960,7 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigOutput) AutoFullBackupWindow()
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
 }
 
-// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 func (o GetDatabasesDatabaseDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
 }
@@ -2136,13 +7003,17 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigArrayOutput) Index(i pulumi.In
 }
 
 type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	Id string `pulumi:"id"`
-	// Indicates whether the backup destination is cross-region or local region.
+	// Indicates whether the backup destination is cross-region or local.
 	IsRemote bool `pulumi:"isRemote"`
-	// The name of the remote region where the remote automatic incremental backups will be stored.
+	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion string `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
 	Type        string `pulumi:"type"`
@@ -2162,13 +7033,17 @@ type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput inte
 }
 
 type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Indicates whether the backup destination is cross-region or local region.
+	// Indicates whether the backup destination is cross-region or local.
 	IsRemote pulumi.BoolInput `pulumi:"isRemote"`
-	// The name of the remote region where the remote automatic incremental backups will be stored.
+	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
 	Type        pulumi.StringInput `pulumi:"type"`
@@ -2227,6 +7102,13 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput)
 	return o
 }
 
+// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string {
@@ -2239,12 +7121,19 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput)
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether the backup destination is cross-region or local region.
+// Indicates whether the backup destination is cross-region or local.
 func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
 }
 
-// The name of the remote region where the remote automatic incremental backups will be stored.
+// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsRetentionLockEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail) string {
 		return v.RemoteRegion
@@ -2735,7 +7624,7 @@ type GetDatabasesDatabaseDbBackupConfig struct {
 	AutoFullBackupDay string `pulumi:"autoFullBackupDay"`
 	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
 	AutoFullBackupWindow string `pulumi:"autoFullBackupWindow"`
-	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 	BackupDeletionPolicy string `pulumi:"backupDeletionPolicy"`
 	// Backup destination details.
 	BackupDestinationDetails []GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
@@ -2765,7 +7654,7 @@ type GetDatabasesDatabaseDbBackupConfigArgs struct {
 	AutoFullBackupDay pulumi.StringInput `pulumi:"autoFullBackupDay"`
 	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
 	AutoFullBackupWindow pulumi.StringInput `pulumi:"autoFullBackupWindow"`
-	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 	BackupDeletionPolicy pulumi.StringInput `pulumi:"backupDeletionPolicy"`
 	// Backup destination details.
 	BackupDestinationDetails GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
@@ -2846,7 +7735,7 @@ func (o GetDatabasesDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
 }
 
-// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 func (o GetDatabasesDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
 }
@@ -2889,13 +7778,17 @@ func (o GetDatabasesDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	Id string `pulumi:"id"`
-	// Indicates whether the backup destination is cross-region or local region.
+	// Indicates whether the backup destination is cross-region or local.
 	IsRemote bool `pulumi:"isRemote"`
-	// The name of the remote region where the remote automatic incremental backups will be stored.
+	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion string `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
 	Type        string `pulumi:"type"`
@@ -2915,13 +7808,17 @@ type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 }
 
 type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Indicates whether the backup destination is cross-region or local region.
+	// Indicates whether the backup destination is cross-region or local.
 	IsRemote pulumi.BoolInput `pulumi:"isRemote"`
-	// The name of the remote region where the remote automatic incremental backups will be stored.
+	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
 	Type        pulumi.StringInput `pulumi:"type"`
@@ -2980,6 +7877,13 @@ func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDa
 	return o
 }
 
+// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
@@ -2990,12 +7894,19 @@ func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pu
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether the backup destination is cross-region or local region.
+// Indicates whether the backup destination is cross-region or local.
 func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
 }
 
-// The name of the remote region where the remote automatic incremental backups will be stored.
+// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsRetentionLockEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.RemoteRegion }).(pulumi.StringOutput)
 }
@@ -3796,14 +8707,16 @@ func (o GetDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
-	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id           string `pulumi:"id"`
-	IsRemote     bool   `pulumi:"isRemote"`
-	RemoteRegion string `pulumi:"remoteRegion"`
-	Type         string `pulumi:"type"`
-	VpcPassword  string `pulumi:"vpcPassword"`
-	VpcUser      string `pulumi:"vpcUser"`
+	Id                     string `pulumi:"id"`
+	IsRemote               bool   `pulumi:"isRemote"`
+	IsRetentionLockEnabled bool   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           string `pulumi:"remoteRegion"`
+	Type                   string `pulumi:"type"`
+	VpcPassword            string `pulumi:"vpcPassword"`
+	VpcUser                string `pulumi:"vpcUser"`
 }
 
 // GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -3818,14 +8731,16 @@ type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 }
 
 type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
-	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id           pulumi.StringInput `pulumi:"id"`
-	IsRemote     pulumi.BoolInput   `pulumi:"isRemote"`
-	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
-	Type         pulumi.StringInput `pulumi:"type"`
-	VpcPassword  pulumi.StringInput `pulumi:"vpcPassword"`
-	VpcUser      pulumi.StringInput `pulumi:"vpcUser"`
+	Id                     pulumi.StringInput `pulumi:"id"`
+	IsRemote               pulumi.BoolInput   `pulumi:"isRemote"`
+	IsRetentionLockEnabled pulumi.BoolInput   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           pulumi.StringInput `pulumi:"remoteRegion"`
+	Type                   pulumi.StringInput `pulumi:"type"`
+	VpcPassword            pulumi.StringInput `pulumi:"vpcPassword"`
+	VpcUser                pulumi.StringInput `pulumi:"vpcUser"`
 }
 
 func (GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -3879,6 +8794,12 @@ func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDbHom
 	return o
 }
 
+func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
 func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
 }
@@ -3890,6 +8811,10 @@ func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulum
 
 func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
 }
 
 func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
@@ -5498,14 +10423,16 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
-	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id           string `pulumi:"id"`
-	IsRemote     bool   `pulumi:"isRemote"`
-	RemoteRegion string `pulumi:"remoteRegion"`
-	Type         string `pulumi:"type"`
-	VpcPassword  string `pulumi:"vpcPassword"`
-	VpcUser      string `pulumi:"vpcUser"`
+	Id                     string `pulumi:"id"`
+	IsRemote               bool   `pulumi:"isRemote"`
+	IsRetentionLockEnabled bool   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           string `pulumi:"remoteRegion"`
+	Type                   string `pulumi:"type"`
+	VpcPassword            string `pulumi:"vpcPassword"`
+	VpcUser                string `pulumi:"vpcUser"`
 }
 
 // GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -5520,14 +10447,16 @@ type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interfac
 }
 
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
-	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id           pulumi.StringInput `pulumi:"id"`
-	IsRemote     pulumi.BoolInput   `pulumi:"isRemote"`
-	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
-	Type         pulumi.StringInput `pulumi:"type"`
-	VpcPassword  pulumi.StringInput `pulumi:"vpcPassword"`
-	VpcUser      pulumi.StringInput `pulumi:"vpcUser"`
+	Id                     pulumi.StringInput `pulumi:"id"`
+	IsRemote               pulumi.BoolInput   `pulumi:"isRemote"`
+	IsRetentionLockEnabled pulumi.BoolInput   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           pulumi.StringInput `pulumi:"remoteRegion"`
+	Type                   pulumi.StringInput `pulumi:"type"`
+	VpcPassword            pulumi.StringInput `pulumi:"vpcPassword"`
+	VpcUser                pulumi.StringInput `pulumi:"vpcUser"`
 }
 
 func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -5581,6 +10510,12 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToG
 	return o
 }
 
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
 func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
 }
@@ -5592,6 +10527,12 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id(
 
 func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsRetentionLockEnabled
+	}).(pulumi.BoolOutput)
 }
 
 func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
@@ -7210,7 +12151,7 @@ type GetDbServersDbServer struct {
 	AutonomousVmClusterIds []string `pulumi:"autonomousVmClusterIds"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled on the Db server.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
@@ -7270,7 +12211,7 @@ type GetDbServersDbServerArgs struct {
 	AutonomousVmClusterIds pulumi.StringArrayInput `pulumi:"autonomousVmClusterIds"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	// The number of CPU cores enabled on the Db server.
 	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
@@ -7378,7 +12319,7 @@ func (o GetDbServersDbServerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbServersDbServer) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o GetDbServersDbServerOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbServersDbServer) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -8638,7 +13579,7 @@ type GetDbSystemShapesDbSystemShape struct {
 	AvailableMemoryInGbs int `pulumi:"availableMemoryInGbs"`
 	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
 	AvailableMemoryPerNodeInGbs int `pulumi:"availableMemoryPerNodeInGbs"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The discrete number by which the CPU core count for this shape can be increased or decreased.
 	CoreCountIncrement int `pulumi:"coreCountIncrement"`
@@ -8706,7 +13647,7 @@ type GetDbSystemShapesDbSystemShapeArgs struct {
 	AvailableMemoryInGbs pulumi.IntInput `pulumi:"availableMemoryInGbs"`
 	// The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
 	AvailableMemoryPerNodeInGbs pulumi.IntInput `pulumi:"availableMemoryPerNodeInGbs"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	// The discrete number by which the CPU core count for this shape can be increased or decreased.
 	CoreCountIncrement pulumi.IntInput `pulumi:"coreCountIncrement"`
@@ -8840,7 +13781,7 @@ func (o GetDbSystemShapesDbSystemShapeOutput) AvailableMemoryPerNodeInGbs() pulu
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) int { return v.AvailableMemoryPerNodeInGbs }).(pulumi.IntOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o GetDbSystemShapesDbSystemShapeOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -10033,7 +14974,7 @@ type GetDbSystemsDbSystem struct {
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 	NodeCount int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion string `pulumi:"osVersion"`
@@ -10169,7 +15110,7 @@ type GetDbSystemsDbSystemArgs struct {
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
@@ -10456,7 +15397,7 @@ func (o GetDbSystemsDbSystemOutput) NodeCount() pulumi.IntOutput {
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o GetDbSystemsDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -11440,12 +16381,14 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pul
 }
 
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
-	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id           string `pulumi:"id"`
-	IsRemote     bool   `pulumi:"isRemote"`
-	RemoteRegion string `pulumi:"remoteRegion"`
-	Type         string `pulumi:"type"`
+	Id                     string `pulumi:"id"`
+	IsRemote               bool   `pulumi:"isRemote"`
+	IsRetentionLockEnabled bool   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           string `pulumi:"remoteRegion"`
+	Type                   string `pulumi:"type"`
 }
 
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -11460,12 +16403,14 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInpu
 }
 
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
-	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	BackupRetentionPolicyOnTerminate pulumi.StringInput `pulumi:"backupRetentionPolicyOnTerminate"`
+	DbrsPolicyId                     pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id           pulumi.StringInput `pulumi:"id"`
-	IsRemote     pulumi.BoolInput   `pulumi:"isRemote"`
-	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
-	Type         pulumi.StringInput `pulumi:"type"`
+	Id                     pulumi.StringInput `pulumi:"id"`
+	IsRemote               pulumi.BoolInput   `pulumi:"isRemote"`
+	IsRetentionLockEnabled pulumi.BoolInput   `pulumi:"isRetentionLockEnabled"`
+	RemoteRegion           pulumi.StringInput `pulumi:"remoteRegion"`
+	Type                   pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -11519,6 +16464,12 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailO
 	return o
 }
 
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.BackupRetentionPolicyOnTerminate
+	}).(pulumi.StringOutput)
+}
+
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
 		return v.DbrsPolicyId
@@ -11533,6 +16484,12 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailO
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
 		return v.IsRemote
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsRetentionLockEnabled
 	}).(pulumi.BoolOutput)
 }
 
@@ -14301,7 +19258,7 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount int `pulumi:"computeCount"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts []GetExadataInfrastructuresExadataInfrastructureContact `pulumi:"contacts"`
@@ -14423,7 +19380,7 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntInput `pulumi:"computeCount"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	// The list of contacts for the Exadata infrastructure.
 	Contacts GetExadataInfrastructuresExadataInfrastructureContactArrayInput `pulumi:"contacts"`
@@ -14617,7 +19574,7 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) ComputeCount() pul
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -17206,7 +22163,7 @@ type GetExadbVmClustersExadbVmCluster struct {
 	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources []GetExadbVmClustersExadbVmClusterNodeResource `pulumi:"nodeResources"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId string `pulumi:"privateZoneId"`
@@ -17309,7 +22266,7 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources GetExadbVmClustersExadbVmClusterNodeResourceArrayInput `pulumi:"nodeResources"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringInput `pulumi:"privateZoneId"`
@@ -17531,7 +22488,7 @@ func (o GetExadbVmClustersExadbVmClusterOutput) NodeResources() GetExadbVmCluste
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o GetExadbVmClustersExadbVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -21129,7 +26086,7 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnector struct {
 	ConnectionCredentials []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
 	ConnectionStatus string `pulumi:"connectionStatus"`
-	// The Oracle Database connection string.
+	// The Oracle AI Database connection string.
 	ConnectionStrings []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString `pulumi:"connectionStrings"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId string `pulumi:"connectorAgentId"`
@@ -21175,7 +26132,7 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs struct {
 	ConnectionCredentials GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
 	ConnectionStatus pulumi.StringInput `pulumi:"connectionStatus"`
-	// The Oracle Database connection string.
+	// The Oracle AI Database connection string.
 	ConnectionStrings GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput `pulumi:"connectionStrings"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId pulumi.StringInput `pulumi:"connectorAgentId"`
@@ -21271,7 +26228,7 @@ func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) Connection
 	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.ConnectionStatus }).(pulumi.StringOutput)
 }
 
-// The Oracle Database connection string.
+// The Oracle AI Database connection string.
 func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectionStrings() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
 	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString {
 		return v.ConnectionStrings
@@ -24832,6 +29789,112 @@ func (o GetKeyStoreAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetKe
 	}).(GetKeyStoreAssociatedDatabaseOutput)
 }
 
+type GetKeyStoreAssociatedLongTermBackup struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoreAssociatedLongTermBackupInput is an input type that accepts GetKeyStoreAssociatedLongTermBackupArgs and GetKeyStoreAssociatedLongTermBackupOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedLongTermBackupInput` via:
+//
+//	GetKeyStoreAssociatedLongTermBackupArgs{...}
+type GetKeyStoreAssociatedLongTermBackupInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedLongTermBackupOutput() GetKeyStoreAssociatedLongTermBackupOutput
+	ToGetKeyStoreAssociatedLongTermBackupOutputWithContext(context.Context) GetKeyStoreAssociatedLongTermBackupOutput
+}
+
+type GetKeyStoreAssociatedLongTermBackupArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoreAssociatedLongTermBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedLongTermBackupArgs) ToGetKeyStoreAssociatedLongTermBackupOutput() GetKeyStoreAssociatedLongTermBackupOutput {
+	return i.ToGetKeyStoreAssociatedLongTermBackupOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedLongTermBackupArgs) ToGetKeyStoreAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetKeyStoreAssociatedLongTermBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedLongTermBackupOutput)
+}
+
+// GetKeyStoreAssociatedLongTermBackupArrayInput is an input type that accepts GetKeyStoreAssociatedLongTermBackupArray and GetKeyStoreAssociatedLongTermBackupArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedLongTermBackupArrayInput` via:
+//
+//	GetKeyStoreAssociatedLongTermBackupArray{ GetKeyStoreAssociatedLongTermBackupArgs{...} }
+type GetKeyStoreAssociatedLongTermBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoreAssociatedLongTermBackupArrayOutput
+	ToGetKeyStoreAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetKeyStoreAssociatedLongTermBackupArrayOutput
+}
+
+type GetKeyStoreAssociatedLongTermBackupArray []GetKeyStoreAssociatedLongTermBackupInput
+
+func (GetKeyStoreAssociatedLongTermBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedLongTermBackupArray) ToGetKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoreAssociatedLongTermBackupArrayOutput {
+	return i.ToGetKeyStoreAssociatedLongTermBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedLongTermBackupArray) ToGetKeyStoreAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedLongTermBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedLongTermBackupArrayOutput)
+}
+
+type GetKeyStoreAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedLongTermBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedLongTermBackupOutput) ToGetKeyStoreAssociatedLongTermBackupOutput() GetKeyStoreAssociatedLongTermBackupOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedLongTermBackupOutput) ToGetKeyStoreAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetKeyStoreAssociatedLongTermBackupOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoreAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoreAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoreAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedLongTermBackupArrayOutput) ToGetKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedLongTermBackupArrayOutput) ToGetKeyStoreAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetKeyStoreAssociatedLongTermBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoreAssociatedLongTermBackup {
+		return vs[0].([]GetKeyStoreAssociatedLongTermBackup)[vs[1].(int)]
+	}).(GetKeyStoreAssociatedLongTermBackupOutput)
+}
+
 type GetKeyStoreTypeDetail struct {
 	// The administrator username to connect to Oracle Key Vault
 	AdminUsername string `pulumi:"adminUsername"`
@@ -25074,6 +30137,10 @@ func (o GetKeyStoresFilterArrayOutput) Index(i pulumi.IntInput) GetKeyStoresFilt
 type GetKeyStoresKeyStore struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoresKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []GetKeyStoresKeyStoreAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId         string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
@@ -25111,6 +30178,10 @@ type GetKeyStoresKeyStoreInput interface {
 type GetKeyStoresKeyStoreArgs struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases GetKeyStoresKeyStoreAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntInput `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups GetKeyStoresKeyStoreAssociatedLongTermBackupArrayInput `pulumi:"associatedLongTermBackups"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId         pulumi.StringInput `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger pulumi.IntInput    `pulumi:"confirmDetailsTrigger"`
@@ -25188,6 +30259,18 @@ func (o GetKeyStoresKeyStoreOutput) ToGetKeyStoresKeyStoreOutputWithContext(ctx 
 // List of databases associated with the key store.
 func (o GetKeyStoresKeyStoreOutput) AssociatedDatabases() GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
 	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreAssociatedDatabase { return v.AssociatedDatabases }).(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o GetKeyStoresKeyStoreOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) int { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o GetKeyStoresKeyStoreOutput) AssociatedLongTermBackups() GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreAssociatedLongTermBackup {
+		return v.AssociatedLongTermBackups
+	}).(GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -25377,6 +30460,112 @@ func (o GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreAssociatedDatabase {
 		return vs[0].([]GetKeyStoresKeyStoreAssociatedDatabase)[vs[1].(int)]
 	}).(GetKeyStoresKeyStoreAssociatedDatabaseOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedLongTermBackup struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoresKeyStoreAssociatedLongTermBackupInput is an input type that accepts GetKeyStoresKeyStoreAssociatedLongTermBackupArgs and GetKeyStoresKeyStoreAssociatedLongTermBackupOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedLongTermBackupInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedLongTermBackupArgs{...}
+type GetKeyStoresKeyStoreAssociatedLongTermBackupInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupOutput
+	ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedLongTermBackupArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoresKeyStoreAssociatedLongTermBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedLongTermBackupArgs) ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedLongTermBackupArgs) ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedLongTermBackupOutput)
+}
+
+// GetKeyStoresKeyStoreAssociatedLongTermBackupArrayInput is an input type that accepts GetKeyStoresKeyStoreAssociatedLongTermBackupArray and GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedLongTermBackupArrayInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedLongTermBackupArray{ GetKeyStoresKeyStoreAssociatedLongTermBackupArgs{...} }
+type GetKeyStoresKeyStoreAssociatedLongTermBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput
+	ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedLongTermBackupArray []GetKeyStoresKeyStoreAssociatedLongTermBackupInput
+
+func (GetKeyStoresKeyStoreAssociatedLongTermBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedLongTermBackupArray) ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedLongTermBackupArray) ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedLongTermBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupOutput) ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupOutput) ToGetKeyStoresKeyStoreAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput) ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput() GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput) ToGetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreAssociatedLongTermBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreAssociatedLongTermBackup {
+		return vs[0].([]GetKeyStoresKeyStoreAssociatedLongTermBackup)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreAssociatedLongTermBackupOutput)
 }
 
 type GetKeyStoresKeyStoreTypeDetail struct {
@@ -25751,7 +30940,7 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
-	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description string `pulumi:"description"`
@@ -25777,7 +30966,7 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	MaintenanceType string `pulumi:"maintenanceType"`
 	// Contain the patch failure count.
 	PatchFailureCount int `pulumi:"patchFailureCount"`
-	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
 	PatchId   string `pulumi:"patchId"`
 	PatchType string `pulumi:"patchType"`
 	// The time when the patching operation ended.
@@ -25834,7 +31023,7 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
-	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
 	// Description of the maintenance run.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -25860,7 +31049,7 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
 	// Contain the patch failure count.
 	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
-	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
 	PatchId   pulumi.StringInput `pulumi:"patchId"`
 	PatchType pulumi.StringInput `pulumi:"patchType"`
 	// The time when the patching operation ended.
@@ -25968,7 +31157,7 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) CustomActionTimeoutInMins() pulu
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
 }
 
-// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 func (o GetMaintenanceRunsMaintenanceRunOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
@@ -26035,7 +31224,7 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) PatchFailureCount() pulumi.IntOu
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.PatchFailureCount }).(pulumi.IntOutput)
 }
 
-// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
 func (o GetMaintenanceRunsMaintenanceRunOutput) PatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchId }).(pulumi.StringOutput)
 }
@@ -28060,7 +33249,8 @@ type GetPluggableDatabasesPluggableDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id string `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted    bool   `pulumi:"isRestricted"`
+	IsRestricted bool `pulumi:"isRestricted"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -28116,7 +33306,8 @@ type GetPluggableDatabasesPluggableDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted    pulumi.BoolInput   `pulumi:"isRestricted"`
+	IsRestricted pulumi.BoolInput `pulumi:"isRestricted"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -28241,6 +33432,7 @@ func (o GetPluggableDatabasesPluggableDatabaseOutput) IsRestricted() pulumi.Bool
 	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) bool { return v.IsRestricted }).(pulumi.BoolOutput)
 }
 
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o GetPluggableDatabasesPluggableDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -36912,7 +42104,7 @@ type GetVmClustersVmCluster struct {
 	CloudAutomationUpdateDetails []GetVmClustersVmClusterCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	CpuCoreCount int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
@@ -36997,7 +42189,7 @@ type GetVmClustersVmClusterArgs struct {
 	CloudAutomationUpdateDetails GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
 	CpuCoreCount pulumi.IntInput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
@@ -37132,7 +42324,7 @@ func (o GetVmClustersVmClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o GetVmClustersVmClusterOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -37893,6 +43085,60 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabaseDatabaseEncryptionKeyLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseStorageSizeDetailInput)(nil)).Elem(), GetDatabaseDatabaseStorageSizeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseStorageSizeDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseStorageSizeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigInput)(nil)).Elem(), GetDatabaseDbBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabaseDbBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabaseDbBackupConfigBackupDestinationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilterInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilterArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesDatabaseSoftwareImageInput)(nil)).Elem(), GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayInput)(nil)).Elem(), GetDatabaseSoftwareImagesDatabaseSoftwareImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesFilterInput)(nil)).Elem(), GetDatabaseSoftwareImagesFilterArgs{})
@@ -38227,6 +43473,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionArrayInput)(nil)).Elem(), GetGiVersionsGiVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedLongTermBackupInput)(nil)).Elem(), GetKeyStoreAssociatedLongTermBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetKeyStoreAssociatedLongTermBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoreTypeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoreTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresFilterInput)(nil)).Elem(), GetKeyStoresFilterArgs{})
@@ -38235,6 +43483,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedLongTermBackupInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedLongTermBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedLongTermBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTimeInput)(nil)).Elem(), GetMaintenanceRunEstimatedPatchingTimeArgs{})
@@ -38423,6 +43673,60 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseStorageSizeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseStorageSizeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigBackupDestinationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesFilterOutput{})
@@ -38757,6 +44061,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGiVersionsGiVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedLongTermBackupOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedLongTermBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreTypeDetailOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresFilterOutput{})
@@ -38765,6 +44071,8 @@ func init() {
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedLongTermBackupOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedLongTermBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunEstimatedPatchingTimeOutput{})

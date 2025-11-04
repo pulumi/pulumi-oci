@@ -482,10 +482,6 @@ class TargetDatabase(pulumi.CustomResource):
                  tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-
         ## Example Usage
 
         ```python
@@ -584,10 +580,6 @@ class TargetDatabase(pulumi.CustomResource):
                  args: TargetDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-
         ## Example Usage
 
         ```python

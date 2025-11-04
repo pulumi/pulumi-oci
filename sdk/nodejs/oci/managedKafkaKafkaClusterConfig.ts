@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
- *
- * Creates a KafkaClusterConfig.
- *
  * ## Example Usage
  *
  * ```typescript

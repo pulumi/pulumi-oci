@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Removes a managed instance from the specified managed instance group.
- * 
  * ## Example Usage
  * 
  * <pre>

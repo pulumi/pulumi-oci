@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * Creates an agent.
- *
  * ## Example Usage
  *
  * ```typescript

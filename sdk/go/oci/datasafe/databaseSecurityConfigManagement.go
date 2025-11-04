@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates the database security configuration.
-//
 // ## Example Usage
 //
 // ```go

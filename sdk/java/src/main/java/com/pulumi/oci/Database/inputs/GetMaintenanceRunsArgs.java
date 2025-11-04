@@ -57,14 +57,14 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
      * 
      */
     @Import(name="isLocalAdg")
     private @Nullable Output<Boolean> isLocalAdg;
 
     /**
-     * @return A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * @return A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
      * 
      */
     public Optional<Output<Boolean>> isLocalAdg() {
@@ -234,7 +234,7 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * @param isLocalAdg A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
          * 
          * @return builder
          * 

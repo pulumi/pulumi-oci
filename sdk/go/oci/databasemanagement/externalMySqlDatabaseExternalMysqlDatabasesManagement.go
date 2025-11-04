@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External My Sql Database External Mysql Databases Management resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Enables Database Management for an external MySQL Database.
-//
 // ## Example Usage
 //
 // ```go

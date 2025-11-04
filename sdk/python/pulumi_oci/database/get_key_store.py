@@ -27,10 +27,16 @@ class GetKeyStoreResult:
     """
     A collection of values returned by getKeyStore.
     """
-    def __init__(__self__, associated_databases=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, type_details=None):
+    def __init__(__self__, associated_databases=None, associated_long_term_backup_count=None, associated_long_term_backups=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, type_details=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
+        if associated_long_term_backup_count and not isinstance(associated_long_term_backup_count, int):
+            raise TypeError("Expected argument 'associated_long_term_backup_count' to be a int")
+        pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        if associated_long_term_backups and not isinstance(associated_long_term_backups, list):
+            raise TypeError("Expected argument 'associated_long_term_backups' to be a list")
+        pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -75,6 +81,22 @@ class GetKeyStoreResult:
         List of databases associated with the key store.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> _builtins.int:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Sequence['outputs.GetKeyStoreAssociatedLongTermBackupResult']:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -174,6 +196,8 @@ class AwaitableGetKeyStoreResult(GetKeyStoreResult):
             yield self
         return GetKeyStoreResult(
             associated_databases=self.associated_databases,
+            associated_long_term_backup_count=self.associated_long_term_backup_count,
+            associated_long_term_backups=self.associated_long_term_backups,
             compartment_id=self.compartment_id,
             confirm_details_trigger=self.confirm_details_trigger,
             defined_tags=self.defined_tags,
@@ -214,6 +238,8 @@ def get_key_store(key_store_id: Optional[_builtins.str] = None,
 
     return AwaitableGetKeyStoreResult(
         associated_databases=pulumi.get(__ret__, 'associated_databases'),
+        associated_long_term_backup_count=pulumi.get(__ret__, 'associated_long_term_backup_count'),
+        associated_long_term_backups=pulumi.get(__ret__, 'associated_long_term_backups'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         confirm_details_trigger=pulumi.get(__ret__, 'confirm_details_trigger'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -251,6 +277,8 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[_builtins.str]] = N
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult)
     return __ret__.apply(lambda __response__: GetKeyStoreResult(
         associated_databases=pulumi.get(__response__, 'associated_databases'),
+        associated_long_term_backup_count=pulumi.get(__response__, 'associated_long_term_backup_count'),
+        associated_long_term_backups=pulumi.get(__response__, 'associated_long_term_backups'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         confirm_details_trigger=pulumi.get(__response__, 'confirm_details_trigger'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
- *
- * Create availability catalog
- *
  * ## Example Usage
  *
  * ```typescript

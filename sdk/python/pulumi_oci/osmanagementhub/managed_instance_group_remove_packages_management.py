@@ -139,10 +139,6 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes the specified packages from each managed instance in a managed instance group.
-
         ## Example Usage
 
         ```python
@@ -179,10 +175,6 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
                  args: ManagedInstanceGroupRemovePackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes the specified packages from each managed instance in a managed instance group.
-
         ## Example Usage
 
         ```python

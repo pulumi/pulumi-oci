@@ -316,10 +316,6 @@ class Repository(pulumi.CustomResource):
                  repository_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Creates a new repository for storing artifacts.
-
         ## Example Usage
 
         ```python
@@ -369,10 +365,6 @@ class Repository(pulumi.CustomResource):
                  args: RepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Creates a new repository for storing artifacts.
-
         ## Example Usage
 
         ```python

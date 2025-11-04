@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of supported Autonomous Database versions.
+        /// Gets a list of supported Autonomous AI Database versions.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of supported Autonomous Database versions.
+        /// Gets a list of supported Autonomous AI Database versions.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of supported Autonomous Database versions.
+        /// Gets a list of supported Autonomous AI Database versions.
         /// 
         /// ## Example Usage
         /// 
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Database
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified workload type.
+        /// A filter to return only Autonomous AI Database resources that match the specified workload type.
         /// </summary>
         [Input("dbWorkload")]
         public string? DbWorkload { get; set; }
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified workload type.
+        /// A filter to return only Autonomous AI Database resources that match the specified workload type.
         /// </summary>
         [Input("dbWorkload")]
         public Input<string>? DbWorkload { get; set; }
@@ -160,11 +160,12 @@ namespace Pulumi.Oci.Database
         public readonly ImmutableArray<Outputs.GetAutonomousDbVersionsAutonomousDbVersionResult> AutonomousDbVersions;
         public readonly string CompartmentId;
         /// <summary>
-        /// The Autonomous Database workload type. The following values are valid:
-        /// * OLTP - indicates an Autonomous Transaction Processing database
-        /// * DW - indicates an Autonomous Data Warehouse database
-        /// * AJD - indicates an Autonomous JSON Database
-        /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        /// The Autonomous AI Database workload type. The following values are valid:
+        /// * OLTP - indicates an Autonomous AI Transaction Processing database
+        /// * DW - indicates an Autonomous AI Lakehouse database
+        /// * AJD - indicates an Autonomous AI JSON Database
+        /// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        /// * LH - indicates an Oracle Autonomous AI Lakehouse database
         /// </summary>
         public readonly string? DbWorkload;
         public readonly ImmutableArray<Outputs.GetAutonomousDbVersionsFilterResult> Filters;

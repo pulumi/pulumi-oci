@@ -12,14 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
-//
-// Adds a backend set to a load balancer.
-//
-// ## Supported Aliases
-//
-// * `ociLoadBalancerBackendset`
-//
 // ## Example Usage
 //
 // ```go

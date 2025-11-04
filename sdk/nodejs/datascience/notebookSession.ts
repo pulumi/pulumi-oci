@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a new notebook session.
- *
  * ## Example Usage
  *
  * ```typescript

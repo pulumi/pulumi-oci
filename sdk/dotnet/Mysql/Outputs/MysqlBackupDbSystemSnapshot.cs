@@ -134,6 +134,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotSecureConnection> SecureConnections;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? SecurityAttributes;
+        /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>
         public readonly string? ShapeName;
@@ -204,6 +208,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotSecureConnection> secureConnections,
 
+            ImmutableDictionary<string, string>? securityAttributes,
+
             string? shapeName,
 
             string? subnetId)
@@ -238,6 +244,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             Region = region;
             Rests = rests;
             SecureConnections = secureConnections;
+            SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
             SubnetId = subnetId;
         }

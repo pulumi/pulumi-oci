@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
-//
-// # Customer can update displayName and tags for compute GPU memory fabric record
+// ## Example Usage
 //
 // ## Import
 //

@@ -60,6 +60,10 @@ type LookupKeyStoreArgs struct {
 type LookupKeyStoreResult struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []GetKeyStoreAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId         string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
@@ -121,6 +125,16 @@ func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutputWithContext(ctx 
 // List of databases associated with the key store.
 func (o LookupKeyStoreResultOutput) AssociatedDatabases() GetKeyStoreAssociatedDatabaseArrayOutput {
 	return o.ApplyT(func(v LookupKeyStoreResult) []GetKeyStoreAssociatedDatabase { return v.AssociatedDatabases }).(GetKeyStoreAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o LookupKeyStoreResultOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) int { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o LookupKeyStoreResultOutput) AssociatedLongTermBackups() GetKeyStoreAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) []GetKeyStoreAssociatedLongTermBackup { return v.AssociatedLongTermBackups }).(GetKeyStoreAssociatedLongTermBackupArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

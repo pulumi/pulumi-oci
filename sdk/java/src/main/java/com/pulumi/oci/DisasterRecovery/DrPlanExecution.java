@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DisasterRecovery.DrPlanExecutionArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionState;
+import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionAutomaticExecutionDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionExecutionOptions;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionLogLocation;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
- * 
- * Execute a DR plan for a DR protection group.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -77,6 +75,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DisasterRecovery/drPlanExecution:DrPlanExecution")
 public class DrPlanExecution extends com.pulumi.resources.CustomResource {
+    /**
+     * The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    @Export(name="automaticExecutionDetails", refs={List.class,DrPlanExecutionAutomaticExecutionDetail.class}, tree="[0,1]")
+    private Output<List<DrPlanExecutionAutomaticExecutionDetail>> automaticExecutionDetails;
+
+    /**
+     * @return The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    public Output<List<DrPlanExecutionAutomaticExecutionDetail>> automaticExecutionDetails() {
+        return this.automaticExecutionDetails;
+    }
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
@@ -188,6 +200,20 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      */
     public Output<List<DrPlanExecutionGroupExecution>> groupExecutions() {
         return this.groupExecutions;
+    }
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    @Export(name="isAutomatic", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutomatic;
+
+    /**
+     * @return A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    public Output<Boolean> isAutomatic() {
+        return this.isAutomatic;
     }
     /**
      * A message describing the DR plan execution&#39;s current state in more detail.

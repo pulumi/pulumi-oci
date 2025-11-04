@@ -1186,10 +1186,6 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own OAuth2 client credential.
-
         ## Example Usage
 
         ## Import
@@ -1324,10 +1320,6 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                  args: DomainsMyOauth2clientCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own OAuth2 client credential.
-
         ## Example Usage
 
         ## Import

@@ -20,9 +20,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Creates a new MediaAsset.
+ * ## Example Usage
  * 
  * ## Import
  * 

@@ -18,10 +18,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
- * 
- * Create a processor job for document analysis.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Create a maintenance window in Fleet Application Management.
- *
  * ## Example Usage
  *
  * ```typescript

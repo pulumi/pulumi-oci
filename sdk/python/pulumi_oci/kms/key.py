@@ -673,14 +673,7 @@ class Key(pulumi.CustomResource):
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new master encryption key.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total
-        number of requests across all management write operations. Key Management might throttle this call
-        to reject an otherwise valid request when the total rate of management write operations exceeds 10
-        requests per second for a given tenancy.
+        ## Example Usage
 
         ## Import
 
@@ -718,14 +711,7 @@ class Key(pulumi.CustomResource):
                  args: KeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new master encryption key.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total
-        number of requests across all management write operations. Key Management might throttle this call
-        to reject an otherwise valid request when the total rate of management write operations exceeds 10
-        requests per second for a given tenancy.
+        ## Example Usage
 
         ## Import
 

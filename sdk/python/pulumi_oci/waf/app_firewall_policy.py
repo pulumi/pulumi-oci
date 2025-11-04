@@ -484,10 +484,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new WebAppFirewallPolicy.
-
         ## Example Usage
 
         ```python
@@ -651,10 +647,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
                  args: AppFirewallPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new WebAppFirewallPolicy.
-
         ## Example Usage
 
         ```python

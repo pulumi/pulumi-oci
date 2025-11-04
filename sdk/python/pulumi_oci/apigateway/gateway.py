@@ -555,10 +555,6 @@ class Gateway(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Gateway resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new gateway.
-
         ## Example Usage
 
         ```python
@@ -636,10 +632,6 @@ class Gateway(pulumi.CustomResource):
                  args: GatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Gateway resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new gateway.
-
         ## Example Usage
 
         ```python

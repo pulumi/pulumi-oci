@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * Creates a knowledge base.
- *
  * ## Example Usage
  *
  * ```typescript

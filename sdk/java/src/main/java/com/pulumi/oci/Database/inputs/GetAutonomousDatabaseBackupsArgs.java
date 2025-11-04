@@ -33,6 +33,21 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
     }
 
     /**
+     * A filter to return only resources that have the given backup destination id.
+     * 
+     */
+    @Import(name="backupDestinationId")
+    private @Nullable Output<String> backupDestinationId;
+
+    /**
+     * @return A filter to return only resources that have the given backup destination id.
+     * 
+     */
+    public Optional<Output<String>> backupDestinationId() {
+        return Optional.ofNullable(this.backupDestinationId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -70,6 +85,36 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
     }
 
     /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    @Import(name="infrastructureType")
+    private @Nullable Output<String> infrastructureType;
+
+    /**
+     * @return A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    public Optional<Output<String>> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
+    }
+
+    /**
+     * A filter to return only resources that have the given key store id.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable Output<String> keyStoreId;
+
+    /**
+     * @return A filter to return only resources that have the given key store id.
+     * 
+     */
+    public Optional<Output<String>> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
      * A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -103,9 +148,12 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
 
     private GetAutonomousDatabaseBackupsArgs(GetAutonomousDatabaseBackupsArgs $) {
         this.autonomousDatabaseId = $.autonomousDatabaseId;
+        this.backupDestinationId = $.backupDestinationId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.infrastructureType = $.infrastructureType;
+        this.keyStoreId = $.keyStoreId;
         this.state = $.state;
         this.type = $.type;
     }
@@ -147,6 +195,27 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
+        }
+
+        /**
+         * @param backupDestinationId A filter to return only resources that have the given backup destination id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationId(@Nullable Output<String> backupDestinationId) {
+            $.backupDestinationId = backupDestinationId;
+            return this;
+        }
+
+        /**
+         * @param backupDestinationId A filter to return only resources that have the given backup destination id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationId(String backupDestinationId) {
+            return backupDestinationId(Output.of(backupDestinationId));
         }
 
         /**
@@ -202,6 +271,48 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
 
         public Builder filters(GetAutonomousDatabaseBackupsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param infrastructureType A filter to return only resources that match the given Infrastructure Type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureType(@Nullable Output<String> infrastructureType) {
+            $.infrastructureType = infrastructureType;
+            return this;
+        }
+
+        /**
+         * @param infrastructureType A filter to return only resources that match the given Infrastructure Type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureType(String infrastructureType) {
+            return infrastructureType(Output.of(infrastructureType));
+        }
+
+        /**
+         * @param keyStoreId A filter to return only resources that have the given key store id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable Output<String> keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId A filter to return only resources that have the given key store id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            return keyStoreId(Output.of(keyStoreId));
         }
 
         /**

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a user's customer secret key.
- *
  * ## Example Usage
  *
  * ## Import

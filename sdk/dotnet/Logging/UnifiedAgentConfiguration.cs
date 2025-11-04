@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging
 {
     /// <summary>
-    /// This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-    /// 
-    /// Create unified agent configuration registration.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

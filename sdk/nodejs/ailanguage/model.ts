@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
- *
- * Creates a new model for training and train the model with date provided.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -170,7 +166,7 @@ export class Model extends pulumi.CustomResource {
      */
     declare public readonly trainingDataset: pulumi.Output<outputs.AiLanguage.ModelTrainingDataset>;
     /**
-     * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     declare public /*out*/ readonly version: pulumi.Output<string>;
 
@@ -304,7 +300,7 @@ export interface ModelState {
      */
     trainingDataset?: pulumi.Input<inputs.AiLanguage.ModelTrainingDataset>;
     /**
-     * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     version?: pulumi.Input<string>;
 }

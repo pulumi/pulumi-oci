@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-//
-// Creates a new HTTP Redirect on the WAF edge.
-//
 // ## Example Usage
 //
 // ```go

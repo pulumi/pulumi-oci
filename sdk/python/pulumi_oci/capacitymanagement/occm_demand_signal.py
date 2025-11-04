@@ -316,10 +316,6 @@ class OccmDemandSignal(pulumi.CustomResource):
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        This is a post API to create occm demand signal.
-
         ## Example Usage
 
         ```python
@@ -366,10 +362,6 @@ class OccmDemandSignal(pulumi.CustomResource):
                  args: OccmDemandSignalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        This is a post API to create occm demand signal.
-
         ## Example Usage
 
         ```python

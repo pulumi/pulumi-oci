@@ -25,10 +25,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
- * 
- * Creates a new Connection.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -94,6 +90,8 @@ import javax.annotation.Nullable;
  *             .clientId(testClient.id())
  *             .clientSecret(connectionClientSecret)
  *             .clientSecretSecretId(testSecret.id())
+ *             .clusterId(testCluster.id())
+ *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
  *             .connectionFactory(connectionConnectionFactory)
  *             .connectionString(connectionConnectionString)
  *             .connectionUrl(connectionConnectionUrl)
@@ -143,6 +141,7 @@ import javax.annotation.Nullable;
  *             .sasTokenSecretId(testSecret.id())
  *             .secretAccessKey(connectionSecretAccessKey)
  *             .secretAccessKeySecretId(testSecret.id())
+ *             .securityAttributes(connectionSecurityAttributes)
  *             .securityProtocol(connectionSecurityProtocol)
  *             .servers(connectionServers)
  *             .serviceAccountKeyFile(connectionServiceAccountKeyFile)
@@ -181,6 +180,7 @@ import javax.annotation.Nullable;
  *             .storageCredentialName(connectionStorageCredentialName)
  *             .streamPoolId(testStreamPool.id())
  *             .subnetId(testSubnet.id())
+ *             .subscriptionId(testSubscription.id())
  *             .tenancyId(testTenancy.id())
  *             .tenantId(testTenant.id())
  *             .tlsCaFile(connectionTlsCaFile)
@@ -416,6 +416,34 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> clientSecretSecretId() {
         return Codegen.optional(this.clientSecretSecretId);
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
+    private Output<String> clusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    public Output<String> clusterId() {
+        return this.clusterId;
+    }
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1144,6 +1172,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.secretAccessKeySecretId);
     }
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
@@ -1228,14 +1270,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.shouldUseJndi;
     }
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     @Export(name="shouldUseResourcePrincipal", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldUseResourcePrincipal;
 
     /**
-     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     public Output<Boolean> shouldUseResourcePrincipal() {
@@ -1524,6 +1566,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

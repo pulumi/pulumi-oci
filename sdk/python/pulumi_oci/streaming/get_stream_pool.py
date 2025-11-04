@@ -27,7 +27,7 @@ class GetStreamPoolResult:
     """
     A collection of values returned by getStreamPool.
     """
-    def __init__(__self__, compartment_id=None, custom_encryption_keys=None, defined_tags=None, endpoint_fqdn=None, freeform_tags=None, id=None, is_private=None, kafka_settings=None, lifecycle_state_details=None, name=None, private_endpoint_settings=None, state=None, stream_pool_id=None, time_created=None):
+    def __init__(__self__, compartment_id=None, custom_encryption_keys=None, defined_tags=None, endpoint_fqdn=None, freeform_tags=None, id=None, is_private=None, kafka_settings=None, lifecycle_state_details=None, name=None, private_endpoint_settings=None, security_attributes=None, state=None, stream_pool_id=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +61,9 @@ class GetStreamPoolResult:
         if private_endpoint_settings and not isinstance(private_endpoint_settings, list):
             raise TypeError("Expected argument 'private_endpoint_settings' to be a list")
         pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -160,6 +163,14 @@ class GetStreamPoolResult:
         return pulumi.get(self, "private_endpoint_settings")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -198,6 +209,7 @@ class AwaitableGetStreamPoolResult(GetStreamPoolResult):
             lifecycle_state_details=self.lifecycle_state_details,
             name=self.name,
             private_endpoint_settings=self.private_endpoint_settings,
+            security_attributes=self.security_attributes,
             state=self.state,
             stream_pool_id=self.stream_pool_id,
             time_created=self.time_created)
@@ -239,6 +251,7 @@ def get_stream_pool(stream_pool_id: Optional[_builtins.str] = None,
         lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
         name=pulumi.get(__ret__, 'name'),
         private_endpoint_settings=pulumi.get(__ret__, 'private_endpoint_settings'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
@@ -277,6 +290,7 @@ def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[_builtins.str]]
         lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
         name=pulumi.get(__response__, 'name'),
         private_endpoint_settings=pulumi.get(__response__, 'private_endpoint_settings'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
         time_created=pulumi.get(__response__, 'time_created')))

@@ -27,11 +27,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
- * 
- * Create a new model.
- * 
- *   Updates the model metadata only selected path parameter.
+ * ## Example Usage
  * 
  * ## Import
  * 

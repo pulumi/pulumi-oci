@@ -55,6 +55,11 @@ public final class GetApplicationsApplication {
      */
     private List<String> networkSecurityGroupIds;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
      * 
      */
@@ -148,6 +153,13 @@ public final class GetApplicationsApplication {
         return this.networkSecurityGroupIds;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
      * 
      */
@@ -214,6 +226,7 @@ public final class GetApplicationsApplication {
         private String id;
         private List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs;
         private List<String> networkSecurityGroupIds;
+        private Map<String,String> securityAttributes;
         private String shape;
         private String state;
         private List<String> subnetIds;
@@ -232,6 +245,7 @@ public final class GetApplicationsApplication {
     	      this.id = defaults.id;
     	      this.imagePolicyConfigs = defaults.imagePolicyConfigs;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
@@ -312,6 +326,14 @@ public final class GetApplicationsApplication {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetApplicationsApplication", "shape");
@@ -383,6 +405,7 @@ public final class GetApplicationsApplication {
             _resultValue.id = id;
             _resultValue.imagePolicyConfigs = imagePolicyConfigs;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetIds = subnetIds;

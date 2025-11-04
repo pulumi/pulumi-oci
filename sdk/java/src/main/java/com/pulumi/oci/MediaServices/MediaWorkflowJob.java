@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

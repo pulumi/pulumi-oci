@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-//
-// Creates an application.
-//
 // ## Example Usage
 //
 // ```go

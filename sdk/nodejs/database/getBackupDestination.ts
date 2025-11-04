@@ -47,6 +47,14 @@ export interface GetBackupDestinationResult {
      * List of databases associated with the backup destination.
      */
     readonly associatedDatabases: outputs.Database.GetBackupDestinationAssociatedDatabase[];
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    readonly associatedLongTermBackupCount: number;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    readonly associatedLongTermBackups: outputs.Database.GetBackupDestinationAssociatedLongTermBackup[];
     readonly backupDestinationId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

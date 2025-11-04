@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.KeyStoreAssociatedDatabaseArgs;
+import com.pulumi.oci.Database.inputs.KeyStoreAssociatedLongTermBackupArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreTypeDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -33,6 +34,36 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<KeyStoreAssociatedDatabaseArgs>>> associatedDatabases() {
         return Optional.ofNullable(this.associatedDatabases);
+    }
+
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    @Import(name="associatedLongTermBackupCount")
+    private @Nullable Output<Integer> associatedLongTermBackupCount;
+
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    public Optional<Output<Integer>> associatedLongTermBackupCount() {
+        return Optional.ofNullable(this.associatedLongTermBackupCount);
+    }
+
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    @Import(name="associatedLongTermBackups")
+    private @Nullable Output<List<KeyStoreAssociatedLongTermBackupArgs>> associatedLongTermBackups;
+
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    public Optional<Output<List<KeyStoreAssociatedLongTermBackupArgs>>> associatedLongTermBackups() {
+        return Optional.ofNullable(this.associatedLongTermBackups);
     }
 
     /**
@@ -181,6 +212,8 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
 
     private KeyStoreState(KeyStoreState $) {
         this.associatedDatabases = $.associatedDatabases;
+        this.associatedLongTermBackupCount = $.associatedLongTermBackupCount;
+        this.associatedLongTermBackups = $.associatedLongTermBackups;
         this.compartmentId = $.compartmentId;
         this.confirmDetailsTrigger = $.confirmDetailsTrigger;
         this.definedTags = $.definedTags;
@@ -240,6 +273,58 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder associatedDatabases(KeyStoreAssociatedDatabaseArgs... associatedDatabases) {
             return associatedDatabases(List.of(associatedDatabases));
+        }
+
+        /**
+         * @param associatedLongTermBackupCount Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedLongTermBackupCount(@Nullable Output<Integer> associatedLongTermBackupCount) {
+            $.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            return this;
+        }
+
+        /**
+         * @param associatedLongTermBackupCount Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedLongTermBackupCount(Integer associatedLongTermBackupCount) {
+            return associatedLongTermBackupCount(Output.of(associatedLongTermBackupCount));
+        }
+
+        /**
+         * @param associatedLongTermBackups List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedLongTermBackups(@Nullable Output<List<KeyStoreAssociatedLongTermBackupArgs>> associatedLongTermBackups) {
+            $.associatedLongTermBackups = associatedLongTermBackups;
+            return this;
+        }
+
+        /**
+         * @param associatedLongTermBackups List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedLongTermBackups(List<KeyStoreAssociatedLongTermBackupArgs> associatedLongTermBackups) {
+            return associatedLongTermBackups(Output.of(associatedLongTermBackups));
+        }
+
+        /**
+         * @param associatedLongTermBackups List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedLongTermBackups(KeyStoreAssociatedLongTermBackupArgs... associatedLongTermBackups) {
+            return associatedLongTermBackups(List.of(associatedLongTermBackups));
         }
 
         /**

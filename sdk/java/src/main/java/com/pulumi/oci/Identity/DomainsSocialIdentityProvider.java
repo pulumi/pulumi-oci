@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a Social Identity Provider
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -68,6 +64,8 @@ import javax.annotation.Nullable;
  *             .showOnLogin(socialIdentityProviderShowOnLogin)
  *             .accessTokenUrl(socialIdentityProviderAccessTokenUrl)
  *             .adminScopes(socialIdentityProviderAdminScope)
+ *             .appleDevId(testAppleDev.id())
+ *             .appleKeyId(testKey.id())
  *             .authorization(socialIdentityProviderAuthorization)
  *             .authzUrl(socialIdentityProviderAuthzUrl)
  *             .autoRedirectEnabled(socialIdentityProviderAutoRedirectEnabled)
@@ -216,6 +214,82 @@ public class DomainsSocialIdentityProvider extends com.pulumi.resources.CustomRe
      */
     public Output<List<String>> adminScopes() {
         return this.adminScopes;
+    }
+    /**
+     * (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="appleDevId", refs={String.class}, tree="[0]")
+    private Output<String> appleDevId;
+
+    /**
+     * @return (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Output<String> appleDevId() {
+        return this.appleDevId;
+    }
+    /**
+     * (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="appleKeyId", refs={String.class}, tree="[0]")
+    private Output<String> appleKeyId;
+
+    /**
+     * @return (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Output<String> appleKeyId() {
+        return this.appleKeyId;
     }
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.

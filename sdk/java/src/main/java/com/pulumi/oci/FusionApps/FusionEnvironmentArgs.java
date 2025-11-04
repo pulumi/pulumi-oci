@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -157,6 +158,21 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    @Import(name="isIpv6dualStackEnabled")
+    private @Nullable Output<Boolean> isIpv6dualStackEnabled;
+
+    /**
+     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    public Optional<Output<Boolean>> isIpv6dualStackEnabled() {
+        return Optional.ofNullable(this.isIpv6dualStackEnabled);
+    }
+
+    /**
      * (Updatable) byok kms keyId
      * 
      */
@@ -213,6 +229,7 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
         this.freeformTags = $.freeformTags;
         this.fusionEnvironmentFamilyId = $.fusionEnvironmentFamilyId;
         this.fusionEnvironmentType = $.fusionEnvironmentType;
+        this.isIpv6dualStackEnabled = $.isIpv6dualStackEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.maintenancePolicy = $.maintenancePolicy;
         this.rules = $.rules;
@@ -433,6 +450,27 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder fusionEnvironmentType(String fusionEnvironmentType) {
             return fusionEnvironmentType(Output.of(fusionEnvironmentType));
+        }
+
+        /**
+         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6dualStackEnabled(@Nullable Output<Boolean> isIpv6dualStackEnabled) {
+            $.isIpv6dualStackEnabled = isIpv6dualStackEnabled;
+            return this;
+        }
+
+        /**
+         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6dualStackEnabled(Boolean isIpv6dualStackEnabled) {
+            return isIpv6dualStackEnabled(Output.of(isIpv6dualStackEnabled));
         }
 
         /**

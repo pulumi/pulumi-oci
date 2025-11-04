@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
- *
- * Creates a new Connection.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -53,6 +49,8 @@ import * as utilities from "../utilities";
  *     clientId: testClient.id,
  *     clientSecret: connectionClientSecret,
  *     clientSecretSecretId: testSecret.id,
+ *     clusterId: testCluster.id,
+ *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     connectionFactory: connectionConnectionFactory,
  *     connectionString: connectionConnectionString,
  *     connectionUrl: connectionConnectionUrl,
@@ -106,6 +104,7 @@ import * as utilities from "../utilities";
  *     sasTokenSecretId: testSecret.id,
  *     secretAccessKey: connectionSecretAccessKey,
  *     secretAccessKeySecretId: testSecret.id,
+ *     securityAttributes: connectionSecurityAttributes,
  *     securityProtocol: connectionSecurityProtocol,
  *     servers: connectionServers,
  *     serviceAccountKeyFile: connectionServiceAccountKeyFile,
@@ -144,6 +143,7 @@ import * as utilities from "../utilities";
  *     storageCredentialName: connectionStorageCredentialName,
  *     streamPoolId: testStreamPool.id,
  *     subnetId: testSubnet.id,
+ *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     tenantId: testTenant.id,
  *     tlsCaFile: connectionTlsCaFile,
@@ -259,6 +259,14 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
      */
     declare public readonly clientSecretSecretId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     */
+    declare public readonly clusterId: pulumi.Output<string>;
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     */
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -468,6 +476,10 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly secretAccessKeySecretId: pulumi.Output<string | undefined>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     declare public readonly securityProtocol: pulumi.Output<string>;
@@ -492,7 +504,7 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly shouldUseJndi: pulumi.Output<boolean>;
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
      */
     declare public readonly shouldUseResourcePrincipal: pulumi.Output<boolean>;
     /**
@@ -580,6 +592,10 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     declare public readonly subnetId: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
@@ -701,6 +717,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = state?.clientId;
             resourceInputs["clientSecret"] = state?.clientSecret;
             resourceInputs["clientSecretSecretId"] = state?.clientSecretSecretId;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["connectionFactory"] = state?.connectionFactory;
             resourceInputs["connectionString"] = state?.connectionString;
@@ -753,6 +771,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["sasTokenSecretId"] = state?.sasTokenSecretId;
             resourceInputs["secretAccessKey"] = state?.secretAccessKey;
             resourceInputs["secretAccessKeySecretId"] = state?.secretAccessKeySecretId;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["securityProtocol"] = state?.securityProtocol;
             resourceInputs["servers"] = state?.servers;
             resourceInputs["serviceAccountKeyFile"] = state?.serviceAccountKeyFile;
@@ -779,6 +798,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["storageCredentialName"] = state?.storageCredentialName;
             resourceInputs["streamPoolId"] = state?.streamPoolId;
             resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["technologyType"] = state?.technologyType;
             resourceInputs["tenancyId"] = state?.tenancyId;
@@ -829,6 +849,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = args?.clientId;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["clientSecretSecretId"] = args?.clientSecretSecretId;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["connectionFactory"] = args?.connectionFactory;
             resourceInputs["connectionString"] = args?.connectionString;
@@ -879,6 +901,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["sasTokenSecretId"] = args?.sasTokenSecretId;
             resourceInputs["secretAccessKey"] = args?.secretAccessKey ? pulumi.secret(args.secretAccessKey) : undefined;
             resourceInputs["secretAccessKeySecretId"] = args?.secretAccessKeySecretId;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["securityProtocol"] = args?.securityProtocol;
             resourceInputs["servers"] = args?.servers;
             resourceInputs["serviceAccountKeyFile"] = args?.serviceAccountKeyFile ? pulumi.secret(args.serviceAccountKeyFile) : undefined;
@@ -904,6 +927,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["storageCredentialName"] = args?.storageCredentialName;
             resourceInputs["streamPoolId"] = args?.streamPoolId;
             resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["technologyType"] = args?.technologyType;
             resourceInputs["tenancyId"] = args?.tenancyId;
             resourceInputs["tenantId"] = args?.tenantId;
@@ -999,6 +1023,14 @@ export interface ConnectionState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
      */
     clientSecretSecretId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     */
+    clusterId?: pulumi.Input<string>;
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -1208,6 +1240,10 @@ export interface ConnectionState {
      */
     secretAccessKeySecretId?: pulumi.Input<string>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     securityProtocol?: pulumi.Input<string>;
@@ -1232,7 +1268,7 @@ export interface ConnectionState {
      */
     shouldUseJndi?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
      */
     shouldUseResourcePrincipal?: pulumi.Input<boolean>;
     /**
@@ -1320,6 +1356,10 @@ export interface ConnectionState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
@@ -1477,6 +1517,14 @@ export interface ConnectionArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
      */
     clientSecretSecretId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     */
+    clusterId?: pulumi.Input<string>;
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -1678,6 +1726,10 @@ export interface ConnectionArgs {
      */
     secretAccessKeySecretId?: pulumi.Input<string>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     securityProtocol?: pulumi.Input<string>;
@@ -1702,7 +1754,7 @@ export interface ConnectionArgs {
      */
     shouldUseJndi?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
      */
     shouldUseResourcePrincipal?: pulumi.Input<boolean>;
     /**
@@ -1786,6 +1838,10 @@ export interface ConnectionArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The Kafka (e.g. Confluent) Schema Registry technology type.
      */

@@ -63,7 +63,7 @@ public final class GetAutonomousContainerDatabaseDataguardGroupMember {
      */
     private String redoTransportMode;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -170,7 +170,7 @@ public final class GetAutonomousContainerDatabaseDataguardGroupMember {
         return this.redoTransportMode;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {

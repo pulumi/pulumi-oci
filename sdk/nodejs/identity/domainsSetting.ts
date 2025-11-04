@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Replace Settings
- *
  * ## Example Usage
  *
  * ## Import

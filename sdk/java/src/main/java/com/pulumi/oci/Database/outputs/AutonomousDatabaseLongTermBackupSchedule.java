@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseLongTermBackupSchedule {
     /**
-     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
     private @Nullable Boolean isDisabled;
@@ -36,7 +36,7 @@ public final class AutonomousDatabaseLongTermBackupSchedule {
 
     private AutonomousDatabaseLongTermBackupSchedule() {}
     /**
-     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
     public Optional<Boolean> isDisabled() {

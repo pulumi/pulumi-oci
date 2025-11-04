@@ -510,10 +510,6 @@ class ProductLicense(pulumi.CustomResource):
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new product license.
-
         ## Example Usage
 
         ```python
@@ -568,10 +564,6 @@ class ProductLicense(pulumi.CustomResource):
                  args: ProductLicenseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new product license.
-
         ## Example Usage
 
         ```python

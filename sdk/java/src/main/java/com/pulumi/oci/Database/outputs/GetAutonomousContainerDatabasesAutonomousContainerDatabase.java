@@ -48,7 +48,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String availabilityDomain;
     /**
-     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      * 
      */
     private Double availableCpus;
@@ -73,7 +73,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private String computeModel;
@@ -99,13 +99,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String dbName;
     /**
-     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     private Integer dbSplitThreshold;
     private String dbUniqueName;
     /**
-     * @return Oracle Database version of the Autonomous Container Database.
+     * @return Oracle AI Database version of the Autonomous Container Database.
      * 
      */
     private String dbVersion;
@@ -120,12 +120,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String displayName;
     /**
-     * @return Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     * @return Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      * 
      */
     private String distributionAffinity;
     /**
-     * @return DST Time-zone File version of the Autonomous Container Database.
+     * @return DST Time-Zone File version of the Autonomous Container Database.
      * 
      */
     private String dstFileVersion;
@@ -141,7 +141,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     private String id;
@@ -156,7 +156,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private Boolean isAutomaticFailoverEnabled;
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Boolean isDataGuardEnabled;
@@ -192,12 +192,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String kmsKeyId;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     private String kmsKeyVersionId;
     /**
-     * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * @return The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
     private Double largestProvisionableAutonomousDatabaseInCpus;
@@ -223,7 +223,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -265,7 +270,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String protectionMode;
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      * 
      */
     private List<Double> provisionableCpuses;
@@ -275,7 +280,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private Double provisionedCpus;
     /**
-     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     private Double reclaimableCpus;
@@ -291,13 +296,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private Double reservedCpus;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
     private Boolean rotateKeyTrigger;
     /**
-     * @return A filter to return only resources that match the given service level agreement type exactly.
+     * @return A filter to return only resources that match the given service-level agreement type exactly.
      * 
      */
     private String serviceLevelAgreementType;
@@ -334,12 +339,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String timeSnapshotStandbyRevert;
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     private Integer totalCpus;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     private String vaultId;
@@ -387,7 +392,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.availabilityDomain;
     }
     /**
-     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      * 
      */
     public Double availableCpus() {
@@ -422,7 +427,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public String computeModel() {
@@ -460,7 +465,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.dbName;
     }
     /**
-     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Integer dbSplitThreshold() {
@@ -470,7 +475,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.dbUniqueName;
     }
     /**
-     * @return Oracle Database version of the Autonomous Container Database.
+     * @return Oracle AI Database version of the Autonomous Container Database.
      * 
      */
     public String dbVersion() {
@@ -491,14 +496,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.displayName;
     }
     /**
-     * @return Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     * @return Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      * 
      */
     public String distributionAffinity() {
         return this.distributionAffinity;
     }
     /**
-     * @return DST Time-zone File version of the Autonomous Container Database.
+     * @return DST Time-Zone File version of the Autonomous Container Database.
      * 
      */
     public String dstFileVersion() {
@@ -522,7 +527,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.freeformTags;
     }
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public String id() {
@@ -543,7 +548,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.isAutomaticFailoverEnabled;
     }
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Boolean isDataGuardEnabled() {
@@ -595,14 +600,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.kmsKeyId;
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public String kmsKeyVersionId() {
         return this.kmsKeyVersionId;
     }
     /**
-     * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * @return The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
     public Double largestProvisionableAutonomousDatabaseInCpus() {
@@ -640,7 +645,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -710,7 +722,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.protectionMode;
     }
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      * 
      */
     public List<Double> provisionableCpuses() {
@@ -724,7 +736,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.provisionedCpus;
     }
     /**
-     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Double reclaimableCpus() {
@@ -748,7 +760,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.reservedCpus;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {
@@ -758,7 +770,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.rotateKeyTrigger;
     }
     /**
-     * @return A filter to return only resources that match the given service level agreement type exactly.
+     * @return A filter to return only resources that match the given service-level agreement type exactly.
      * 
      */
     public String serviceLevelAgreementType() {
@@ -813,14 +825,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.timeSnapshotStandbyRevert;
     }
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     public Integer totalCpus() {
         return this.totalCpus;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     public String vaultId() {
@@ -894,6 +906,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private List<String> listOneOffPatches;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private String netServicesArchitecture;
         private String nextMaintenanceRunId;
@@ -976,6 +989,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.listOneOffPatches = defaults.listOneOffPatches;
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.netServicesArchitecture = defaults.netServicesArchitecture;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
@@ -1396,6 +1410,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             if (memoryPerOracleComputeUnitInGbs == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "memoryPerOracleComputeUnitInGbs");
@@ -1730,6 +1752,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.listOneOffPatches = listOneOffPatches;
             _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.netServicesArchitecture = netServicesArchitecture;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;

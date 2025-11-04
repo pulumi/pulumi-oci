@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
-    /// This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
-    /// 
-    /// Create a task schedule using the information provided.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -26,42 +22,42 @@ namespace Pulumi.Oci.Jms
     /// {
     ///     var testTaskSchedule = new Oci.Jms.TaskSchedule("test_task_schedule", new()
     ///     {
-    ///         ExecutionRecurrences = taskScheduleExecutionRecurrences,
-    ///         FleetId = testFleet.Id,
+    ///         FleetId = fleetOcid,
+    ///         ExecutionRecurrences = "DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z",
     ///         TaskDetails = new Oci.Jms.Inputs.TaskScheduleTaskDetailsArgs
     ///         {
-    ///             TaskType = taskScheduleTaskDetailsTaskType,
+    ///             TaskType = "ADD_INSTALLATION_SITE",
     ///             AddInstallationSiteTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs
     ///             {
     ///                 InstallationSites = new[]
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs
     ///                     {
-    ///                         ArtifactContentType = taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesArtifactContentType,
-    ///                         ForceInstall = taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesForceInstall,
-    ///                         HeadlessMode = taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesHeadlessMode,
-    ///                         InstallationPath = taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesInstallationPath,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
-    ///                         ReleaseVersion = taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesReleaseVersion,
+    ///                         ArtifactContentType = "JDK",
+    ///                         ForceInstall = false,
+    ///                         HeadlessMode = false,
+    ///                         InstallationPath = "/example/install/path",
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
+    ///                         ReleaseVersion = "17.0.0",
     ///                     },
     ///                 },
-    ///                 PostInstallationActions = taskScheduleTaskDetailsAddInstallationSiteTaskRequestPostInstallationActions,
+    ///                 PostInstallationActions = new() { },
     ///             },
     ///             CryptoTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsCryptoTaskRequestArgs
     ///             {
-    ///                 RecordingDurationInMinutes = taskScheduleTaskDetailsCryptoTaskRequestRecordingDurationInMinutes,
+    ///                 RecordingDurationInMinutes = 10,
     ///                 Targets = new[]
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs
     ///                     {
-    ///                         ApplicationInstallationKey = taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationInstallationKey,
-    ///                         ApplicationKey = taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationKey,
-    ///                         ContainerKey = taskScheduleTaskDetailsCryptoTaskRequestTargetsContainerKey,
-    ///                         JreKey = taskScheduleTaskDetailsCryptoTaskRequestTargetsJreKey,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
+    ///                         ApplicationInstallationKey = "example-application-installation-key",
+    ///                         ApplicationKey = "example-application-key",
+    ///                         ContainerKey = "example-container-key",
+    ///                         JreKey = "example-jre-key",
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
     ///                     },
     ///                 },
-    ///                 WaitingPeriodInMinutes = taskScheduleTaskDetailsCryptoTaskRequestWaitingPeriodInMinutes,
+    ///                 WaitingPeriodInMinutes = 10,
     ///             },
     ///             DeployedApplicationMigrationTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs
     ///             {
@@ -69,12 +65,12 @@ namespace Pulumi.Oci.Jms
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs
     ///                     {
-    ///                         DeployedApplicationInstallationKey = taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsDeployedApplicationInstallationKey,
-    ///                         ExcludePackagePrefixes = taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsExcludePackagePrefixes,
-    ///                         IncludePackagePrefixes = taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsIncludePackagePrefixes,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
-    ///                         SourceJdkVersion = taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsSourceJdkVersion,
-    ///                         TargetJdkVersion = taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsTargetJdkVersion,
+    ///                         DeployedApplicationInstallationKey = "example-application-installation-key",
+    ///                         ExcludePackagePrefixes = new() { },
+    ///                         IncludePackagePrefixes = new() { },
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
+    ///                         SourceJdkVersion = "11",
+    ///                         TargetJdkVersion = "21",
     ///                     },
     ///                 },
     ///             },
@@ -84,50 +80,50 @@ namespace Pulumi.Oci.Jms
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs
     ///                     {
-    ///                         ApplicationInstallationKey = taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsApplicationInstallationKey,
-    ///                         ExcludePackagePrefixes = taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsExcludePackagePrefixes,
-    ///                         IncludePackagePrefixes = taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsIncludePackagePrefixes,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
-    ///                         SourceJdkVersion = taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsSourceJdkVersion,
-    ///                         TargetJdkVersion = taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsTargetJdkVersion,
+    ///                         ApplicationInstallationKey = "example-application-installation-key",
+    ///                         ExcludePackagePrefixes = new() { },
+    ///                         IncludePackagePrefixes = new() { },
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
+    ///                         SourceJdkVersion = "11",
+    ///                         TargetJdkVersion = "21",
     ///                     },
     ///                 },
     ///             },
     ///             JfrTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsJfrTaskRequestArgs
     ///             {
-    ///                 JfcProfileName = testProfile.Name,
-    ///                 JfcV1 = taskScheduleTaskDetailsJfrTaskRequestJfcV1,
-    ///                 JfcV2 = taskScheduleTaskDetailsJfrTaskRequestJfcV2,
-    ///                 RecordingDurationInMinutes = taskScheduleTaskDetailsJfrTaskRequestRecordingDurationInMinutes,
-    ///                 RecordingSizeInMb = taskScheduleTaskDetailsJfrTaskRequestRecordingSizeInMb,
+    ///                 JfcProfileName = "jfcV1",
+    ///                 JfcV1 = "jfcV1",
+    ///                 JfcV2 = "jfvV2",
+    ///                 RecordingDurationInMinutes = 10,
+    ///                 RecordingSizeInMb = 10,
     ///                 Targets = new[]
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsJfrTaskRequestTargetArgs
     ///                     {
-    ///                         ApplicationInstallationKey = taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationInstallationKey,
-    ///                         ApplicationKey = taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationKey,
-    ///                         ContainerKey = taskScheduleTaskDetailsJfrTaskRequestTargetsContainerKey,
-    ///                         JreKey = taskScheduleTaskDetailsJfrTaskRequestTargetsJreKey,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
+    ///                         ApplicationInstallationKey = "example-application-installation-key",
+    ///                         ApplicationKey = "example-application-key",
+    ///                         ContainerKey = "example-container-key",
+    ///                         JreKey = "example-jre-key",
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
     ///                     },
     ///                 },
-    ///                 WaitingPeriodInMinutes = taskScheduleTaskDetailsJfrTaskRequestWaitingPeriodInMinutes,
+    ///                 WaitingPeriodInMinutes = 10,
     ///             },
     ///             PerformanceTuningTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs
     ///             {
-    ///                 RecordingDurationInMinutes = taskScheduleTaskDetailsPerformanceTuningTaskRequestRecordingDurationInMinutes,
+    ///                 RecordingDurationInMinutes = 10,
     ///                 Targets = new[]
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs
     ///                     {
-    ///                         ApplicationInstallationKey = taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationInstallationKey,
-    ///                         ApplicationKey = taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationKey,
-    ///                         ContainerKey = taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsContainerKey,
-    ///                         JreKey = taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsJreKey,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
+    ///                         ApplicationInstallationKey = "example-application-installation-key",
+    ///                         ApplicationKey = "example-application-key",
+    ///                         ContainerKey = "example-container-key",
+    ///                         JreKey = "example-jre-key",
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
     ///                     },
     ///                 },
-    ///                 WaitingPeriodInMinutes = taskScheduleTaskDetailsPerformanceTuningTaskRequestWaitingPeriodInMinutes,
+    ///                 WaitingPeriodInMinutes = 10,
     ///             },
     ///             RemoveInstallationSiteTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs
     ///             {
@@ -135,20 +131,20 @@ namespace Pulumi.Oci.Jms
     ///                 {
     ///                     new Oci.Jms.Inputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs
     ///                     {
-    ///                         InstallationKey = taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSitesInstallationKey,
-    ///                         ManagedInstanceId = testManagedInstance.Id,
+    ///                         InstallationKey = "example-jvm-installation-key",
+    ///                         ManagedInstanceId = "example-managed-instance-ocid",
     ///                     },
     ///                 },
     ///             },
     ///             ScanJavaServerTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs
     ///             {
-    ///                 ManagedInstanceIds = taskScheduleTaskDetailsScanJavaServerTaskRequestManagedInstanceIds,
+    ///                 ManagedInstanceIds = new() { },
     ///             },
     ///             ScanLibraryTaskRequest = new Oci.Jms.Inputs.TaskScheduleTaskDetailsScanLibraryTaskRequestArgs
     ///             {
-    ///                 DynamicScanDurationInMinutes = taskScheduleTaskDetailsScanLibraryTaskRequestDynamicScanDurationInMinutes,
-    ///                 IsDynamicScan = taskScheduleTaskDetailsScanLibraryTaskRequestIsDynamicScan,
-    ///                 ManagedInstanceIds = taskScheduleTaskDetailsScanLibraryTaskRequestManagedInstanceIds,
+    ///                 DynamicScanDurationInMinutes = 10,
+    ///                 IsDynamicScan = false,
+    ///                 ManagedInstanceIds = new() { },
     ///             },
     ///         },
     ///     });

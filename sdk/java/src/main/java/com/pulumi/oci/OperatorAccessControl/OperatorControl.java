@@ -18,9 +18,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
- * 
- * Creates an Operator Control.
+ * ## Example Usage
  * 
  * ## Import
  * 

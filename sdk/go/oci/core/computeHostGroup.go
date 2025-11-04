@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new compute host group in the specified compartment and availability domain.
-//
 // ## Example Usage
 //
 // ```go

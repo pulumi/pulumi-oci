@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a job.
- * 
  * ## Example Usage
  * 
  * ## Import

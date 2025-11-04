@@ -357,10 +357,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add an autoscale configuration to the cluster.
-
         ## Example Usage
 
         ```python
@@ -441,10 +437,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  args: AutoScalingConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add an autoscale configuration to the cluster.
-
         ## Example Usage
 
         ```python

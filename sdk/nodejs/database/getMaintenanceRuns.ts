@@ -58,7 +58,7 @@ export interface GetMaintenanceRunsArgs {
     compartmentId: string;
     filters?: inputs.Database.GetMaintenanceRunsFilter[];
     /**
-     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
      */
     isLocalAdg?: boolean;
     /**
@@ -111,7 +111,7 @@ export interface GetMaintenanceRunsResult {
      */
     readonly maintenanceType?: string;
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     readonly state?: string;
     /**
@@ -175,7 +175,7 @@ export interface GetMaintenanceRunsOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetMaintenanceRunsFilterArgs>[]>;
     /**
-     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     * A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
      */
     isLocalAdg?: pulumi.Input<boolean>;
     /**

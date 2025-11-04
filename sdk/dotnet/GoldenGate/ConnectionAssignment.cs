@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
-    /// This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-    /// 
-    /// Creates a new Connection Assignment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

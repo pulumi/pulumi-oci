@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
 //
-// Gets the Autonomous Database regional wallet details.
+// Gets the Autonomous AI Database regional wallet details.
 //
 // ## Example Usage
 //
@@ -53,7 +53,7 @@ type LookupAutonomousDatabaseRegionalWalletManagementResult struct {
 	GracePeriod  int    `pulumi:"gracePeriod"`
 	Id           string `pulumi:"id"`
 	ShouldRotate bool   `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated string `pulumi:"timeRotated"`
@@ -93,7 +93,7 @@ func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ShouldRota
 	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) bool { return v.ShouldRotate }).(pulumi.BoolOutput)
 }
 
-// The current lifecycle state of the Autonomous Database wallet.
+// The current lifecycle state of the Autonomous AI Database wallet.
 func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.State }).(pulumi.StringOutput)
 }

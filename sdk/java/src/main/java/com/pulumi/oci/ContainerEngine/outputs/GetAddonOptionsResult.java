@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,7 @@ public final class GetAddonOptionsResult {
      */
     private String id;
     private String kubernetesVersion;
+    private @Nullable Boolean shouldShowAllVersions;
 
     private GetAddonOptionsResult() {}
     public Optional<String> addonName() {
@@ -53,6 +55,9 @@ public final class GetAddonOptionsResult {
     public String kubernetesVersion() {
         return this.kubernetesVersion;
     }
+    public Optional<Boolean> shouldShowAllVersions() {
+        return Optional.ofNullable(this.shouldShowAllVersions);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -68,6 +73,7 @@ public final class GetAddonOptionsResult {
         private @Nullable List<GetAddonOptionsFilter> filters;
         private String id;
         private String kubernetesVersion;
+        private @Nullable Boolean shouldShowAllVersions;
         public Builder() {}
         public Builder(GetAddonOptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,6 +82,7 @@ public final class GetAddonOptionsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.kubernetesVersion = defaults.kubernetesVersion;
+    	      this.shouldShowAllVersions = defaults.shouldShowAllVersions;
         }
 
         @CustomType.Setter
@@ -120,6 +127,12 @@ public final class GetAddonOptionsResult {
             this.kubernetesVersion = kubernetesVersion;
             return this;
         }
+        @CustomType.Setter
+        public Builder shouldShowAllVersions(@Nullable Boolean shouldShowAllVersions) {
+
+            this.shouldShowAllVersions = shouldShowAllVersions;
+            return this;
+        }
         public GetAddonOptionsResult build() {
             final var _resultValue = new GetAddonOptionsResult();
             _resultValue.addonName = addonName;
@@ -127,6 +140,7 @@ public final class GetAddonOptionsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.kubernetesVersion = kubernetesVersion;
+            _resultValue.shouldShowAllVersions = shouldShowAllVersions;
             return _resultValue;
         }
     }

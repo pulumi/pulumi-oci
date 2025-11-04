@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway
 {
     /// <summary>
-    /// This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-    /// 
-    /// Update plan of the subscription.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

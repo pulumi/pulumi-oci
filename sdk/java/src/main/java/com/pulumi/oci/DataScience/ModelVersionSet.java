@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new modelVersionSet.
- * 
  * ## Example Usage
  * 
  * <pre>

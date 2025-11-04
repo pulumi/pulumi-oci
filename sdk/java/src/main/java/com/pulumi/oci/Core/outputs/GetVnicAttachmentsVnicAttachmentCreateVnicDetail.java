@@ -31,6 +31,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     private String routeTableId;
     private Map<String,String> securityAttributes;
     private Boolean skipSourceDestCheck;
+    private String subnetCidr;
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
@@ -86,6 +87,9 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     public Boolean skipSourceDestCheck() {
         return this.skipSourceDestCheck;
     }
+    public String subnetCidr() {
+        return this.subnetCidr;
+    }
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
@@ -123,6 +127,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
         private String routeTableId;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
+        private String subnetCidr;
         private String subnetId;
         private String vlanId;
         public Builder() {}
@@ -141,6 +146,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     	      this.routeTableId = defaults.routeTableId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
+    	      this.subnetCidr = defaults.subnetCidr;
     	      this.subnetId = defaults.subnetId;
     	      this.vlanId = defaults.vlanId;
         }
@@ -256,6 +262,14 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetCidr(String subnetCidr) {
+            if (subnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "subnetCidr");
+            }
+            this.subnetCidr = subnetCidr;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "subnetId");
@@ -286,6 +300,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             _resultValue.routeTableId = routeTableId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetCidr = subnetCidr;
             _resultValue.subnetId = subnetId;
             _resultValue.vlanId = vlanId;
             return _resultValue;

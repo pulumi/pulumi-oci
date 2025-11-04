@@ -406,11 +406,6 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
                  time_start: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
-
-        Create a new report in the specified format containing the download details
-        for the tenancy.
-
         ## Example Usage
 
         ```python
@@ -454,11 +449,6 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
                  args: JavaDownloadsJavaDownloadReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
-
-        Create a new report in the specified format containing the download details
-        for the tenancy.
-
         ## Example Usage
 
         ```python

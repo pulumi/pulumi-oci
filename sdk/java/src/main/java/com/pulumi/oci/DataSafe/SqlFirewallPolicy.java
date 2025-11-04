@@ -16,9 +16,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Updates the SQL Firewall policy.
+ * ## Example Usage
  * 
  * ## Import
  * 

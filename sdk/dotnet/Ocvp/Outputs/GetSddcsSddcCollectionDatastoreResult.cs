@@ -13,8 +13,14 @@ namespace Pulumi.Oci.Ocvp.Outputs
     [OutputType]
     public sealed class GetSddcsSddcCollectionDatastoreResult
     {
+        /// <summary>
+        /// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        /// </summary>
         public readonly ImmutableArray<string> BlockVolumeIds;
         public readonly double Capacity;
+        /// <summary>
+        /// Type of the datastore.
+        /// </summary>
         public readonly string DatastoreType;
 
         [OutputConstructor]

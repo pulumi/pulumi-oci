@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Creates a new Pipeline.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -87,6 +85,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("logConfigurationDetails")]
         public Output<Outputs.PipelineLogConfigurationDetails> LogConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Parameters used in the pipeline.
+        /// </summary>
+        [Output("parameters")]
+        public Output<ImmutableDictionary<string, string>> Parameters { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -242,6 +246,18 @@ namespace Pulumi.Oci.DataScience
         [Input("logConfigurationDetails")]
         public Input<Inputs.PipelineLogConfigurationDetailsArgs>? LogConfigurationDetails { get; set; }
 
+        [Input("parameters")]
+        private InputMap<string>? _parameters;
+
+        /// <summary>
+        /// (Updatable) Parameters used in the pipeline.
+        /// </summary>
+        public InputMap<string> Parameters
+        {
+            get => _parameters ?? (_parameters = new InputMap<string>());
+            set => _parameters = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         /// </summary>
@@ -362,6 +378,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("logConfigurationDetails")]
         public Input<Inputs.PipelineLogConfigurationDetailsGetArgs>? LogConfigurationDetails { get; set; }
+
+        [Input("parameters")]
+        private InputMap<string>? _parameters;
+
+        /// <summary>
+        /// (Updatable) Parameters used in the pipeline.
+        /// </summary>
+        public InputMap<string> Parameters
+        {
+            get => _parameters ?? (_parameters = new InputMap<string>());
+            set => _parameters = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

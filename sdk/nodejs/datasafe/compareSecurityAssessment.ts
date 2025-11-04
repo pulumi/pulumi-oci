@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compare Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Compares two security assessments. For this comparison, a security assessment can be a saved assessment, a latest assessment, or a baseline assessment.
- * For example, you can compare saved assessment or a latest assessment against a baseline.
- *
  * ## Example Usage
  *
  * ```typescript

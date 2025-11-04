@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Redis
 {
     /// <summary>
-    /// This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
-    /// 
-    /// Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

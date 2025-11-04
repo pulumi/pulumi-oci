@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-//
-// Creates a new Dataset.
-//
 // ## Example Usage
 //
 // ```go

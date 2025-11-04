@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
-//
-// Updates the repository settings for a project.
-//
 // ## Example Usage
 //
 // ```go

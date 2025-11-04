@@ -19,16 +19,28 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? CpuBaseline { get; set; }
 
         /// <summary>
-        /// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        /// (Updatable) The total amount of memory available to the pipeline step run instance GBs.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<double>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        /// (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        [Input("memoryInGbsParameterized")]
+        public Input<string>? MemoryInGbsParameterized { get; set; }
+
+        /// <summary>
+        /// (Updatable) The total number of OCPUs available to the pipeline step run instance.
         /// </summary>
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }
+
+        /// <summary>
+        /// (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        [Input("ocpusParameterized")]
+        public Input<string>? OcpusParameterized { get; set; }
 
         public PipelineInfrastructureConfigurationDetailsShapeConfigDetailsGetArgs()
         {

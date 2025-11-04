@@ -358,10 +358,6 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                  parameters: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaWorkflowConfiguration.
-
         ## Example Usage
 
         ```python
@@ -415,10 +411,6 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                  args: MediaWorkflowConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaWorkflowConfiguration.
-
         ## Example Usage
 
         ```python

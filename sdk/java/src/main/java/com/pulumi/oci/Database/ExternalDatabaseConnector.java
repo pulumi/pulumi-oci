@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new external database connector.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -129,14 +125,14 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
         return this.connectionStatus;
     }
     /**
-     * (Updatable) The Oracle Database connection string.
+     * (Updatable) The Oracle AI Database connection string.
      * 
      */
     @Export(name="connectionString", refs={ExternalDatabaseConnectorConnectionString.class}, tree="[0]")
     private Output<ExternalDatabaseConnectorConnectionString> connectionString;
 
     /**
-     * @return (Updatable) The Oracle Database connection string.
+     * @return (Updatable) The Oracle AI Database connection string.
      * 
      */
     public Output<ExternalDatabaseConnectorConnectionString> connectionString() {

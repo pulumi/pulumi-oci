@@ -58,11 +58,11 @@ type GetCloudAutonomousVmClusterResourceUsageArgs struct {
 
 // A collection of values returned by getCloudAutonomousVmClusterResourceUsage.
 type GetCloudAutonomousVmClusterResourceUsageResult struct {
-	// The data disk group size allocated for Autonomous Databases, in TBs.
+	// The data disk group size allocated for Autonomous AI Databases, in TBs.
 	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// List of Autonomous VM resource usages.
 	AutonomousVmResourceUsages []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage `pulumi:"autonomousVmResourceUsages"`
-	// The data disk group size available for Autonomous Databases, in TBs.
+	// The data disk group size available for Autonomous AI Databases, in TBs.
 	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
 	// The number of CPU cores available.
 	AvailableCpus              float64 `pulumi:"availableCpus"`
@@ -75,7 +75,9 @@ type GetCloudAutonomousVmClusterResourceUsageResult struct {
 	ExadataStorageInTbs float64 `pulumi:"exadataStorageInTbs"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	MemoryPerComputeUnitInGbs float64 `pulumi:"memoryPerComputeUnitInGbs"`
+	// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
@@ -87,7 +89,7 @@ type GetCloudAutonomousVmClusterResourceUsageResult struct {
 	ProvisionedAutonomousContainerDatabases int `pulumi:"provisionedAutonomousContainerDatabases"`
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
@@ -95,7 +97,7 @@ type GetCloudAutonomousVmClusterResourceUsageResult struct {
 	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
 	// The number of CPU cores enabled on the Cloud Autonomous VM cluster.
 	TotalCpus float64 `pulumi:"totalCpus"`
-	// The data disk group size used for Autonomous Databases, in TBs.
+	// The data disk group size used for Autonomous AI Databases, in TBs.
 	UsedAutonomousDataStorageSizeInTbs float64 `pulumi:"usedAutonomousDataStorageSizeInTbs"`
 	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
 	UsedCpus float64 `pulumi:"usedCpus"`
@@ -135,7 +137,7 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToGetCloudAutonomo
 	return o
 }
 
-// The data disk group size allocated for Autonomous Databases, in TBs.
+// The data disk group size allocated for Autonomous AI Databases, in TBs.
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
 		return v.AutonomousDataStorageSizeInTbs
@@ -149,7 +151,7 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AutonomousVmResour
 	}).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput)
 }
 
-// The data disk group size available for Autonomous Databases, in TBs.
+// The data disk group size available for Autonomous AI Databases, in TBs.
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
 		return v.AvailableAutonomousDataStorageSizeInTbs
@@ -185,7 +187,12 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) Id() pulumi.String
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The amount of memory (in GBs) to be enabled per each CPU core.
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemoryPerComputeUnitInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.MemoryPerComputeUnitInGbs }).(pulumi.Float64Output)
+}
+
+// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -221,7 +228,7 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionedCpus() 
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
-// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
@@ -241,7 +248,7 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) TotalCpus() pulumi
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.TotalCpus }).(pulumi.Float64Output)
 }
 
-// The data disk group size used for Autonomous Databases, in TBs.
+// The data disk group size used for Autonomous AI Databases, in TBs.
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) UsedAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
 		return v.UsedAutonomousDataStorageSizeInTbs

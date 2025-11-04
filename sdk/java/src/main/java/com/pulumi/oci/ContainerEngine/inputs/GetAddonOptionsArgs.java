@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,12 +56,28 @@ public final class GetAddonOptionsArgs extends com.pulumi.resources.InvokeArgs {
         return this.kubernetesVersion;
     }
 
+    /**
+     * Whether to show all add-on versions
+     * 
+     */
+    @Import(name="shouldShowAllVersions")
+    private @Nullable Output<Boolean> shouldShowAllVersions;
+
+    /**
+     * @return Whether to show all add-on versions
+     * 
+     */
+    public Optional<Output<Boolean>> shouldShowAllVersions() {
+        return Optional.ofNullable(this.shouldShowAllVersions);
+    }
+
     private GetAddonOptionsArgs() {}
 
     private GetAddonOptionsArgs(GetAddonOptionsArgs $) {
         this.addonName = $.addonName;
         this.filters = $.filters;
         this.kubernetesVersion = $.kubernetesVersion;
+        this.shouldShowAllVersions = $.shouldShowAllVersions;
     }
 
     public static Builder builder() {
@@ -134,6 +151,27 @@ public final class GetAddonOptionsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder kubernetesVersion(String kubernetesVersion) {
             return kubernetesVersion(Output.of(kubernetesVersion));
+        }
+
+        /**
+         * @param shouldShowAllVersions Whether to show all add-on versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldShowAllVersions(@Nullable Output<Boolean> shouldShowAllVersions) {
+            $.shouldShowAllVersions = shouldShowAllVersions;
+            return this;
+        }
+
+        /**
+         * @param shouldShowAllVersions Whether to show all add-on versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldShowAllVersions(Boolean shouldShowAllVersions) {
+            return shouldShowAllVersions(Output.of(shouldShowAllVersions));
         }
 
         public GetAddonOptionsArgs build() {

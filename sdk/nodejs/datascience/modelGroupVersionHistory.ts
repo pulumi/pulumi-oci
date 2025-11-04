@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a new modelGroupVersionHistory.
- *
  * ## Example Usage
  *
  * ```typescript

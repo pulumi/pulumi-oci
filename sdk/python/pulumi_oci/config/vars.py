@@ -43,6 +43,13 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get_bool('disableAutoRetries')
 
     @_builtins.property
+    def dual_stack_endpoint_enabled(self) -> Optional[bool]:
+        """
+        (Optional) flags to enable Dual Stack endpoint.
+        """
+        return __config__.get_bool('dualStackEndpointEnabled')
+
+    @_builtins.property
     def fingerprint(self) -> Optional[str]:
         """
         (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.

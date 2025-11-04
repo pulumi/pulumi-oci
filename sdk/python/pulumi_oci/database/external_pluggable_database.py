@@ -509,11 +509,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
                  source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-        Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-        resource.
-
         ## Example Usage
 
         ```python
@@ -559,11 +554,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
                  args: ExternalPluggableDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-        Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-        resource.
-
         ## Example Usage
 
         ```python

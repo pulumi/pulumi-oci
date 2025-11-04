@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
-//
-// Creates a Lustre file system.
-//
 // ## Example Usage
 //
 // ```go

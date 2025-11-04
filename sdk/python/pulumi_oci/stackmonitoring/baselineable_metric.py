@@ -411,10 +411,6 @@ class BaselineableMetric(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates the specified Baseline-able metric
-
         ## Example Usage
 
         ```python
@@ -458,10 +454,6 @@ class BaselineableMetric(pulumi.CustomResource):
                  args: BaselineableMetricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates the specified Baseline-able metric
-
         ## Example Usage
 
         ```python

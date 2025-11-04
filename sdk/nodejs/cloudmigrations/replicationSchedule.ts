@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
- *
- * Creates a replication schedule.
- *
  * ## Example Usage
  *
  * ```typescript

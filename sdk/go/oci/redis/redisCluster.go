@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-//
-// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
-//
 // ## Example Usage
 //
 // ```go
@@ -46,6 +42,7 @@ import (
 //				},
 //				NsgIds:              pulumi.Any(redisClusterNsgIds),
 //				OciCacheConfigSetId: pulumi.Any(testOciCacheConfigSet.Id),
+//				SecurityAttributes:  pulumi.Any(redisClusterSecurityAttributes),
 //				ShardCount:          pulumi.Any(redisClusterShardCount),
 //			})
 //			if err != nil {
@@ -101,6 +98,8 @@ type RedisCluster struct {
 	ReplicasEndpointIpAddress pulumi.StringOutput `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn pulumi.StringOutput `pulumi:"replicasFqdn"`
+	// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntOutput `pulumi:"shardCount"`
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -202,6 +201,8 @@ type redisClusterState struct {
 	ReplicasEndpointIpAddress *string `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn *string `pulumi:"replicasFqdn"`
+	// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount *int `pulumi:"shardCount"`
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -256,6 +257,8 @@ type RedisClusterState struct {
 	ReplicasEndpointIpAddress pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn pulumi.StringPtrInput
+	// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntPtrInput
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -298,6 +301,8 @@ type redisClusterArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 	OciCacheConfigSetId *string `pulumi:"ociCacheConfigSetId"`
+	// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount *int `pulumi:"shardCount"`
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -329,6 +334,8 @@ type RedisClusterArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 	OciCacheConfigSetId pulumi.StringPtrInput
+	// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntPtrInput
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -510,6 +517,11 @@ func (o RedisClusterOutput) ReplicasEndpointIpAddress() pulumi.StringOutput {
 // The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 func (o RedisClusterOutput) ReplicasFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.ReplicasFqdn }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o RedisClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.

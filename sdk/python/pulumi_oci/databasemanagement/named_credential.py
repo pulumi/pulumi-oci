@@ -431,10 +431,6 @@ class NamedCredential(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a named credential.
-
         ## Example Usage
 
         ```python
@@ -494,10 +490,6 @@ class NamedCredential(pulumi.CustomResource):
                  args: NamedCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a named credential.
-
         ## Example Usage
 
         ```python

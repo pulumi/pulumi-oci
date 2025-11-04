@@ -5,12 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
- * If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
- * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
- *
  * ## Example Usage
  *
  * ```typescript

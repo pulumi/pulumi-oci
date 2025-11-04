@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway
 {
     /// <summary>
-    /// This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
-    /// 
-    /// Creates a new usage plan.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

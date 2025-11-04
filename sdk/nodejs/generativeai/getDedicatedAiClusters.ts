@@ -68,12 +68,18 @@ export interface GetDedicatedAiClustersResult {
      * The list of dedicated_ai_cluster_collection.
      */
     readonly dedicatedAiClusterCollections: outputs.GenerativeAi.GetDedicatedAiClustersDedicatedAiClusterCollection[];
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     */
     readonly displayName?: string;
     readonly filters?: outputs.GenerativeAi.GetDedicatedAiClustersFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
      */
     readonly id?: string;
+    /**
+     * The current state of the dedicated AI cluster.
+     */
     readonly state?: string;
 }
 /**

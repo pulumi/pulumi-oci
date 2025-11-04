@@ -1248,10 +1248,6 @@ class DomainsPolicy(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPolicyTagArgs', 'DomainsPolicyTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Policy.
-
         ## Example Usage
 
         ```python
@@ -1415,10 +1411,6 @@ class DomainsPolicy(pulumi.CustomResource):
                  args: DomainsPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Policy.
-
         ## Example Usage
 
         ```python

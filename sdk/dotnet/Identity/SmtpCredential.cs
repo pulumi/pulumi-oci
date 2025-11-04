@@ -10,13 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity service.
-    /// 
-    /// Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
-    /// You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
-    /// have to be unique, and you can change it anytime with
-    /// [UpdateSmtpCredential](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

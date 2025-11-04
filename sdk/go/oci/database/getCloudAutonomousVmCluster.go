@@ -58,17 +58,17 @@ type LookupCloudAutonomousVmClusterArgs struct {
 
 // A collection of values returned by getCloudAutonomousVmCluster.
 type LookupCloudAutonomousVmClusterResult struct {
-	// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+	// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
 	AutonomousDataStoragePercentage float64 `pulumi:"autonomousDataStoragePercentage"`
-	// The data disk group size allocated for Autonomous Databases, in TBs.
+	// The data disk group size allocated for Autonomous AI Databases, in TBs.
 	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The name of the availability domain that the cloud Autonomous VM cluster is located in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The data disk group size available for Autonomous Databases, in TBs.
+	// The data disk group size available for Autonomous AI Databases, in TBs.
 	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
 	// The number of Autonomous Container Databases that can be created with the currently available local storage.
 	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
-	// CPU cores available for allocation to Autonomous Databases.
+	// CPU cores available for allocation to Autonomous AI Databases.
 	AvailableCpus              float64 `pulumi:"availableCpus"`
 	CloudAutonomousVmClusterId string  `pulumi:"cloudAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -77,7 +77,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
@@ -115,7 +115,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
-	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+	// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails         string                                               `pulumi:"lifecycleDetails"`
@@ -124,7 +124,9 @@ type LookupCloudAutonomousVmClusterResult struct {
 	MaintenanceWindows []GetCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The lowest value to which maximum number of ACDs can be scaled down.
 	MaxAcdsLowestScaledValue int `pulumi:"maxAcdsLowestScaledValue"`
-	// The amount of memory (in GBs) enabled per OCPU or ECPU.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	MemoryPerComputeUnitInGbs float64 `pulumi:"memoryPerComputeUnitInGbs"`
+	// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
@@ -135,7 +137,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	NonProvisionableAutonomousContainerDatabases int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount float64 `pulumi:"ocpuCount"`
@@ -148,9 +150,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ProvisionedAutonomousContainerDatabases int `pulumi:"provisionedAutonomousContainerDatabases"`
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// For Autonomous Databases on Dedicated Exadata Infrastructure:
-	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
@@ -178,7 +178,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	TimeOrdsCertificateExpires string `pulumi:"timeOrdsCertificateExpires"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The total data disk group size for Autonomous Databases, in TBs.
+	// The total data disk group size for Autonomous AI Databases, in TBs.
 	TotalAutonomousDataStorageInTbs float64 `pulumi:"totalAutonomousDataStorageInTbs"`
 	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
 	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
@@ -220,12 +220,12 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ToLookupCloudAutonomousVmClu
 	return o
 }
 
-// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) AutonomousDataStoragePercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AutonomousDataStoragePercentage }).(pulumi.Float64Output)
 }
 
-// The data disk group size allocated for Autonomous Databases, in TBs.
+// The data disk group size allocated for Autonomous AI Databases, in TBs.
 func (o LookupCloudAutonomousVmClusterResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -235,7 +235,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) AvailabilityDomain() pulumi.
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// The data disk group size available for Autonomous Databases, in TBs.
+// The data disk group size available for Autonomous AI Databases, in TBs.
 func (o LookupCloudAutonomousVmClusterResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AvailableAutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -245,7 +245,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) AvailableContainerDatabases(
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
 }
 
-// CPU cores available for allocation to Autonomous Databases.
+// CPU cores available for allocation to Autonomous AI Databases.
 func (o LookupCloudAutonomousVmClusterResultOutput) AvailableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
@@ -269,7 +269,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupCloudAutonomousVmClusterResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -364,7 +364,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) LastUpdateHistoryEntryId() p
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
 }
 
-// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 func (o LookupCloudAutonomousVmClusterResultOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LicenseModel }).(pulumi.StringOutput)
 }
@@ -392,7 +392,12 @@ func (o LookupCloudAutonomousVmClusterResultOutput) MaxAcdsLowestScaledValue() p
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
 }
 
-// The amount of memory (in GBs) enabled per OCPU or ECPU.
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+func (o LookupCloudAutonomousVmClusterResultOutput) MemoryPerComputeUnitInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.MemoryPerComputeUnitInGbs }).(pulumi.Float64Output)
+}
+
+// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 func (o LookupCloudAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -420,7 +425,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) NonProvisionableAutonomousCo
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o LookupCloudAutonomousVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -454,9 +459,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ProvisionedCpus() pulumi.Flo
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
-// For Autonomous Databases on Dedicated Exadata Infrastructure:
-// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 func (o LookupCloudAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
@@ -526,7 +529,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) TimeUpdated() pulumi.StringO
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The total data disk group size for Autonomous Databases, in TBs.
+// The total data disk group size for Autonomous AI Databases, in TBs.
 func (o LookupCloudAutonomousVmClusterResultOutput) TotalAutonomousDataStorageInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64Output)
 }

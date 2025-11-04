@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Profile Attach Managed Instance Group Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Attaches the specified managed instance group to a profile.
-//
 // ## Example Usage
 //
 // ```go

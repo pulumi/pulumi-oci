@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Report resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates the specified report. Only tags can be updated.
+// ## Example Usage
 //
 // ## Import
 //

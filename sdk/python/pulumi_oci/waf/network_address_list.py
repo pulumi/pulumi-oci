@@ -368,10 +368,6 @@ class NetworkAddressList(pulumi.CustomResource):
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new NetworkAddressList.
-
         ## Example Usage
 
         ```python
@@ -422,10 +418,6 @@ class NetworkAddressList(pulumi.CustomResource):
                  args: NetworkAddressListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new NetworkAddressList.
-
         ## Example Usage
 
         ```python

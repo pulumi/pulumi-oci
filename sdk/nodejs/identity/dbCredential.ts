@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
- *
- * Creates a new DB credential for the specified user.
- *
  * ## Example Usage
  *
  * ```typescript

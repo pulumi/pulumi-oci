@@ -380,9 +380,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Exadata storage server grid specified by exadataStorageGridId.
+        ## Example Usage
 
         ## Import
 
@@ -409,9 +407,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
                  args: ExternalExadataStorageGridArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Exadata storage server grid specified by exadataStorageGridId.
+        ## Example Usage
 
         ## Import
 

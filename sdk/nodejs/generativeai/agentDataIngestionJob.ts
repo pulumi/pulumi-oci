@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **CreateDataIngestionJob**
- *
- * Creates a data ingestion job.
- *
  * ## Example Usage
  *
  * ```typescript

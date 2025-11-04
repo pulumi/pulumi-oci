@@ -105,6 +105,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private String ipxeScript;
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    private Boolean isAiEnterpriseEnabled;
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
@@ -286,6 +291,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.ipxeScript;
     }
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Boolean isAiEnterpriseEnabled() {
+        return this.isAiEnterpriseEnabled;
+    }
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
@@ -404,6 +416,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private Map<String,String> freeformTags;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption> instanceOptions;
         private String ipxeScript;
+        private Boolean isAiEnterpriseEnabled;
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption> launchOptions;
@@ -436,6 +449,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.freeformTags = defaults.freeformTags;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
+    	      this.isAiEnterpriseEnabled = defaults.isAiEnterpriseEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
@@ -592,6 +606,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            if (isAiEnterpriseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "isAiEnterpriseEnabled");
+            }
+            this.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             if (isPvEncryptionInTransitEnabled == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "isPvEncryptionInTransitEnabled");
@@ -734,6 +756,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             _resultValue.freeformTags = freeformTags;
             _resultValue.instanceOptions = instanceOptions;
             _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;

@@ -26,7 +26,10 @@ class GetEndpointResult:
     """
     A collection of values returned by getEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inference_units=None, lifecycle_details=None, model_id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alias=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inference_units=None, lifecycle_details=None, model_id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+        if alias and not isinstance(alias, str):
+            raise TypeError("Expected argument 'alias' to be a str")
+        pulumi.set(__self__, "alias", alias)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -69,6 +72,14 @@ class GetEndpointResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> _builtins.str:
+        """
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        """
+        return pulumi.get(self, "alias")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -189,6 +200,7 @@ class AwaitableGetEndpointResult(GetEndpointResult):
         if False:
             yield self
         return GetEndpointResult(
+            alias=self.alias,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -223,6 +235,7 @@ def get_endpoint(id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiLanguage/getEndpoint:getEndpoint', __args__, opts=opts, typ=GetEndpointResult).value
 
     return AwaitableGetEndpointResult(
+        alias=pulumi.get(__ret__, 'alias'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -254,6 +267,7 @@ def get_endpoint_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:AiLanguage/getEndpoint:getEndpoint', __args__, opts=opts, typ=GetEndpointResult)
     return __ret__.apply(lambda __response__: GetEndpointResult(
+        alias=pulumi.get(__response__, 'alias'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),

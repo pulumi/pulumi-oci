@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
-//
-// Create a new visionPrivateEndpoint.
-//
 // ## Example Usage
 //
 // ```go

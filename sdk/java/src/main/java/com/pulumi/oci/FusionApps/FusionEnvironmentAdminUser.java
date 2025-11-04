@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
- * 
- * Create a FusionEnvironment admin user
- * 
  * ## Example Usage
  * 
  * <pre>

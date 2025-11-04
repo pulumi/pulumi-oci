@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Container Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
- *
- * Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
- * [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
- *
  * ## Example Usage
  *
  * ```typescript
@@ -68,7 +63,7 @@ export class AutonomousContainerDatabaseSnapshotStandby extends pulumi.CustomRes
      */
     declare public readonly connectionStringsType: pulumi.Output<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
      *
      *
      * ** IMPORTANT **
@@ -122,7 +117,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyState {
      */
     connectionStringsType?: pulumi.Input<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
      *
      *
      * ** IMPORTANT **
@@ -144,7 +139,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyArgs {
      */
     connectionStringsType?: pulumi.Input<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
      *
      *
      * ** IMPORTANT **

@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a secondary VNIC and attaches it to the specified instance.
-// For more information about secondary VNICs, see
-// [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-//
 // ## Example Usage
 //
 // ```go
@@ -46,6 +40,7 @@ import (
 //					PrivateIp:                            pulumi.Any(vnicAttachmentCreateVnicDetailsPrivateIp),
 //					SecurityAttributes:                   pulumi.Any(vnicAttachmentCreateVnicDetailsSecurityAttributes),
 //					SkipSourceDestCheck:                  pulumi.Any(vnicAttachmentCreateVnicDetailsSkipSourceDestCheck),
+//					SubnetCidr:                           pulumi.Any(vnicAttachmentCreateVnicDetailsSubnetCidr),
 //					SubnetId:                             pulumi.Any(testSubnet.Id),
 //					VlanId:                               pulumi.Any(testVlan.Id),
 //				},

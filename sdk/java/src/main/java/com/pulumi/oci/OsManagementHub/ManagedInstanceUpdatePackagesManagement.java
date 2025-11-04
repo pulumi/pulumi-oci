@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Updates a package on a managed instance.
- * 
  * ## Example Usage
  * 
  * <pre>

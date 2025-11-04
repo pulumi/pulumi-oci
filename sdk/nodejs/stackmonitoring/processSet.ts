@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * API to create Process Set.
- *
  * ## Example Usage
  *
  * ```typescript

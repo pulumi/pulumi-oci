@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
-//
-// Creates a Data Science private endpoint to be used by a Data Science resource.
-//
 // ## Example Usage
 //
 // ```go

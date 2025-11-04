@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
- *
- * Create a DR protection group.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -311,10 +311,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new RefreshActivity.
-
         ## Example Usage
 
         ## Import
@@ -338,10 +334,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  args: FusionEnvironmentRefreshActivityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new RefreshActivity.
-
         ## Example Usage
 
         ## Import

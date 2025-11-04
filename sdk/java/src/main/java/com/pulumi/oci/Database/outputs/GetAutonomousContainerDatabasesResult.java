@@ -21,7 +21,7 @@ public final class GetAutonomousContainerDatabasesResult {
      */
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
     /**
-     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+     * @return **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     private @Nullable String autonomousExadataInfrastructureId;
@@ -81,7 +81,7 @@ public final class GetAutonomousContainerDatabasesResult {
         return this.autonomousContainerDatabases;
     }
     /**
-     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+     * @return **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     public Optional<String> autonomousExadataInfrastructureId() {

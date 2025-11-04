@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
- *
- * Install the specified addon for a cluster.
+ * ## Example Usage
  *
  * ## Import
  *

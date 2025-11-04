@@ -12,9 +12,22 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabases
     {
         /// <summary>
+        /// ## 
+        /// 
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// Gets a list of Autonomous AI Databases based on the query parameters specified.
         /// 
         /// 
         /// ## Example Usage
@@ -51,9 +64,22 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
+        /// ## 
+        /// 
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// Gets a list of Autonomous AI Databases based on the query parameters specified.
         /// 
         /// 
         /// ## Example Usage
@@ -90,9 +116,22 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// ## 
+        /// 
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// Gets a list of Autonomous AI Databases based on the query parameters specified.
         /// 
         /// 
         /// ## Example Usage
@@ -145,13 +184,13 @@ namespace Pulumi.Oci.Database
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified dbVersion.
+        /// A filter to return only Autonomous AI Database resources that match the specified dbVersion.
         /// </summary>
         [Input("dbVersion")]
         public string? DbVersion { get; set; }
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified workload type.
+        /// A filter to return only Autonomous AI Database resources that match the specified workload type.
         /// </summary>
         [Input("dbWorkload")]
         public string? DbWorkload { get; set; }
@@ -200,14 +239,11 @@ namespace Pulumi.Oci.Database
         [Input("isResourcePoolLeader")]
         public bool? IsResourcePoolLeader { get; set; }
 
-        /// <summary>
-        /// A filter to return only resources that not match the given lifecycle state.
-        /// </summary>
         [Input("lifecycleStateNotEqualTo")]
         public string? LifecycleStateNotEqualTo { get; set; }
 
         /// <summary>
-        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
         /// </summary>
         [Input("resourcePoolLeaderId")]
         public string? ResourcePoolLeaderId { get; set; }
@@ -239,13 +275,13 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified dbVersion.
+        /// A filter to return only Autonomous AI Database resources that match the specified dbVersion.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
 
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified workload type.
+        /// A filter to return only Autonomous AI Database resources that match the specified workload type.
         /// </summary>
         [Input("dbWorkload")]
         public Input<string>? DbWorkload { get; set; }
@@ -294,14 +330,11 @@ namespace Pulumi.Oci.Database
         [Input("isResourcePoolLeader")]
         public Input<bool>? IsResourcePoolLeader { get; set; }
 
-        /// <summary>
-        /// A filter to return only resources that not match the given lifecycle state.
-        /// </summary>
         [Input("lifecycleStateNotEqualTo")]
         public Input<string>? LifecycleStateNotEqualTo { get; set; }
 
         /// <summary>
-        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
         /// </summary>
         [Input("resourcePoolLeaderId")]
         public Input<string>? ResourcePoolLeaderId { get; set; }
@@ -323,7 +356,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabasesResult
     {
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         /// </summary>
         public readonly string? AutonomousContainerDatabaseId;
         /// <summary>
@@ -335,19 +368,20 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database.
         /// </summary>
         public readonly string? DbVersion;
         /// <summary>
-        /// The Autonomous Database workload type. The following values are valid:
-        /// * OLTP - indicates an Autonomous Transaction Processing database
-        /// * DW - indicates an Autonomous Data Warehouse database
-        /// * AJD - indicates an Autonomous JSON Database
-        /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        /// The Autonomous AI Database workload type. The following values are valid:
+        /// * OLTP - indicates an Autonomous AI Transaction Processing database
+        /// * DW - indicates an Autonomous AI Lakehouse database
+        /// * AJD - indicates an Autonomous AI JSON Database
+        /// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        /// * LH - indicates an Oracle Autonomous AI Lakehouse database
         /// </summary>
         public readonly string? DbWorkload;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        /// The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesFilterResult> Filters;
@@ -360,25 +394,25 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string? InfrastructureType;
         /// <summary>
-        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         public readonly bool? IsDataGuardEnabled;
         /// <summary>
-        /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         /// </summary>
         public readonly bool? IsFreeTier;
         /// <summary>
-        /// Indicates if the Autonomous Database is a refreshable clone.
+        /// Indicates if the Autonomous AI Database is a refreshable clone.
         /// </summary>
         public readonly bool? IsRefreshableClone;
         public readonly bool? IsResourcePoolLeader;
         public readonly string? LifecycleStateNotEqualTo;
         /// <summary>
-        /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? ResourcePoolLeaderId;
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// The current state of the Autonomous AI Database.
         /// </summary>
         public readonly string? State;
 

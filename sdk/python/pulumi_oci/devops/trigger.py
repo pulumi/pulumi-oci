@@ -464,10 +464,6 @@ class Trigger(pulumi.CustomResource):
                  trigger_source: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Trigger resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new trigger.
-
         ## Example Usage
 
         ```python
@@ -532,10 +528,6 @@ class Trigger(pulumi.CustomResource):
                  args: TriggerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Trigger resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new trigger.
-
         ## Example Usage
 
         ```python

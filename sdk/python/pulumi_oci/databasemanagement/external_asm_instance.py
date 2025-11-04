@@ -362,9 +362,7 @@ class ExternalAsmInstance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external ASM instance specified by `externalAsmInstanceId`.
+        ## Example Usage
 
         ## Import
 
@@ -391,9 +389,7 @@ class ExternalAsmInstance(pulumi.CustomResource):
                  args: ExternalAsmInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external ASM instance specified by `externalAsmInstanceId`.
+        ## Example Usage
 
         ## Import
 

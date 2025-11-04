@@ -121,10 +121,6 @@ class BackupCancelManagement(pulumi.CustomResource):
                  cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
-
-        Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
-
         ## Example Usage
 
         ```python
@@ -156,10 +152,6 @@ class BackupCancelManagement(pulumi.CustomResource):
                  args: BackupCancelManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
-
-        Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
-
         ## Example Usage
 
         ```python

@@ -43,6 +43,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String category;
     /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
@@ -229,6 +234,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String publicIpAddress;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -248,6 +258,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String subnetId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
@@ -322,6 +337,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String category() {
         return this.category;
+    }
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -586,6 +608,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.publicIpAddress;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -612,6 +641,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -690,6 +726,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
         private Integer byolCpuCoreCountLimit;
         private String category;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Integer cpuCoreCount;
         private Map<String,String> definedTags;
@@ -728,10 +765,12 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private List<GetDeploymentsDeploymentCollectionItemPlacement> placements;
         private String privateIpAddress;
         private String publicIpAddress;
+        private Map<String,String> securityAttributes;
         private String sourceDeploymentId;
         private String state;
         private String storageUtilizationInBytes;
         private String subnetId;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeLastBackupScheduled;
@@ -748,6 +787,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.backupSchedules = defaults.backupSchedules;
     	      this.byolCpuCoreCountLimit = defaults.byolCpuCoreCountLimit;
     	      this.category = defaults.category;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.definedTags = defaults.definedTags;
@@ -786,10 +826,12 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.placements = defaults.placements;
     	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.publicIpAddress = defaults.publicIpAddress;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.sourceDeploymentId = defaults.sourceDeploymentId;
     	      this.state = defaults.state;
     	      this.storageUtilizationInBytes = defaults.storageUtilizationInBytes;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastBackupScheduled = defaults.timeLastBackupScheduled;
@@ -834,6 +876,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "category");
             }
             this.category = category;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -1165,6 +1215,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceDeploymentId(String sourceDeploymentId) {
             if (sourceDeploymentId == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "sourceDeploymentId");
@@ -1194,6 +1252,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "subnetId");
             }
             this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
@@ -1274,6 +1340,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.backupSchedules = backupSchedules;
             _resultValue.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
             _resultValue.category = category;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.definedTags = definedTags;
@@ -1312,10 +1379,12 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.placements = placements;
             _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.publicIpAddress = publicIpAddress;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.sourceDeploymentId = sourceDeploymentId;
             _resultValue.state = state;
             _resultValue.storageUtilizationInBytes = storageUtilizationInBytes;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastBackupScheduled = timeLastBackupScheduled;

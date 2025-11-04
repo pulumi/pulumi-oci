@@ -350,12 +350,6 @@ class SensitiveTypesExport(pulumi.CustomResource):
                  sensitive_type_ids_for_exports: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Generates a downloadable file corresponding to the specified list of sensitive types. It's a prerequisite for the
-        DownloadSensitiveTypesExport operation. Use this endpoint to generate a sensitive Types Export file and then use
-        DownloadSensitiveTypesExport to download the generated file.
-
         ## Example Usage
 
         ```python
@@ -405,12 +399,6 @@ class SensitiveTypesExport(pulumi.CustomResource):
                  args: SensitiveTypesExportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Generates a downloadable file corresponding to the specified list of sensitive types. It's a prerequisite for the
-        DownloadSensitiveTypesExport operation. Use this endpoint to generate a sensitive Types Export file and then use
-        DownloadSensitiveTypesExport to download the generated file.
-
         ## Example Usage
 
         ```python

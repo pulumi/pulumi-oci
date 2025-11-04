@@ -1465,10 +1465,6 @@ class DomainsRule(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Rule.
-
         ## Example Usage
 
         ```python
@@ -1672,10 +1668,6 @@ class DomainsRule(pulumi.CustomResource):
                  args: DomainsRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Rule.
-
         ## Example Usage
 
         ```python

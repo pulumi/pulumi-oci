@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
- *
  * ## Example Usage
  *
  * ```typescript

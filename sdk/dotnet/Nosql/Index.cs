@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql
 {
     /// <summary>
-    /// This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-    /// 
-    /// Create a new index on the table identified by tableNameOrId.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

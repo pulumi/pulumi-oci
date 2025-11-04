@@ -14,9 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
- * 
- * Updates the enrollment status of the tenancy.
+ * ## Example Usage
  * 
  * ## Import
  * 

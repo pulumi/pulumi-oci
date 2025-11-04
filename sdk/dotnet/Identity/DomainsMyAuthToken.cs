@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a user's own Auth token.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

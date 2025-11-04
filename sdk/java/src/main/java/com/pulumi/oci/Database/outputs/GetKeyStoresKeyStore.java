@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStoreAssociatedDatabase;
+import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStoreAssociatedLongTermBackup;
 import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStoreTypeDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -20,6 +21,16 @@ public final class GetKeyStoresKeyStore {
      * 
      */
     private List<GetKeyStoresKeyStoreAssociatedDatabase> associatedDatabases;
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    private Integer associatedLongTermBackupCount;
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    private List<GetKeyStoresKeyStoreAssociatedLongTermBackup> associatedLongTermBackups;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -79,6 +90,20 @@ public final class GetKeyStoresKeyStore {
      */
     public List<GetKeyStoresKeyStoreAssociatedDatabase> associatedDatabases() {
         return this.associatedDatabases;
+    }
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    public Integer associatedLongTermBackupCount() {
+        return this.associatedLongTermBackupCount;
+    }
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    public List<GetKeyStoresKeyStoreAssociatedLongTermBackup> associatedLongTermBackups() {
+        return this.associatedLongTermBackups;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -164,6 +189,8 @@ public final class GetKeyStoresKeyStore {
     @CustomType.Builder
     public static final class Builder {
         private List<GetKeyStoresKeyStoreAssociatedDatabase> associatedDatabases;
+        private Integer associatedLongTermBackupCount;
+        private List<GetKeyStoresKeyStoreAssociatedLongTermBackup> associatedLongTermBackups;
         private String compartmentId;
         private Integer confirmDetailsTrigger;
         private Map<String,String> definedTags;
@@ -179,6 +206,8 @@ public final class GetKeyStoresKeyStore {
         public Builder(GetKeyStoresKeyStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedDatabases = defaults.associatedDatabases;
+    	      this.associatedLongTermBackupCount = defaults.associatedLongTermBackupCount;
+    	      this.associatedLongTermBackups = defaults.associatedLongTermBackups;
     	      this.compartmentId = defaults.compartmentId;
     	      this.confirmDetailsTrigger = defaults.confirmDetailsTrigger;
     	      this.definedTags = defaults.definedTags;
@@ -202,6 +231,25 @@ public final class GetKeyStoresKeyStore {
         }
         public Builder associatedDatabases(GetKeyStoresKeyStoreAssociatedDatabase... associatedDatabases) {
             return associatedDatabases(List.of(associatedDatabases));
+        }
+        @CustomType.Setter
+        public Builder associatedLongTermBackupCount(Integer associatedLongTermBackupCount) {
+            if (associatedLongTermBackupCount == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresKeyStore", "associatedLongTermBackupCount");
+            }
+            this.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedLongTermBackups(List<GetKeyStoresKeyStoreAssociatedLongTermBackup> associatedLongTermBackups) {
+            if (associatedLongTermBackups == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresKeyStore", "associatedLongTermBackups");
+            }
+            this.associatedLongTermBackups = associatedLongTermBackups;
+            return this;
+        }
+        public Builder associatedLongTermBackups(GetKeyStoresKeyStoreAssociatedLongTermBackup... associatedLongTermBackups) {
+            return associatedLongTermBackups(List.of(associatedLongTermBackups));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -297,6 +345,8 @@ public final class GetKeyStoresKeyStore {
         public GetKeyStoresKeyStore build() {
             final var _resultValue = new GetKeyStoresKeyStore();
             _resultValue.associatedDatabases = associatedDatabases;
+            _resultValue.associatedLongTermBackupCount = associatedLongTermBackupCount;
+            _resultValue.associatedLongTermBackups = associatedLongTermBackups;
             _resultValue.compartmentId = compartmentId;
             _resultValue.confirmDetailsTrigger = confirmDetailsTrigger;
             _resultValue.definedTags = definedTags;

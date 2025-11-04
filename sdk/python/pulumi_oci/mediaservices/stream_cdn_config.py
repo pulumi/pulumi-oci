@@ -391,10 +391,6 @@ class StreamCdnConfig(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new CDN Configuration.
-
         ## Example Usage
 
         ```python
@@ -459,10 +455,6 @@ class StreamCdnConfig(pulumi.CustomResource):
                  args: StreamCdnConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new CDN Configuration.
-
         ## Example Usage
 
         ```python

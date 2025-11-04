@@ -490,15 +490,6 @@ class VolumeBackup(pulumi.CustomResource):
                  volume_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup of the specified volume. For general information about volume backups,
-        see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
         ## Example Usage
 
         ```python
@@ -544,15 +535,6 @@ class VolumeBackup(pulumi.CustomResource):
                  args: Optional[VolumeBackupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup of the specified volume. For general information about volume backups,
-        see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
         ## Example Usage
 
         ```python

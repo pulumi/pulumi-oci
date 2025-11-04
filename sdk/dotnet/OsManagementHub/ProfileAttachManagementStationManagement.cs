@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Attaches the specified management station to a profile.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

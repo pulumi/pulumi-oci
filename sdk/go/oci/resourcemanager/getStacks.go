@@ -13,9 +13,11 @@ import (
 
 // This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
 //
-// Returns a list of stacks.
+// Lists stacks according to the specified filter.
+// For more information, see
+// [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
 // - If called using the compartment ID, returns all stacks in the specified compartment.
-// - If called using the stack ID, returns the specified stack.
+// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
 //
 // ## Example Usage
 //
@@ -64,13 +66,7 @@ type GetStacksArgs struct {
 	Filters     []GetStacksFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id *string `pulumi:"id"`
-	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-	//
-	// Allowable values:
-	// * CREATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
+	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State *string `pulumi:"state"`
 }
 
@@ -78,14 +74,14 @@ type GetStacksArgs struct {
 type GetStacksResult struct {
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Human-readable display name for the stack.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetStacksFilter `pulumi:"filters"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the stack.
 	Id *string `pulumi:"id"`
 	// The list of stacks.
 	Stacks []GetStacksStack `pulumi:"stacks"`
-	// The current lifecycle state of the stack.
+	// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State *string `pulumi:"state"`
 }
 
@@ -107,13 +103,7 @@ type GetStacksOutputArgs struct {
 	Filters     GetStacksFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-	//
-	// Allowable values:
-	// * CREATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
+	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -141,7 +131,7 @@ func (o GetStacksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Human-readable display name for the stack.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetStacksResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetStacksResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -160,7 +150,7 @@ func (o GetStacksResultOutput) Stacks() GetStacksStackArrayOutput {
 	return o.ApplyT(func(v GetStacksResult) []GetStacksStack { return v.Stacks }).(GetStacksStackArrayOutput)
 }
 
-// The current lifecycle state of the stack.
+// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 func (o GetStacksResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetStacksResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

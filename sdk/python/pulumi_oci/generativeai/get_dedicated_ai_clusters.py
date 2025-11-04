@@ -64,6 +64,9 @@ class GetDedicatedAiClustersResult:
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -82,6 +85,9 @@ class GetDedicatedAiClustersResult:
     @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
+        """
+        The current state of the dedicated AI cluster.
+        """
         return pulumi.get(self, "state")
 
 

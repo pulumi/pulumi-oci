@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
- * 
- * Creates a new repository for storing artifacts.
- * 
  * ## Example Usage
  * 
  * <pre>

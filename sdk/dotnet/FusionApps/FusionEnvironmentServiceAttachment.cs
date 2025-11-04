@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
-    /// This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-    /// 
-    /// Attaches a service instance to the fusion pod.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

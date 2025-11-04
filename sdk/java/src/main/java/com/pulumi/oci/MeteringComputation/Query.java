@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
- * 
- * Returns the created query.
- * 
  * ## Example Usage
  * 
  * <pre>

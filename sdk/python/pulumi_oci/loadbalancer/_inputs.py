@@ -1558,7 +1558,7 @@ if not MYPY:
     class LoadBalancerReservedIpArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Ocid of the Reserved IP/Public Ip created with VCN.
+        (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
         Reserved IPs are IPs which already registered using VCN API.
 
@@ -1578,7 +1578,7 @@ class LoadBalancerReservedIpArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP/Public Ip created with VCN.
+        :param pulumi.Input[_builtins.str] id: (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
                
                Reserved IPs are IPs which already registered using VCN API.
                
@@ -1597,7 +1597,7 @@ class LoadBalancerReservedIpArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Ocid of the Reserved IP/Public Ip created with VCN.
+        (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
         Reserved IPs are IPs which already registered using VCN API.
 

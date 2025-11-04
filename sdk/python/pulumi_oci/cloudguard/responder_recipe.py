@@ -422,10 +422,7 @@ class ResponderRecipe(pulumi.CustomResource):
                  source_responder_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a responder recipe (ResponderRecipe resource), from values passed in a
-        CreateResponderRecipeDetails resource.
+        ## Example Usage
 
         ## Import
 
@@ -462,10 +459,7 @@ class ResponderRecipe(pulumi.CustomResource):
                  args: ResponderRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a responder recipe (ResponderRecipe resource), from values passed in a
-        CreateResponderRecipeDetails resource.
+        ## Example Usage
 
         ## Import
 

@@ -71,26 +71,14 @@ public final class GetStacksArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-     * 
-     * Allowable values:
-     * * CREATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
+     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-     * 
-     * Allowable values:
-     * * CREATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
+     * @return A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     public Optional<Output<String>> state() {
@@ -202,13 +190,7 @@ public final class GetStacksArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-         * 
-         * Allowable values:
-         * * CREATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
+         * @param state A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          * 
          * @return builder
          * 
@@ -219,13 +201,7 @@ public final class GetStacksArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-         * 
-         * Allowable values:
-         * * CREATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
+         * @param state A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          * 
          * @return builder
          * 

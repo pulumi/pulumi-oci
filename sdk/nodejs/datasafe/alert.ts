@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates the status of the specified alert.
+ * ## Example Usage
  *
  * ## Import
  *

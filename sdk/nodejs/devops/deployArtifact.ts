@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
- *
- * Creates a new deployment artifact.
- *
  * ## Example Usage
  *
  * ```typescript

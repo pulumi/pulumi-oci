@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates a new Database Management private endpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

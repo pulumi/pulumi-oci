@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseApexDetail {
     /**
-     * @return The Oracle APEX Application Development version.
+     * @return The Oracle APEX AI Application Development version.
      * 
      */
     private @Nullable String apexVersion;
@@ -24,7 +24,7 @@ public final class AutonomousDatabaseApexDetail {
 
     private AutonomousDatabaseApexDetail() {}
     /**
-     * @return The Oracle APEX Application Development version.
+     * @return The Oracle APEX AI Application Development version.
      * 
      */
     public Optional<String> apexVersion() {

@@ -173,12 +173,6 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Container Database Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enables Database Management Service for the external container database.
-        For more information about the Database Management Service, see
-        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-
         ## Example Usage
 
         ## Import
@@ -201,12 +195,6 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
                  args: ExternalContainerDatabaseManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Container Database Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enables Database Management Service for the external container database.
-        For more information about the Database Management Service, see
-        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-
         ## Example Usage
 
         ## Import

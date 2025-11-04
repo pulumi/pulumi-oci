@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
-//
-// Returns carbon emission usage for the given account.
-//
 // ## Example Usage
 //
 // ```go

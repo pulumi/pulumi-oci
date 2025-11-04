@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
  *
- * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+ * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
  *
  * ## Example Usage
  *
@@ -50,7 +50,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
      */
     readonly autonomousDatabaseDataguardAssociations: outputs.Database.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
      */
     readonly autonomousDatabaseId: string;
     readonly filters?: outputs.Database.GetAutonomousDatabaseDataguardAssociationsFilter[];
@@ -62,7 +62,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
 /**
  * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
  *
- * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+ * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
  *
  * ## Example Usage
  *

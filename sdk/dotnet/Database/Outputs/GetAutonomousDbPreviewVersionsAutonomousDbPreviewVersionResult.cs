@@ -14,11 +14,12 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult
     {
         /// <summary>
-        /// The Autonomous Database workload type. The following values are valid:
-        /// * OLTP - indicates an Autonomous Transaction Processing database
-        /// * DW - indicates an Autonomous Data Warehouse database
-        /// * AJD - indicates an Autonomous JSON Database
-        /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        /// The Autonomous AI Database workload type. The following values are valid:
+        /// * OLTP - indicates an Autonomous AI Transaction Processing database
+        /// * DW - indicates an Autonomous AI Lakehouse database
+        /// * AJD - indicates an Autonomous AI JSON Database
+        /// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        /// * LH - indicates an Oracle Autonomous AI Lakehouse database
         /// </summary>
         public readonly string DbWorkload;
         /// <summary>
@@ -34,7 +35,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimePreviewEnd;
         /// <summary>
-        /// A valid Autonomous Database preview version.
+        /// A valid Autonomous AI Database preview version.
         /// </summary>
         public readonly string Version;
 

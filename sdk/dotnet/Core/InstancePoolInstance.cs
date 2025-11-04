@@ -10,14 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Attaches an instance to an instance pool. For information about the prerequisites
-    /// that an instance must meet before you can attach it to a pool, see
-    /// [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
-    /// 
-    /// Using this resource will impact the size of the instance pool, attach will increment the size of the pool
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

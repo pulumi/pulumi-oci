@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
- *
- * OCI will release Tag Namespaces that our customers can import.
- * These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -8,11 +8,92 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlDbSystemMaintenanceArgs Empty = new MysqlDbSystemMaintenanceArgs();
+
+    /**
+     * (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    @Import(name="maintenanceScheduleType")
+    private @Nullable Output<String> maintenanceScheduleType;
+
+    /**
+     * @return (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    public Optional<Output<String>> maintenanceScheduleType() {
+        return Optional.ofNullable(this.maintenanceScheduleType);
+    }
+
+    /**
+     * The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    @Import(name="targetVersion")
+    private @Nullable Output<String> targetVersion;
+
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    public Optional<Output<String>> targetVersion() {
+        return Optional.ofNullable(this.targetVersion);
+    }
+
+    /**
+     * The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    @Import(name="timeScheduled")
+    private @Nullable Output<String> timeScheduled;
+
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public Optional<Output<String>> timeScheduled() {
+        return Optional.ofNullable(this.timeScheduled);
+    }
+
+    /**
+     * (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * 
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     * 
+     */
+    @Import(name="versionPreference")
+    private @Nullable Output<String> versionPreference;
+
+    /**
+     * @return (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * 
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     * 
+     */
+    public Optional<Output<String>> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
+    }
+
+    /**
+     * (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    @Import(name="versionTrackPreference")
+    private @Nullable Output<String> versionTrackPreference;
+
+    /**
+     * @return (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    public Optional<Output<String>> versionTrackPreference() {
+        return Optional.ofNullable(this.versionTrackPreference);
+    }
 
     /**
      * (Updatable) The start of the 2 hour maintenance window.
@@ -48,6 +129,11 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
     private MysqlDbSystemMaintenanceArgs() {}
 
     private MysqlDbSystemMaintenanceArgs(MysqlDbSystemMaintenanceArgs $) {
+        this.maintenanceScheduleType = $.maintenanceScheduleType;
+        this.targetVersion = $.targetVersion;
+        this.timeScheduled = $.timeScheduled;
+        this.versionPreference = $.versionPreference;
+        this.versionTrackPreference = $.versionTrackPreference;
         this.windowStartTime = $.windowStartTime;
     }
 
@@ -67,6 +153,115 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
 
         public Builder(MysqlDbSystemMaintenanceArgs defaults) {
             $ = new MysqlDbSystemMaintenanceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param maintenanceScheduleType (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceScheduleType(@Nullable Output<String> maintenanceScheduleType) {
+            $.maintenanceScheduleType = maintenanceScheduleType;
+            return this;
+        }
+
+        /**
+         * @param maintenanceScheduleType (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceScheduleType(String maintenanceScheduleType) {
+            return maintenanceScheduleType(Output.of(maintenanceScheduleType));
+        }
+
+        /**
+         * @param targetVersion The version that is expected to be targeted during the next scheduled maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetVersion(@Nullable Output<String> targetVersion) {
+            $.targetVersion = targetVersion;
+            return this;
+        }
+
+        /**
+         * @param targetVersion The version that is expected to be targeted during the next scheduled maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetVersion(String targetVersion) {
+            return targetVersion(Output.of(targetVersion));
+        }
+
+        /**
+         * @param timeScheduled The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduled(@Nullable Output<String> timeScheduled) {
+            $.timeScheduled = timeScheduled;
+            return this;
+        }
+
+        /**
+         * @param timeScheduled The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduled(String timeScheduled) {
+            return timeScheduled(Output.of(timeScheduled));
+        }
+
+        /**
+         * @param versionPreference (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+         * 
+         * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(@Nullable Output<String> versionPreference) {
+            $.versionPreference = versionPreference;
+            return this;
+        }
+
+        /**
+         * @param versionPreference (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+         * 
+         * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionPreference(String versionPreference) {
+            return versionPreference(Output.of(versionPreference));
+        }
+
+        /**
+         * @param versionTrackPreference (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionTrackPreference(@Nullable Output<String> versionTrackPreference) {
+            $.versionTrackPreference = versionTrackPreference;
+            return this;
+        }
+
+        /**
+         * @param versionTrackPreference (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionTrackPreference(String versionTrackPreference) {
+            return versionTrackPreference(Output.of(versionTrackPreference));
         }
 
         /**

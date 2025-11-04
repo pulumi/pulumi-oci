@@ -317,9 +317,7 @@ class Addon(pulumi.CustomResource):
                  version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Install the specified addon for a cluster.
+        ## Example Usage
 
         ## Import
 
@@ -349,9 +347,7 @@ class Addon(pulumi.CustomResource):
                  args: AddonArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Install the specified addon for a cluster.
+        ## Example Usage
 
         ## Import
 

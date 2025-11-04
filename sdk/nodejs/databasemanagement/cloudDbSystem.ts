@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates a cloud DB system and its related resources.
- *
  * ## Example Usage
  *
  * ```typescript

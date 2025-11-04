@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Adm
 {
     /// <summary>
-    /// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
-    /// 
-    /// Creates a new Knowledge Base.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

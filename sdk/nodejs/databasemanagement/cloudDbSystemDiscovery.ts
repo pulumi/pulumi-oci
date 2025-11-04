@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates a cloud DB system discovery resource and initiates the discovery process.
- *
- *   Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
- *
  * ## Example Usage
  *
  * ## Import

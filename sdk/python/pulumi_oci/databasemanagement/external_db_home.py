@@ -330,9 +330,7 @@ class ExternalDbHome(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB home specified by `externalDbHomeId`.
+        ## Example Usage
 
         ## Import
 
@@ -359,9 +357,7 @@ class ExternalDbHome(pulumi.CustomResource):
                  args: ExternalDbHomeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB home specified by `externalDbHomeId`.
+        ## Example Usage
 
         ## Import
 

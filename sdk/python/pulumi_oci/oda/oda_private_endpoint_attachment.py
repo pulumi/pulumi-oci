@@ -184,13 +184,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
                  oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint Attachment.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
         ## Example Usage
 
         ```python
@@ -226,13 +219,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
                  args: OdaPrivateEndpointAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint Attachment.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
         ## Example Usage
 
         ```python

@@ -13,6 +13,245 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AutomaticDrConfigurationMember struct {
+	// (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled *bool `pulumi:"isAutoFailoverEnabled"`
+	// (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled *bool `pulumi:"isAutoSwitchoverEnabled"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId string `pulumi:"memberId"`
+	// (Updatable) The type of the member.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MemberType string `pulumi:"memberType"`
+}
+
+// AutomaticDrConfigurationMemberInput is an input type that accepts AutomaticDrConfigurationMemberArgs and AutomaticDrConfigurationMemberOutput values.
+// You can construct a concrete instance of `AutomaticDrConfigurationMemberInput` via:
+//
+//	AutomaticDrConfigurationMemberArgs{...}
+type AutomaticDrConfigurationMemberInput interface {
+	pulumi.Input
+
+	ToAutomaticDrConfigurationMemberOutput() AutomaticDrConfigurationMemberOutput
+	ToAutomaticDrConfigurationMemberOutputWithContext(context.Context) AutomaticDrConfigurationMemberOutput
+}
+
+type AutomaticDrConfigurationMemberArgs struct {
+	// (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled pulumi.BoolPtrInput `pulumi:"isAutoFailoverEnabled"`
+	// (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled pulumi.BoolPtrInput `pulumi:"isAutoSwitchoverEnabled"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// (Updatable) The type of the member.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MemberType pulumi.StringInput `pulumi:"memberType"`
+}
+
+func (AutomaticDrConfigurationMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (i AutomaticDrConfigurationMemberArgs) ToAutomaticDrConfigurationMemberOutput() AutomaticDrConfigurationMemberOutput {
+	return i.ToAutomaticDrConfigurationMemberOutputWithContext(context.Background())
+}
+
+func (i AutomaticDrConfigurationMemberArgs) ToAutomaticDrConfigurationMemberOutputWithContext(ctx context.Context) AutomaticDrConfigurationMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutomaticDrConfigurationMemberOutput)
+}
+
+// AutomaticDrConfigurationMemberArrayInput is an input type that accepts AutomaticDrConfigurationMemberArray and AutomaticDrConfigurationMemberArrayOutput values.
+// You can construct a concrete instance of `AutomaticDrConfigurationMemberArrayInput` via:
+//
+//	AutomaticDrConfigurationMemberArray{ AutomaticDrConfigurationMemberArgs{...} }
+type AutomaticDrConfigurationMemberArrayInput interface {
+	pulumi.Input
+
+	ToAutomaticDrConfigurationMemberArrayOutput() AutomaticDrConfigurationMemberArrayOutput
+	ToAutomaticDrConfigurationMemberArrayOutputWithContext(context.Context) AutomaticDrConfigurationMemberArrayOutput
+}
+
+type AutomaticDrConfigurationMemberArray []AutomaticDrConfigurationMemberInput
+
+func (AutomaticDrConfigurationMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (i AutomaticDrConfigurationMemberArray) ToAutomaticDrConfigurationMemberArrayOutput() AutomaticDrConfigurationMemberArrayOutput {
+	return i.ToAutomaticDrConfigurationMemberArrayOutputWithContext(context.Background())
+}
+
+func (i AutomaticDrConfigurationMemberArray) ToAutomaticDrConfigurationMemberArrayOutputWithContext(ctx context.Context) AutomaticDrConfigurationMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutomaticDrConfigurationMemberArrayOutput)
+}
+
+type AutomaticDrConfigurationMemberOutput struct{ *pulumi.OutputState }
+
+func (AutomaticDrConfigurationMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (o AutomaticDrConfigurationMemberOutput) ToAutomaticDrConfigurationMemberOutput() AutomaticDrConfigurationMemberOutput {
+	return o
+}
+
+func (o AutomaticDrConfigurationMemberOutput) ToAutomaticDrConfigurationMemberOutputWithContext(ctx context.Context) AutomaticDrConfigurationMemberOutput {
+	return o
+}
+
+// (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o AutomaticDrConfigurationMemberOutput) IsAutoFailoverEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutomaticDrConfigurationMember) *bool { return v.IsAutoFailoverEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o AutomaticDrConfigurationMemberOutput) IsAutoSwitchoverEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutomaticDrConfigurationMember) *bool { return v.IsAutoSwitchoverEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+func (o AutomaticDrConfigurationMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v AutomaticDrConfigurationMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of the member.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AutomaticDrConfigurationMemberOutput) MemberType() pulumi.StringOutput {
+	return o.ApplyT(func(v AutomaticDrConfigurationMember) string { return v.MemberType }).(pulumi.StringOutput)
+}
+
+type AutomaticDrConfigurationMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (AutomaticDrConfigurationMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (o AutomaticDrConfigurationMemberArrayOutput) ToAutomaticDrConfigurationMemberArrayOutput() AutomaticDrConfigurationMemberArrayOutput {
+	return o
+}
+
+func (o AutomaticDrConfigurationMemberArrayOutput) ToAutomaticDrConfigurationMemberArrayOutputWithContext(ctx context.Context) AutomaticDrConfigurationMemberArrayOutput {
+	return o
+}
+
+func (o AutomaticDrConfigurationMemberArrayOutput) Index(i pulumi.IntInput) AutomaticDrConfigurationMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutomaticDrConfigurationMember {
+		return vs[0].([]AutomaticDrConfigurationMember)[vs[1].(int)]
+	}).(AutomaticDrConfigurationMemberOutput)
+}
+
+type DrPlanExecutionAutomaticExecutionDetail struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName *string `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId *string `pulumi:"memberId"`
+}
+
+// DrPlanExecutionAutomaticExecutionDetailInput is an input type that accepts DrPlanExecutionAutomaticExecutionDetailArgs and DrPlanExecutionAutomaticExecutionDetailOutput values.
+// You can construct a concrete instance of `DrPlanExecutionAutomaticExecutionDetailInput` via:
+//
+//	DrPlanExecutionAutomaticExecutionDetailArgs{...}
+type DrPlanExecutionAutomaticExecutionDetailInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionAutomaticExecutionDetailOutput() DrPlanExecutionAutomaticExecutionDetailOutput
+	ToDrPlanExecutionAutomaticExecutionDetailOutputWithContext(context.Context) DrPlanExecutionAutomaticExecutionDetailOutput
+}
+
+type DrPlanExecutionAutomaticExecutionDetailArgs struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName pulumi.StringPtrInput `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
+}
+
+func (DrPlanExecutionAutomaticExecutionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i DrPlanExecutionAutomaticExecutionDetailArgs) ToDrPlanExecutionAutomaticExecutionDetailOutput() DrPlanExecutionAutomaticExecutionDetailOutput {
+	return i.ToDrPlanExecutionAutomaticExecutionDetailOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionAutomaticExecutionDetailArgs) ToDrPlanExecutionAutomaticExecutionDetailOutputWithContext(ctx context.Context) DrPlanExecutionAutomaticExecutionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionAutomaticExecutionDetailOutput)
+}
+
+// DrPlanExecutionAutomaticExecutionDetailArrayInput is an input type that accepts DrPlanExecutionAutomaticExecutionDetailArray and DrPlanExecutionAutomaticExecutionDetailArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionAutomaticExecutionDetailArrayInput` via:
+//
+//	DrPlanExecutionAutomaticExecutionDetailArray{ DrPlanExecutionAutomaticExecutionDetailArgs{...} }
+type DrPlanExecutionAutomaticExecutionDetailArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionAutomaticExecutionDetailArrayOutput() DrPlanExecutionAutomaticExecutionDetailArrayOutput
+	ToDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(context.Context) DrPlanExecutionAutomaticExecutionDetailArrayOutput
+}
+
+type DrPlanExecutionAutomaticExecutionDetailArray []DrPlanExecutionAutomaticExecutionDetailInput
+
+func (DrPlanExecutionAutomaticExecutionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i DrPlanExecutionAutomaticExecutionDetailArray) ToDrPlanExecutionAutomaticExecutionDetailArrayOutput() DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return i.ToDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionAutomaticExecutionDetailArray) ToDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionAutomaticExecutionDetailArrayOutput)
+}
+
+type DrPlanExecutionAutomaticExecutionDetailOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionAutomaticExecutionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o DrPlanExecutionAutomaticExecutionDetailOutput) ToDrPlanExecutionAutomaticExecutionDetailOutput() DrPlanExecutionAutomaticExecutionDetailOutput {
+	return o
+}
+
+func (o DrPlanExecutionAutomaticExecutionDetailOutput) ToDrPlanExecutionAutomaticExecutionDetailOutputWithContext(ctx context.Context) DrPlanExecutionAutomaticExecutionDetailOutput {
+	return o
+}
+
+// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+func (o DrPlanExecutionAutomaticExecutionDetailOutput) EventName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionAutomaticExecutionDetail) *string { return v.EventName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+func (o DrPlanExecutionAutomaticExecutionDetailOutput) MemberId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionAutomaticExecutionDetail) *string { return v.MemberId }).(pulumi.StringPtrOutput)
+}
+
+type DrPlanExecutionAutomaticExecutionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionAutomaticExecutionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o DrPlanExecutionAutomaticExecutionDetailArrayOutput) ToDrPlanExecutionAutomaticExecutionDetailArrayOutput() DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionAutomaticExecutionDetailArrayOutput) ToDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionAutomaticExecutionDetailArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionAutomaticExecutionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionAutomaticExecutionDetail {
+		return vs[0].([]DrPlanExecutionAutomaticExecutionDetail)[vs[1].(int)]
+	}).(DrPlanExecutionAutomaticExecutionDetailOutput)
+}
+
 type DrPlanExecutionExecutionOptions struct {
 	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled *bool `pulumi:"arePrechecksEnabled"`
@@ -5692,6 +5931,841 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) 
 	}).(DrProtectionGroupMemberVnicMappingOutput)
 }
 
+type GetAutomaticDrConfigurationMember struct {
+	// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled bool `pulumi:"isAutoFailoverEnabled"`
+	// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled bool `pulumi:"isAutoSwitchoverEnabled"`
+	// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId string `pulumi:"memberId"`
+	// The type of the member.
+	MemberType string `pulumi:"memberType"`
+}
+
+// GetAutomaticDrConfigurationMemberInput is an input type that accepts GetAutomaticDrConfigurationMemberArgs and GetAutomaticDrConfigurationMemberOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationMemberInput` via:
+//
+//	GetAutomaticDrConfigurationMemberArgs{...}
+type GetAutomaticDrConfigurationMemberInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationMemberOutput() GetAutomaticDrConfigurationMemberOutput
+	ToGetAutomaticDrConfigurationMemberOutputWithContext(context.Context) GetAutomaticDrConfigurationMemberOutput
+}
+
+type GetAutomaticDrConfigurationMemberArgs struct {
+	// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled pulumi.BoolInput `pulumi:"isAutoFailoverEnabled"`
+	// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled pulumi.BoolInput `pulumi:"isAutoSwitchoverEnabled"`
+	// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The type of the member.
+	MemberType pulumi.StringInput `pulumi:"memberType"`
+}
+
+func (GetAutomaticDrConfigurationMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationMemberArgs) ToGetAutomaticDrConfigurationMemberOutput() GetAutomaticDrConfigurationMemberOutput {
+	return i.ToGetAutomaticDrConfigurationMemberOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationMemberArgs) ToGetAutomaticDrConfigurationMemberOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationMemberOutput)
+}
+
+// GetAutomaticDrConfigurationMemberArrayInput is an input type that accepts GetAutomaticDrConfigurationMemberArray and GetAutomaticDrConfigurationMemberArrayOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationMemberArrayInput` via:
+//
+//	GetAutomaticDrConfigurationMemberArray{ GetAutomaticDrConfigurationMemberArgs{...} }
+type GetAutomaticDrConfigurationMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationMemberArrayOutput() GetAutomaticDrConfigurationMemberArrayOutput
+	ToGetAutomaticDrConfigurationMemberArrayOutputWithContext(context.Context) GetAutomaticDrConfigurationMemberArrayOutput
+}
+
+type GetAutomaticDrConfigurationMemberArray []GetAutomaticDrConfigurationMemberInput
+
+func (GetAutomaticDrConfigurationMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationMemberArray) ToGetAutomaticDrConfigurationMemberArrayOutput() GetAutomaticDrConfigurationMemberArrayOutput {
+	return i.ToGetAutomaticDrConfigurationMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationMemberArray) ToGetAutomaticDrConfigurationMemberArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationMemberArrayOutput)
+}
+
+type GetAutomaticDrConfigurationMemberOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationMemberOutput) ToGetAutomaticDrConfigurationMemberOutput() GetAutomaticDrConfigurationMemberOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationMemberOutput) ToGetAutomaticDrConfigurationMemberOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationMemberOutput {
+	return o
+}
+
+// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o GetAutomaticDrConfigurationMemberOutput) IsAutoFailoverEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationMember) bool { return v.IsAutoFailoverEnabled }).(pulumi.BoolOutput)
+}
+
+// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o GetAutomaticDrConfigurationMemberOutput) IsAutoSwitchoverEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationMember) bool { return v.IsAutoSwitchoverEnabled }).(pulumi.BoolOutput)
+}
+
+// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The type of the member.
+func (o GetAutomaticDrConfigurationMemberOutput) MemberType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationMember) string { return v.MemberType }).(pulumi.StringOutput)
+}
+
+type GetAutomaticDrConfigurationMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationMember)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationMemberArrayOutput) ToGetAutomaticDrConfigurationMemberArrayOutput() GetAutomaticDrConfigurationMemberArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationMemberArrayOutput) ToGetAutomaticDrConfigurationMemberArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationMemberArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationMemberArrayOutput) Index(i pulumi.IntInput) GetAutomaticDrConfigurationMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutomaticDrConfigurationMember {
+		return vs[0].([]GetAutomaticDrConfigurationMember)[vs[1].(int)]
+	}).(GetAutomaticDrConfigurationMemberOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection struct {
+	Items []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem `pulumi:"items"`
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs{...}
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs struct {
+	Items GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput)
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray{ GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs{...} }
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionInput
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput) Items() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection) []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem {
+		return v.Items
+	}).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection {
+		return vs[0].([]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollection)[vs[1].(int)]
+	}).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem struct {
+	// The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+	DefaultFailoverDrPlanId string `pulumi:"defaultFailoverDrPlanId"`
+	// The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+	DefaultSwitchoverDrPlanId string `pulumi:"defaultSwitchoverDrPlanId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the Automatic DR configuration.  Example: `ocid1.automaticdrconfiguration.oc1..uniqueID`
+	Id string `pulumi:"id"`
+	// A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
+	LastAutomaticDrExecutionSubmitDetails string `pulumi:"lastAutomaticDrExecutionSubmitDetails"`
+	// The status of most recent attempt to submit Automatic DR plan execution.
+	LastAutomaticDrExecutionSubmitStatus string `pulumi:"lastAutomaticDrExecutionSubmitStatus"`
+	// A message describing the Automatic DR configuration's current state in more detail.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The list of members in this Automatic DR configuration.
+	Members []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember `pulumi:"members"`
+	// A filter to return only Automatic DR configurations that match the given lifecycle state.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
+	TimeLastAutomaticDrExecutionSubmitAttempt string `pulumi:"timeLastAutomaticDrExecutionSubmitAttempt"`
+	// The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs{...}
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs struct {
+	// The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+	DefaultFailoverDrPlanId pulumi.StringInput `pulumi:"defaultFailoverDrPlanId"`
+	// The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+	DefaultSwitchoverDrPlanId pulumi.StringInput `pulumi:"defaultSwitchoverDrPlanId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the Automatic DR configuration.  Example: `ocid1.automaticdrconfiguration.oc1..uniqueID`
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
+	LastAutomaticDrExecutionSubmitDetails pulumi.StringInput `pulumi:"lastAutomaticDrExecutionSubmitDetails"`
+	// The status of most recent attempt to submit Automatic DR plan execution.
+	LastAutomaticDrExecutionSubmitStatus pulumi.StringInput `pulumi:"lastAutomaticDrExecutionSubmitStatus"`
+	// A message describing the Automatic DR configuration's current state in more detail.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The list of members in this Automatic DR configuration.
+	Members GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayInput `pulumi:"members"`
+	// A filter to return only Automatic DR configurations that match the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
+	TimeLastAutomaticDrExecutionSubmitAttempt pulumi.StringInput `pulumi:"timeLastAutomaticDrExecutionSubmitAttempt"`
+	// The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput)
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray{ GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs{...} }
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemInput
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) DefaultFailoverDrPlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.DefaultFailoverDrPlanId
+	}).(pulumi.StringOutput)
+}
+
+// The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) DefaultSwitchoverDrPlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.DefaultSwitchoverDrPlanId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) DrProtectionGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.DrProtectionGroupId
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the Automatic DR configuration.  Example: `ocid1.automaticdrconfiguration.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) LastAutomaticDrExecutionSubmitDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.LastAutomaticDrExecutionSubmitDetails
+	}).(pulumi.StringOutput)
+}
+
+// The status of most recent attempt to submit Automatic DR plan execution.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) LastAutomaticDrExecutionSubmitStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.LastAutomaticDrExecutionSubmitStatus
+	}).(pulumi.StringOutput)
+}
+
+// A message describing the Automatic DR configuration's current state in more detail.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The list of members in this Automatic DR configuration.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) Members() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember {
+		return v.Members
+	}).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput)
+}
+
+// A filter to return only Automatic DR configurations that match the given lifecycle state.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) TimeLastAutomaticDrExecutionSubmitAttempt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.TimeLastAutomaticDrExecutionSubmitAttempt
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem {
+		return vs[0].([]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItem)[vs[1].(int)]
+	}).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember struct {
+	// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled bool `pulumi:"isAutoFailoverEnabled"`
+	// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled bool `pulumi:"isAutoSwitchoverEnabled"`
+	// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId string `pulumi:"memberId"`
+	// The type of the member.
+	MemberType string `pulumi:"memberType"`
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs{...}
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs struct {
+	// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoFailoverEnabled pulumi.BoolInput `pulumi:"isAutoFailoverEnabled"`
+	// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+	IsAutoSwitchoverEnabled pulumi.BoolInput `pulumi:"isAutoSwitchoverEnabled"`
+	// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The type of the member.
+	MemberType pulumi.StringInput `pulumi:"memberType"`
+}
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput)
+}
+
+// GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayInput is an input type that accepts GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray and GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayInput` via:
+//
+//	GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray{ GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs{...} }
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput
+	ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutputWithContext(context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray []GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberInput
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput {
+	return i.ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput {
+	return o
+}
+
+// A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) IsAutoFailoverEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember) bool {
+		return v.IsAutoFailoverEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) IsAutoSwitchoverEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember) bool {
+		return v.IsAutoSwitchoverEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember) string {
+		return v.MemberId
+	}).(pulumi.StringOutput)
+}
+
+// The type of the member.
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput) MemberType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember) string {
+		return v.MemberType
+	}).(pulumi.StringOutput)
+}
+
+type GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput() GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput) ToGetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput) Index(i pulumi.IntInput) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember {
+		return vs[0].([]GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMember)[vs[1].(int)]
+	}).(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput)
+}
+
+type GetAutomaticDrConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAutomaticDrConfigurationsFilterInput is an input type that accepts GetAutomaticDrConfigurationsFilterArgs and GetAutomaticDrConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsFilterInput` via:
+//
+//	GetAutomaticDrConfigurationsFilterArgs{...}
+type GetAutomaticDrConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsFilterOutput() GetAutomaticDrConfigurationsFilterOutput
+	ToGetAutomaticDrConfigurationsFilterOutputWithContext(context.Context) GetAutomaticDrConfigurationsFilterOutput
+}
+
+type GetAutomaticDrConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAutomaticDrConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsFilterArgs) ToGetAutomaticDrConfigurationsFilterOutput() GetAutomaticDrConfigurationsFilterOutput {
+	return i.ToGetAutomaticDrConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsFilterArgs) ToGetAutomaticDrConfigurationsFilterOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsFilterOutput)
+}
+
+// GetAutomaticDrConfigurationsFilterArrayInput is an input type that accepts GetAutomaticDrConfigurationsFilterArray and GetAutomaticDrConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAutomaticDrConfigurationsFilterArrayInput` via:
+//
+//	GetAutomaticDrConfigurationsFilterArray{ GetAutomaticDrConfigurationsFilterArgs{...} }
+type GetAutomaticDrConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAutomaticDrConfigurationsFilterArrayOutput() GetAutomaticDrConfigurationsFilterArrayOutput
+	ToGetAutomaticDrConfigurationsFilterArrayOutputWithContext(context.Context) GetAutomaticDrConfigurationsFilterArrayOutput
+}
+
+type GetAutomaticDrConfigurationsFilterArray []GetAutomaticDrConfigurationsFilterInput
+
+func (GetAutomaticDrConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetAutomaticDrConfigurationsFilterArray) ToGetAutomaticDrConfigurationsFilterArrayOutput() GetAutomaticDrConfigurationsFilterArrayOutput {
+	return i.ToGetAutomaticDrConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutomaticDrConfigurationsFilterArray) ToGetAutomaticDrConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutomaticDrConfigurationsFilterArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutomaticDrConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsFilterOutput) ToGetAutomaticDrConfigurationsFilterOutput() GetAutomaticDrConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsFilterOutput) ToGetAutomaticDrConfigurationsFilterOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAutomaticDrConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAutomaticDrConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAutomaticDrConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAutomaticDrConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutomaticDrConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutomaticDrConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetAutomaticDrConfigurationsFilterArrayOutput) ToGetAutomaticDrConfigurationsFilterArrayOutput() GetAutomaticDrConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsFilterArrayOutput) ToGetAutomaticDrConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetAutomaticDrConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutomaticDrConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetAutomaticDrConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutomaticDrConfigurationsFilter {
+		return vs[0].([]GetAutomaticDrConfigurationsFilter)[vs[1].(int)]
+	}).(GetAutomaticDrConfigurationsFilterOutput)
+}
+
+type GetDrPlanExecutionAutomaticExecutionDetail struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName string `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId string `pulumi:"memberId"`
+}
+
+// GetDrPlanExecutionAutomaticExecutionDetailInput is an input type that accepts GetDrPlanExecutionAutomaticExecutionDetailArgs and GetDrPlanExecutionAutomaticExecutionDetailOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionAutomaticExecutionDetailInput` via:
+//
+//	GetDrPlanExecutionAutomaticExecutionDetailArgs{...}
+type GetDrPlanExecutionAutomaticExecutionDetailInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionAutomaticExecutionDetailOutput() GetDrPlanExecutionAutomaticExecutionDetailOutput
+	ToGetDrPlanExecutionAutomaticExecutionDetailOutputWithContext(context.Context) GetDrPlanExecutionAutomaticExecutionDetailOutput
+}
+
+type GetDrPlanExecutionAutomaticExecutionDetailArgs struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName pulumi.StringInput `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+}
+
+func (GetDrPlanExecutionAutomaticExecutionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionAutomaticExecutionDetailArgs) ToGetDrPlanExecutionAutomaticExecutionDetailOutput() GetDrPlanExecutionAutomaticExecutionDetailOutput {
+	return i.ToGetDrPlanExecutionAutomaticExecutionDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionAutomaticExecutionDetailArgs) ToGetDrPlanExecutionAutomaticExecutionDetailOutputWithContext(ctx context.Context) GetDrPlanExecutionAutomaticExecutionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionAutomaticExecutionDetailOutput)
+}
+
+// GetDrPlanExecutionAutomaticExecutionDetailArrayInput is an input type that accepts GetDrPlanExecutionAutomaticExecutionDetailArray and GetDrPlanExecutionAutomaticExecutionDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionAutomaticExecutionDetailArrayInput` via:
+//
+//	GetDrPlanExecutionAutomaticExecutionDetailArray{ GetDrPlanExecutionAutomaticExecutionDetailArgs{...} }
+type GetDrPlanExecutionAutomaticExecutionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionAutomaticExecutionDetailArrayOutput
+	ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(context.Context) GetDrPlanExecutionAutomaticExecutionDetailArrayOutput
+}
+
+type GetDrPlanExecutionAutomaticExecutionDetailArray []GetDrPlanExecutionAutomaticExecutionDetailInput
+
+func (GetDrPlanExecutionAutomaticExecutionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionAutomaticExecutionDetailArray) ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return i.ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionAutomaticExecutionDetailArray) ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionAutomaticExecutionDetailArrayOutput)
+}
+
+type GetDrPlanExecutionAutomaticExecutionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionAutomaticExecutionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionAutomaticExecutionDetailOutput) ToGetDrPlanExecutionAutomaticExecutionDetailOutput() GetDrPlanExecutionAutomaticExecutionDetailOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionAutomaticExecutionDetailOutput) ToGetDrPlanExecutionAutomaticExecutionDetailOutputWithContext(ctx context.Context) GetDrPlanExecutionAutomaticExecutionDetailOutput {
+	return o
+}
+
+// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+func (o GetDrPlanExecutionAutomaticExecutionDetailOutput) EventName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionAutomaticExecutionDetail) string { return v.EventName }).(pulumi.StringOutput)
+}
+
+// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+func (o GetDrPlanExecutionAutomaticExecutionDetailOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionAutomaticExecutionDetail) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+type GetDrPlanExecutionAutomaticExecutionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionAutomaticExecutionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionAutomaticExecutionDetailArrayOutput) ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionAutomaticExecutionDetailArrayOutput) ToGetDrPlanExecutionAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionAutomaticExecutionDetailArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionAutomaticExecutionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionAutomaticExecutionDetail {
+		return vs[0].([]GetDrPlanExecutionAutomaticExecutionDetail)[vs[1].(int)]
+	}).(GetDrPlanExecutionAutomaticExecutionDetailOutput)
+}
+
 type GetDrPlanExecutionExecutionOption struct {
 	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
@@ -6494,6 +7568,8 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails []GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail `pulumi:"automaticExecutionDetails"`
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -6512,6 +7588,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	GroupExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id string `pulumi:"id"`
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic bool `pulumi:"isAutomatic"`
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
@@ -6550,6 +7628,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemInput interface {
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayInput `pulumi:"automaticExecutionDetails"`
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -6568,6 +7648,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	GroupExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic pulumi.BoolInput `pulumi:"isAutomatic"`
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
@@ -6645,6 +7727,13 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToGetDrPlanExecu
 	return o
 }
 
+// The details of the event that started the automatic DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) AutomaticExecutionDetails() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) []GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail {
+		return v.AutomaticExecutionDetails
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput)
+}
+
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -6692,6 +7781,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) GroupExecutions(
 // The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) IsAutomatic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
 // A message describing the DR plan execution's current state in more detail.
@@ -6774,6 +7868,116 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItem {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItem)[vs[1].(int)]
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName string `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId string `pulumi:"memberId"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs struct {
+	// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+	EventName pulumi.StringInput `pulumi:"eventName"`
+	// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput {
+	return o
+}
+
+// The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput) EventName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail) string {
+		return v.EventName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail) string {
+		return v.MemberId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetail)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput)
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption struct {
@@ -16902,6 +18106,10 @@ func (o GetDrProtectionGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPr
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AutomaticDrConfigurationMemberInput)(nil)).Elem(), AutomaticDrConfigurationMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutomaticDrConfigurationMemberArrayInput)(nil)).Elem(), AutomaticDrConfigurationMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionAutomaticExecutionDetailInput)(nil)).Elem(), DrPlanExecutionAutomaticExecutionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionAutomaticExecutionDetailArrayInput)(nil)).Elem(), DrPlanExecutionAutomaticExecutionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionExecutionOptionsInput)(nil)).Elem(), DrPlanExecutionExecutionOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionExecutionOptionsPtrInput)(nil)).Elem(), DrPlanExecutionExecutionOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionGroupExecutionInput)(nil)).Elem(), DrPlanExecutionGroupExecutionArgs{})
@@ -16976,6 +18184,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfigArrayInput)(nil)).Elem(), DrProtectionGroupMemberVirtualNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationMemberInput)(nil)).Elem(), GetAutomaticDrConfigurationMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationMemberArrayInput)(nil)).Elem(), GetAutomaticDrConfigurationMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayInput)(nil)).Elem(), GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsFilterInput)(nil)).Elem(), GetAutomaticDrConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutomaticDrConfigurationsFilterArrayInput)(nil)).Elem(), GetAutomaticDrConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionAutomaticExecutionDetailInput)(nil)).Elem(), GetDrPlanExecutionAutomaticExecutionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionAutomaticExecutionDetailArrayInput)(nil)).Elem(), GetDrPlanExecutionAutomaticExecutionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionExecutionOptionInput)(nil)).Elem(), GetDrPlanExecutionExecutionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionExecutionOptionArrayInput)(nil)).Elem(), GetDrPlanExecutionExecutionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionGroupExecutionInput)(nil)).Elem(), GetDrPlanExecutionGroupExecutionArgs{})
@@ -16990,6 +18210,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs{})
@@ -17142,6 +18364,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsFilterInput)(nil)).Elem(), GetDrProtectionGroupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsFilterArrayInput)(nil)).Elem(), GetDrProtectionGroupsFilterArray{})
+	pulumi.RegisterOutputType(AutomaticDrConfigurationMemberOutput{})
+	pulumi.RegisterOutputType(AutomaticDrConfigurationMemberArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionAutomaticExecutionDetailOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionAutomaticExecutionDetailArrayOutput{})
 	pulumi.RegisterOutputType(DrPlanExecutionExecutionOptionsOutput{})
 	pulumi.RegisterOutputType(DrPlanExecutionExecutionOptionsPtrOutput{})
 	pulumi.RegisterOutputType(DrPlanExecutionGroupExecutionOutput{})
@@ -17216,6 +18442,18 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationMemberOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetAutomaticDrConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionAutomaticExecutionDetailOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionAutomaticExecutionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionExecutionOptionOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionExecutionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionGroupExecutionOutput{})
@@ -17230,6 +18468,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput{})

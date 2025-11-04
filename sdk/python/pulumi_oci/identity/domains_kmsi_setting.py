@@ -1374,9 +1374,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  tou_prompt_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace KmsiSettings
+        ## Example Usage
 
         ## Import
 
@@ -1528,9 +1526,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  args: DomainsKmsiSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace KmsiSettings
+        ## Example Usage
 
         ## Import
 

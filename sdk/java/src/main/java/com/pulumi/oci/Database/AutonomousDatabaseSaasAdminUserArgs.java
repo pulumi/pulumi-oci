@@ -108,7 +108,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     }
 
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +118,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     private @Nullable Output<String> timeSaasAdminUserEnabled;
 
     /**
-     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,7 +285,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -299,7 +299,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

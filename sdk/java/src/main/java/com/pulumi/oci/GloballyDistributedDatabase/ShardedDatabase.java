@@ -24,14 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
- * 
- * Creates a Sharded Database.
- * 
- *   Patch operation to add, remove or update shards to the sharded database topology. In single patch
- * operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
- * and remove in single operation is not allowed.
- * 
  * ## Example Usage
  * 
  * ## Import

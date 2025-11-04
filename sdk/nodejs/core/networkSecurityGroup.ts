@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a new network security group for the specified VCN.
- *
  * ## Example Usage
  *
  * ```typescript

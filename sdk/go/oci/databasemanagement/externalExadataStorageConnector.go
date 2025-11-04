@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Creates the Exadata storage server connector after validating the connection information.
-//
 // ## Example Usage
 //
 // ```go

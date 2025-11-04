@@ -20,10 +20,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
- * 
- * Creates a new model deployment.
- * 
  * ## Example Usage
  * 
  * <pre>

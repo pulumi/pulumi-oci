@@ -1183,13 +1183,6 @@ class DomainsMyRequest(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Request
-
-        ** IMPORTANT **
-        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
-
         ## Example Usage
 
         ```python
@@ -1328,13 +1321,6 @@ class DomainsMyRequest(pulumi.CustomResource):
                  args: DomainsMyRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Request
-
-        ** IMPORTANT **
-        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
-
         ## Example Usage
 
         ```python

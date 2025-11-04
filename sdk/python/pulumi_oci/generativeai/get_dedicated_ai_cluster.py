@@ -95,16 +95,25 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the dedicated AI cluster.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -123,16 +132,25 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state with detail that can provide actionable information.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
+        """
+        The current state of the dedicated AI cluster.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -143,6 +161,9 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
+        """
+        The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+        """
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
@@ -153,11 +174,17 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="unitCount")
     def unit_count(self) -> _builtins.int:
+        """
+        The number of dedicated units in this AI cluster.
+        """
         return pulumi.get(self, "unit_count")
 
     @_builtins.property
     @pulumi.getter(name="unitShape")
     def unit_shape(self) -> _builtins.str:
+        """
+        The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+        """
         return pulumi.get(self, "unit_shape")
 
 

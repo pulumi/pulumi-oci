@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Create a private endpoint resource for the tenant in Ops Insights.
-    /// This resource will be created in customer compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

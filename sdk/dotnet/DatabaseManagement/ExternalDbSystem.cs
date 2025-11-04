@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates an external DB system and its related resources.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

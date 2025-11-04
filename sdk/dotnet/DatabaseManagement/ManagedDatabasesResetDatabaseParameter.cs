@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Resets database parameter values to their default or startup values.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

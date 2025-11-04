@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates one or more attributes of the specified audit trail.
- *
  * ## Example Usage
  *
  * ```typescript

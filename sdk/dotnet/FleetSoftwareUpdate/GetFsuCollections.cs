@@ -188,11 +188,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     public sealed class GetFsuCollectionsResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Exadata Fleet Update Collection resource display name.
+        /// The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetFsuCollectionsFilterResult> Filters;

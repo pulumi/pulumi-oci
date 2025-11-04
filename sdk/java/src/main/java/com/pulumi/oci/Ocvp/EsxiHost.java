@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.EsxiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.EsxiHostState;
+import com.pulumi.oci.Ocvp.outputs.EsxiHostDatastoreAttachment;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +31,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Ocvp/esxiHost:EsxiHost")
 public class EsxiHost extends com.pulumi.resources.CustomResource {
+    @Export(name="attachDatastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> attachDatastoreClusterIds;
+
+    public Output<Optional<List<String>>> attachDatastoreClusterIds() {
+        return Codegen.optional(this.attachDatastoreClusterIds);
+    }
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -164,6 +172,34 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.currentSku;
     }
     /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    @Export(name="datastoreAttachments", refs={List.class,EsxiHostDatastoreAttachment.class}, tree="[0,1]")
+    private Output<List<EsxiHostDatastoreAttachment>> datastoreAttachments;
+
+    /**
+     * @return List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    public Output<List<EsxiHostDatastoreAttachment>> datastoreAttachments() {
+        return this.datastoreAttachments;
+    }
+    /**
+     * A list of datastore clusters.
+     * 
+     */
+    @Export(name="datastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> datastoreClusterIds;
+
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public Output<List<String>> datastoreClusterIds() {
+        return this.datastoreClusterIds;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -177,8 +213,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
+    @Export(name="detachDatastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> detachDatastoreClusterIds;
+
+    public Output<Optional<List<String>>> detachDatastoreClusterIds() {
+        return Codegen.optional(this.detachDatastoreClusterIds);
+    }
     /**
-     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
@@ -189,7 +231,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 

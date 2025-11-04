@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Creates a new scheduled job.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -120,10 +120,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseDownloadWarehouseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
         ## Example Usage
 
         ```python

@@ -203,10 +203,6 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Service for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -249,10 +245,6 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  args: NetworkFirewallPolicyServiceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Service for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

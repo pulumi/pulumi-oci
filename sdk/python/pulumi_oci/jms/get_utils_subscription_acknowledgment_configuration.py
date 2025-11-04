@@ -59,9 +59,6 @@ class GetUtilsSubscriptionAcknowledgmentConfigurationResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -95,7 +92,6 @@ class AwaitableGetUtilsSubscriptionAcknowledgmentConfigurationResult(GetUtilsSub
 
 
 def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional[_builtins.str] = None,
-                                                        is_acknowledged: Optional[_builtins.bool] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUtilsSubscriptionAcknowledgmentConfigurationResult:
     """
     This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -113,11 +109,9 @@ def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.bool is_acknowledged: Flag to determine whether the subscription was acknowledged or not.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    __args__['isAcknowledged'] = is_acknowledged
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration', __args__, opts=opts, typ=GetUtilsSubscriptionAcknowledgmentConfigurationResult).value
 
@@ -127,8 +121,7 @@ def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional
         id=pulumi.get(__ret__, 'id'),
         is_acknowledged=pulumi.get(__ret__, 'is_acknowledged'),
         time_acknowledged=pulumi.get(__ret__, 'time_acknowledged'))
-def get_utils_subscription_acknowledgment_configuration_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                               is_acknowledged: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_utils_subscription_acknowledgment_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsSubscriptionAcknowledgmentConfigurationResult]:
     """
     This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -146,11 +139,9 @@ def get_utils_subscription_acknowledgment_configuration_output(compartment_id: O
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.bool is_acknowledged: Flag to determine whether the subscription was acknowledged or not.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
-    __args__['isAcknowledged'] = is_acknowledged
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration', __args__, opts=opts, typ=GetUtilsSubscriptionAcknowledgmentConfigurationResult)
     return __ret__.apply(lambda __response__: GetUtilsSubscriptionAcknowledgmentConfigurationResult(

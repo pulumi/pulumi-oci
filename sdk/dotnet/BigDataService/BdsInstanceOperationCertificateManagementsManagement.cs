@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Configuring TLS/SSL for various ODH services running on the BDS cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

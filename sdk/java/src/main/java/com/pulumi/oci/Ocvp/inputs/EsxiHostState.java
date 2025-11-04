@@ -5,9 +5,11 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Ocvp.inputs.EsxiHostDatastoreAttachmentArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +19,13 @@ import javax.annotation.Nullable;
 public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
 
     public static final EsxiHostState Empty = new EsxiHostState();
+
+    @Import(name="attachDatastoreClusterIds")
+    private @Nullable Output<List<String>> attachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> attachDatastoreClusterIds() {
+        return Optional.ofNullable(this.attachDatastoreClusterIds);
+    }
 
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -170,6 +179,36 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    @Import(name="datastoreAttachments")
+    private @Nullable Output<List<EsxiHostDatastoreAttachmentArgs>> datastoreAttachments;
+
+    /**
+     * @return List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    public Optional<Output<List<EsxiHostDatastoreAttachmentArgs>>> datastoreAttachments() {
+        return Optional.ofNullable(this.datastoreAttachments);
+    }
+
+    /**
+     * A list of datastore clusters.
+     * 
+     */
+    @Import(name="datastoreClusterIds")
+    private @Nullable Output<List<String>> datastoreClusterIds;
+
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public Optional<Output<List<String>>> datastoreClusterIds() {
+        return Optional.ofNullable(this.datastoreClusterIds);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -184,8 +223,15 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.definedTags);
     }
 
+    @Import(name="detachDatastoreClusterIds")
+    private @Nullable Output<List<String>> detachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> detachDatastoreClusterIds() {
+        return Optional.ofNullable(this.detachDatastoreClusterIds);
+    }
+
     /**
-     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
@@ -196,7 +242,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
@@ -529,6 +575,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     private EsxiHostState() {}
 
     private EsxiHostState(EsxiHostState $) {
+        this.attachDatastoreClusterIds = $.attachDatastoreClusterIds;
         this.billingContractEndDate = $.billingContractEndDate;
         this.billingDonorHostId = $.billingDonorHostId;
         this.capacityReservationId = $.capacityReservationId;
@@ -538,7 +585,10 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.computeInstanceId = $.computeInstanceId;
         this.currentCommitment = $.currentCommitment;
         this.currentSku = $.currentSku;
+        this.datastoreAttachments = $.datastoreAttachments;
+        this.datastoreClusterIds = $.datastoreClusterIds;
         this.definedTags = $.definedTags;
+        this.detachDatastoreClusterIds = $.detachDatastoreClusterIds;
         this.displayName = $.displayName;
         this.esxiSoftwareVersion = $.esxiSoftwareVersion;
         this.failedEsxiHostId = $.failedEsxiHostId;
@@ -577,6 +627,19 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(EsxiHostState defaults) {
             $ = new EsxiHostState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder attachDatastoreClusterIds(@Nullable Output<List<String>> attachDatastoreClusterIds) {
+            $.attachDatastoreClusterIds = attachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder attachDatastoreClusterIds(List<String> attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(Output.of(attachDatastoreClusterIds));
+        }
+
+        public Builder attachDatastoreClusterIds(String... attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(List.of(attachDatastoreClusterIds));
         }
 
         /**
@@ -785,6 +848,68 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param datastoreAttachments List of DatastoreAttachment objects containing information about attachment details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreAttachments(@Nullable Output<List<EsxiHostDatastoreAttachmentArgs>> datastoreAttachments) {
+            $.datastoreAttachments = datastoreAttachments;
+            return this;
+        }
+
+        /**
+         * @param datastoreAttachments List of DatastoreAttachment objects containing information about attachment details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreAttachments(List<EsxiHostDatastoreAttachmentArgs> datastoreAttachments) {
+            return datastoreAttachments(Output.of(datastoreAttachments));
+        }
+
+        /**
+         * @param datastoreAttachments List of DatastoreAttachment objects containing information about attachment details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreAttachments(EsxiHostDatastoreAttachmentArgs... datastoreAttachments) {
+            return datastoreAttachments(List.of(datastoreAttachments));
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(@Nullable Output<List<String>> datastoreClusterIds) {
+            $.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            return datastoreClusterIds(Output.of(datastoreClusterIds));
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
@@ -805,8 +930,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
             return definedTags(Output.of(definedTags));
         }
 
+        public Builder detachDatastoreClusterIds(@Nullable Output<List<String>> detachDatastoreClusterIds) {
+            $.detachDatastoreClusterIds = detachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder detachDatastoreClusterIds(List<String> detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(Output.of(detachDatastoreClusterIds));
+        }
+
+        public Builder detachDatastoreClusterIds(String... detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(List.of(detachDatastoreClusterIds));
+        }
+
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
          * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 
@@ -821,7 +959,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
          * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 

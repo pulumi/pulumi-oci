@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// # Performs test of Metric Extension on a specific resource Id
-//
 // ## Example Usage
 //
 // ```go

@@ -158,7 +158,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str]
     ```
 
 
-    :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
     :param _builtins.str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
     :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -209,7 +209,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     ```
 
 
-    :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
     :param _builtins.str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
     :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.

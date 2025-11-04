@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new Decryption Profile for the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

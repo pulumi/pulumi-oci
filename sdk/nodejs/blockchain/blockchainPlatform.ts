@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
- *
- * Creates a new Blockchain Platform.
- *
  * ## Example Usage
  *
  * ```typescript

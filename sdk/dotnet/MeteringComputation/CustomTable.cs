@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
-    /// This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
-    /// 
-    /// Returns the created custom table.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

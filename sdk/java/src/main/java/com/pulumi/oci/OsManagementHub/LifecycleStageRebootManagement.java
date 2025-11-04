@@ -16,10 +16,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Reboots all managed instances in the specified lifecycle stage.
- * 
  * ## Example Usage
  * 
  * <pre>

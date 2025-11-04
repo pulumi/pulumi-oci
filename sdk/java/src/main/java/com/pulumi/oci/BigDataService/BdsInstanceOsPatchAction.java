@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Install the specified OS patch to this cluster nodes.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
- * 
- * Creates a DB System read replica.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -61,6 +57,7 @@ import javax.annotation.Nullable;
  *                 .configurationId(testMysqlConfiguration.id())
  *                 .mysqlVersion(replicaReplicaOverridesMysqlVersion)
  *                 .nsgIds(replicaReplicaOverridesNsgIds)
+ *                 .securityAttributes(replicaReplicaOverridesSecurityAttributes)
  *                 .shapeName(testShape.name())
  *                 .build())
  *             .build());
@@ -346,6 +343,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ReplicaSecureConnection>> secureConnections() {
         return this.secureConnections;
+    }
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

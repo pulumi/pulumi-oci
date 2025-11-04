@@ -266,10 +266,6 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create the specified workloadMapping for a cluster.
-
         ## Example Usage
 
         ```python
@@ -315,10 +311,6 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
                  args: ClusterWorkloadMappingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create the specified workloadMapping for a cluster.
-
         ## Example Usage
 
         ```python

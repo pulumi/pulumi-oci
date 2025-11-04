@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Enable Operations Insights for the external non-container database.
-    /// When deleting this resource block , we call disable if it was in enabled state .
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

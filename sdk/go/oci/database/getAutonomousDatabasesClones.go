@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 //
-// Lists the Autonomous Database clones for the specified Autonomous Database.
+// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
 //
 // ## Example Usage
 //
@@ -74,16 +74,16 @@ type GetAutonomousDatabasesClonesResult struct {
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// The list of autonomous_databases.
 	AutonomousDatabases []GetAutonomousDatabasesClonesAutonomousDatabase `pulumi:"autonomousDatabases"`
-	// The Autonomous Database clone type.
+	// The Autonomous AI Database clone type.
 	CloneType *string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+	// The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetAutonomousDatabasesClonesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the Autonomous Database.
+	// The current state of the Autonomous AI Database.
 	State *string `pulumi:"state"`
 }
 
@@ -141,7 +141,7 @@ func (o GetAutonomousDatabasesClonesResultOutput) AutonomousDatabases() GetAuton
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseArrayOutput)
 }
 
-// The Autonomous Database clone type.
+// The Autonomous AI Database clone type.
 func (o GetAutonomousDatabasesClonesResultOutput) CloneType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) *string { return v.CloneType }).(pulumi.StringPtrOutput)
 }
@@ -151,7 +151,7 @@ func (o GetAutonomousDatabasesClonesResultOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+// The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 func (o GetAutonomousDatabasesClonesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -165,7 +165,7 @@ func (o GetAutonomousDatabasesClonesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the Autonomous Database.
+// The current state of the Autonomous AI Database.
 func (o GetAutonomousDatabasesClonesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

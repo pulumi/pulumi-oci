@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates a Managed Database Group. The group does not contain any
-    /// Managed Databases when it is created, and they must be added later.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

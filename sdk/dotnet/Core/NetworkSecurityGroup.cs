@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new network security group for the specified VCN.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

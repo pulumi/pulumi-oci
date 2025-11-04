@@ -224,22 +224,26 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
 	DisplayName string `pulumi:"displayName"`
-	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+	// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	Id string `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider bool `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// An array of network security groups (NSG) that the customer can optionally provide.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists []string `pulumi:"nsgIdLists"`
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps []string `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId string `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -266,22 +270,26 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+	// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider pulumi.BoolInput `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// An array of network security groups (NSG) that the customer can optionally provide.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists pulumi.StringArrayInput `pulumi:"nsgIdLists"`
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -359,7 +367,7 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pu
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DnsZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.DnsZones }).(pulumi.StringArrayOutput)
 }
@@ -369,7 +377,7 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() p
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -381,12 +389,19 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) IsUsedWithConfig
 	}).(pulumi.BoolOutput)
 }
 
-// An array of network security groups (NSG) that the customer can optionally provide.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) NsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.NsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SourceIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
 }
@@ -399,6 +414,11 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.S
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
@@ -653,19 +673,16 @@ type GetStacksStack struct {
 	Description string `pulumi:"description"`
 	// Display name on which to query.
 	DisplayName string `pulumi:"displayName"`
-	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id string `pulumi:"id"`
-	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-	//
-	// Allowable values:
-	// * CREATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
+	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State string `pulumi:"state"`
-	// The date and time at which the stack was created.
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags       map[string]string `pulumi:"systemTags"`
+	TerraformVersion string            `pulumi:"terraformVersion"`
+	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated string            `pulumi:"timeCreated"`
 	Variables   map[string]string `pulumi:"variables"`
 }
@@ -691,19 +708,16 @@ type GetStacksStackArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Display name on which to query.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-	//
-	// Allowable values:
-	// * CREATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
+	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time at which the stack was created.
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags       pulumi.StringMapInput `pulumi:"systemTags"`
+	TerraformVersion pulumi.StringInput    `pulumi:"terraformVersion"`
+	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
 	Variables   pulumi.StringMapInput `pulumi:"variables"`
 }
@@ -783,7 +797,7 @@ func (o GetStacksStackOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetStacksStackOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -793,18 +807,21 @@ func (o GetStacksStackOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-//
-// Allowable values:
-// * CREATING
-// * ACTIVE
-// * DELETING
-// * DELETED
+// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 func (o GetStacksStackOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time at which the stack was created.
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetStacksStackOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetStacksStackOutput) TerraformVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStacksStack) string { return v.TerraformVersion }).(pulumi.StringOutput)
+}
+
+// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
 func (o GetStacksStackOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

@@ -18,6 +18,14 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string CollectionType;
         /// <summary>
+        /// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+        /// </summary>
+        public readonly bool IsIgnorePostUpgradeErrors;
+        /// <summary>
+        /// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+        /// </summary>
+        public readonly bool IsIgnorePrerequisites;
+        /// <summary>
         /// Enables or disables the recompilation of invalid objects.
         /// </summary>
         public readonly bool IsRecompileInvalidObjects;
@@ -25,18 +33,31 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// Enables or disables time zone upgrade.
         /// </summary>
         public readonly bool IsTimeZoneUpgrade;
+        /// <summary>
+        /// Service drain timeout specified in seconds.
+        /// </summary>
+        public readonly int MaxDrainTimeoutInSeconds;
 
         [OutputConstructor]
         private GetFsuCycleUpgradeDetailResult(
             string collectionType,
 
+            bool isIgnorePostUpgradeErrors,
+
+            bool isIgnorePrerequisites,
+
             bool isRecompileInvalidObjects,
 
-            bool isTimeZoneUpgrade)
+            bool isTimeZoneUpgrade,
+
+            int maxDrainTimeoutInSeconds)
         {
             CollectionType = collectionType;
+            IsIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            IsIgnorePrerequisites = isIgnorePrerequisites;
             IsRecompileInvalidObjects = isRecompileInvalidObjects;
             IsTimeZoneUpgrade = isTimeZoneUpgrade;
+            MaxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
         }
     }
 }

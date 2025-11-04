@@ -80,16 +80,16 @@ export interface GetFsuCyclesResult {
      */
     readonly collectionType?: string;
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
     readonly compartmentId: string;
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      */
     readonly displayName?: string;
     readonly filters?: outputs.FleetSoftwareUpdate.GetFsuCyclesFilter[];
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      */
     readonly fsuCollectionId?: string;
     /**

@@ -18,9 +18,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
- * 
- * Creates a Channel to establish replication from a source to a target.
+ * ## Example Usage
  * 
  * ## Import
  * 

@@ -349,10 +349,6 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                  matching_criteria: Optional[pulumi.Input[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new target database group.
-
         ## Example Usage
 
         ```python
@@ -413,10 +409,6 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                  args: TargetDatabaseGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new target database group.
-
         ## Example Usage
 
         ```python

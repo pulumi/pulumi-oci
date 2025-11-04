@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
- * 
- * Creates a new Remediation Recipe.
- * 
  * ## Example Usage
  * 
  * <pre>

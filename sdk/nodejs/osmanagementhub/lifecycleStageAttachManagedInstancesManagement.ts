@@ -7,9 +7,23 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * ## Example Usage
  *
- * Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLifecycleStageAttachManagedInstancesManagement = new oci.osmanagementhub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management", {
+ *     lifecycleStageId: testLifecycleStage.id,
+ *     managedInstanceDetails: {
+ *         managedInstances: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
+ *         workRequestDetails: {
+ *             description: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
+ *             displayName: lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
+ *         },
+ *     },
+ * });
+ * ```
  *
  * ## Import
  *

@@ -528,10 +528,6 @@ class VirtualNodePool(pulumi.CustomResource):
                  virtual_node_tags: Optional[pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new virtual node pool.
-
         ## Example Usage
 
         ```python
@@ -609,10 +605,6 @@ class VirtualNodePool(pulumi.CustomResource):
                  args: VirtualNodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new virtual node pool.
-
         ## Example Usage
 
         ```python

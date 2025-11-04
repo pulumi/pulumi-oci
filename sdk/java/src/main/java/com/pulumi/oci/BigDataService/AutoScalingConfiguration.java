@@ -18,10 +18,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Add an autoscale configuration to the cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -76,7 +76,7 @@ class GetAutonomousDatabaseInstanceWalletManagementResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
         """
         return pulumi.get(self, "state")
 
@@ -108,7 +108,7 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
     """
     This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
-    Gets the wallet details for the specified Autonomous Database.
+    Gets the wallet details for the specified Autonomous AI Database.
 
     ## Example Usage
 
@@ -139,7 +139,7 @@ def get_autonomous_database_instance_wallet_management_output(autonomous_databas
     """
     This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
-    Gets the wallet details for the specified Autonomous Database.
+    Gets the wallet details for the specified Autonomous AI Database.
 
     ## Example Usage
 

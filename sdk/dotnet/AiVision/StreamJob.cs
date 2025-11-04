@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision
 {
     /// <summary>
-    /// This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
-    /// 
-    /// Create a stream analysis job with given inputs and features.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

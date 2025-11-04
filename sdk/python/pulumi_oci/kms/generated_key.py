@@ -300,10 +300,6 @@ class GeneratedKey(pulumi.CustomResource):
                  logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a key that you can use to encrypt or decrypt data.
-
         ## Example Usage
 
         ```python
@@ -347,10 +343,6 @@ class GeneratedKey(pulumi.CustomResource):
                  args: GeneratedKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a key that you can use to encrypt or decrypt data.
-
         ## Example Usage
 
         ```python

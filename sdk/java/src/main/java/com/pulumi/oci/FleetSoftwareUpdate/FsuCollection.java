@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FleetSoftwareUpdate.FsuCollectionArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionState;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCollectionActiveFsuCycle;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCollectionComponent;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCollectionFleetDiscovery;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -19,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fsu Collection resource in Oracle Cloud Infrastructure Fleet Software Update service.
- * 
- * Creates a new Exadata Fleet Update Collection.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -34,6 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FleetSoftwareUpdate.FsuCollection;
  * import com.pulumi.oci.FleetSoftwareUpdate.FsuCollectionArgs;
+ * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionComponentArgs;
+ * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionComponentFleetDiscoveryArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionFleetDiscoveryArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -51,8 +50,31 @@ import javax.annotation.Nullable;
  *         var testFsuCollection = new FsuCollection("testFsuCollection", FsuCollectionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .serviceType(fsuCollectionServiceType)
- *             .sourceMajorVersion(fsuCollectionSourceMajorVersion)
  *             .type(fsuCollectionType)
+ *             .components(FsuCollectionComponentArgs.builder()
+ *                 .componentType(fsuCollectionComponentsComponentType)
+ *                 .sourceMajorVersion(fsuCollectionComponentsSourceMajorVersion)
+ *                 .fleetDiscovery(FsuCollectionComponentFleetDiscoveryArgs.builder()
+ *                     .strategy(fsuCollectionComponentsFleetDiscoveryStrategy)
+ *                     .filters(FsuCollectionComponentFleetDiscoveryFilterArgs.builder()
+ *                         .type(fsuCollectionComponentsFleetDiscoveryFiltersType)
+ *                         .entityType(fsuCollectionComponentsFleetDiscoveryFiltersEntityType)
+ *                         .exadataReleases(fsuCollectionComponentsFleetDiscoveryFiltersExadataReleases)
+ *                         .identifiers(fsuCollectionComponentsFleetDiscoveryFiltersIdentifiers)
+ *                         .mode(fsuCollectionComponentsFleetDiscoveryFiltersMode)
+ *                         .operator(fsuCollectionComponentsFleetDiscoveryFiltersOperator)
+ *                         .tags(FsuCollectionComponentFleetDiscoveryFilterTagArgs.builder()
+ *                             .key(fsuCollectionComponentsFleetDiscoveryFiltersTagsKey)
+ *                             .namespace(fsuCollectionComponentsFleetDiscoveryFiltersTagsNamespace)
+ *                             .value(fsuCollectionComponentsFleetDiscoveryFiltersTagsValue)
+ *                             .build())
+ *                         .versions(fsuCollectionComponentsFleetDiscoveryFiltersVersions)
+ *                         .build())
+ *                     .fsuDiscoveryId(testFsuDiscovery.id())
+ *                     .query(fsuCollectionComponentsFleetDiscoveryQuery)
+ *                     .targets(fsuCollectionComponentsFleetDiscoveryTargets)
+ *                     .build())
+ *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(fsuCollectionDisplayName)
  *             .fleetDiscovery(FsuCollectionFleetDiscoveryArgs.builder()
@@ -60,14 +82,15 @@ import javax.annotation.Nullable;
  *                 .filters(FsuCollectionFleetDiscoveryFilterArgs.builder()
  *                     .type(fsuCollectionFleetDiscoveryFiltersType)
  *                     .entityType(fsuCollectionFleetDiscoveryFiltersEntityType)
+ *                     .exadataReleases(fsuCollectionFleetDiscoveryFiltersExadataReleases)
  *                     .identifiers(fsuCollectionFleetDiscoveryFiltersIdentifiers)
  *                     .mode(fsuCollectionFleetDiscoveryFiltersMode)
  *                     .names(fsuCollectionFleetDiscoveryFiltersNames)
  *                     .operator(fsuCollectionFleetDiscoveryFiltersOperator)
  *                     .tags(FsuCollectionFleetDiscoveryFilterTagArgs.builder()
  *                         .key(fsuCollectionFleetDiscoveryFiltersTagsKey)
- *                         .value(fsuCollectionFleetDiscoveryFiltersTagsValue)
  *                         .namespace(fsuCollectionFleetDiscoveryFiltersTagsNamespace)
+ *                         .value(fsuCollectionFleetDiscoveryFiltersTagsValue)
  *                         .build())
  *                     .versions(fsuCollectionFleetDiscoveryFiltersVersions)
  *                     .build())
@@ -76,6 +99,7 @@ import javax.annotation.Nullable;
  *                 .targets(fsuCollectionFleetDiscoveryTargets)
  *                 .build())
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .sourceMajorVersion(fsuCollectionSourceMajorVersion)
  *             .build());
  * 
  *     }
@@ -109,18 +133,32 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.activeFsuCycles;
     }
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * Details of components in an Exadata software stack.
+     * 
+     */
+    @Export(name="components", refs={List.class,FsuCollectionComponent.class}, tree="[0,1]")
+    private Output<List<FsuCollectionComponent>> components;
+
+    /**
+     * @return Details of components in an Exadata software stack.
+     * 
+     */
+    public Output<List<FsuCollectionComponent>> components() {
+        return this.components;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -137,28 +175,28 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Exadata Fleet Update Collection Identifier.
+     * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Exadata Fleet Update Collection Identifier.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     @Export(name="fleetDiscovery", refs={FsuCollectionFleetDiscovery.class}, tree="[0]")
     private Output<FsuCollectionFleetDiscovery> fleetDiscovery;
 
     /**
-     * @return Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * @return Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     public Output<FsuCollectionFleetDiscovery> fleetDiscovery() {
@@ -221,14 +259,14 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.serviceType;
     }
     /**
-     * Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     @Export(name="sourceMajorVersion", refs={String.class}, tree="[0]")
     private Output<String> sourceMajorVersion;
 
     /**
-     * @return Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * @return Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     public Output<String> sourceMajorVersion() {
@@ -305,7 +343,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+     * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -315,7 +353,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
     private Output<String> type;
 
     /**
-     * @return Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+     * @return Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates the peer target database under the primary target database in Data Safe.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -17,11 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates an instance configuration. An instance configuration is a template that defines the
- * settings to use when creating Compute instances.
- * 
  * ## Example Usage
  * 
  * ## Import

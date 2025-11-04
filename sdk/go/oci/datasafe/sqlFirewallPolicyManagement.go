@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Sql Firewall Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates the SQL firewall policy.
-//
 // ## Example Usage
 //
 // ```go

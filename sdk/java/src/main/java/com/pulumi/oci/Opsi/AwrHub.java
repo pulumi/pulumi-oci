@@ -15,11 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a AWR hub resource for the tenant in Operations Insights.
- * This resource will be created in root compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

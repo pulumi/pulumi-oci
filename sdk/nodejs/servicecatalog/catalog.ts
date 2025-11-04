@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
- *
- * Creates a brand new service catalog in a given compartment.
- *
  * ## Example Usage
  *
  * ```typescript

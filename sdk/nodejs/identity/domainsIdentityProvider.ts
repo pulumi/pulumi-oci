@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create an Identity Provider
- *
  * ## Example Usage
  *
  * ## Import

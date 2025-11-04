@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-//
-// Creates a new Database Tools connection.
+// ## Example Usage
 //
 // ## Import
 //
@@ -50,6 +48,10 @@ type DatabaseToolsConnection struct {
 	ProxyClient DatabaseToolsConnectionProxyClientOutput `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourceOutput `pulumi:"relatedResource"`
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint pulumi.StringOutput `pulumi:"runtimeEndpoint"`
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity pulumi.StringOutput `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringOutput `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
@@ -58,15 +60,15 @@ type DatabaseToolsConnection struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) The DatabaseToolsConnection type.
+	// (Updatable) The Database Tools connection type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringOutput `pulumi:"url"`
 	// (Updatable) The database user name.
 	UserName pulumi.StringOutput `pulumi:"userName"`
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword DatabaseToolsConnectionUserPasswordOutput `pulumi:"userPassword"`
 }
 
@@ -139,6 +141,10 @@ type databaseToolsConnectionState struct {
 	ProxyClient *DatabaseToolsConnectionProxyClient `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint *string `pulumi:"runtimeEndpoint"`
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity *string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport *string `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
@@ -147,15 +153,15 @@ type databaseToolsConnectionState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The DatabaseToolsConnection type.
+	// (Updatable) The Database Tools connection type.
 	Type *string `pulumi:"type"`
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url *string `pulumi:"url"`
 	// (Updatable) The database user name.
 	UserName *string `pulumi:"userName"`
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword *DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
 }
 
@@ -184,6 +190,10 @@ type DatabaseToolsConnectionState struct {
 	ProxyClient DatabaseToolsConnectionProxyClientPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint pulumi.StringPtrInput
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity pulumi.StringPtrInput
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringPtrInput
 	// The current state of the Database Tools connection.
@@ -192,15 +202,15 @@ type DatabaseToolsConnectionState struct {
 	SystemTags pulumi.StringMapInput
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) The DatabaseToolsConnection type.
+	// (Updatable) The Database Tools connection type.
 	Type pulumi.StringPtrInput
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringPtrInput
 	// (Updatable) The database user name.
 	UserName pulumi.StringPtrInput
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword DatabaseToolsConnectionUserPasswordPtrInput
 }
 
@@ -231,15 +241,17 @@ type databaseToolsConnectionArgs struct {
 	ProxyClient *DatabaseToolsConnectionProxyClient `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity *string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport *string `pulumi:"runtimeSupport"`
-	// (Updatable) The DatabaseToolsConnection type.
+	// (Updatable) The Database Tools connection type.
 	Type string `pulumi:"type"`
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url *string `pulumi:"url"`
 	// (Updatable) The database user name.
 	UserName string `pulumi:"userName"`
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
 }
 
@@ -267,15 +279,17 @@ type DatabaseToolsConnectionArgs struct {
 	ProxyClient DatabaseToolsConnectionProxyClientPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity pulumi.StringPtrInput
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringPtrInput
-	// (Updatable) The DatabaseToolsConnection type.
+	// (Updatable) The Database Tools connection type.
 	Type pulumi.StringInput
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringPtrInput
 	// (Updatable) The database user name.
 	UserName pulumi.StringInput
-	// (Updatable) The user password.
+	// (Updatable) The database user password.
 	UserPassword DatabaseToolsConnectionUserPasswordInput
 }
 
@@ -428,6 +442,16 @@ func (o DatabaseToolsConnectionOutput) RelatedResource() DatabaseToolsConnection
 	}).(DatabaseToolsConnectionRelatedResourceOutput)
 }
 
+// Specifies the Database Tools Runtime endpoint.
+func (o DatabaseToolsConnectionOutput) RuntimeEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeEndpoint }).(pulumi.StringOutput)
+}
+
+// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+func (o DatabaseToolsConnectionOutput) RuntimeIdentity() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeIdentity }).(pulumi.StringOutput)
+}
+
 // Specifies whether this connection is supported by the Database Tools Runtime.
 func (o DatabaseToolsConnectionOutput) RuntimeSupport() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeSupport }).(pulumi.StringOutput)
@@ -448,12 +472,12 @@ func (o DatabaseToolsConnectionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 func (o DatabaseToolsConnectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) The DatabaseToolsConnection type.
+// (Updatable) The Database Tools connection type.
 func (o DatabaseToolsConnectionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
@@ -468,7 +492,7 @@ func (o DatabaseToolsConnectionOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }
 
-// (Updatable) The user password.
+// (Updatable) The database user password.
 func (o DatabaseToolsConnectionOutput) UserPassword() DatabaseToolsConnectionUserPasswordOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionUserPasswordOutput { return v.UserPassword }).(DatabaseToolsConnectionUserPasswordOutput)
 }

@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Onboard a tenant to Fleet Application Management.
-    /// The onboarding process lets Fleet Application Management create a few required policies that you need to start using it
-    /// and its features.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,8 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
-//
 // ## Example Usage
 //
 // ```go

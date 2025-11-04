@@ -33,6 +33,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The name of the step.
         /// </summary>
         public readonly string StepName;
+        /// <summary>
+        /// The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> StepStorageMountConfigurationDetailsLists;
 
         [OutputConstructor]
         private PipelineRunStepOverrideDetail(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails? stepInfrastructureConfigurationDetails,
 
-            string stepName)
+            string stepName,
+
+            ImmutableArray<Outputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists)
         {
             StepConfigurationDetails = stepConfigurationDetails;
             StepContainerConfigurationDetails = stepContainerConfigurationDetails;
             StepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             StepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             StepName = stepName;
+            StepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
         }
     }
 }

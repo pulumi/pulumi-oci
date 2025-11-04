@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
-//
-// Creates a DB System read replica.
-//
 // ## Example Usage
 //
 // ```go
@@ -42,10 +38,11 @@ import (
 //				},
 //				IsDeleteProtected: pulumi.Any(replicaIsDeleteProtected),
 //				ReplicaOverrides: &mysql.ReplicaReplicaOverridesArgs{
-//					ConfigurationId: pulumi.Any(testMysqlConfiguration.Id),
-//					MysqlVersion:    pulumi.Any(replicaReplicaOverridesMysqlVersion),
-//					NsgIds:          pulumi.Any(replicaReplicaOverridesNsgIds),
-//					ShapeName:       pulumi.Any(testShape.Name),
+//					ConfigurationId:    pulumi.Any(testMysqlConfiguration.Id),
+//					MysqlVersion:       pulumi.Any(replicaReplicaOverridesMysqlVersion),
+//					NsgIds:             pulumi.Any(replicaReplicaOverridesNsgIds),
+//					SecurityAttributes: pulumi.Any(replicaReplicaOverridesSecurityAttributes),
+//					ShapeName:          pulumi.Any(testShape.Name),
 //				},
 //			})
 //			if err != nil {
@@ -105,6 +102,8 @@ type Replica struct {
 	ReplicaOverrides ReplicaReplicaOverridesOutput `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections ReplicaSecureConnectionArrayOutput `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The state of the read replica.
@@ -186,6 +185,8 @@ type replicaState struct {
 	ReplicaOverrides *ReplicaReplicaOverrides `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections []ReplicaSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// The state of the read replica.
@@ -235,6 +236,8 @@ type ReplicaState struct {
 	ReplicaOverrides ReplicaReplicaOverridesPtrInput
 	// Secure connection configuration details.
 	SecureConnections ReplicaSecureConnectionArrayInput
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
 	// The state of the read replica.
@@ -464,6 +467,11 @@ func (o ReplicaOutput) ReplicaOverrides() ReplicaReplicaOverridesOutput {
 // Secure connection configuration details.
 func (o ReplicaOutput) SecureConnections() ReplicaSecureConnectionArrayOutput {
 	return o.ApplyT(func(v *Replica) ReplicaSecureConnectionArrayOutput { return v.SecureConnections }).(ReplicaSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o ReplicaOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

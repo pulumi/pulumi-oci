@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Add a user's OAuth2 client credentials.
-//
 // ## Example Usage
 //
 // ## Import

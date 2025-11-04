@@ -388,10 +388,6 @@ class Preauthrequest(pulumi.CustomResource):
                  time_expires: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a pre-authenticated request specific to the bucket.
-
         ## Example Usage
 
         ```python
@@ -438,10 +434,6 @@ class Preauthrequest(pulumi.CustomResource):
                  args: PreauthrequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a pre-authenticated request specific to the bucket.
-
         ## Example Usage
 
         ```python

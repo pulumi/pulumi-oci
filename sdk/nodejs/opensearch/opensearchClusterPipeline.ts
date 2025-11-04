@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
- *
- * Creates a new OpensearchCluster Pipeline.
- *
  * ## Example Usage
  *
  * ```typescript

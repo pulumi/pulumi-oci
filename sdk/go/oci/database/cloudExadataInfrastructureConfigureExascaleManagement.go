@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
-//
 // ## Example Usage
 //
 // ```go

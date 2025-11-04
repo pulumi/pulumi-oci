@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
-//
-// Creates a source environment.
-//
 // ## Example Usage
 //
 // ```go

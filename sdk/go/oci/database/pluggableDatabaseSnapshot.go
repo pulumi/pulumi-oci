@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
-//
-// # Creates a Pluggable Database Snapshot
-//
 // ## Example Usage
 //
 // ```go

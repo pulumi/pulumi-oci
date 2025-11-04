@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
-//
-// Creates Oracle DB GCP Identity Connector resource.
-//
 // ## Example Usage
 //
 // ```go

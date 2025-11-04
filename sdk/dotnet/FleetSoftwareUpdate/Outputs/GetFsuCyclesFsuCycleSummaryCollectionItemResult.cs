@@ -42,7 +42,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// OCID identifier for the Action that is currently in execution, if applicable.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         /// </summary>
         public readonly string ExecutingFsuActionId;
         /// <summary>
@@ -54,23 +54,23 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string FsuCollectionId;
         /// <summary>
-        /// Goal version or image details for the Exadata Fleet Update Cycle.
+        /// Details of goal 'GUEST_OS' software version.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult> GoalVersionDetails;
         /// <summary>
-        /// OCID identifier for the Exadata Fleet Update Cycle.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// List of identifiers of patches to ignore.
+        /// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         public readonly ImmutableArray<string> IsIgnoreMissingPatches;
         /// <summary>
-        /// Ignore patch conflicts or missing patches between the source and goal homes.
+        /// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         public readonly bool IsIgnorePatches;
         /// <summary>
-        /// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        /// Ensure that database services are online on the same VMs before and after the maintenance update.
         /// </summary>
         public readonly bool IsKeepPlacement;
         /// <summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly int MaxDrainTimeoutInSeconds;
         /// <summary>
-        /// In this array all the possible actions will be listed. The first element is the suggested Action.
+        /// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult> NextActionToExecutes;
         /// <summary>

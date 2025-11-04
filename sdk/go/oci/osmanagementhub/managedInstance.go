@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Updates the specified managed instance information, such as description, ONS topic, and associated management station.
+// ## Example Usage
 //
 // ## Import
 //

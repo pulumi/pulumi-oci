@@ -84,6 +84,16 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
     /**
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    private String runtimeEndpoint;
+    /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    private String runtimeIdentity;
+    /**
      * @return Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -104,7 +114,7 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private String timeCreated;
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     private String timeUpdated;
@@ -124,7 +134,7 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private String userName;
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     private List<GetDatabaseToolsConnectionUserPassword> userPasswords;
@@ -225,6 +235,20 @@ public final class GetDatabaseToolsConnectionResult {
         return this.relatedResources;
     }
     /**
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    public String runtimeEndpoint() {
+        return this.runtimeEndpoint;
+    }
+    /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    public String runtimeIdentity() {
+        return this.runtimeIdentity;
+    }
+    /**
      * @return Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -253,7 +277,7 @@ public final class GetDatabaseToolsConnectionResult {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public String timeUpdated() {
@@ -281,7 +305,7 @@ public final class GetDatabaseToolsConnectionResult {
         return this.userName;
     }
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     public List<GetDatabaseToolsConnectionUserPassword> userPasswords() {
@@ -311,6 +335,8 @@ public final class GetDatabaseToolsConnectionResult {
         private String privateEndpointId;
         private List<GetDatabaseToolsConnectionProxyClient> proxyClients;
         private List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
+        private String runtimeEndpoint;
+        private String runtimeIdentity;
         private String runtimeSupport;
         private String state;
         private Map<String,String> systemTags;
@@ -337,6 +363,8 @@ public final class GetDatabaseToolsConnectionResult {
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.proxyClients = defaults.proxyClients;
     	      this.relatedResources = defaults.relatedResources;
+    	      this.runtimeEndpoint = defaults.runtimeEndpoint;
+    	      this.runtimeIdentity = defaults.runtimeIdentity;
     	      this.runtimeSupport = defaults.runtimeSupport;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -473,6 +501,22 @@ public final class GetDatabaseToolsConnectionResult {
             return relatedResources(List.of(relatedResources));
         }
         @CustomType.Setter
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            if (runtimeEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionResult", "runtimeEndpoint");
+            }
+            this.runtimeEndpoint = runtimeEndpoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder runtimeIdentity(String runtimeIdentity) {
+            if (runtimeIdentity == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionResult", "runtimeIdentity");
+            }
+            this.runtimeIdentity = runtimeIdentity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder runtimeSupport(String runtimeSupport) {
             if (runtimeSupport == null) {
               throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionResult", "runtimeSupport");
@@ -563,6 +607,8 @@ public final class GetDatabaseToolsConnectionResult {
             _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.proxyClients = proxyClients;
             _resultValue.relatedResources = relatedResources;
+            _resultValue.runtimeEndpoint = runtimeEndpoint;
+            _resultValue.runtimeIdentity = runtimeIdentity;
             _resultValue.runtimeSupport = runtimeSupport;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

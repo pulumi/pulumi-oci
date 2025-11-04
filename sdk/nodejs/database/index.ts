@@ -150,6 +150,11 @@ export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
 utilities.lazyLoad(exports, ["Database"], () => require("./database"));
 
+export { DatabaseSnapshotStandbyArgs, DatabaseSnapshotStandbyState } from "./databaseSnapshotStandby";
+export type DatabaseSnapshotStandby = import("./databaseSnapshotStandby").DatabaseSnapshotStandby;
+export const DatabaseSnapshotStandby: typeof import("./databaseSnapshotStandby").DatabaseSnapshotStandby = null as any;
+utilities.lazyLoad(exports, ["DatabaseSnapshotStandby"], () => require("./databaseSnapshotStandby"));
+
 export { DatabaseSoftwareImageArgs, DatabaseSoftwareImageState } from "./databaseSoftwareImage";
 export type DatabaseSoftwareImage = import("./databaseSoftwareImage").DatabaseSoftwareImage;
 export const DatabaseSoftwareImage: typeof import("./databaseSoftwareImage").DatabaseSoftwareImage = null as any;
@@ -1203,6 +1208,8 @@ const _module = {
                 return new DataGuardAssociation(name, <any>undefined, { urn })
             case "oci:Database/database:Database":
                 return new Database(name, <any>undefined, { urn })
+            case "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby":
+                return new DatabaseSnapshotStandby(name, <any>undefined, { urn })
             case "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage":
                 return new DatabaseSoftwareImage(name, <any>undefined, { urn })
             case "oci:Database/databaseUpgrade:DatabaseUpgrade":
@@ -1327,6 +1334,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/cloudVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudVmClusterIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dataGuardAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/database", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/databaseSnapshotStandby", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareImage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)

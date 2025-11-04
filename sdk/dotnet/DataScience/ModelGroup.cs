@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Create a new Model Group resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

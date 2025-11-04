@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs>? _encryptionKeys;
 
         /// <summary>
-        /// (Updatable) Details of the Autonomous Database encryption key.
+        /// (Updatable) Details of the Autonomous AI Database encryption key.
         /// </summary>
         public InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs> EncryptionKeys
         {

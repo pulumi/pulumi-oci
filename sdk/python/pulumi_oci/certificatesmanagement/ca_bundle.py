@@ -300,10 +300,6 @@ class CaBundle(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new CA bundle according to the details of the request.
-
         ## Example Usage
 
         ```python
@@ -351,10 +347,6 @@ class CaBundle(pulumi.CustomResource):
                  args: CaBundleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new CA bundle according to the details of the request.
-
         ## Example Usage
 
         ```python

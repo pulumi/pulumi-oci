@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates the SQL Firewall policy.
+ * ## Example Usage
  *
  * ## Import
  *

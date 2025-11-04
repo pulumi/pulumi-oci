@@ -4044,10 +4044,6 @@ class DomainsSetting(pulumi.CustomResource):
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace Settings
-
         ## Example Usage
 
         ## Import
@@ -4564,10 +4560,6 @@ class DomainsSetting(pulumi.CustomResource):
                  args: DomainsSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace Settings
-
         ## Example Usage
 
         ## Import

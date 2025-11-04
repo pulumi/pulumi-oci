@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
- *
- * Update plan of the subscription.
+ * ## Example Usage
  *
  * ## Import
  *

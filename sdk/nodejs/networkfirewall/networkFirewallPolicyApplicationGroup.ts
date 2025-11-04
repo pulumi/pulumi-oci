@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
- *
- * Creates a new ApplicationGroup inside the Network Firewall Policy.
- *
  * ## Example Usage
  *
  * ```typescript

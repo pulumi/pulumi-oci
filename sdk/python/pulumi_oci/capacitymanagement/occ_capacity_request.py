@@ -626,11 +626,6 @@ class OccCapacityRequest(pulumi.CustomResource):
                  request_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create Capacity Request.
-          Updates the OccCapacityRequest by evaluating a sequence of instructions.
-
         ## Example Usage
 
         ## Import
@@ -670,11 +665,6 @@ class OccCapacityRequest(pulumi.CustomResource):
                  args: OccCapacityRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create Capacity Request.
-          Updates the OccCapacityRequest by evaluating a sequence of instructions.
-
         ## Example Usage
 
         ## Import

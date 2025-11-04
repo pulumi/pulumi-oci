@@ -56,9 +56,6 @@ class GetUtilsAnalyzeApplicationsConfigurationResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -82,9 +79,7 @@ class AwaitableGetUtilsAnalyzeApplicationsConfigurationResult(GetUtilsAnalyzeApp
             namespace=self.namespace)
 
 
-def get_utils_analyze_applications_configuration(bucket: Optional[_builtins.str] = None,
-                                                 compartment_id: Optional[_builtins.str] = None,
-                                                 namespace: Optional[_builtins.str] = None,
+def get_utils_analyze_applications_configuration(compartment_id: Optional[_builtins.str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUtilsAnalyzeApplicationsConfigurationResult:
     """
     This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -101,14 +96,10 @@ def get_utils_analyze_applications_configuration(bucket: Optional[_builtins.str]
     ```
 
 
-    :param _builtins.str bucket: The name of the bucket used for analyzing applications.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.str namespace: The Object Storage namespace used for analyzing applications.
     """
     __args__ = dict()
-    __args__['bucket'] = bucket
     __args__['compartmentId'] = compartment_id
-    __args__['namespace'] = namespace
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration', __args__, opts=opts, typ=GetUtilsAnalyzeApplicationsConfigurationResult).value
 
@@ -117,9 +108,7 @@ def get_utils_analyze_applications_configuration(bucket: Optional[_builtins.str]
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_utils_analyze_applications_configuration_output(bucket: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_utils_analyze_applications_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsAnalyzeApplicationsConfigurationResult]:
     """
     This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -136,14 +125,10 @@ def get_utils_analyze_applications_configuration_output(bucket: Optional[pulumi.
     ```
 
 
-    :param _builtins.str bucket: The name of the bucket used for analyzing applications.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.str namespace: The Object Storage namespace used for analyzing applications.
     """
     __args__ = dict()
-    __args__['bucket'] = bucket
     __args__['compartmentId'] = compartment_id
-    __args__['namespace'] = namespace
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration', __args__, opts=opts, typ=GetUtilsAnalyzeApplicationsConfigurationResult)
     return __ret__.apply(lambda __response__: GetUtilsAnalyzeApplicationsConfigurationResult(

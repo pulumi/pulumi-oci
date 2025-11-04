@@ -18,19 +18,19 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterResult> Filters;
         /// <summary>
-        /// OCIDs of Fleet Software Update Discovery.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         /// </summary>
         public readonly string FsuDiscoveryId;
         /// <summary>
-        /// Oracle Cloud Infrastructure Search Service query string.
+        /// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         /// </summary>
         public readonly string Query;
         /// <summary>
-        /// Possible fleet discovery strategies.
+        /// Supported fleet discovery strategies.
         /// </summary>
         public readonly string Strategy;
         /// <summary>
-        /// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+        /// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
         /// </summary>
         public readonly ImmutableArray<string> Targets;
 

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
- *
- * Create a processor job for document analysis.
- *
  * ## Example Usage
  *
  * ```typescript

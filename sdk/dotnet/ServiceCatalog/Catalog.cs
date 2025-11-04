@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog
 {
     /// <summary>
-    /// This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
-    /// 
-    /// Creates a brand new service catalog in a given compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

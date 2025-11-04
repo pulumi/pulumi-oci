@@ -490,10 +490,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  task_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Schedule a task as specified and return task info.
-
         ## Example Usage
 
         ## Import
@@ -528,10 +524,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  args: NamespaceScheduledTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Schedule a task as specified and return task info.
-
         ## Example Usage
 
         ## Import

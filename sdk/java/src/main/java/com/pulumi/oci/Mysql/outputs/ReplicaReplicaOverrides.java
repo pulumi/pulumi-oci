@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -27,6 +28,11 @@ public final class ReplicaReplicaOverrides {
      * 
      */
     private @Nullable List<String> nsgIds;
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
@@ -59,6 +65,13 @@ public final class ReplicaReplicaOverrides {
         return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
+    }
+    /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      * ** IMPORTANT **
@@ -81,6 +94,7 @@ public final class ReplicaReplicaOverrides {
         private @Nullable String configurationId;
         private @Nullable String mysqlVersion;
         private @Nullable List<String> nsgIds;
+        private @Nullable Map<String,String> securityAttributes;
         private @Nullable String shapeName;
         public Builder() {}
         public Builder(ReplicaReplicaOverrides defaults) {
@@ -88,6 +102,7 @@ public final class ReplicaReplicaOverrides {
     	      this.configurationId = defaults.configurationId;
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
         }
 
@@ -113,6 +128,12 @@ public final class ReplicaReplicaOverrides {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
 
             this.shapeName = shapeName;
@@ -123,6 +144,7 @@ public final class ReplicaReplicaOverrides {
             _resultValue.configurationId = configurationId;
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             return _resultValue;
         }

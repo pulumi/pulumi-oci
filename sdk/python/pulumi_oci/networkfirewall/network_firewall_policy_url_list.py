@@ -171,10 +171,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Url List for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -211,10 +207,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  args: NetworkFirewallPolicyUrlListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Url List for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

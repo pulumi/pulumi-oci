@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration
 {
     /// <summary>
-    /// This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
-    /// 
-    /// Creates a new Integration Instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -71,6 +67,11 @@ namespace Pulumi.Oci.Integration
     ///                 },
     ///             },
     ///             IsIntegrationVcnAllowlisted = integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
+    ///         },
+    ///         SecurityAttributes = 
+    ///         {
+    ///             { "oracle-zpr.sensitivity.value", "low" },
+    ///             { "oracle-zpr.sensitivity.mode", "enforce" },
     ///         },
     ///         Shape = integrationInstanceShape,
     ///         State = integrationInstanceTargetState,
@@ -196,7 +197,7 @@ namespace Pulumi.Oci.Integration
         public Output<string> InstanceUrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        /// (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Output("integrationInstanceType")]
         public Output<string> IntegrationInstanceType { get; private set; } = null!;
@@ -248,6 +249,15 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("privateEndpointOutboundConnections")]
         public Output<ImmutableArray<Outputs.IntegrationInstancePrivateEndpointOutboundConnection>> PrivateEndpointOutboundConnections { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        /// "oracle-zpr.sensitivity.value" = "low"
+        /// "oracle-zpr.sensitivity.mode" = "enforce"
+        /// }`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// Shape
@@ -440,7 +450,7 @@ namespace Pulumi.Oci.Integration
         }
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        /// (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Input("integrationInstanceType", required: true)]
         public Input<string> IntegrationInstanceType { get; set; } = null!;
@@ -480,6 +490,21 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("networkEndpointDetails")]
         public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsArgs>? NetworkEndpointDetails { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        /// "oracle-zpr.sensitivity.value" = "low"
+        /// "oracle-zpr.sensitivity.mode" = "enforce"
+        /// }`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// Shape
@@ -657,7 +682,7 @@ namespace Pulumi.Oci.Integration
         public Input<string>? InstanceUrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        /// (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         /// </summary>
         [Input("integrationInstanceType")]
         public Input<string>? IntegrationInstanceType { get; set; }
@@ -714,6 +739,21 @@ namespace Pulumi.Oci.Integration
         {
             get => _privateEndpointOutboundConnections ?? (_privateEndpointOutboundConnections = new InputList<Inputs.IntegrationInstancePrivateEndpointOutboundConnectionGetArgs>());
             set => _privateEndpointOutboundConnections = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        /// "oracle-zpr.sensitivity.value" = "low"
+        /// "oracle-zpr.sensitivity.mode" = "enforce"
+        /// }`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

@@ -4,7 +4,6 @@
 package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,7 +15,7 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
      * @return Freeform tag key.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Defined tag namespace.
      * 
@@ -26,15 +25,15 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
      * @return Freeform tag value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private FsuCollectionFleetDiscoveryFilterTag() {}
     /**
      * @return Freeform tag key.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Defined tag namespace.
@@ -47,8 +46,8 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
      * @return Freeform tag value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -60,9 +59,9 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
+        private @Nullable String key;
         private @Nullable String namespace;
-        private String value;
+        private @Nullable String value;
         public Builder() {}
         public Builder(FsuCollectionFleetDiscoveryFilterTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,10 +71,8 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            if (key == null) {
-              throw new MissingRequiredPropertyException("FsuCollectionFleetDiscoveryFilterTag", "key");
-            }
+        public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
@@ -86,10 +83,8 @@ public final class FsuCollectionFleetDiscoveryFilterTag {
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            if (value == null) {
-              throw new MissingRequiredPropertyException("FsuCollectionFleetDiscoveryFilterTag", "value");
-            }
+        public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

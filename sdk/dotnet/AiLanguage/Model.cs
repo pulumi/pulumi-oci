@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiLanguage
 {
     /// <summary>
-    /// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-    /// 
-    /// Creates a new model for training and train the model with date provided.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -196,7 +192,7 @@ namespace Pulumi.Oci.AiLanguage
         public Output<Outputs.ModelTrainingDataset> TrainingDataset { get; private set; } = null!;
 
         /// <summary>
-        /// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+        /// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -436,7 +432,7 @@ namespace Pulumi.Oci.AiLanguage
         public Input<Inputs.ModelTrainingDatasetGetArgs>? TrainingDataset { get; set; }
 
         /// <summary>
-        /// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+        /// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

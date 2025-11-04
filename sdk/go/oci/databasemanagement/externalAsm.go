@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Asm resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the external ASM specified by `externalAsmId`.
+// ## Example Usage
 //
 // ## Import
 //

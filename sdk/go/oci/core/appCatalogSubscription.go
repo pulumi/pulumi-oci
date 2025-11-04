@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
-//
-// Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
-//
 // ## Example Usage
 //
 // ```go

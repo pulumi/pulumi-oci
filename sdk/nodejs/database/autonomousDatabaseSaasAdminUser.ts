@@ -7,9 +7,21 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
  *
- * This operation updates SaaS administrative user configuration of the Autonomous Database.
+ * This operation updates SaaS administrative user configuration of the Autonomous AI Database.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseSaasAdminUser = new oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     password: autonomousDatabaseSaasAdminUserPassword,
+ *     accessType: autonomousDatabaseSaasAdminUserAccessType,
+ *     duration: autonomousDatabaseSaasAdminUserDuration,
+ * });
+ * ```
  *
  * ## Import
  *
@@ -68,7 +80,7 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
      */
     declare public readonly secretVersionNumber: pulumi.Output<number | undefined>;
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
      *
      * ** IMPORTANT **
@@ -145,7 +157,7 @@ export interface AutonomousDatabaseSaasAdminUserState {
      */
     secretVersionNumber?: pulumi.Input<number>;
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
      *
      * ** IMPORTANT **
@@ -183,7 +195,7 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
      */
     secretVersionNumber?: pulumi.Input<number>;
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
      *
      * ** IMPORTANT **

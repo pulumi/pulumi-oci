@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
- *
- * Creates a new Connection Assignment.
- *
  * ## Example Usage
  *
  * ```typescript

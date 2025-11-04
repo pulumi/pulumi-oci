@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new Url List for the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -218,10 +218,6 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create customer.
-
         ## Example Usage
 
         ```python
@@ -263,10 +259,6 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
                  args: OccCustomerGroupOccCustomerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create customer.
-
         ## Example Usage
 
         ```python

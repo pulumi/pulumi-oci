@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
- *
- * Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
- *
  * ## Example Usage
  *
  * ## Import

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a new rule for the alert policy.
-//
 // ## Example Usage
 //
 // ```go

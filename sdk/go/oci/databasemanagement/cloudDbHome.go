@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the cloud DB home specified by `cloudDbHomeId`.
+// ## Example Usage
 //
 // ## Import
 //

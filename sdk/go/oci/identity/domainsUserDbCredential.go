@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Create a user's database (DB) credentials.
-//
 // ## Example Usage
 //
 // ## Import

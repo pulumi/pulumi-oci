@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
-//
-// Create a Private access Channel for the Analytics instance. The operation is long-running
-// and creates a new WorkRequest.
-//
 // ## Example Usage
 //
 // ```go

@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := containerengine.GetAddonOptions(ctx, &containerengine.GetAddonOptionsArgs{
-//				KubernetesVersion: addonOptionKubernetesVersion,
-//				AddonName:         pulumi.StringRef(testAddon.Name),
+//				KubernetesVersion:     addonOptionKubernetesVersion,
+//				AddonName:             pulumi.StringRef(testAddon.Name),
+//				ShouldShowAllVersions: pulumi.BoolRef(addonOptionShouldShowAllVersions),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetAddonOptionsArgs struct {
 	Filters   []GetAddonOptionsFilter `pulumi:"filters"`
 	// The kubernetes version to fetch the addons.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	// Whether to show all add-on versions
+	ShouldShowAllVersions *bool `pulumi:"shouldShowAllVersions"`
 }
 
 // A collection of values returned by getAddonOptions.
@@ -67,8 +70,9 @@ type GetAddonOptionsResult struct {
 	AddonOptions []GetAddonOptionsAddonOption `pulumi:"addonOptions"`
 	Filters      []GetAddonOptionsFilter      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	Id                    string `pulumi:"id"`
+	KubernetesVersion     string `pulumi:"kubernetesVersion"`
+	ShouldShowAllVersions *bool  `pulumi:"shouldShowAllVersions"`
 }
 
 func GetAddonOptionsOutput(ctx *pulumi.Context, args GetAddonOptionsOutputArgs, opts ...pulumi.InvokeOption) GetAddonOptionsResultOutput {
@@ -87,6 +91,8 @@ type GetAddonOptionsOutputArgs struct {
 	Filters   GetAddonOptionsFilterArrayInput `pulumi:"filters"`
 	// The kubernetes version to fetch the addons.
 	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	// Whether to show all add-on versions
+	ShouldShowAllVersions pulumi.BoolPtrInput `pulumi:"shouldShowAllVersions"`
 }
 
 func (GetAddonOptionsOutputArgs) ElementType() reflect.Type {
@@ -128,6 +134,10 @@ func (o GetAddonOptionsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAddonOptionsResultOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddonOptionsResult) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+}
+
+func (o GetAddonOptionsResultOutput) ShouldShowAllVersions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsResult) *bool { return v.ShouldShowAllVersions }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

@@ -16,9 +16,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Updates the unified audit policy definition.
+ * ## Example Usage
  * 
  * ## Import
  * 

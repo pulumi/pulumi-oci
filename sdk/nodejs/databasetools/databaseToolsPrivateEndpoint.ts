@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
- *
- * Creates a new Database Tools private endpoint.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -37,6 +33,7 @@ import * as utilities from "../utilities";
  *     }],
  *     nsgIds: databaseToolsPrivateEndpointNsgIds,
  *     privateEndpointIp: databaseToolsPrivateEndpointPrivateEndpointIp,
+ *     securityAttributes: databaseToolsPrivateEndpointSecurityAttributes,
  * });
  * ```
  *
@@ -133,6 +130,10 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly reverseConnectionConfigurations: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[]>;
     /**
+     * (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the Database Tools private endpoint.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -188,6 +189,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
             resourceInputs["privateEndpointVnicId"] = state?.privateEndpointVnicId;
             resourceInputs["reverseConnectionConfigurations"] = state?.reverseConnectionConfigurations;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -217,6 +219,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["locks"] = args?.locks;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["privateEndpointIp"] = args?.privateEndpointIp;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["additionalFqdns"] = undefined /*out*/;
             resourceInputs["endpointFqdn"] = undefined /*out*/;
@@ -295,6 +298,10 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     reverseConnectionConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration>[]>;
     /**
+     * (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The current state of the Database Tools private endpoint.
      */
     state?: pulumi.Input<string>;
@@ -364,6 +371,10 @@ export interface DatabaseToolsPrivateEndpointArgs {
      * The private IP address that represents the access point for the associated endpoint service.
      */
     privateEndpointIp?: pulumi.Input<string>;
+    /**
+     * (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      *

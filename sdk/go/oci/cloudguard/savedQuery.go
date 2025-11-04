@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a SavedQuery resource.
-//
 // ## Example Usage
 //
 // ```go

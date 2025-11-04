@@ -462,10 +462,6 @@ class ResolverEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new resolver endpoint in the same compartment as the resolver.
-
         ## Example Usage
 
         ```python
@@ -522,10 +518,6 @@ class ResolverEndpoint(pulumi.CustomResource):
                  args: ResolverEndpointInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new resolver endpoint in the same compartment as the resolver.
-
         ## Example Usage
 
         ```python

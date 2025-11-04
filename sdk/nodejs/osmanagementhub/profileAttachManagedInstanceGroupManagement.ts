@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Profile Attach Managed Instance Group Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Attaches the specified managed instance group to a profile.
- *
  * ## Example Usage
  *
  * ```typescript

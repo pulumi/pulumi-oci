@@ -18,14 +18,14 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     public static final AutonomousDatabaseSoftwareImageState Empty = new AutonomousDatabaseSoftwareImageState();
 
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     @Import(name="autonomousDsiOneOffPatches")
     private @Nullable Output<List<String>> autonomousDsiOneOffPatches;
 
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     public Optional<Output<List<String>>> autonomousDsiOneOffPatches() {
@@ -48,14 +48,14 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     }
 
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     @Import(name="databaseVersion")
     private @Nullable Output<String> databaseVersion;
 
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     public Optional<Output<String>> databaseVersion() {
@@ -78,14 +78,14 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -153,7 +153,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     }
 
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,7 +163,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     private @Nullable Output<String> sourceCdbId;
 
     /**
-     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,14 +174,14 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     }
 
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     public Optional<Output<String>> state() {
@@ -204,14 +204,14 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
     }
 
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -255,7 +255,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous Database Software Image
+         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous AI Database Software Image
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous Database Software Image
+         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous AI Database Software Image
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous Database Software Image
+         * @param autonomousDsiOneOffPatches One-off patches included in the Autonomous AI Database Software Image
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param databaseVersion The database version with which the Autonomous Database Software Image is to be built.
+         * @param databaseVersion The database version with which the Autonomous AI Database Software Image is to be built.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param databaseVersion The database version with which the Autonomous Database Software Image is to be built.
+         * @param databaseVersion The database version with which the Autonomous AI Database Software Image is to be built.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * @param displayName The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * @param displayName The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -468,7 +468,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -481,7 +481,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param state The current state of the Autonomous Database Software Image.
+         * @param state The current state of the Autonomous AI Database Software Image.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param state The current state of the Autonomous Database Software Image.
+         * @param state The current state of the Autonomous AI Database Software Image.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param timeCreated The date and time the Autonomous Database Software Image was created.
+         * @param timeCreated The date and time the Autonomous AI Database Software Image was created.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class AutonomousDatabaseSoftwareImageState extends com.pulumi.resou
         }
 
         /**
-         * @param timeCreated The date and time the Autonomous Database Software Image was created.
+         * @param timeCreated The date and time the Autonomous AI Database Software Image was created.
          * 
          * @return builder
          * 

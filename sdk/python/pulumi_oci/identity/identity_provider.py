@@ -460,25 +460,6 @@ class IdentityProvider(pulumi.CustomResource):
                  protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
-
-        **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-        Creates a new identity provider in your tenancy. For more information, see
-        [Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
-
-        You must specify your tenancy's OCID as the compartment ID in the request object.
-        Remember that the tenancy is simply the root compartment. For information about
-        OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You must also specify a *name* for the `IdentityProvider`, which must be unique
-        across all `IdentityProvider` objects in your tenancy and cannot be changed.
-
-        You must also specify a *description* for the `IdentityProvider` (although
-        it can be an empty string). It does not have to be unique, and you can change
-        it anytime with
-        [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
-
         ## Example Usage
 
         ```python
@@ -534,25 +515,6 @@ class IdentityProvider(pulumi.CustomResource):
                  args: IdentityProviderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
-
-        **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-        Creates a new identity provider in your tenancy. For more information, see
-        [Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
-
-        You must specify your tenancy's OCID as the compartment ID in the request object.
-        Remember that the tenancy is simply the root compartment. For information about
-        OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You must also specify a *name* for the `IdentityProvider`, which must be unique
-        across all `IdentityProvider` objects in your tenancy and cannot be changed.
-
-        You must also specify a *description* for the `IdentityProvider` (although
-        it can be an empty string). It does not have to be unique, and you can change
-        it anytime with
-        [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
-
         ## Example Usage
 
         ```python

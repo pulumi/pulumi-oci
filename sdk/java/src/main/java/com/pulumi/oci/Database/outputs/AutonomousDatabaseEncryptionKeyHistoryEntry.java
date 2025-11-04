@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseEncryptionKeyHistoryEntry {
     /**
-     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * @return (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     private @Nullable List<AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey> encryptionKeys;
@@ -26,7 +26,7 @@ public final class AutonomousDatabaseEncryptionKeyHistoryEntry {
 
     private AutonomousDatabaseEncryptionKeyHistoryEntry() {}
     /**
-     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * @return (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     public List<AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey> encryptionKeys() {

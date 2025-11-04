@@ -10,14 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
-    /// This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
-    /// 
-    /// Adds a backend set to a load balancer.
-    /// 
-    /// ## Supported Aliases
-    /// 
-    /// * `OciLoadBalancerBackendset`
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -11,13 +11,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore {
+    /**
+     * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+     * 
+     */
     private List<String> blockVolumeIds;
+    /**
+     * @return Type of the datastore.
+     * 
+     */
     private String datastoreType;
 
     private GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore() {}
+    /**
+     * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+     * 
+     */
     public List<String> blockVolumeIds() {
         return this.blockVolumeIds;
     }
+    /**
+     * @return Type of the datastore.
+     * 
+     */
     public String datastoreType() {
         return this.datastoreType;
     }

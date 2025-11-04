@@ -517,18 +517,6 @@ class Vault(pulumi.CustomResource):
                  vault_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new vault. The type of vault you create determines key placement, pricing, and
-        available options. Options include storage isolation, a dedicated service endpoint instead
-        of a shared service endpoint for API calls, and either a dedicated hardware security module
-        (HSM) or a multitenant HSM.
-
-        As a provisioning operation, this call is subject to a Key Management limit that applies to
-        the total number of requests across all provisioning write operations. Key Management might
-        throttle this call to reject an otherwise valid request when the total rate of provisioning
-        write operations exceeds 10 requests per second for a given tenancy.
-
         ## Example Usage
 
         ```python
@@ -586,18 +574,6 @@ class Vault(pulumi.CustomResource):
                  args: VaultArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a new vault. The type of vault you create determines key placement, pricing, and
-        available options. Options include storage isolation, a dedicated service endpoint instead
-        of a shared service endpoint for API calls, and either a dedicated hardware security module
-        (HSM) or a multitenant HSM.
-
-        As a provisioning operation, this call is subject to a Key Management limit that applies to
-        the total number of requests across all provisioning write operations. Key Management might
-        throttle this call to reject an otherwise valid request when the total rate of provisioning
-        write operations exceeds 10 requests per second for a given tenancy.
-
         ## Example Usage
 
         ```python

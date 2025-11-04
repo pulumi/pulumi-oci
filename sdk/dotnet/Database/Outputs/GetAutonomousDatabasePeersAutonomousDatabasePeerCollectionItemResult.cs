@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The name of the region where this peer Autonomous Database clone exists.
+        /// The name of the region where this peer Autonomous AI Database clone exists.
         /// </summary>
         public readonly string Region;
 

@@ -164,7 +164,8 @@ type Sddc struct {
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys pulumi.StringOutput `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
-	State pulumi.StringOutput `pulumi:"state"`
+	State      pulumi.StringOutput    `pulumi:"state"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -399,7 +400,8 @@ type sddcState struct {
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys *string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
-	State *string `pulumi:"state"`
+	State      *string           `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -596,7 +598,8 @@ type SddcState struct {
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys pulumi.StringPtrInput
 	// The current state of the SDDC.
-	State pulumi.StringPtrInput
+	State      pulumi.StringPtrInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -1263,6 +1266,10 @@ func (o SddcOutput) SshAuthorizedKeys() pulumi.StringOutput {
 // The current state of the SDDC.
 func (o SddcOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+func (o SddcOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Sddc) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

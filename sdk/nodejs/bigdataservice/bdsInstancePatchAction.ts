@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Install the specified patch to this cluster.
- *
  * ## Example Usage
  *
  * ```typescript

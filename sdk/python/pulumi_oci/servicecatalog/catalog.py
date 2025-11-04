@@ -234,10 +234,6 @@ class Catalog(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a brand new service catalog in a given compartment.
-
         ## Example Usage
 
         ```python
@@ -281,10 +277,6 @@ class Catalog(pulumi.CustomResource):
                  args: CatalogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a brand new service catalog in a given compartment.
-
         ## Example Usage
 
         ```python

@@ -441,14 +441,6 @@ class Dkim(pulumi.CustomResource):
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new DKIM for an email domain.
-        This DKIM signs all approved senders in the tenancy that are in this email domain.
-        Best security practices indicate to periodically rotate the DKIM that is doing the signing.
-        When a second DKIM is applied, all senders seamlessly pick up the new key
-        without interruption in signing.
-
         ## Example Usage
 
         ```python
@@ -499,14 +491,6 @@ class Dkim(pulumi.CustomResource):
                  args: DkimArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new DKIM for an email domain.
-        This DKIM signs all approved senders in the tenancy that are in this email domain.
-        Best security practices indicate to periodically rotate the DKIM that is doing the signing.
-        When a second DKIM is applied, all senders seamlessly pick up the new key
-        without interruption in signing.
-
         ## Example Usage
 
         ```python

@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new MlApplicationImplementation.
- * 
  * ## Example Usage
  * 
  * <pre>

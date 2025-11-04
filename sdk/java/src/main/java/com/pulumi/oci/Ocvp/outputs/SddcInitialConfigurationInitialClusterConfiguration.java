@@ -34,12 +34,17 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     private String computeAvailabilityDomain;
     /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    private @Nullable List<String> datastoreClusterIds;
+    /**
      * @return A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
     private @Nullable List<SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores;
     /**
-     * @return A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -116,6 +121,13 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return this.computeAvailabilityDomain;
     }
     /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public List<String> datastoreClusterIds() {
+        return this.datastoreClusterIds == null ? List.of() : this.datastoreClusterIds;
+    }
+    /**
      * @return A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
@@ -123,7 +135,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return this.datastores == null ? List.of() : this.datastores;
     }
     /**
-     * @return A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -209,6 +221,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         private @Nullable Integer actualEsxiHostsCount;
         private @Nullable String capacityReservationId;
         private String computeAvailabilityDomain;
+        private @Nullable List<String> datastoreClusterIds;
         private @Nullable List<SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores;
         private @Nullable String displayName;
         private Integer esxiHostsCount;
@@ -226,6 +239,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.datastores = defaults.datastores;
     	      this.displayName = defaults.displayName;
     	      this.esxiHostsCount = defaults.esxiHostsCount;
@@ -258,6 +272,15 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             }
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder datastoreClusterIds(@Nullable List<String> datastoreClusterIds) {
+
+            this.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
         }
         @CustomType.Setter
         public Builder datastores(@Nullable List<SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores) {
@@ -337,6 +360,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.datastores = datastores;
             _resultValue.displayName = displayName;
             _resultValue.esxiHostsCount = esxiHostsCount;

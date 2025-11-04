@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
-//
-// Creates a new NetworkFirewall.
-//
 // ## Example Usage
 //
 // ```go

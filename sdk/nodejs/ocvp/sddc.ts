@@ -276,6 +276,7 @@ export class Sddc extends pulumi.CustomResource {
      * The current state of the SDDC.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -420,6 +421,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["reservingHcxOnPremiseLicenseKeys"] = state?.reservingHcxOnPremiseLicenseKeys;
             resourceInputs["sshAuthorizedKeys"] = state?.sshAuthorizedKeys;
             resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeHcxBillingCycleEnd"] = state?.timeHcxBillingCycleEnd;
             resourceInputs["timeHcxLicenseStatusUpdated"] = state?.timeHcxLicenseStatusUpdated;
@@ -498,6 +500,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["nsxManagerUsername"] = undefined /*out*/;
             resourceInputs["nsxOverlaySegmentName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeHcxBillingCycleEnd"] = undefined /*out*/;
             resourceInputs["timeHcxLicenseStatusUpdated"] = undefined /*out*/;
@@ -752,6 +755,7 @@ export interface SddcState {
      * The current state of the SDDC.
      */
     state?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

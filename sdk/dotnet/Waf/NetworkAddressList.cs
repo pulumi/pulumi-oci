@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf
 {
     /// <summary>
-    /// This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-    /// 
-    /// Creates a new NetworkAddressList.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

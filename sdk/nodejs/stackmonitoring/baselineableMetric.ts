@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Creates the specified Baseline-able metric
- *
  * ## Example Usage
  *
  * ```typescript

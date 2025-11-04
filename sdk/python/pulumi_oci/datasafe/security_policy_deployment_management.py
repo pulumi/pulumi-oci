@@ -478,10 +478,6 @@ class SecurityPolicyDeploymentManagement(pulumi.CustomResource):
                  target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a Data Safe security policy deployment in the Data Safe Console.
-
         ## Example Usage
 
         ```python
@@ -531,10 +527,6 @@ class SecurityPolicyDeploymentManagement(pulumi.CustomResource):
                  args: SecurityPolicyDeploymentManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a Data Safe security policy deployment in the Data Safe Console.
-
         ## Example Usage
 
         ```python

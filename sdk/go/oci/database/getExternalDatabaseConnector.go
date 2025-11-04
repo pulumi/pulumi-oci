@@ -64,7 +64,7 @@ type LookupExternalDatabaseConnectorResult struct {
 	ConnectionCredentials []GetExternalDatabaseConnectorConnectionCredential `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
 	ConnectionStatus string `pulumi:"connectionStatus"`
-	// The Oracle Database connection string.
+	// The Oracle AI Database connection string.
 	ConnectionStrings []GetExternalDatabaseConnectorConnectionString `pulumi:"connectionStrings"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId string `pulumi:"connectorAgentId"`
@@ -144,7 +144,7 @@ func (o LookupExternalDatabaseConnectorResultOutput) ConnectionStatus() pulumi.S
 	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) string { return v.ConnectionStatus }).(pulumi.StringOutput)
 }
 
-// The Oracle Database connection string.
+// The Oracle AI Database connection string.
 func (o LookupExternalDatabaseConnectorResultOutput) ConnectionStrings() GetExternalDatabaseConnectorConnectionStringArrayOutput {
 	return o.ApplyT(func(v LookupExternalDatabaseConnectorResult) []GetExternalDatabaseConnectorConnectionString {
 		return v.ConnectionStrings

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
 //
-// Gets information about the specified Autonomous Database Software Image.
+// Gets information about the specified Autonomous AI Database Software Image.
 //
 // ## Example Usage
 //
@@ -52,26 +52,26 @@ func LookupAutonomousDatabaseSoftwareImage(ctx *pulumi.Context, args *LookupAuto
 
 // A collection of arguments for invoking getAutonomousDatabaseSoftwareImage.
 type LookupAutonomousDatabaseSoftwareImageArgs struct {
-	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseSoftwareImageId string `pulumi:"autonomousDatabaseSoftwareImageId"`
 }
 
 // A collection of values returned by getAutonomousDatabaseSoftwareImage.
 type LookupAutonomousDatabaseSoftwareImageResult struct {
 	AutonomousDatabaseSoftwareImageId string `pulumi:"autonomousDatabaseSoftwareImageId"`
-	// One-off patches included in the Autonomous Database Software Image
+	// One-off patches included in the Autonomous AI Database Software Image
 	AutonomousDsiOneOffPatches []string `pulumi:"autonomousDsiOneOffPatches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The database version with which the Autonomous Database Software Image is to be built.
+	// The database version with which the Autonomous AI Database Software Image is to be built.
 	DatabaseVersion string `pulumi:"databaseVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+	// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
 	Id string `pulumi:"id"`
 	// To what shape the image is meant for.
 	ImageShapeFamily string `pulumi:"imageShapeFamily"`
@@ -80,11 +80,11 @@ type LookupAutonomousDatabaseSoftwareImageResult struct {
 	// The Release Updates.
 	ReleaseUpdate string `pulumi:"releaseUpdate"`
 	SourceCdbId   string `pulumi:"sourceCdbId"`
-	// The current state of the Autonomous Database Software Image.
+	// The current state of the Autonomous AI Database Software Image.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the Autonomous Database Software Image was created.
+	// The date and time the Autonomous AI Database Software Image was created.
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -99,7 +99,7 @@ func LookupAutonomousDatabaseSoftwareImageOutput(ctx *pulumi.Context, args Looku
 
 // A collection of arguments for invoking getAutonomousDatabaseSoftwareImage.
 type LookupAutonomousDatabaseSoftwareImageOutputArgs struct {
-	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseSoftwareImageId pulumi.StringInput `pulumi:"autonomousDatabaseSoftwareImageId"`
 }
 
@@ -126,7 +126,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) AutonomousDatabaseSof
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.AutonomousDatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
-// One-off patches included in the Autonomous Database Software Image
+// One-off patches included in the Autonomous AI Database Software Image
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) AutonomousDsiOneOffPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) []string { return v.AutonomousDsiOneOffPatches }).(pulumi.StringArrayOutput)
 }
@@ -136,7 +136,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) CompartmentId() pulum
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The database version with which the Autonomous Database Software Image is to be built.
+// The database version with which the Autonomous AI Database Software Image is to be built.
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) DatabaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
 }
@@ -146,7 +146,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) DefinedTags() pulumi.
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -156,7 +156,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) FreeformTags() pulumi
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -180,7 +180,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) SourceCdbId() pulumi.
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.SourceCdbId }).(pulumi.StringOutput)
 }
 
-// The current state of the Autonomous Database Software Image.
+// The current state of the Autonomous AI Database Software Image.
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -190,7 +190,7 @@ func (o LookupAutonomousDatabaseSoftwareImageResultOutput) SystemTags() pulumi.S
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the Autonomous Database Software Image was created.
+// The date and time the Autonomous AI Database Software Image was created.
 func (o LookupAutonomousDatabaseSoftwareImageResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseSoftwareImageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

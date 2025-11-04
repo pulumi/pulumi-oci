@@ -1076,9 +1076,7 @@ class SoftwareSource(pulumi.CustomResource):
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new software source.
+        ## Example Usage
 
         ## Import
 
@@ -1127,9 +1125,7 @@ class SoftwareSource(pulumi.CustomResource):
                  args: SoftwareSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new software source.
+        ## Example Usage
 
         ## Import
 

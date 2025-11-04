@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the external cluster specified by `externalClusterId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

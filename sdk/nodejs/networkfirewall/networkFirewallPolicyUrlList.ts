@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
- *
- * Creates a new Url List for the Network Firewall Policy.
- *
  * ## Example Usage
  *
  * ```typescript

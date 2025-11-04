@@ -358,10 +358,6 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new FusionEnvironmentFamily.
-
         ## Example Usage
 
         ```python
@@ -413,10 +409,6 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  args: FusionEnvironmentFamilyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new FusionEnvironmentFamily.
-
         ## Example Usage
 
         ```python

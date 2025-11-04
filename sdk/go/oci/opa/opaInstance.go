@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-//
-// Creates a new OpaInstance.
-//
 // ## Example Usage
 //
 // ```go

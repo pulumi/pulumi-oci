@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
- * 
- * Creates a new Recovery Service Subnet.
- * 
  * ## Example Usage
  * 
  * <pre>

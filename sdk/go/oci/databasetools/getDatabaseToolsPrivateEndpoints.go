@@ -56,7 +56,7 @@ func GetDatabaseToolsPrivateEndpoints(ctx *pulumi.Context, args *GetDatabaseTool
 
 // A collection of arguments for invoking getDatabaseToolsPrivateEndpoints.
 type GetDatabaseToolsPrivateEndpointsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string `pulumi:"displayName"`
@@ -99,7 +99,7 @@ func GetDatabaseToolsPrivateEndpointsOutput(ctx *pulumi.Context, args GetDatabas
 
 // A collection of arguments for invoking getDatabaseToolsPrivateEndpoints.
 type GetDatabaseToolsPrivateEndpointsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`

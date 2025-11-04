@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
-    /// 
-    /// Creates Oracle DB Azure Vault Association resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

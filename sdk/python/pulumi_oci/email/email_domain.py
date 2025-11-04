@@ -363,10 +363,6 @@ class EmailDomain(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new email domain. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python
@@ -414,10 +410,6 @@ class EmailDomain(pulumi.CustomResource):
                  args: EmailDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new email domain. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python

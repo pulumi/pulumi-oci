@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Create and activate external metastore configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

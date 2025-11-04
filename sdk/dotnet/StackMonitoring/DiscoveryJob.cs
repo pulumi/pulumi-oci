@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// API to create discovery Job and submit discovery Details to agent.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -205,10 +205,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Pluggabledatabase Pluggable Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified Oracle cloud pluggable database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -228,10 +224,6 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  args: PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pluggabledatabase Pluggable Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified Oracle cloud pluggable database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

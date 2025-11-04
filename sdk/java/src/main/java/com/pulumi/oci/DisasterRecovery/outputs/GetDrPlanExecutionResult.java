@@ -5,9 +5,11 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionAutomaticExecutionDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionExecutionOption;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionLogLocation;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -16,6 +18,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDrPlanExecutionResult {
+    /**
+     * @return The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    private List<GetDrPlanExecutionAutomaticExecutionDetail> automaticExecutionDetails;
     /**
      * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
@@ -62,6 +69,11 @@ public final class GetDrPlanExecutionResult {
      * 
      */
     private String id;
+    /**
+     * @return A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    private Boolean isAutomatic;
     /**
      * @return A message describing the DR plan execution&#39;s current state in more detail.
      * 
@@ -124,6 +136,13 @@ public final class GetDrPlanExecutionResult {
     private String timeUpdated;
 
     private GetDrPlanExecutionResult() {}
+    /**
+     * @return The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    public List<GetDrPlanExecutionAutomaticExecutionDetail> automaticExecutionDetails() {
+        return this.automaticExecutionDetails;
+    }
     /**
      * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
@@ -189,6 +208,13 @@ public final class GetDrPlanExecutionResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    public Boolean isAutomatic() {
+        return this.isAutomatic;
     }
     /**
      * @return A message describing the DR plan execution&#39;s current state in more detail.
@@ -284,6 +310,7 @@ public final class GetDrPlanExecutionResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDrPlanExecutionAutomaticExecutionDetail> automaticExecutionDetails;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
@@ -294,6 +321,7 @@ public final class GetDrPlanExecutionResult {
         private Map<String,String> freeformTags;
         private List<GetDrPlanExecutionGroupExecution> groupExecutions;
         private String id;
+        private Boolean isAutomatic;
         private String lifeCycleDetails;
         private List<GetDrPlanExecutionLogLocation> logLocations;
         private String peerDrProtectionGroupId;
@@ -309,6 +337,7 @@ public final class GetDrPlanExecutionResult {
         public Builder() {}
         public Builder(GetDrPlanExecutionResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.automaticExecutionDetails = defaults.automaticExecutionDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -319,6 +348,7 @@ public final class GetDrPlanExecutionResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.groupExecutions = defaults.groupExecutions;
     	      this.id = defaults.id;
+    	      this.isAutomatic = defaults.isAutomatic;
     	      this.lifeCycleDetails = defaults.lifeCycleDetails;
     	      this.logLocations = defaults.logLocations;
     	      this.peerDrProtectionGroupId = defaults.peerDrProtectionGroupId;
@@ -333,6 +363,17 @@ public final class GetDrPlanExecutionResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder automaticExecutionDetails(List<GetDrPlanExecutionAutomaticExecutionDetail> automaticExecutionDetails) {
+            if (automaticExecutionDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionResult", "automaticExecutionDetails");
+            }
+            this.automaticExecutionDetails = automaticExecutionDetails;
+            return this;
+        }
+        public Builder automaticExecutionDetails(GetDrPlanExecutionAutomaticExecutionDetail... automaticExecutionDetails) {
+            return automaticExecutionDetails(List.of(automaticExecutionDetails));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -417,6 +458,14 @@ public final class GetDrPlanExecutionResult {
               throw new MissingRequiredPropertyException("GetDrPlanExecutionResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutomatic(Boolean isAutomatic) {
+            if (isAutomatic == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionResult", "isAutomatic");
+            }
+            this.isAutomatic = isAutomatic;
             return this;
         }
         @CustomType.Setter
@@ -520,6 +569,7 @@ public final class GetDrPlanExecutionResult {
         }
         public GetDrPlanExecutionResult build() {
             final var _resultValue = new GetDrPlanExecutionResult();
+            _resultValue.automaticExecutionDetails = automaticExecutionDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
@@ -530,6 +580,7 @@ public final class GetDrPlanExecutionResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.groupExecutions = groupExecutions;
             _resultValue.id = id;
+            _resultValue.isAutomatic = isAutomatic;
             _resultValue.lifeCycleDetails = lifeCycleDetails;
             _resultValue.logLocations = logLocations;
             _resultValue.peerDrProtectionGroupId = peerDrProtectionGroupId;

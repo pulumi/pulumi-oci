@@ -26,10 +26,13 @@ class GetPrivateIpResult:
     """
     A collection of values returned by getPrivateIp.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, ip_state=None, is_primary=None, is_reserved=None, lifetime=None, private_ip_id=None, route_table_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, cidr_prefix_length=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, ip_state=None, ipv4subnet_cidr_at_creation=None, is_primary=None, is_reserved=None, lifetime=None, private_ip_id=None, route_table_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if cidr_prefix_length and not isinstance(cidr_prefix_length, int):
+            raise TypeError("Expected argument 'cidr_prefix_length' to be a int")
+        pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +57,9 @@ class GetPrivateIpResult:
         if ip_state and not isinstance(ip_state, str):
             raise TypeError("Expected argument 'ip_state' to be a str")
         pulumi.set(__self__, "ip_state", ip_state)
+        if ipv4subnet_cidr_at_creation and not isinstance(ipv4subnet_cidr_at_creation, str):
+            raise TypeError("Expected argument 'ipv4subnet_cidr_at_creation' to be a str")
+        pulumi.set(__self__, "ipv4subnet_cidr_at_creation", ipv4subnet_cidr_at_creation)
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
@@ -89,6 +95,14 @@ class GetPrivateIpResult:
         The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> _builtins.int:
+        """
+        The secondary IPv4 CIDR prefix length.
+        """
+        return pulumi.get(self, "cidr_prefix_length")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -153,6 +167,14 @@ class GetPrivateIpResult:
         State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         """
         return pulumi.get(self, "ip_state")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4subnetCidrAtCreation")
+    def ipv4subnet_cidr_at_creation(self) -> _builtins.str:
+        """
+        Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+        """
+        return pulumi.get(self, "ipv4subnet_cidr_at_creation")
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
@@ -230,6 +252,7 @@ class AwaitableGetPrivateIpResult(GetPrivateIpResult):
             yield self
         return GetPrivateIpResult(
             availability_domain=self.availability_domain,
+            cidr_prefix_length=self.cidr_prefix_length,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -238,6 +261,7 @@ class AwaitableGetPrivateIpResult(GetPrivateIpResult):
             id=self.id,
             ip_address=self.ip_address,
             ip_state=self.ip_state,
+            ipv4subnet_cidr_at_creation=self.ipv4subnet_cidr_at_creation,
             is_primary=self.is_primary,
             is_reserved=self.is_reserved,
             lifetime=self.lifetime,
@@ -278,6 +302,7 @@ def get_private_ip(private_ip_id: Optional[_builtins.str] = None,
 
     return AwaitableGetPrivateIpResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cidr_prefix_length=pulumi.get(__ret__, 'cidr_prefix_length'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -286,6 +311,7 @@ def get_private_ip(private_ip_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
         ip_state=pulumi.get(__ret__, 'ip_state'),
+        ipv4subnet_cidr_at_creation=pulumi.get(__ret__, 'ipv4subnet_cidr_at_creation'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         is_reserved=pulumi.get(__ret__, 'is_reserved'),
         lifetime=pulumi.get(__ret__, 'lifetime'),
@@ -323,6 +349,7 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[_builtins.str]] =
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getPrivateIp:getPrivateIp', __args__, opts=opts, typ=GetPrivateIpResult)
     return __ret__.apply(lambda __response__: GetPrivateIpResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cidr_prefix_length=pulumi.get(__response__, 'cidr_prefix_length'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
@@ -331,6 +358,7 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[_builtins.str]] =
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
         ip_state=pulumi.get(__response__, 'ip_state'),
+        ipv4subnet_cidr_at_creation=pulumi.get(__response__, 'ipv4subnet_cidr_at_creation'),
         is_primary=pulumi.get(__response__, 'is_primary'),
         is_reserved=pulumi.get(__response__, 'is_reserved'),
         lifetime=pulumi.get(__response__, 'lifetime'),

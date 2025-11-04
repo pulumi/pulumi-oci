@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Maintenance Windows Retry Failed Operation resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Retry the last failed operation. The operation failed will be the most recent one. It won&#39;t apply for previous failed operations.
- * 
  * ## Example Usage
  * 
  * <pre>

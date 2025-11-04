@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new local peering gateway (LPG) for the specified VCN.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

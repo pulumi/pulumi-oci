@@ -20,7 +20,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private List<String> additionalFqdns;
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -90,6 +90,11 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations;
     /**
+     * @return Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
@@ -129,7 +134,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.additionalFqdns;
     }
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -227,6 +232,13 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.reverseConnectionConfigurations;
     }
     /**
+     * @return Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
@@ -293,6 +305,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         private String privateEndpointIp;
         private String privateEndpointVnicId;
         private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -317,6 +330,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.privateEndpointVnicId = defaults.privateEndpointVnicId;
     	      this.reverseConnectionConfigurations = defaults.reverseConnectionConfigurations;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -458,6 +472,14 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             return reverseConnectionConfigurations(List.of(reverseConnectionConfigurations));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem", "state");
@@ -522,6 +544,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             _resultValue.privateEndpointIp = privateEndpointIp;
             _resultValue.privateEndpointVnicId = privateEndpointVnicId;
             _resultValue.reverseConnectionConfigurations = reverseConnectionConfigurations;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

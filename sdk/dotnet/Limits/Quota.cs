@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits
 {
     /// <summary>
-    /// This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
-    /// 
-    /// Creates a new quota with the details supplied.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

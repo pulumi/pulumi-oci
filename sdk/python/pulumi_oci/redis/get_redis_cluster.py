@@ -27,7 +27,7 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, security_attributes=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if cluster_mode and not isinstance(cluster_mode, str):
             raise TypeError("Expected argument 'cluster_mode' to be a str")
         pulumi.set(__self__, "cluster_mode", cluster_mode)
@@ -85,6 +85,9 @@ class GetRedisClusterResult:
         if replicas_fqdn and not isinstance(replicas_fqdn, str):
             raise TypeError("Expected argument 'replicas_fqdn' to be a str")
         pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shard_count and not isinstance(shard_count, int):
             raise TypeError("Expected argument 'shard_count' to be a int")
         pulumi.set(__self__, "shard_count", shard_count)
@@ -257,6 +260,14 @@ class GetRedisClusterResult:
         return pulumi.get(self, "replicas_fqdn")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="shardCount")
     def shard_count(self) -> _builtins.int:
         """
@@ -338,6 +349,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             redis_cluster_id=self.redis_cluster_id,
             replicas_endpoint_ip_address=self.replicas_endpoint_ip_address,
             replicas_fqdn=self.replicas_fqdn,
+            security_attributes=self.security_attributes,
             shard_count=self.shard_count,
             software_version=self.software_version,
             state=self.state,
@@ -391,6 +403,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         replicas_endpoint_ip_address=pulumi.get(__ret__, 'replicas_endpoint_ip_address'),
         replicas_fqdn=pulumi.get(__ret__, 'replicas_fqdn'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shard_count=pulumi.get(__ret__, 'shard_count'),
         software_version=pulumi.get(__ret__, 'software_version'),
         state=pulumi.get(__ret__, 'state'),
@@ -441,6 +454,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
         redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),
         replicas_endpoint_ip_address=pulumi.get(__response__, 'replicas_endpoint_ip_address'),
         replicas_fqdn=pulumi.get(__response__, 'replicas_fqdn'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shard_count=pulumi.get(__response__, 'shard_count'),
         software_version=pulumi.get(__response__, 'software_version'),
         state=pulumi.get(__response__, 'state'),

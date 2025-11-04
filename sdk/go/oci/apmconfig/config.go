@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
-//
-// Creates a new configuration item.
-//
 // ## Example Usage
 //
 // ```go

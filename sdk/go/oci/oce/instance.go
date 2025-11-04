@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-//
-// Creates a new OceInstance.
-//
 // ## Example Usage
 //
 // ```go

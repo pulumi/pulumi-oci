@@ -60,7 +60,7 @@ export interface GetMaintenanceRunResult {
      */
     readonly customActionTimeoutInMins: number;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     readonly databaseSoftwareImageId: string;
     /**
@@ -113,7 +113,7 @@ export interface GetMaintenanceRunResult {
      */
     readonly patchFailureCount: number;
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      */
     readonly patchId: string;
     readonly patchType: string;
@@ -142,7 +142,7 @@ export interface GetMaintenanceRunResult {
      */
     readonly peerMaintenanceRunIds: string[];
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     readonly state: string;
     /**

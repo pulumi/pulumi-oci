@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Creates a new managed instance group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

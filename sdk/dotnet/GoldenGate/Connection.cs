@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
-    /// This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
-    /// 
-    /// Creates a new Connection.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -70,6 +66,8 @@ namespace Pulumi.Oci.GoldenGate
     ///         ClientId = testClient.Id,
     ///         ClientSecret = connectionClientSecret,
     ///         ClientSecretSecretId = testSecret.Id,
+    ///         ClusterId = testCluster.Id,
+    ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
     ///         ConnectionFactory = connectionConnectionFactory,
     ///         ConnectionString = connectionConnectionString,
     ///         ConnectionUrl = connectionConnectionUrl,
@@ -129,6 +127,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         SasTokenSecretId = testSecret.Id,
     ///         SecretAccessKey = connectionSecretAccessKey,
     ///         SecretAccessKeySecretId = testSecret.Id,
+    ///         SecurityAttributes = connectionSecurityAttributes,
     ///         SecurityProtocol = connectionSecurityProtocol,
     ///         Servers = connectionServers,
     ///         ServiceAccountKeyFile = connectionServiceAccountKeyFile,
@@ -168,6 +167,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         StorageCredentialName = connectionStorageCredentialName,
     ///         StreamPoolId = testStreamPool.Id,
     ///         SubnetId = testSubnet.Id,
+    ///         SubscriptionId = testSubscription.Id,
     ///         TenancyId = testTenancy.Id,
     ///         TenantId = testTenant.Id,
     ///         TlsCaFile = connectionTlsCaFile,
@@ -287,6 +287,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("clientSecretSecretId")]
         public Output<string?> ClientSecretSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        /// </summary>
+        [Output("clusterId")]
+        public Output<string> ClusterId { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -601,6 +613,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> SecretAccessKeySecretId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
         [Output("securityProtocol")]
@@ -637,7 +655,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> ShouldUseJndi { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         /// </summary>
         [Output("shouldUseResourcePrincipal")]
         public Output<bool> ShouldUseResourcePrincipal { get; private set; } = null!;
@@ -764,6 +782,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1088,6 +1112,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("clientSecretSecretId")]
         public Input<string>? ClientSecretSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        /// </summary>
+        [Input("clusterId")]
+        public Input<string>? ClusterId { get; set; }
+
+        /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1493,6 +1529,18 @@ namespace Pulumi.Oci.GoldenGate
         [Input("secretAccessKeySecretId")]
         public Input<string>? SecretAccessKeySecretId { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
@@ -1540,7 +1588,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         /// </summary>
         [Input("shouldUseResourcePrincipal")]
         public Input<bool>? ShouldUseResourcePrincipal { get; set; }
@@ -1701,6 +1749,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
         /// The Kafka (e.g. Confluent) Schema Registry technology type.
@@ -1996,6 +2050,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("clientSecretSecretId")]
         public Input<string>? ClientSecretSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        /// </summary>
+        [Input("clusterId")]
+        public Input<string>? ClusterId { get; set; }
+
+        /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -2419,6 +2485,18 @@ namespace Pulumi.Oci.GoldenGate
         [Input("secretAccessKeySecretId")]
         public Input<string>? SecretAccessKeySecretId { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
@@ -2466,7 +2544,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         /// </summary>
         [Input("shouldUseResourcePrincipal")]
         public Input<bool>? ShouldUseResourcePrincipal { get; set; }
@@ -2633,6 +2711,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

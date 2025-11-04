@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Creates a CatalogItem.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPrivateEndpointResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * 
      */
     private String compartmentId;
@@ -34,7 +34,7 @@ public final class GetPrivateEndpointResult {
      */
     private String displayName;
     /**
-     * @return DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     * @return DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
      * 
      */
     private List<String> dnsZones;
@@ -44,7 +44,7 @@ public final class GetPrivateEndpointResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     private String id;
@@ -54,13 +54,18 @@ public final class GetPrivateEndpointResult {
      */
     private Boolean isUsedWithConfigurationSourceProvider;
     /**
-     * @return An array of network security groups (NSG) that the customer can optionally provide.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
      * 
      */
     private List<String> nsgIdLists;
     private String privateEndpointId;
     /**
-     * @return The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
+     * @return The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
      * 
      */
     private List<String> sourceIps;
@@ -75,6 +80,11 @@ public final class GetPrivateEndpointResult {
      */
     private String subnetId;
     /**
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      * 
      */
@@ -87,7 +97,7 @@ public final class GetPrivateEndpointResult {
 
     private GetPrivateEndpointResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * 
      */
     public String compartmentId() {
@@ -115,7 +125,7 @@ public final class GetPrivateEndpointResult {
         return this.displayName;
     }
     /**
-     * @return DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     * @return DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
      * 
      */
     public List<String> dnsZones() {
@@ -129,7 +139,7 @@ public final class GetPrivateEndpointResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     public String id() {
@@ -143,7 +153,7 @@ public final class GetPrivateEndpointResult {
         return this.isUsedWithConfigurationSourceProvider;
     }
     /**
-     * @return An array of network security groups (NSG) that the customer can optionally provide.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
      * 
      */
     public List<String> nsgIdLists() {
@@ -153,7 +163,14 @@ public final class GetPrivateEndpointResult {
         return this.privateEndpointId;
     }
     /**
-     * @return The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
+     * @return The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
      * 
      */
     public List<String> sourceIps() {
@@ -172,6 +189,13 @@ public final class GetPrivateEndpointResult {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
@@ -207,9 +231,11 @@ public final class GetPrivateEndpointResult {
         private Boolean isUsedWithConfigurationSourceProvider;
         private List<String> nsgIdLists;
         private String privateEndpointId;
+        private Map<String,String> securityAttributes;
         private List<String> sourceIps;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String vcnId;
         public Builder() {}
@@ -225,9 +251,11 @@ public final class GetPrivateEndpointResult {
     	      this.isUsedWithConfigurationSourceProvider = defaults.isUsedWithConfigurationSourceProvider;
     	      this.nsgIdLists = defaults.nsgIdLists;
     	      this.privateEndpointId = defaults.privateEndpointId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.sourceIps = defaults.sourceIps;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnId = defaults.vcnId;
         }
@@ -319,6 +347,14 @@ public final class GetPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceIps(List<String> sourceIps) {
             if (sourceIps == null) {
               throw new MissingRequiredPropertyException("GetPrivateEndpointResult", "sourceIps");
@@ -343,6 +379,14 @@ public final class GetPrivateEndpointResult {
               throw new MissingRequiredPropertyException("GetPrivateEndpointResult", "subnetId");
             }
             this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -373,9 +417,11 @@ public final class GetPrivateEndpointResult {
             _resultValue.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
             _resultValue.nsgIdLists = nsgIdLists;
             _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.sourceIps = sourceIps;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vcnId = vcnId;
             return _resultValue;

@@ -21,18 +21,18 @@ public final class GetFsuCyclesResult {
      */
     private @Nullable String collectionType;
     /**
-     * @return Compartment Identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     private String compartmentId;
     /**
-     * @return Exadata Fleet Update Cycle display name.
+     * @return The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetFsuCyclesFilter> filters;
     /**
-     * @return OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      * 
      */
     private @Nullable String fsuCollectionId;
@@ -62,14 +62,14 @@ public final class GetFsuCyclesResult {
         return Optional.ofNullable(this.collectionType);
     }
     /**
-     * @return Compartment Identifier.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Exadata Fleet Update Cycle display name.
+     * @return The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     public Optional<String> displayName() {
@@ -79,7 +79,7 @@ public final class GetFsuCyclesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      * 
      */
     public Optional<String> fsuCollectionId() {

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
-    /// 
-    /// Creates a new MediaWorkflow.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

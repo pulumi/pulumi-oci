@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oci Cache User Get Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-//
-// Gets a list of associated redis cluster for an Oracle Cloud Infrastructure cache user.
-//
 // ## Example Usage
 //
 // ```go

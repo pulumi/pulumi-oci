@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
- *
- * Creates a new quota with the details supplied.
- *
  * ## Example Usage
  *
  * ```typescript

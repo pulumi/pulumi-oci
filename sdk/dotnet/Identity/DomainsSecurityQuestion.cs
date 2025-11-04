@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a security question.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

@@ -330,10 +330,6 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                  protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new tunnel inspection rule for the network firewall policy.
-
         ## Example Usage
 
         ```python
@@ -390,10 +386,6 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                  args: NetworkFirewallPolicyTunnelInspectionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new tunnel inspection rule for the network firewall policy.
-
         ## Example Usage
 
         ```python

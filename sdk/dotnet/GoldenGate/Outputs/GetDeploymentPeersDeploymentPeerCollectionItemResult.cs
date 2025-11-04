@@ -18,6 +18,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// A unique Deployment identifier.
         /// </summary>
         public readonly string DeploymentId;
@@ -46,6 +50,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeCreated;
@@ -66,6 +74,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         private GetDeploymentPeersDeploymentPeerCollectionItemResult(
             string availabilityDomain,
 
+            string clusterPlacementGroupId,
+
             string deploymentId,
 
             string displayName,
@@ -80,6 +90,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string state,
 
+            string subscriptionId,
+
             string timeCreated,
 
             string timeLastSynced,
@@ -89,6 +101,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string timeUpdated)
         {
             AvailabilityDomain = availabilityDomain;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             DeploymentId = deploymentId;
             DisplayName = displayName;
             FaultDomain = faultDomain;
@@ -96,6 +109,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             PeerType = peerType;
             Region = region;
             State = state;
+            SubscriptionId = subscriptionId;
             TimeCreated = timeCreated;
             TimeLastSynced = timeLastSynced;
             TimeRoleChanged = timeRoleChanged;

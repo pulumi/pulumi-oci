@@ -64,7 +64,7 @@ type GetMaintenanceRunsArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetMaintenanceRunsFilter `pulumi:"filters"`
-	// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+	// A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
 	IsLocalAdg *bool `pulumi:"isLocalAdg"`
 	// The sub-type of the maintenance run.
 	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
@@ -93,7 +93,7 @@ type GetMaintenanceRunsResult struct {
 	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
-	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId *string `pulumi:"targetResourceId"`
@@ -117,7 +117,7 @@ type GetMaintenanceRunsOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput                 `pulumi:"compartmentId"`
 	Filters       GetMaintenanceRunsFilterArrayInput `pulumi:"filters"`
-	// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+	// A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
 	IsLocalAdg pulumi.BoolPtrInput `pulumi:"isLocalAdg"`
 	// The sub-type of the maintenance run.
 	MaintenanceSubtype pulumi.StringPtrInput `pulumi:"maintenanceSubtype"`
@@ -187,7 +187,7 @@ func (o GetMaintenanceRunsResultOutput) MaintenanceType() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.MaintenanceType }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o GetMaintenanceRunsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

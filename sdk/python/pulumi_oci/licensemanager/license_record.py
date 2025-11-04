@@ -494,10 +494,6 @@ class LicenseRecord(pulumi.CustomResource):
                  support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new license record for the given product license ID.
-
         ## Example Usage
 
         ```python
@@ -553,10 +549,6 @@ class LicenseRecord(pulumi.CustomResource):
                  args: LicenseRecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new license record for the given product license ID.
-
         ## Example Usage
 
         ```python

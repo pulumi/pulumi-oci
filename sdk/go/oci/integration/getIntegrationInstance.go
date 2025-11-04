@@ -91,7 +91,7 @@ type LookupIntegrationInstanceResult struct {
 	// The Integration Instance URL.
 	InstanceUrl           string `pulumi:"instanceUrl"`
 	IntegrationInstanceId string `pulumi:"integrationInstanceId"`
-	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
@@ -109,6 +109,12 @@ type LookupIntegrationInstanceResult struct {
 	NetworkEndpointDetails []GetIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+	// "oracle-zpr.sensitivity.value" = "low"
+	// "oracle-zpr.sensitivity.mode" = "enforce"
+	// }
+	// `
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Shape
 	Shape string `pulumi:"shape"`
 	// The current state of the integration instance.
@@ -256,7 +262,7 @@ func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceId() pulumi.St
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.IntegrationInstanceId }).(pulumi.StringOutput)
 }
 
-// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 func (o LookupIntegrationInstanceResultOutput) IntegrationInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
 }
@@ -303,6 +309,15 @@ func (o LookupIntegrationInstanceResultOutput) PrivateEndpointOutboundConnection
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstancePrivateEndpointOutboundConnection {
 		return v.PrivateEndpointOutboundConnections
 	}).(GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+// "oracle-zpr.sensitivity.value" = "low"
+// "oracle-zpr.sensitivity.mode" = "enforce"
+// }
+// `
+func (o LookupIntegrationInstanceResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Shape

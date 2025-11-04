@@ -54,6 +54,14 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string StepName;
         /// <summary>
+        /// Pipeline step parameter details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepParameterResult> StepParameters;
+        /// <summary>
+        /// Name used when creating the steprun.
+        /// </summary>
+        public readonly string StepRunName;
+        /// <summary>
         /// The storage mount details to mount to the instance running the pipeline step.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineStepDetailStepStorageMountConfigurationDetailsListResult> StepStorageMountConfigurationDetailsLists;
@@ -84,6 +92,10 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string stepName,
 
+            ImmutableArray<Outputs.GetPipelineStepDetailStepParameterResult> stepParameters,
+
+            string stepRunName,
+
             ImmutableArray<Outputs.GetPipelineStepDetailStepStorageMountConfigurationDetailsListResult> stepStorageMountConfigurationDetailsLists,
 
             string stepType)
@@ -98,6 +110,8 @@ namespace Pulumi.Oci.DataScience.Outputs
             StepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             StepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             StepName = stepName;
+            StepParameters = stepParameters;
+            StepRunName = stepRunName;
             StepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             StepType = stepType;
         }

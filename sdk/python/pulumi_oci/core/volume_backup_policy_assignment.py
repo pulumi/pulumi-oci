@@ -169,12 +169,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
-
-        Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
-        only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
-        has a different backup policy assigned, the prior backup policy will be silently unassigned.
-
         ## Example Usage
 
         ```python
@@ -212,12 +206,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  args: VolumeBackupPolicyAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
-
-        Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
-        only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
-        has a different backup policy assigned, the prior backup policy will be silently unassigned.
-
         ## Example Usage
 
         ```python

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-//
-// Creates a new Alert Rule.
-//
 // ## Example Usage
 //
 // ```go

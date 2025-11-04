@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Updates the availability for a list of specified software sources.
- *
  * ## Example Usage
  *
  * ```typescript

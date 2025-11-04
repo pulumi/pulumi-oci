@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
- *
- * Generates attested marketplace metadata
- *
  * ## Example Usage
  *
  * ```typescript

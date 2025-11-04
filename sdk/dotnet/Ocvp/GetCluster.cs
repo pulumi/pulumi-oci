@@ -124,6 +124,7 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetClusterResult
     {
         public readonly int ActualEsxiHostsCount;
+        public readonly ImmutableArray<string> AttachDatastoreClusterIds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
@@ -138,6 +139,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
         /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public readonly ImmutableArray<string> DatastoreClusterIds;
+        /// <summary>
         /// Datastores used for the Cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterDatastoreResult> Datastores;
@@ -145,6 +150,7 @@ namespace Pulumi.Oci.Ocvp
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly ImmutableArray<string> DetachDatastoreClusterIds;
         /// <summary>
         /// A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
         /// </summary>
@@ -230,6 +236,8 @@ namespace Pulumi.Oci.Ocvp
         private GetClusterResult(
             int actualEsxiHostsCount,
 
+            ImmutableArray<string> attachDatastoreClusterIds,
+
             string capacityReservationId,
 
             string clusterId,
@@ -238,9 +246,13 @@ namespace Pulumi.Oci.Ocvp
 
             string computeAvailabilityDomain,
 
+            ImmutableArray<string> datastoreClusterIds,
+
             ImmutableArray<Outputs.GetClusterDatastoreResult> datastores,
 
             ImmutableDictionary<string, string> definedTags,
+
+            ImmutableArray<string> detachDatastoreClusterIds,
 
             string displayName,
 
@@ -283,12 +295,15 @@ namespace Pulumi.Oci.Ocvp
             string workloadNetworkCidr)
         {
             ActualEsxiHostsCount = actualEsxiHostsCount;
+            AttachDatastoreClusterIds = attachDatastoreClusterIds;
             CapacityReservationId = capacityReservationId;
             ClusterId = clusterId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
+            DatastoreClusterIds = datastoreClusterIds;
             Datastores = datastores;
             DefinedTags = definedTags;
+            DetachDatastoreClusterIds = detachDatastoreClusterIds;
             DisplayName = displayName;
             EsxiHostsCount = esxiHostsCount;
             EsxiSoftwareVersion = esxiSoftwareVersion;

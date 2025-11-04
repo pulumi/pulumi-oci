@@ -183,6 +183,8 @@ class BackupDestinationArgs:
 class _BackupDestinationState:
     def __init__(__self__, *,
                  associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]]] = None,
+                 associated_long_term_backup_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 associated_long_term_backups: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedLongTermBackupArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -205,6 +207,8 @@ class _BackupDestinationState:
         """
         Input properties used for looking up and filtering BackupDestination resources.
         :param pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the backup destination.
+        :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedLongTermBackupArgs']]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -231,6 +235,10 @@ class _BackupDestinationState:
         """
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
+        if associated_long_term_backup_count is not None:
+            pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        if associated_long_term_backups is not None:
+            pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_string is not None:
@@ -284,6 +292,30 @@ class _BackupDestinationState:
     @associated_databases.setter
     def associated_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]]]):
         pulumi.set(self, "associated_databases", value)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @associated_long_term_backup_count.setter
+    def associated_long_term_backup_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "associated_long_term_backup_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedLongTermBackupArgs']]]]:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
+
+    @associated_long_term_backups.setter
+    def associated_long_term_backups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedLongTermBackupArgs']]]]):
+        pulumi.set(self, "associated_long_term_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -536,10 +568,6 @@ class BackupDestination(pulumi.CustomResource):
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a backup destination in an Exadata Cloud@Customer system.
-
         ## Example Usage
 
         ```python
@@ -596,10 +624,6 @@ class BackupDestination(pulumi.CustomResource):
                  args: BackupDestinationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a backup destination in an Exadata Cloud@Customer system.
-
         ## Example Usage
 
         ```python
@@ -682,6 +706,8 @@ class BackupDestination(pulumi.CustomResource):
             __props__.__dict__["type"] = type
             __props__.__dict__["vpc_users"] = vpc_users
             __props__.__dict__["associated_databases"] = None
+            __props__.__dict__["associated_long_term_backup_count"] = None
+            __props__.__dict__["associated_long_term_backups"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["nfs_mount_type"] = None
             __props__.__dict__["nfs_server_export"] = None
@@ -703,6 +729,8 @@ class BackupDestination(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict']]]]] = None,
+            associated_long_term_backup_count: Optional[pulumi.Input[_builtins.int]] = None,
+            associated_long_term_backups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             connection_string: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -730,6 +758,8 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict']]]] associated_databases: List of databases associated with the backup destination.
+        :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -759,6 +789,8 @@ class BackupDestination(pulumi.CustomResource):
         __props__ = _BackupDestinationState.__new__(_BackupDestinationState)
 
         __props__.__dict__["associated_databases"] = associated_databases
+        __props__.__dict__["associated_long_term_backup_count"] = associated_long_term_backup_count
+        __props__.__dict__["associated_long_term_backups"] = associated_long_term_backups
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_string"] = connection_string
         __props__.__dict__["defined_tags"] = defined_tags
@@ -787,6 +819,22 @@ class BackupDestination(pulumi.CustomResource):
         List of databases associated with the backup destination.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> pulumi.Output[Sequence['outputs.BackupDestinationAssociatedLongTermBackup']]:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

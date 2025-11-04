@@ -26,10 +26,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Add a Grantee to an AppRole
- * 
  * ## Example Usage
  * 
  * ## Import

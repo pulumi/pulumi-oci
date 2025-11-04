@@ -4144,10 +4144,6 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  user_mapping_store_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an Identity Provider
-
         ## Example Usage
 
         ## Import
@@ -4719,10 +4715,6 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  args: DomainsIdentityProviderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an Identity Provider
-
         ## Example Usage
 
         ## Import

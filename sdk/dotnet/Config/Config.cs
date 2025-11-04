@@ -63,6 +63,16 @@ namespace Pulumi.Oci
             set => _disableAutoRetries.Set(value);
         }
 
+        private static readonly __Value<bool?> _dualStackEndpointEnabled = new __Value<bool?>(() => __config.GetBoolean("dualStackEndpointEnabled"));
+        /// <summary>
+        /// (Optional) flags to enable Dual Stack endpoint.
+        /// </summary>
+        public static bool? DualStackEndpointEnabled
+        {
+            get => _dualStackEndpointEnabled.Get();
+            set => _dualStackEndpointEnabled.Set(value);
+        }
+
         private static readonly __Value<string?> _fingerprint = new __Value<string?>(() => __config.Get("fingerprint"));
         /// <summary>
         /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.

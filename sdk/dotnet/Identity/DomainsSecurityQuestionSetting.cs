@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Replace a security question setting.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Lustre
 {
     /// <summary>
-    /// This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
-    /// 
-    /// Creates a Lustre file system.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

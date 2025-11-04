@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
-//
-// Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
-//
-// Creates a new WebAppAccelerationPolicy.
-//
 // ## Example Usage
 //
 // ```go

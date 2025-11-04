@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-//
-// Execute a DR plan for a DR protection group.
-//
 // ## Example Usage
 //
 // ```go
@@ -64,6 +60,8 @@ import (
 type DrPlanExecution struct {
 	pulumi.CustomResourceState
 
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails DrPlanExecutionAutomaticExecutionDetailArrayOutput `pulumi:"automaticExecutionDetails"`
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -80,6 +78,8 @@ type DrPlanExecution struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions DrPlanExecutionGroupExecutionArrayOutput `pulumi:"groupExecutions"`
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic pulumi.BoolOutput `pulumi:"isAutomatic"`
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
@@ -145,6 +145,8 @@ func GetDrPlanExecution(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DrPlanExecution resources.
 type drPlanExecutionState struct {
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails []DrPlanExecutionAutomaticExecutionDetail `pulumi:"automaticExecutionDetails"`
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -161,6 +163,8 @@ type drPlanExecutionState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions []DrPlanExecutionGroupExecution `pulumi:"groupExecutions"`
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic *bool `pulumi:"isAutomatic"`
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
@@ -191,6 +195,8 @@ type drPlanExecutionState struct {
 }
 
 type DrPlanExecutionState struct {
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails DrPlanExecutionAutomaticExecutionDetailArrayInput
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -207,6 +213,8 @@ type DrPlanExecutionState struct {
 	FreeformTags pulumi.StringMapInput
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions DrPlanExecutionGroupExecutionArrayInput
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic pulumi.BoolPtrInput
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails pulumi.StringPtrInput
 	// The details of an object storage log location for a DR protection group.
@@ -360,6 +368,13 @@ func (o DrPlanExecutionOutput) ToDrPlanExecutionOutputWithContext(ctx context.Co
 	return o
 }
 
+// The details of the event that started the automatic DR plan execution.
+func (o DrPlanExecutionOutput) AutomaticExecutionDetails() DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o.ApplyT(func(v *DrPlanExecution) DrPlanExecutionAutomaticExecutionDetailArrayOutput {
+		return v.AutomaticExecutionDetails
+	}).(DrPlanExecutionAutomaticExecutionDetailArrayOutput)
+}
+
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o DrPlanExecutionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -398,6 +413,11 @@ func (o DrPlanExecutionOutput) FreeformTags() pulumi.StringMapOutput {
 // A list of groups executed in this DR plan execution.
 func (o DrPlanExecutionOutput) GroupExecutions() DrPlanExecutionGroupExecutionArrayOutput {
 	return o.ApplyT(func(v *DrPlanExecution) DrPlanExecutionGroupExecutionArrayOutput { return v.GroupExecutions }).(DrPlanExecutionGroupExecutionArrayOutput)
+}
+
+// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+func (o DrPlanExecutionOutput) IsAutomatic() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.BoolOutput { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
 // A message describing the DR plan execution's current state in more detail.

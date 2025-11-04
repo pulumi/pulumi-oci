@@ -795,6 +795,369 @@ func (o ClusterVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) Cluster
 	}).(ClusterVsphereUpgradeObjectOutput)
 }
 
+type DatastoreBlockVolumeDetail struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments []DatastoreBlockVolumeDetailAttachment `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id *string `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn *string `pulumi:"iqn"`
+}
+
+// DatastoreBlockVolumeDetailInput is an input type that accepts DatastoreBlockVolumeDetailArgs and DatastoreBlockVolumeDetailOutput values.
+// You can construct a concrete instance of `DatastoreBlockVolumeDetailInput` via:
+//
+//	DatastoreBlockVolumeDetailArgs{...}
+type DatastoreBlockVolumeDetailInput interface {
+	pulumi.Input
+
+	ToDatastoreBlockVolumeDetailOutput() DatastoreBlockVolumeDetailOutput
+	ToDatastoreBlockVolumeDetailOutputWithContext(context.Context) DatastoreBlockVolumeDetailOutput
+}
+
+type DatastoreBlockVolumeDetailArgs struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments DatastoreBlockVolumeDetailAttachmentArrayInput `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn pulumi.StringPtrInput `pulumi:"iqn"`
+}
+
+func (DatastoreBlockVolumeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i DatastoreBlockVolumeDetailArgs) ToDatastoreBlockVolumeDetailOutput() DatastoreBlockVolumeDetailOutput {
+	return i.ToDatastoreBlockVolumeDetailOutputWithContext(context.Background())
+}
+
+func (i DatastoreBlockVolumeDetailArgs) ToDatastoreBlockVolumeDetailOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastoreBlockVolumeDetailOutput)
+}
+
+// DatastoreBlockVolumeDetailArrayInput is an input type that accepts DatastoreBlockVolumeDetailArray and DatastoreBlockVolumeDetailArrayOutput values.
+// You can construct a concrete instance of `DatastoreBlockVolumeDetailArrayInput` via:
+//
+//	DatastoreBlockVolumeDetailArray{ DatastoreBlockVolumeDetailArgs{...} }
+type DatastoreBlockVolumeDetailArrayInput interface {
+	pulumi.Input
+
+	ToDatastoreBlockVolumeDetailArrayOutput() DatastoreBlockVolumeDetailArrayOutput
+	ToDatastoreBlockVolumeDetailArrayOutputWithContext(context.Context) DatastoreBlockVolumeDetailArrayOutput
+}
+
+type DatastoreBlockVolumeDetailArray []DatastoreBlockVolumeDetailInput
+
+func (DatastoreBlockVolumeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i DatastoreBlockVolumeDetailArray) ToDatastoreBlockVolumeDetailArrayOutput() DatastoreBlockVolumeDetailArrayOutput {
+	return i.ToDatastoreBlockVolumeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DatastoreBlockVolumeDetailArray) ToDatastoreBlockVolumeDetailArrayOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastoreBlockVolumeDetailArrayOutput)
+}
+
+type DatastoreBlockVolumeDetailOutput struct{ *pulumi.OutputState }
+
+func (DatastoreBlockVolumeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o DatastoreBlockVolumeDetailOutput) ToDatastoreBlockVolumeDetailOutput() DatastoreBlockVolumeDetailOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailOutput) ToDatastoreBlockVolumeDetailOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailOutput {
+	return o
+}
+
+// List of BlockVolumeAttachment objects containing information about attachment details
+func (o DatastoreBlockVolumeDetailOutput) Attachments() DatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetail) []DatastoreBlockVolumeDetailAttachment { return v.Attachments }).(DatastoreBlockVolumeDetailAttachmentArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+func (o DatastoreBlockVolumeDetailOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetail) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o DatastoreBlockVolumeDetailOutput) Iqn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetail) *string { return v.Iqn }).(pulumi.StringPtrOutput)
+}
+
+type DatastoreBlockVolumeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DatastoreBlockVolumeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o DatastoreBlockVolumeDetailArrayOutput) ToDatastoreBlockVolumeDetailArrayOutput() DatastoreBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailArrayOutput) ToDatastoreBlockVolumeDetailArrayOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailArrayOutput) Index(i pulumi.IntInput) DatastoreBlockVolumeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatastoreBlockVolumeDetail {
+		return vs[0].([]DatastoreBlockVolumeDetail)[vs[1].(int)]
+	}).(DatastoreBlockVolumeDetailOutput)
+}
+
+type DatastoreBlockVolumeDetailAttachment struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId *string `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress *string `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port *int `pulumi:"port"`
+}
+
+// DatastoreBlockVolumeDetailAttachmentInput is an input type that accepts DatastoreBlockVolumeDetailAttachmentArgs and DatastoreBlockVolumeDetailAttachmentOutput values.
+// You can construct a concrete instance of `DatastoreBlockVolumeDetailAttachmentInput` via:
+//
+//	DatastoreBlockVolumeDetailAttachmentArgs{...}
+type DatastoreBlockVolumeDetailAttachmentInput interface {
+	pulumi.Input
+
+	ToDatastoreBlockVolumeDetailAttachmentOutput() DatastoreBlockVolumeDetailAttachmentOutput
+	ToDatastoreBlockVolumeDetailAttachmentOutputWithContext(context.Context) DatastoreBlockVolumeDetailAttachmentOutput
+}
+
+type DatastoreBlockVolumeDetailAttachmentArgs struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId pulumi.StringPtrInput `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (DatastoreBlockVolumeDetailAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i DatastoreBlockVolumeDetailAttachmentArgs) ToDatastoreBlockVolumeDetailAttachmentOutput() DatastoreBlockVolumeDetailAttachmentOutput {
+	return i.ToDatastoreBlockVolumeDetailAttachmentOutputWithContext(context.Background())
+}
+
+func (i DatastoreBlockVolumeDetailAttachmentArgs) ToDatastoreBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastoreBlockVolumeDetailAttachmentOutput)
+}
+
+// DatastoreBlockVolumeDetailAttachmentArrayInput is an input type that accepts DatastoreBlockVolumeDetailAttachmentArray and DatastoreBlockVolumeDetailAttachmentArrayOutput values.
+// You can construct a concrete instance of `DatastoreBlockVolumeDetailAttachmentArrayInput` via:
+//
+//	DatastoreBlockVolumeDetailAttachmentArray{ DatastoreBlockVolumeDetailAttachmentArgs{...} }
+type DatastoreBlockVolumeDetailAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToDatastoreBlockVolumeDetailAttachmentArrayOutput() DatastoreBlockVolumeDetailAttachmentArrayOutput
+	ToDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(context.Context) DatastoreBlockVolumeDetailAttachmentArrayOutput
+}
+
+type DatastoreBlockVolumeDetailAttachmentArray []DatastoreBlockVolumeDetailAttachmentInput
+
+func (DatastoreBlockVolumeDetailAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i DatastoreBlockVolumeDetailAttachmentArray) ToDatastoreBlockVolumeDetailAttachmentArrayOutput() DatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return i.ToDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i DatastoreBlockVolumeDetailAttachmentArray) ToDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastoreBlockVolumeDetailAttachmentArrayOutput)
+}
+
+type DatastoreBlockVolumeDetailAttachmentOutput struct{ *pulumi.OutputState }
+
+func (DatastoreBlockVolumeDetailAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o DatastoreBlockVolumeDetailAttachmentOutput) ToDatastoreBlockVolumeDetailAttachmentOutput() DatastoreBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailAttachmentOutput) ToDatastoreBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+func (o DatastoreBlockVolumeDetailAttachmentOutput) EsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetailAttachment) *string { return v.EsxiHostId }).(pulumi.StringPtrOutput)
+}
+
+// The IP address of block volume attachment.
+func (o DatastoreBlockVolumeDetailAttachmentOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetailAttachment) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The port of block volume attachment.
+func (o DatastoreBlockVolumeDetailAttachmentOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DatastoreBlockVolumeDetailAttachment) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type DatastoreBlockVolumeDetailAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (DatastoreBlockVolumeDetailAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o DatastoreBlockVolumeDetailAttachmentArrayOutput) ToDatastoreBlockVolumeDetailAttachmentArrayOutput() DatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailAttachmentArrayOutput) ToDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) DatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o DatastoreBlockVolumeDetailAttachmentArrayOutput) Index(i pulumi.IntInput) DatastoreBlockVolumeDetailAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatastoreBlockVolumeDetailAttachment {
+		return vs[0].([]DatastoreBlockVolumeDetailAttachment)[vs[1].(int)]
+	}).(DatastoreBlockVolumeDetailAttachmentOutput)
+}
+
+type EsxiHostDatastoreAttachment struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId *string `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId *string `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress *string `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port *int `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn *string `pulumi:"volumeIqn"`
+}
+
+// EsxiHostDatastoreAttachmentInput is an input type that accepts EsxiHostDatastoreAttachmentArgs and EsxiHostDatastoreAttachmentOutput values.
+// You can construct a concrete instance of `EsxiHostDatastoreAttachmentInput` via:
+//
+//	EsxiHostDatastoreAttachmentArgs{...}
+type EsxiHostDatastoreAttachmentInput interface {
+	pulumi.Input
+
+	ToEsxiHostDatastoreAttachmentOutput() EsxiHostDatastoreAttachmentOutput
+	ToEsxiHostDatastoreAttachmentOutputWithContext(context.Context) EsxiHostDatastoreAttachmentOutput
+}
+
+type EsxiHostDatastoreAttachmentArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId pulumi.StringPtrInput `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn pulumi.StringPtrInput `pulumi:"volumeIqn"`
+}
+
+func (EsxiHostDatastoreAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EsxiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (i EsxiHostDatastoreAttachmentArgs) ToEsxiHostDatastoreAttachmentOutput() EsxiHostDatastoreAttachmentOutput {
+	return i.ToEsxiHostDatastoreAttachmentOutputWithContext(context.Background())
+}
+
+func (i EsxiHostDatastoreAttachmentArgs) ToEsxiHostDatastoreAttachmentOutputWithContext(ctx context.Context) EsxiHostDatastoreAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostDatastoreAttachmentOutput)
+}
+
+// EsxiHostDatastoreAttachmentArrayInput is an input type that accepts EsxiHostDatastoreAttachmentArray and EsxiHostDatastoreAttachmentArrayOutput values.
+// You can construct a concrete instance of `EsxiHostDatastoreAttachmentArrayInput` via:
+//
+//	EsxiHostDatastoreAttachmentArray{ EsxiHostDatastoreAttachmentArgs{...} }
+type EsxiHostDatastoreAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToEsxiHostDatastoreAttachmentArrayOutput() EsxiHostDatastoreAttachmentArrayOutput
+	ToEsxiHostDatastoreAttachmentArrayOutputWithContext(context.Context) EsxiHostDatastoreAttachmentArrayOutput
+}
+
+type EsxiHostDatastoreAttachmentArray []EsxiHostDatastoreAttachmentInput
+
+func (EsxiHostDatastoreAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EsxiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (i EsxiHostDatastoreAttachmentArray) ToEsxiHostDatastoreAttachmentArrayOutput() EsxiHostDatastoreAttachmentArrayOutput {
+	return i.ToEsxiHostDatastoreAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i EsxiHostDatastoreAttachmentArray) ToEsxiHostDatastoreAttachmentArrayOutputWithContext(ctx context.Context) EsxiHostDatastoreAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostDatastoreAttachmentArrayOutput)
+}
+
+type EsxiHostDatastoreAttachmentOutput struct{ *pulumi.OutputState }
+
+func (EsxiHostDatastoreAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EsxiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (o EsxiHostDatastoreAttachmentOutput) ToEsxiHostDatastoreAttachmentOutput() EsxiHostDatastoreAttachmentOutput {
+	return o
+}
+
+func (o EsxiHostDatastoreAttachmentOutput) ToEsxiHostDatastoreAttachmentOutputWithContext(ctx context.Context) EsxiHostDatastoreAttachmentOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+func (o EsxiHostDatastoreAttachmentOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EsxiHostDatastoreAttachment) *string { return v.BlockVolumeId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+func (o EsxiHostDatastoreAttachmentOutput) DatastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EsxiHostDatastoreAttachment) *string { return v.DatastoreId }).(pulumi.StringPtrOutput)
+}
+
+// The IP address of datastore attachment.
+func (o EsxiHostDatastoreAttachmentOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EsxiHostDatastoreAttachment) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The port of datastore attachment.
+func (o EsxiHostDatastoreAttachmentOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v EsxiHostDatastoreAttachment) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o EsxiHostDatastoreAttachmentOutput) VolumeIqn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EsxiHostDatastoreAttachment) *string { return v.VolumeIqn }).(pulumi.StringPtrOutput)
+}
+
+type EsxiHostDatastoreAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (EsxiHostDatastoreAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EsxiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (o EsxiHostDatastoreAttachmentArrayOutput) ToEsxiHostDatastoreAttachmentArrayOutput() EsxiHostDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o EsxiHostDatastoreAttachmentArrayOutput) ToEsxiHostDatastoreAttachmentArrayOutputWithContext(ctx context.Context) EsxiHostDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o EsxiHostDatastoreAttachmentArrayOutput) Index(i pulumi.IntInput) EsxiHostDatastoreAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EsxiHostDatastoreAttachment {
+		return vs[0].([]EsxiHostDatastoreAttachment)[vs[1].(int)]
+	}).(EsxiHostDatastoreAttachmentOutput)
+}
+
 type SddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -1131,9 +1494,11 @@ type SddcInitialConfigurationInitialClusterConfiguration struct {
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores []SddcInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
-	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	//
@@ -1177,9 +1542,11 @@ type SddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
-	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	//
@@ -1271,6 +1638,11 @@ func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAvaila
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 func (o SddcInitialConfigurationInitialClusterConfigurationOutput) Datastores() SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) []SddcInitialConfigurationInitialClusterConfigurationDatastore {
@@ -1278,7 +1650,7 @@ func (o SddcInitialConfigurationInitialClusterConfigurationOutput) Datastores() 
 	}).(SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
 }
 
-// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 func (o SddcInitialConfigurationInitialClusterConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2760,17 +3132,21 @@ func (o GetClustersClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetClu
 }
 
 type GetClustersClusterCollectionItem struct {
-	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount      int      `pulumi:"actualEsxiHostsCount"`
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// Datastores used for the Cluster.
 	Datastores []GetClustersClusterCollectionItemDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -2825,17 +3201,21 @@ type GetClustersClusterCollectionItemInput interface {
 }
 
 type GetClustersClusterCollectionItemArgs struct {
-	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount      pulumi.IntInput         `pulumi:"actualEsxiHostsCount"`
+	AttachDatastoreClusterIds pulumi.StringArrayInput `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput `pulumi:"datastoreClusterIds"`
 	// Datastores used for the Cluster.
 	Datastores GetClustersClusterCollectionItemDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	DefinedTags               pulumi.StringMapInput   `pulumi:"definedTags"`
+	DetachDatastoreClusterIds pulumi.StringArrayInput `pulumi:"detachDatastoreClusterIds"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -2933,6 +3313,10 @@ func (o GetClustersClusterCollectionItemOutput) ActualEsxiHostsCount() pulumi.In
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+func (o GetClustersClusterCollectionItemOutput) AttachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []string { return v.AttachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o GetClustersClusterCollectionItemOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.CapacityReservationId }).(pulumi.StringOutput)
@@ -2948,6 +3332,11 @@ func (o GetClustersClusterCollectionItemOutput) ComputeAvailabilityDomain() pulu
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o GetClustersClusterCollectionItemOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Datastores used for the Cluster.
 func (o GetClustersClusterCollectionItemOutput) Datastores() GetClustersClusterCollectionItemDatastoreArrayOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemDatastore {
@@ -2958,6 +3347,10 @@ func (o GetClustersClusterCollectionItemOutput) Datastores() GetClustersClusterC
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetClustersClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetClustersClusterCollectionItemOutput) DetachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []string { return v.DetachDatastoreClusterIds }).(pulumi.StringArrayOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -3706,7 +4099,1462 @@ func (o GetClustersFilterArrayOutput) Index(i pulumi.IntInput) GetClustersFilter
 	}).(GetClustersFilterOutput)
 }
 
+type GetDatastoreBlockVolumeDetail struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments []GetDatastoreBlockVolumeDetailAttachment `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id string `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn string `pulumi:"iqn"`
+}
+
+// GetDatastoreBlockVolumeDetailInput is an input type that accepts GetDatastoreBlockVolumeDetailArgs and GetDatastoreBlockVolumeDetailOutput values.
+// You can construct a concrete instance of `GetDatastoreBlockVolumeDetailInput` via:
+//
+//	GetDatastoreBlockVolumeDetailArgs{...}
+type GetDatastoreBlockVolumeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatastoreBlockVolumeDetailOutput() GetDatastoreBlockVolumeDetailOutput
+	ToGetDatastoreBlockVolumeDetailOutputWithContext(context.Context) GetDatastoreBlockVolumeDetailOutput
+}
+
+type GetDatastoreBlockVolumeDetailArgs struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments GetDatastoreBlockVolumeDetailAttachmentArrayInput `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id pulumi.StringInput `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn pulumi.StringInput `pulumi:"iqn"`
+}
+
+func (GetDatastoreBlockVolumeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i GetDatastoreBlockVolumeDetailArgs) ToGetDatastoreBlockVolumeDetailOutput() GetDatastoreBlockVolumeDetailOutput {
+	return i.ToGetDatastoreBlockVolumeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreBlockVolumeDetailArgs) ToGetDatastoreBlockVolumeDetailOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreBlockVolumeDetailOutput)
+}
+
+// GetDatastoreBlockVolumeDetailArrayInput is an input type that accepts GetDatastoreBlockVolumeDetailArray and GetDatastoreBlockVolumeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatastoreBlockVolumeDetailArrayInput` via:
+//
+//	GetDatastoreBlockVolumeDetailArray{ GetDatastoreBlockVolumeDetailArgs{...} }
+type GetDatastoreBlockVolumeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoreBlockVolumeDetailArrayOutput() GetDatastoreBlockVolumeDetailArrayOutput
+	ToGetDatastoreBlockVolumeDetailArrayOutputWithContext(context.Context) GetDatastoreBlockVolumeDetailArrayOutput
+}
+
+type GetDatastoreBlockVolumeDetailArray []GetDatastoreBlockVolumeDetailInput
+
+func (GetDatastoreBlockVolumeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i GetDatastoreBlockVolumeDetailArray) ToGetDatastoreBlockVolumeDetailArrayOutput() GetDatastoreBlockVolumeDetailArrayOutput {
+	return i.ToGetDatastoreBlockVolumeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreBlockVolumeDetailArray) ToGetDatastoreBlockVolumeDetailArrayOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreBlockVolumeDetailArrayOutput)
+}
+
+type GetDatastoreBlockVolumeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreBlockVolumeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o GetDatastoreBlockVolumeDetailOutput) ToGetDatastoreBlockVolumeDetailOutput() GetDatastoreBlockVolumeDetailOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailOutput) ToGetDatastoreBlockVolumeDetailOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailOutput {
+	return o
+}
+
+// List of BlockVolumeAttachment objects containing information about attachment details
+func (o GetDatastoreBlockVolumeDetailOutput) Attachments() GetDatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetail) []GetDatastoreBlockVolumeDetailAttachment { return v.Attachments }).(GetDatastoreBlockVolumeDetailAttachmentArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+func (o GetDatastoreBlockVolumeDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o GetDatastoreBlockVolumeDetailOutput) Iqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetail) string { return v.Iqn }).(pulumi.StringOutput)
+}
+
+type GetDatastoreBlockVolumeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreBlockVolumeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o GetDatastoreBlockVolumeDetailArrayOutput) ToGetDatastoreBlockVolumeDetailArrayOutput() GetDatastoreBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailArrayOutput) ToGetDatastoreBlockVolumeDetailArrayOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailArrayOutput) Index(i pulumi.IntInput) GetDatastoreBlockVolumeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoreBlockVolumeDetail {
+		return vs[0].([]GetDatastoreBlockVolumeDetail)[vs[1].(int)]
+	}).(GetDatastoreBlockVolumeDetailOutput)
+}
+
+type GetDatastoreBlockVolumeDetailAttachment struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId string `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress string `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port int `pulumi:"port"`
+}
+
+// GetDatastoreBlockVolumeDetailAttachmentInput is an input type that accepts GetDatastoreBlockVolumeDetailAttachmentArgs and GetDatastoreBlockVolumeDetailAttachmentOutput values.
+// You can construct a concrete instance of `GetDatastoreBlockVolumeDetailAttachmentInput` via:
+//
+//	GetDatastoreBlockVolumeDetailAttachmentArgs{...}
+type GetDatastoreBlockVolumeDetailAttachmentInput interface {
+	pulumi.Input
+
+	ToGetDatastoreBlockVolumeDetailAttachmentOutput() GetDatastoreBlockVolumeDetailAttachmentOutput
+	ToGetDatastoreBlockVolumeDetailAttachmentOutputWithContext(context.Context) GetDatastoreBlockVolumeDetailAttachmentOutput
+}
+
+type GetDatastoreBlockVolumeDetailAttachmentArgs struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId pulumi.StringInput `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetDatastoreBlockVolumeDetailAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i GetDatastoreBlockVolumeDetailAttachmentArgs) ToGetDatastoreBlockVolumeDetailAttachmentOutput() GetDatastoreBlockVolumeDetailAttachmentOutput {
+	return i.ToGetDatastoreBlockVolumeDetailAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreBlockVolumeDetailAttachmentArgs) ToGetDatastoreBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreBlockVolumeDetailAttachmentOutput)
+}
+
+// GetDatastoreBlockVolumeDetailAttachmentArrayInput is an input type that accepts GetDatastoreBlockVolumeDetailAttachmentArray and GetDatastoreBlockVolumeDetailAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetDatastoreBlockVolumeDetailAttachmentArrayInput` via:
+//
+//	GetDatastoreBlockVolumeDetailAttachmentArray{ GetDatastoreBlockVolumeDetailAttachmentArgs{...} }
+type GetDatastoreBlockVolumeDetailAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoreBlockVolumeDetailAttachmentArrayOutput() GetDatastoreBlockVolumeDetailAttachmentArrayOutput
+	ToGetDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(context.Context) GetDatastoreBlockVolumeDetailAttachmentArrayOutput
+}
+
+type GetDatastoreBlockVolumeDetailAttachmentArray []GetDatastoreBlockVolumeDetailAttachmentInput
+
+func (GetDatastoreBlockVolumeDetailAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i GetDatastoreBlockVolumeDetailAttachmentArray) ToGetDatastoreBlockVolumeDetailAttachmentArrayOutput() GetDatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return i.ToGetDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreBlockVolumeDetailAttachmentArray) ToGetDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreBlockVolumeDetailAttachmentArrayOutput)
+}
+
+type GetDatastoreBlockVolumeDetailAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreBlockVolumeDetailAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o GetDatastoreBlockVolumeDetailAttachmentOutput) ToGetDatastoreBlockVolumeDetailAttachmentOutput() GetDatastoreBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailAttachmentOutput) ToGetDatastoreBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+func (o GetDatastoreBlockVolumeDetailAttachmentOutput) EsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetailAttachment) string { return v.EsxiHostId }).(pulumi.StringOutput)
+}
+
+// The IP address of block volume attachment.
+func (o GetDatastoreBlockVolumeDetailAttachmentOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetailAttachment) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The port of block volume attachment.
+func (o GetDatastoreBlockVolumeDetailAttachmentOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastoreBlockVolumeDetailAttachment) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetDatastoreBlockVolumeDetailAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreBlockVolumeDetailAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o GetDatastoreBlockVolumeDetailAttachmentArrayOutput) ToGetDatastoreBlockVolumeDetailAttachmentArrayOutput() GetDatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailAttachmentArrayOutput) ToGetDatastoreBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) GetDatastoreBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDatastoreBlockVolumeDetailAttachmentArrayOutput) Index(i pulumi.IntInput) GetDatastoreBlockVolumeDetailAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoreBlockVolumeDetailAttachment {
+		return vs[0].([]GetDatastoreBlockVolumeDetailAttachment)[vs[1].(int)]
+	}).(GetDatastoreBlockVolumeDetailAttachmentOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollection struct {
+	Items []GetDatastoreClustersDatastoreClusterCollectionItem `pulumi:"items"`
+}
+
+// GetDatastoreClustersDatastoreClusterCollectionInput is an input type that accepts GetDatastoreClustersDatastoreClusterCollectionArgs and GetDatastoreClustersDatastoreClusterCollectionOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersDatastoreClusterCollectionInput` via:
+//
+//	GetDatastoreClustersDatastoreClusterCollectionArgs{...}
+type GetDatastoreClustersDatastoreClusterCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersDatastoreClusterCollectionOutput() GetDatastoreClustersDatastoreClusterCollectionOutput
+	ToGetDatastoreClustersDatastoreClusterCollectionOutputWithContext(context.Context) GetDatastoreClustersDatastoreClusterCollectionOutput
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionArgs struct {
+	Items GetDatastoreClustersDatastoreClusterCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatastoreClustersDatastoreClusterCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollection)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionArgs) ToGetDatastoreClustersDatastoreClusterCollectionOutput() GetDatastoreClustersDatastoreClusterCollectionOutput {
+	return i.ToGetDatastoreClustersDatastoreClusterCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionArgs) ToGetDatastoreClustersDatastoreClusterCollectionOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersDatastoreClusterCollectionOutput)
+}
+
+// GetDatastoreClustersDatastoreClusterCollectionArrayInput is an input type that accepts GetDatastoreClustersDatastoreClusterCollectionArray and GetDatastoreClustersDatastoreClusterCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersDatastoreClusterCollectionArrayInput` via:
+//
+//	GetDatastoreClustersDatastoreClusterCollectionArray{ GetDatastoreClustersDatastoreClusterCollectionArgs{...} }
+type GetDatastoreClustersDatastoreClusterCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersDatastoreClusterCollectionArrayOutput() GetDatastoreClustersDatastoreClusterCollectionArrayOutput
+	ToGetDatastoreClustersDatastoreClusterCollectionArrayOutputWithContext(context.Context) GetDatastoreClustersDatastoreClusterCollectionArrayOutput
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionArray []GetDatastoreClustersDatastoreClusterCollectionInput
+
+func (GetDatastoreClustersDatastoreClusterCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersDatastoreClusterCollection)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionArray) ToGetDatastoreClustersDatastoreClusterCollectionArrayOutput() GetDatastoreClustersDatastoreClusterCollectionArrayOutput {
+	return i.ToGetDatastoreClustersDatastoreClusterCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionArray) ToGetDatastoreClustersDatastoreClusterCollectionArrayOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersDatastoreClusterCollectionArrayOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersDatastoreClusterCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollection)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionOutput) ToGetDatastoreClustersDatastoreClusterCollectionOutput() GetDatastoreClustersDatastoreClusterCollectionOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionOutput) ToGetDatastoreClustersDatastoreClusterCollectionOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionOutput) Items() GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollection) []GetDatastoreClustersDatastoreClusterCollectionItem {
+		return v.Items
+	}).(GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersDatastoreClusterCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersDatastoreClusterCollection)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionArrayOutput) ToGetDatastoreClustersDatastoreClusterCollectionArrayOutput() GetDatastoreClustersDatastoreClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionArrayOutput) ToGetDatastoreClustersDatastoreClusterCollectionArrayOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetDatastoreClustersDatastoreClusterCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoreClustersDatastoreClusterCollection {
+		return vs[0].([]GetDatastoreClustersDatastoreClusterCollection)[vs[1].(int)]
+	}).(GetDatastoreClustersDatastoreClusterCollectionOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionItem struct {
+	// The availability domain of the Datastore Cluster.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Total size of all datastores associated with the datastore cluster in GB.
+	CapacityInGbs float64 `pulumi:"capacityInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Type of the datastore cluster.
+	DatastoreClusterType string `pulumi:"datastoreClusterType"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastores that belong to the Datastore Cluster
+	DatastoreIds []string `pulumi:"datastoreIds"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi hosts to attach the datastore to. All ESXi hosts must belong to the same VMware cluster.
+	EsxiHostIds []string `pulumi:"esxiHostIds"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore cluster.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore cluster is associated with.
+	SddcId string `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Datastore Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Datastore Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDatastoreClustersDatastoreClusterCollectionItemInput is an input type that accepts GetDatastoreClustersDatastoreClusterCollectionItemArgs and GetDatastoreClustersDatastoreClusterCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersDatastoreClusterCollectionItemInput` via:
+//
+//	GetDatastoreClustersDatastoreClusterCollectionItemArgs{...}
+type GetDatastoreClustersDatastoreClusterCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersDatastoreClusterCollectionItemOutput() GetDatastoreClustersDatastoreClusterCollectionItemOutput
+	ToGetDatastoreClustersDatastoreClusterCollectionItemOutputWithContext(context.Context) GetDatastoreClustersDatastoreClusterCollectionItemOutput
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionItemArgs struct {
+	// The availability domain of the Datastore Cluster.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Total size of all datastores associated with the datastore cluster in GB.
+	CapacityInGbs pulumi.Float64Input `pulumi:"capacityInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Type of the datastore cluster.
+	DatastoreClusterType pulumi.StringInput `pulumi:"datastoreClusterType"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastores that belong to the Datastore Cluster
+	DatastoreIds pulumi.StringArrayInput `pulumi:"datastoreIds"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi hosts to attach the datastore to. All ESXi hosts must belong to the same VMware cluster.
+	EsxiHostIds pulumi.StringArrayInput `pulumi:"esxiHostIds"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore cluster is associated with.
+	SddcId pulumi.StringInput `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Datastore Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Datastore Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDatastoreClustersDatastoreClusterCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionItemArgs) ToGetDatastoreClustersDatastoreClusterCollectionItemOutput() GetDatastoreClustersDatastoreClusterCollectionItemOutput {
+	return i.ToGetDatastoreClustersDatastoreClusterCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionItemArgs) ToGetDatastoreClustersDatastoreClusterCollectionItemOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersDatastoreClusterCollectionItemOutput)
+}
+
+// GetDatastoreClustersDatastoreClusterCollectionItemArrayInput is an input type that accepts GetDatastoreClustersDatastoreClusterCollectionItemArray and GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersDatastoreClusterCollectionItemArrayInput` via:
+//
+//	GetDatastoreClustersDatastoreClusterCollectionItemArray{ GetDatastoreClustersDatastoreClusterCollectionItemArgs{...} }
+type GetDatastoreClustersDatastoreClusterCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutput() GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput
+	ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutputWithContext(context.Context) GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionItemArray []GetDatastoreClustersDatastoreClusterCollectionItemInput
+
+func (GetDatastoreClustersDatastoreClusterCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersDatastoreClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionItemArray) ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutput() GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput {
+	return i.ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersDatastoreClusterCollectionItemArray) ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersDatastoreClusterCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) ToGetDatastoreClustersDatastoreClusterCollectionItemOutput() GetDatastoreClustersDatastoreClusterCollectionItemOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) ToGetDatastoreClustersDatastoreClusterCollectionItemOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionItemOutput {
+	return o
+}
+
+// The availability domain of the Datastore Cluster.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Total size of all datastores associated with the datastore cluster in GB.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) CapacityInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) float64 { return v.CapacityInGbs }).(pulumi.Float64Output)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Type of the datastore cluster.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) DatastoreClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.DatastoreClusterType }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastores that belong to the Datastore Cluster
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) DatastoreIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) []string { return v.DatastoreIds }).(pulumi.StringArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi hosts to attach the datastore to. All ESXi hosts must belong to the same VMware cluster.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) EsxiHostIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) []string { return v.EsxiHostIds }).(pulumi.StringArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore cluster.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore cluster is associated with.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) SddcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.SddcId }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the resource.
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Datastore Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Datastore Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersDatastoreClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput) ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutput() GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput) ToGetDatastoreClustersDatastoreClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatastoreClustersDatastoreClusterCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoreClustersDatastoreClusterCollectionItem {
+		return vs[0].([]GetDatastoreClustersDatastoreClusterCollectionItem)[vs[1].(int)]
+	}).(GetDatastoreClustersDatastoreClusterCollectionItemOutput)
+}
+
+type GetDatastoreClustersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatastoreClustersFilterInput is an input type that accepts GetDatastoreClustersFilterArgs and GetDatastoreClustersFilterOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersFilterInput` via:
+//
+//	GetDatastoreClustersFilterArgs{...}
+type GetDatastoreClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersFilterOutput() GetDatastoreClustersFilterOutput
+	ToGetDatastoreClustersFilterOutputWithContext(context.Context) GetDatastoreClustersFilterOutput
+}
+
+type GetDatastoreClustersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatastoreClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersFilter)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersFilterArgs) ToGetDatastoreClustersFilterOutput() GetDatastoreClustersFilterOutput {
+	return i.ToGetDatastoreClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersFilterArgs) ToGetDatastoreClustersFilterOutputWithContext(ctx context.Context) GetDatastoreClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersFilterOutput)
+}
+
+// GetDatastoreClustersFilterArrayInput is an input type that accepts GetDatastoreClustersFilterArray and GetDatastoreClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatastoreClustersFilterArrayInput` via:
+//
+//	GetDatastoreClustersFilterArray{ GetDatastoreClustersFilterArgs{...} }
+type GetDatastoreClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoreClustersFilterArrayOutput() GetDatastoreClustersFilterArrayOutput
+	ToGetDatastoreClustersFilterArrayOutputWithContext(context.Context) GetDatastoreClustersFilterArrayOutput
+}
+
+type GetDatastoreClustersFilterArray []GetDatastoreClustersFilterInput
+
+func (GetDatastoreClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersFilter)(nil)).Elem()
+}
+
+func (i GetDatastoreClustersFilterArray) ToGetDatastoreClustersFilterArrayOutput() GetDatastoreClustersFilterArrayOutput {
+	return i.ToGetDatastoreClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoreClustersFilterArray) ToGetDatastoreClustersFilterArrayOutputWithContext(ctx context.Context) GetDatastoreClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoreClustersFilterArrayOutput)
+}
+
+type GetDatastoreClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoreClustersFilter)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersFilterOutput) ToGetDatastoreClustersFilterOutput() GetDatastoreClustersFilterOutput {
+	return o
+}
+
+func (o GetDatastoreClustersFilterOutput) ToGetDatastoreClustersFilterOutputWithContext(ctx context.Context) GetDatastoreClustersFilterOutput {
+	return o
+}
+
+func (o GetDatastoreClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoreClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatastoreClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatastoreClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatastoreClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatastoreClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatastoreClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoreClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoreClustersFilter)(nil)).Elem()
+}
+
+func (o GetDatastoreClustersFilterArrayOutput) ToGetDatastoreClustersFilterArrayOutput() GetDatastoreClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersFilterArrayOutput) ToGetDatastoreClustersFilterArrayOutputWithContext(ctx context.Context) GetDatastoreClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetDatastoreClustersFilterArrayOutput) Index(i pulumi.IntInput) GetDatastoreClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoreClustersFilter {
+		return vs[0].([]GetDatastoreClustersFilter)[vs[1].(int)]
+	}).(GetDatastoreClustersFilterOutput)
+}
+
+type GetDatastoresDatastoreCollection struct {
+	Items []GetDatastoresDatastoreCollectionItem `pulumi:"items"`
+}
+
+// GetDatastoresDatastoreCollectionInput is an input type that accepts GetDatastoresDatastoreCollectionArgs and GetDatastoresDatastoreCollectionOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionInput` via:
+//
+//	GetDatastoresDatastoreCollectionArgs{...}
+type GetDatastoresDatastoreCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionOutput() GetDatastoresDatastoreCollectionOutput
+	ToGetDatastoresDatastoreCollectionOutputWithContext(context.Context) GetDatastoresDatastoreCollectionOutput
+}
+
+type GetDatastoresDatastoreCollectionArgs struct {
+	Items GetDatastoresDatastoreCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatastoresDatastoreCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollection)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionArgs) ToGetDatastoresDatastoreCollectionOutput() GetDatastoresDatastoreCollectionOutput {
+	return i.ToGetDatastoresDatastoreCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionArgs) ToGetDatastoresDatastoreCollectionOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionOutput)
+}
+
+// GetDatastoresDatastoreCollectionArrayInput is an input type that accepts GetDatastoresDatastoreCollectionArray and GetDatastoresDatastoreCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionArrayInput` via:
+//
+//	GetDatastoresDatastoreCollectionArray{ GetDatastoresDatastoreCollectionArgs{...} }
+type GetDatastoresDatastoreCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionArrayOutput() GetDatastoresDatastoreCollectionArrayOutput
+	ToGetDatastoresDatastoreCollectionArrayOutputWithContext(context.Context) GetDatastoresDatastoreCollectionArrayOutput
+}
+
+type GetDatastoresDatastoreCollectionArray []GetDatastoresDatastoreCollectionInput
+
+func (GetDatastoresDatastoreCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollection)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionArray) ToGetDatastoresDatastoreCollectionArrayOutput() GetDatastoresDatastoreCollectionArrayOutput {
+	return i.ToGetDatastoresDatastoreCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionArray) ToGetDatastoresDatastoreCollectionArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionArrayOutput)
+}
+
+type GetDatastoresDatastoreCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollection)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionOutput) ToGetDatastoresDatastoreCollectionOutput() GetDatastoresDatastoreCollectionOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionOutput) ToGetDatastoresDatastoreCollectionOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionOutput) Items() GetDatastoresDatastoreCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollection) []GetDatastoresDatastoreCollectionItem { return v.Items }).(GetDatastoresDatastoreCollectionItemArrayOutput)
+}
+
+type GetDatastoresDatastoreCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollection)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionArrayOutput) ToGetDatastoresDatastoreCollectionArrayOutput() GetDatastoresDatastoreCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionArrayOutput) ToGetDatastoresDatastoreCollectionArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionArrayOutput) Index(i pulumi.IntInput) GetDatastoresDatastoreCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoresDatastoreCollection {
+		return vs[0].([]GetDatastoresDatastoreCollection)[vs[1].(int)]
+	}).(GetDatastoresDatastoreCollectionOutput)
+}
+
+type GetDatastoresDatastoreCollectionItem struct {
+	// The availability domain of the Datastore.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The list of Block Volume details that belong to the datastore.
+	BlockVolumeDetails []GetDatastoresDatastoreCollectionItemBlockVolumeDetail `pulumi:"blockVolumeDetails"`
+	// The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Total size of the datastore in GB.
+	CapacityInGbs float64 `pulumi:"capacityInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore is associated with.
+	SddcId string `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Datastore was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Datastore was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDatastoresDatastoreCollectionItemInput is an input type that accepts GetDatastoresDatastoreCollectionItemArgs and GetDatastoresDatastoreCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemArgs{...}
+type GetDatastoresDatastoreCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemOutput() GetDatastoresDatastoreCollectionItemOutput
+	ToGetDatastoresDatastoreCollectionItemOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemOutput
+}
+
+type GetDatastoresDatastoreCollectionItemArgs struct {
+	// The availability domain of the Datastore.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The list of Block Volume details that belong to the datastore.
+	BlockVolumeDetails GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayInput `pulumi:"blockVolumeDetails"`
+	// The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Total size of the datastore in GB.
+	CapacityInGbs pulumi.Float64Input `pulumi:"capacityInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore is associated with.
+	SddcId pulumi.StringInput `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Datastore was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Datastore was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDatastoresDatastoreCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemArgs) ToGetDatastoresDatastoreCollectionItemOutput() GetDatastoresDatastoreCollectionItemOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemArgs) ToGetDatastoresDatastoreCollectionItemOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemOutput)
+}
+
+// GetDatastoresDatastoreCollectionItemArrayInput is an input type that accepts GetDatastoresDatastoreCollectionItemArray and GetDatastoresDatastoreCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemArrayInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemArray{ GetDatastoresDatastoreCollectionItemArgs{...} }
+type GetDatastoresDatastoreCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemArrayOutput() GetDatastoresDatastoreCollectionItemArrayOutput
+	ToGetDatastoresDatastoreCollectionItemArrayOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemArrayOutput
+}
+
+type GetDatastoresDatastoreCollectionItemArray []GetDatastoresDatastoreCollectionItemInput
+
+func (GetDatastoresDatastoreCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemArray) ToGetDatastoresDatastoreCollectionItemArrayOutput() GetDatastoresDatastoreCollectionItemArrayOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemArray) ToGetDatastoresDatastoreCollectionItemArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemArrayOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemOutput) ToGetDatastoresDatastoreCollectionItemOutput() GetDatastoresDatastoreCollectionItemOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemOutput) ToGetDatastoresDatastoreCollectionItemOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemOutput {
+	return o
+}
+
+// The availability domain of the Datastore.
+func (o GetDatastoresDatastoreCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The list of Block Volume details that belong to the datastore.
+func (o GetDatastoresDatastoreCollectionItemOutput) BlockVolumeDetails() GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) []GetDatastoresDatastoreCollectionItemBlockVolumeDetail {
+		return v.BlockVolumeDetails
+	}).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput)
+}
+
+// The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
+func (o GetDatastoresDatastoreCollectionItemOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Total size of the datastore in GB.
+func (o GetDatastoresDatastoreCollectionItemOutput) CapacityInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) float64 { return v.CapacityInGbs }).(pulumi.Float64Output)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
+func (o GetDatastoresDatastoreCollectionItemOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDatastoresDatastoreCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDatastoresDatastoreCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDatastoresDatastoreCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatastoresDatastoreCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+func (o GetDatastoresDatastoreCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that Datastore is associated with.
+func (o GetDatastoresDatastoreCollectionItemOutput) SddcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.SddcId }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the resource.
+func (o GetDatastoresDatastoreCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetDatastoresDatastoreCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Datastore was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetDatastoresDatastoreCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Datastore was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetDatastoresDatastoreCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemArrayOutput) ToGetDatastoresDatastoreCollectionItemArrayOutput() GetDatastoresDatastoreCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemArrayOutput) ToGetDatastoresDatastoreCollectionItemArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatastoresDatastoreCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoresDatastoreCollectionItem {
+		return vs[0].([]GetDatastoresDatastoreCollectionItem)[vs[1].(int)]
+	}).(GetDatastoresDatastoreCollectionItemOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetail struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments []GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id string `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn string `pulumi:"iqn"`
+}
+
+// GetDatastoresDatastoreCollectionItemBlockVolumeDetailInput is an input type that accepts GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs and GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemBlockVolumeDetailInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs{...}
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs struct {
+	// List of BlockVolumeAttachment objects containing information about attachment details
+	Attachments GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayInput `pulumi:"attachments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+	Id pulumi.StringInput `pulumi:"id"`
+	// An IQN of the Block Storage Volume.
+	Iqn pulumi.StringInput `pulumi:"iqn"`
+}
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput)
+}
+
+// GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayInput is an input type that accepts GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray and GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray{ GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs{...} }
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray []GetDatastoresDatastoreCollectionItemBlockVolumeDetailInput
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItemBlockVolumeDetail)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput {
+	return o
+}
+
+// List of BlockVolumeAttachment objects containing information about attachment details
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) Attachments() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetail) []GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment {
+		return v.Attachments
+	}).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput) Iqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetail) string { return v.Iqn }).(pulumi.StringOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItemBlockVolumeDetail)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput) Index(i pulumi.IntInput) GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoresDatastoreCollectionItemBlockVolumeDetail {
+		return vs[0].([]GetDatastoresDatastoreCollectionItemBlockVolumeDetail)[vs[1].(int)]
+	}).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId string `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress string `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port int `pulumi:"port"`
+}
+
+// GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentInput is an input type that accepts GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs and GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs{...}
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs struct {
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+	EsxiHostId pulumi.StringInput `pulumi:"esxiHostId"`
+	// The IP address of block volume attachment.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The port of block volume attachment.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput)
+}
+
+// GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayInput is an input type that accepts GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray and GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayInput` via:
+//
+//	GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray{ GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs{...} }
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput
+	ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutputWithContext(context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray []GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentInput
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput {
+	return i.ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput {
+	return o
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) EsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment) string { return v.EsxiHostId }).(pulumi.StringOutput)
+}
+
+// The IP address of block volume attachment.
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The port of block volume attachment.
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment)(nil)).Elem()
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput() GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput) ToGetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutputWithContext(ctx context.Context) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput) Index(i pulumi.IntInput) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment {
+		return vs[0].([]GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachment)[vs[1].(int)]
+	}).(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput)
+}
+
+type GetDatastoresFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatastoresFilterInput is an input type that accepts GetDatastoresFilterArgs and GetDatastoresFilterOutput values.
+// You can construct a concrete instance of `GetDatastoresFilterInput` via:
+//
+//	GetDatastoresFilterArgs{...}
+type GetDatastoresFilterInput interface {
+	pulumi.Input
+
+	ToGetDatastoresFilterOutput() GetDatastoresFilterOutput
+	ToGetDatastoresFilterOutputWithContext(context.Context) GetDatastoresFilterOutput
+}
+
+type GetDatastoresFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatastoresFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresFilter)(nil)).Elem()
+}
+
+func (i GetDatastoresFilterArgs) ToGetDatastoresFilterOutput() GetDatastoresFilterOutput {
+	return i.ToGetDatastoresFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresFilterArgs) ToGetDatastoresFilterOutputWithContext(ctx context.Context) GetDatastoresFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresFilterOutput)
+}
+
+// GetDatastoresFilterArrayInput is an input type that accepts GetDatastoresFilterArray and GetDatastoresFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatastoresFilterArrayInput` via:
+//
+//	GetDatastoresFilterArray{ GetDatastoresFilterArgs{...} }
+type GetDatastoresFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastoresFilterArrayOutput() GetDatastoresFilterArrayOutput
+	ToGetDatastoresFilterArrayOutputWithContext(context.Context) GetDatastoresFilterArrayOutput
+}
+
+type GetDatastoresFilterArray []GetDatastoresFilterInput
+
+func (GetDatastoresFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresFilter)(nil)).Elem()
+}
+
+func (i GetDatastoresFilterArray) ToGetDatastoresFilterArrayOutput() GetDatastoresFilterArrayOutput {
+	return i.ToGetDatastoresFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastoresFilterArray) ToGetDatastoresFilterArrayOutputWithContext(ctx context.Context) GetDatastoresFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastoresFilterArrayOutput)
+}
+
+type GetDatastoresFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastoresFilter)(nil)).Elem()
+}
+
+func (o GetDatastoresFilterOutput) ToGetDatastoresFilterOutput() GetDatastoresFilterOutput {
+	return o
+}
+
+func (o GetDatastoresFilterOutput) ToGetDatastoresFilterOutputWithContext(ctx context.Context) GetDatastoresFilterOutput {
+	return o
+}
+
+func (o GetDatastoresFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastoresFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatastoresFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatastoresFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatastoresFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatastoresFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatastoresFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastoresFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastoresFilter)(nil)).Elem()
+}
+
+func (o GetDatastoresFilterArrayOutput) ToGetDatastoresFilterArrayOutput() GetDatastoresFilterArrayOutput {
+	return o
+}
+
+func (o GetDatastoresFilterArrayOutput) ToGetDatastoresFilterArrayOutputWithContext(ctx context.Context) GetDatastoresFilterArrayOutput {
+	return o
+}
+
+func (o GetDatastoresFilterArrayOutput) Index(i pulumi.IntInput) GetDatastoresFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastoresFilter {
+		return vs[0].([]GetDatastoresFilter)[vs[1].(int)]
+	}).(GetDatastoresFilterOutput)
+}
+
+type GetExsiHostDatastoreAttachment struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId string `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress string `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port int `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn string `pulumi:"volumeIqn"`
+}
+
+// GetExsiHostDatastoreAttachmentInput is an input type that accepts GetExsiHostDatastoreAttachmentArgs and GetExsiHostDatastoreAttachmentOutput values.
+// You can construct a concrete instance of `GetExsiHostDatastoreAttachmentInput` via:
+//
+//	GetExsiHostDatastoreAttachmentArgs{...}
+type GetExsiHostDatastoreAttachmentInput interface {
+	pulumi.Input
+
+	ToGetExsiHostDatastoreAttachmentOutput() GetExsiHostDatastoreAttachmentOutput
+	ToGetExsiHostDatastoreAttachmentOutputWithContext(context.Context) GetExsiHostDatastoreAttachmentOutput
+}
+
+type GetExsiHostDatastoreAttachmentArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId pulumi.StringInput `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port pulumi.IntInput `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn pulumi.StringInput `pulumi:"volumeIqn"`
+}
+
+func (GetExsiHostDatastoreAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExsiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (i GetExsiHostDatastoreAttachmentArgs) ToGetExsiHostDatastoreAttachmentOutput() GetExsiHostDatastoreAttachmentOutput {
+	return i.ToGetExsiHostDatastoreAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetExsiHostDatastoreAttachmentArgs) ToGetExsiHostDatastoreAttachmentOutputWithContext(ctx context.Context) GetExsiHostDatastoreAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostDatastoreAttachmentOutput)
+}
+
+// GetExsiHostDatastoreAttachmentArrayInput is an input type that accepts GetExsiHostDatastoreAttachmentArray and GetExsiHostDatastoreAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetExsiHostDatastoreAttachmentArrayInput` via:
+//
+//	GetExsiHostDatastoreAttachmentArray{ GetExsiHostDatastoreAttachmentArgs{...} }
+type GetExsiHostDatastoreAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetExsiHostDatastoreAttachmentArrayOutput() GetExsiHostDatastoreAttachmentArrayOutput
+	ToGetExsiHostDatastoreAttachmentArrayOutputWithContext(context.Context) GetExsiHostDatastoreAttachmentArrayOutput
+}
+
+type GetExsiHostDatastoreAttachmentArray []GetExsiHostDatastoreAttachmentInput
+
+func (GetExsiHostDatastoreAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExsiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (i GetExsiHostDatastoreAttachmentArray) ToGetExsiHostDatastoreAttachmentArrayOutput() GetExsiHostDatastoreAttachmentArrayOutput {
+	return i.ToGetExsiHostDatastoreAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetExsiHostDatastoreAttachmentArray) ToGetExsiHostDatastoreAttachmentArrayOutputWithContext(ctx context.Context) GetExsiHostDatastoreAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostDatastoreAttachmentArrayOutput)
+}
+
+type GetExsiHostDatastoreAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetExsiHostDatastoreAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExsiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (o GetExsiHostDatastoreAttachmentOutput) ToGetExsiHostDatastoreAttachmentOutput() GetExsiHostDatastoreAttachmentOutput {
+	return o
+}
+
+func (o GetExsiHostDatastoreAttachmentOutput) ToGetExsiHostDatastoreAttachmentOutputWithContext(ctx context.Context) GetExsiHostDatastoreAttachmentOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+func (o GetExsiHostDatastoreAttachmentOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostDatastoreAttachment) string { return v.BlockVolumeId }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+func (o GetExsiHostDatastoreAttachmentOutput) DatastoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostDatastoreAttachment) string { return v.DatastoreId }).(pulumi.StringOutput)
+}
+
+// The IP address of datastore attachment.
+func (o GetExsiHostDatastoreAttachmentOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostDatastoreAttachment) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The port of datastore attachment.
+func (o GetExsiHostDatastoreAttachmentOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExsiHostDatastoreAttachment) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o GetExsiHostDatastoreAttachmentOutput) VolumeIqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostDatastoreAttachment) string { return v.VolumeIqn }).(pulumi.StringOutput)
+}
+
+type GetExsiHostDatastoreAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExsiHostDatastoreAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExsiHostDatastoreAttachment)(nil)).Elem()
+}
+
+func (o GetExsiHostDatastoreAttachmentArrayOutput) ToGetExsiHostDatastoreAttachmentArrayOutput() GetExsiHostDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o GetExsiHostDatastoreAttachmentArrayOutput) ToGetExsiHostDatastoreAttachmentArrayOutputWithContext(ctx context.Context) GetExsiHostDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o GetExsiHostDatastoreAttachmentArrayOutput) Index(i pulumi.IntInput) GetExsiHostDatastoreAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostDatastoreAttachment {
+		return vs[0].([]GetExsiHostDatastoreAttachment)[vs[1].(int)]
+	}).(GetExsiHostDatastoreAttachmentOutput)
+}
+
 type GetExsiHostsEsxiHostCollection struct {
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -3729,8 +5577,13 @@ type GetExsiHostsEsxiHostCollection struct {
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
+	// List of DatastoreAttachment objects containing information about attachment details
+	DatastoreAttachments []GetExsiHostsEsxiHostCollectionDatastoreAttachment `pulumi:"datastoreAttachments"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -3795,6 +5648,7 @@ type GetExsiHostsEsxiHostCollectionInput interface {
 }
 
 type GetExsiHostsEsxiHostCollectionArgs struct {
+	AttachDatastoreClusterIds pulumi.StringArrayInput `pulumi:"attachDatastoreClusterIds"`
 	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate pulumi.StringInput `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -3817,8 +5671,13 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku pulumi.StringInput `pulumi:"currentSku"`
+	// List of DatastoreAttachment objects containing information about attachment details
+	DatastoreAttachments GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput `pulumi:"datastoreAttachments"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput `pulumi:"datastoreClusterIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	DefinedTags               pulumi.StringMapInput   `pulumi:"definedTags"`
+	DetachDatastoreClusterIds pulumi.StringArrayInput `pulumi:"detachDatastoreClusterIds"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -3922,6 +5781,10 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ToGetExsiHostsEsxiHostCollectionOu
 	return o
 }
 
+func (o GetExsiHostsEsxiHostCollectionOutput) AttachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) []string { return v.AttachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
@@ -3971,9 +5834,25 @@ func (o GetExsiHostsEsxiHostCollectionOutput) CurrentSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CurrentSku }).(pulumi.StringOutput)
 }
 
+// List of DatastoreAttachment objects containing information about attachment details
+func (o GetExsiHostsEsxiHostCollectionOutput) DatastoreAttachments() GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) []GetExsiHostsEsxiHostCollectionDatastoreAttachment {
+		return v.DatastoreAttachments
+	}).(GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput)
+}
+
+// A list of datastore clusters.
+func (o GetExsiHostsEsxiHostCollectionOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetExsiHostsEsxiHostCollectionOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetExsiHostsEsxiHostCollectionOutput) DetachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) []string { return v.DetachDatastoreClusterIds }).(pulumi.StringArrayOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -4107,6 +5986,139 @@ func (o GetExsiHostsEsxiHostCollectionArrayOutput) Index(i pulumi.IntInput) GetE
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostsEsxiHostCollection {
 		return vs[0].([]GetExsiHostsEsxiHostCollection)[vs[1].(int)]
 	}).(GetExsiHostsEsxiHostCollectionOutput)
+}
+
+type GetExsiHostsEsxiHostCollectionDatastoreAttachment struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId string `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress string `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port int `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn string `pulumi:"volumeIqn"`
+}
+
+// GetExsiHostsEsxiHostCollectionDatastoreAttachmentInput is an input type that accepts GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs and GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput values.
+// You can construct a concrete instance of `GetExsiHostsEsxiHostCollectionDatastoreAttachmentInput` via:
+//
+//	GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs{...}
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentInput interface {
+	pulumi.Input
+
+	ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput
+	ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutputWithContext(context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput
+}
+
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+	DatastoreId pulumi.StringInput `pulumi:"datastoreId"`
+	// The IP address of datastore attachment.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The port of datastore attachment.
+	Port pulumi.IntInput `pulumi:"port"`
+	// An IQN of the Block Storage Volume.
+	VolumeIqn pulumi.StringInput `pulumi:"volumeIqn"`
+}
+
+func (GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExsiHostsEsxiHostCollectionDatastoreAttachment)(nil)).Elem()
+}
+
+func (i GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput {
+	return i.ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput)
+}
+
+// GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput is an input type that accepts GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray and GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput` via:
+//
+//	GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray{ GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs{...} }
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput
+	ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutputWithContext(context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput
+}
+
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray []GetExsiHostsEsxiHostCollectionDatastoreAttachmentInput
+
+func (GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExsiHostsEsxiHostCollectionDatastoreAttachment)(nil)).Elem()
+}
+
+func (i GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput {
+	return i.ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput)
+}
+
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExsiHostsEsxiHostCollectionDatastoreAttachment)(nil)).Elem()
+}
+
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput {
+	return o
+}
+
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollectionDatastoreAttachment) string { return v.BlockVolumeId }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) DatastoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollectionDatastoreAttachment) string { return v.DatastoreId }).(pulumi.StringOutput)
+}
+
+// The IP address of datastore attachment.
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollectionDatastoreAttachment) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The port of datastore attachment.
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollectionDatastoreAttachment) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// An IQN of the Block Storage Volume.
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput) VolumeIqn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollectionDatastoreAttachment) string { return v.VolumeIqn }).(pulumi.StringOutput)
+}
+
+type GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExsiHostsEsxiHostCollectionDatastoreAttachment)(nil)).Elem()
+}
+
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput() GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput) ToGetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput {
+	return o
+}
+
+func (o GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput) Index(i pulumi.IntInput) GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostsEsxiHostCollectionDatastoreAttachment {
+		return vs[0].([]GetExsiHostsEsxiHostCollectionDatastoreAttachment)[vs[1].(int)]
+	}).(GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput)
 }
 
 type GetExsiHostsFilter struct {
@@ -4551,9 +6563,11 @@ type GetSddcInitialConfigurationInitialClusterConfiguration struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores []GetSddcInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
-	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
@@ -4593,9 +6607,11 @@ type GetSddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
-	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
@@ -4685,6 +6701,11 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAva
 	}).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) Datastores() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) []GetSddcInitialConfigurationInitialClusterConfigurationDatastore {
@@ -4692,7 +6713,7 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) Datastores
 	}).(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
 }
 
-// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5408,6 +7429,8 @@ type GetSddcsSddcCollection struct {
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The number of Clusters in the SDDC.
@@ -5418,13 +7441,15 @@ type GetSddcsSddcCollection struct {
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores []GetSddcsSddcCollectionDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
-	// (**Deprecated**) The number of ESXi hosts in the SDDC.
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
@@ -5444,10 +7469,13 @@ type GetSddcsSddcCollection struct {
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses []GetSddcsSddcCollectionHcxOnPremLicense `pulumi:"hcxOnPremLicenses"`
 	HcxPrivateIpId    string                                   `pulumi:"hcxPrivateIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	HcxVlanId string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id                    string                                       `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// Details of SDDC initial configuration
 	InitialConfigurations []GetSddcsSddcCollectionInitialConfiguration `pulumi:"initialConfigurations"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
@@ -5459,6 +7487,8 @@ type GetSddcsSddcCollection struct {
 	InitialHostShapeName string `pulumi:"initialHostShapeName"`
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialSku string `pulumi:"initialSku"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
@@ -5475,11 +7505,17 @@ type GetSddcsSddcCollection struct {
 	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
 	IsSingleHostSddc bool `pulumi:"isSingleHostSddc"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
 	NsxEdgeUplinkIpId    string `pulumi:"nsxEdgeUplinkIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	//
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -5491,19 +7527,28 @@ type GetSddcsSddcCollection struct {
 	NsxManagerUsername string `pulumi:"nsxManagerUsername"`
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
 	NsxOverlaySegmentName string `pulumi:"nsxOverlaySegmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningVlanId      string `pulumi:"provisioningVlanId"`
 	RefreshHcxLicenseStatus bool   `pulumi:"refreshHcxLicenseStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	SshAuthorizedKeys                string   `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State string `pulumi:"state"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated                 string `pulumi:"timeCreated"`
 	TimeHcxBillingCycleEnd      string `pulumi:"timeHcxBillingCycleEnd"`
@@ -5518,18 +7563,26 @@ type GetSddcsSddcCollection struct {
 	VcenterInitialPassword string `pulumi:"vcenterInitialPassword"`
 	VcenterPrivateIpId     string `pulumi:"vcenterPrivateIpId"`
 	VcenterUsername        string `pulumi:"vcenterUsername"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	//
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VmotionVlanId string `pulumi:"vmotionVlanId"`
 	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsanVlanId string `pulumi:"vsanVlanId"`
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
 	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
 	// Deprecated: The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	VsphereUpgradeObjects []GetSddcsSddcCollectionVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
+	// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
 }
@@ -5550,6 +7603,8 @@ type GetSddcsSddcCollectionArgs struct {
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The number of Clusters in the SDDC.
@@ -5560,13 +7615,15 @@ type GetSddcsSddcCollectionArgs struct {
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores GetSddcsSddcCollectionDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// (**Deprecated**) The number of ESXi hosts in the SDDC.
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
@@ -5586,10 +7643,13 @@ type GetSddcsSddcCollectionArgs struct {
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses GetSddcsSddcCollectionHcxOnPremLicenseArrayInput `pulumi:"hcxOnPremLicenses"`
 	HcxPrivateIpId    pulumi.StringInput                               `pulumi:"hcxPrivateIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id                    pulumi.StringInput                                   `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of SDDC initial configuration
 	InitialConfigurations GetSddcsSddcCollectionInitialConfigurationArrayInput `pulumi:"initialConfigurations"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
@@ -5601,6 +7661,8 @@ type GetSddcsSddcCollectionArgs struct {
 	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialSku pulumi.StringInput `pulumi:"initialSku"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
@@ -5617,11 +7679,17 @@ type GetSddcsSddcCollectionArgs struct {
 	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
 	IsSingleHostSddc pulumi.BoolInput `pulumi:"isSingleHostSddc"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
 	NsxEdgeUplinkIpId    pulumi.StringInput `pulumi:"nsxEdgeUplinkIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	//
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -5633,19 +7701,28 @@ type GetSddcsSddcCollectionArgs struct {
 	NsxManagerUsername pulumi.StringInput `pulumi:"nsxManagerUsername"`
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
 	NsxOverlaySegmentName pulumi.StringInput `pulumi:"nsxOverlaySegmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningVlanId      pulumi.StringInput `pulumi:"provisioningVlanId"`
 	RefreshHcxLicenseStatus pulumi.BoolInput   `pulumi:"refreshHcxLicenseStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                pulumi.StringInput      `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	SshAuthorizedKeys                pulumi.StringInput      `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State      pulumi.StringInput    `pulumi:"state"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated                 pulumi.StringInput `pulumi:"timeCreated"`
 	TimeHcxBillingCycleEnd      pulumi.StringInput `pulumi:"timeHcxBillingCycleEnd"`
@@ -5660,18 +7737,26 @@ type GetSddcsSddcCollectionArgs struct {
 	VcenterInitialPassword pulumi.StringInput `pulumi:"vcenterInitialPassword"`
 	VcenterPrivateIpId     pulumi.StringInput `pulumi:"vcenterPrivateIpId"`
 	VcenterUsername        pulumi.StringInput `pulumi:"vcenterUsername"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	//
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
 	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
 	VsphereUpgradeGuide pulumi.StringInput `pulumi:"vsphereUpgradeGuide"`
 	// Deprecated: The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	VsphereUpgradeObjects GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput `pulumi:"vsphereUpgradeObjects"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
+	// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
 }
@@ -5734,6 +7819,8 @@ func (o GetSddcsSddcCollectionOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+//
 // Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
@@ -5756,6 +7843,8 @@ func (o GetSddcsSddcCollectionOutput) ComputeAvailabilityDomain() pulumi.StringO
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+//
 // Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) Datastores() GetSddcsSddcCollectionDatastoreArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionDatastore { return v.Datastores }).(GetSddcsSddcCollectionDatastoreArrayOutput)
@@ -5771,7 +7860,7 @@ func (o GetSddcsSddcCollectionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The number of ESXi hosts in the SDDC.
+// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 //
 // Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) EsxiHostsCount() pulumi.IntOutput {
@@ -5821,6 +7910,8 @@ func (o GetSddcsSddcCollectionOutput) HcxPrivateIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxPrivateIpId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+//
 // Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxVlanId }).(pulumi.StringOutput)
@@ -5831,6 +7922,7 @@ func (o GetSddcsSddcCollectionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Details of SDDC initial configuration
 func (o GetSddcsSddcCollectionOutput) InitialConfigurations() GetSddcsSddcCollectionInitialConfigurationArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionInitialConfiguration {
 		return v.InitialConfigurations
@@ -5856,6 +7948,8 @@ func (o GetSddcsSddcCollectionOutput) InitialSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialSku }).(pulumi.StringOutput)
 }
 
+// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+//
 // Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
@@ -5890,11 +7984,15 @@ func (o GetSddcsSddcCollectionOutput) IsSingleHostSddc() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsSingleHostSddc }).(pulumi.BoolOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
 // Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
 // Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
@@ -5904,6 +8002,8 @@ func (o GetSddcsSddcCollectionOutput) NsxEdgeUplinkIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplinkIpId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+//
 // Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
@@ -5933,16 +8033,22 @@ func (o GetSddcsSddcCollectionOutput) NsxOverlaySegmentName() pulumi.StringOutpu
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxOverlaySegmentName }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+//
 // Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+//
 // Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ProvisioningSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+//
 // Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ProvisioningVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
@@ -5952,6 +8058,8 @@ func (o GetSddcsSddcCollectionOutput) RefreshHcxLicenseStatus() pulumi.BoolOutpu
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+//
 // Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ReplicationVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
@@ -5968,6 +8076,10 @@ func (o GetSddcsSddcCollectionOutput) SshAuthorizedKeys() pulumi.StringOutput {
 // The lifecycle state of the resource.
 func (o GetSddcsSddcCollectionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -6011,6 +8123,8 @@ func (o GetSddcsSddcCollectionOutput) VcenterUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterUsername }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+//
 // Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VmotionVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmotionVlanId }).(pulumi.StringOutput)
@@ -6021,6 +8135,8 @@ func (o GetSddcsSddcCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutpu
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+//
 // Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsanVlanId }).(pulumi.StringOutput)
@@ -6038,11 +8154,15 @@ func (o GetSddcsSddcCollectionOutput) VsphereUpgradeObjects() GetSddcsSddcCollec
 	}).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
 // Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VsphereVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereVlanId }).(pulumi.StringOutput)
 }
 
+// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+//
 // Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) WorkloadNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
@@ -6069,9 +8189,11 @@ func (o GetSddcsSddcCollectionArrayOutput) Index(i pulumi.IntInput) GetSddcsSddc
 }
 
 type GetSddcsSddcCollectionDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
 	Capacity       float64  `pulumi:"capacity"`
-	DatastoreType  string   `pulumi:"datastoreType"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
 }
 
 // GetSddcsSddcCollectionDatastoreInput is an input type that accepts GetSddcsSddcCollectionDatastoreArgs and GetSddcsSddcCollectionDatastoreOutput values.
@@ -6086,9 +8208,11 @@ type GetSddcsSddcCollectionDatastoreInput interface {
 }
 
 type GetSddcsSddcCollectionDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
 	Capacity       pulumi.Float64Input     `pulumi:"capacity"`
-	DatastoreType  pulumi.StringInput      `pulumi:"datastoreType"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
 }
 
 func (GetSddcsSddcCollectionDatastoreArgs) ElementType() reflect.Type {
@@ -6142,6 +8266,7 @@ func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastore
 	return o
 }
 
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 func (o GetSddcsSddcCollectionDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
 }
@@ -6150,6 +8275,7 @@ func (o GetSddcsSddcCollectionDatastoreOutput) Capacity() pulumi.Float64Output {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
 }
 
+// Type of the datastore.
 func (o GetSddcsSddcCollectionDatastoreOutput) DatastoreType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
 }
@@ -6290,6 +8416,7 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetSddcsSddcCollectionInitialConfiguration struct {
+	// The configurations for Clusters initially created in the SDDC.
 	InitialClusterConfigurations []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration `pulumi:"initialClusterConfigurations"`
 }
 
@@ -6305,6 +8432,7 @@ type GetSddcsSddcCollectionInitialConfigurationInput interface {
 }
 
 type GetSddcsSddcCollectionInitialConfigurationArgs struct {
+	// The configurations for Clusters initially created in the SDDC.
 	InitialClusterConfigurations GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput `pulumi:"initialClusterConfigurations"`
 }
 
@@ -6359,6 +8487,7 @@ func (o GetSddcsSddcCollectionInitialConfigurationOutput) ToGetSddcsSddcCollecti
 	return o
 }
 
+// The configurations for Clusters initially created in the SDDC.
 func (o GetSddcsSddcCollectionInitialConfigurationOutput) InitialClusterConfigurations() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration {
 		return v.InitialClusterConfigurations
@@ -6387,26 +8516,35 @@ func (o GetSddcsSddcCollectionInitialConfigurationArrayOutput) Index(i pulumi.In
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration struct {
 	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
-	ActualEsxiHostsCount  int    `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
-	ComputeAvailabilityDomain string                                                                           `pulumi:"computeAvailabilityDomain"`
-	Datastores                []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
+	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
-	// (**Deprecated**) The number of ESXi hosts in the SDDC.
-	EsxiHostsCount    int    `pulumi:"esxiHostsCount"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-	InitialHostShapeName      string `pulumi:"initialHostShapeName"`
+	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
-	IsShieldedInstanceEnabled bool                                                                                        `pulumi:"isShieldedInstanceEnabled"`
-	NetworkConfigurations     []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
-	VsphereType               string                                                                                      `pulumi:"vsphereType"`
-	WorkloadNetworkCidr       string                                                                                      `pulumi:"workloadNetworkCidr"`
+	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
+	// vSphere Cluster types.
+	VsphereType string `pulumi:"vsphereType"`
+	// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
 }
 
 // GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput values.
@@ -6422,26 +8560,35 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput 
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs struct {
 	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
-	ActualEsxiHostsCount  pulumi.IntInput    `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
-	ComputeAvailabilityDomain pulumi.StringInput                                                                       `pulumi:"computeAvailabilityDomain"`
-	Datastores                GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
+	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput `pulumi:"datastoreClusterIds"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// (**Deprecated**) The number of ESXi hosts in the SDDC.
-	EsxiHostsCount    pulumi.IntInput    `pulumi:"esxiHostsCount"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-	InitialHostShapeName      pulumi.StringInput `pulumi:"initialHostShapeName"`
+	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
-	IsShieldedInstanceEnabled pulumi.BoolInput                                                                                    `pulumi:"isShieldedInstanceEnabled"`
-	NetworkConfigurations     GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
-	VsphereType               pulumi.StringInput                                                                                  `pulumi:"vsphereType"`
-	WorkloadNetworkCidr       pulumi.StringInput                                                                                  `pulumi:"workloadNetworkCidr"`
+	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// vSphere Cluster types.
+	VsphereType pulumi.StringInput `pulumi:"vsphereType"`
+	// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
 }
 
 func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs) ElementType() reflect.Type {
@@ -6502,6 +8649,7 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.IntOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.CapacityReservationId
@@ -6515,6 +8663,14 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []string {
+		return v.DatastoreClusterIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) Datastores() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore {
 		return v.Datastores
@@ -6528,13 +8684,14 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The number of ESXi hosts in the SDDC.
+// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) int {
 		return v.EsxiHostsCount
 	}).(pulumi.IntOutput)
 }
 
+// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.InitialCommitment
@@ -6555,6 +8712,7 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.StringOutput)
 }
 
+// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.InstanceDisplayNamePrefix
@@ -6568,18 +8726,21 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.BoolOutput)
 }
 
+// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) NetworkConfigurations() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
 		return v.NetworkConfigurations
 	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput)
 }
 
+// vSphere Cluster types.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) VsphereType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.VsphereType
 	}).(pulumi.StringOutput)
 }
 
+// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) WorkloadNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.WorkloadNetworkCidr
@@ -6607,8 +8768,10 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArr
 }
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
-	DatastoreType  string   `pulumi:"datastoreType"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
 }
 
 // GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput values.
@@ -6623,8 +8786,10 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatast
 }
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
-	DatastoreType  pulumi.StringInput      `pulumi:"datastoreType"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
 }
 
 func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs) ElementType() reflect.Type {
@@ -6678,12 +8843,14 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDat
 	return o
 }
 
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore) []string {
 		return v.BlockVolumeIds
 	}).(pulumi.StringArrayOutput)
 }
 
+// Type of the datastore.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) DatastoreType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore) string {
 		return v.DatastoreType
@@ -6711,17 +8878,28 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDat
 }
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration struct {
-	HcxVlanId            string `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId string `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
-	NsxEdgeVtepVlanId    string `pulumi:"nsxEdgeVtepVlanId"`
-	NsxVtepVlanId        string `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
 	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
-	ProvisioningVlanId   string `pulumi:"provisioningVlanId"`
-	ReplicationVlanId    string `pulumi:"replicationVlanId"`
-	VmotionVlanId        string `pulumi:"vmotionVlanId"`
-	VsanVlanId           string `pulumi:"vsanVlanId"`
-	VsphereVlanId        string `pulumi:"vsphereVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId string `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId string `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId string `pulumi:"vsphereVlanId"`
 }
 
 // GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput values.
@@ -6736,17 +8914,28 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetwor
 }
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs struct {
-	HcxVlanId            pulumi.StringInput `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
-	NsxEdgeVtepVlanId    pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
-	NsxVtepVlanId        pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
 	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
-	ProvisioningVlanId   pulumi.StringInput `pulumi:"provisioningVlanId"`
-	ReplicationVlanId    pulumi.StringInput `pulumi:"replicationVlanId"`
-	VmotionVlanId        pulumi.StringInput `pulumi:"vmotionVlanId"`
-	VsanVlanId           pulumi.StringInput `pulumi:"vsanVlanId"`
-	VsphereVlanId        pulumi.StringInput `pulumi:"vsphereVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId pulumi.StringInput `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId pulumi.StringInput `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
 }
 
 func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -6800,66 +8989,77 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNet
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) HcxVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.HcxVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.NsxEdgeUplink1vlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.NsxEdgeUplink2vlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.NsxEdgeVtepVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.NsxVtepVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.ProvisioningSubnetId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.ProvisioningVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.ReplicationVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.VmotionVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.VsanVlanId
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsphereVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
 		return v.VsphereVlanId
@@ -8164,6 +10364,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterUpgradeLicenseArrayInput)(nil)).Elem(), ClusterUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterVsphereUpgradeObjectInput)(nil)).Elem(), ClusterVsphereUpgradeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterVsphereUpgradeObjectArrayInput)(nil)).Elem(), ClusterVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastoreBlockVolumeDetailInput)(nil)).Elem(), DatastoreBlockVolumeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastoreBlockVolumeDetailArrayInput)(nil)).Elem(), DatastoreBlockVolumeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastoreBlockVolumeDetailAttachmentInput)(nil)).Elem(), DatastoreBlockVolumeDetailAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastoreBlockVolumeDetailAttachmentArrayInput)(nil)).Elem(), DatastoreBlockVolumeDetailAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EsxiHostDatastoreAttachmentInput)(nil)).Elem(), EsxiHostDatastoreAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EsxiHostDatastoreAttachmentArrayInput)(nil)).Elem(), EsxiHostDatastoreAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreInput)(nil)).Elem(), SddcDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreArrayInput)(nil)).Elem(), SddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseInput)(nil)).Elem(), SddcHcxOnPremLicenseArgs{})
@@ -8202,8 +10408,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemVsphereUpgradeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersFilterInput)(nil)).Elem(), GetClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersFilterArrayInput)(nil)).Elem(), GetClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreBlockVolumeDetailInput)(nil)).Elem(), GetDatastoreBlockVolumeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreBlockVolumeDetailArrayInput)(nil)).Elem(), GetDatastoreBlockVolumeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreBlockVolumeDetailAttachmentInput)(nil)).Elem(), GetDatastoreBlockVolumeDetailAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreBlockVolumeDetailAttachmentArrayInput)(nil)).Elem(), GetDatastoreBlockVolumeDetailAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionInput)(nil)).Elem(), GetDatastoreClustersDatastoreClusterCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionArrayInput)(nil)).Elem(), GetDatastoreClustersDatastoreClusterCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionItemInput)(nil)).Elem(), GetDatastoreClustersDatastoreClusterCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersDatastoreClusterCollectionItemArrayInput)(nil)).Elem(), GetDatastoreClustersDatastoreClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersFilterInput)(nil)).Elem(), GetDatastoreClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoreClustersFilterArrayInput)(nil)).Elem(), GetDatastoreClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionInput)(nil)).Elem(), GetDatastoresDatastoreCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionArrayInput)(nil)).Elem(), GetDatastoresDatastoreCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemArrayInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemBlockVolumeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemBlockVolumeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayInput)(nil)).Elem(), GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresFilterInput)(nil)).Elem(), GetDatastoresFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastoresFilterArrayInput)(nil)).Elem(), GetDatastoresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostDatastoreAttachmentInput)(nil)).Elem(), GetExsiHostDatastoreAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostDatastoreAttachmentArrayInput)(nil)).Elem(), GetExsiHostDatastoreAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionDatastoreAttachmentInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionDatastoreAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterInput)(nil)).Elem(), GetExsiHostsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterArrayInput)(nil)).Elem(), GetExsiHostsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreInput)(nil)).Elem(), GetSddcDatastoreArgs{})
@@ -8268,6 +10498,12 @@ func init() {
 	pulumi.RegisterOutputType(ClusterUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(ClusterVsphereUpgradeObjectOutput{})
 	pulumi.RegisterOutputType(ClusterVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(DatastoreBlockVolumeDetailOutput{})
+	pulumi.RegisterOutputType(DatastoreBlockVolumeDetailArrayOutput{})
+	pulumi.RegisterOutputType(DatastoreBlockVolumeDetailAttachmentOutput{})
+	pulumi.RegisterOutputType(DatastoreBlockVolumeDetailAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(EsxiHostDatastoreAttachmentOutput{})
+	pulumi.RegisterOutputType(EsxiHostDatastoreAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseOutput{})
@@ -8306,8 +10542,32 @@ func init() {
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoreBlockVolumeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatastoreBlockVolumeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoreBlockVolumeDetailAttachmentOutput{})
+	pulumi.RegisterOutputType(GetDatastoreBlockVolumeDetailAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersDatastoreClusterCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersDatastoreClusterCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersDatastoreClusterCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersDatastoreClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetDatastoreClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemBlockVolumeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemBlockVolumeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentOutput{})
+	pulumi.RegisterOutputType(GetDatastoresDatastoreCollectionItemBlockVolumeDetailAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastoresFilterOutput{})
+	pulumi.RegisterOutputType(GetDatastoresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExsiHostDatastoreAttachmentOutput{})
+	pulumi.RegisterOutputType(GetExsiHostDatastoreAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionDatastoreAttachmentOutput{})
+	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcDatastoreOutput{})

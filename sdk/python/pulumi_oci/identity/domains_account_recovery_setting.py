@@ -1071,9 +1071,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace an account recovery setting.
+        ## Example Usage
 
         ## Import
 
@@ -1177,9 +1175,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                  args: DomainsAccountRecoverySettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace an account recovery setting.
+        ## Example Usage
 
         ## Import
 

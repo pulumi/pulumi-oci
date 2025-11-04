@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.UsageProxy
 {
     /// <summary>
-    /// This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-    /// 
-    /// Adds the list of redeemable user summary for a subscription ID.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

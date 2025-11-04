@@ -579,9 +579,7 @@ class Deployment(pulumi.CustomResource):
                  trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment.
+        ## Example Usage
 
         ## Import
 
@@ -616,9 +614,7 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment.
+        ## Example Usage
 
         ## Import
 

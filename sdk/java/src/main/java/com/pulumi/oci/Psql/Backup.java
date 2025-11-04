@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
- * 
- * Creates a new backup.
- * 
  * ## Example Usage
  * 
  * <pre>

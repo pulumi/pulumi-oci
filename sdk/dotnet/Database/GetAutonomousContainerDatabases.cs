@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Database
         public string? InfrastructureType { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given service level agreement type exactly.
+        /// A filter to return only resources that match the given service-level agreement type exactly.
         /// </summary>
         [Input("serviceLevelAgreementType")]
         public string? ServiceLevelAgreementType { get; set; }
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given service level agreement type exactly.
+        /// A filter to return only resources that match the given service-level agreement type exactly.
         /// </summary>
         [Input("serviceLevelAgreementType")]
         public Input<string>? ServiceLevelAgreementType { get; set; }
@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult> AutonomousContainerDatabases;
         /// <summary>
-        /// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        /// **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         /// </summary>
         public readonly string? AutonomousExadataInfrastructureId;
         /// <summary>

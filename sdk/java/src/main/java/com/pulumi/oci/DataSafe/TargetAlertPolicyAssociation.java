@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new target-alert policy association to track a alert policy applied on target.
- * 
  * ## Example Usage
  * 
  * ## Import

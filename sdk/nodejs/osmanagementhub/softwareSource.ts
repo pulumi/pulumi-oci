@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Creates a new software source.
+ * ## Example Usage
  *
  * ## Import
  *

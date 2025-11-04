@@ -5,8 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
- *
  * ## Example Usage
  *
  * ```typescript

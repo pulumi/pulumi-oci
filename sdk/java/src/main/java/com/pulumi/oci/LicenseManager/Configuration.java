@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
- * 
- * Updates the configuration for the compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

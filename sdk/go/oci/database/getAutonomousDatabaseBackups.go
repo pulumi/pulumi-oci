@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
 //
-// Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
 //
 // ## Example Usage
 //
@@ -31,8 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetAutonomousDatabaseBackups(ctx, &database.GetAutonomousDatabaseBackupsArgs{
 //				AutonomousDatabaseId: pulumi.StringRef(testAutonomousDatabase.Id),
+//				BackupDestinationId:  pulumi.StringRef(testBackupDestination.Id),
 //				CompartmentId:        pulumi.StringRef(compartmentId),
 //				DisplayName:          pulumi.StringRef(autonomousDatabaseBackupDisplayName),
+//				InfrastructureType:   pulumi.StringRef(autonomousDatabaseBackupInfrastructureType),
+//				KeyStoreId:           pulumi.StringRef(testKeyStore.Id),
 //				State:                pulumi.StringRef(autonomousDatabaseBackupState),
 //				Type:                 pulumi.StringRef(autonomousDatabaseBackupType),
 //			}, nil)
@@ -58,11 +61,17 @@ func GetAutonomousDatabaseBackups(ctx *pulumi.Context, args *GetAutonomousDataba
 type GetAutonomousDatabaseBackupsArgs struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only resources that have the given backup destination id.
+	BackupDestinationId *string `pulumi:"backupDestinationId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetAutonomousDatabaseBackupsFilter `pulumi:"filters"`
+	// A filter to return only resources that match the given Infrastructure Type.
+	InfrastructureType *string `pulumi:"infrastructureType"`
+	// A filter to return only resources that have the given key store id.
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
 	// A filter to return only backups that matches with the given type of Backup.
@@ -73,8 +82,9 @@ type GetAutonomousDatabaseBackupsArgs struct {
 type GetAutonomousDatabaseBackupsResult struct {
 	// The list of autonomous_database_backups.
 	AutonomousDatabaseBackups []GetAutonomousDatabaseBackupsAutonomousDatabaseBackup `pulumi:"autonomousDatabaseBackups"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	BackupDestinationId  *string `pulumi:"backupDestinationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The user-friendly name for the backup. The name does not have to be unique.
@@ -82,6 +92,10 @@ type GetAutonomousDatabaseBackupsResult struct {
 	Filters     []GetAutonomousDatabaseBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The infrastructure type this resource belongs to.
+	InfrastructureType *string `pulumi:"infrastructureType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
 	// The type of backup.
@@ -101,11 +115,17 @@ func GetAutonomousDatabaseBackupsOutput(ctx *pulumi.Context, args GetAutonomousD
 type GetAutonomousDatabaseBackupsOutputArgs struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only resources that have the given backup destination id.
+	BackupDestinationId pulumi.StringPtrInput `pulumi:"backupDestinationId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringPtrInput                        `pulumi:"displayName"`
 	Filters     GetAutonomousDatabaseBackupsFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match the given Infrastructure Type.
+	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
+	// A filter to return only resources that have the given key store id.
+	KeyStoreId pulumi.StringPtrInput `pulumi:"keyStoreId"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter to return only backups that matches with the given type of Backup.
@@ -138,9 +158,13 @@ func (o GetAutonomousDatabaseBackupsResultOutput) AutonomousDatabaseBackups() Ge
 	}).(GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
 func (o GetAutonomousDatabaseBackupsResultOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAutonomousDatabaseBackupsResultOutput) BackupDestinationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.BackupDestinationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -160,6 +184,16 @@ func (o GetAutonomousDatabaseBackupsResultOutput) Filters() GetAutonomousDatabas
 // The provider-assigned unique ID for this managed resource.
 func (o GetAutonomousDatabaseBackupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The infrastructure type this resource belongs to.
+func (o GetAutonomousDatabaseBackupsResultOutput) InfrastructureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetAutonomousDatabaseBackupsResultOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the backup.

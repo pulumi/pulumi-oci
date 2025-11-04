@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Add RunbookVersion in Fleet Application Management.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

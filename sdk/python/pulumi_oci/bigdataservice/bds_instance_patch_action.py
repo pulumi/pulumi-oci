@@ -187,10 +187,6 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Install the specified patch to this cluster.
-
         ## Example Usage
 
         ```python
@@ -233,10 +229,6 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  args: BdsInstancePatchActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Install the specified patch to this cluster.
-
         ## Example Usage
 
         ```python

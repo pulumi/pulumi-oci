@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
- *
  * ## Example Usage
  *
  * ```typescript

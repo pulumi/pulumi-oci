@@ -109,7 +109,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Applies to IPV6 LB creation only.
+     * (Updatable) Applies to IPV6 LB creation only.
      * 
      * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
      * 
@@ -120,7 +120,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> ipv6subnetCidr;
 
     /**
-     * @return Applies to IPV6 LB creation only.
+     * @return (Updatable) Applies to IPV6 LB creation only.
      * 
      * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
      * 
@@ -287,14 +287,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
     @Import(name="reservedIps")
     private @Nullable Output<List<LoadBalancerReservedIpArgs>> reservedIps;
 
     /**
-     * @return An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * @return (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
     public Optional<Output<List<LoadBalancerReservedIpArgs>>> reservedIps() {
@@ -524,7 +524,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * @param ipv6subnetCidr (Updatable) Applies to IPV6 LB creation only.
          * 
          * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
          * 
@@ -539,7 +539,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * @param ipv6subnetCidr (Updatable) Applies to IPV6 LB creation only.
          * 
          * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
          * 
@@ -756,7 +756,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reservedIps An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+         * @param reservedIps (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reservedIps An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+         * @param reservedIps (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
          * 
          * @return builder
          * 
@@ -777,7 +777,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reservedIps An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+         * @param reservedIps (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
          * 
          * @return builder
          * 

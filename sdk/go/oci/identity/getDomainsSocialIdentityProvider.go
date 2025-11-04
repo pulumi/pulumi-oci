@@ -72,8 +72,12 @@ type LookupDomainsSocialIdentityProviderResult struct {
 	// Whether account linking is enabled
 	AccountLinkingEnabled bool `pulumi:"accountLinkingEnabled"`
 	// Admin scope to request
-	AdminScopes   []string `pulumi:"adminScopes"`
-	Authorization *string  `pulumi:"authorization"`
+	AdminScopes []string `pulumi:"adminScopes"`
+	// Apple Developer ID
+	AppleDevId string `pulumi:"appleDevId"`
+	// Apple Private Key ID
+	AppleKeyId    string  `pulumi:"appleKeyId"`
+	Authorization *string `pulumi:"authorization"`
 	// Social IDP Authorization URL
 	AuthzUrl string `pulumi:"authzUrl"`
 	// Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
@@ -206,6 +210,16 @@ func (o LookupDomainsSocialIdentityProviderResultOutput) AccountLinkingEnabled()
 // Admin scope to request
 func (o LookupDomainsSocialIdentityProviderResultOutput) AdminScopes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsSocialIdentityProviderResult) []string { return v.AdminScopes }).(pulumi.StringArrayOutput)
+}
+
+// Apple Developer ID
+func (o LookupDomainsSocialIdentityProviderResultOutput) AppleDevId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsSocialIdentityProviderResult) string { return v.AppleDevId }).(pulumi.StringOutput)
+}
+
+// Apple Private Key ID
+func (o LookupDomainsSocialIdentityProviderResultOutput) AppleKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsSocialIdentityProviderResult) string { return v.AppleKeyId }).(pulumi.StringOutput)
 }
 
 func (o LookupDomainsSocialIdentityProviderResultOutput) Authorization() pulumi.StringPtrOutput {

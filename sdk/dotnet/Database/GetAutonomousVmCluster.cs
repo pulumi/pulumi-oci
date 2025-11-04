@@ -241,6 +241,10 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
+        public readonly double MemoryPerComputeUnitInGbs;
+        /// <summary>
+        /// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+        /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// The memory allocated in GBs.
@@ -387,6 +391,8 @@ namespace Pulumi.Oci.Database
 
             int maxAcdsLowestScaledValue,
 
+            double memoryPerComputeUnitInGbs,
+
             int memoryPerOracleComputeUnitInGbs,
 
             int memorySizeInGbs,
@@ -462,6 +468,7 @@ namespace Pulumi.Oci.Database
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
             MaxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            MemoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;

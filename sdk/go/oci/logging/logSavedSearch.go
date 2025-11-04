@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-//
-// Creates a new LogSavedSearch.
-//
 // ## Example Usage
 //
 // ```go

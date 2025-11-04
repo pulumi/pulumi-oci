@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Log Analytics Resource Categories Management resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
- *
- * Creates Oracle DB Azure Vault Association resource.
- *
  * ## Example Usage
  *
  * ```typescript

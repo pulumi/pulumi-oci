@@ -20,7 +20,15 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
      * 
      */
     private String compartmentId;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -33,17 +41,37 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return A message describing the current state with detail that can provide actionable information.
+     * 
+     */
     private String lifecycleDetails;
     /**
      * @return A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
     private String timeCreated;
+    /**
+     * @return The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+     * 
+     */
     private String timeUpdated;
     private String type;
+    /**
+     * @return The number of dedicated units in this AI cluster.
+     * 
+     */
     private Integer unitCount;
+    /**
+     * @return The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+     * 
+     */
     private String unitShape;
 
     private GetDedicatedAiClustersDedicatedAiClusterCollectionItem() {}
@@ -57,9 +85,17 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     public String description() {
         return this.description;
     }
@@ -80,6 +116,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public String id() {
         return this.id;
     }
+    /**
+     * @return A message describing the current state with detail that can provide actionable information.
+     * 
+     */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
@@ -90,21 +130,37 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+     * 
+     */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     public String type() {
         return this.type;
     }
+    /**
+     * @return The number of dedicated units in this AI cluster.
+     * 
+     */
     public Integer unitCount() {
         return this.unitCount;
     }
+    /**
+     * @return The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+     * 
+     */
     public String unitShape() {
         return this.unitShape;
     }

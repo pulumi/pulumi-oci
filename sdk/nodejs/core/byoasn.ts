@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Byoasn resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a BYOASN Resource
- *
  * ## Example Usage
  *
  * ```typescript

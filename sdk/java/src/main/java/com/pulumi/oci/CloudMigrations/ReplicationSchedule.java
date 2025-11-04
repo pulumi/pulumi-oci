@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
- * 
- * Creates a replication schedule.
- * 
  * ## Example Usage
  * 
  * <pre>

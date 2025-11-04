@@ -630,9 +630,7 @@ class Fleet(pulumi.CustomResource):
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a fleet in Fleet Application Management.
+        ## Example Usage
 
         ## Import
 
@@ -667,9 +665,7 @@ class Fleet(pulumi.CustomResource):
                  args: FleetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a fleet in Fleet Application Management.
+        ## Example Usage
 
         ## Import
 

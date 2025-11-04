@@ -79,6 +79,11 @@ public final class InstanceShapeConfig {
      */
     private @Nullable String processorDescription;
     /**
+     * @return (Updatable) This field is reserved for internal use.
+     * 
+     */
+    private @Nullable String resourceManagement;
+    /**
      * @return (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -175,6 +180,13 @@ public final class InstanceShapeConfig {
         return Optional.ofNullable(this.processorDescription);
     }
     /**
+     * @return (Updatable) This field is reserved for internal use.
+     * 
+     */
+    public Optional<String> resourceManagement() {
+        return Optional.ofNullable(this.resourceManagement);
+    }
+    /**
      * @return (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -203,6 +215,7 @@ public final class InstanceShapeConfig {
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
         private @Nullable String processorDescription;
+        private @Nullable String resourceManagement;
         private @Nullable Integer vcpus;
         public Builder() {}
         public Builder(InstanceShapeConfig defaults) {
@@ -219,6 +232,7 @@ public final class InstanceShapeConfig {
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.processorDescription = defaults.processorDescription;
+    	      this.resourceManagement = defaults.resourceManagement;
     	      this.vcpus = defaults.vcpus;
         }
 
@@ -295,6 +309,12 @@ public final class InstanceShapeConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceManagement(@Nullable String resourceManagement) {
+
+            this.resourceManagement = resourceManagement;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vcpus(@Nullable Integer vcpus) {
 
             this.vcpus = vcpus;
@@ -314,6 +334,7 @@ public final class InstanceShapeConfig {
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
             _resultValue.processorDescription = processorDescription;
+            _resultValue.resourceManagement = resourceManagement;
             _resultValue.vcpus = vcpus;
             return _resultValue;
         }

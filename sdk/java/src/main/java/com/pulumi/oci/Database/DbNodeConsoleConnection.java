@@ -15,12 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new console connection to the specified database node.
- * After the console connection has been created and is available,
- * you connect to the console using SSH.
- * 
  * ## Example Usage
  * 
  * <pre>

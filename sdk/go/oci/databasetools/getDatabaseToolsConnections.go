@@ -33,6 +33,7 @@ import (
 //				CompartmentId:             compartmentId,
 //				DisplayName:               pulumi.StringRef(databaseToolsConnectionDisplayName),
 //				RelatedResourceIdentifier: pulumi.StringRef(databaseToolsConnectionRelatedResourceIdentifier),
+//				RuntimeIdentities:         databaseToolsConnectionRuntimeIdentity,
 //				RuntimeSupports:           databaseToolsConnectionRuntimeSupport,
 //				State:                     pulumi.StringRef(databaseToolsConnectionState),
 //				Types:                     databaseToolsConnectionType,
@@ -57,14 +58,16 @@ func GetDatabaseToolsConnections(ctx *pulumi.Context, args *GetDatabaseToolsConn
 
 // A collection of arguments for invoking getDatabaseToolsConnections.
 type GetDatabaseToolsConnectionsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
-	// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
 	RelatedResourceIdentifier *string `pulumi:"relatedResourceIdentifier"`
-	// A filter to return only resources with one of the specified runtimeSupport values.
+	// A filter to return only resources with one of the specified runtimeIdentity values.
+	RuntimeIdentities []string `pulumi:"runtimeIdentities"`
+	// A filter to return only resources with one of the specified type values.
 	RuntimeSupports []string `pulumi:"runtimeSupports"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State *string `pulumi:"state"`
@@ -84,6 +87,8 @@ type GetDatabaseToolsConnectionsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                        string  `pulumi:"id"`
 	RelatedResourceIdentifier *string `pulumi:"relatedResourceIdentifier"`
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentities []string `pulumi:"runtimeIdentities"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupports []string `pulumi:"runtimeSupports"`
 	// The current state of the Database Tools connection.
@@ -103,14 +108,16 @@ func GetDatabaseToolsConnectionsOutput(ctx *pulumi.Context, args GetDatabaseTool
 
 // A collection of arguments for invoking getDatabaseToolsConnections.
 type GetDatabaseToolsConnectionsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput                       `pulumi:"displayName"`
 	Filters     GetDatabaseToolsConnectionsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
 	RelatedResourceIdentifier pulumi.StringPtrInput `pulumi:"relatedResourceIdentifier"`
-	// A filter to return only resources with one of the specified runtimeSupport values.
+	// A filter to return only resources with one of the specified runtimeIdentity values.
+	RuntimeIdentities pulumi.StringArrayInput `pulumi:"runtimeIdentities"`
+	// A filter to return only resources with one of the specified type values.
 	RuntimeSupports pulumi.StringArrayInput `pulumi:"runtimeSupports"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -165,6 +172,11 @@ func (o GetDatabaseToolsConnectionsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetDatabaseToolsConnectionsResultOutput) RelatedResourceIdentifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) *string { return v.RelatedResourceIdentifier }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+func (o GetDatabaseToolsConnectionsResultOutput) RuntimeIdentities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) []string { return v.RuntimeIdentities }).(pulumi.StringArrayOutput)
 }
 
 // Specifies whether this connection is supported by the Database Tools Runtime.

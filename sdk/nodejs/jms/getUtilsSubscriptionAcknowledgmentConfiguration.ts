@@ -20,12 +20,10 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getUtilsSubscriptionAcknowledgmentConfiguration(args?: GetUtilsSubscriptionAcknowledgmentConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUtilsSubscriptionAcknowledgmentConfigurationResult> {
-    args = args || {};
+export function getUtilsSubscriptionAcknowledgmentConfiguration(args: GetUtilsSubscriptionAcknowledgmentConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUtilsSubscriptionAcknowledgmentConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", {
         "compartmentId": args.compartmentId,
-        "isAcknowledged": args.isAcknowledged,
     }, opts);
 }
 
@@ -36,11 +34,7 @@ export interface GetUtilsSubscriptionAcknowledgmentConfigurationArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: string;
-    /**
-     * Flag to determine whether the subscription was acknowledged or not.
-     */
-    isAcknowledged?: boolean;
+    compartmentId: string;
 }
 
 /**
@@ -52,9 +46,6 @@ export interface GetUtilsSubscriptionAcknowledgmentConfigurationResult {
      */
     readonly acknowledgedBy: string;
     readonly compartmentId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     /**
      * Flag to determine whether the subscription was acknowledged or not.
@@ -81,12 +72,10 @@ export interface GetUtilsSubscriptionAcknowledgmentConfigurationResult {
  * });
  * ```
  */
-export function getUtilsSubscriptionAcknowledgmentConfigurationOutput(args?: GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> {
-    args = args || {};
+export function getUtilsSubscriptionAcknowledgmentConfigurationOutput(args: GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", {
         "compartmentId": args.compartmentId,
-        "isAcknowledged": args.isAcknowledged,
     }, opts);
 }
 
@@ -97,9 +86,5 @@ export interface GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    /**
-     * Flag to determine whether the subscription was acknowledged or not.
-     */
-    isAcknowledged?: pulumi.Input<boolean>;
+    compartmentId: pulumi.Input<string>;
 }

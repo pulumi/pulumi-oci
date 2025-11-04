@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Creates a new modelVersionSet.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

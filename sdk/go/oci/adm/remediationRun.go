@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-//
-// Creates a new remediation run.
-//
 // ## Example Usage
 //
 // ```go

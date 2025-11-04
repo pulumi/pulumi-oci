@@ -22,10 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a security question.
- * 
  * ## Example Usage
  * 
  * ## Import

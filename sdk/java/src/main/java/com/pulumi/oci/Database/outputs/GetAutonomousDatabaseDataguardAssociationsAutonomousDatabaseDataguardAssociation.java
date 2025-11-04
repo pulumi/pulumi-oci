@@ -27,12 +27,12 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
      */
     private String autonomousDatabaseId;
     /**
-     * @return The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+     * @return The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
      * 
      */
     private String id;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     private Boolean isAutomaticFailoverEnabled;
@@ -42,17 +42,17 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
      */
     private String lifecycleDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous AI Database.
      * 
      */
     private String peerAutonomousDatabaseId;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     private String peerAutonomousDatabaseLifeCycleState;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String peerRole;
@@ -62,7 +62,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
      */
     private String protectionMode;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -115,14 +115,14 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
         return this.autonomousDatabaseId;
     }
     /**
-     * @return The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+     * @return The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     public Boolean isAutomaticFailoverEnabled() {
@@ -136,21 +136,21 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
         return this.lifecycleDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous AI Database.
      * 
      */
     public String peerAutonomousDatabaseId() {
         return this.peerAutonomousDatabaseId;
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public String peerAutonomousDatabaseLifeCycleState() {
         return this.peerAutonomousDatabaseLifeCycleState;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String peerRole() {
@@ -164,7 +164,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
         return this.protectionMode;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {

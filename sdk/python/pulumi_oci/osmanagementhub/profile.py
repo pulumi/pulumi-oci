@@ -710,10 +710,6 @@ class Profile(pulumi.CustomResource):
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
-
         ## Example Usage
 
         ```python
@@ -779,10 +775,6 @@ class Profile(pulumi.CustomResource):
                  args: ProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
-
         ## Example Usage
 
         ```python

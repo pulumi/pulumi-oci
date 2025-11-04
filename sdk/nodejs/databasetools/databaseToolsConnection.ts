@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
- *
- * Creates a new Database Tools connection.
+ * ## Example Usage
  *
  * ## Import
  *
@@ -96,6 +94,14 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     declare public readonly relatedResource: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
     /**
+     * Specifies the Database Tools Runtime endpoint.
+     */
+    declare public /*out*/ readonly runtimeEndpoint: pulumi.Output<string>;
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     */
+    declare public readonly runtimeIdentity: pulumi.Output<string>;
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
     declare public readonly runtimeSupport: pulumi.Output<string>;
@@ -112,11 +118,11 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * (Updatable) The Database Tools connection type.
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -128,7 +134,7 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     declare public readonly userName: pulumi.Output<string>;
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      */
     declare public readonly userPassword: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
 
@@ -157,6 +163,8 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             resourceInputs["privateEndpointId"] = state?.privateEndpointId;
             resourceInputs["proxyClient"] = state?.proxyClient;
             resourceInputs["relatedResource"] = state?.relatedResource;
+            resourceInputs["runtimeEndpoint"] = state?.runtimeEndpoint;
+            resourceInputs["runtimeIdentity"] = state?.runtimeIdentity;
             resourceInputs["runtimeSupport"] = state?.runtimeSupport;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -194,12 +202,14 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             resourceInputs["privateEndpointId"] = args?.privateEndpointId;
             resourceInputs["proxyClient"] = args?.proxyClient;
             resourceInputs["relatedResource"] = args?.relatedResource;
+            resourceInputs["runtimeIdentity"] = args?.runtimeIdentity;
             resourceInputs["runtimeSupport"] = args?.runtimeSupport;
             resourceInputs["type"] = args?.type;
             resourceInputs["url"] = args?.url;
             resourceInputs["userName"] = args?.userName;
             resourceInputs["userPassword"] = args?.userPassword;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["runtimeEndpoint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -263,6 +273,14 @@ export interface DatabaseToolsConnectionState {
      */
     relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
     /**
+     * Specifies the Database Tools Runtime endpoint.
+     */
+    runtimeEndpoint?: pulumi.Input<string>;
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     */
+    runtimeIdentity?: pulumi.Input<string>;
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
     runtimeSupport?: pulumi.Input<string>;
@@ -279,11 +297,11 @@ export interface DatabaseToolsConnectionState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * (Updatable) The Database Tools connection type.
      */
     type?: pulumi.Input<string>;
     /**
@@ -295,7 +313,7 @@ export interface DatabaseToolsConnectionState {
      */
     userName?: pulumi.Input<string>;
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      */
     userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
 }
@@ -349,11 +367,15 @@ export interface DatabaseToolsConnectionArgs {
      */
     relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
     /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     */
+    runtimeIdentity?: pulumi.Input<string>;
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
     runtimeSupport?: pulumi.Input<string>;
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * (Updatable) The Database Tools connection type.
      */
     type: pulumi.Input<string>;
     /**
@@ -365,7 +387,7 @@ export interface DatabaseToolsConnectionArgs {
      */
     userName: pulumi.Input<string>;
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      */
     userPassword: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
 }

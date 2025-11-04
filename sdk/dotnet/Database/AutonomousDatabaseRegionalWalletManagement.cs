@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Updates the Autonomous Database regional wallet.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -57,7 +53,7 @@ namespace Pulumi.Oci.Database
         public Output<bool?> ShouldRotate { get; private set; } = null!;
 
         /// <summary>
-        /// The current lifecycle state of the Autonomous Database wallet.
+        /// The current lifecycle state of the Autonomous AI Database wallet.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -155,7 +151,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? ShouldRotate { get; set; }
 
         /// <summary>
-        /// The current lifecycle state of the Autonomous Database wallet.
+        /// The current lifecycle state of the Autonomous AI Database wallet.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -177,6 +177,14 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionRelatedResourceResult> RelatedResources;
         /// <summary>
+        /// Specifies the Database Tools Runtime endpoint.
+        /// </summary>
+        public readonly string RuntimeEndpoint;
+        /// <summary>
+        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// </summary>
+        public readonly string RuntimeIdentity;
+        /// <summary>
         /// Specifies whether this connection is supported by the Database Tools Runtime.
         /// </summary>
         public readonly string RuntimeSupport;
@@ -193,7 +201,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        /// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
@@ -209,7 +217,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string UserName;
         /// <summary>
-        /// The user password.
+        /// The database user password.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionUserPasswordResult> UserPasswords;
 
@@ -243,6 +251,10 @@ namespace Pulumi.Oci.DatabaseTools
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionRelatedResourceResult> relatedResources,
 
+            string runtimeEndpoint,
+
+            string runtimeIdentity,
+
             string runtimeSupport,
 
             string state,
@@ -275,6 +287,8 @@ namespace Pulumi.Oci.DatabaseTools
             PrivateEndpointId = privateEndpointId;
             ProxyClients = proxyClients;
             RelatedResources = relatedResources;
+            RuntimeEndpoint = runtimeEndpoint;
+            RuntimeIdentity = runtimeIdentity;
             RuntimeSupport = runtimeSupport;
             State = state;
             SystemTags = systemTags;

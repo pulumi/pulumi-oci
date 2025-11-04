@@ -216,6 +216,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string IpxeScript;
         /// <summary>
+        /// Whether AI enterprise is enabled on the instance.
+        /// </summary>
+        public readonly bool IsAiEnterpriseEnabled;
+        /// <summary>
         /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         /// </summary>
         public readonly bool IsCrossNumaNode;
@@ -357,6 +361,8 @@ namespace Pulumi.Oci.Core
 
             string ipxeScript,
 
+            bool isAiEnterpriseEnabled,
+
             bool isCrossNumaNode,
 
             bool isPvEncryptionInTransitEnabled,
@@ -432,6 +438,7 @@ namespace Pulumi.Oci.Core
             InstanceId = instanceId;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;
+            IsAiEnterpriseEnabled = isAiEnterpriseEnabled;
             IsCrossNumaNode = isCrossNumaNode;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;

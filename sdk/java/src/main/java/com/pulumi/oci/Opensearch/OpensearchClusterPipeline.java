@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
- * 
- * Creates a new OpensearchCluster Pipeline.
- * 
  * ## Example Usage
  * 
  * <pre>

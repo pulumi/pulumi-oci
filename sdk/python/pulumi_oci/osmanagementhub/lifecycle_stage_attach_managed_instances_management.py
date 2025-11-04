@@ -106,9 +106,22 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
                  managed_instance_details: Optional[pulumi.Input[Union['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        ## Example Usage
 
-        Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_lifecycle_stage_attach_managed_instances_management = oci.osmanagementhub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management",
+            lifecycle_stage_id=test_lifecycle_stage["id"],
+            managed_instance_details={
+                "managed_instances": lifecycle_stage_attach_managed_instances_management_managed_instance_details_managed_instances,
+                "work_request_details": {
+                    "description": lifecycle_stage_attach_managed_instances_management_managed_instance_details_work_request_details_description,
+                    "display_name": lifecycle_stage_attach_managed_instances_management_managed_instance_details_work_request_details_display_name,
+                },
+            })
+        ```
 
         ## Import
 
@@ -130,9 +143,22 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
                  args: LifecycleStageAttachManagedInstancesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        ## Example Usage
 
-        Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_lifecycle_stage_attach_managed_instances_management = oci.osmanagementhub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management",
+            lifecycle_stage_id=test_lifecycle_stage["id"],
+            managed_instance_details={
+                "managed_instances": lifecycle_stage_attach_managed_instances_management_managed_instance_details_managed_instances,
+                "work_request_details": {
+                    "description": lifecycle_stage_attach_managed_instances_management_managed_instance_details_work_request_details_description,
+                    "display_name": lifecycle_stage_attach_managed_instances_management_managed_instance_details_work_request_details_display_name,
+                },
+            })
+        ```
 
         ## Import
 

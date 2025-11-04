@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
-    /// 
-    /// Creates a new MediaAsset.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

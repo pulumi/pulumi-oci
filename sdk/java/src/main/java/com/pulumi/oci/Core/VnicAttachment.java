@@ -16,12 +16,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a secondary VNIC and attaches it to the specified instance.
- * For more information about secondary VNICs, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -61,6 +55,7 @@ import javax.annotation.Nullable;
  *                 .privateIp(vnicAttachmentCreateVnicDetailsPrivateIp)
  *                 .securityAttributes(vnicAttachmentCreateVnicDetailsSecurityAttributes)
  *                 .skipSourceDestCheck(vnicAttachmentCreateVnicDetailsSkipSourceDestCheck)
+ *                 .subnetCidr(vnicAttachmentCreateVnicDetailsSubnetCidr)
  *                 .subnetId(testSubnet.id())
  *                 .vlanId(testVlan.id())
  *                 .build())

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new Data Safe private endpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

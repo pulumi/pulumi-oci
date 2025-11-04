@@ -18,11 +18,23 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
 
+        [Input("exadataReleases")]
+        private InputList<string>? _exadataReleases;
+
+        /// <summary>
+        /// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+        /// </summary>
+        public InputList<string> ExadataReleases
+        {
+            get => _exadataReleases ?? (_exadataReleases = new InputList<string>());
+            set => _exadataReleases = value;
+        }
+
         [Input("identifiers")]
         private InputList<string>? _identifiers;
 
         /// <summary>
-        /// Related resource Ids to include in the discovery.  All must match the specified entityType.
+        /// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
         /// </summary>
         public InputList<string> Identifiers
         {
@@ -31,7 +43,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         }
 
         /// <summary>
-        /// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+        /// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
@@ -58,7 +70,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         private InputList<Inputs.FsuCollectionFleetDiscoveryFilterTagArgs>? _tags;
 
         /// <summary>
-        /// Freeform tags to include in the discovery.
+        /// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         /// </summary>
         public InputList<Inputs.FsuCollectionFleetDiscoveryFilterTagArgs> Tags
         {
@@ -67,7 +79,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         }
 
         /// <summary>
-        /// Type of filters supported for Database targets discovery.
+        /// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -76,7 +88,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         private InputList<string>? _versions;
 
         /// <summary>
-        /// List of Versions strings to include in the discovery.
+        /// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         /// </summary>
         public InputList<string> Versions
         {

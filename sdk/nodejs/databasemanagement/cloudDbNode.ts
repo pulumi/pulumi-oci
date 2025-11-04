@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the cloud DB node specified by `cloudDbNodeId`.
+ * ## Example Usage
  *
  * ## Import
  *

@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates an IPv6 for the specified VNIC.
-//
 // ## Example Usage
 //
 // ```go

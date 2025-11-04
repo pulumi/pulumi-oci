@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain
 {
     /// <summary>
-    /// This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-    /// 
-    /// Creates a new Blockchain Platform.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

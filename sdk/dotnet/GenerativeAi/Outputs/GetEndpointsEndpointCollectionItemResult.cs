@@ -17,12 +17,18 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
-        public readonly ImmutableArray<Outputs.GetEndpointsEndpointCollectionItemContentModerationConfigResult> ContentModerationConfigs;
-        public readonly string DedicatedAiClusterId;
-        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// An optional description of the endpoint.
+        /// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         /// </summary>
+        public readonly ImmutableArray<Outputs.GetEndpointsEndpointCollectionItemContentModerationConfigResult> ContentModerationConfigs;
+        /// <summary>
+        /// The OCID of the dedicated AI cluster on which the model will be deployed to.
+        /// </summary>
+        public readonly string DedicatedAiClusterId;
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -30,23 +36,30 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         public readonly string DisplayName;
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        /// </summary>
+        public readonly string GenerativeAiPrivateEndpointId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// A message describing the current state of the endpoint in more detail that can provide actionable information.
+        /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The OCID of the model that's used to create this endpoint.
+        /// The OCID of the model used for the feature.
         /// </summary>
         public readonly string ModelId;
         /// <summary>
         /// A filter to return only resources that their lifecycle state matches the given lifecycle state.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
-        /// <summary>
-        /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-        /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]
@@ -64,6 +77,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             string displayName,
 
             ImmutableDictionary<string, string> freeformTags,
+
+            string generativeAiPrivateEndpointId,
 
             string id,
 
@@ -86,6 +101,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            GenerativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             ModelId = modelId;

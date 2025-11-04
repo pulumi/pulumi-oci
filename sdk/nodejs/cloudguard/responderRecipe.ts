@@ -7,10 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates a responder recipe (ResponderRecipe resource), from values passed in a
- * CreateResponderRecipeDetails resource.
+ * ## Example Usage
  *
  * ## Import
  *

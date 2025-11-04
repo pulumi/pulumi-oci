@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
-    /// This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
-    /// 
-    /// Updates the plugin.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

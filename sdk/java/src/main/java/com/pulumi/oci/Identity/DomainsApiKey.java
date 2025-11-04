@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a user&#39;s API key.
- * 
  * ## Example Usage
  * 
  * ## Import

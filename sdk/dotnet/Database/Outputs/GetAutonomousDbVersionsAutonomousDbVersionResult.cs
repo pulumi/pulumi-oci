@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDbVersionsAutonomousDbVersionResult
     {
         /// <summary>
-        /// A filter to return only autonomous database resources that match the specified workload type.
+        /// A filter to return only Autonomous AI Database resources that match the specified workload type.
         /// </summary>
         public readonly string DbWorkload;
         /// <summary>
-        /// A URL that points to a detailed description of the Autonomous Database version.
+        /// A URL that points to a detailed description of the Autonomous AI Database version.
         /// </summary>
         public readonly string Details;
         /// <summary>
@@ -26,23 +26,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsDedicated;
         /// <summary>
-        /// True if this version of the Oracle Database software's default is free.
+        /// True if this version of the Oracle AI Database software's default is free.
         /// </summary>
         public readonly bool IsDefaultForFree;
         /// <summary>
-        /// True if this version of the Oracle Database software's default is paid.
+        /// True if this version of the Oracle AI Database software's default is paid.
         /// </summary>
         public readonly bool IsDefaultForPaid;
         /// <summary>
-        /// True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+        /// True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
         /// </summary>
         public readonly bool IsFreeTierEnabled;
         /// <summary>
-        /// True if this version of the Oracle Database software has payments enabled.
+        /// True if this version of the Oracle AI Database software has payments enabled.
         /// </summary>
         public readonly bool IsPaidEnabled;
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database.
         /// </summary>
         public readonly string Version;
 

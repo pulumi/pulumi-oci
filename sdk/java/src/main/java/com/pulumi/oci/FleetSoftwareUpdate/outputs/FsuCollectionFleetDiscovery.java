@@ -20,22 +20,22 @@ public final class FsuCollectionFleetDiscovery {
      */
     private @Nullable List<FsuCollectionFleetDiscoveryFilter> filters;
     /**
-     * @return OCIDs of Fleet Software Update Discovery.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     private @Nullable String fsuDiscoveryId;
     /**
-     * @return Oracle Cloud Infrastructure Search Service query string.
+     * @return [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     private @Nullable String query;
     /**
-     * @return Possible fleet discovery strategies.
+     * @return Supported fleet discovery strategies.
      * 
      */
     private String strategy;
     /**
-     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     private @Nullable List<String> targets;
@@ -49,28 +49,28 @@ public final class FsuCollectionFleetDiscovery {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return OCIDs of Fleet Software Update Discovery.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     public Optional<String> fsuDiscoveryId() {
         return Optional.ofNullable(this.fsuDiscoveryId);
     }
     /**
-     * @return Oracle Cloud Infrastructure Search Service query string.
+     * @return [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     public Optional<String> query() {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return Possible fleet discovery strategies.
+     * @return Supported fleet discovery strategies.
      * 
      */
     public String strategy() {
         return this.strategy;
     }
     /**
-     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     public List<String> targets() {

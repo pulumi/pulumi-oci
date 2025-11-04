@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
- *
- * Creates a run for an application.
- *
  * ## Example Usage
  *
  * ```typescript

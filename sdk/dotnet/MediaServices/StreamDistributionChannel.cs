@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
-    /// 
-    /// Creates a new Stream Distribution Channel.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

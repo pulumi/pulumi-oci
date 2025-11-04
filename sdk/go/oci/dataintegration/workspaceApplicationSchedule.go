@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
-//
-// # Endpoint to create a new schedule
-//
 // ## Example Usage
 //
 // ```go

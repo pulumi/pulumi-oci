@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabaseLocalStandbyDb {
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     private String availabilityDomain;
@@ -32,17 +32,17 @@ public final class GetAutonomousDatabaseLocalStandbyDb {
      */
     private String maintenanceTargetComponent;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     private String state;
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     private String timeDataGuardRoleChanged;
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     private String timeDisasterRecoveryRoleChanged;
@@ -59,7 +59,7 @@ public final class GetAutonomousDatabaseLocalStandbyDb {
 
     private GetAutonomousDatabaseLocalStandbyDb() {}
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public String availabilityDomain() {
@@ -87,21 +87,21 @@ public final class GetAutonomousDatabaseLocalStandbyDb {
         return this.maintenanceTargetComponent;
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     public String timeDataGuardRoleChanged() {
         return this.timeDataGuardRoleChanged;
     }
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     public String timeDisasterRecoveryRoleChanged() {

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-//
-// Creates a new model for training and train the model with date provided.
-//
 // ## Example Usage
 //
 // ```go
@@ -133,7 +129,7 @@ type Model struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDataset ModelTrainingDatasetOutput `pulumi:"trainingDataset"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -209,7 +205,7 @@ type modelState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDataset *ModelTrainingDataset `pulumi:"trainingDataset"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version *string `pulumi:"version"`
 }
 
@@ -244,7 +240,7 @@ type ModelState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// Possible data set type
 	TrainingDataset ModelTrainingDatasetPtrInput
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringPtrInput
 }
 
@@ -457,7 +453,7 @@ func (o ModelOutput) TrainingDataset() ModelTrainingDatasetOutput {
 	return o.ApplyT(func(v *Model) ModelTrainingDatasetOutput { return v.TrainingDataset }).(ModelTrainingDatasetOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o ModelOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

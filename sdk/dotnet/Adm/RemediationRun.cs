@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Adm
 {
     /// <summary>
-    /// This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-    /// 
-    /// Creates a new remediation run.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

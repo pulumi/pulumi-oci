@@ -23,10 +23,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
- * 
- * Creates a target asset.
- * 
  * ## Example Usage
  * 
  * <pre>

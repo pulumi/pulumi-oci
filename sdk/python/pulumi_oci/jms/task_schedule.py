@@ -250,10 +250,6 @@ class TaskSchedule(pulumi.CustomResource):
                  task_details: Optional[pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
-
-        Create a task schedule using the information provided.
-
         ## Example Usage
 
         ```python
@@ -261,91 +257,91 @@ class TaskSchedule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_task_schedule = oci.jms.TaskSchedule("test_task_schedule",
-            execution_recurrences=task_schedule_execution_recurrences,
-            fleet_id=test_fleet["id"],
+            fleet_id=fleet_ocid,
+            execution_recurrences="DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z",
             task_details={
-                "task_type": task_schedule_task_details_task_type,
+                "task_type": "ADD_INSTALLATION_SITE",
                 "add_installation_site_task_request": {
                     "installation_sites": [{
-                        "artifact_content_type": task_schedule_task_details_add_installation_site_task_request_installation_sites_artifact_content_type,
-                        "force_install": task_schedule_task_details_add_installation_site_task_request_installation_sites_force_install,
-                        "headless_mode": task_schedule_task_details_add_installation_site_task_request_installation_sites_headless_mode,
-                        "installation_path": task_schedule_task_details_add_installation_site_task_request_installation_sites_installation_path,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "release_version": task_schedule_task_details_add_installation_site_task_request_installation_sites_release_version,
+                        "artifact_content_type": "JDK",
+                        "force_install": False,
+                        "headless_mode": False,
+                        "installation_path": "/example/install/path",
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "release_version": "17.0.0",
                     }],
-                    "post_installation_actions": task_schedule_task_details_add_installation_site_task_request_post_installation_actions,
+                    "post_installation_actions": [],
                 },
                 "crypto_task_request": {
-                    "recording_duration_in_minutes": task_schedule_task_details_crypto_task_request_recording_duration_in_minutes,
+                    "recording_duration_in_minutes": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_crypto_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_crypto_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_crypto_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_crypto_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_crypto_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "deployed_application_migration_task_request": {
                     "targets": [{
-                        "deployed_application_installation_key": task_schedule_task_details_deployed_application_migration_task_request_targets_deployed_application_installation_key,
-                        "exclude_package_prefixes": task_schedule_task_details_deployed_application_migration_task_request_targets_exclude_package_prefixes,
-                        "include_package_prefixes": task_schedule_task_details_deployed_application_migration_task_request_targets_include_package_prefixes,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "source_jdk_version": task_schedule_task_details_deployed_application_migration_task_request_targets_source_jdk_version,
-                        "target_jdk_version": task_schedule_task_details_deployed_application_migration_task_request_targets_target_jdk_version,
+                        "deployed_application_installation_key": "example-application-installation-key",
+                        "exclude_package_prefixes": [],
+                        "include_package_prefixes": [],
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "source_jdk_version": "11",
+                        "target_jdk_version": "21",
                     }],
                 },
                 "java_migration_task_request": {
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_java_migration_task_request_targets_application_installation_key,
-                        "exclude_package_prefixes": task_schedule_task_details_java_migration_task_request_targets_exclude_package_prefixes,
-                        "include_package_prefixes": task_schedule_task_details_java_migration_task_request_targets_include_package_prefixes,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "source_jdk_version": task_schedule_task_details_java_migration_task_request_targets_source_jdk_version,
-                        "target_jdk_version": task_schedule_task_details_java_migration_task_request_targets_target_jdk_version,
+                        "application_installation_key": "example-application-installation-key",
+                        "exclude_package_prefixes": [],
+                        "include_package_prefixes": [],
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "source_jdk_version": "11",
+                        "target_jdk_version": "21",
                     }],
                 },
                 "jfr_task_request": {
-                    "jfc_profile_name": test_profile["name"],
-                    "jfc_v1": task_schedule_task_details_jfr_task_request_jfc_v1,
-                    "jfc_v2": task_schedule_task_details_jfr_task_request_jfc_v2,
-                    "recording_duration_in_minutes": task_schedule_task_details_jfr_task_request_recording_duration_in_minutes,
-                    "recording_size_in_mb": task_schedule_task_details_jfr_task_request_recording_size_in_mb,
+                    "jfc_profile_name": "jfcV1",
+                    "jfc_v1": "jfcV1",
+                    "jfc_v2": "jfvV2",
+                    "recording_duration_in_minutes": 10,
+                    "recording_size_in_mb": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_jfr_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_jfr_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_jfr_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_jfr_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_jfr_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "performance_tuning_task_request": {
-                    "recording_duration_in_minutes": task_schedule_task_details_performance_tuning_task_request_recording_duration_in_minutes,
+                    "recording_duration_in_minutes": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_performance_tuning_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_performance_tuning_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_performance_tuning_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_performance_tuning_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_performance_tuning_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "remove_installation_site_task_request": {
                     "installation_sites": [{
-                        "installation_key": task_schedule_task_details_remove_installation_site_task_request_installation_sites_installation_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "installation_key": "example-jvm-installation-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
                 },
                 "scan_java_server_task_request": {
-                    "managed_instance_ids": task_schedule_task_details_scan_java_server_task_request_managed_instance_ids,
+                    "managed_instance_ids": [],
                 },
                 "scan_library_task_request": {
-                    "dynamic_scan_duration_in_minutes": task_schedule_task_details_scan_library_task_request_dynamic_scan_duration_in_minutes,
-                    "is_dynamic_scan": task_schedule_task_details_scan_library_task_request_is_dynamic_scan,
-                    "managed_instance_ids": task_schedule_task_details_scan_library_task_request_managed_instance_ids,
+                    "dynamic_scan_duration_in_minutes": 10,
+                    "is_dynamic_scan": False,
+                    "managed_instance_ids": [],
                 },
             })
         ```
@@ -371,10 +367,6 @@ class TaskSchedule(pulumi.CustomResource):
                  args: TaskScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
-
-        Create a task schedule using the information provided.
-
         ## Example Usage
 
         ```python
@@ -382,91 +374,91 @@ class TaskSchedule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_task_schedule = oci.jms.TaskSchedule("test_task_schedule",
-            execution_recurrences=task_schedule_execution_recurrences,
-            fleet_id=test_fleet["id"],
+            fleet_id=fleet_ocid,
+            execution_recurrences="DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z",
             task_details={
-                "task_type": task_schedule_task_details_task_type,
+                "task_type": "ADD_INSTALLATION_SITE",
                 "add_installation_site_task_request": {
                     "installation_sites": [{
-                        "artifact_content_type": task_schedule_task_details_add_installation_site_task_request_installation_sites_artifact_content_type,
-                        "force_install": task_schedule_task_details_add_installation_site_task_request_installation_sites_force_install,
-                        "headless_mode": task_schedule_task_details_add_installation_site_task_request_installation_sites_headless_mode,
-                        "installation_path": task_schedule_task_details_add_installation_site_task_request_installation_sites_installation_path,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "release_version": task_schedule_task_details_add_installation_site_task_request_installation_sites_release_version,
+                        "artifact_content_type": "JDK",
+                        "force_install": False,
+                        "headless_mode": False,
+                        "installation_path": "/example/install/path",
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "release_version": "17.0.0",
                     }],
-                    "post_installation_actions": task_schedule_task_details_add_installation_site_task_request_post_installation_actions,
+                    "post_installation_actions": [],
                 },
                 "crypto_task_request": {
-                    "recording_duration_in_minutes": task_schedule_task_details_crypto_task_request_recording_duration_in_minutes,
+                    "recording_duration_in_minutes": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_crypto_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_crypto_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_crypto_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_crypto_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_crypto_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "deployed_application_migration_task_request": {
                     "targets": [{
-                        "deployed_application_installation_key": task_schedule_task_details_deployed_application_migration_task_request_targets_deployed_application_installation_key,
-                        "exclude_package_prefixes": task_schedule_task_details_deployed_application_migration_task_request_targets_exclude_package_prefixes,
-                        "include_package_prefixes": task_schedule_task_details_deployed_application_migration_task_request_targets_include_package_prefixes,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "source_jdk_version": task_schedule_task_details_deployed_application_migration_task_request_targets_source_jdk_version,
-                        "target_jdk_version": task_schedule_task_details_deployed_application_migration_task_request_targets_target_jdk_version,
+                        "deployed_application_installation_key": "example-application-installation-key",
+                        "exclude_package_prefixes": [],
+                        "include_package_prefixes": [],
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "source_jdk_version": "11",
+                        "target_jdk_version": "21",
                     }],
                 },
                 "java_migration_task_request": {
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_java_migration_task_request_targets_application_installation_key,
-                        "exclude_package_prefixes": task_schedule_task_details_java_migration_task_request_targets_exclude_package_prefixes,
-                        "include_package_prefixes": task_schedule_task_details_java_migration_task_request_targets_include_package_prefixes,
-                        "managed_instance_id": test_managed_instance["id"],
-                        "source_jdk_version": task_schedule_task_details_java_migration_task_request_targets_source_jdk_version,
-                        "target_jdk_version": task_schedule_task_details_java_migration_task_request_targets_target_jdk_version,
+                        "application_installation_key": "example-application-installation-key",
+                        "exclude_package_prefixes": [],
+                        "include_package_prefixes": [],
+                        "managed_instance_id": "example-managed-instance-ocid",
+                        "source_jdk_version": "11",
+                        "target_jdk_version": "21",
                     }],
                 },
                 "jfr_task_request": {
-                    "jfc_profile_name": test_profile["name"],
-                    "jfc_v1": task_schedule_task_details_jfr_task_request_jfc_v1,
-                    "jfc_v2": task_schedule_task_details_jfr_task_request_jfc_v2,
-                    "recording_duration_in_minutes": task_schedule_task_details_jfr_task_request_recording_duration_in_minutes,
-                    "recording_size_in_mb": task_schedule_task_details_jfr_task_request_recording_size_in_mb,
+                    "jfc_profile_name": "jfcV1",
+                    "jfc_v1": "jfcV1",
+                    "jfc_v2": "jfvV2",
+                    "recording_duration_in_minutes": 10,
+                    "recording_size_in_mb": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_jfr_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_jfr_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_jfr_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_jfr_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_jfr_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "performance_tuning_task_request": {
-                    "recording_duration_in_minutes": task_schedule_task_details_performance_tuning_task_request_recording_duration_in_minutes,
+                    "recording_duration_in_minutes": 10,
                     "targets": [{
-                        "application_installation_key": task_schedule_task_details_performance_tuning_task_request_targets_application_installation_key,
-                        "application_key": task_schedule_task_details_performance_tuning_task_request_targets_application_key,
-                        "container_key": task_schedule_task_details_performance_tuning_task_request_targets_container_key,
-                        "jre_key": task_schedule_task_details_performance_tuning_task_request_targets_jre_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "application_installation_key": "example-application-installation-key",
+                        "application_key": "example-application-key",
+                        "container_key": "example-container-key",
+                        "jre_key": "example-jre-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
-                    "waiting_period_in_minutes": task_schedule_task_details_performance_tuning_task_request_waiting_period_in_minutes,
+                    "waiting_period_in_minutes": 10,
                 },
                 "remove_installation_site_task_request": {
                     "installation_sites": [{
-                        "installation_key": task_schedule_task_details_remove_installation_site_task_request_installation_sites_installation_key,
-                        "managed_instance_id": test_managed_instance["id"],
+                        "installation_key": "example-jvm-installation-key",
+                        "managed_instance_id": "example-managed-instance-ocid",
                     }],
                 },
                 "scan_java_server_task_request": {
-                    "managed_instance_ids": task_schedule_task_details_scan_java_server_task_request_managed_instance_ids,
+                    "managed_instance_ids": [],
                 },
                 "scan_library_task_request": {
-                    "dynamic_scan_duration_in_minutes": task_schedule_task_details_scan_library_task_request_dynamic_scan_duration_in_minutes,
-                    "is_dynamic_scan": task_schedule_task_details_scan_library_task_request_is_dynamic_scan,
-                    "managed_instance_ids": task_schedule_task_details_scan_library_task_request_managed_instance_ids,
+                    "dynamic_scan_duration_in_minutes": 10,
+                    "is_dynamic_scan": False,
+                    "managed_instance_ids": [],
                 },
             })
         ```

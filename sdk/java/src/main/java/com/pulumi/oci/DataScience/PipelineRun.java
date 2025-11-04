@@ -16,6 +16,7 @@ import com.pulumi.oci.DataScience.outputs.PipelineRunLogConfigurationOverrideDet
 import com.pulumi.oci.DataScience.outputs.PipelineRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.PipelineRunStepOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.PipelineRunStepRun;
+import com.pulumi.oci.DataScience.outputs.PipelineRunStorageMountConfigurationOverrideDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -25,125 +26,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new PipelineRun.
- * 
  * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataScience.PipelineRun;
- * import com.pulumi.oci.DataScience.PipelineRunArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunConfigurationOverrideDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testPipelineRun = new PipelineRun("testPipelineRun", PipelineRunArgs.builder()
- *             .compartmentId(compartmentId)
- *             .pipelineId(testPipeline.id())
- *             .configurationOverrideDetails(PipelineRunConfigurationOverrideDetailsArgs.builder()
- *                 .type(pipelineRunConfigurationOverrideDetailsType)
- *                 .commandLineArguments(pipelineRunConfigurationOverrideDetailsCommandLineArguments)
- *                 .environmentVariables(pipelineRunConfigurationOverrideDetailsEnvironmentVariables)
- *                 .maximumRuntimeInMinutes(pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes)
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .displayName(pipelineRunDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .infrastructureConfigurationOverrideDetails(PipelineRunInfrastructureConfigurationOverrideDetailsArgs.builder()
- *                 .blockStorageSizeInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs)
- *                 .shapeName(testShape.name())
- *                 .shapeConfigDetails(PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs.builder()
- *                     .memoryInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs)
- *                     .ocpus(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus)
- *                     .build())
- *                 .subnetId(testSubnet.id())
- *                 .build())
- *             .logConfigurationOverrideDetails(PipelineRunLogConfigurationOverrideDetailsArgs.builder()
- *                 .enableAutoLogCreation(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation)
- *                 .enableLogging(pipelineRunLogConfigurationOverrideDetailsEnableLogging)
- *                 .logGroupId(testLogGroup.id())
- *                 .logId(testLog.id())
- *                 .build())
- *             .opcParentRptUrl(pipelineRunOpcParentRptUrl)
- *             .projectId(testProject.id())
- *             .stepOverrideDetails(PipelineRunStepOverrideDetailArgs.builder()
- *                 .stepConfigurationDetails(PipelineRunStepOverrideDetailStepConfigurationDetailsArgs.builder()
- *                     .commandLineArguments(pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments)
- *                     .environmentVariables(pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables)
- *                     .maximumRuntimeInMinutes(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes)
- *                     .build())
- *                 .stepName(pipelineRunStepOverrideDetailsStepName)
- *                 .stepContainerConfigurationDetails(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs.builder()
- *                     .containerType(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType)
- *                     .image(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage)
- *                     .cmds(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd)
- *                     .entrypoints(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint)
- *                     .imageDigest(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest)
- *                     .imageSignatureId(testImageSignature.id())
- *                     .build())
- *                 .stepDataflowConfigurationDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs.builder()
- *                     .configuration(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration)
- *                     .driverShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape)
- *                     .driverShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs.builder()
- *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline)
- *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs)
- *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus)
- *                         .build())
- *                     .executorShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape)
- *                     .executorShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs.builder()
- *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline)
- *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs)
- *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus)
- *                         .build())
- *                     .logsBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri)
- *                     .numExecutors(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors)
- *                     .warehouseBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri)
- *                     .build())
- *                 .stepInfrastructureConfigurationDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs.builder()
- *                     .blockStorageSizeInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
- *                     .shapeName(testShape.name())
- *                     .shapeConfigDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
- *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
- *                         .ocpus(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
- *                         .build())
- *                     .subnetId(testSubnet.id())
- *                     .build())
- *                 .build())
- *             .systemTags(pipelineRunSystemTags)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * 
  * ## Import
  * 
@@ -331,6 +214,20 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.opcParentRptUrl);
     }
     /**
+     * Parameters override used in the pipeline run.
+     * 
+     */
+    @Export(name="parametersOverride", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> parametersOverride;
+
+    /**
+     * @return Parameters override used in the pipeline run.
+     * 
+     */
+    public Output<Map<String,String>> parametersOverride() {
+        return this.parametersOverride;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
@@ -399,6 +296,20 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      */
     public Output<List<PipelineRunStepRun>> stepRuns() {
         return this.stepRuns;
+    }
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    @Export(name="storageMountConfigurationOverrideDetailsLists", refs={List.class,PipelineRunStorageMountConfigurationOverrideDetailsList.class}, tree="[0,1]")
+    private Output<List<PipelineRunStorageMountConfigurationOverrideDetailsList>> storageMountConfigurationOverrideDetailsLists;
+
+    /**
+     * @return The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Output<List<PipelineRunStorageMountConfigurationOverrideDetailsList>> storageMountConfigurationOverrideDetailsLists() {
+        return this.storageMountConfigurationOverrideDetailsLists;
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`

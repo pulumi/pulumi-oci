@@ -16,6 +16,11 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     private String availabilityDomain;
     /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return A unique Deployment identifier.
      * 
      */
@@ -51,6 +56,11 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     private String state;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -78,6 +88,13 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return A unique Deployment identifier.
@@ -129,6 +146,13 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         return this.state;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -167,6 +191,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String clusterPlacementGroupId;
         private String deploymentId;
         private String displayName;
         private String faultDomain;
@@ -174,6 +199,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         private String peerType;
         private String region;
         private String state;
+        private String subscriptionId;
         private String timeCreated;
         private String timeLastSynced;
         private String timeRoleChanged;
@@ -182,6 +208,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         public Builder(GetDeploymentPeersDeploymentPeerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.deploymentId = defaults.deploymentId;
     	      this.displayName = defaults.displayName;
     	      this.faultDomain = defaults.faultDomain;
@@ -189,6 +216,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
     	      this.peerType = defaults.peerType;
     	      this.region = defaults.region;
     	      this.state = defaults.state;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastSynced = defaults.timeLastSynced;
     	      this.timeRoleChanged = defaults.timeRoleChanged;
@@ -201,6 +229,14 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -260,6 +296,14 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "timeCreated");
@@ -294,6 +338,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         public GetDeploymentPeersDeploymentPeerCollectionItem build() {
             final var _resultValue = new GetDeploymentPeersDeploymentPeerCollectionItem();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.deploymentId = deploymentId;
             _resultValue.displayName = displayName;
             _resultValue.faultDomain = faultDomain;
@@ -301,6 +346,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             _resultValue.peerType = peerType;
             _resultValue.region = region;
             _resultValue.state = state;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastSynced = timeLastSynced;
             _resultValue.timeRoleChanged = timeRoleChanged;

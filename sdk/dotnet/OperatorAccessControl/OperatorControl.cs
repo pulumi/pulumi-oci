@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OperatorAccessControl
 {
     /// <summary>
-    /// This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-    /// 
-    /// Creates an Operator Control.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

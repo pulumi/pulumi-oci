@@ -82,7 +82,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[_builtins.str]:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -106,7 +106,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[_builtins.str]:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -114,11 +114,12 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[_builtins.str]:
         """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        The Autonomous AI Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous AI Transaction Processing database
+        * DW - indicates an Autonomous AI Lakehouse database
+        * AJD - indicates an Autonomous AI JSON Database
+        * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        * LH - indicates an Oracle Autonomous AI Lakehouse database
         """
         return pulumi.get(self, "db_workload")
 
@@ -126,7 +127,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -155,7 +156,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> Optional[_builtins.bool]:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -163,7 +164,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> Optional[_builtins.bool]:
         """
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -171,7 +172,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[_builtins.bool]:
         """
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -189,7 +190,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> Optional[_builtins.str]:
         """
-        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
@@ -197,7 +198,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -242,9 +243,22 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
                              state: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
+    ## 
+
+    ***
+    ## subcategory: "Database"
+
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
     This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of Autonomous Databases based on the query parameters specified.
+    Gets a list of Autonomous AI Databases based on the query parameters specified.
 
     ## Example Usage
 
@@ -270,16 +284,15 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
 
     :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-    :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param _builtins.str db_version: A filter to return only Autonomous AI Database resources that match the specified dbVersion.
+    :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
     :param _builtins.bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
     :param _builtins.bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param _builtins.bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
     :param _builtins.bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-    :param _builtins.str lifecycle_state_not_equal_to: A filter to return only resources that not match the given lifecycle state.
-    :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+    :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
@@ -333,9 +346,22 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
+    ## 
+
+    ***
+    ## subcategory: "Database"
+
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
     This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of Autonomous Databases based on the query parameters specified.
+    Gets a list of Autonomous AI Databases based on the query parameters specified.
 
     ## Example Usage
 
@@ -361,16 +387,15 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
 
     :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-    :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param _builtins.str db_version: A filter to return only Autonomous AI Database resources that match the specified dbVersion.
+    :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
     :param _builtins.bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
     :param _builtins.bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param _builtins.bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
     :param _builtins.bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-    :param _builtins.str lifecycle_state_not_equal_to: A filter to return only resources that not match the given lifecycle state.
-    :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+    :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()

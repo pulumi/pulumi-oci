@@ -48,19 +48,23 @@ export interface GetFsuCollectionResult {
      */
     readonly activeFsuCycles: outputs.FleetSoftwareUpdate.GetFsuCollectionActiveFsuCycle[];
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
     readonly compartmentId: string;
+    /**
+     * Details of components in an Exadata software stack.
+     */
+    readonly components: outputs.FleetSoftwareUpdate.GetFsuCollectionComponent[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Exadata Fleet Update Collection resource display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      */
     readonly displayName: string;
     /**
-     * Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      */
     readonly fleetDiscoveries: outputs.FleetSoftwareUpdate.GetFsuCollectionFleetDiscovery[];
     /**
@@ -69,7 +73,7 @@ export interface GetFsuCollectionResult {
     readonly freeformTags: {[key: string]: string};
     readonly fsuCollectionId: string;
     /**
-     * OCID identifier for the Exadata Fleet Update Collection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      */
     readonly id: string;
     /**
@@ -85,7 +89,7 @@ export interface GetFsuCollectionResult {
      */
     readonly serviceType: string;
     /**
-     * Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      */
     readonly sourceMajorVersion: string;
     /**

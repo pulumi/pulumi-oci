@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
- * 
- * Creates a new Compute Cloud{@literal @}Customer upgrade schedule.
- * 
  * ## Example Usage
  * 
  * <pre>

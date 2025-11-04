@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseApexDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The Oracle APEX Application Development version.
+        /// The Oracle APEX AI Application Development version.
         /// </summary>
         [Input("apexVersion")]
         public Input<string>? ApexVersion { get; set; }

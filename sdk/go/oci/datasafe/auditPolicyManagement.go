@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Audit Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates the audit policy.
-//
 // ## Example Usage
 //
 // ```go

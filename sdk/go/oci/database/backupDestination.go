@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a backup destination in an Exadata Cloud@Customer system.
-//
 // ## Example Usage
 //
 // ```go
@@ -69,6 +65,10 @@ type BackupDestination struct {
 
 	// List of databases associated with the backup destination.
 	AssociatedDatabases BackupDestinationAssociatedDatabaseArrayOutput `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntOutput `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups BackupDestinationAssociatedLongTermBackupArrayOutput `pulumi:"associatedLongTermBackups"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
@@ -155,6 +155,10 @@ func GetBackupDestination(ctx *pulumi.Context,
 type backupDestinationState struct {
 	// List of databases associated with the backup destination.
 	AssociatedDatabases []BackupDestinationAssociatedDatabase `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount *int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []BackupDestinationAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
@@ -203,6 +207,10 @@ type backupDestinationState struct {
 type BackupDestinationState struct {
 	// List of databases associated with the backup destination.
 	AssociatedDatabases BackupDestinationAssociatedDatabaseArrayInput
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntPtrInput
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups BackupDestinationAssociatedLongTermBackupArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
@@ -397,6 +405,18 @@ func (o BackupDestinationOutput) AssociatedDatabases() BackupDestinationAssociat
 	return o.ApplyT(func(v *BackupDestination) BackupDestinationAssociatedDatabaseArrayOutput {
 		return v.AssociatedDatabases
 	}).(BackupDestinationAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o BackupDestinationOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.IntOutput { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o BackupDestinationOutput) AssociatedLongTermBackups() BackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v *BackupDestination) BackupDestinationAssociatedLongTermBackupArrayOutput {
+		return v.AssociatedLongTermBackups
+	}).(BackupDestinationAssociatedLongTermBackupArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

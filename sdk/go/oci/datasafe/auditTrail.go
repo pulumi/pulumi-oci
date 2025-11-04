@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates one or more attributes of the specified audit trail.
+// ## Example Usage
 //
 // ## Import
 //

@@ -27,10 +27,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create an Identity Provider
- * 
  * ## Example Usage
  * 
  * ## Import

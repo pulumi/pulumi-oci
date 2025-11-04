@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Customer can update the some fields for ComputeHost record
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Email
 {
     /// <summary>
-    /// This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
-    /// 
-    /// Creates a new email domain. Avoid entering confidential information.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

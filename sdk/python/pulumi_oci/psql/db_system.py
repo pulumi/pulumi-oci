@@ -824,10 +824,6 @@ class DbSystem(pulumi.CustomResource):
                  system_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
-
-        Creates a new database system.
-
         ## Example Usage
 
         ```python
@@ -946,10 +942,6 @@ class DbSystem(pulumi.CustomResource):
                  args: DbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
-
-        Creates a new database system.
-
         ## Example Usage
 
         ```python

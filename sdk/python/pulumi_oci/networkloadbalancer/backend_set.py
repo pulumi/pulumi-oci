@@ -417,10 +417,6 @@ class BackendSet(pulumi.CustomResource):
                  policy: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
         ## Example Usage
 
         ```python
@@ -494,10 +490,6 @@ class BackendSet(pulumi.CustomResource):
                  args: BackendSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
         ## Example Usage
 
         ```python

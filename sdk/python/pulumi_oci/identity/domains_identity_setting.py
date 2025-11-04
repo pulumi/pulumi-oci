@@ -1457,9 +1457,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  user_allowed_to_set_recovery_email: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace an Identity setting.
+        ## Example Usage
 
         ## Import
 
@@ -1615,9 +1613,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  args: DomainsIdentitySettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace an Identity setting.
+        ## Example Usage
 
         ## Import
 

@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates the audit policy.
+ * ## Example Usage
  *
  * ## Import
  *

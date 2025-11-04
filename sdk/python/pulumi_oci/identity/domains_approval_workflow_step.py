@@ -1133,10 +1133,6 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create ApprovalWorkflowStep
-
         ## Example Usage
 
         ## Import
@@ -1258,10 +1254,6 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                  args: DomainsApprovalWorkflowStepArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create ApprovalWorkflowStep
-
         ## Example Usage
 
         ## Import

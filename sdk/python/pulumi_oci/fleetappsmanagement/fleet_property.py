@@ -312,10 +312,6 @@ class FleetProperty(pulumi.CustomResource):
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add an existing global property to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python
@@ -350,10 +346,6 @@ class FleetProperty(pulumi.CustomResource):
                  args: FleetPropertyInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add an existing global property to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python

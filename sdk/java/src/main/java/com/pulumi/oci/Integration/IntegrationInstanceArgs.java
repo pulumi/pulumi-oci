@@ -204,14 +204,14 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     @Import(name="integrationInstanceType", required=true)
     private Output<String> integrationInstanceType;
 
     /**
-     * @return (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public Output<String> integrationInstanceType() {
@@ -309,6 +309,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * Shape
      * 
      */
@@ -366,6 +387,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
+        this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
         this.state = $.state;
     }
@@ -651,7 +673,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param integrationInstanceType (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * @param integrationInstanceType (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          * 
          * @return builder
          * 
@@ -662,7 +684,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param integrationInstanceType (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * @param integrationInstanceType (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          * 
          * @return builder
          * 
@@ -795,6 +817,33 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
          */
         public Builder networkEndpointDetails(IntegrationInstanceNetworkEndpointDetailsArgs networkEndpointDetails) {
             return networkEndpointDetails(Output.of(networkEndpointDetails));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+         * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+         * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+         * }`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+         * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+         * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+         * }`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

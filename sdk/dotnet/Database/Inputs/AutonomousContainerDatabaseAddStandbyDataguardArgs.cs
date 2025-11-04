@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? RedoTransportMode { get; set; }
 
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

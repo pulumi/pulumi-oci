@@ -12,16 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Creates a configuration item, for example to define
-// whether resources of a specific type should be discovered automatically.
-//
-// For example, when a new Management Agent gets registered in a certain compartment,
-// this Management Agent can potentially get promoted to a HOST resource.
-// The configuration item will determine if HOST resources in the selected compartment will be
-// discovered automatically.
-//
 // ## Example Usage
 //
 // ```go

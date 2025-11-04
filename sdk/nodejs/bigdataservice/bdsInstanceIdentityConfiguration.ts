@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Create an identity configuration for the cluster
- *
  * ## Example Usage
  *
  * ```typescript

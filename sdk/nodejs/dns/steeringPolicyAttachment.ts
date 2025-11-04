@@ -5,15 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
- *
- * Creates a new attachment between a steering policy and a domain, giving the
- * policy permission to answer queries for the specified domain. A steering policy must
- * be attached to a domain for the policy to answer DNS queries for that domain.
- *
- * For the purposes of access control, the attachment is automatically placed
- * into the same compartment as the domain's zone.
- *
  * ## Example Usage
  *
  * ```typescript

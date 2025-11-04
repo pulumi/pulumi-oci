@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
-    /// This resource provides the Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
-    /// 
-    /// Endpoint to create a new schedule
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -499,9 +499,7 @@ class MigrationAsset(pulumi.CustomResource):
                  snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration asset.
+        ## Example Usage
 
         ## Import
 
@@ -532,9 +530,7 @@ class MigrationAsset(pulumi.CustomResource):
                  args: MigrationAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration asset.
+        ## Example Usage
 
         ## Import
 

@@ -12,18 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-//
-// Creates a new OpensearchCluster.
-//
-// ## Prerequisites
-//
-// # The below policies must be created in compartment before creating OpensearchCluster
-//
-// ##### {Compartment-Name} - Name of  your compartment
-//
-// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+// ## Example Usage
 //
 // ## Import
 //
@@ -37,6 +26,8 @@ type Cluster struct {
 
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains pulumi.StringArrayOutput `pulumi:"availabilityDomains"`
+	// (Updatable) Custom certificate config for customer provided certs.
+	CertificateConfig ClusterCertificateConfigOutput `pulumi:"certificateConfig"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
@@ -81,6 +72,8 @@ type Cluster struct {
 	MasterNodeHostShape pulumi.StringOutput `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringOutput `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId pulumi.StringOutput `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringOutput `pulumi:"opendashboardFqdn"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -115,6 +108,8 @@ type Cluster struct {
 	SearchNodeHostType pulumi.StringOutput `pulumi:"searchNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb pulumi.IntOutput `pulumi:"searchNodeStorageGb"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringOutput `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -252,6 +247,8 @@ func GetCluster(ctx *pulumi.Context,
 type clusterState struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
+	// (Updatable) Custom certificate config for customer provided certs.
+	CertificateConfig *ClusterCertificateConfig `pulumi:"certificateConfig"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
@@ -296,6 +293,8 @@ type clusterState struct {
 	MasterNodeHostShape *string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType *string `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId *string `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn *string `pulumi:"opendashboardFqdn"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -330,6 +329,8 @@ type clusterState struct {
 	SearchNodeHostType *string `pulumi:"searchNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb *int `pulumi:"searchNodeStorageGb"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -370,6 +371,8 @@ type clusterState struct {
 type ClusterState struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains pulumi.StringArrayInput
+	// (Updatable) Custom certificate config for customer provided certs.
+	CertificateConfig ClusterCertificateConfigPtrInput
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
@@ -414,6 +417,8 @@ type ClusterState struct {
 	MasterNodeHostShape pulumi.StringPtrInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringPtrInput
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringPtrInput
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -448,6 +453,8 @@ type ClusterState struct {
 	SearchNodeHostType pulumi.StringPtrInput
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb pulumi.IntPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -490,6 +497,8 @@ func (ClusterState) ElementType() reflect.Type {
 }
 
 type clusterArgs struct {
+	// (Updatable) Custom certificate config for customer provided certs.
+	CertificateConfig *ClusterCertificateConfig `pulumi:"certificateConfig"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
@@ -530,6 +539,8 @@ type clusterArgs struct {
 	MasterNodeHostShape *string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId *string `pulumi:"nsgId"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount int `pulumi:"opendashboardNodeCount"`
 	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
@@ -554,6 +565,8 @@ type clusterArgs struct {
 	SearchNodeHostType *string `pulumi:"searchNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb *int `pulumi:"searchNodeStorageGb"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -583,6 +596,8 @@ type clusterArgs struct {
 
 // The set of arguments for constructing a Cluster resource.
 type ClusterArgs struct {
+	// (Updatable) Custom certificate config for customer provided certs.
+	CertificateConfig ClusterCertificateConfigPtrInput
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
@@ -623,6 +638,8 @@ type ClusterArgs struct {
 	MasterNodeHostShape pulumi.StringPtrInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringInput
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId pulumi.StringPtrInput
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount pulumi.IntInput
 	// (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
@@ -647,6 +664,8 @@ type ClusterArgs struct {
 	SearchNodeHostType pulumi.StringPtrInput
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb pulumi.IntPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -766,6 +785,11 @@ func (o ClusterOutput) AvailabilityDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.AvailabilityDomains }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Custom certificate config for customer provided certs.
+func (o ClusterOutput) CertificateConfig() ClusterCertificateConfigOutput {
+	return o.ApplyT(func(v *Cluster) ClusterCertificateConfigOutput { return v.CertificateConfig }).(ClusterCertificateConfigOutput)
+}
+
 // The OCID of the compartment to create the cluster in.
 func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -876,6 +900,11 @@ func (o ClusterOutput) MasterNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.MasterNodeHostType }).(pulumi.StringOutput)
 }
 
+// The OCID of the NSG where the private endpoint vnic will be attached.
+func (o ClusterOutput) NsgId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.NsgId }).(pulumi.StringOutput)
+}
+
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 func (o ClusterOutput) OpendashboardFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpendashboardFqdn }).(pulumi.StringOutput)
@@ -959,6 +988,11 @@ func (o ClusterOutput) SearchNodeHostType() pulumi.StringOutput {
 // (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
 func (o ClusterOutput) SearchNodeStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.SearchNodeStorageGb }).(pulumi.IntOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o ClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The name of the master user that are used to manage security config

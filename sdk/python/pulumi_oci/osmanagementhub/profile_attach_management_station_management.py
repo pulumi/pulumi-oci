@@ -120,10 +120,6 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Attaches the specified management station to a profile.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
                  args: ProfileAttachManagementStationManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Attaches the specified management station to a profile.
-
         ## Example Usage
 
         ```python

@@ -16,12 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
- * 
- * Creates an endpoint.
- * 
- * The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -53,11 +47,14 @@ import javax.annotation.Nullable;
  *             .modelId(testModel.id())
  *             .contentModerationConfig(EndpointContentModerationConfigArgs.builder()
  *                 .isEnabled(endpointContentModerationConfigIsEnabled)
+ *                 .mode(endpointContentModerationConfigMode)
+ *                 .modelId(testModel.id())
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(endpointDescription)
  *             .displayName(endpointDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
  *             .build());
  * 
  *     }
@@ -91,14 +88,14 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      * 
      */
     @Export(name="contentModerationConfig", refs={EndpointContentModerationConfig.class}, tree="[0]")
     private Output<EndpointContentModerationConfig> contentModerationConfig;
 
     /**
-     * @return (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+     * @return (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      * 
      */
     public Output<EndpointContentModerationConfig> contentModerationConfig() {
@@ -175,6 +172,20 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     * 
+     */
+    @Export(name="generativeAiPrivateEndpointId", refs={String.class}, tree="[0]")
+    private Output<String> generativeAiPrivateEndpointId;
+
+    /**
+     * @return (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     * 
+     */
+    public Output<String> generativeAiPrivateEndpointId() {
+        return this.generativeAiPrivateEndpointId;
+    }
+    /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      * 
      */
@@ -189,7 +200,7 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The ID of the model that&#39;s used to create this endpoint.
+     * The OCID of the model that&#39;s used to create this endpoint.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -199,7 +210,7 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
     private Output<String> modelId;
 
     /**
-     * @return The ID of the model that&#39;s used to create this endpoint.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

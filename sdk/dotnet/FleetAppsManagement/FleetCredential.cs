@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Add credentials to a fleet in Fleet Application Management.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

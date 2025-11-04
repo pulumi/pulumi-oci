@@ -445,9 +445,7 @@ class CloudAsm(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud ASM specified by `cloudAsmId`.
+        ## Example Usage
 
         ## Import
 
@@ -475,9 +473,7 @@ class CloudAsm(pulumi.CustomResource):
                  args: CloudAsmArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud ASM specified by `cloudAsmId`.
+        ## Example Usage
 
         ## Import
 

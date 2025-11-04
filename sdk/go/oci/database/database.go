@@ -12,11 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
-//
-// **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+// ## Example Usage
 //
 // ## Import
 //
@@ -28,7 +24,6 @@ import (
 type Database struct {
 	pulumi.CustomResourceState
 
-	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
 	ActionTrigger pulumi.IntPtrOutput `pulumi:"actionTrigger"`
 	// The character set for the database.
 	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
@@ -36,11 +31,7 @@ type Database struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayOutput `pulumi:"connectionStrings"`
-	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DataGuardAction pulumi.StringPtrOutput `pulumi:"dataGuardAction"`
+	DataGuardAction   pulumi.StringPtrOutput              `pulumi:"dataGuardAction"`
 	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
 	DataGuardGroups DatabaseDataGuardGroupArrayOutput `pulumi:"dataGuardGroups"`
 	// (Updatable) Details for creating a database.
@@ -78,12 +69,10 @@ type Database struct {
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	KmsKeyId        pulumi.StringOutput  `pulumi:"kmsKeyId"`
 	KmsKeyMigration pulumi.BoolPtrOutput `pulumi:"kmsKeyMigration"`
-	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-	KmsKeyRotation pulumi.IntPtrOutput `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	KmsKeyRotation  pulumi.IntPtrOutput  `pulumi:"kmsKeyRotation"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds pulumi.IntOutput `pulumi:"lastBackupDurationInSeconds"`
@@ -99,7 +88,7 @@ type Database struct {
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringOutput `pulumi:"sidPrefix"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source pulumi.StringOutput `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -156,7 +145,6 @@ func GetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
-	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
 	ActionTrigger *int `pulumi:"actionTrigger"`
 	// The character set for the database.
 	CharacterSet *string `pulumi:"characterSet"`
@@ -164,11 +152,7 @@ type databaseState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []DatabaseConnectionString `pulumi:"connectionStrings"`
-	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DataGuardAction *string `pulumi:"dataGuardAction"`
+	DataGuardAction   *string                    `pulumi:"dataGuardAction"`
 	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
 	DataGuardGroups []DatabaseDataGuardGroup `pulumi:"dataGuardGroups"`
 	// (Updatable) Details for creating a database.
@@ -206,12 +190,10 @@ type databaseState struct {
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-	KmsKeyMigration *bool `pulumi:"kmsKeyMigration"`
-	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	KmsKeyId        *string `pulumi:"kmsKeyId"`
+	KmsKeyMigration *bool   `pulumi:"kmsKeyMigration"`
+	KmsKeyRotation  *int    `pulumi:"kmsKeyRotation"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds *int `pulumi:"lastBackupDurationInSeconds"`
@@ -227,7 +209,7 @@ type databaseState struct {
 	PdbName *string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix *string `pulumi:"sidPrefix"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source *string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -246,7 +228,6 @@ type databaseState struct {
 }
 
 type DatabaseState struct {
-	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
 	ActionTrigger pulumi.IntPtrInput
 	// The character set for the database.
 	CharacterSet pulumi.StringPtrInput
@@ -254,11 +235,7 @@ type DatabaseState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayInput
-	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DataGuardAction pulumi.StringPtrInput
+	DataGuardAction   pulumi.StringPtrInput
 	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
 	DataGuardGroups DatabaseDataGuardGroupArrayInput
 	// (Updatable) Details for creating a database.
@@ -296,12 +273,10 @@ type DatabaseState struct {
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringPtrInput
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	KmsKeyId        pulumi.StringPtrInput
 	KmsKeyMigration pulumi.BoolPtrInput
-	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-	KmsKeyRotation pulumi.IntPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	KmsKeyRotation  pulumi.IntPtrInput
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds pulumi.IntPtrInput
@@ -317,7 +292,7 @@ type DatabaseState struct {
 	PdbName pulumi.StringPtrInput
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringPtrInput
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source pulumi.StringPtrInput
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrInput
@@ -340,12 +315,7 @@ func (DatabaseState) ElementType() reflect.Type {
 }
 
 type databaseArgs struct {
-	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-	ActionTrigger *int `pulumi:"actionTrigger"`
-	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ActionTrigger   *int    `pulumi:"actionTrigger"`
 	DataGuardAction *string `pulumi:"dataGuardAction"`
 	// (Updatable) Details for creating a database.
 	//
@@ -360,14 +330,12 @@ type databaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-	KmsKeyMigration *bool `pulumi:"kmsKeyMigration"`
-	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	KmsKeyId        *string `pulumi:"kmsKeyId"`
+	KmsKeyMigration *bool   `pulumi:"kmsKeyMigration"`
+	KmsKeyRotation  *int    `pulumi:"kmsKeyRotation"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId *string `pulumi:"vaultId"`
@@ -375,12 +343,7 @@ type databaseArgs struct {
 
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
-	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-	ActionTrigger pulumi.IntPtrInput
-	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ActionTrigger   pulumi.IntPtrInput
 	DataGuardAction pulumi.StringPtrInput
 	// (Updatable) Details for creating a database.
 	//
@@ -395,14 +358,12 @@ type DatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringPtrInput
-	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
+	KmsKeyId        pulumi.StringPtrInput
 	KmsKeyMigration pulumi.BoolPtrInput
-	// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-	KmsKeyRotation pulumi.IntPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	KmsKeyRotation  pulumi.IntPtrInput
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringPtrInput
@@ -495,7 +456,6 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 	return o
 }
 
-// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
 func (o DatabaseOutput) ActionTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.IntPtrOutput { return v.ActionTrigger }).(pulumi.IntPtrOutput)
 }
@@ -515,10 +475,6 @@ func (o DatabaseOutput) ConnectionStrings() DatabaseConnectionStringArrayOutput 
 	return o.ApplyT(func(v *Database) DatabaseConnectionStringArrayOutput { return v.ConnectionStrings }).(DatabaseConnectionStringArrayOutput)
 }
 
-// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseOutput) DataGuardAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringPtrOutput { return v.DataGuardAction }).(pulumi.StringPtrOutput)
 }
@@ -612,17 +568,15 @@ func (o DatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
 func (o DatabaseOutput) KmsKeyMigration() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.BoolPtrOutput { return v.KmsKeyMigration }).(pulumi.BoolPtrOutput)
 }
 
-// The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
 func (o DatabaseOutput) KmsKeyRotation() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.IntPtrOutput { return v.KmsKeyRotation }).(pulumi.IntPtrOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DatabaseOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
@@ -662,7 +616,7 @@ func (o DatabaseOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
-// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 func (o DatabaseOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }

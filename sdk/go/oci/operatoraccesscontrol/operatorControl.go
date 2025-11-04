@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-//
-// Creates an Operator Control.
+// ## Example Usage
 //
 // ## Import
 //

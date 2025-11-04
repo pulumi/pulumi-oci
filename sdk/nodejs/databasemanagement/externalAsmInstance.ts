@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the external ASM instance specified by `externalAsmInstanceId`.
+ * ## Example Usage
  *
  * ## Import
  *

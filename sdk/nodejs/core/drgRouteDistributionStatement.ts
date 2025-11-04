@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
- *
- * Adds one route distribution statement to the specified route distribution.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -384,9 +384,7 @@ class Channel(pulumi.CustomResource):
                  target: Optional[pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a Channel to establish replication from a source to a target.
+        ## Example Usage
 
         ## Import
 
@@ -414,9 +412,7 @@ class Channel(pulumi.CustomResource):
                  args: ChannelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a Channel to establish replication from a source to a target.
+        ## Example Usage
 
         ## Import
 

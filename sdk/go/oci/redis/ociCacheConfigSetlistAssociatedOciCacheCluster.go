@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oci Cache Config Setlist Associated Oci Cache Cluster resource in Oracle Cloud Infrastructure Redis service.
-//
-// Gets a list of associated Oracle Cloud Infrastructure Cache clusters for an Oracle Cloud Infrastructure Cache Config Set.
-//
 // ## Example Usage
 //
 // ```go

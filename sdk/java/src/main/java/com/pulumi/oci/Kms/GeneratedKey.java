@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
- * 
- * Generates a key that you can use to encrypt or decrypt data.
- * 
  * ## Example Usage
  * 
  * <pre>

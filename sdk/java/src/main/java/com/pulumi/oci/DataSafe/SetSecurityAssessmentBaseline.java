@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Set Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type &#39;SAVED&#39;.
- * 
  * ## Example Usage
  * 
  * <pre>

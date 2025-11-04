@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
-//
-// Creates a new notebook session.
-//
 // ## Example Usage
 //
 // ```go

@@ -38,8 +38,6 @@ if not MYPY:
         metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
-
-        <<<<<<< ours
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgsDict']]]]
@@ -60,8 +58,6 @@ class ScheduleResourceArgs:
         """
         :param pulumi.Input[_builtins.str] id: (Updatable) This is the resource OCID.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
-               
-               <<<<<<< ours
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]] parameters: (Updatable) This is the user input parameters to use when acting on the resource.
                
@@ -90,8 +86,6 @@ class ScheduleResourceArgs:
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
-
-        <<<<<<< ours
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         return pulumi.get(self, "metadata")
@@ -290,7 +284,6 @@ if not MYPY:
         value: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) This is the HTTP request header value.
-        =======
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
 elif False:
@@ -304,7 +297,6 @@ class ScheduleResourceParameterArgs:
         """
         :param pulumi.Input[_builtins.str] parameter_type: (Updatable) This is the parameter type on which the input parameter is defined
         :param pulumi.Input[_builtins.str] value: (Updatable) This is the HTTP request header value.
-               =======
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         pulumi.set(__self__, "parameter_type", parameter_type)
@@ -328,7 +320,6 @@ class ScheduleResourceParameterArgs:
     def value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) This is the HTTP request header value.
-        =======
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         return pulumi.get(self, "value")

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new target-alert policy association to track a alert policy applied on target.
- *
  * ## Example Usage
  *
  * ## Import

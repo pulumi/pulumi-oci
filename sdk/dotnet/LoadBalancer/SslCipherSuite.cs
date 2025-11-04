@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
-    /// This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
-    /// 
-    /// Creates a custom SSL cipher suite.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -17,18 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vtap resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a virtual test access point (VTAP) in the specified compartment.
- * 
- * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
- * For more information about compartments and access control, see
- * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
- * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
- * 
- * You may optionally specify a *display name* for the VTAP, otherwise a default is provided.
- * It does not have to be unique, and you can change it.
- * 
  * ## Example Usage
  * 
  * <pre>

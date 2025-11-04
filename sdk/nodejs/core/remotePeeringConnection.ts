@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a new remote peering connection (RPC) for the specified DRG.
- *
  * ## Example Usage
  *
  * ```typescript

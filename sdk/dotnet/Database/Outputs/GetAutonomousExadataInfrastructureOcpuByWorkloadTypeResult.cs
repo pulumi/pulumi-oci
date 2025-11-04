@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult
     {
         /// <summary>
-        /// The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+        /// The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
         /// </summary>
         public readonly double Adw;
         /// <summary>
-        /// The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+        /// The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
         /// </summary>
         public readonly double Atp;
 

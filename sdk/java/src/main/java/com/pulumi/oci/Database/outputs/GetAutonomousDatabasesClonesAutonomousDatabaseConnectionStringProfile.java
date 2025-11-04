@@ -42,7 +42,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
      */
     private String sessionMode;
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     private String syntaxFormat;
@@ -101,7 +101,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         return this.sessionMode;
     }
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     public String syntaxFormat() {

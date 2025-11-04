@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
- * 
- * Creates a new view in the specified compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -56,7 +56,7 @@ export interface GetExternalDatabaseConnectorResult {
      */
     readonly connectionStatus: string;
     /**
-     * The Oracle Database connection string.
+     * The Oracle AI Database connection string.
      */
     readonly connectionStrings: outputs.Database.GetExternalDatabaseConnectorConnectionString[];
     /**

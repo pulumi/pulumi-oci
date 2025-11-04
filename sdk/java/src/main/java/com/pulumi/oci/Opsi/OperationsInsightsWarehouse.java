@@ -16,12 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
- * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the &#39;opsi-warehouse-type&#39;
- * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -6,15 +6,48 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetEndpointsEndpointCollectionItemContentModerationConfig {
+    /**
+     * @return Whether to enable the content moderation feature.
+     * 
+     */
     private Boolean isEnabled;
+    /**
+     * @return Enum for the modes of operation for inference protection.
+     * 
+     */
+    private String mode;
+    /**
+     * @return The OCID of the model used for the feature.
+     * 
+     */
+    private String modelId;
 
     private GetEndpointsEndpointCollectionItemContentModerationConfig() {}
+    /**
+     * @return Whether to enable the content moderation feature.
+     * 
+     */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return Enum for the modes of operation for inference protection.
+     * 
+     */
+    public String mode() {
+        return this.mode;
+    }
+    /**
+     * @return The OCID of the model used for the feature.
+     * 
+     */
+    public String modelId() {
+        return this.modelId;
     }
 
     public static Builder builder() {
@@ -27,10 +60,14 @@ public final class GetEndpointsEndpointCollectionItemContentModerationConfig {
     @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
+        private String mode;
+        private String modelId;
         public Builder() {}
         public Builder(GetEndpointsEndpointCollectionItemContentModerationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
+    	      this.mode = defaults.mode;
+    	      this.modelId = defaults.modelId;
         }
 
         @CustomType.Setter
@@ -41,9 +78,27 @@ public final class GetEndpointsEndpointCollectionItemContentModerationConfig {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
+        public Builder mode(String mode) {
+            if (mode == null) {
+              throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItemContentModerationConfig", "mode");
+            }
+            this.mode = mode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelId(String modelId) {
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItemContentModerationConfig", "modelId");
+            }
+            this.modelId = modelId;
+            return this;
+        }
         public GetEndpointsEndpointCollectionItemContentModerationConfig build() {
             final var _resultValue = new GetEndpointsEndpointCollectionItemContentModerationConfig();
             _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            _resultValue.modelId = modelId;
             return _resultValue;
         }
     }

@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int> BlockStorageSizeInGbs { get; set; } = null!;
 
         /// <summary>
+        /// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        [Input("blockStorageSizeInGbsParameterized")]
+        public Input<string>? BlockStorageSizeInGbsParameterized { get; set; }
+
+        /// <summary>
         /// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         [Input("shapeConfigDetails")]

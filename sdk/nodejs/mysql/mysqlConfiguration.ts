@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
- *
- * Creates a new Configuration.
- *
  * ## Example Usage
  *
  * ```typescript

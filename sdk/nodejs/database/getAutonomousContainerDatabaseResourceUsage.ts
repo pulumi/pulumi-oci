@@ -49,7 +49,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
      */
     readonly autonomousContainerDatabaseVmUsages: outputs.Database.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage[];
     /**
-     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+     * CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
      */
     readonly availableCpus: number;
     /**
@@ -73,7 +73,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
      */
     readonly largestProvisionableAutonomousDatabaseInCpus: number;
     /**
-     * Valid list of provisionable CPUs for Autonomous Database.
+     * Valid list of provisionable CPUs for Autonomous AI Database.
      */
     readonly provisionableCpuses: number[];
     /**

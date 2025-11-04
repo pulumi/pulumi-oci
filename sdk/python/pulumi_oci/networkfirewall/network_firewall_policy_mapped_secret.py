@@ -273,10 +273,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                  version_number: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Mapped Secret for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -322,10 +318,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                  args: NetworkFirewallPolicyMappedSecretArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Mapped Secret for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

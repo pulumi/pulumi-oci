@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
-//
-// Adds one static route rule to the specified DRG route table.
-//
 // ## Example Usage
 //
 // ```go

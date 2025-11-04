@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
-    /// waits before marking the reboot operation as failed.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
-    /// This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-    /// 
-    /// Update advanced feature configurations for the Fleet.
-    /// Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -30,13 +25,13 @@ namespace Pulumi.Oci.Jms
     ///         FleetId = testFleet.Id,
     ///         AdvancedUsageTracking = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationAdvancedUsageTrackingIsEnabled,
+    ///             IsEnabled = true,
     ///         },
     ///         AnalyticBucketName = testBucket.Name,
-    ///         AnalyticNamespace = fleetAdvancedFeatureConfigurationAnalyticNamespace,
+    ///         AnalyticNamespace = "example-bucket-namespace",
     ///         CryptoEventAnalysis = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationCryptoEventAnalysisIsEnabled,
+    ///             IsEnabled = true,
     ///             SummarizedEventsLog = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs
     ///             {
     ///                 LogGroupId = testLogGroup.Id,
@@ -45,65 +40,68 @@ namespace Pulumi.Oci.Jms
     ///         },
     ///         JavaMigrationAnalysis = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationJavaMigrationAnalysisIsEnabled,
+    ///             IsEnabled = true,
     ///         },
     ///         JfrRecording = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationJfrRecordingArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationJfrRecordingIsEnabled,
+    ///             IsEnabled = true,
     ///         },
     ///         Lcm = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationLcmIsEnabled,
+    ///             IsEnabled = true,
     ///             PostInstallationActions = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs
     ///             {
-    ///                 AddLoggingHandler = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsAddLoggingHandler,
-    ///                 DisabledTlsVersions = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsDisabledTlsVersions,
-    ///                 GlobalLoggingLevel = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsGlobalLoggingLevel,
+    ///                 AddLoggingHandler = false,
+    ///                 DisabledTlsVersions = new[]
+    ///                 {
+    ///                     "TLS_1_0",
+    ///                 },
+    ///                 GlobalLoggingLevel = "ALL",
     ///                 MinimumKeySizeSettings = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs
     ///                 {
     ///                     Certpaths = new[]
     ///                     {
     ///                         new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs
     ///                         {
-    ///                             KeySize = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathKeySize,
-    ///                             Name = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathName,
+    ///                             KeySize = 2048,
+    ///                             Name = "RSA",
     ///                         },
     ///                     },
     ///                     Jars = new[]
     ///                     {
     ///                         new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs
     ///                         {
-    ///                             KeySize = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarKeySize,
-    ///                             Name = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarName,
+    ///                             KeySize = 2048,
+    ///                             Name = "RSA",
     ///                         },
     ///                     },
     ///                     Tls = new[]
     ///                     {
     ///                         new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs
     ///                         {
-    ///                             KeySize = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsKeySize,
-    ///                             Name = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsName,
+    ///                             KeySize = 2048,
+    ///                             Name = "RSA",
     ///                         },
     ///                     },
     ///                 },
     ///                 Proxies = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs
     ///                 {
-    ///                     FtpProxyHost = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyHost,
-    ///                     FtpProxyPort = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyPort,
-    ///                     HttpProxyHost = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyHost,
-    ///                     HttpProxyPort = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyPort,
-    ///                     HttpsProxyHost = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyHost,
-    ///                     HttpsProxyPort = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyPort,
-    ///                     SocksProxyHost = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyHost,
-    ///                     SocksProxyPort = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyPort,
-    ///                     UseSystemProxies = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesUseSystemProxies,
+    ///                     FtpProxyHost = "example-ftp-proxy-host",
+    ///                     FtpProxyPort = 10,
+    ///                     HttpProxyHost = "example-http-proxy-host",
+    ///                     HttpProxyPort = 10,
+    ///                     HttpsProxyHost = "example-https-proxy-host",
+    ///                     HttpsProxyPort = 10,
+    ///                     SocksProxyHost = "example-socks-proxy-host",
+    ///                     SocksProxyPort = 10,
+    ///                     UseSystemProxies = false,
     ///                 },
-    ///                 ShouldReplaceCertificatesOperatingSystem = fleetAdvancedFeatureConfigurationLcmPostInstallationActionsShouldReplaceCertificatesOperatingSystem,
+    ///                 ShouldReplaceCertificatesOperatingSystem = false,
     ///             },
     ///         },
     ///         PerformanceTuningAnalysis = new Oci.Jms.Inputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs
     ///         {
-    ///             IsEnabled = fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisIsEnabled,
+    ///             IsEnabled = true,
     ///         },
     ///     });
     /// 

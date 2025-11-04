@@ -475,10 +475,6 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                  is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external MySQL connector resource.
-
         ## Example Usage
 
         ```python
@@ -526,10 +522,6 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                  args: ExternalMySqlDatabaseConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external MySQL connector resource.
-
         ## Example Usage
 
         ```python

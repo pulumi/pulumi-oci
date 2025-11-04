@@ -20,10 +20,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Audit Profile Management resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile by fetching the Audit profile.
- * 
  * ## Example Usage
  * 
  * <pre>

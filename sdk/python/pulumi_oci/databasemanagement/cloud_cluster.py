@@ -477,9 +477,7 @@ class CloudCluster(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud cluster specified by `cloudClusterId`.
+        ## Example Usage
 
         ## Import
 
@@ -507,9 +505,7 @@ class CloudCluster(pulumi.CustomResource):
                  args: CloudClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud cluster specified by `cloudClusterId`.
+        ## Example Usage
 
         ## Import
 

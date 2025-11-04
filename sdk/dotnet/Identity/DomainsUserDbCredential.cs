@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a user's database (DB) credentials.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

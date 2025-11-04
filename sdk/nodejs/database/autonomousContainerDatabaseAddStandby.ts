@@ -7,41 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
- *
- * Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
- * [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
- *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousContainerDatabaseAddStandby = new oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby", {
- *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
- *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds,
- *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled,
- *     peerAutonomousContainerDatabaseBackupConfig: {
- *         backupDestinationDetails: [{
- *             type: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
- *             dbrsPolicyId: testPolicy.id,
- *             id: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
- *             internetProxy: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
- *             vpcPassword: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
- *             vpcUser: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
- *         }],
- *         recoveryWindowInDays: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
- *     },
- *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
- *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName,
- *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
- *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
- *     peerDbUniqueName: autonomousContainerDatabaseAddStandbyPeerDbUniqueName,
- *     protectionMode: autonomousContainerDatabaseAddStandbyProtectionMode,
- *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays,
- * });
- * ```
  *
  * ## Import
  *
@@ -84,7 +50,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
-     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+     * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
     declare public /*out*/ readonly autonomousExadataInfrastructureId: pulumi.Output<string>;
     /**
@@ -112,7 +78,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
@@ -128,12 +94,12 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly dbName: pulumi.Output<string>;
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     declare public /*out*/ readonly dbSplitThreshold: pulumi.Output<number>;
     declare public /*out*/ readonly dbUniqueName: pulumi.Output<string>;
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * Oracle AI Database version of the Autonomous Container Database.
      */
     declare public /*out*/ readonly dbVersion: pulumi.Output<string>;
     /**
@@ -145,7 +111,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
-     * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
     declare public /*out*/ readonly distributionAffinity: pulumi.Output<string>;
     /**
@@ -169,7 +135,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public readonly isAutomaticFailoverEnabled: pulumi.Output<boolean>;
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     declare public /*out*/ readonly isDataGuardEnabled: pulumi.Output<boolean>;
     /**
@@ -197,11 +163,11 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly kmsKeyId: pulumi.Output<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      */
     declare public /*out*/ readonly largestProvisionableAutonomousDatabaseInCpus: pulumi.Output<number>;
     /**
@@ -221,7 +187,11 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    declare public /*out*/ readonly memoryPerComputeUnitInGbs: pulumi.Output<number>;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     declare public /*out*/ readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
@@ -273,7 +243,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public readonly protectionMode: pulumi.Output<string>;
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      */
     declare public /*out*/ readonly provisionableCpuses: pulumi.Output<number[]>;
     /**
@@ -281,7 +251,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly provisionedCpus: pulumi.Output<number>;
     /**
-     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     declare public /*out*/ readonly reclaimableCpus: pulumi.Output<number>;
     /**
@@ -289,7 +259,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
@@ -386,6 +356,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["listOneOffPatches"] = state?.listOneOffPatches;
             resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["memoryPerComputeUnitInGbs"] = state?.memoryPerComputeUnitInGbs;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
             resourceInputs["netServicesArchitecture"] = state?.netServicesArchitecture;
             resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
@@ -463,6 +434,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listOneOffPatches"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
+            resourceInputs["memoryPerComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["netServicesArchitecture"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
@@ -498,7 +470,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     autonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
-     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+     * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
     autonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -526,7 +498,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     computeModel?: pulumi.Input<string>;
     /**
@@ -542,12 +514,12 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     dbName?: pulumi.Input<string>;
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
     /**
-     * Oracle Database version of the Autonomous Container Database.
+     * Oracle AI Database version of the Autonomous Container Database.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -559,7 +531,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
     /**
@@ -583,7 +555,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -611,11 +583,11 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
-     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      */
     largestProvisionableAutonomousDatabaseInCpus?: pulumi.Input<number>;
     /**
@@ -635,7 +607,11 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    memoryPerComputeUnitInGbs?: pulumi.Input<number>;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -687,7 +663,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     protectionMode?: pulumi.Input<string>;
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      */
     provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
     /**
@@ -695,7 +671,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     provisionedCpus?: pulumi.Input<number>;
     /**
-     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     reclaimableCpus?: pulumi.Input<number>;
     /**
@@ -703,7 +679,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     reservedCpus?: pulumi.Input<number>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     role?: pulumi.Input<string>;
     /**

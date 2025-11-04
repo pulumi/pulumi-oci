@@ -395,10 +395,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-        Create a new EKMS private endpoint used to connect to external key manager system
-
         ## Example Usage
 
         ```python
@@ -450,10 +446,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
                  args: EkmsPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-        Create a new EKMS private endpoint used to connect to external key manager system
-
         ## Example Usage
 
         ```python

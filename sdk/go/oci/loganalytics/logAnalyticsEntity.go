@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// Create a new log analytics entity.
-//
 // ## Example Usage
 //
 // ```go

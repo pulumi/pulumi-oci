@@ -41,14 +41,14 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
     }
 
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      * 
      */
     @Import(name="isDedicated")
     private @Nullable Output<Boolean> isDedicated;
 
     /**
-     * @return Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * @return Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      * 
      */
     public Optional<Output<Boolean>> isDedicated() {
@@ -56,7 +56,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
     }
 
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      * :
      * 
@@ -65,7 +65,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
     private @Nullable Output<Boolean> isShared;
 
     /**
-     * @return Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      * :
      * 
@@ -136,7 +136,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isDedicated Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * @param isDedicated Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isDedicated Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * @param isDedicated Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * @param isShared Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
          * 
          * :
          * 
@@ -170,7 +170,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * @param isShared Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
          * 
          * :
          * 

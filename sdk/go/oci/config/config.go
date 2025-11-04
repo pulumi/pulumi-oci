@@ -27,6 +27,11 @@ func GetDisableAutoRetries(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "oci:disableAutoRetries")
 }
 
+// (Optional) flags to enable Dual Stack endpoint.
+func GetDualStackEndpointEnabled(ctx *pulumi.Context) bool {
+	return config.GetBool(ctx, "oci:dualStackEndpointEnabled")
+}
+
 // (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func GetFingerprint(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:fingerprint")

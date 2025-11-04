@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Create a new stack monitoring resource task.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

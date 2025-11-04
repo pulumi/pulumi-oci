@@ -442,12 +442,6 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemDiscoveryPatchOperationArgs', 'CloudDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a cloud DB system discovery resource and initiates the discovery process.
-
-          Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
-
         ## Example Usage
 
         ## Import
@@ -476,12 +470,6 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
                  args: CloudDbSystemDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a cloud DB system discovery resource and initiates the discovery process.
-
-          Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
-
         ## Example Usage
 
         ## Import

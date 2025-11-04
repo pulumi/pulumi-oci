@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
- * 
- * Creates a new RefreshActivity.
- * 
  * ## Example Usage
  * 
  * ## Import

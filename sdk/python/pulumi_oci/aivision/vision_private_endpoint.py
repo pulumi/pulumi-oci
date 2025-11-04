@@ -332,10 +332,6 @@ class VisionPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a new visionPrivateEndpoint.
-
         ## Example Usage
 
         ```python
@@ -379,10 +375,6 @@ class VisionPrivateEndpoint(pulumi.CustomResource):
                  args: VisionPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a new visionPrivateEndpoint.
-
         ## Example Usage
 
         ```python

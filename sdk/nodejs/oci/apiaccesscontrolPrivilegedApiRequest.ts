@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
- *
- * Creates a PrivilegedApiRequest.
- *
  * ## Example Usage
  *
  * ```typescript

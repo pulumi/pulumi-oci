@@ -624,9 +624,7 @@ class AuditTrail(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates one or more attributes of the specified audit trail.
+        ## Example Usage
 
         ## Import
 
@@ -659,9 +657,7 @@ class AuditTrail(pulumi.CustomResource):
                  args: AuditTrailArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates one or more attributes of the specified audit trail.
+        ## Example Usage
 
         ## Import
 

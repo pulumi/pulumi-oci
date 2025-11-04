@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
- *
- * Creates a new function.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -25,6 +21,14 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     detachedModeTimeoutInSeconds: functionDetachedModeTimeoutInSeconds,
+ *     failureDestination: {
+ *         kind: functionFailureDestinationKind,
+ *         channelId: testChannel.id,
+ *         queueId: testQueue.id,
+ *         streamId: testStream.id,
+ *         topicId: testNotificationTopic.id,
+ *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -37,6 +41,13 @@ import * as utilities from "../utilities";
  *     sourceDetails: {
  *         pbfListingId: testPbfListing.id,
  *         sourceType: functionSourceDetailsSourceType,
+ *     },
+ *     successDestination: {
+ *         kind: functionSuccessDestinationKind,
+ *         channelId: testChannel.id,
+ *         queueId: testQueue.id,
+ *         streamId: testStream.id,
+ *         topicId: testNotificationTopic.id,
  *     },
  *     timeoutInSeconds: functionTimeoutInSeconds,
  *     traceConfig: {
@@ -100,9 +111,17 @@ export class Function extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Timeout for detached function invocations. Value in seconds.
+     */
+    declare public readonly detachedModeTimeoutInSeconds: pulumi.Output<number>;
+    /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+     */
+    declare public readonly failureDestination: pulumi.Output<outputs.Functions.FunctionFailureDestination>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -140,6 +159,10 @@ export class Function extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+     */
+    declare public readonly successDestination: pulumi.Output<outputs.Functions.FunctionSuccessDestination>;
+    /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -173,7 +196,9 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["config"] = state?.config;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detachedModeTimeoutInSeconds"] = state?.detachedModeTimeoutInSeconds;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["failureDestination"] = state?.failureDestination;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["image"] = state?.image;
             resourceInputs["imageDigest"] = state?.imageDigest;
@@ -183,6 +208,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["shape"] = state?.shape;
             resourceInputs["sourceDetails"] = state?.sourceDetails;
             resourceInputs["state"] = state?.state;
+            resourceInputs["successDestination"] = state?.successDestination;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
@@ -201,13 +227,16 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["applicationId"] = args?.applicationId;
             resourceInputs["config"] = args?.config;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["detachedModeTimeoutInSeconds"] = args?.detachedModeTimeoutInSeconds;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["failureDestination"] = args?.failureDestination;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["image"] = args?.image;
             resourceInputs["imageDigest"] = args?.imageDigest;
             resourceInputs["memoryInMbs"] = args?.memoryInMbs;
             resourceInputs["provisionedConcurrencyConfig"] = args?.provisionedConcurrencyConfig;
             resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["successDestination"] = args?.successDestination;
             resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
             resourceInputs["traceConfig"] = args?.traceConfig;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -245,9 +274,17 @@ export interface FunctionState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Timeout for detached function invocations. Value in seconds.
+     */
+    detachedModeTimeoutInSeconds?: pulumi.Input<number>;
+    /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+     */
+    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -285,6 +322,10 @@ export interface FunctionState {
      */
     state?: pulumi.Input<string>;
     /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+     */
+    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination>;
+    /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
     timeCreated?: pulumi.Input<string>;
@@ -321,9 +362,17 @@ export interface FunctionArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Timeout for detached function invocations. Value in seconds.
+     */
+    detachedModeTimeoutInSeconds?: pulumi.Input<number>;
+    /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+     */
+    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -348,6 +397,10 @@ export interface FunctionArgs {
      * The source details for the Function. The function can be created from various sources.
      */
     sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails>;
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+     */
+    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */

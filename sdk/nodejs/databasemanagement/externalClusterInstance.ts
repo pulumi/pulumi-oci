@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the external cluster instance specified by `externalClusterInstanceId`.
+ * ## Example Usage
  *
  * ## Import
  *

@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oci Cache User Get Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
- * 
- * Gets a list of associated redis cluster for an Oracle Cloud Infrastructure cache user.
- * 
  * ## Example Usage
  * 
  * <pre>

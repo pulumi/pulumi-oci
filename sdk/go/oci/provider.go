@@ -76,6 +76,8 @@ type providerArgs struct {
 	// (Optional) Disable automatic retries for retriable errors.
 	// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 	DisableAutoRetries *bool `pulumi:"disableAutoRetries"`
+	// (Optional) flags to enable Dual Stack endpoint.
+	DualStackEndpointEnabled *bool `pulumi:"dualStackEndpointEnabled"`
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint       *string  `pulumi:"fingerprint"`
 	IgnoreDefinedTags []string `pulumi:"ignoreDefinedTags"`
@@ -110,6 +112,8 @@ type ProviderArgs struct {
 	// (Optional) Disable automatic retries for retriable errors.
 	// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 	DisableAutoRetries pulumi.BoolPtrInput
+	// (Optional) flags to enable Dual Stack endpoint.
+	DualStackEndpointEnabled pulumi.BoolPtrInput
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint       pulumi.StringPtrInput
 	IgnoreDefinedTags pulumi.StringArrayInput

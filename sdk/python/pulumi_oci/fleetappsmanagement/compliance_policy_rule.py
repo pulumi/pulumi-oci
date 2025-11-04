@@ -446,10 +446,6 @@ class CompliancePolicyRule(pulumi.CustomResource):
                  severities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Compliance Policy Rule resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a compliance policy rule.
-
         ## Example Usage
 
         ```python
@@ -511,10 +507,6 @@ class CompliancePolicyRule(pulumi.CustomResource):
                  args: CompliancePolicyRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compliance Policy Rule resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a compliance policy rule.
-
         ## Example Usage
 
         ```python

@@ -368,15 +368,7 @@ class KeyVersion(pulumi.CustomResource):
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a new [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
-        material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total number
-        of requests across all  management write operations. Key Management might throttle this call to reject an
-        otherwise valid request when the total rate of management write operations exceeds 10 requests per second
-        for a given tenancy.
+        ## Example Usage
 
         ## Import
 
@@ -403,15 +395,7 @@ class KeyVersion(pulumi.CustomResource):
                  args: KeyVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a new [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
-        material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total number
-        of requests across all  management write operations. Key Management might throttle this call to reject an
-        otherwise valid request when the total rate of management write operations exceeds 10 requests per second
-        for a given tenancy.
+        ## Example Usage
 
         ## Import
 

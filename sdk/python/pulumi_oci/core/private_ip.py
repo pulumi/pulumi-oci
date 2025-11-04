@@ -19,11 +19,13 @@ __all__ = ['PrivateIpArgs', 'PrivateIp']
 @pulumi.input_type
 class PrivateIpArgs:
     def __init__(__self__, *,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
                  lifetime: Optional[pulumi.Input[_builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -31,6 +33,7 @@ class PrivateIpArgs:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateIp resource.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -40,7 +43,8 @@ class PrivateIpArgs:
                
                Example: `bminstance1`
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        :param pulumi.Input[_builtins.str] ipv4subnet_cidr_at_creation: Any one of the IPv4 CIDRs allocated to the subnet.
+        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPs:
                * Ephemeral
                * Reserved
         :param pulumi.Input[_builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
@@ -54,6 +58,8 @@ class PrivateIpArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if cidr_prefix_length is not None:
+            pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -64,6 +70,8 @@ class PrivateIpArgs:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv4subnet_cidr_at_creation is not None:
+            pulumi.set(__self__, "ipv4subnet_cidr_at_creation", ipv4subnet_cidr_at_creation)
         if lifetime is not None:
             pulumi.set(__self__, "lifetime", lifetime)
         if route_table_id is not None:
@@ -74,6 +82,18 @@ class PrivateIpArgs:
             pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
             pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        """
+        return pulumi.get(self, "cidr_prefix_length")
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -140,10 +160,22 @@ class PrivateIpArgs:
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="ipv4subnetCidrAtCreation")
+    def ipv4subnet_cidr_at_creation(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Any one of the IPv4 CIDRs allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv4subnet_cidr_at_creation")
+
+    @ipv4subnet_cidr_at_creation.setter
+    def ipv4subnet_cidr_at_creation(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv4subnet_cidr_at_creation", value)
+
+    @_builtins.property
     @pulumi.getter
     def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        (Updatable) Lifetime of the IP address. There are two types of IPs:
         * Ephemeral
         * Reserved
         """
@@ -212,6 +244,7 @@ class PrivateIpArgs:
 class _PrivateIpState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -219,6 +252,7 @@ class _PrivateIpState:
                  hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
                  is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_reserved: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifetime: Optional[pulumi.Input[_builtins.str]] = None,
@@ -230,6 +264,7 @@ class _PrivateIpState:
         """
         Input properties used for looking up and filtering PrivateIp resources.
         :param pulumi.Input[_builtins.str] availability_domain: The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -241,8 +276,9 @@ class _PrivateIpState:
                Example: `bminstance1`
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         :param pulumi.Input[_builtins.str] ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        :param pulumi.Input[_builtins.str] ipv4subnet_cidr_at_creation: Any one of the IPv4 CIDRs allocated to the subnet.
         :param pulumi.Input[_builtins.bool] is_primary: Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPs:
                * Ephemeral
                * Reserved
         :param pulumi.Input[_builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
@@ -259,6 +295,8 @@ class _PrivateIpState:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cidr_prefix_length is not None:
+            pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -273,6 +311,8 @@ class _PrivateIpState:
             pulumi.set(__self__, "ip_address", ip_address)
         if ip_state is not None:
             pulumi.set(__self__, "ip_state", ip_state)
+        if ipv4subnet_cidr_at_creation is not None:
+            pulumi.set(__self__, "ipv4subnet_cidr_at_creation", ipv4subnet_cidr_at_creation)
         if is_primary is not None:
             pulumi.set(__self__, "is_primary", is_primary)
         if is_reserved is not None:
@@ -301,6 +341,18 @@ class _PrivateIpState:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        """
+        return pulumi.get(self, "cidr_prefix_length")
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -391,6 +443,18 @@ class _PrivateIpState:
         pulumi.set(self, "ip_state", value)
 
     @_builtins.property
+    @pulumi.getter(name="ipv4subnetCidrAtCreation")
+    def ipv4subnet_cidr_at_creation(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Any one of the IPv4 CIDRs allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv4subnet_cidr_at_creation")
+
+    @ipv4subnet_cidr_at_creation.setter
+    def ipv4subnet_cidr_at_creation(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv4subnet_cidr_at_creation", value)
+
+    @_builtins.property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -415,7 +479,7 @@ class _PrivateIpState:
     @pulumi.getter
     def lifetime(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        (Updatable) Lifetime of the IP address. There are two types of IPs:
         * Ephemeral
         * Reserved
         """
@@ -498,11 +562,13 @@ class PrivateIp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
                  lifetime: Optional[pulumi.Input[_builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -510,12 +576,6 @@ class PrivateIp(pulumi.CustomResource):
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a secondary private IP for the specified VNIC.
-        For more information about secondary private IPs, see
-        [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-
         ## Example Usage
 
         ```python
@@ -523,6 +583,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
+            cidr_prefix_length=private_ip_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -532,6 +593,7 @@ class PrivateIp(pulumi.CustomResource):
             },
             hostname_label=private_ip_hostname_label,
             ip_address=private_ip_ip_address,
+            ipv4subnet_cidr_at_creation=private_ip_ipv4subnet_cidr_at_creation,
             lifetime=private_ip_lifetime,
             route_table_id=test_route_table["id"],
             subnet_id=test_subnet["id"],
@@ -549,6 +611,7 @@ class PrivateIp(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -558,7 +621,8 @@ class PrivateIp(pulumi.CustomResource):
                
                Example: `bminstance1`
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        :param pulumi.Input[_builtins.str] ipv4subnet_cidr_at_creation: Any one of the IPv4 CIDRs allocated to the subnet.
+        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPs:
                * Ephemeral
                * Reserved
         :param pulumi.Input[_builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
@@ -579,12 +643,6 @@ class PrivateIp(pulumi.CustomResource):
                  args: Optional[PrivateIpArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a secondary private IP for the specified VNIC.
-        For more information about secondary private IPs, see
-        [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-
         ## Example Usage
 
         ```python
@@ -592,6 +650,7 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_private_ip = oci.core.PrivateIp("test_private_ip",
+            cidr_prefix_length=private_ip_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -601,6 +660,7 @@ class PrivateIp(pulumi.CustomResource):
             },
             hostname_label=private_ip_hostname_label,
             ip_address=private_ip_ip_address,
+            ipv4subnet_cidr_at_creation=private_ip_ipv4subnet_cidr_at_creation,
             lifetime=private_ip_lifetime,
             route_table_id=test_route_table["id"],
             subnet_id=test_subnet["id"],
@@ -631,11 +691,13 @@ class PrivateIp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
                  lifetime: Optional[pulumi.Input[_builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -650,11 +712,13 @@ class PrivateIp(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PrivateIpArgs.__new__(PrivateIpArgs)
 
+            __props__.__dict__["cidr_prefix_length"] = cidr_prefix_length
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
+            __props__.__dict__["ipv4subnet_cidr_at_creation"] = ipv4subnet_cidr_at_creation
             __props__.__dict__["lifetime"] = lifetime
             __props__.__dict__["route_table_id"] = route_table_id
             __props__.__dict__["subnet_id"] = subnet_id
@@ -677,6 +741,7 @@ class PrivateIp(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+            cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -684,6 +749,7 @@ class PrivateIp(pulumi.CustomResource):
             hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
             ip_address: Optional[pulumi.Input[_builtins.str]] = None,
             ip_state: Optional[pulumi.Input[_builtins.str]] = None,
+            ipv4subnet_cidr_at_creation: Optional[pulumi.Input[_builtins.str]] = None,
             is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
             is_reserved: Optional[pulumi.Input[_builtins.bool]] = None,
             lifetime: Optional[pulumi.Input[_builtins.str]] = None,
@@ -700,6 +766,7 @@ class PrivateIp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -711,8 +778,9 @@ class PrivateIp(pulumi.CustomResource):
                Example: `bminstance1`
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         :param pulumi.Input[_builtins.str] ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        :param pulumi.Input[_builtins.str] ipv4subnet_cidr_at_creation: Any one of the IPv4 CIDRs allocated to the subnet.
         :param pulumi.Input[_builtins.bool] is_primary: Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        :param pulumi.Input[_builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPs:
                * Ephemeral
                * Reserved
         :param pulumi.Input[_builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
@@ -732,6 +800,7 @@ class PrivateIp(pulumi.CustomResource):
         __props__ = _PrivateIpState.__new__(_PrivateIpState)
 
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["cidr_prefix_length"] = cidr_prefix_length
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -739,6 +808,7 @@ class PrivateIp(pulumi.CustomResource):
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["ip_address"] = ip_address
         __props__.__dict__["ip_state"] = ip_state
+        __props__.__dict__["ipv4subnet_cidr_at_creation"] = ipv4subnet_cidr_at_creation
         __props__.__dict__["is_primary"] = is_primary
         __props__.__dict__["is_reserved"] = is_reserved
         __props__.__dict__["lifetime"] = lifetime
@@ -756,6 +826,14 @@ class PrivateIp(pulumi.CustomResource):
         The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> pulumi.Output[_builtins.int]:
+        """
+        An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        """
+        return pulumi.get(self, "cidr_prefix_length")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -818,6 +896,14 @@ class PrivateIp(pulumi.CustomResource):
         return pulumi.get(self, "ip_state")
 
     @_builtins.property
+    @pulumi.getter(name="ipv4subnetCidrAtCreation")
+    def ipv4subnet_cidr_at_creation(self) -> pulumi.Output[_builtins.str]:
+        """
+        Any one of the IPv4 CIDRs allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv4subnet_cidr_at_creation")
+
+    @_builtins.property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -834,7 +920,7 @@ class PrivateIp(pulumi.CustomResource):
     @pulumi.getter
     def lifetime(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        (Updatable) Lifetime of the IP address. There are two types of IPs:
         * Ephemeral
         * Reserved
         """

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Removes a managed instance from the specified managed instance group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

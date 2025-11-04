@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Creates a cloud DB system and its related resources.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
     /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    private String backupRetentionPolicyOnTerminate;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
@@ -22,12 +27,17 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
      */
     private String id;
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     private Boolean isRemote;
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    private Boolean isRetentionLockEnabled;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     private String remoteRegion;
@@ -40,6 +50,13 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
     private String vpcUser;
 
     private GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail() {}
+    /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
@@ -55,14 +72,21 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
         return this.id;
     }
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     public Boolean isRemote() {
         return this.isRemote;
     }
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     public String remoteRegion() {
@@ -91,9 +115,11 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private Boolean isRemote;
+        private Boolean isRetentionLockEnabled;
         private String remoteRegion;
         private String type;
         private String vpcPassword;
@@ -101,15 +127,25 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
         public Builder() {}
         public Builder(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             if (dbrsPolicyId == null) {
@@ -132,6 +168,14 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail", "isRemote");
             }
             this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
             return this;
         }
         @CustomType.Setter
@@ -168,9 +212,11 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
         }
         public GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;

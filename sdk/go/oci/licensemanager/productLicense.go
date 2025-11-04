@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-//
-// Creates a new product license.
-//
 // ## Example Usage
 //
 // ```go

@@ -25,10 +25,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
- * 
- * Creates a new Exadata Fleet Update Cycle.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -64,6 +60,16 @@ import javax.annotation.Nullable;
  *             .fsuCollectionId(testFsuCollection.id())
  *             .goalVersionDetails(FsuCycleGoalVersionDetailsArgs.builder()
  *                 .type(fsuCycleGoalVersionDetailsType)
+ *                 .components(FsuCycleGoalVersionDetailsComponentArgs.builder()
+ *                     .componentType(fsuCycleGoalVersionDetailsComponentsComponentType)
+ *                     .goalVersionDetails(FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs.builder()
+ *                         .goalSoftwareImageId(testImage.id())
+ *                         .goalType(fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalType)
+ *                         .goalVersion(fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalVersion)
+ *                         .build())
+ *                     .homePolicy(fsuCycleGoalVersionDetailsComponentsHomePolicy)
+ *                     .newHomePrefix(fsuCycleGoalVersionDetailsComponentsNewHomePrefix)
+ *                     .build())
  *                 .homePolicy(fsuCycleGoalVersionDetailsHomePolicy)
  *                 .newHomePrefix(fsuCycleGoalVersionDetailsNewHomePrefix)
  *                 .softwareImageId(testImage.id())
@@ -96,8 +102,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .upgradeDetails(FsuCycleUpgradeDetailsArgs.builder()
  *                 .collectionType(fsuCycleUpgradeDetailsCollectionType)
+ *                 .isIgnorePostUpgradeErrors(fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors)
+ *                 .isIgnorePrerequisites(fsuCycleUpgradeDetailsIsIgnorePrerequisites)
  *                 .isRecompileInvalidObjects(fsuCycleUpgradeDetailsIsRecompileInvalidObjects)
  *                 .isTimeZoneUpgrade(fsuCycleUpgradeDetailsIsTimeZoneUpgrade)
+ *                 .maxDrainTimeoutInSeconds(fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds)
  *                 .build())
  *             .build());
  * 
@@ -160,14 +169,14 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.collectionType;
     }
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -202,28 +211,28 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.diagnosticsCollection;
     }
     /**
-     * (Updatable) Exadata Fleet Update Cycle display name.
+     * (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Exadata Fleet Update Cycle display name.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * OCID identifier for the Action that is currently in execution, if applicable.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      * 
      */
     @Export(name="executingFsuActionId", refs={String.class}, tree="[0]")
     private Output<String> executingFsuActionId;
 
     /**
-     * @return OCID identifier for the Action that is currently in execution, if applicable.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      * 
      */
     public Output<String> executingFsuActionId() {
@@ -244,14 +253,14 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      * 
      */
     @Export(name="fsuCollectionId", refs={String.class}, tree="[0]")
     private Output<String> fsuCollectionId;
 
     /**
-     * @return OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      * 
      */
     public Output<String> fsuCollectionId() {
@@ -272,42 +281,42 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.goalVersionDetails;
     }
     /**
-     * (Updatable) List of patch IDs to ignore.
+     * (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     @Export(name="isIgnoreMissingPatches", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> isIgnoreMissingPatches;
 
     /**
-     * @return (Updatable) List of patch IDs to ignore.
+     * @return (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public Output<List<String>> isIgnoreMissingPatches() {
         return this.isIgnoreMissingPatches;
     }
     /**
-     * (Updatable) Ignore all patches between the source and target homes during patching.
+     * (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     @Export(name="isIgnorePatches", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIgnorePatches;
 
     /**
-     * @return (Updatable) Ignore all patches between the source and target homes during patching.
+     * @return (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public Output<Boolean> isIgnorePatches() {
         return this.isIgnorePatches;
     }
     /**
-     * (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     @Export(name="isKeepPlacement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isKeepPlacement;
 
     /**
-     * @return (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * @return (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     public Output<Boolean> isKeepPlacement() {
@@ -356,28 +365,28 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Service drain timeout specified in seconds.
+     * (Updatable) Timeout for session draining for database services specified in seconds.
      * 
      */
     @Export(name="maxDrainTimeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxDrainTimeoutInSeconds;
 
     /**
-     * @return (Updatable) Service drain timeout specified in seconds.
+     * @return (Updatable) Timeout for session draining for database services specified in seconds.
      * 
      */
     public Output<Integer> maxDrainTimeoutInSeconds() {
         return this.maxDrainTimeoutInSeconds;
     }
     /**
-     * In this array all the possible actions will be listed. The first element is the suggested Action.
+     * All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      * 
      */
     @Export(name="nextActionToExecutes", refs={List.class,FsuCycleNextActionToExecute.class}, tree="[0,1]")
     private Output<List<FsuCycleNextActionToExecute>> nextActionToExecutes;
 
     /**
-     * @return In this array all the possible actions will be listed. The first element is the suggested Action.
+     * @return All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      * 
      */
     public Output<List<FsuCycleNextActionToExecute>> nextActionToExecutes() {

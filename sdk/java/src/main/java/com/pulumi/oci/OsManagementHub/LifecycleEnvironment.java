@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
- * 
  * ## Example Usage
  * 
  * <pre>

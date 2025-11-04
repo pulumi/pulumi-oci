@@ -62,11 +62,12 @@ class GetAutonomousDbVersionsResult:
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[_builtins.str]:
         """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        The Autonomous AI Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous AI Transaction Processing database
+        * DW - indicates an Autonomous AI Lakehouse database
+        * AJD - indicates an Autonomous AI JSON Database
+        * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        * LH - indicates an Oracle Autonomous AI Lakehouse database
         """
         return pulumi.get(self, "db_workload")
 
@@ -104,7 +105,7 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported Autonomous Database versions.
+    Gets a list of supported Autonomous AI Database versions.
 
     ## Example Usage
 
@@ -118,7 +119,7 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -140,7 +141,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[_bui
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported Autonomous Database versions.
+    Gets a list of supported Autonomous AI Database versions.
 
     ## Example Usage
 
@@ -154,7 +155,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[_bui
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

@@ -88,10 +88,6 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Regenerates metadata for the specified custom software source.
-
         ## Example Usage
 
         ```python
@@ -124,10 +120,6 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
                  args: SoftwareSourceGenerateMetadataManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Regenerates metadata for the specified custom software source.
-
         ## Example Usage
 
         ```python

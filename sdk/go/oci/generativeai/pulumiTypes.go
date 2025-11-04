@@ -5877,6 +5877,10 @@ func (o DedicatedAiClusterCapacityArrayOutput) Index(i pulumi.IntInput) Dedicate
 type EndpointContentModerationConfig struct {
 	// (Updatable) Whether to enable the content moderation feature.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// (Updatable) Enum for the modes of operation for inference protection.
+	Mode *string `pulumi:"mode"`
+	// (Updatable) The OCID of the model used for the feature.
+	ModelId *string `pulumi:"modelId"`
 }
 
 // EndpointContentModerationConfigInput is an input type that accepts EndpointContentModerationConfigArgs and EndpointContentModerationConfigOutput values.
@@ -5893,6 +5897,10 @@ type EndpointContentModerationConfigInput interface {
 type EndpointContentModerationConfigArgs struct {
 	// (Updatable) Whether to enable the content moderation feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// (Updatable) Enum for the modes of operation for inference protection.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// (Updatable) The OCID of the model used for the feature.
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 }
 
 func (EndpointContentModerationConfigArgs) ElementType() reflect.Type {
@@ -5977,6 +5985,16 @@ func (o EndpointContentModerationConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v EndpointContentModerationConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Enum for the modes of operation for inference protection.
+func (o EndpointContentModerationConfigOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointContentModerationConfig) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the model used for the feature.
+func (o EndpointContentModerationConfigOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointContentModerationConfig) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
 type EndpointContentModerationConfigPtrOutput struct{ *pulumi.OutputState }
 
 func (EndpointContentModerationConfigPtrOutput) ElementType() reflect.Type {
@@ -6009,6 +6027,26 @@ func (o EndpointContentModerationConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutp
 		}
 		return &v.IsEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enum for the modes of operation for inference protection.
+func (o EndpointContentModerationConfigPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointContentModerationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the model used for the feature.
+func (o EndpointContentModerationConfigPtrOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointContentModerationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModelId
+	}).(pulumi.StringPtrOutput)
 }
 
 type ModelFineTuneDetails struct {
@@ -17789,23 +17827,30 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionArrayOutput) Index(i p
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItem struct {
 	Capacities []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string            `pulumi:"compartmentId"`
-	DefinedTags   map[string]string `pulumi:"definedTags"`
-	Description   string            `pulumi:"description"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the dedicated AI cluster.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  string            `pulumi:"displayName"`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-	Id               string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// A message describing the current state with detail that can provide actionable information.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
-	State       string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags  map[string]string `pulumi:"systemTags"`
 	TimeCreated string            `pulumi:"timeCreated"`
-	TimeUpdated string            `pulumi:"timeUpdated"`
-	Type        string            `pulumi:"type"`
-	UnitCount   int               `pulumi:"unitCount"`
-	UnitShape   string            `pulumi:"unitShape"`
+	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+	TimeUpdated string `pulumi:"timeUpdated"`
+	Type        string `pulumi:"type"`
+	// The number of dedicated units in this AI cluster.
+	UnitCount int `pulumi:"unitCount"`
+	// The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+	UnitShape string `pulumi:"unitShape"`
 }
 
 // GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput is an input type that accepts GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs and GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput values.
@@ -17822,23 +17867,30 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput interface {
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs struct {
 	Capacities GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayInput `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
-	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
-	Description   pulumi.StringInput    `pulumi:"description"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the dedicated AI cluster.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-	Id               pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state with detail that can provide actionable information.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
-	State       pulumi.StringInput    `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
 	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
-	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
-	Type        pulumi.StringInput    `pulumi:"type"`
-	UnitCount   pulumi.IntInput       `pulumi:"unitCount"`
-	UnitShape   pulumi.StringInput    `pulumi:"unitShape"`
+	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	Type        pulumi.StringInput `pulumi:"type"`
+	// The number of dedicated units in this AI cluster.
+	UnitCount pulumi.IntInput `pulumi:"unitCount"`
+	// The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+	UnitShape pulumi.StringInput `pulumi:"unitShape"`
 }
 
 func (GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs) ElementType() reflect.Type {
@@ -17903,10 +17955,12 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Compartmen
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// An optional description of the dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -17927,6 +17981,7 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Id() pulum
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// A message describing the current state with detail that can provide actionable information.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -17936,6 +17991,7 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) State() pu
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
@@ -17944,6 +18000,7 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) TimeCreate
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -17952,10 +18009,12 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Type() pul
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
 
+// The number of dedicated units in this AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) UnitCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) int { return v.UnitCount }).(pulumi.IntOutput)
 }
 
+// The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) UnitShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.UnitShape }).(pulumi.StringOutput)
 }
@@ -18197,7 +18256,12 @@ func (o GetDedicatedAiClustersFilterArrayOutput) Index(i pulumi.IntInput) GetDed
 }
 
 type GetEndpointContentModerationConfig struct {
+	// Whether to enable the content moderation feature.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// Enum for the modes of operation for inference protection.
+	Mode string `pulumi:"mode"`
+	// The OCID of the model used for the feature.
+	ModelId string `pulumi:"modelId"`
 }
 
 // GetEndpointContentModerationConfigInput is an input type that accepts GetEndpointContentModerationConfigArgs and GetEndpointContentModerationConfigOutput values.
@@ -18212,7 +18276,12 @@ type GetEndpointContentModerationConfigInput interface {
 }
 
 type GetEndpointContentModerationConfigArgs struct {
+	// Whether to enable the content moderation feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Enum for the modes of operation for inference protection.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The OCID of the model used for the feature.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
 }
 
 func (GetEndpointContentModerationConfigArgs) ElementType() reflect.Type {
@@ -18266,8 +18335,19 @@ func (o GetEndpointContentModerationConfigOutput) ToGetEndpointContentModeration
 	return o
 }
 
+// Whether to enable the content moderation feature.
 func (o GetEndpointContentModerationConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEndpointContentModerationConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Enum for the modes of operation for inference protection.
+func (o GetEndpointContentModerationConfigOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointContentModerationConfig) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The OCID of the model used for the feature.
+func (o GetEndpointContentModerationConfigOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointContentModerationConfig) string { return v.ModelId }).(pulumi.StringOutput)
 }
 
 type GetEndpointContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
@@ -18386,26 +18466,31 @@ func (o GetEndpointsEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetE
 
 type GetEndpointsEndpointCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId            string                                                      `pulumi:"compartmentId"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfigs []GetEndpointsEndpointCollectionItemContentModerationConfig `pulumi:"contentModerationConfigs"`
-	DedicatedAiClusterId     string                                                      `pulumi:"dedicatedAiClusterId"`
-	DefinedTags              map[string]string                                           `pulumi:"definedTags"`
-	// An optional description of the endpoint.
-	Description string `pulumi:"description"`
+	// The OCID of the dedicated AI cluster on which the model will be deployed to.
+	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	Description string            `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  string            `pulumi:"displayName"`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	GenerativeAiPrivateEndpointId string `pulumi:"generativeAiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
-	Id               string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// A message describing the current state of the endpoint in more detail that can provide actionable information.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The OCID of the model that's used to create this endpoint.
+	// The OCID of the model used for the feature.
 	ModelId string `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State       string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags  map[string]string `pulumi:"systemTags"`
 	TimeCreated string            `pulumi:"timeCreated"`
-	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated string            `pulumi:"timeUpdated"`
 }
 
 // GetEndpointsEndpointCollectionItemInput is an input type that accepts GetEndpointsEndpointCollectionItemArgs and GetEndpointsEndpointCollectionItemOutput values.
@@ -18421,26 +18506,31 @@ type GetEndpointsEndpointCollectionItemInput interface {
 
 type GetEndpointsEndpointCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId            pulumi.StringInput                                                  `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfigs GetEndpointsEndpointCollectionItemContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
-	DedicatedAiClusterId     pulumi.StringInput                                                  `pulumi:"dedicatedAiClusterId"`
-	DefinedTags              pulumi.StringMapInput                                               `pulumi:"definedTags"`
-	// An optional description of the endpoint.
-	Description pulumi.StringInput `pulumi:"description"`
+	// The OCID of the dedicated AI cluster on which the model will be deployed to.
+	DedicatedAiClusterId pulumi.StringInput `pulumi:"dedicatedAiClusterId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	Description pulumi.StringInput    `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	GenerativeAiPrivateEndpointId pulumi.StringInput `pulumi:"generativeAiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
-	Id               pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state of the endpoint in more detail that can provide actionable information.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The OCID of the model that's used to create this endpoint.
+	// The OCID of the model used for the feature.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State       pulumi.StringInput    `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
 	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
-	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
 }
 
 func (GetEndpointsEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -18499,21 +18589,23 @@ func (o GetEndpointsEndpointCollectionItemOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 func (o GetEndpointsEndpointCollectionItemOutput) ContentModerationConfigs() GetEndpointsEndpointCollectionItemContentModerationConfigArrayOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) []GetEndpointsEndpointCollectionItemContentModerationConfig {
 		return v.ContentModerationConfigs
 	}).(GetEndpointsEndpointCollectionItemContentModerationConfigArrayOutput)
 }
 
+// The OCID of the dedicated AI cluster on which the model will be deployed to.
 func (o GetEndpointsEndpointCollectionItemOutput) DedicatedAiClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetEndpointsEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// An optional description of the endpoint.
 func (o GetEndpointsEndpointCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -18527,16 +18619,22 @@ func (o GetEndpointsEndpointCollectionItemOutput) FreeformTags() pulumi.StringMa
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+func (o GetEndpointsEndpointCollectionItemOutput) GenerativeAiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.GenerativeAiPrivateEndpointId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 func (o GetEndpointsEndpointCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// A message describing the current state of the endpoint in more detail that can provide actionable information.
 func (o GetEndpointsEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the model that's used to create this endpoint.
+// The OCID of the model used for the feature.
 func (o GetEndpointsEndpointCollectionItemOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.ModelId }).(pulumi.StringOutput)
 }
@@ -18546,6 +18644,7 @@ func (o GetEndpointsEndpointCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetEndpointsEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
@@ -18554,7 +18653,6 @@ func (o GetEndpointsEndpointCollectionItemOutput) TimeCreated() pulumi.StringOut
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 func (o GetEndpointsEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -18580,7 +18678,12 @@ func (o GetEndpointsEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetEndpointsEndpointCollectionItemContentModerationConfig struct {
+	// Whether to enable the content moderation feature.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// Enum for the modes of operation for inference protection.
+	Mode string `pulumi:"mode"`
+	// The OCID of the model used for the feature.
+	ModelId string `pulumi:"modelId"`
 }
 
 // GetEndpointsEndpointCollectionItemContentModerationConfigInput is an input type that accepts GetEndpointsEndpointCollectionItemContentModerationConfigArgs and GetEndpointsEndpointCollectionItemContentModerationConfigOutput values.
@@ -18595,7 +18698,12 @@ type GetEndpointsEndpointCollectionItemContentModerationConfigInput interface {
 }
 
 type GetEndpointsEndpointCollectionItemContentModerationConfigArgs struct {
+	// Whether to enable the content moderation feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Enum for the modes of operation for inference protection.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The OCID of the model used for the feature.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
 }
 
 func (GetEndpointsEndpointCollectionItemContentModerationConfigArgs) ElementType() reflect.Type {
@@ -18649,8 +18757,19 @@ func (o GetEndpointsEndpointCollectionItemContentModerationConfigOutput) ToGetEn
 	return o
 }
 
+// Whether to enable the content moderation feature.
 func (o GetEndpointsEndpointCollectionItemContentModerationConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItemContentModerationConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Enum for the modes of operation for inference protection.
+func (o GetEndpointsEndpointCollectionItemContentModerationConfigOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItemContentModerationConfig) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The OCID of the model used for the feature.
+func (o GetEndpointsEndpointCollectionItemContentModerationConfigOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItemContentModerationConfig) string { return v.ModelId }).(pulumi.StringOutput)
 }
 
 type GetEndpointsEndpointCollectionItemContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
@@ -18777,6 +18896,455 @@ func (o GetEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEndpointsFilt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointsFilter {
 		return vs[0].([]GetEndpointsFilter)[vs[1].(int)]
 	}).(GetEndpointsFilterOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetGenerativeAiPrivateEndpointsFilterInput is an input type that accepts GetGenerativeAiPrivateEndpointsFilterArgs and GetGenerativeAiPrivateEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsFilterInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsFilterArgs{...}
+type GetGenerativeAiPrivateEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsFilterOutput() GetGenerativeAiPrivateEndpointsFilterOutput
+	ToGetGenerativeAiPrivateEndpointsFilterOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsFilterOutput
+}
+
+type GetGenerativeAiPrivateEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGenerativeAiPrivateEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsFilterArgs) ToGetGenerativeAiPrivateEndpointsFilterOutput() GetGenerativeAiPrivateEndpointsFilterOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsFilterArgs) ToGetGenerativeAiPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsFilterOutput)
+}
+
+// GetGenerativeAiPrivateEndpointsFilterArrayInput is an input type that accepts GetGenerativeAiPrivateEndpointsFilterArray and GetGenerativeAiPrivateEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsFilterArrayInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsFilterArray{ GetGenerativeAiPrivateEndpointsFilterArgs{...} }
+type GetGenerativeAiPrivateEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsFilterArrayOutput() GetGenerativeAiPrivateEndpointsFilterArrayOutput
+	ToGetGenerativeAiPrivateEndpointsFilterArrayOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsFilterArrayOutput
+}
+
+type GetGenerativeAiPrivateEndpointsFilterArray []GetGenerativeAiPrivateEndpointsFilterInput
+
+func (GetGenerativeAiPrivateEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsFilterArray) ToGetGenerativeAiPrivateEndpointsFilterArrayOutput() GetGenerativeAiPrivateEndpointsFilterArrayOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsFilterArray) ToGetGenerativeAiPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsFilterArrayOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterOutput) ToGetGenerativeAiPrivateEndpointsFilterOutput() GetGenerativeAiPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterOutput) ToGetGenerativeAiPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterArrayOutput) ToGetGenerativeAiPrivateEndpointsFilterArrayOutput() GetGenerativeAiPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterArrayOutput) ToGetGenerativeAiPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetGenerativeAiPrivateEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGenerativeAiPrivateEndpointsFilter {
+		return vs[0].([]GetGenerativeAiPrivateEndpointsFilter)[vs[1].(int)]
+	}).(GetGenerativeAiPrivateEndpointsFilterOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection struct {
+	Items []GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem `pulumi:"items"`
+}
+
+// GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionInput is an input type that accepts GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs and GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs{...}
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs struct {
+	Items GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput)
+}
+
+// GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayInput is an input type that accepts GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray and GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray{ GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs{...} }
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray []GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionInput
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput) Items() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection) []GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem {
+		return v.Items
+	}).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection {
+		return vs[0].([]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection)[vs[1].(int)]
+	}).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	// A description of this private endpoint.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	DnsPrefix   string `pulumi:"dnsPrefix"`
+	// Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
+	Fqdn string `pulumi:"fqdn"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	Id               string `pulumi:"id"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds        []string `pulumi:"nsgIds"`
+	PreviousState string   `pulumi:"previousState"`
+	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// The lifecycle state of Generative AI private endpoints.
+	State       string            `pulumi:"state"`
+	SubnetId    string            `pulumi:"subnetId"`
+	SystemTags  map[string]string `pulumi:"systemTags"`
+	TimeCreated string            `pulumi:"timeCreated"`
+	TimeUpdated string            `pulumi:"timeUpdated"`
+}
+
+// GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput is an input type that accepts GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs and GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs{...}
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of this private endpoint.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DnsPrefix   pulumi.StringInput `pulumi:"dnsPrefix"`
+	// Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+	Id               pulumi.StringInput `pulumi:"id"`
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds        pulumi.StringArrayInput `pulumi:"nsgIds"`
+	PreviousState pulumi.StringInput      `pulumi:"previousState"`
+	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// The lifecycle state of Generative AI private endpoints.
+	State       pulumi.StringInput    `pulumi:"state"`
+	SubnetId    pulumi.StringInput    `pulumi:"subnetId"`
+	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
+	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
+	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
+}
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput)
+}
+
+// GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput is an input type that accepts GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray and GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput` via:
+//
+//	GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray{ GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs{...} }
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput
+	ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutputWithContext(context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray []GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput {
+	return i.ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A description of this private endpoint.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) DnsPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.DnsPrefix
+	}).(pulumi.StringOutput)
+}
+
+// Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) PreviousState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.PreviousState
+	}).(pulumi.StringOutput)
+}
+
+// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.PrivateEndpointIp
+	}).(pulumi.StringOutput)
+}
+
+// The lifecycle state of Generative AI private endpoints.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput() GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput) ToGetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem {
+		return vs[0].([]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)[vs[1].(int)]
+	}).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput)
 }
 
 type GetModelFineTuneDetail struct {
@@ -19521,13 +20089,12 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 }
 
 type GetModelsModelCollectionItem struct {
-	// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-	BaseModelId string `pulumi:"baseModelId"`
-	// Describes what this model can be used for.
+	BaseModelId  string   `pulumi:"baseModelId"`
 	Capabilities []string `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string            `pulumi:"compartmentId"`
-	DefinedTags   map[string]string `pulumi:"definedTags"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
@@ -19574,13 +20141,12 @@ type GetModelsModelCollectionItemInput interface {
 }
 
 type GetModelsModelCollectionItemArgs struct {
-	// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-	BaseModelId pulumi.StringInput `pulumi:"baseModelId"`
-	// Describes what this model can be used for.
+	BaseModelId  pulumi.StringInput      `pulumi:"baseModelId"`
 	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
-	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
@@ -19666,12 +20232,10 @@ func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutput
 	return o
 }
 
-// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
 func (o GetModelsModelCollectionItemOutput) BaseModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.BaseModelId }).(pulumi.StringOutput)
 }
 
-// Describes what this model can be used for.
 func (o GetModelsModelCollectionItemOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }
@@ -19681,6 +20245,7 @@ func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -20609,6 +21174,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsEndpointCollectionItemContentModerationConfigArrayInput)(nil)).Elem(), GetEndpointsEndpointCollectionItemContentModerationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsFilterInput)(nil)).Elem(), GetEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsFilterArrayInput)(nil)).Elem(), GetEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsFilterInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailInput)(nil)).Elem(), GetModelFineTuneDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailArrayInput)(nil)).Elem(), GetModelFineTuneDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelFineTuneDetailTrainingConfigInput)(nil)).Elem(), GetModelFineTuneDetailTrainingConfigArgs{})
@@ -20903,6 +21474,12 @@ func init() {
 	pulumi.RegisterOutputType(GetEndpointsEndpointCollectionItemContentModerationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelFineTuneDetailTrainingConfigOutput{})

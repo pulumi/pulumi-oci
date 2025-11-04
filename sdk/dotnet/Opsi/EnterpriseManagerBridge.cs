@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Create a Enterprise Manager bridge in Operations Insights.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

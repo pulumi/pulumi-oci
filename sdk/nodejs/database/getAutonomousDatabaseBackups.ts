@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+ * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
  *
  * ## Example Usage
  *
@@ -19,8 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousDatabaseBackupDisplayName,
+ *     infrastructureType: autonomousDatabaseBackupInfrastructureType,
+ *     keyStoreId: testKeyStore.id,
  *     state: autonomousDatabaseBackupState,
  *     type: autonomousDatabaseBackupType,
  * });
@@ -31,9 +34,12 @@ export function getAutonomousDatabaseBackups(args?: GetAutonomousDatabaseBackups
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
+        "backupDestinationId": args.backupDestinationId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "infrastructureType": args.infrastructureType,
+        "keyStoreId": args.keyStoreId,
         "state": args.state,
         "type": args.type,
     }, opts);
@@ -48,6 +54,10 @@ export interface GetAutonomousDatabaseBackupsArgs {
      */
     autonomousDatabaseId?: string;
     /**
+     * A filter to return only resources that have the given backup destination id.
+     */
+    backupDestinationId?: string;
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: string;
@@ -56,6 +66,14 @@ export interface GetAutonomousDatabaseBackupsArgs {
      */
     displayName?: string;
     filters?: inputs.Database.GetAutonomousDatabaseBackupsFilter[];
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    infrastructureType?: string;
+    /**
+     * A filter to return only resources that have the given key store id.
+     */
+    keyStoreId?: string;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
@@ -75,9 +93,10 @@ export interface GetAutonomousDatabaseBackupsResult {
      */
     readonly autonomousDatabaseBackups: outputs.Database.GetAutonomousDatabaseBackupsAutonomousDatabaseBackup[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      */
     readonly autonomousDatabaseId?: string;
+    readonly backupDestinationId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -92,6 +111,14 @@ export interface GetAutonomousDatabaseBackupsResult {
      */
     readonly id: string;
     /**
+     * The infrastructure type this resource belongs to.
+     */
+    readonly infrastructureType?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     */
+    readonly keyStoreId?: string;
+    /**
      * The current state of the backup.
      */
     readonly state?: string;
@@ -103,7 +130,7 @@ export interface GetAutonomousDatabaseBackupsResult {
 /**
  * This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+ * Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
  *
  * ## Example Usage
  *
@@ -113,8 +140,11 @@ export interface GetAutonomousDatabaseBackupsResult {
  *
  * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousDatabaseBackupDisplayName,
+ *     infrastructureType: autonomousDatabaseBackupInfrastructureType,
+ *     keyStoreId: testKeyStore.id,
  *     state: autonomousDatabaseBackupState,
  *     type: autonomousDatabaseBackupType,
  * });
@@ -125,9 +155,12 @@ export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseB
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
+        "backupDestinationId": args.backupDestinationId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "infrastructureType": args.infrastructureType,
+        "keyStoreId": args.keyStoreId,
         "state": args.state,
         "type": args.type,
     }, opts);
@@ -142,6 +175,10 @@ export interface GetAutonomousDatabaseBackupsOutputArgs {
      */
     autonomousDatabaseId?: pulumi.Input<string>;
     /**
+     * A filter to return only resources that have the given backup destination id.
+     */
+    backupDestinationId?: pulumi.Input<string>;
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
@@ -150,6 +187,14 @@ export interface GetAutonomousDatabaseBackupsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseBackupsFilterArgs>[]>;
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    infrastructureType?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that have the given key store id.
+     */
+    keyStoreId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */

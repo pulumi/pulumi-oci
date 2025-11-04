@@ -69,7 +69,7 @@ class GetFsuCyclesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        Compartment Identifier.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -77,7 +77,7 @@ class GetFsuCyclesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "display_name")
 
@@ -90,7 +90,7 @@ class GetFsuCyclesResult:
     @pulumi.getter(name="fsuCollectionId")
     def fsu_collection_id(self) -> Optional[_builtins.str]:
         """
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "fsu_collection_id")
 

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-//
-// # Creates an Exadata VM cluster on Exascale Infrastructure
-//
 // ## Example Usage
 //
 // ```go
@@ -149,7 +145,7 @@ type ExadbVmCluster struct {
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources ExadbVmClusterNodeResourceArrayOutput `pulumi:"nodeResources"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringOutput `pulumi:"privateZoneId"`
@@ -310,7 +306,7 @@ type exadbVmClusterState struct {
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources []ExadbVmClusterNodeResource `pulumi:"nodeResources"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
@@ -409,7 +405,7 @@ type ExadbVmClusterState struct {
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources ExadbVmClusterNodeResourceArrayInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringPtrInput
@@ -498,7 +494,7 @@ type exadbVmClusterArgs struct {
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources []ExadbVmClusterNodeResource `pulumi:"nodeResources"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
@@ -568,7 +564,7 @@ type ExadbVmClusterArgs struct {
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeResources ExadbVmClusterNodeResourceArrayInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringPtrInput
@@ -806,7 +802,7 @@ func (o ExadbVmClusterOutput) NodeResources() ExadbVmClusterNodeResourceArrayOut
 }
 
 // (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o ExadbVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Add an autoscale configuration to the cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

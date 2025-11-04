@@ -16,11 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a security zone recipe (SecurityRecipe resource), using parameters
- * passed in a CreateSecurityRecipeDetails resource.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -17,10 +17,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Repository Setting resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Updates the settings for a repository.
- * 
  * ## Example Usage
  * 
  * <pre>

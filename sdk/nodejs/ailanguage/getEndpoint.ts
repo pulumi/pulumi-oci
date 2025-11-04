@@ -33,6 +33,10 @@ export interface GetEndpointArgs {
  */
 export interface GetEndpointResult {
     /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     */
+    readonly alias: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
      */
     readonly compartmentId: string;

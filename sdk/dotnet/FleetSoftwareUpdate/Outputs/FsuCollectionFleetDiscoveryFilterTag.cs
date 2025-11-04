@@ -16,7 +16,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// <summary>
         /// Freeform tag key.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Defined tag namespace.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// <summary>
         /// Freeform tag value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private FsuCollectionFleetDiscoveryFilterTag(
-            string key,
+            string? key,
 
             string? @namespace,
 
-            string value)
+            string? value)
         {
             Key = key;
             Namespace = @namespace;

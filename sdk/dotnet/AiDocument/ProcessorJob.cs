@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiDocument
 {
     /// <summary>
-    /// This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-    /// 
-    /// Create a processor job for document analysis.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

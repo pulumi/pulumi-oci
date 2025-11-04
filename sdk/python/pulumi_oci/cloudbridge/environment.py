@@ -267,10 +267,6 @@ class Environment(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates a source environment.
-
         ## Example Usage
 
         ```python
@@ -314,10 +310,6 @@ class Environment(pulumi.CustomResource):
                  args: EnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates a source environment.
-
         ## Example Usage
 
         ```python

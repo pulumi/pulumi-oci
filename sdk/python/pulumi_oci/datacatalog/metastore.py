@@ -349,10 +349,6 @@ class Metastore(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new metastore.
-
         ## Example Usage
 
         ```python
@@ -400,10 +396,6 @@ class Metastore(pulumi.CustomResource):
                  args: MetastoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new metastore.
-
         ## Example Usage
 
         ```python

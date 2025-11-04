@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
-//
 // ## Example Usage
 //
 // ```go

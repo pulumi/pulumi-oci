@@ -18,9 +18,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
- * 
- * This API creates a schedule. You must provide either resources or resourceFilters.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -35,7 +33,6 @@ import javax.annotation.Nullable;
 public class Schedule extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="action", refs={String.class}, tree="[0]")
@@ -43,21 +40,20 @@ public class Schedule extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) This is the action that will be executed by the schedule.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> action() {
         return this.action;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      * 
      */
     public Output<String> compartmentId() {
@@ -107,7 +103,6 @@ public class Schedule extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
@@ -115,7 +110,6 @@ public class Schedule extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<Map<String,String>> freeformTags() {
@@ -136,32 +130,28 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.lastRunStatus;
     }
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     * 
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
     @Export(name="recurrenceDetails", refs={String.class}, tree="[0]")
     private Output<String> recurrenceDetails;
 
     /**
-     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     * 
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
     public Output<String> recurrenceDetails() {
         return this.recurrenceDetails;
     }
     /**
-     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * (Updatable) Type of recurrence of a schedule
      * 
      */
     @Export(name="recurrenceType", refs={String.class}, tree="[0]")
     private Output<String> recurrenceType;
 
     /**
-     * @return (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * @return (Updatable) Type of recurrence of a schedule
      * 
      */
     public Output<String> recurrenceType() {

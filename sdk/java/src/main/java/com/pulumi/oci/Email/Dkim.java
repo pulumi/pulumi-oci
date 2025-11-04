@@ -18,14 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
- * 
- * Creates a new DKIM for an email domain.
- * This DKIM signs all approved senders in the tenancy that are in this email domain.
- * Best security practices indicate to periodically rotate the DKIM that is doing the signing.
- * When a second DKIM is applied, all senders seamlessly pick up the new key
- * without interruption in signing.
- * 
  * ## Example Usage
  * 
  * <pre>

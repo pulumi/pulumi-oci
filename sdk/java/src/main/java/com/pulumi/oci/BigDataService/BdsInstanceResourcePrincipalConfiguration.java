@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Create a resource principal session token configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

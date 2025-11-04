@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Create a user's API key.
-//
 // ## Example Usage
 //
 // ## Import

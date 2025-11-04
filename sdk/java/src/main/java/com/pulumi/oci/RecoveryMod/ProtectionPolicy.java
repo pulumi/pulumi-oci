@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
- * 
- * Creates a new Protection Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

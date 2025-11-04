@@ -603,10 +603,6 @@ class Configuration(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
-
-        Creates a new configuration.
-
         ## Example Usage
 
         ```python
@@ -679,10 +675,6 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
-
-        Creates a new configuration.
-
         ## Example Usage
 
         ```python

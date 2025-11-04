@@ -86,6 +86,8 @@ type GetFusionEnvironmentResult struct {
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled bool `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// BYOK key info
@@ -225,6 +227,11 @@ func (o GetFusionEnvironmentResultOutput) IdcsDomainUrl() pulumi.StringOutput {
 // If it's true, then the Break Glass feature is enabled
 func (o GetFusionEnvironmentResultOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+func (o GetFusionEnvironmentResultOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentResult) bool { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }
 
 // BYOK key id

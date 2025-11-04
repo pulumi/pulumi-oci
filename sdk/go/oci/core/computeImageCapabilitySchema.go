@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates compute image capability schema.
-//
 // ## Example Usage
 //
 // ## Import

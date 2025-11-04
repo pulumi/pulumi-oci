@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Create a new alarm condition in same monitoringTemplate compartment.
- *
  * ## Example Usage
  *
  * ```typescript

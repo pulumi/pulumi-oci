@@ -22,6 +22,7 @@ class ProviderArgs:
                  auth: Optional[pulumi.Input[_builtins.str]] = None,
                  config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
                  disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
                  ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
@@ -39,6 +40,7 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
+        :param pulumi.Input[_builtins.bool] dual_stack_endpoint_enabled: (Optional) flags to enable Dual Stack endpoint.
         :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
@@ -58,6 +60,8 @@ class ProviderArgs:
             pulumi.set(__self__, "config_file_profile", config_file_profile)
         if disable_auto_retries is not None:
             pulumi.set(__self__, "disable_auto_retries", disable_auto_retries)
+        if dual_stack_endpoint_enabled is not None:
+            pulumi.set(__self__, "dual_stack_endpoint_enabled", dual_stack_endpoint_enabled)
         if fingerprint is not None:
             pulumi.set(__self__, "fingerprint", fingerprint)
         if ignore_defined_tags is not None:
@@ -117,6 +121,18 @@ class ProviderArgs:
     @disable_auto_retries.setter
     def disable_auto_retries(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "disable_auto_retries", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dualStackEndpointEnabled")
+    def dual_stack_endpoint_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Optional) flags to enable Dual Stack endpoint.
+        """
+        return pulumi.get(self, "dual_stack_endpoint_enabled")
+
+    @dual_stack_endpoint_enabled.setter
+    def dual_stack_endpoint_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "dual_stack_endpoint_enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -257,6 +273,7 @@ class Provider(pulumi.ProviderResource):
                  auth: Optional[pulumi.Input[_builtins.str]] = None,
                  config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
                  disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
                  ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
@@ -281,6 +298,7 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
+        :param pulumi.Input[_builtins.bool] dual_stack_endpoint_enabled: (Optional) flags to enable Dual Stack endpoint.
         :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
@@ -324,6 +342,7 @@ class Provider(pulumi.ProviderResource):
                  auth: Optional[pulumi.Input[_builtins.str]] = None,
                  config_file_profile: Optional[pulumi.Input[_builtins.str]] = None,
                  disable_auto_retries: Optional[pulumi.Input[_builtins.bool]] = None,
+                 dual_stack_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
                  ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
@@ -347,6 +366,7 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["auth"] = auth
             __props__.__dict__["config_file_profile"] = config_file_profile
             __props__.__dict__["disable_auto_retries"] = pulumi.Output.from_input(disable_auto_retries).apply(pulumi.runtime.to_json) if disable_auto_retries is not None else None
+            __props__.__dict__["dual_stack_endpoint_enabled"] = pulumi.Output.from_input(dual_stack_endpoint_enabled).apply(pulumi.runtime.to_json) if dual_stack_endpoint_enabled is not None else None
             __props__.__dict__["fingerprint"] = fingerprint
             __props__.__dict__["ignore_defined_tags"] = pulumi.Output.from_input(ignore_defined_tags).apply(pulumi.runtime.to_json) if ignore_defined_tags is not None else None
             __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)

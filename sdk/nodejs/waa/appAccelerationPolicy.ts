@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
- *
- * Creates a new WebAppAccelerationPolicy.
- *
  * ## Example Usage
  *
  * ```typescript

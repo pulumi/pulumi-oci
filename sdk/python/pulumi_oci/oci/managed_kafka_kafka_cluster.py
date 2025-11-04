@@ -558,10 +558,6 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
                  kafka_version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Creates a KafkaCluster.
-
         ## Example Usage
 
         ```python
@@ -627,10 +623,6 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
                  args: ManagedKafkaKafkaClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Creates a KafkaCluster.
-
         ## Example Usage
 
         ```python

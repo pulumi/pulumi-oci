@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
- *
- * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
- *
  * ## Example Usage
  *
  * ```typescript
@@ -33,6 +29,7 @@ import * as utilities from "../utilities";
  *     },
  *     nsgIds: redisClusterNsgIds,
  *     ociCacheConfigSetId: testOciCacheConfigSet.id,
+ *     securityAttributes: redisClusterSecurityAttributes,
  *     shardCount: redisClusterShardCount,
  * });
  * ```
@@ -142,6 +139,10 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly replicasFqdn: pulumi.Output<string>;
     /**
+     * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */
     declare public readonly shardCount: pulumi.Output<number>;
@@ -204,6 +205,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["primaryFqdn"] = state?.primaryFqdn;
             resourceInputs["replicasEndpointIpAddress"] = state?.replicasEndpointIpAddress;
             resourceInputs["replicasFqdn"] = state?.replicasFqdn;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shardCount"] = state?.shardCount;
             resourceInputs["softwareVersion"] = state?.softwareVersion;
             resourceInputs["state"] = state?.state;
@@ -240,6 +242,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["nodeMemoryInGbs"] = args?.nodeMemoryInGbs;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["ociCacheConfigSetId"] = args?.ociCacheConfigSetId;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shardCount"] = args?.shardCount;
             resourceInputs["softwareVersion"] = args?.softwareVersion;
             resourceInputs["subnetId"] = args?.subnetId;
@@ -334,6 +337,10 @@ export interface RedisClusterState {
      */
     replicasFqdn?: pulumi.Input<string>;
     /**
+     * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */
     shardCount?: pulumi.Input<number>;
@@ -407,6 +414,10 @@ export interface RedisClusterArgs {
      * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
      */
     ociCacheConfigSetId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */

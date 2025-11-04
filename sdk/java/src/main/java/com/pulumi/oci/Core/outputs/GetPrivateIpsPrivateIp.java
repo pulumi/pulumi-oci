@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class GetPrivateIpsPrivateIp {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return The secondary IPv4 CIDR prefix length.
+     * 
+     */
+    private Integer cidrPrefixLength;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
      * 
@@ -57,6 +63,11 @@ public final class GetPrivateIpsPrivateIp {
      * 
      */
     private String ipState;
+    /**
+     * @return Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+     * 
+     */
+    private String ipv4subnetCidrAtCreation;
     /**
      * @return Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
@@ -103,6 +114,13 @@ public final class GetPrivateIpsPrivateIp {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The secondary IPv4 CIDR prefix length.
+     * 
+     */
+    public Integer cidrPrefixLength() {
+        return this.cidrPrefixLength;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
@@ -159,6 +177,13 @@ public final class GetPrivateIpsPrivateIp {
      */
     public String ipState() {
         return this.ipState;
+    }
+    /**
+     * @return Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+     * 
+     */
+    public String ipv4subnetCidrAtCreation() {
+        return this.ipv4subnetCidrAtCreation;
     }
     /**
      * @return Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
@@ -225,6 +250,7 @@ public final class GetPrivateIpsPrivateIp {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private Integer cidrPrefixLength;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
@@ -233,6 +259,7 @@ public final class GetPrivateIpsPrivateIp {
         private String id;
         private String ipAddress;
         private String ipState;
+        private String ipv4subnetCidrAtCreation;
         private Boolean isPrimary;
         private Boolean isReserved;
         private String lifetime;
@@ -245,6 +272,7 @@ public final class GetPrivateIpsPrivateIp {
         public Builder(GetPrivateIpsPrivateIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.cidrPrefixLength = defaults.cidrPrefixLength;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -253,6 +281,7 @@ public final class GetPrivateIpsPrivateIp {
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
     	      this.ipState = defaults.ipState;
+    	      this.ipv4subnetCidrAtCreation = defaults.ipv4subnetCidrAtCreation;
     	      this.isPrimary = defaults.isPrimary;
     	      this.isReserved = defaults.isReserved;
     	      this.lifetime = defaults.lifetime;
@@ -269,6 +298,14 @@ public final class GetPrivateIpsPrivateIp {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            if (cidrPrefixLength == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "cidrPrefixLength");
+            }
+            this.cidrPrefixLength = cidrPrefixLength;
             return this;
         }
         @CustomType.Setter
@@ -333,6 +370,14 @@ public final class GetPrivateIpsPrivateIp {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "ipState");
             }
             this.ipState = ipState;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv4subnetCidrAtCreation(String ipv4subnetCidrAtCreation) {
+            if (ipv4subnetCidrAtCreation == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "ipv4subnetCidrAtCreation");
+            }
+            this.ipv4subnetCidrAtCreation = ipv4subnetCidrAtCreation;
             return this;
         }
         @CustomType.Setter
@@ -402,6 +447,7 @@ public final class GetPrivateIpsPrivateIp {
         public GetPrivateIpsPrivateIp build() {
             final var _resultValue = new GetPrivateIpsPrivateIp();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cidrPrefixLength = cidrPrefixLength;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
@@ -410,6 +456,7 @@ public final class GetPrivateIpsPrivateIp {
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
             _resultValue.ipState = ipState;
+            _resultValue.ipv4subnetCidrAtCreation = ipv4subnetCidrAtCreation;
             _resultValue.isPrimary = isPrimary;
             _resultValue.isReserved = isReserved;
             _resultValue.lifetime = lifetime;

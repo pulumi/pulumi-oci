@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql
 {
     /// <summary>
-    /// This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-    /// 
-    /// Updates the HeatWave cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

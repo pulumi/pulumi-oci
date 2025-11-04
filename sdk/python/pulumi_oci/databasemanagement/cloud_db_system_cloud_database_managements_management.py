@@ -186,11 +186,6 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
                  metadata: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Db System Cloud Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management service for all the components of the specified
-        cloud DB system (except databases).
-
         ## Example Usage
 
         ```python
@@ -222,11 +217,6 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
                  args: CloudDbSystemCloudDatabaseManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Db System Cloud Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management service for all the components of the specified
-        cloud DB system (except databases).
-
         ## Example Usage
 
         ```python

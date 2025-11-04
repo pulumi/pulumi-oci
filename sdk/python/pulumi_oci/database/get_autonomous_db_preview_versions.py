@@ -87,8 +87,8 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[_builtins.str] =
     """
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+    Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+    Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
     ## Example Usage
 
@@ -119,8 +119,8 @@ def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.In
     """
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+    Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+    Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
     ## Example Usage
 

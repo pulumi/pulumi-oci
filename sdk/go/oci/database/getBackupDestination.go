@@ -60,7 +60,11 @@ type LookupBackupDestinationArgs struct {
 type LookupBackupDestinationResult struct {
 	// List of databases associated with the backup destination.
 	AssociatedDatabases []GetBackupDestinationAssociatedDatabase `pulumi:"associatedDatabases"`
-	BackupDestinationId string                                   `pulumi:"backupDestinationId"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []GetBackupDestinationAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
+	BackupDestinationId       string                                         `pulumi:"backupDestinationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
@@ -143,6 +147,18 @@ func (o LookupBackupDestinationResultOutput) AssociatedDatabases() GetBackupDest
 	return o.ApplyT(func(v LookupBackupDestinationResult) []GetBackupDestinationAssociatedDatabase {
 		return v.AssociatedDatabases
 	}).(GetBackupDestinationAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o LookupBackupDestinationResultOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) int { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o LookupBackupDestinationResultOutput) AssociatedLongTermBackups() GetBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) []GetBackupDestinationAssociatedLongTermBackup {
+		return v.AssociatedLongTermBackups
+	}).(GetBackupDestinationAssociatedLongTermBackupArrayOutput)
 }
 
 func (o LookupBackupDestinationResultOutput) BackupDestinationId() pulumi.StringOutput {

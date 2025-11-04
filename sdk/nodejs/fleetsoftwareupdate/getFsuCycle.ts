@@ -56,7 +56,7 @@ export interface GetFsuCycleResult {
      */
     readonly collectionType: string;
     /**
-     * Compartment Identifier.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
     readonly compartmentId: string;
     /**
@@ -68,11 +68,11 @@ export interface GetFsuCycleResult {
      */
     readonly diagnosticsCollections: outputs.FleetSoftwareUpdate.GetFsuCycleDiagnosticsCollection[];
     /**
-     * Exadata Fleet Update Cycle display name.
+     * The user-friendly name for the Exadata Fleet Update Cycle.
      */
     readonly displayName: string;
     /**
-     * OCID identifier for the Action that is currently in execution, if applicable.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      */
     readonly executingFsuActionId: string;
     /**
@@ -80,28 +80,28 @@ export interface GetFsuCycleResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
      */
     readonly fsuCollectionId: string;
     readonly fsuCycleId: string;
     /**
-     * Goal version or image details for the Exadata Fleet Update Cycle.
+     * Details of goal 'GUEST_OS' software version.
      */
     readonly goalVersionDetails: outputs.FleetSoftwareUpdate.GetFsuCycleGoalVersionDetail[];
     /**
-     * OCID identifier for the Exadata Fleet Update Cycle.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
      */
     readonly id: string;
     /**
-     * List of identifiers of patches to ignore.
+     * List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
     readonly isIgnoreMissingPatches: string[];
     /**
-     * Ignore patch conflicts or missing patches between the source and goal homes.
+     * Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
     readonly isIgnorePatches: boolean;
     /**
-     * Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * Ensure that database services are online on the same VMs before and after the maintenance update.
      */
     readonly isKeepPlacement: boolean;
     /**
@@ -121,7 +121,7 @@ export interface GetFsuCycleResult {
      */
     readonly maxDrainTimeoutInSeconds: number;
     /**
-     * In this array all the possible actions will be listed. The first element is the suggested Action.
+     * All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      */
     readonly nextActionToExecutes: outputs.FleetSoftwareUpdate.GetFsuCycleNextActionToExecute[];
     /**

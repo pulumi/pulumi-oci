@@ -17,8 +17,6 @@ type ScheduleResource struct {
 	// (Updatable) This is the resource OCID.
 	Id string `pulumi:"id"`
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
-	//
-	// <<<<<<< ours
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Metadata map[string]string `pulumi:"metadata"`
 	// (Updatable) This is the user input parameters to use when acting on the resource.
@@ -42,8 +40,6 @@ type ScheduleResourceArgs struct {
 	// (Updatable) This is the resource OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
-	//
-	// <<<<<<< ours
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// (Updatable) This is the user input parameters to use when acting on the resource.
@@ -109,8 +105,6 @@ func (o ScheduleResourceOutput) Id() pulumi.StringOutput {
 }
 
 // (Updatable) This is additional information that helps to identity the resource for the schedule.
-//
-// <<<<<<< ours
 // { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 func (o ScheduleResourceOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v ScheduleResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
@@ -389,7 +383,6 @@ type ScheduleResourceParameter struct {
 	// (Updatable) This is the parameter type on which the input parameter is defined
 	ParameterType string `pulumi:"parameterType"`
 	// (Updatable) This is the HTTP request header value.
-	// ===
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Value *string `pulumi:"value"`
 }
@@ -409,7 +402,6 @@ type ScheduleResourceParameterArgs struct {
 	// (Updatable) This is the parameter type on which the input parameter is defined
 	ParameterType pulumi.StringInput `pulumi:"parameterType"`
 	// (Updatable) This is the HTTP request header value.
-	// ===
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -471,7 +463,6 @@ func (o ScheduleResourceParameterOutput) ParameterType() pulumi.StringOutput {
 }
 
 // (Updatable) This is the HTTP request header value.
-// ===
 // { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 func (o ScheduleResourceParameterOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceParameter) *string { return v.Value }).(pulumi.StringPtrOutput)

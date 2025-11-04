@@ -43,6 +43,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         /// </summary>
         public readonly bool IsRestricted;
+        /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
         /// Detailed message for the lifecycle state.

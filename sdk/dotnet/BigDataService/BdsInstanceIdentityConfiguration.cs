@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Create an identity configuration for the cluster
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

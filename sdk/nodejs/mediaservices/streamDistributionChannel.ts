@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
- *
- * Creates a new Stream Distribution Channel.
- *
  * ## Example Usage
  *
  * ```typescript

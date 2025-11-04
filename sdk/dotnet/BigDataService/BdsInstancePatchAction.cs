@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Install the specified patch to this cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -331,10 +331,6 @@ class PlatformConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Platform Configuration resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new PlatformConfiguration.
-
         ## Example Usage
 
         ```python
@@ -409,10 +405,6 @@ class PlatformConfiguration(pulumi.CustomResource):
                  args: PlatformConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Platform Configuration resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new PlatformConfiguration.
-
         ## Example Usage
 
         ```python

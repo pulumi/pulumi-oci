@@ -16,10 +16,6 @@ public final class GetUtilsAnalyzeApplicationsConfigurationResult {
      */
     private String bucket;
     private String compartmentId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     private String id;
     /**
      * @return The Object Storage namespace used for analyzing applications.
@@ -38,10 +34,6 @@ public final class GetUtilsAnalyzeApplicationsConfigurationResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     public String id() {
         return this.id;
     }

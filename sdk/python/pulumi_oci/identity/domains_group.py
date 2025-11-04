@@ -1263,10 +1263,6 @@ class DomainsGroup(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a group.
-
         ## Example Usage
 
         ## Import
@@ -1381,10 +1377,6 @@ class DomainsGroup(pulumi.CustomResource):
                  args: DomainsGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a group.
-
         ## Example Usage
 
         ## Import

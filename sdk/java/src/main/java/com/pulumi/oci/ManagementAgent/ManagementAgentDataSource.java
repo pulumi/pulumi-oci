@@ -18,10 +18,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
- * 
- * Datasource creation request to given Management Agent.
- * 
  * ## Example Usage
  * 
  * <pre>

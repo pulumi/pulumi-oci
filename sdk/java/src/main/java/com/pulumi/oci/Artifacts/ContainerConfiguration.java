@@ -15,8 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
- * 
  * ## Example Usage
  * 
  * <pre>

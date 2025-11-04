@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create an OAuth Partner Certificate
- *
  * ## Example Usage
  *
  * ```typescript

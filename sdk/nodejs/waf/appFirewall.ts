@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
- *
- * Creates a new WebAppFirewall.
- *
  * ## Example Usage
  *
  * ```typescript

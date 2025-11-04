@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified Autonomous Database Software Image.
+ * Gets information about the specified Autonomous AI Database Software Image.
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getAutonomousDatabaseSoftwareImage(args: GetAutonomousDatabaseSo
  */
 export interface GetAutonomousDatabaseSoftwareImageArgs {
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseSoftwareImageId: string;
 }
@@ -43,7 +43,7 @@ export interface GetAutonomousDatabaseSoftwareImageArgs {
 export interface GetAutonomousDatabaseSoftwareImageResult {
     readonly autonomousDatabaseSoftwareImageId: string;
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      */
     readonly autonomousDsiOneOffPatches: string[];
     /**
@@ -51,7 +51,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
      */
     readonly compartmentId: string;
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      */
     readonly databaseVersion: string;
     /**
@@ -59,7 +59,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      */
     readonly displayName: string;
     /**
@@ -67,7 +67,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      */
     readonly id: string;
     /**
@@ -84,7 +84,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
     readonly releaseUpdate: string;
     readonly sourceCdbId: string;
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      */
     readonly state: string;
     /**
@@ -92,14 +92,14 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      */
     readonly timeCreated: string;
 }
 /**
  * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified Autonomous Database Software Image.
+ * Gets information about the specified Autonomous AI Database Software Image.
  *
  * ## Example Usage
  *
@@ -124,7 +124,7 @@ export function getAutonomousDatabaseSoftwareImageOutput(args: GetAutonomousData
  */
 export interface GetAutonomousDatabaseSoftwareImageOutputArgs {
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseSoftwareImageId: pulumi.Input<string>;
 }

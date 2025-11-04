@@ -21,12 +21,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
- * 
- * Updates the specified resolver with your new information.
- * 
- * Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN&#39;s state shows as Available in OCI console before updating DNS resolver properties.
- * Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver&#39;s rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+ * ## Example Usage
  * 
  * ## Import
  * 

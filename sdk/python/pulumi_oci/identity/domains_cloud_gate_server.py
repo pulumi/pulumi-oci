@@ -1300,10 +1300,6 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate server
-
         ## Example Usage
 
         ## Import
@@ -1441,10 +1437,6 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  args: DomainsCloudGateServerInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate server
-
         ## Example Usage
 
         ## Import

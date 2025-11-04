@@ -120,10 +120,6 @@ class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Profile Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Attaches the specified software sources to a profile.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
                  args: ProfileAttachSoftwareSourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Profile Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Attaches the specified software sources to a profile.
-
         ## Example Usage
 
         ```python

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     private String id;
     /**
-     * @return The name of the region where this peer Autonomous Database clone exists.
+     * @return The name of the region where this peer Autonomous AI Database clone exists.
      * 
      */
     private String region;
 
     private GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The name of the region where this peer Autonomous Database clone exists.
+     * @return The name of the region where this peer Autonomous AI Database clone exists.
      * 
      */
     public String region() {

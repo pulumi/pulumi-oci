@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
- *
- * Creates a publication of the specified listing type with an optional default package.
- *
  * ## Example Usage
  *
  * ```typescript

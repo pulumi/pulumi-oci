@@ -34,6 +34,7 @@ import (
 //				AvailabilityDomain:        pulumi.StringRef(computeHostAvailabilityDomain),
 //				ComputeHostGroupId:        pulumi.StringRef(testComputeHostGroup.Id),
 //				ComputeHostHealth:         pulumi.StringRef(computeHostComputeHostHealth),
+//				ComputeHostInSubtree:      pulumi.BoolRef(computeHostComputeHostInSubtree),
 //				ComputeHostLifecycleState: pulumi.StringRef(computeHostComputeHostLifecycleState),
 //				DisplayName:               pulumi.StringRef(computeHostDisplayName),
 //				NetworkResourceId:         pulumi.StringRef(testResource.Id),
@@ -66,6 +67,8 @@ type GetComputeHostsArgs struct {
 	ComputeHostGroupId *string `pulumi:"computeHostGroupId"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
 	ComputeHostHealth *string `pulumi:"computeHostHealth"`
+	// When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+	ComputeHostInSubtree *bool `pulumi:"computeHostInSubtree"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
 	ComputeHostLifecycleState *string `pulumi:"computeHostLifecycleState"`
 	// A filter to return only resources that match the given display name exactly.
@@ -89,6 +92,7 @@ type GetComputeHostsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
 	ComputeHostGroupId        *string `pulumi:"computeHostGroupId"`
 	ComputeHostHealth         *string `pulumi:"computeHostHealth"`
+	ComputeHostInSubtree      *bool   `pulumi:"computeHostInSubtree"`
 	ComputeHostLifecycleState *string `pulumi:"computeHostLifecycleState"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                 `pulumi:"displayName"`
@@ -119,6 +123,8 @@ type GetComputeHostsOutputArgs struct {
 	ComputeHostGroupId pulumi.StringPtrInput `pulumi:"computeHostGroupId"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
 	ComputeHostHealth pulumi.StringPtrInput `pulumi:"computeHostHealth"`
+	// When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+	ComputeHostInSubtree pulumi.BoolPtrInput `pulumi:"computeHostInSubtree"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
 	ComputeHostLifecycleState pulumi.StringPtrInput `pulumi:"computeHostLifecycleState"`
 	// A filter to return only resources that match the given display name exactly.
@@ -172,6 +178,10 @@ func (o GetComputeHostsResultOutput) ComputeHostGroupId() pulumi.StringPtrOutput
 
 func (o GetComputeHostsResultOutput) ComputeHostHealth() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeHostsResult) *string { return v.ComputeHostHealth }).(pulumi.StringPtrOutput)
+}
+
+func (o GetComputeHostsResultOutput) ComputeHostInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetComputeHostsResult) *bool { return v.ComputeHostInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetComputeHostsResultOutput) ComputeHostLifecycleState() pulumi.StringPtrOutput {

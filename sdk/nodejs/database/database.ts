@@ -7,11 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
- *
- * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+ * ## Example Usage
  *
  * ## Import
  *
@@ -49,9 +45,6 @@ export class Database extends pulumi.CustomResource {
         return obj['__pulumiType'] === Database.__pulumiType;
     }
 
-    /**
-     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     */
     declare public readonly actionTrigger: pulumi.Output<number | undefined>;
     /**
      * The character set for the database.
@@ -65,12 +58,6 @@ export class Database extends pulumi.CustomResource {
      * The Connection strings used to connect to the Oracle Database.
      */
     declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.Database.DatabaseConnectionString[]>;
-    /**
-     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     declare public readonly dataGuardAction: pulumi.Output<string | undefined>;
     /**
      * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
@@ -144,16 +131,10 @@ export class Database extends pulumi.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     declare public readonly kmsKeyId: pulumi.Output<string>;
-    /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     */
     declare public readonly kmsKeyMigration: pulumi.Output<boolean | undefined>;
-    /**
-     * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     */
     declare public readonly kmsKeyRotation: pulumi.Output<number | undefined>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     declare public readonly kmsKeyVersionId: pulumi.Output<string | undefined>;
     /**
@@ -185,7 +166,7 @@ export class Database extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly sidPrefix: pulumi.Output<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
     declare public readonly source: pulumi.Output<string>;
     /**
@@ -331,9 +312,6 @@ export class Database extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Database resources.
  */
 export interface DatabaseState {
-    /**
-     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     */
     actionTrigger?: pulumi.Input<number>;
     /**
      * The character set for the database.
@@ -347,12 +325,6 @@ export interface DatabaseState {
      * The Connection strings used to connect to the Oracle Database.
      */
     connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseConnectionString>[]>;
-    /**
-     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     dataGuardAction?: pulumi.Input<string>;
     /**
      * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
@@ -426,16 +398,10 @@ export interface DatabaseState {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     kmsKeyId?: pulumi.Input<string>;
-    /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     */
     kmsKeyMigration?: pulumi.Input<boolean>;
-    /**
-     * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     */
     kmsKeyRotation?: pulumi.Input<number>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
@@ -467,7 +433,7 @@ export interface DatabaseState {
      */
     sidPrefix?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
     source?: pulumi.Input<string>;
     /**
@@ -504,16 +470,7 @@ export interface DatabaseState {
  * The set of arguments for constructing a Database resource.
  */
 export interface DatabaseArgs {
-    /**
-     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     */
     actionTrigger?: pulumi.Input<number>;
-    /**
-     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     dataGuardAction?: pulumi.Input<string>;
     /**
      * (Updatable) Details for creating a database.
@@ -539,20 +496,14 @@ export interface DatabaseArgs {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     kmsKeyId?: pulumi.Input<string>;
-    /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     */
     kmsKeyMigration?: pulumi.Input<boolean>;
-    /**
-     * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     */
     kmsKeyRotation?: pulumi.Input<number>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
     source: pulumi.Input<string>;
     /**

@@ -431,10 +431,6 @@ class CloudDbSystem(pulumi.CustomResource):
                  stack_monitoring_config: Optional[pulumi.Input[Union['CloudDbSystemStackMonitoringConfigArgs', 'CloudDbSystemStackMonitoringConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a cloud DB system and its related resources.
-
         ## Example Usage
 
         ```python
@@ -486,10 +482,6 @@ class CloudDbSystem(pulumi.CustomResource):
                  args: CloudDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a cloud DB system and its related resources.
-
         ## Example Usage
 
         ```python

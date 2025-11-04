@@ -21,7 +21,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      */
     private List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
     /**
-     * @return CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+     * @return CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
      * 
      */
     private Double availableCpus;
@@ -51,7 +51,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      */
     private Double largestProvisionableAutonomousDatabaseInCpus;
     /**
-     * @return Valid list of provisionable CPUs for Autonomous Database.
+     * @return Valid list of provisionable CPUs for Autonomous AI Database.
      * 
      */
     private List<Double> provisionableCpuses;
@@ -88,7 +88,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         return this.autonomousContainerDatabaseVmUsages;
     }
     /**
-     * @return CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+     * @return CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
      * 
      */
     public Double availableCpus() {
@@ -130,7 +130,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         return this.largestProvisionableAutonomousDatabaseInCpus;
     }
     /**
-     * @return Valid list of provisionable CPUs for Autonomous Database.
+     * @return Valid list of provisionable CPUs for Autonomous AI Database.
      * 
      */
     public List<Double> provisionableCpuses() {

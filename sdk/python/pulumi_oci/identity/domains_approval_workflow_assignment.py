@@ -962,10 +962,6 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowAssignmentTagArgs', 'DomainsApprovalWorkflowAssignmentTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create Approval Workflow Assignment
-
         ## Example Usage
 
         ## Import
@@ -1057,10 +1053,6 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
                  args: DomainsApprovalWorkflowAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create Approval Workflow Assignment
-
         ## Example Usage
 
         ## Import

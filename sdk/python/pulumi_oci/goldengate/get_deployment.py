@@ -27,7 +27,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, cluster_placement_group_id=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, security_attributes=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -40,6 +40,9 @@ class GetDeploymentResult:
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -157,6 +160,9 @@ class GetDeploymentResult:
         if public_ip_address and not isinstance(public_ip_address, str):
             raise TypeError("Expected argument 'public_ip_address' to be a str")
         pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if source_deployment_id and not isinstance(source_deployment_id, str):
             raise TypeError("Expected argument 'source_deployment_id' to be a str")
         pulumi.set(__self__, "source_deployment_id", source_deployment_id)
@@ -169,6 +175,9 @@ class GetDeploymentResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -228,6 +237,14 @@ class GetDeploymentResult:
         The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         """
         return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -536,6 +553,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "public_ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="sourceDeploymentId")
     def source_deployment_id(self) -> _builtins.str:
         """
@@ -566,6 +591,14 @@ class GetDeploymentResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -650,6 +683,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             backup_schedules=self.backup_schedules,
             byol_cpu_core_count_limit=self.byol_cpu_core_count_limit,
             category=self.category,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             defined_tags=self.defined_tags,
@@ -689,10 +723,12 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             placements=self.placements,
             private_ip_address=self.private_ip_address,
             public_ip_address=self.public_ip_address,
+            security_attributes=self.security_attributes,
             source_deployment_id=self.source_deployment_id,
             state=self.state,
             storage_utilization_in_bytes=self.storage_utilization_in_bytes,
             subnet_id=self.subnet_id,
+            subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_last_backup_scheduled=self.time_last_backup_scheduled,
@@ -733,6 +769,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         backup_schedules=pulumi.get(__ret__, 'backup_schedules'),
         byol_cpu_core_count_limit=pulumi.get(__ret__, 'byol_cpu_core_count_limit'),
         category=pulumi.get(__ret__, 'category'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -772,10 +809,12 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         placements=pulumi.get(__ret__, 'placements'),
         private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         public_ip_address=pulumi.get(__ret__, 'public_ip_address'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         source_deployment_id=pulumi.get(__ret__, 'source_deployment_id'),
         state=pulumi.get(__ret__, 'state'),
         storage_utilization_in_bytes=pulumi.get(__ret__, 'storage_utilization_in_bytes'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_backup_scheduled=pulumi.get(__ret__, 'time_last_backup_scheduled'),
@@ -813,6 +852,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
         backup_schedules=pulumi.get(__response__, 'backup_schedules'),
         byol_cpu_core_count_limit=pulumi.get(__response__, 'byol_cpu_core_count_limit'),
         category=pulumi.get(__response__, 'category'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -852,10 +892,12 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
         placements=pulumi.get(__response__, 'placements'),
         private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         source_deployment_id=pulumi.get(__response__, 'source_deployment_id'),
         state=pulumi.get(__response__, 'state'),
         storage_utilization_in_bytes=pulumi.get(__response__, 'storage_utilization_in_bytes'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_last_backup_scheduled=pulumi.get(__response__, 'time_last_backup_scheduled'),

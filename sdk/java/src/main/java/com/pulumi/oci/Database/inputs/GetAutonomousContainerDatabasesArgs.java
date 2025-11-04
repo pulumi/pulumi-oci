@@ -131,14 +131,14 @@ public final class GetAutonomousContainerDatabasesArgs extends com.pulumi.resour
     }
 
     /**
-     * A filter to return only resources that match the given service level agreement type exactly.
+     * A filter to return only resources that match the given service-level agreement type exactly.
      * 
      */
     @Import(name="serviceLevelAgreementType")
     private @Nullable Output<String> serviceLevelAgreementType;
 
     /**
-     * @return A filter to return only resources that match the given service level agreement type exactly.
+     * @return A filter to return only resources that match the given service-level agreement type exactly.
      * 
      */
     public Optional<Output<String>> serviceLevelAgreementType() {
@@ -354,7 +354,7 @@ public final class GetAutonomousContainerDatabasesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param serviceLevelAgreementType A filter to return only resources that match the given service level agreement type exactly.
+         * @param serviceLevelAgreementType A filter to return only resources that match the given service-level agreement type exactly.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class GetAutonomousContainerDatabasesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param serviceLevelAgreementType A filter to return only resources that match the given service level agreement type exactly.
+         * @param serviceLevelAgreementType A filter to return only resources that match the given service-level agreement type exactly.
          * 
          * @return builder
          * 

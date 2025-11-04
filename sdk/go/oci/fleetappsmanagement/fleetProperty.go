@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-//
-// Add an existing global property to a fleet in Fleet Application Management.
-//
 // ## Example Usage
 //
 // ```go

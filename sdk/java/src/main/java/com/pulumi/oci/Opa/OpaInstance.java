@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
- * 
- * Creates a new OpaInstance.
- * 
  * ## Example Usage
  * 
  * <pre>

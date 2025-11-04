@@ -529,10 +529,6 @@ class MlApplicationImplementation(pulumi.CustomResource):
                  opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new MlApplicationImplementation.
-
         ## Example Usage
 
         ```python
@@ -605,10 +601,6 @@ class MlApplicationImplementation(pulumi.CustomResource):
                  args: MlApplicationImplementationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new MlApplicationImplementation.
-
         ## Example Usage
 
         ```python

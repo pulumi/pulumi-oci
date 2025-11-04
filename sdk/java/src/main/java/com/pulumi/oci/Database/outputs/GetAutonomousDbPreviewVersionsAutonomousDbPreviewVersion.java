@@ -11,11 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     private String dbWorkload;
@@ -35,18 +36,19 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
      */
     private String timePreviewEnd;
     /**
-     * @return A valid Autonomous Database preview version.
+     * @return A valid Autonomous AI Database preview version.
      * 
      */
     private String version;
 
     private GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion() {}
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     public String dbWorkload() {
@@ -74,7 +76,7 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
         return this.timePreviewEnd;
     }
     /**
-     * @return A valid Autonomous Database preview version.
+     * @return A valid Autonomous AI Database preview version.
      * 
      */
     public String version() {

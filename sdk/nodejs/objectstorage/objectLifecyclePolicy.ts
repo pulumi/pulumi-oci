@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
- *
- * Creates or replaces the object lifecycle policy for the bucket.
- *
  * ## Example Usage
  *
  * ```typescript

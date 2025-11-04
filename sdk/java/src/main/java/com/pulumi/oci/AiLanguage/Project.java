@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Project resource in Oracle Cloud Infrastructure Ai Language service.
- * 
- * Creates a new Project.
- * 
  * ## Example Usage
  * 
  * <pre>

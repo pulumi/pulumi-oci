@@ -401,10 +401,6 @@ class RunbookVersion(pulumi.CustomResource):
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add RunbookVersion in Fleet Application Management.
-
         ## Example Usage
 
         ```python
@@ -585,10 +581,6 @@ class RunbookVersion(pulumi.CustomResource):
                  args: RunbookVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add RunbookVersion in Fleet Application Management.
-
         ## Example Usage
 
         ```python

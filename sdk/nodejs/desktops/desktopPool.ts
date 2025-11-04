@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
- *
- * Creates a desktop pool with the given configuration parameters.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -415,10 +415,6 @@ class BuildRun(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
-
-        Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
-
         ## Example Usage
 
         ```python
@@ -475,10 +471,6 @@ class BuildRun(pulumi.CustomResource):
                  args: BuildRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
-
-        Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
-
         ## Example Usage
 
         ```python

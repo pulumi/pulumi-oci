@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Creates a new metric extension resource for a given compartment
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

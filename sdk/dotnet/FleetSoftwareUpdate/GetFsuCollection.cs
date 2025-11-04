@@ -131,19 +131,23 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCollectionActiveFsuCycleResult> ActiveFsuCycles;
         /// <summary>
-        /// Compartment Identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Details of components in an Exadata software stack.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFsuCollectionComponentResult> Components;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// Exadata Fleet Update Collection resource display name.
+        /// The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+        /// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCollectionFleetDiscoveryResult> FleetDiscoveries;
         /// <summary>
@@ -152,7 +156,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string FsuCollectionId;
         /// <summary>
-        /// OCID identifier for the Exadata Fleet Update Collection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -168,7 +172,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public readonly string ServiceType;
         /// <summary>
-        /// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+        /// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         /// </summary>
         public readonly string SourceMajorVersion;
         /// <summary>
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
             ImmutableArray<Outputs.GetFsuCollectionActiveFsuCycleResult> activeFsuCycles,
 
             string compartmentId,
+
+            ImmutableArray<Outputs.GetFsuCollectionComponentResult> components,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -236,6 +242,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         {
             ActiveFsuCycles = activeFsuCycles;
             CompartmentId = compartmentId;
+            Components = components;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FleetDiscoveries = fleetDiscoveries;

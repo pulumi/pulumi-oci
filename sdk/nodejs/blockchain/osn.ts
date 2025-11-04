@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
- *
- * Create Blockchain Platform Osn
- *
  * ## Example Usage
  *
  * ```typescript

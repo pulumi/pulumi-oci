@@ -431,10 +431,6 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
                  security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
-
-          Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
-
         ## Example Usage
 
         ```python
@@ -471,10 +467,6 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
                  args: SecurityAssessmentFindingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
-
-          Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
-
         ## Example Usage
 
         ```python

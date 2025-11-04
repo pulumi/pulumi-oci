@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
-//
-// Creates a Java license acceptance record for the specified license type in a tenancy.
-//
 // ## Example Usage
 //
 // ```go

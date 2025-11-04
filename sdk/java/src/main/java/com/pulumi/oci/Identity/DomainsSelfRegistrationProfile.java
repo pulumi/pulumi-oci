@@ -30,10 +30,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a self-registration profile.
- * 
  * ## Example Usage
  * 
  * ## Import

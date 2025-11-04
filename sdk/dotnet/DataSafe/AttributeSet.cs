@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates an attribute set.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

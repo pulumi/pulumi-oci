@@ -496,9 +496,7 @@ class CertificateAuthority(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate authority (CA) according to the details of the request.
+        ## Example Usage
 
         ## Import
 
@@ -531,9 +529,7 @@ class CertificateAuthority(pulumi.CustomResource):
                  args: CertificateAuthorityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate authority (CA) according to the details of the request.
+        ## Example Usage
 
         ## Import
 

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -41,6 +43,7 @@ export class EsxiHost extends pulumi.CustomResource {
         return obj['__pulumiType'] === EsxiHost.__pulumiType;
     }
 
+    declare public readonly attachDatastoreClusterIds: pulumi.Output<string[] | undefined>;
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
@@ -82,11 +85,20 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     declare public readonly currentSku: pulumi.Output<string>;
     /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     */
+    declare public /*out*/ readonly datastoreAttachments: pulumi.Output<outputs.Ocvp.EsxiHostDatastoreAttachment[]>;
+    /**
+     * A list of datastore clusters.
+     */
+    declare public /*out*/ readonly datastoreClusterIds: pulumi.Output<string[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly detachDatastoreClusterIds: pulumi.Output<string[] | undefined>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
      * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *
@@ -193,6 +205,7 @@ export class EsxiHost extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EsxiHostState | undefined;
+            resourceInputs["attachDatastoreClusterIds"] = state?.attachDatastoreClusterIds;
             resourceInputs["billingContractEndDate"] = state?.billingContractEndDate;
             resourceInputs["billingDonorHostId"] = state?.billingDonorHostId;
             resourceInputs["capacityReservationId"] = state?.capacityReservationId;
@@ -202,7 +215,10 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["computeInstanceId"] = state?.computeInstanceId;
             resourceInputs["currentCommitment"] = state?.currentCommitment;
             resourceInputs["currentSku"] = state?.currentSku;
+            resourceInputs["datastoreAttachments"] = state?.datastoreAttachments;
+            resourceInputs["datastoreClusterIds"] = state?.datastoreClusterIds;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detachDatastoreClusterIds"] = state?.detachDatastoreClusterIds;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
             resourceInputs["failedEsxiHostId"] = state?.failedEsxiHostId;
@@ -225,12 +241,14 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["vmwareSoftwareVersion"] = state?.vmwareSoftwareVersion;
         } else {
             const args = argsOrState as EsxiHostArgs | undefined;
+            resourceInputs["attachDatastoreClusterIds"] = args?.attachDatastoreClusterIds;
             resourceInputs["billingDonorHostId"] = args?.billingDonorHostId;
             resourceInputs["capacityReservationId"] = args?.capacityReservationId;
             resourceInputs["clusterId"] = args?.clusterId;
             resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
             resourceInputs["currentSku"] = args?.currentSku;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["detachDatastoreClusterIds"] = args?.detachDatastoreClusterIds;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
             resourceInputs["failedEsxiHostId"] = args?.failedEsxiHostId;
@@ -244,6 +262,8 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
             resourceInputs["currentCommitment"] = undefined /*out*/;
+            resourceInputs["datastoreAttachments"] = undefined /*out*/;
+            resourceInputs["datastoreClusterIds"] = undefined /*out*/;
             resourceInputs["gracePeriodEndDate"] = undefined /*out*/;
             resourceInputs["isBillingContinuationInProgress"] = undefined /*out*/;
             resourceInputs["isBillingSwappingInProgress"] = undefined /*out*/;
@@ -265,6 +285,7 @@ export class EsxiHost extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EsxiHost resources.
  */
 export interface EsxiHostState {
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
@@ -306,11 +327,20 @@ export interface EsxiHostState {
      */
     currentSku?: pulumi.Input<string>;
     /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     */
+    datastoreAttachments?: pulumi.Input<pulumi.Input<inputs.Ocvp.EsxiHostDatastoreAttachment>[]>;
+    /**
+     * A list of datastore clusters.
+     */
+    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
      * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *
@@ -409,6 +439,7 @@ export interface EsxiHostState {
  * The set of arguments for constructing a EsxiHost resource.
  */
 export interface EsxiHostArgs {
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      *
@@ -437,8 +468,9 @@ export interface EsxiHostArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
      * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *

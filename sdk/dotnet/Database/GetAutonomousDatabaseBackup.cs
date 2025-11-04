@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database backup.
+        /// Gets information about the specified Autonomous AI Database backup.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database backup.
+        /// Gets information about the specified Autonomous AI Database backup.
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database backup.
+        /// Gets information about the specified Autonomous AI Database backup.
         /// 
         /// ## Example Usage
         /// 
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabaseBackupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         [Input("autonomousDatabaseBackupId", required: true)]
         public string AutonomousDatabaseBackupId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabaseBackupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         [Input("autonomousDatabaseBackupId", required: true)]
         public Input<string> AutonomousDatabaseBackupId { get; set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Database
     {
         public readonly string AutonomousDatabaseBackupId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double DatabaseSizeInTbs;
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
@@ -149,16 +149,20 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The infrastructure type this resource belongs to.
+        /// </summary>
+        public readonly string InfrastructureType;
         /// <summary>
         /// Indicates whether the backup is user-initiated or automatic.
         /// </summary>
         public readonly bool IsAutomatic;
         public readonly bool IsLongTermBackup;
         /// <summary>
-        /// Indicates whether the backup can be used to restore the associated Autonomous Database.
+        /// Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         /// </summary>
         public readonly bool IsRestorable;
         /// <summary>
@@ -174,13 +178,17 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Name of the region in which backup is taken in.
+        /// </summary>
+        public readonly string Region;
         /// <summary>
         /// Retention period, in days, for long-term backups
         /// </summary>
@@ -189,6 +197,10 @@ namespace Pulumi.Oci.Database
         /// The backup size in terrabytes (TB).
         /// </summary>
         public readonly double SizeInTbs;
+        /// <summary>
+        /// Source Autonomous Database details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailResult> SourceDatabaseDetails;
         /// <summary>
         /// The current state of the backup.
         /// </summary>
@@ -232,6 +244,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            string infrastructureType,
+
             bool isAutomatic,
 
             bool isLongTermBackup,
@@ -248,9 +262,13 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            string region,
+
             int retentionPeriodInDays,
 
             double sizeInTbs,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailResult> sourceDatabaseDetails,
 
             string state,
 
@@ -272,6 +290,7 @@ namespace Pulumi.Oci.Database
             DbVersion = dbVersion;
             DisplayName = displayName;
             Id = id;
+            InfrastructureType = infrastructureType;
             IsAutomatic = isAutomatic;
             IsLongTermBackup = isLongTermBackup;
             IsRestorable = isRestorable;
@@ -280,8 +299,10 @@ namespace Pulumi.Oci.Database
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
+            Region = region;
             RetentionPeriodInDays = retentionPeriodInDays;
             SizeInTbs = sizeInTbs;
+            SourceDatabaseDetails = sourceDatabaseDetails;
             State = state;
             TimeAvailableTill = timeAvailableTill;
             TimeEnded = timeEnded;

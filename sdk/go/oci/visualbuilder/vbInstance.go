@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-//
-// Creates a new Vb Instance.
+// ## Example Usage
 //
 // ## Import
 //

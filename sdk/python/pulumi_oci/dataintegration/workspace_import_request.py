@@ -463,10 +463,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Import Metadata Object
-
         ## Example Usage
 
         ```python
@@ -518,10 +514,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  args: WorkspaceImportRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Import Metadata Object
-
         ## Example Usage
 
         ```python

@@ -1041,10 +1041,6 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create ApprovalWorkflow
-
         ## Example Usage
 
         ## Import
@@ -1148,10 +1144,6 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                  args: DomainsApprovalWorkflowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create ApprovalWorkflow
-
         ## Example Usage
 
         ## Import

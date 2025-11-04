@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
-//
-// # Verify address
-//
 // ## Example Usage
 //
 // ```go

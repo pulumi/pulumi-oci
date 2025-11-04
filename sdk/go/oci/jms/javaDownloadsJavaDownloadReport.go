@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
-//
-// Create a new report in the specified format containing the download details
-// for the tenancy.
-//
 // ## Example Usage
 //
 // ```go

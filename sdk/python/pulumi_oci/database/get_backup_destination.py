@@ -27,10 +27,16 @@ class GetBackupDestinationResult:
     """
     A collection of values returned by getBackupDestination.
     """
-    def __init__(__self__, associated_databases=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, system_tags=None, time_at_which_storage_details_are_updated=None, time_created=None, total_storage_size_in_gbs=None, type=None, utilized_storage_size_in_gbs=None, vpc_users=None):
+    def __init__(__self__, associated_databases=None, associated_long_term_backup_count=None, associated_long_term_backups=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, system_tags=None, time_at_which_storage_details_are_updated=None, time_created=None, total_storage_size_in_gbs=None, type=None, utilized_storage_size_in_gbs=None, vpc_users=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
+        if associated_long_term_backup_count and not isinstance(associated_long_term_backup_count, int):
+            raise TypeError("Expected argument 'associated_long_term_backup_count' to be a int")
+        pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        if associated_long_term_backups and not isinstance(associated_long_term_backups, list):
+            raise TypeError("Expected argument 'associated_long_term_backups' to be a list")
+        pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         if backup_destination_id and not isinstance(backup_destination_id, str):
             raise TypeError("Expected argument 'backup_destination_id' to be a str")
         pulumi.set(__self__, "backup_destination_id", backup_destination_id)
@@ -102,6 +108,22 @@ class GetBackupDestinationResult:
         List of databases associated with the backup destination.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> _builtins.int:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Sequence['outputs.GetBackupDestinationAssociatedLongTermBackupResult']:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationId")
@@ -274,6 +296,8 @@ class AwaitableGetBackupDestinationResult(GetBackupDestinationResult):
             yield self
         return GetBackupDestinationResult(
             associated_databases=self.associated_databases,
+            associated_long_term_backup_count=self.associated_long_term_backup_count,
+            associated_long_term_backups=self.associated_long_term_backups,
             backup_destination_id=self.backup_destination_id,
             compartment_id=self.compartment_id,
             connection_string=self.connection_string,
@@ -323,6 +347,8 @@ def get_backup_destination(backup_destination_id: Optional[_builtins.str] = None
 
     return AwaitableGetBackupDestinationResult(
         associated_databases=pulumi.get(__ret__, 'associated_databases'),
+        associated_long_term_backup_count=pulumi.get(__ret__, 'associated_long_term_backup_count'),
+        associated_long_term_backups=pulumi.get(__ret__, 'associated_long_term_backups'),
         backup_destination_id=pulumi.get(__ret__, 'backup_destination_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_string=pulumi.get(__ret__, 'connection_string'),
@@ -369,6 +395,8 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[_
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackupDestination:getBackupDestination', __args__, opts=opts, typ=GetBackupDestinationResult)
     return __ret__.apply(lambda __response__: GetBackupDestinationResult(
         associated_databases=pulumi.get(__response__, 'associated_databases'),
+        associated_long_term_backup_count=pulumi.get(__response__, 'associated_long_term_backup_count'),
+        associated_long_term_backups=pulumi.get(__response__, 'associated_long_term_backups'),
         backup_destination_id=pulumi.get(__response__, 'backup_destination_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_string=pulumi.get(__response__, 'connection_string'),

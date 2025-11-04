@@ -7,11 +7,14 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .database_tools_connection import *
+from .database_tools_identity import *
 from .database_tools_private_endpoint import *
 from .get_database_tools_connection import *
 from .get_database_tools_connections import *
 from .get_database_tools_endpoint_service import *
 from .get_database_tools_endpoint_services import *
+from .get_database_tools_identities import *
+from .get_database_tools_identity import *
 from .get_database_tools_private_endpoint import *
 from .get_database_tools_private_endpoints import *
 from ._inputs import *

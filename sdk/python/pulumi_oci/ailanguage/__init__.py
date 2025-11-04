@@ -9,12 +9,15 @@ import typing
 from .endpoint import *
 from .get_endpoint import *
 from .get_endpoints import *
+from .get_job import *
+from .get_jobs import *
 from .get_model import *
 from .get_model_evaluation_results import *
 from .get_model_type import *
 from .get_models import *
 from .get_project import *
 from .get_projects import *
+from .job import *
 from .model import *
 from .project import *
 from ._inputs import *

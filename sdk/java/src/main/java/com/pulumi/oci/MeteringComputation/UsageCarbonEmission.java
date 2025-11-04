@@ -19,10 +19,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
- * 
- * Returns carbon emission usage for the given account.
- * 
  * ## Example Usage
  * 
  * <pre>

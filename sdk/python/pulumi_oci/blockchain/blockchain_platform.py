@@ -757,10 +757,6 @@ class BlockchainPlatform(pulumi.CustomResource):
                  total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Creates a new Blockchain Platform.
-
         ## Example Usage
 
         ```python
@@ -824,10 +820,6 @@ class BlockchainPlatform(pulumi.CustomResource):
                  args: BlockchainPlatformArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Creates a new Blockchain Platform.
-
         ## Example Usage
 
         ```python

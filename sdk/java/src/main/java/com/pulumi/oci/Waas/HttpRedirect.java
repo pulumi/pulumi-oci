@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
- * 
- * Creates a new HTTP Redirect on the WAF edge.
- * 
  * ## Example Usage
  * 
  * <pre>

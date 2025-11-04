@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
-//
-// Note: Deprecated. Use the /connections API instead.
-// Creates a new DatabaseRegistration.
-//
 // ## Example Usage
 //
 // ```go

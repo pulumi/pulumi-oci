@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
-//
 // ## Example Usage
 //
 // ## Import

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
-    /// This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-    /// 
-    /// Creates a new resolver endpoint in the same compartment as the resolver.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

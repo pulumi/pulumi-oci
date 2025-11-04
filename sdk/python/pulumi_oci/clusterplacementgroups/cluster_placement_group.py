@@ -481,10 +481,6 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
-
-        Creates a new cluster placement group in the specified compartment.
-
         ## Example Usage
 
         ```python
@@ -549,10 +545,6 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  args: ClusterPlacementGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
-
-        Creates a new cluster placement group in the specified compartment.
-
         ## Example Usage
 
         ```python

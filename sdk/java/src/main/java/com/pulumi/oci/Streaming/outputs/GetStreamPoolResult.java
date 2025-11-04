@@ -72,6 +72,11 @@ public final class GetStreamPoolResult {
      */
     private List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The current state of the stream pool.
      * 
      */
@@ -162,6 +167,13 @@ public final class GetStreamPoolResult {
         return this.privateEndpointSettings;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The current state of the stream pool.
      * 
      */
@@ -199,6 +211,7 @@ public final class GetStreamPoolResult {
         private String lifecycleStateDetails;
         private String name;
         private List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
+        private Map<String,String> securityAttributes;
         private String state;
         private String streamPoolId;
         private String timeCreated;
@@ -216,6 +229,7 @@ public final class GetStreamPoolResult {
     	      this.lifecycleStateDetails = defaults.lifecycleStateDetails;
     	      this.name = defaults.name;
     	      this.privateEndpointSettings = defaults.privateEndpointSettings;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.streamPoolId = defaults.streamPoolId;
     	      this.timeCreated = defaults.timeCreated;
@@ -319,6 +333,14 @@ public final class GetStreamPoolResult {
             return privateEndpointSettings(List.of(privateEndpointSettings));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetStreamPoolResult", "state");
@@ -355,6 +377,7 @@ public final class GetStreamPoolResult {
             _resultValue.lifecycleStateDetails = lifecycleStateDetails;
             _resultValue.name = name;
             _resultValue.privateEndpointSettings = privateEndpointSettings;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.streamPoolId = streamPoolId;
             _resultValue.timeCreated = timeCreated;

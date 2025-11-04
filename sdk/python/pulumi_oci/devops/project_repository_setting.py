@@ -156,10 +156,6 @@ class ProjectRepositorySetting(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
-
-        Updates the repository settings for a project.
-
         ## Example Usage
 
         ```python
@@ -209,10 +205,6 @@ class ProjectRepositorySetting(pulumi.CustomResource):
                  args: ProjectRepositorySettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
-
-        Updates the repository settings for a project.
-
         ## Example Usage
 
         ```python

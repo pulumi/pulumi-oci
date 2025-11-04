@@ -13,13 +13,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
     public sealed class FsuCollectionActiveFsuCycleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Collection Identifier.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// OCID identifier for the Exadata Fleet Update Collection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

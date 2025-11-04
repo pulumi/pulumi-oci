@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
- *
- * This API creates a schedule. You must provide either resources or resourceFilters.
+ * ## Example Usage
  *
  * ## Import
  *
@@ -49,11 +47,10 @@ export class Schedule extends pulumi.CustomResource {
 
     /**
      * (Updatable) This is the action that will be executed by the schedule.
-     * <<<<<<< ours
      */
     declare public readonly action: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -70,7 +67,6 @@ export class Schedule extends pulumi.CustomResource {
     declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     * >>>>>>> theirs
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
@@ -78,13 +74,11 @@ export class Schedule extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lastRunStatus: pulumi.Output<string>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     *
-     * >>>>>>> theirs
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
     declare public readonly recurrenceDetails: pulumi.Output<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * (Updatable) Type of recurrence of a schedule
      */
     declare public readonly recurrenceType: pulumi.Output<string>;
     /**
@@ -209,11 +203,10 @@ export class Schedule extends pulumi.CustomResource {
 export interface ScheduleState {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
-     * <<<<<<< ours
      */
     action?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -230,7 +223,6 @@ export interface ScheduleState {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     * >>>>>>> theirs
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -238,13 +230,11 @@ export interface ScheduleState {
      */
     lastRunStatus?: pulumi.Input<string>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     *
-     * >>>>>>> theirs
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
     recurrenceDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * (Updatable) Type of recurrence of a schedule
      */
     recurrenceType?: pulumi.Input<string>;
     /**
@@ -299,11 +289,10 @@ export interface ScheduleState {
 export interface ScheduleArgs {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
-     * <<<<<<< ours
      */
     action: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -320,17 +309,14 @@ export interface ScheduleArgs {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     * >>>>>>> theirs
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     *
-     * >>>>>>> theirs
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
     recurrenceDetails: pulumi.Input<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * (Updatable) Type of recurrence of a schedule
      */
     recurrenceType: pulumi.Input<string>;
     /**

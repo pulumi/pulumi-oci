@@ -300,10 +300,6 @@ class SensitiveTypeGroup(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive type group.
-
         ## Example Usage
 
         ```python
@@ -349,10 +345,6 @@ class SensitiveTypeGroup(pulumi.CustomResource):
                  args: SensitiveTypeGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive type group.
-
         ## Example Usage
 
         ```python

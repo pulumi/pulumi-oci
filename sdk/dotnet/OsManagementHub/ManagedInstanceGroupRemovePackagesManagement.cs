@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Removes the specified packages from each managed instance in a managed instance group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

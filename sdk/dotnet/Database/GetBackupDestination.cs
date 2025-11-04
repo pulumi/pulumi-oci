@@ -130,6 +130,14 @@ namespace Pulumi.Oci.Database
         /// List of databases associated with the backup destination.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupDestinationAssociatedDatabaseResult> AssociatedDatabases;
+        /// <summary>
+        /// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        /// </summary>
+        public readonly int AssociatedLongTermBackupCount;
+        /// <summary>
+        /// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBackupDestinationAssociatedLongTermBackupResult> AssociatedLongTermBackups;
         public readonly string BackupDestinationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -213,6 +221,10 @@ namespace Pulumi.Oci.Database
         private GetBackupDestinationResult(
             ImmutableArray<Outputs.GetBackupDestinationAssociatedDatabaseResult> associatedDatabases,
 
+            int associatedLongTermBackupCount,
+
+            ImmutableArray<Outputs.GetBackupDestinationAssociatedLongTermBackupResult> associatedLongTermBackups,
+
             string backupDestinationId,
 
             string compartmentId,
@@ -256,6 +268,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> vpcUsers)
         {
             AssociatedDatabases = associatedDatabases;
+            AssociatedLongTermBackupCount = associatedLongTermBackupCount;
+            AssociatedLongTermBackups = associatedLongTermBackups;
             BackupDestinationId = backupDestinationId;
             CompartmentId = compartmentId;
             ConnectionString = connectionString;

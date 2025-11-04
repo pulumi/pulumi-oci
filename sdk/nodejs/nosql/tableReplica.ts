@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
- *
- * Add a replica for this table. The table's schema must be frozen prior to this operation.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepConfiguration
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepContainerConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepDataflowConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepParameter;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetailStepStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
@@ -67,6 +68,16 @@ public final class GetPipelineStepDetail {
      * 
      */
     private String stepName;
+    /**
+     * @return Pipeline step parameter details
+     * 
+     */
+    private List<GetPipelineStepDetailStepParameter> stepParameters;
+    /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    private String stepRunName;
     /**
      * @return The storage mount details to mount to the instance running the pipeline step.
      * 
@@ -150,6 +161,20 @@ public final class GetPipelineStepDetail {
         return this.stepName;
     }
     /**
+     * @return Pipeline step parameter details
+     * 
+     */
+    public List<GetPipelineStepDetailStepParameter> stepParameters() {
+        return this.stepParameters;
+    }
+    /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    public String stepRunName() {
+        return this.stepRunName;
+    }
+    /**
      * @return The storage mount details to mount to the instance running the pipeline step.
      * 
      */
@@ -183,6 +208,8 @@ public final class GetPipelineStepDetail {
         private List<GetPipelineStepDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
         private List<GetPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
         private String stepName;
+        private List<GetPipelineStepDetailStepParameter> stepParameters;
+        private String stepRunName;
         private List<GetPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
         private String stepType;
         public Builder() {}
@@ -198,6 +225,8 @@ public final class GetPipelineStepDetail {
     	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
     	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
+    	      this.stepParameters = defaults.stepParameters;
+    	      this.stepRunName = defaults.stepRunName;
     	      this.stepStorageMountConfigurationDetailsLists = defaults.stepStorageMountConfigurationDetailsLists;
     	      this.stepType = defaults.stepType;
         }
@@ -298,6 +327,25 @@ public final class GetPipelineStepDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder stepParameters(List<GetPipelineStepDetailStepParameter> stepParameters) {
+            if (stepParameters == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetail", "stepParameters");
+            }
+            this.stepParameters = stepParameters;
+            return this;
+        }
+        public Builder stepParameters(GetPipelineStepDetailStepParameter... stepParameters) {
+            return stepParameters(List.of(stepParameters));
+        }
+        @CustomType.Setter
+        public Builder stepRunName(String stepRunName) {
+            if (stepRunName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetail", "stepRunName");
+            }
+            this.stepRunName = stepRunName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stepStorageMountConfigurationDetailsLists(List<GetPipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists) {
             if (stepStorageMountConfigurationDetailsLists == null) {
               throw new MissingRequiredPropertyException("GetPipelineStepDetail", "stepStorageMountConfigurationDetailsLists");
@@ -328,6 +376,8 @@ public final class GetPipelineStepDetail {
             _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
+            _resultValue.stepParameters = stepParameters;
+            _resultValue.stepRunName = stepRunName;
             _resultValue.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             _resultValue.stepType = stepType;
             return _resultValue;

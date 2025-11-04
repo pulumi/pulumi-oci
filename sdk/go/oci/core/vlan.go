@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a VLAN in the specified VCN and the specified compartment.
-//
 // ## Example Usage
 //
 // ```go

@@ -19,15 +19,16 @@ __all__ = ['SubnetArgs', 'Subnet']
 @pulumi.input_type
 class SubnetArgs:
     def __init__(__self__, *,
-                 cidr_block: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  vcn_id: pulumi.Input[_builtins.str],
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_label: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
                  ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -36,11 +37,6 @@ class SubnetArgs:
                  security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Subnet resource.
-        :param pulumi.Input[_builtins.str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-               
-               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-               
-               Example: `10.0.1.0/24`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
                
@@ -54,6 +50,11 @@ class SubnetArgs:
                To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
                
                Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+               
+               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+               
+               Example: `10.0.1.0/24`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] dhcp_options_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -65,6 +66,10 @@ class SubnetArgs:
                
                Example: `subnet123`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4cidr_blocks: The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+               * Ipv4 CIDR blocks must be valid.
+               * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+               * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
         :param pulumi.Input[_builtins.str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
                
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -89,11 +94,12 @@ class SubnetArgs:
         :param pulumi.Input[_builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         """
-        pulumi.set(__self__, "cidr_block", cidr_block)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cidr_block is not None:
+            pulumi.set(__self__, "cidr_block", cidr_block)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if dhcp_options_id is not None:
@@ -104,6 +110,8 @@ class SubnetArgs:
             pulumi.set(__self__, "dns_label", dns_label)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ipv4cidr_blocks is not None:
+            pulumi.set(__self__, "ipv4cidr_blocks", ipv4cidr_blocks)
         if ipv6cidr_block is not None:
             pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
         if ipv6cidr_blocks is not None:
@@ -116,22 +124,6 @@ class SubnetArgs:
             pulumi.set(__self__, "route_table_id", route_table_id)
         if security_list_ids is not None:
             pulumi.set(__self__, "security_list_ids", security_list_ids)
-
-    @_builtins.property
-    @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-
-        a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-
-        Example: `10.0.1.0/24`
-        """
-        return pulumi.get(self, "cidr_block")
-
-    @cidr_block.setter
-    def cidr_block(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -178,6 +170,22 @@ class SubnetArgs:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrBlock")
+    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+
+        Example: `10.0.1.0/24`
+        """
+        return pulumi.get(self, "cidr_block")
+
+    @cidr_block.setter
+    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -244,6 +252,21 @@ class SubnetArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4cidrBlocks")
+    def ipv4cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        * Ipv4 CIDR blocks must be valid.
+        * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+        """
+        return pulumi.get(self, "ipv4cidr_blocks")
+
+    @ipv4cidr_blocks.setter
+    def ipv4cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ipv4cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")
@@ -346,6 +369,7 @@ class _SubnetState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_label: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
                  ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv6virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
@@ -385,6 +409,10 @@ class _SubnetState:
                
                Example: `subnet123`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4cidr_blocks: The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+               * Ipv4 CIDR blocks must be valid.
+               * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+               * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
         :param pulumi.Input[_builtins.str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
                
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -436,6 +464,8 @@ class _SubnetState:
             pulumi.set(__self__, "dns_label", dns_label)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ipv4cidr_blocks is not None:
+            pulumi.set(__self__, "ipv4cidr_blocks", ipv4cidr_blocks)
         if ipv6cidr_block is not None:
             pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
         if ipv6cidr_blocks is not None:
@@ -574,6 +604,21 @@ class _SubnetState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4cidrBlocks")
+    def ipv4cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        * Ipv4 CIDR blocks must be valid.
+        * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+        """
+        return pulumi.get(self, "ipv4cidr_blocks")
+
+    @ipv4cidr_blocks.setter
+    def ipv4cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ipv4cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")
@@ -767,6 +812,7 @@ class Subnet(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_label: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
                  ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -776,40 +822,6 @@ class Subnet(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
-        so it's important to think about the size of subnets you need before creating them.
-        For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
-        For information on the number of subnets you can have in a VCN, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
-        to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-        other Networking Service components. If you're not sure which compartment to use, put the subnet in
-        the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-        see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally associate a route table with the subnet. If you don't, the subnet will use the
-        VCN's default route table. For more information about route tables, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
-        You may optionally associate a security list with the subnet. If you don't, the subnet will use the
-        VCN's default security list. For more information about security lists, see
-        [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-
-        You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
-        VCN's default set. For more information about DHCP options, see
-        [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
-
-        You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        You can also add a DNS label for the subnet, which is required if you want the Internet and
-        VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-        [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
         ## Example Usage
 
         ```python
@@ -817,10 +829,10 @@ class Subnet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_subnet = oci.core.Subnet("test_subnet",
-            cidr_block=subnet_cidr_block,
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
             availability_domain=subnet_availability_domain,
+            cidr_block=subnet_cidr_block,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -830,6 +842,7 @@ class Subnet(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
             prohibit_internet_ingress=subnet_prohibit_internet_ingress,
@@ -872,6 +885,10 @@ class Subnet(pulumi.CustomResource):
                
                Example: `subnet123`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4cidr_blocks: The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+               * Ipv4 CIDR blocks must be valid.
+               * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+               * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
         :param pulumi.Input[_builtins.str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
                
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -908,40 +925,6 @@ class Subnet(pulumi.CustomResource):
                  args: SubnetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
-        so it's important to think about the size of subnets you need before creating them.
-        For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
-        For information on the number of subnets you can have in a VCN, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
-        to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-        other Networking Service components. If you're not sure which compartment to use, put the subnet in
-        the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-        see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally associate a route table with the subnet. If you don't, the subnet will use the
-        VCN's default route table. For more information about route tables, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
-        You may optionally associate a security list with the subnet. If you don't, the subnet will use the
-        VCN's default security list. For more information about security lists, see
-        [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-
-        You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
-        VCN's default set. For more information about DHCP options, see
-        [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
-
-        You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        You can also add a DNS label for the subnet, which is required if you want the Internet and
-        VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-        [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
         ## Example Usage
 
         ```python
@@ -949,10 +932,10 @@ class Subnet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_subnet = oci.core.Subnet("test_subnet",
-            cidr_block=subnet_cidr_block,
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
             availability_domain=subnet_availability_domain,
+            cidr_block=subnet_cidr_block,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -962,6 +945,7 @@ class Subnet(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
             prohibit_internet_ingress=subnet_prohibit_internet_ingress,
@@ -1001,6 +985,7 @@ class Subnet(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_label: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
                  ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -1018,8 +1003,6 @@ class Subnet(pulumi.CustomResource):
             __props__ = SubnetArgs.__new__(SubnetArgs)
 
             __props__.__dict__["availability_domain"] = availability_domain
-            if cidr_block is None and not opts.urn:
-                raise TypeError("Missing required property 'cidr_block'")
             __props__.__dict__["cidr_block"] = cidr_block
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -1029,6 +1012,7 @@ class Subnet(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["dns_label"] = dns_label
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["ipv4cidr_blocks"] = ipv4cidr_blocks
             __props__.__dict__["ipv6cidr_block"] = ipv6cidr_block
             __props__.__dict__["ipv6cidr_blocks"] = ipv6cidr_blocks
             __props__.__dict__["prohibit_internet_ingress"] = prohibit_internet_ingress
@@ -1062,6 +1046,7 @@ class Subnet(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             dns_label: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
             ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ipv6virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1106,6 +1091,10 @@ class Subnet(pulumi.CustomResource):
                
                Example: `subnet123`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4cidr_blocks: The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+               * Ipv4 CIDR blocks must be valid.
+               * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+               * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
         :param pulumi.Input[_builtins.str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
                
                For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -1153,6 +1142,7 @@ class Subnet(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["dns_label"] = dns_label
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["ipv4cidr_blocks"] = ipv4cidr_blocks
         __props__.__dict__["ipv6cidr_block"] = ipv6cidr_block
         __props__.__dict__["ipv6cidr_blocks"] = ipv6cidr_blocks
         __props__.__dict__["ipv6virtual_router_ip"] = ipv6virtual_router_ip
@@ -1247,6 +1237,17 @@ class Subnet(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4cidrBlocks")
+    def ipv4cidr_blocks(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        * Ipv4 CIDR blocks must be valid.
+        * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+        """
+        return pulumi.get(self, "ipv4cidr_blocks")
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")

@@ -58,13 +58,12 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-	BaseModelId string `pulumi:"baseModelId"`
-	// Describes what this model can be used for.
+	BaseModelId  string   `pulumi:"baseModelId"`
 	Capabilities []string `pulumi:"capabilities"`
 	// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-	CompartmentId string            `pulumi:"compartmentId"`
-	DefinedTags   map[string]string `pulumi:"definedTags"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A user-friendly name.
@@ -134,12 +133,10 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
 func (o LookupModelResultOutput) BaseModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.BaseModelId }).(pulumi.StringOutput)
 }
 
-// Describes what this model can be used for.
 func (o LookupModelResultOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }
@@ -149,6 +146,7 @@ func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

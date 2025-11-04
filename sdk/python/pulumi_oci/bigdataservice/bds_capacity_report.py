@@ -122,10 +122,6 @@ class BdsCapacityReport(pulumi.CustomResource):
                  shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service. Customer would require BDS_READ permission for the target compartment.
-
-        Create a detailed capacity report for BDS service
-
         ## Example Usage
 
         ```python
@@ -164,10 +160,6 @@ class BdsCapacityReport(pulumi.CustomResource):
                  args: BdsCapacityReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service. Customer would require BDS_READ permission for the target compartment.
-
-        Create a detailed capacity report for BDS service
-
         ## Example Usage
 
         ```python

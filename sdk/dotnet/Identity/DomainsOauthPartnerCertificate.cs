@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create an OAuth Partner Certificate
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

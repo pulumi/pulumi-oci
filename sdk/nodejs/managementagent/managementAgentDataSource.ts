@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
- *
- * Datasource creation request to given Management Agent.
- *
  * ## Example Usage
  *
  * ```typescript

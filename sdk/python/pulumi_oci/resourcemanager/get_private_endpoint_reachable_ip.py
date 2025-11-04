@@ -52,7 +52,7 @@ class GetPrivateEndpointReachableIpResult:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> _builtins.str:
         """
-        An IP address for the Resource Manager service to use for connection to the private resource.
+        Reachable IP address associated with the private endpoint.
         """
         return pulumi.get(self, "ip_address")
 
@@ -85,7 +85,10 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[_builtins.st
     """
     This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
 
-    Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+    Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+    Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+    For more information, see
+    [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
 
     ## Example Usage
 
@@ -118,7 +121,10 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     """
     This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
 
-    Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+    Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+    Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+    For more information, see
+    [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
 
     ## Example Usage
 

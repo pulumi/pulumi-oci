@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vbs
 {
     /// <summary>
-    /// This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-    /// 
-    /// Creates a new VbsInstance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

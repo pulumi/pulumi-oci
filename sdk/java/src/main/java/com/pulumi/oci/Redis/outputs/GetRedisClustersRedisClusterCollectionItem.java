@@ -106,6 +106,11 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private String replicasFqdn;
     /**
+     * @return Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
      * 
      */
@@ -269,6 +274,13 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.replicasFqdn;
     }
     /**
+     * @return Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
      * 
      */
@@ -345,6 +357,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         private String primaryFqdn;
         private String replicasEndpointIpAddress;
         private String replicasFqdn;
+        private Map<String,String> securityAttributes;
         private Integer shardCount;
         private String softwareVersion;
         private String state;
@@ -373,6 +386,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.primaryFqdn = defaults.primaryFqdn;
     	      this.replicasEndpointIpAddress = defaults.replicasEndpointIpAddress;
     	      this.replicasFqdn = defaults.replicasFqdn;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shardCount = defaults.shardCount;
     	      this.softwareVersion = defaults.softwareVersion;
     	      this.state = defaults.state;
@@ -533,6 +547,14 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shardCount(Integer shardCount) {
             if (shardCount == null) {
               throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "shardCount");
@@ -608,6 +630,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             _resultValue.primaryFqdn = primaryFqdn;
             _resultValue.replicasEndpointIpAddress = replicasEndpointIpAddress;
             _resultValue.replicasFqdn = replicasFqdn;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shardCount = shardCount;
             _resultValue.softwareVersion = softwareVersion;
             _resultValue.state = state;

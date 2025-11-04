@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
- * 
- * Creates a new VbsInstance.
- * 
  * ## Example Usage
  * 
  * <pre>

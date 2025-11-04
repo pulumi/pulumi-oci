@@ -429,11 +429,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
         ## Example Usage
 
         ```python
@@ -487,11 +482,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
         ## Example Usage
 
         ```python

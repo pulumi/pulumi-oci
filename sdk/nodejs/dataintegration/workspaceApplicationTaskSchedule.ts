@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
- *
- * Endpoint to be used create TaskSchedule.
- *
  * ## Example Usage
  *
  * ```typescript

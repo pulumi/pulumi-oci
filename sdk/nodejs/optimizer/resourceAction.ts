@@ -7,14 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
- *
- * Updates the resource action that corresponds to the specified OCID.
- * Use this operation to implement the following actions:
- *
- *   * Postpone resource action
- *   * Ignore resource action
- *   * Reactivate resource action
+ * ## Example Usage
  *
  * ## Import
  *

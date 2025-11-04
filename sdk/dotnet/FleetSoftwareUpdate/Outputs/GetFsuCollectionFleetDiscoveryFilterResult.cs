@@ -18,11 +18,15 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string EntityType;
         /// <summary>
-        /// Related resource Ids to include in the discovery.  All must match the specified entityType.
+        /// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+        /// </summary>
+        public readonly ImmutableArray<string> ExadataReleases;
+        /// <summary>
+        /// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
         /// </summary>
         public readonly ImmutableArray<string> Identifiers;
         /// <summary>
-        /// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+        /// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
         /// </summary>
         public readonly string Mode;
         /// <summary>
@@ -34,7 +38,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string Operator;
         /// <summary>
-        /// Freeform tags to include in the discovery.
+        /// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCollectionFleetDiscoveryFilterTagResult> Tags;
         /// <summary>
@@ -42,13 +46,15 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// List of Versions strings to include in the discovery.
+        /// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
         /// </summary>
         public readonly ImmutableArray<string> Versions;
 
         [OutputConstructor]
         private GetFsuCollectionFleetDiscoveryFilterResult(
             string entityType,
+
+            ImmutableArray<string> exadataReleases,
 
             ImmutableArray<string> identifiers,
 
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
             ImmutableArray<string> versions)
         {
             EntityType = entityType;
+            ExadataReleases = exadataReleases;
             Identifiers = identifiers;
             Mode = mode;
             Names = names;

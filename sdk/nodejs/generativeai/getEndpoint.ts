@@ -44,34 +44,41 @@ export interface GetEndpointArgs {
  */
 export interface GetEndpointResult {
     readonly compartmentId: string;
+    /**
+     * The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
+     */
     readonly contentModerationConfigs: outputs.GenerativeAi.GetEndpointContentModerationConfig[];
+    /**
+     * The OCID of the dedicated AI cluster on which the model will be deployed to.
+     */
     readonly dedicatedAiClusterId: string;
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
     readonly definedTags: {[key: string]: string};
-    /**
-     * An optional description of the endpoint.
-     */
     readonly description: string;
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName: string;
     readonly endpointId: string;
     readonly freeformTags: {[key: string]: string};
+    readonly generativeAiPrivateEndpointId: string;
     readonly id: string;
+    /**
+     * A message describing the current state of the endpoint in more detail that can provide actionable information.
+     */
     readonly lifecycleDetails: string;
     /**
-     * The OCID of the model that's used to create this endpoint.
+     * The OCID of the model used for the feature.
      */
     readonly modelId: string;
     /**
      * The current state of the endpoint.
      */
     readonly state: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     readonly systemTags: {[key: string]: string};
     readonly timeCreated: string;
-    /**
-     * The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-     */
     readonly timeUpdated: string;
 }
 /**

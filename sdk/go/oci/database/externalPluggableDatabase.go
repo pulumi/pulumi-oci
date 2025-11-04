@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-//
-// Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-// resource.
-//
 // ## Example Usage
 //
 // ```go

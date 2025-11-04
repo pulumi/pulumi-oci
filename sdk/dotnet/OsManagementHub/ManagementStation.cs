@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Creates a management station using the proxy and mirror configuration information provided.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Create a new stack monitoring resource task.
-//
 // ## Example Usage
 //
 // ```go

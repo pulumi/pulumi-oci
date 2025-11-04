@@ -319,6 +319,7 @@ public final class ContainerEngineFunctions {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
      *             .addonName(testAddon.name())
+     *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
      *     }
@@ -362,6 +363,7 @@ public final class ContainerEngineFunctions {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
      *             .addonName(testAddon.name())
+     *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
      *     }
@@ -405,6 +407,7 @@ public final class ContainerEngineFunctions {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
      *             .addonName(testAddon.name())
+     *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
      *     }
@@ -448,6 +451,7 @@ public final class ContainerEngineFunctions {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
      *             .addonName(testAddon.name())
+     *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
      *     }
@@ -491,6 +495,7 @@ public final class ContainerEngineFunctions {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
      *             .addonName(testAddon.name())
+     *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
      *     }

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
- *
- * Creates a new model deployment.
- *
  * ## Example Usage
  *
  * ```typescript

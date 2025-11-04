@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -119,7 +115,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public readonly computeCount: pulumi.Output<number>;
     /**
-     * The compute model of the Exadata infrastructure.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
@@ -401,7 +397,7 @@ export interface CloudExadataInfrastructureState {
      */
     computeCount?: pulumi.Input<number>;
     /**
-     * The compute model of the Exadata infrastructure.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     computeModel?: pulumi.Input<string>;
     /**

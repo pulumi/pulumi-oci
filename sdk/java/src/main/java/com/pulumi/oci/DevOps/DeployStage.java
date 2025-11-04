@@ -35,9 +35,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new deployment stage.
+ * ## Example Usage
  * 
  * ## Import
  * 

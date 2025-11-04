@@ -716,6 +716,7 @@ class _SddcState:
                  reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_hcx_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
                  time_hcx_license_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -967,6 +968,8 @@ class _SddcState:
             pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_hcx_billing_cycle_end is not None:
@@ -1603,6 +1606,15 @@ class _SddcState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -2033,6 +2045,7 @@ class Sddc(pulumi.CustomResource):
             __props__.__dict__["nsx_manager_username"] = None
             __props__.__dict__["nsx_overlay_segment_name"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_hcx_billing_cycle_end"] = None
             __props__.__dict__["time_hcx_license_status_updated"] = None
@@ -2100,6 +2113,7 @@ class Sddc(pulumi.CustomResource):
             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_hcx_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
             time_hcx_license_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2245,6 +2259,7 @@ class Sddc(pulumi.CustomResource):
         __props__.__dict__["reserving_hcx_on_premise_license_keys"] = reserving_hcx_on_premise_license_keys
         __props__.__dict__["ssh_authorized_keys"] = ssh_authorized_keys
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_hcx_billing_cycle_end"] = time_hcx_billing_cycle_end
         __props__.__dict__["time_hcx_license_status_updated"] = time_hcx_license_status_updated
@@ -2656,6 +2671,11 @@ class Sddc(pulumi.CustomResource):
         The current state of the SDDC.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

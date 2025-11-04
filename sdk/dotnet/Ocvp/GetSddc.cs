@@ -152,7 +152,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -303,6 +303,7 @@ namespace Pulumi.Oci.Ocvp
         /// The current state of the SDDC.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -466,6 +467,8 @@ namespace Pulumi.Oci.Ocvp
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeHcxBillingCycleEnd,
@@ -546,6 +549,7 @@ namespace Pulumi.Oci.Ocvp
             SddcId = sddcId;
             SshAuthorizedKeys = sshAuthorizedKeys;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             TimeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;

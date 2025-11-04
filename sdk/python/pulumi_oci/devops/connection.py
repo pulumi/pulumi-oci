@@ -515,10 +515,6 @@ class Connection(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new connection.
-
         ## Example Usage
 
         ```python
@@ -579,10 +575,6 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new connection.
-
         ## Example Usage
 
         ```python

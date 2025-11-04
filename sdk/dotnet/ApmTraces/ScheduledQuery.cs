@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmTraces
 {
     /// <summary>
-    /// This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
-    /// 
-    /// Create a scheduled query in the APM Domain.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

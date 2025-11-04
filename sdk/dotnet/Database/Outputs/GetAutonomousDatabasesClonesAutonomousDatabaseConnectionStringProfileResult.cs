@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SessionMode;
         /// <summary>
-        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         /// </summary>
         public readonly string SyntaxFormat;
         /// <summary>

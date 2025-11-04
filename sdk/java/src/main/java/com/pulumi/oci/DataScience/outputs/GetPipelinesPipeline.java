@@ -76,6 +76,11 @@ public final class GetPipelinesPipeline {
      */
     private List<GetPipelinesPipelineLogConfigurationDetail> logConfigurationDetails;
     /**
+     * @return Parameters used in the pipeline.
+     * 
+     */
+    private Map<String,String> parameters;
+    /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
@@ -194,6 +199,13 @@ public final class GetPipelinesPipeline {
         return this.logConfigurationDetails;
     }
     /**
+     * @return Parameters used in the pipeline.
+     * 
+     */
+    public Map<String,String> parameters() {
+        return this.parameters;
+    }
+    /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
@@ -267,6 +279,7 @@ public final class GetPipelinesPipeline {
         private List<GetPipelinesPipelineInfrastructureConfigurationDetail> infrastructureConfigurationDetails;
         private String lifecycleDetails;
         private List<GetPipelinesPipelineLogConfigurationDetail> logConfigurationDetails;
+        private Map<String,String> parameters;
         private String projectId;
         private String state;
         private List<GetPipelinesPipelineStepArtifact> stepArtifacts;
@@ -290,6 +303,7 @@ public final class GetPipelinesPipeline {
     	      this.infrastructureConfigurationDetails = defaults.infrastructureConfigurationDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logConfigurationDetails = defaults.logConfigurationDetails;
+    	      this.parameters = defaults.parameters;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.stepArtifacts = defaults.stepArtifacts;
@@ -406,6 +420,14 @@ public final class GetPipelinesPipeline {
             return logConfigurationDetails(List.of(logConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder parameters(Map<String,String> parameters) {
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipeline", "parameters");
+            }
+            this.parameters = parameters;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipeline", "projectId");
@@ -492,6 +514,7 @@ public final class GetPipelinesPipeline {
             _resultValue.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logConfigurationDetails = logConfigurationDetails;
+            _resultValue.parameters = parameters;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.stepArtifacts = stepArtifacts;

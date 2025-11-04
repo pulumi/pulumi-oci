@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsConnectionDisplayName,
  *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
+ *     runtimeIdentities: databaseToolsConnectionRuntimeIdentity,
  *     runtimeSupports: databaseToolsConnectionRuntimeSupport,
  *     state: databaseToolsConnectionState,
  *     types: databaseToolsConnectionType,
@@ -34,6 +35,7 @@ export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArg
         "displayName": args.displayName,
         "filters": args.filters,
         "relatedResourceIdentifier": args.relatedResourceIdentifier,
+        "runtimeIdentities": args.runtimeIdentities,
         "runtimeSupports": args.runtimeSupports,
         "state": args.state,
         "types": args.types,
@@ -45,7 +47,7 @@ export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArg
  */
 export interface GetDatabaseToolsConnectionsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -54,11 +56,15 @@ export interface GetDatabaseToolsConnectionsArgs {
     displayName?: string;
     filters?: inputs.DatabaseTools.GetDatabaseToolsConnectionsFilter[];
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      */
     relatedResourceIdentifier?: string;
     /**
-     * A filter to return only resources with one of the specified runtimeSupport values.
+     * A filter to return only resources with one of the specified runtimeIdentity values.
+     */
+    runtimeIdentities?: string[];
+    /**
+     * A filter to return only resources with one of the specified type values.
      */
     runtimeSupports?: string[];
     /**
@@ -94,6 +100,10 @@ export interface GetDatabaseToolsConnectionsResult {
     readonly id: string;
     readonly relatedResourceIdentifier?: string;
     /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     */
+    readonly runtimeIdentities?: string[];
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
     readonly runtimeSupports?: string[];
@@ -121,6 +131,7 @@ export interface GetDatabaseToolsConnectionsResult {
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsConnectionDisplayName,
  *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
+ *     runtimeIdentities: databaseToolsConnectionRuntimeIdentity,
  *     runtimeSupports: databaseToolsConnectionRuntimeSupport,
  *     state: databaseToolsConnectionState,
  *     types: databaseToolsConnectionType,
@@ -134,6 +145,7 @@ export function getDatabaseToolsConnectionsOutput(args: GetDatabaseToolsConnecti
         "displayName": args.displayName,
         "filters": args.filters,
         "relatedResourceIdentifier": args.relatedResourceIdentifier,
+        "runtimeIdentities": args.runtimeIdentities,
         "runtimeSupports": args.runtimeSupports,
         "state": args.state,
         "types": args.types,
@@ -145,7 +157,7 @@ export function getDatabaseToolsConnectionsOutput(args: GetDatabaseToolsConnecti
  */
 export interface GetDatabaseToolsConnectionsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -154,11 +166,15 @@ export interface GetDatabaseToolsConnectionsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsConnectionsFilterArgs>[]>;
     /**
-     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      */
     relatedResourceIdentifier?: pulumi.Input<string>;
     /**
-     * A filter to return only resources with one of the specified runtimeSupport values.
+     * A filter to return only resources with one of the specified runtimeIdentity values.
+     */
+    runtimeIdentities?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources with one of the specified type values.
      */
     runtimeSupports?: pulumi.Input<pulumi.Input<string>[]>;
     /**

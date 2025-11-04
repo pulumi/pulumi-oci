@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
- * 
- * Updates the plugin.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ConnectionStatus;
         /// <summary>
-        /// The Oracle Database connection string.
+        /// The Oracle AI Database connection string.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDatabaseConnectorConnectionStringResult> ConnectionStrings;
         /// <summary>

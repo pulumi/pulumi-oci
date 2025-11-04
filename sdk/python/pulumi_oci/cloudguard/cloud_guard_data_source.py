@@ -390,11 +390,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a data source (DataSource resource), using parameters passed
-        through a CreateDataSourceDetails resource.
-
         ## Example Usage
 
         ```python
@@ -470,11 +465,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  args: CloudGuardDataSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a data source (DataSource resource), using parameters passed
-        through a CreateDataSourceDetails resource.
-
         ## Example Usage
 
         ```python

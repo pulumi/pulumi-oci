@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
- *
- * Adds a backend set to a network load balancer.
- *
  * ## Example Usage
  *
  * ```typescript

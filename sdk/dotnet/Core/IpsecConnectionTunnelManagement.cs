@@ -10,24 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Updates the specified tunnel. This operation lets you change tunnel attributes such as the
-    /// routing type (BGP dynamic routing or static routing). Here are some important notes:
-    /// 
-    ///     * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
-    ///     down while it's reprovisioned.
-    ///     
-    ///     * If you want to switch the tunnel's `Routing` from `STATIC` to `BGP`, make sure the tunnel's
-    ///     BGP session configuration attributes have been set (bgpSessionConfig).
-    ///     
-    ///     * If you want to switch the tunnel's `Routing` from `BGP` to `STATIC`, make sure the
-    ///     IPSecConnection already has at least one valid CIDR
-    ///     static route.
-    /// 
-    /// ** IMPORTANT **
-    /// Destroying the `oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

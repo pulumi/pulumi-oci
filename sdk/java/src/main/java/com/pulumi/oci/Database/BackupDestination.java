@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.BackupDestinationArgs;
 import com.pulumi.oci.Database.inputs.BackupDestinationState;
 import com.pulumi.oci.Database.outputs.BackupDestinationAssociatedDatabase;
+import com.pulumi.oci.Database.outputs.BackupDestinationAssociatedLongTermBackup;
 import com.pulumi.oci.Database.outputs.BackupDestinationMountTypeDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -20,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a backup destination in an Exadata Cloud{@literal @}Customer system.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -95,6 +92,34 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      */
     public Output<List<BackupDestinationAssociatedDatabase>> associatedDatabases() {
         return this.associatedDatabases;
+    }
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    @Export(name="associatedLongTermBackupCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> associatedLongTermBackupCount;
+
+    /**
+     * @return Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     * 
+     */
+    public Output<Integer> associatedLongTermBackupCount() {
+        return this.associatedLongTermBackupCount;
+    }
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    @Export(name="associatedLongTermBackups", refs={List.class,BackupDestinationAssociatedLongTermBackup.class}, tree="[0,1]")
+    private Output<List<BackupDestinationAssociatedLongTermBackup>> associatedLongTermBackups;
+
+    /**
+     * @return List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     * 
+     */
+    public Output<List<BackupDestinationAssociatedLongTermBackup>> associatedLongTermBackups() {
+        return this.associatedLongTermBackups;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

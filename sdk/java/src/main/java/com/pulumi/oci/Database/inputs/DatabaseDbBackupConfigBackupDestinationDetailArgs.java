@@ -17,6 +17,21 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     public static final DatabaseDbBackupConfigBackupDestinationDetailArgs Empty = new DatabaseDbBackupConfigBackupDestinationDetailArgs();
 
     /**
+     * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    @Import(name="backupRetentionPolicyOnTerminate")
+    private @Nullable Output<String> backupRetentionPolicyOnTerminate;
+
+    /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    public Optional<Output<String>> backupRetentionPolicyOnTerminate() {
+        return Optional.ofNullable(this.backupRetentionPolicyOnTerminate);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
@@ -47,14 +62,14 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     }
 
     /**
-     * Indicates whether the backup destination is cross-region or local region.
+     * Indicates whether the backup destination is cross-region or local.
      * 
      */
     @Import(name="isRemote")
     private @Nullable Output<Boolean> isRemote;
 
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     public Optional<Output<Boolean>> isRemote() {
@@ -62,14 +77,29 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     }
 
     /**
-     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    @Import(name="isRetentionLockEnabled")
+    private @Nullable Output<Boolean> isRetentionLockEnabled;
+
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    public Optional<Output<Boolean>> isRetentionLockEnabled() {
+        return Optional.ofNullable(this.isRetentionLockEnabled);
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     @Import(name="remoteRegion")
     private @Nullable Output<String> remoteRegion;
 
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     public Optional<Output<String>> remoteRegion() {
@@ -91,32 +121,16 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         return Optional.ofNullable(this.type);
     }
 
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     * 
-     */
     @Import(name="vpcPassword")
     private @Nullable Output<String> vpcPassword;
 
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     * 
-     */
     public Optional<Output<String>> vpcPassword() {
         return Optional.ofNullable(this.vpcPassword);
     }
 
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     * 
-     */
     @Import(name="vpcUser")
     private @Nullable Output<String> vpcUser;
 
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     * 
-     */
     public Optional<Output<String>> vpcUser() {
         return Optional.ofNullable(this.vpcUser);
     }
@@ -124,9 +138,11 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     private DatabaseDbBackupConfigBackupDestinationDetailArgs() {}
 
     private DatabaseDbBackupConfigBackupDestinationDetailArgs(DatabaseDbBackupConfigBackupDestinationDetailArgs $) {
+        this.backupRetentionPolicyOnTerminate = $.backupRetentionPolicyOnTerminate;
         this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
         this.isRemote = $.isRemote;
+        this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.remoteRegion = $.remoteRegion;
         this.type = $.type;
         this.vpcPassword = $.vpcPassword;
@@ -149,6 +165,27 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
 
         public Builder(DatabaseDbBackupConfigBackupDestinationDetailArgs defaults) {
             $ = new DatabaseDbBackupConfigBackupDestinationDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPolicyOnTerminate(@Nullable Output<String> backupRetentionPolicyOnTerminate) {
+            $.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
+
+        /**
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            return backupRetentionPolicyOnTerminate(Output.of(backupRetentionPolicyOnTerminate));
         }
 
         /**
@@ -194,7 +231,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * @param isRemote Indicates whether the backup destination is cross-region or local.
          * 
          * @return builder
          * 
@@ -205,7 +242,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * @param isRemote Indicates whether the backup destination is cross-region or local.
          * 
          * @return builder
          * 
@@ -215,7 +252,28 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * @param isRetentionLockEnabled Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(@Nullable Output<Boolean> isRetentionLockEnabled) {
+            $.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRetentionLockEnabled Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            return isRetentionLockEnabled(Output.of(isRetentionLockEnabled));
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * 
          * @return builder
          * 
@@ -226,7 +284,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * 
          * @return builder
          * 
@@ -256,44 +314,20 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
             return type(Output.of(type));
         }
 
-        /**
-         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vpcPassword(@Nullable Output<String> vpcPassword) {
             $.vpcPassword = vpcPassword;
             return this;
         }
 
-        /**
-         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vpcPassword(String vpcPassword) {
             return vpcPassword(Output.of(vpcPassword));
         }
 
-        /**
-         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vpcUser(@Nullable Output<String> vpcUser) {
             $.vpcUser = vpcUser;
             return this;
         }
 
-        /**
-         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vpcUser(String vpcUser) {
             return vpcUser(Output.of(vpcUser));
         }

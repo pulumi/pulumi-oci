@@ -476,10 +476,6 @@ class Agent(pulumi.CustomResource):
                  os_version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an Agent.
-
         ## Example Usage
 
         ```python
@@ -531,10 +527,6 @@ class Agent(pulumi.CustomResource):
                  args: AgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an Agent.
-
         ## Example Usage
 
         ```python

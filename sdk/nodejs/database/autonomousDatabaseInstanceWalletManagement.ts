@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
- *
- * Updates the wallet for the specified Autonomous Database.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -71,7 +67,7 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
      */
     declare public readonly shouldRotate: pulumi.Output<boolean | undefined>;
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -134,7 +130,7 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
      */
     shouldRotate?: pulumi.Input<boolean>;
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      */
     state?: pulumi.Input<string>;
     /**

@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new deployment environment.
- * 
  * ## Example Usage
  * 
  * <pre>

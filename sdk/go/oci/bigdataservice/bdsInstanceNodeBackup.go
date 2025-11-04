@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// Add a node volume backup to the cluster for an indicated node type or node.
-//
 // ## Example Usage
 //
 // ```go

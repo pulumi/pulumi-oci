@@ -16,7 +16,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuC
      */
     private String displayName;
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     private String id;
@@ -30,7 +30,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuC
         return this.displayName;
     }
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     public String id() {

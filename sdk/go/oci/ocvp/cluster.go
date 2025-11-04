@@ -12,77 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-//
-// Create a vSphere Cluster in software-defined data center (SDDC).
-//
-// Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
-// creation of the Cluster.
-//
-// **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
-//
 // ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/ocvp"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ocvp.NewCluster(ctx, "test_cluster", &ocvp.ClusterArgs{
-//				ComputeAvailabilityDomain: pulumi.Any(clusterComputeAvailabilityDomain),
-//				EsxiHostsCount:            pulumi.Any(clusterEsxiHostsCount),
-//				NetworkConfiguration: &ocvp.ClusterNetworkConfigurationArgs{
-//					NsxEdgeVtepVlanId:    pulumi.Any(testVlan.Id),
-//					NsxVtepVlanId:        pulumi.Any(testVlan.Id),
-//					ProvisioningSubnetId: pulumi.Any(testSubnet.Id),
-//					VmotionVlanId:        pulumi.Any(testVlan.Id),
-//					VsanVlanId:           pulumi.Any(testVlan.Id),
-//					HcxVlanId:            pulumi.Any(testVlan.Id),
-//					NsxEdgeUplink1vlanId: pulumi.Any(testNsxEdgeUplink1vlan.Id),
-//					NsxEdgeUplink2vlanId: pulumi.Any(testNsxEdgeUplink2vlan.Id),
-//					ProvisioningVlanId:   pulumi.Any(testVlan.Id),
-//					ReplicationVlanId:    pulumi.Any(testVlan.Id),
-//					VsphereVlanId:        pulumi.Any(testVlan.Id),
-//				},
-//				SddcId:                pulumi.Any(testSddc.Id),
-//				CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
-//				Datastores: ocvp.ClusterDatastoreArray{
-//					&ocvp.ClusterDatastoreArgs{
-//						BlockVolumeIds: pulumi.Any(clusterDatastoresBlockVolumeIds),
-//						DatastoreType:  pulumi.Any(clusterDatastoresDatastoreType),
-//					},
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				DisplayName:         pulumi.Any(clusterDisplayName),
-//				EsxiSoftwareVersion: pulumi.Any(clusterEsxiSoftwareVersion),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				InitialCommitment:         pulumi.Any(clusterInitialCommitment),
-//				InitialHostOcpuCount:      pulumi.Any(clusterInitialHostOcpuCount),
-//				InitialHostShapeName:      pulumi.Any(testShape.Name),
-//				InstanceDisplayNamePrefix: pulumi.Any(clusterInstanceDisplayNamePrefix),
-//				IsShieldedInstanceEnabled: pulumi.Any(clusterIsShieldedInstanceEnabled),
-//				VmwareSoftwareVersion:     pulumi.Any(clusterVmwareSoftwareVersion),
-//				WorkloadNetworkCidr:       pulumi.Any(clusterWorkloadNetworkCidr),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 //
 // ## Import
 //
@@ -94,18 +24,22 @@ import (
 type Cluster struct {
 	pulumi.CustomResourceState
 
-	ActualEsxiHostsCount pulumi.IntOutput `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount      pulumi.IntOutput         `pulumi:"actualEsxiHostsCount"`
+	AttachDatastoreClusterIds pulumi.StringArrayOutput `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringOutput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringOutput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayOutput `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores ClusterDatastoreArrayOutput `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DefinedTags               pulumi.StringMapOutput   `pulumi:"definedTags"`
+	DetachDatastoreClusterIds pulumi.StringArrayOutput `pulumi:"detachDatastoreClusterIds"`
+	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 	//
@@ -194,18 +128,22 @@ func GetCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Cluster resources.
 type clusterState struct {
-	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount      *int     `pulumi:"actualEsxiHostsCount"`
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores []ClusterDatastore `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
+	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 	//
@@ -253,18 +191,22 @@ type clusterState struct {
 }
 
 type ClusterState struct {
-	ActualEsxiHostsCount pulumi.IntPtrInput
+	ActualEsxiHostsCount      pulumi.IntPtrInput
+	AttachDatastoreClusterIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
 	CompartmentId pulumi.StringPtrInput
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringPtrInput
+	// A list of datastore clusters.
+	DatastoreClusterIds pulumi.StringArrayInput
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores ClusterDatastoreArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput
-	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DefinedTags               pulumi.StringMapInput
+	DetachDatastoreClusterIds pulumi.StringArrayInput
+	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 	//
@@ -316,6 +258,7 @@ func (ClusterState) ElementType() reflect.Type {
 }
 
 type clusterArgs struct {
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
@@ -323,8 +266,9 @@ type clusterArgs struct {
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores []ClusterDatastore `pulumi:"datastores"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
+	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 	//
@@ -361,6 +305,7 @@ type clusterArgs struct {
 
 // The set of arguments for constructing a Cluster resource.
 type ClusterArgs struct {
+	AttachDatastoreClusterIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringPtrInput
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
@@ -368,8 +313,9 @@ type ClusterArgs struct {
 	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 	Datastores ClusterDatastoreArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput
-	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DefinedTags               pulumi.StringMapInput
+	DetachDatastoreClusterIds pulumi.StringArrayInput
+	// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 	//
@@ -495,6 +441,10 @@ func (o ClusterOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+func (o ClusterOutput) AttachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.AttachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o ClusterOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CapacityReservationId }).(pulumi.StringOutput)
@@ -510,6 +460,11 @@ func (o ClusterOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o ClusterOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
 func (o ClusterOutput) Datastores() ClusterDatastoreArrayOutput {
 	return o.ApplyT(func(v *Cluster) ClusterDatastoreArrayOutput { return v.Datastores }).(ClusterDatastoreArrayOutput)
@@ -520,7 +475,11 @@ func (o ClusterOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+func (o ClusterOutput) DetachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.DetachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 func (o ClusterOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

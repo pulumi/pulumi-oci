@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new Security Rule for the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -75,6 +75,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      */
     private Boolean skipSourceDestCheck;
     /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    private String subnetCidr;
+    /**
      * @return The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -166,6 +171,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         return this.skipSourceDestCheck;
     }
     /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public String subnetCidr() {
+        return this.subnetCidr;
+    }
+    /**
      * @return The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -194,6 +206,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         private String privateIp;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
+        private String subnetCidr;
         private String subnetId;
         public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail defaults) {
@@ -210,6 +223,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     	      this.privateIp = defaults.privateIp;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
+    	      this.subnetCidr = defaults.subnetCidr;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -316,6 +330,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         @CustomType.Setter
+        public Builder subnetCidr(String subnetCidr) {
+            if (subnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail", "subnetCidr");
+            }
+            this.subnetCidr = subnetCidr;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail", "subnetId");
@@ -337,6 +359,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             _resultValue.privateIp = privateIp;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetCidr = subnetCidr;
             _resultValue.subnetId = subnetId;
             return _resultValue;
         }

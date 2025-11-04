@@ -22,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
- * 
- * Creates a new FusionEnvironment.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -69,6 +65,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .dnsPrefix(fusionEnvironmentDnsPrefix)
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isIpv6dualStackEnabled(fusionEnvironmentIsIpv6dualStackEnabled)
  *             .kmsKeyId(testKey.id())
  *             .maintenancePolicy(FusionEnvironmentMaintenancePolicyArgs.builder()
  *                 .environmentMaintenanceOverride(fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride)
@@ -281,6 +278,20 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isBreakGlassEnabled() {
         return this.isBreakGlassEnabled;
+    }
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    @Export(name="isIpv6dualStackEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isIpv6dualStackEnabled;
+
+    /**
+     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    public Output<Boolean> isIpv6dualStackEnabled() {
+        return this.isIpv6dualStackEnabled;
     }
     /**
      * (Updatable) byok kms keyId

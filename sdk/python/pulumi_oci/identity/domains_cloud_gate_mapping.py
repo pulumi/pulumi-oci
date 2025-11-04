@@ -1434,10 +1434,6 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  upstream_server_group: Optional[pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate mapping
-
         ## Example Usage
 
         ## Import
@@ -1596,10 +1592,6 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  args: DomainsCloudGateMappingInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate mapping
-
         ## Example Usage
 
         ## Import

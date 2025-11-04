@@ -91,6 +91,21 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Name used when creating the steprun.
+     * 
+     */
+    @Import(name="stepRunName")
+    private @Nullable Output<String> stepRunName;
+
+    /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    public Optional<Output<String>> stepRunName() {
+        return Optional.ofNullable(this.stepRunName);
+    }
+
+    /**
      * The type of step.
      * 
      */
@@ -143,6 +158,7 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.stepName = $.stepName;
+        this.stepRunName = $.stepRunName;
         this.stepType = $.stepType;
         this.timeFinished = $.timeFinished;
         this.timeStarted = $.timeStarted;
@@ -269,6 +285,27 @@ public final class PipelineRunStepRunArgs extends com.pulumi.resources.ResourceA
          */
         public Builder stepName(String stepName) {
             return stepName(Output.of(stepName));
+        }
+
+        /**
+         * @param stepRunName Name used when creating the steprun.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepRunName(@Nullable Output<String> stepRunName) {
+            $.stepRunName = stepRunName;
+            return this;
+        }
+
+        /**
+         * @param stepRunName Name used when creating the steprun.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepRunName(String stepRunName) {
+            return stepRunName(Output.of(stepRunName));
         }
 
         /**

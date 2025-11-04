@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

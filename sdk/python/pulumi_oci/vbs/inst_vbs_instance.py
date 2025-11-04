@@ -414,10 +414,6 @@ class InstVbsInstance(pulumi.CustomResource):
                  resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-        Creates a new VbsInstance.
-
         ## Example Usage
 
         ```python
@@ -469,10 +465,6 @@ class InstVbsInstance(pulumi.CustomResource):
                  args: InstVbsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-        Creates a new VbsInstance.
-
         ## Example Usage
 
         ```python

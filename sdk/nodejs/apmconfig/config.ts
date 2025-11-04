@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
- *
- * Creates a new configuration item.
- *
  * ## Example Usage
  *
  * ```typescript

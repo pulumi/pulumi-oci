@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
-    /// This resource provides the Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
-    /// 
-    /// Creates a patch in an application.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

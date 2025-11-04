@@ -155,10 +155,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates or replaces the object lifecycle policy for the bucket.
-
         ## Example Usage
 
         ```python
@@ -204,10 +200,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  args: ObjectLifecyclePolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates or replaces the object lifecycle policy for the bucket.
-
         ## Example Usage
 
         ```python

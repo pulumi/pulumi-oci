@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// This API updates the archiving configuration
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -380,10 +380,6 @@ class AppAcceleration(pulumi.CustomResource):
                  web_app_acceleration_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
-
-        Creates a new WebAppAcceleration.
-
         ## Example Usage
 
         ```python
@@ -435,10 +431,6 @@ class AppAcceleration(pulumi.CustomResource):
                  args: AppAccelerationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
-
-        Creates a new WebAppAcceleration.
-
         ## Example Usage
 
         ```python

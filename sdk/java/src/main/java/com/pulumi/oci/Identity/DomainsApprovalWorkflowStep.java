@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create ApprovalWorkflowStep
- * 
  * ## Example Usage
  * 
  * ## Import

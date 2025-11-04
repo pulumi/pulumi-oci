@@ -174,6 +174,11 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     private List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
@@ -396,6 +401,13 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.secureConnections;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
@@ -449,6 +461,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private String region;
         private List<GetMysqlBackupDbSystemSnapshotRest> rests;
         private List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
+        private Map<String,String> securityAttributes;
         private String shapeName;
         private String subnetId;
         public Builder() {}
@@ -484,6 +497,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.region = defaults.region;
     	      this.rests = defaults.rests;
     	      this.secureConnections = defaults.secureConnections;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -759,6 +773,14 @@ public final class GetMysqlBackupDbSystemSnapshot {
             return secureConnections(List.of(secureConnections));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "shapeName");
@@ -806,6 +828,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.region = region;
             _resultValue.rests = rests;
             _resultValue.secureConnections = secureConnections;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

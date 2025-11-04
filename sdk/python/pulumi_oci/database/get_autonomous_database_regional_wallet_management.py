@@ -62,7 +62,7 @@ class GetAutonomousDatabaseRegionalWalletManagementResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
         """
         return pulumi.get(self, "state")
 
@@ -92,7 +92,7 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
     """
     This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
-    Gets the Autonomous Database regional wallet details.
+    Gets the Autonomous AI Database regional wallet details.
 
     ## Example Usage
 
@@ -117,7 +117,7 @@ def get_autonomous_database_regional_wallet_management_output(opts: Optional[Uni
     """
     This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
 
-    Gets the Autonomous Database regional wallet details.
+    Gets the Autonomous AI Database regional wallet details.
 
     ## Example Usage
 

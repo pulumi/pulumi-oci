@@ -155,10 +155,6 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  feature_details: Optional[pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management feature for the specified external non-container database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -178,10 +174,6 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  args: ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management feature for the specified external non-container database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

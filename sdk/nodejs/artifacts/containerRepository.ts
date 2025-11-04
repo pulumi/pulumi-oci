@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
- *
- * Create a new empty container repository. Avoid entering confidential information.
- *
  * ## Example Usage
  *
  * ```typescript

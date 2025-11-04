@@ -147,6 +147,9 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * SMALL_GENERIC_V1
+     * * MEDIUM_GENERIC_V1
+     * * LARGE_GENERIC_V1
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,6 +174,9 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * SMALL_GENERIC_V1
+     * * MEDIUM_GENERIC_V1
+     * * LARGE_GENERIC_V1
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -382,6 +388,9 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * * LARGE_GENERIC_4
          * * SMALL_GENERIC_V2
          * * LARGE_GENERIC_2
+         * * SMALL_GENERIC_V1
+         * * MEDIUM_GENERIC_V1
+         * * LARGE_GENERIC_V1
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -410,6 +419,9 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * * LARGE_GENERIC_4
          * * SMALL_GENERIC_V2
          * * LARGE_GENERIC_2
+         * * SMALL_GENERIC_V1
+         * * MEDIUM_GENERIC_V1
+         * * LARGE_GENERIC_V1
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

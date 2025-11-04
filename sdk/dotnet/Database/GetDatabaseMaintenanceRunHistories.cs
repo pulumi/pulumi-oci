@@ -236,7 +236,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string? MaintenanceType;
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string? State;
         /// <summary>

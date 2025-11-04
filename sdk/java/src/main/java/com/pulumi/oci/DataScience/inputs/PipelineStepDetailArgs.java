@@ -10,6 +10,7 @@ import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDeta
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepDataflowConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepParametersArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -174,6 +175,36 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) Pipeline step parameter details
+     * 
+     */
+    @Import(name="stepParameters")
+    private @Nullable Output<PipelineStepDetailStepParametersArgs> stepParameters;
+
+    /**
+     * @return (Updatable) Pipeline step parameter details
+     * 
+     */
+    public Optional<Output<PipelineStepDetailStepParametersArgs>> stepParameters() {
+        return Optional.ofNullable(this.stepParameters);
+    }
+
+    /**
+     * (Updatable) Name used when creating the steprun.
+     * 
+     */
+    @Import(name="stepRunName")
+    private @Nullable Output<String> stepRunName;
+
+    /**
+     * @return (Updatable) Name used when creating the steprun.
+     * 
+     */
+    public Optional<Output<String>> stepRunName() {
+        return Optional.ofNullable(this.stepRunName);
+    }
+
+    /**
      * (Updatable) The storage mount details to mount to the instance running the pipeline step.
      * 
      */
@@ -216,6 +247,8 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         this.stepDataflowConfigurationDetails = $.stepDataflowConfigurationDetails;
         this.stepInfrastructureConfigurationDetails = $.stepInfrastructureConfigurationDetails;
         this.stepName = $.stepName;
+        this.stepParameters = $.stepParameters;
+        this.stepRunName = $.stepRunName;
         this.stepStorageMountConfigurationDetailsLists = $.stepStorageMountConfigurationDetailsLists;
         this.stepType = $.stepType;
     }
@@ -456,6 +489,48 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
          */
         public Builder stepName(String stepName) {
             return stepName(Output.of(stepName));
+        }
+
+        /**
+         * @param stepParameters (Updatable) Pipeline step parameter details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepParameters(@Nullable Output<PipelineStepDetailStepParametersArgs> stepParameters) {
+            $.stepParameters = stepParameters;
+            return this;
+        }
+
+        /**
+         * @param stepParameters (Updatable) Pipeline step parameter details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepParameters(PipelineStepDetailStepParametersArgs stepParameters) {
+            return stepParameters(Output.of(stepParameters));
+        }
+
+        /**
+         * @param stepRunName (Updatable) Name used when creating the steprun.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepRunName(@Nullable Output<String> stepRunName) {
+            $.stepRunName = stepRunName;
+            return this;
+        }
+
+        /**
+         * @param stepRunName (Updatable) Name used when creating the steprun.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepRunName(String stepRunName) {
+            return stepRunName(Output.of(stepRunName));
         }
 
         /**

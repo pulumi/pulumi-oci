@@ -21,32 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Image resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
- * 
- * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
- * the OCID of the compartment containing that instance. For more information about images,
- * see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
- * 
- * When importing an exported image from Object Storage, you specify the source information
- * in [ImageSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceDetails).
- * 
- * When importing an image based on the namespace, bucket name, and object name,
- * use [ImageSourceViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageTupleDetails).
- * 
- * When importing an image based on the Object Storage URL, use
- * [ImageSourceViaObjectStorageUriDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageUriDetails).
- * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
- * for constructing URLs for image import/export.
- * 
- * For more information about importing exported images, see
- * [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
- * 
- * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
- * It does not have to be unique, and you can change it. See [UpdateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/UpdateImage).
- * Avoid entering confidential information.
- * 
  * ## Example Usage
  * 
  * ### Create image from instance in tenancy

@@ -35,15 +35,16 @@ class DatabaseToolsConnectionArgs:
                  private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy_client: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientArgs']] = None,
                  related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
+                 runtime_identity: Optional[pulumi.Input[_builtins.str]] = None,
                  runtime_support: Optional[pulumi.Input[_builtins.str]] = None,
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DatabaseToolsConnection resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The user password.
+        :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The database user password.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -53,6 +54,7 @@ class DatabaseToolsConnectionArgs:
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param pulumi.Input['DatabaseToolsConnectionProxyClientArgs'] proxy_client: (Updatable) The proxy client information.
         :param pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs'] related_resource: (Updatable) The related resource
+        :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         """
@@ -79,6 +81,8 @@ class DatabaseToolsConnectionArgs:
             pulumi.set(__self__, "proxy_client", proxy_client)
         if related_resource is not None:
             pulumi.set(__self__, "related_resource", related_resource)
+        if runtime_identity is not None:
+            pulumi.set(__self__, "runtime_identity", runtime_identity)
         if runtime_support is not None:
             pulumi.set(__self__, "runtime_support", runtime_support)
         if url is not None:
@@ -112,7 +116,7 @@ class DatabaseToolsConnectionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The DatabaseToolsConnection type.
+        (Updatable) The Database Tools connection type.
         """
         return pulumi.get(self, "type")
 
@@ -136,7 +140,7 @@ class DatabaseToolsConnectionArgs:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']:
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 
@@ -253,6 +257,18 @@ class DatabaseToolsConnectionArgs:
         pulumi.set(self, "related_resource", value)
 
     @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @runtime_identity.setter
+    def runtime_identity(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "runtime_identity", value)
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupport")
     def runtime_support(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -292,6 +308,8 @@ class _DatabaseToolsConnectionState:
                  private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy_client: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientArgs']] = None,
                  related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
+                 runtime_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 runtime_identity: Optional[pulumi.Input[_builtins.str]] = None,
                  runtime_support: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -315,15 +333,17 @@ class _DatabaseToolsConnectionState:
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param pulumi.Input['DatabaseToolsConnectionProxyClientArgs'] proxy_client: (Updatable) The proxy client information.
         :param pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs'] related_resource: (Updatable) The related resource
+        :param pulumi.Input[_builtins.str] runtime_endpoint: Specifies the Database Tools Runtime endpoint.
+        :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[_builtins.str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The user password.
+        :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The database user password.
         """
         if advanced_properties is not None:
             pulumi.set(__self__, "advanced_properties", advanced_properties)
@@ -349,6 +369,10 @@ class _DatabaseToolsConnectionState:
             pulumi.set(__self__, "proxy_client", proxy_client)
         if related_resource is not None:
             pulumi.set(__self__, "related_resource", related_resource)
+        if runtime_endpoint is not None:
+            pulumi.set(__self__, "runtime_endpoint", runtime_endpoint)
+        if runtime_identity is not None:
+            pulumi.set(__self__, "runtime_identity", runtime_identity)
         if runtime_support is not None:
             pulumi.set(__self__, "runtime_support", runtime_support)
         if state is not None:
@@ -513,6 +537,30 @@ class _DatabaseToolsConnectionState:
         pulumi.set(self, "related_resource", value)
 
     @_builtins.property
+    @pulumi.getter(name="runtimeEndpoint")
+    def runtime_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the Database Tools Runtime endpoint.
+        """
+        return pulumi.get(self, "runtime_endpoint")
+
+    @runtime_endpoint.setter
+    def runtime_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "runtime_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @runtime_identity.setter
+    def runtime_identity(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "runtime_identity", value)
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupport")
     def runtime_support(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -564,7 +612,7 @@ class _DatabaseToolsConnectionState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -576,7 +624,7 @@ class _DatabaseToolsConnectionState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The DatabaseToolsConnection type.
+        (Updatable) The Database Tools connection type.
         """
         return pulumi.get(self, "type")
 
@@ -612,7 +660,7 @@ class _DatabaseToolsConnectionState:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']]:
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 
@@ -638,6 +686,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy_client: Optional[pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
                  related_resource: Optional[pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+                 runtime_identity: Optional[pulumi.Input[_builtins.str]] = None,
                  runtime_support: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  url: Optional[pulumi.Input[_builtins.str]] = None,
@@ -645,9 +694,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  user_password: Optional[pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-
-        Creates a new Database Tools connection.
+        ## Example Usage
 
         ## Import
 
@@ -670,11 +717,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']] proxy_client: (Updatable) The proxy client information.
         :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']] related_resource: (Updatable) The related resource
+        :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The user password.
+        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The database user password.
         """
         ...
     @overload
@@ -683,9 +731,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  args: DatabaseToolsConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
-
-        Creates a new Database Tools connection.
+        ## Example Usage
 
         ## Import
 
@@ -721,6 +767,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy_client: Optional[pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
                  related_resource: Optional[pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+                 runtime_identity: Optional[pulumi.Input[_builtins.str]] = None,
                  runtime_support: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  url: Optional[pulumi.Input[_builtins.str]] = None,
@@ -750,6 +797,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             __props__.__dict__["private_endpoint_id"] = private_endpoint_id
             __props__.__dict__["proxy_client"] = proxy_client
             __props__.__dict__["related_resource"] = related_resource
+            __props__.__dict__["runtime_identity"] = runtime_identity
             __props__.__dict__["runtime_support"] = runtime_support
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -762,6 +810,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                 raise TypeError("Missing required property 'user_password'")
             __props__.__dict__["user_password"] = user_password
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["runtime_endpoint"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -788,6 +837,8 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
             proxy_client: Optional[pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
             related_resource: Optional[pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+            runtime_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+            runtime_identity: Optional[pulumi.Input[_builtins.str]] = None,
             runtime_support: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -816,15 +867,17 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']] proxy_client: (Updatable) The proxy client information.
         :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']] related_resource: (Updatable) The related resource
+        :param pulumi.Input[_builtins.str] runtime_endpoint: Specifies the Database Tools Runtime endpoint.
+        :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[_builtins.str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The user password.
+        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The database user password.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -842,6 +895,8 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         __props__.__dict__["private_endpoint_id"] = private_endpoint_id
         __props__.__dict__["proxy_client"] = proxy_client
         __props__.__dict__["related_resource"] = related_resource
+        __props__.__dict__["runtime_endpoint"] = runtime_endpoint
+        __props__.__dict__["runtime_identity"] = runtime_identity
         __props__.__dict__["runtime_support"] = runtime_support
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -950,6 +1005,22 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         return pulumi.get(self, "related_resource")
 
     @_builtins.property
+    @pulumi.getter(name="runtimeEndpoint")
+    def runtime_endpoint(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the Database Tools Runtime endpoint.
+        """
+        return pulumi.get(self, "runtime_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupport")
     def runtime_support(self) -> pulumi.Output[_builtins.str]:
         """
@@ -985,7 +1056,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -993,7 +1064,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The DatabaseToolsConnection type.
+        (Updatable) The Database Tools connection type.
         """
         return pulumi.get(self, "type")
 
@@ -1017,7 +1088,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     @pulumi.getter(name="userPassword")
     def user_password(self) -> pulumi.Output['outputs.DatabaseToolsConnectionUserPassword']:
         """
-        (Updatable) The user password.
+        (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 

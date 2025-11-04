@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
- * 
- * Creates a new metastore.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
- *
- * Creates a new rule.
- *
  * ## Example Usage
  *
  * ```typescript

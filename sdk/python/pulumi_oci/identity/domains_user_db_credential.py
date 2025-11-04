@@ -1305,10 +1305,6 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsUserDbCredentialUserArgs', 'DomainsUserDbCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's database (DB) credentials.
-
         ## Example Usage
 
         ## Import
@@ -1423,10 +1419,6 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                  args: DomainsUserDbCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's database (DB) credentials.
-
         ## Example Usage
 
         ## Import

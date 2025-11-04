@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-//
-// Creates a CatalogItem.
-//
 // ## Example Usage
 //
 // ```go

@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a password policy.
- * 
  * ## Example Usage
  * 
  * ## Import

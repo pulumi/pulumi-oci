@@ -73,6 +73,14 @@ export interface GetDomainsSocialIdentityProviderResult {
      * Admin scope to request
      */
     readonly adminScopes: string[];
+    /**
+     * Apple Developer ID
+     */
+    readonly appleDevId: string;
+    /**
+     * Apple Private Key ID
+     */
+    readonly appleKeyId: string;
     readonly authorization?: string;
     /**
      * Social IDP Authorization URL

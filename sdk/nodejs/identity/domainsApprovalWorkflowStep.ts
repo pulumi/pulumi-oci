@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create ApprovalWorkflowStep
- *
  * ## Example Usage
  *
  * ## Import

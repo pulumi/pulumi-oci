@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-//
-// Creates a new budget.
-//
 // ## Example Usage
 //
 // ```go

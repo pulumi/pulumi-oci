@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates provenance information for the specified model.
- *
  * ## Example Usage
  *
  * ```typescript

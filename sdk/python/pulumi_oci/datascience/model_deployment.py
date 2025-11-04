@@ -465,10 +465,6 @@ class ModelDeployment(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-
-        Creates a new model deployment.
-
         ## Example Usage
 
         ```python
@@ -589,10 +585,6 @@ class ModelDeployment(pulumi.CustomResource):
                  args: ModelDeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-
-        Creates a new model deployment.
-
         ## Example Usage
 
         ```python

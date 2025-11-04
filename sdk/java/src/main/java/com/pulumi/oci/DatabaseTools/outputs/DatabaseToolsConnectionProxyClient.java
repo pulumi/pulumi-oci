@@ -30,7 +30,7 @@ public final class DatabaseToolsConnectionProxyClient {
      */
     private @Nullable String userName;
     /**
-     * @return (Updatable) The user password.
+     * @return (Updatable) The database user password.
      * 
      */
     private @Nullable DatabaseToolsConnectionProxyClientUserPassword userPassword;
@@ -58,7 +58,7 @@ public final class DatabaseToolsConnectionProxyClient {
         return Optional.ofNullable(this.userName);
     }
     /**
-     * @return (Updatable) The user password.
+     * @return (Updatable) The database user password.
      * 
      */
     public Optional<DatabaseToolsConnectionProxyClientUserPassword> userPassword() {

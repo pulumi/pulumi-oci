@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDbVersionsAutonomousDbVersion {
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     private String dbWorkload;
     /**
-     * @return A URL that points to a detailed description of the Autonomous Database version.
+     * @return A URL that points to a detailed description of the Autonomous AI Database version.
      * 
      */
     private String details;
@@ -27,41 +27,41 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
      */
     private Boolean isDedicated;
     /**
-     * @return True if this version of the Oracle Database software&#39;s default is free.
+     * @return True if this version of the Oracle AI Database software&#39;s default is free.
      * 
      */
     private Boolean isDefaultForFree;
     /**
-     * @return True if this version of the Oracle Database software&#39;s default is paid.
+     * @return True if this version of the Oracle AI Database software&#39;s default is paid.
      * 
      */
     private Boolean isDefaultForPaid;
     /**
-     * @return True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     * @return True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
      * 
      */
     private Boolean isFreeTierEnabled;
     /**
-     * @return True if this version of the Oracle Database software has payments enabled.
+     * @return True if this version of the Oracle AI Database software has payments enabled.
      * 
      */
     private Boolean isPaidEnabled;
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     private String version;
 
     private GetAutonomousDbVersionsAutonomousDbVersion() {}
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     public String dbWorkload() {
         return this.dbWorkload;
     }
     /**
-     * @return A URL that points to a detailed description of the Autonomous Database version.
+     * @return A URL that points to a detailed description of the Autonomous AI Database version.
      * 
      */
     public String details() {
@@ -75,35 +75,35 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
         return this.isDedicated;
     }
     /**
-     * @return True if this version of the Oracle Database software&#39;s default is free.
+     * @return True if this version of the Oracle AI Database software&#39;s default is free.
      * 
      */
     public Boolean isDefaultForFree() {
         return this.isDefaultForFree;
     }
     /**
-     * @return True if this version of the Oracle Database software&#39;s default is paid.
+     * @return True if this version of the Oracle AI Database software&#39;s default is paid.
      * 
      */
     public Boolean isDefaultForPaid() {
         return this.isDefaultForPaid;
     }
     /**
-     * @return True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     * @return True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
      * 
      */
     public Boolean isFreeTierEnabled() {
         return this.isFreeTierEnabled;
     }
     /**
-     * @return True if this version of the Oracle Database software has payments enabled.
+     * @return True if this version of the Oracle AI Database software has payments enabled.
      * 
      */
     public Boolean isPaidEnabled() {
         return this.isPaidEnabled;
     }
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public String version() {

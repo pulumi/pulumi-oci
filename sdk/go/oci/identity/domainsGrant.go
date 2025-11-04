@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Add a Grantee to an AppRole
-//
 // ## Example Usage
 //
 // ## Import

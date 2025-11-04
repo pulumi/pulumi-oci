@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
- *
- * Attaches a service instance to the fusion pod.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
-//
-// Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
-//
 // ## Example Usage
 //
 // ```go

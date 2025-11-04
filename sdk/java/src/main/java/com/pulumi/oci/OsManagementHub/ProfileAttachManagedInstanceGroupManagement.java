@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Profile Attach Managed Instance Group Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Attaches the specified managed instance group to a profile.
- * 
  * ## Example Usage
  * 
  * <pre>

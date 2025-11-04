@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates a security zone recipe (SecurityRecipe resource), using parameters
- * passed in a CreateSecurityRecipeDetails resource.
- *
  * ## Example Usage
  *
  * ```typescript

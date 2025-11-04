@@ -10,119 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Creates a new PipelineRun.
-    /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testPipelineRun = new Oci.DataScience.PipelineRun("test_pipeline_run", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         PipelineId = testPipeline.Id,
-    ///         ConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunConfigurationOverrideDetailsArgs
-    ///         {
-    ///             Type = pipelineRunConfigurationOverrideDetailsType,
-    ///             CommandLineArguments = pipelineRunConfigurationOverrideDetailsCommandLineArguments,
-    ///             EnvironmentVariables = pipelineRunConfigurationOverrideDetailsEnvironmentVariables,
-    ///             MaximumRuntimeInMinutes = pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes,
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DisplayName = pipelineRunDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         InfrastructureConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs
-    ///         {
-    ///             BlockStorageSizeInGbs = pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
-    ///             ShapeName = testShape.Name,
-    ///             ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs
-    ///             {
-    ///                 MemoryInGbs = pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs,
-    ///                 Ocpus = pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus,
-    ///             },
-    ///             SubnetId = testSubnet.Id,
-    ///         },
-    ///         LogConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunLogConfigurationOverrideDetailsArgs
-    ///         {
-    ///             EnableAutoLogCreation = pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
-    ///             EnableLogging = pipelineRunLogConfigurationOverrideDetailsEnableLogging,
-    ///             LogGroupId = testLogGroup.Id,
-    ///             LogId = testLog.Id,
-    ///         },
-    ///         OpcParentRptUrl = pipelineRunOpcParentRptUrl,
-    ///         ProjectId = testProject.Id,
-    ///         StepOverrideDetails = new[]
-    ///         {
-    ///             new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailArgs
-    ///             {
-    ///                 StepConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs
-    ///                 {
-    ///                     CommandLineArguments = pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments,
-    ///                     EnvironmentVariables = pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables,
-    ///                     MaximumRuntimeInMinutes = pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
-    ///                 },
-    ///                 StepName = pipelineRunStepOverrideDetailsStepName,
-    ///                 StepContainerConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs
-    ///                 {
-    ///                     ContainerType = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType,
-    ///                     Image = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage,
-    ///                     Cmds = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd,
-    ///                     Entrypoints = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint,
-    ///                     ImageDigest = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
-    ///                     ImageSignatureId = testImageSignature.Id,
-    ///                 },
-    ///                 StepDataflowConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs
-    ///                 {
-    ///                     Configuration = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
-    ///                     DriverShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
-    ///                     DriverShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
-    ///                     {
-    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
-    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
-    ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
-    ///                     },
-    ///                     ExecutorShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
-    ///                     ExecutorShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
-    ///                     {
-    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
-    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
-    ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
-    ///                     },
-    ///                     LogsBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
-    ///                     NumExecutors = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
-    ///                     WarehouseBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
-    ///                 },
-    ///                 StepInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs
-    ///                 {
-    ///                     BlockStorageSizeInGbs = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
-    ///                     ShapeName = testShape.Name,
-    ///                     ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs
-    ///                     {
-    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
-    ///                         Ocpus = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
-    ///                     },
-    ///                     SubnetId = testSubnet.Id,
-    ///                 },
-    ///             },
-    ///         },
-    ///         SystemTags = pipelineRunSystemTags,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -211,6 +99,12 @@ namespace Pulumi.Oci.DataScience
         public Output<string?> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
+        /// Parameters override used in the pipeline run.
+        /// </summary>
+        [Output("parametersOverride")]
+        public Output<ImmutableDictionary<string, string>> ParametersOverride { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
         [Output("pipelineId")]
@@ -239,6 +133,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("stepRuns")]
         public Output<ImmutableArray<Outputs.PipelineRunStepRun>> StepRuns { get; private set; } = null!;
+
+        /// <summary>
+        /// The storage mount override details to mount to the instance running the pipeline step.
+        /// </summary>
+        [Output("storageMountConfigurationOverrideDetailsLists")]
+        public Output<ImmutableArray<Outputs.PipelineRunStorageMountConfigurationOverrideDetailsList>> StorageMountConfigurationOverrideDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
@@ -383,6 +283,18 @@ namespace Pulumi.Oci.DataScience
         [Input("opcParentRptUrl")]
         public Input<string>? OpcParentRptUrl { get; set; }
 
+        [Input("parametersOverride")]
+        private InputMap<string>? _parametersOverride;
+
+        /// <summary>
+        /// Parameters override used in the pipeline run.
+        /// </summary>
+        public InputMap<string> ParametersOverride
+        {
+            get => _parametersOverride ?? (_parametersOverride = new InputMap<string>());
+            set => _parametersOverride = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
@@ -405,6 +317,18 @@ namespace Pulumi.Oci.DataScience
         {
             get => _stepOverrideDetails ?? (_stepOverrideDetails = new InputList<Inputs.PipelineRunStepOverrideDetailArgs>());
             set => _stepOverrideDetails = value;
+        }
+
+        [Input("storageMountConfigurationOverrideDetailsLists")]
+        private InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs>? _storageMountConfigurationOverrideDetailsLists;
+
+        /// <summary>
+        /// The storage mount override details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs> StorageMountConfigurationOverrideDetailsLists
+        {
+            get => _storageMountConfigurationOverrideDetailsLists ?? (_storageMountConfigurationOverrideDetailsLists = new InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs>());
+            set => _storageMountConfigurationOverrideDetailsLists = value;
         }
 
         [Input("systemTags")]
@@ -530,6 +454,18 @@ namespace Pulumi.Oci.DataScience
         [Input("opcParentRptUrl")]
         public Input<string>? OpcParentRptUrl { get; set; }
 
+        [Input("parametersOverride")]
+        private InputMap<string>? _parametersOverride;
+
+        /// <summary>
+        /// Parameters override used in the pipeline run.
+        /// </summary>
+        public InputMap<string> ParametersOverride
+        {
+            get => _parametersOverride ?? (_parametersOverride = new InputMap<string>());
+            set => _parametersOverride = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
@@ -570,6 +506,18 @@ namespace Pulumi.Oci.DataScience
         {
             get => _stepRuns ?? (_stepRuns = new InputList<Inputs.PipelineRunStepRunGetArgs>());
             set => _stepRuns = value;
+        }
+
+        [Input("storageMountConfigurationOverrideDetailsLists")]
+        private InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListGetArgs>? _storageMountConfigurationOverrideDetailsLists;
+
+        /// <summary>
+        /// The storage mount override details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListGetArgs> StorageMountConfigurationOverrideDetailsLists
+        {
+            get => _storageMountConfigurationOverrideDetailsLists ?? (_storageMountConfigurationOverrideDetailsLists = new InputList<Inputs.PipelineRunStorageMountConfigurationOverrideDetailsListGetArgs>());
+            set => _storageMountConfigurationOverrideDetailsLists = value;
         }
 
         [Input("systemTags")]

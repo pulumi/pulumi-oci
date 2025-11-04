@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
- *
- * Creates a new Compute Cloud@Customer upgrade schedule.
- *
  * ## Example Usage
  *
  * ```typescript

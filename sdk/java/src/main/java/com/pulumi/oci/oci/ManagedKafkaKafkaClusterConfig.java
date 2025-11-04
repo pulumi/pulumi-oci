@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
- * 
- * Creates a KafkaClusterConfig.
- * 
  * ## Example Usage
  * 
  * <pre>

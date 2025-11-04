@@ -284,10 +284,6 @@ class ProcessSet(pulumi.CustomResource):
                  specification: Optional[pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create Process Set.
-
         ## Example Usage
 
         ```python
@@ -336,10 +332,6 @@ class ProcessSet(pulumi.CustomResource):
                  args: ProcessSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create Process Set.
-
         ## Example Usage
 
         ```python

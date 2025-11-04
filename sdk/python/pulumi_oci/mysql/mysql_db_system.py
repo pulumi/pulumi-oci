@@ -54,6 +54,7 @@ class MysqlDbSystemArgs:
                  read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
                  rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
@@ -111,6 +112,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input['MysqlDbSystemRestArgs'] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
                
                ** IMPORTANT **
@@ -180,6 +182,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "rest", rest)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shutdown_type is not None:
             pulumi.set(__self__, "shutdown_type", shutdown_type)
         if source is not None:
@@ -603,6 +607,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "secure_connections", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="shutdownType")
     def shutdown_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -683,6 +699,7 @@ class _MysqlDbSystemState:
                  read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
                  rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
@@ -749,6 +766,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input['MysqlDbSystemRestArgs'] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -838,6 +856,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "rest", rest)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if shutdown_type is not None:
@@ -1330,6 +1350,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "secure_connections", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1467,6 +1499,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
                  rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
@@ -1474,10 +1507,6 @@ class MysqlDbSystem(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates and launches a DB System.
-
         ## Example Usage
 
         ```python
@@ -1546,6 +1575,9 @@ class MysqlDbSystem(pulumi.CustomResource):
             is_highly_available=mysql_db_system_is_highly_available,
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
+                "maintenance_schedule_type": mysql_db_system_maintenance_maintenance_schedule_type,
+                "version_preference": mysql_db_system_maintenance_version_preference,
+                "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
             port=mysql_db_system_port,
@@ -1564,6 +1596,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
                 "certificate_id": test_certificate["id"],
             },
+            security_attributes=mysql_db_system_security_attributes,
             source={
                 "source_type": mysql_db_system_source_source_type,
                 "backup_id": test_backup["id"],
@@ -1629,6 +1662,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -1646,10 +1680,6 @@ class MysqlDbSystem(pulumi.CustomResource):
                  args: MysqlDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates and launches a DB System.
-
         ## Example Usage
 
         ```python
@@ -1718,6 +1748,9 @@ class MysqlDbSystem(pulumi.CustomResource):
             is_highly_available=mysql_db_system_is_highly_available,
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
+                "maintenance_schedule_type": mysql_db_system_maintenance_maintenance_schedule_type,
+                "version_preference": mysql_db_system_maintenance_version_preference,
+                "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
             port=mysql_db_system_port,
@@ -1736,6 +1769,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
                 "certificate_id": test_certificate["id"],
             },
+            security_attributes=mysql_db_system_security_attributes,
             source={
                 "source_type": mysql_db_system_source_source_type,
                 "backup_id": test_backup["id"],
@@ -1796,6 +1830,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
                  rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
@@ -1845,6 +1880,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["read_endpoint"] = read_endpoint
             __props__.__dict__["rest"] = rest
             __props__.__dict__["secure_connections"] = secure_connections
+            __props__.__dict__["security_attributes"] = security_attributes
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
@@ -1914,6 +1950,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
             rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
             secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape_name: Optional[pulumi.Input[_builtins.str]] = None,
             shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
             source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
@@ -1985,6 +2022,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -2040,6 +2078,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["read_endpoint"] = read_endpoint
         __props__.__dict__["rest"] = rest
         __props__.__dict__["secure_connections"] = secure_connections
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["shutdown_type"] = shutdown_type
         __props__.__dict__["source"] = source
@@ -2371,6 +2410,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         (Updatable) Secure connection configuration details.
         """
         return pulumi.get(self, "secure_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="shapeName")

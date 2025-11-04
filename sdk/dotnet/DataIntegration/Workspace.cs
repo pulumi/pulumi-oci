@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
-    /// This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
-    /// 
-    /// Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

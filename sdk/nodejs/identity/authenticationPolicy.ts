@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
- *
- * Updates authentication policy for the specified tenancy
- *
  * ## Example Usage
  *
  * ```typescript

@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Kafka Cluster Superusers Management resource in Oracle Cloud Infrastructure Managed Kafka service.
- * 
- * Adds a SASL superuser to the Kafka cluster. A generated password will be updated to the specified vault.
- * 
  * ## Example Usage
  * 
  * <pre>

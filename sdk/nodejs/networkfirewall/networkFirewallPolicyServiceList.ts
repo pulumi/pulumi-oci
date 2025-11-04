@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
- *
- * Creates a new ServiceList for the Network Firewall Policy.
- *
  * ## Example Usage
  *
  * ```typescript

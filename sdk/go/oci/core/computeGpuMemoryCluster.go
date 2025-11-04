@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
-//
-// # Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
-//
 // ## Example Usage
 //
 // ```go

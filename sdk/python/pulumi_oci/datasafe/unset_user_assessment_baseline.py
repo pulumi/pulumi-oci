@@ -121,12 +121,6 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
-        If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
-        Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-
         ## Example Usage
 
         ```python
@@ -162,12 +156,6 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
                  args: UnsetUserAssessmentBaselineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
-        If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
-        Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-
         ## Example Usage
 
         ```python

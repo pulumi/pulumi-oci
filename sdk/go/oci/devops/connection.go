@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
-//
-// Creates a new connection.
-//
 // ## Example Usage
 //
 // ```go

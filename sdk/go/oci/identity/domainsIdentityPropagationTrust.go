@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Register a new Identity Propagation Trust configuration.
-//
 // ## Example Usage
 //
 // ```go

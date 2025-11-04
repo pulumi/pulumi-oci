@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a Rule.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

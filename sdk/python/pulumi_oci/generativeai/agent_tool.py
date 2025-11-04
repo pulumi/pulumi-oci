@@ -366,10 +366,6 @@ class AgentTool(pulumi.CustomResource):
                  tool_config: Optional[pulumi.Input[Union['AgentToolToolConfigArgs', 'AgentToolToolConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates a tool.
-
         ## Example Usage
 
         ```python
@@ -482,10 +478,6 @@ class AgentTool(pulumi.CustomResource):
                  args: AgentToolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates a tool.
-
         ## Example Usage
 
         ```python

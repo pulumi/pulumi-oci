@@ -152,10 +152,6 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Enables the specified ingest time rule.
-
         ## Example Usage
 
         ```python
@@ -185,10 +181,6 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
                  args: NamespaceIngestTimeRulesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Enables the specified ingest time rule.
-
         ## Example Usage
 
         ```python

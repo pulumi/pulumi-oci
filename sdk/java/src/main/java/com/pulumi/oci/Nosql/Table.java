@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
- * 
- * Create a new table.
- * 
  * ## Example Usage
  * 
  * <pre>

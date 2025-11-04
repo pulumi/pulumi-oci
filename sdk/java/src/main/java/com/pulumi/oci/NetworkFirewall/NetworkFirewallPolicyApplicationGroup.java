@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new ApplicationGroup inside the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

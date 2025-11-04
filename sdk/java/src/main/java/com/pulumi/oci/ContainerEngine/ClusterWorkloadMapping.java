@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
- * 
- * Create the specified workloadMapping for a cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

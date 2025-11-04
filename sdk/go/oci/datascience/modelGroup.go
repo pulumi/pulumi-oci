@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
-//
-// Create a new Model Group resource.
-//
 // ## Example Usage
 //
 // ```go

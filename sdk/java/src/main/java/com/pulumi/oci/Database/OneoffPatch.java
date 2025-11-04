@@ -19,10 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates one-off patch for specified database version to download.
- * 
  * ## Example Usage
  * 
  * <pre>

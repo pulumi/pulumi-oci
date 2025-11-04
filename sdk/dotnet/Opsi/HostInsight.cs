@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

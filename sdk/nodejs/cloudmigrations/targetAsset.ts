@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
- *
- * Creates a target asset.
- *
  * ## Example Usage
  *
  * ```typescript

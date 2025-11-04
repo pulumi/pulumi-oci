@@ -724,10 +724,6 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster Pipeline.
-
         ## Example Usage
 
         ```python
@@ -800,10 +796,6 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  args: OpensearchClusterPipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster Pipeline.
-
         ## Example Usage
 
         ```python

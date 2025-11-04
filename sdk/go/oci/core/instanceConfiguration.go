@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates an instance configuration. An instance configuration is a template that defines the
-// settings to use when creating Compute instances.
-//
 // ## Example Usage
 //
 // ## Import

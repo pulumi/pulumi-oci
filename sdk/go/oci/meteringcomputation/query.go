@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-//
-// Returns the created query.
-//
 // ## Example Usage
 //
 // ```go

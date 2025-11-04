@@ -398,10 +398,6 @@ class StreamJob(pulumi.CustomResource):
                  stream_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a stream analysis job with given inputs and features.
-
         ## Example Usage
 
         ```python
@@ -467,10 +463,6 @@ class StreamJob(pulumi.CustomResource):
                  args: StreamJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a stream analysis job with given inputs and features.
-
         ## Example Usage
 
         ```python

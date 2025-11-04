@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int AvailableComputeCapacity;
         /// <summary>
-        /// Indicates if the resource pool should be deleted for the Autonomous Database.
+        /// Indicates if the vanity url details should be deleted for the Autonomous Database.
         /// </summary>
         public readonly bool IsDisabled;
         /// <summary>

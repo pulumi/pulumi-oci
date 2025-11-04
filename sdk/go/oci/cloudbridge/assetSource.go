@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
-//
-// Creates an asset source.
-//
 // ## Example Usage
 //
 // ```go

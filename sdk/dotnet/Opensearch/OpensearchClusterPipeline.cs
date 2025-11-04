@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opensearch
 {
     /// <summary>
-    /// This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
-    /// 
-    /// Creates a new OpensearchCluster Pipeline.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

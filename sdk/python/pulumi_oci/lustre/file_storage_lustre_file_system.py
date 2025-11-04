@@ -690,10 +690,6 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
-
-        Creates a Lustre file system.
-
         ## Example Usage
 
         ```python
@@ -763,10 +759,6 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  args: FileStorageLustreFileSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
-
-        Creates a Lustre file system.
-
         ## Example Usage
 
         ```python

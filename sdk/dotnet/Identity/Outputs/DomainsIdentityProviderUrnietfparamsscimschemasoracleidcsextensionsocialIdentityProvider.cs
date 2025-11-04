@@ -62,6 +62,38 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AdminScopes;
         /// <summary>
+        /// (Updatable) Apple Developer ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? AppleDevId;
+        /// <summary>
+        /// (Updatable) Apple Private Key ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? AppleKeyId;
+        /// <summary>
         /// (Updatable) Social IDP Authorization URL
         /// 
         /// **Added In:** 20.1.3
@@ -342,6 +374,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<string> adminScopes,
 
+            string? appleDevId,
+
+            string? appleKeyId,
+
             string? authzUrl,
 
             bool? autoRedirectEnabled,
@@ -379,6 +415,8 @@ namespace Pulumi.Oci.Identity.Outputs
             AccessTokenUrl = accessTokenUrl;
             AccountLinkingEnabled = accountLinkingEnabled;
             AdminScopes = adminScopes;
+            AppleDevId = appleDevId;
+            AppleKeyId = appleKeyId;
             AuthzUrl = authzUrl;
             AutoRedirectEnabled = autoRedirectEnabled;
             ClientCredentialInPayload = clientCredentialInPayload;

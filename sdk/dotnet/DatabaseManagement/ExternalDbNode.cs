@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the external DB node specified by `externalDbNodeId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

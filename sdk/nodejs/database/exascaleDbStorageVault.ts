@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates an Exadata Database Storage Vault
- *
  * ## Example Usage
  *
  * ```typescript

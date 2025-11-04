@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
- *
- * Creates a new budget.
- *
  * ## Example Usage
  *
  * ```typescript

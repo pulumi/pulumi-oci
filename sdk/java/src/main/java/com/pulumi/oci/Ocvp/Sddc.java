@@ -776,6 +776,12 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
+    }
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 

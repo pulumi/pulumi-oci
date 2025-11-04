@@ -756,11 +756,6 @@ class DatabaseRegistration(pulumi.CustomResource):
                  wallet: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Note: Deprecated. Use the /connections API instead.
-        Creates a new DatabaseRegistration.
-
         ## Example Usage
 
         ```python
@@ -832,11 +827,6 @@ class DatabaseRegistration(pulumi.CustomResource):
                  args: DatabaseRegistrationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Note: Deprecated. Use the /connections API instead.
-        Creates a new DatabaseRegistration.
-
         ## Example Usage
 
         ```python

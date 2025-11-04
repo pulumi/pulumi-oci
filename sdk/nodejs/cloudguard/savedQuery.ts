@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates a SavedQuery resource.
- *
  * ## Example Usage
  *
  * ```typescript

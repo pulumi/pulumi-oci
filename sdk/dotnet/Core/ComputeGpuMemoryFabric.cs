@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Customer can update displayName and tags for compute GPU memory fabric record
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

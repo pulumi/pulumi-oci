@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
- *
- * Creates a new APM domain.
- *
  * ## Example Usage
  *
  * ```typescript

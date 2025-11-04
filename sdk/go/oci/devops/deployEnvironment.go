@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
-//
-// Creates a new deployment environment.
-//
 // ## Example Usage
 //
 // ```go

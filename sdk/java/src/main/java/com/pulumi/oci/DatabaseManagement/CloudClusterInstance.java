@@ -15,9 +15,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the cloud cluster instance specified by `cloudClusterInstanceId`.
+ * ## Example Usage
  * 
  * ## Import
  * 

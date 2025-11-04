@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Zpr
 {
     /// <summary>
-    /// This resource provides the Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
-    /// 
-    /// Creates a ZprPolicy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

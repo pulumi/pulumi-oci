@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
-    /// This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-    /// 
-    /// Create a new virtual node pool.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

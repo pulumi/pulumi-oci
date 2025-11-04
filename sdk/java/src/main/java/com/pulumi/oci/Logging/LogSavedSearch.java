@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
- * 
- * Creates a new LogSavedSearch.
- * 
  * ## Example Usage
  * 
  * <pre>

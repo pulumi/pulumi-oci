@@ -57,7 +57,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
      */
     private String displayName;
     /**
-     * @return OCID identifier for the Action that is currently in execution, if applicable.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      * 
      */
     private String executingFsuActionId;
@@ -72,27 +72,27 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
      */
     private String fsuCollectionId;
     /**
-     * @return Goal version or image details for the Exadata Fleet Update Cycle.
+     * @return Details of goal &#39;GUEST_OS&#39; software version.
      * 
      */
     private List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail> goalVersionDetails;
     /**
-     * @return OCID identifier for the Exadata Fleet Update Cycle.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
      * 
      */
     private String id;
     /**
-     * @return List of identifiers of patches to ignore.
+     * @return List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     private List<String> isIgnoreMissingPatches;
     /**
-     * @return Ignore patch conflicts or missing patches between the source and goal homes.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     private Boolean isIgnorePatches;
     /**
-     * @return Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * @return Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     private Boolean isKeepPlacement;
@@ -117,7 +117,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
      */
     private Integer maxDrainTimeoutInSeconds;
     /**
-     * @return In this array all the possible actions will be listed. The first element is the suggested Action.
+     * @return All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      * 
      */
     private List<GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute> nextActionToExecutes;
@@ -218,7 +218,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
         return this.displayName;
     }
     /**
-     * @return OCID identifier for the Action that is currently in execution, if applicable.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      * 
      */
     public String executingFsuActionId() {
@@ -239,35 +239,35 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
         return this.fsuCollectionId;
     }
     /**
-     * @return Goal version or image details for the Exadata Fleet Update Cycle.
+     * @return Details of goal &#39;GUEST_OS&#39; software version.
      * 
      */
     public List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail> goalVersionDetails() {
         return this.goalVersionDetails;
     }
     /**
-     * @return OCID identifier for the Exadata Fleet Update Cycle.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return List of identifiers of patches to ignore.
+     * @return List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public List<String> isIgnoreMissingPatches() {
         return this.isIgnoreMissingPatches;
     }
     /**
-     * @return Ignore patch conflicts or missing patches between the source and goal homes.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public Boolean isIgnorePatches() {
         return this.isIgnorePatches;
     }
     /**
-     * @return Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * @return Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     public Boolean isKeepPlacement() {
@@ -302,7 +302,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
         return this.maxDrainTimeoutInSeconds;
     }
     /**
-     * @return In this array all the possible actions will be listed. The first element is the suggested Action.
+     * @return All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      * 
      */
     public List<GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute> nextActionToExecutes() {

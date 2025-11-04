@@ -14,7 +14,9 @@ import (
 // This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
 //
 // Lists private endpoints according to the specified filter.
-// - For `compartmentId`, lists all private endpoint in the matching compartment.
+// For more information, see
+// [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+// - For `compartmentId`, lists all private endpoints in the matching compartment.
 // - For `privateEndpointId`, lists the matching private endpoint.
 //
 // ## Example Usage
@@ -70,7 +72,7 @@ type GetPrivateEndpointsArgs struct {
 
 // A collection of values returned by getPrivateEndpoints.
 type GetPrivateEndpointsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                     `pulumi:"displayName"`
@@ -125,7 +127,7 @@ func (o GetPrivateEndpointsResultOutput) ToGetPrivateEndpointsResultOutputWithCo
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 func (o GetPrivateEndpointsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

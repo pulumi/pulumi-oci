@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Updates the availability for a list of specified software sources.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

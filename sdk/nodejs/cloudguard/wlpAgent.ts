@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates and registers a WLP agent for an
- * on-premise resource.
- *
  * ## Example Usage
  *
  * ```typescript

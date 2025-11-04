@@ -19,7 +19,7 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfig {
      */
     private @Nullable List<AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
-     * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+     * @return Number of days between the current and earliest point of recoverability covered by automatic backups.
      * 
      */
     private @Nullable Integer recoveryWindowInDays;
@@ -33,7 +33,7 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfig {
         return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
     /**
-     * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+     * @return Number of days between the current and earliest point of recoverability covered by automatic backups.
      * 
      */
     public Optional<Integer> recoveryWindowInDays() {

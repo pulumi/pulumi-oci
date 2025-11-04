@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
-    /// This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
-    /// 
-    /// Create availability catalog
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

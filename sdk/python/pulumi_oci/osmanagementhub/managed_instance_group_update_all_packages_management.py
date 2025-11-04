@@ -140,10 +140,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Update All Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates all packages on each managed instance in the specified managed instance group.
-
         ## Example Usage
 
         ```python
@@ -180,10 +176,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
                  args: ManagedInstanceGroupUpdateAllPackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Update All Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates all packages on each managed instance in the specified managed instance group.
-
         ## Example Usage
 
         ```python

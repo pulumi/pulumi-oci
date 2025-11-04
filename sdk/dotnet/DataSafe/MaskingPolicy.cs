@@ -10,26 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new masking policy and associates it with a sensitive data model or a target database.
-    /// 
-    /// To use a sensitive data model as the source of masking columns, set the columnSource attribute to
-    /// SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After creating a masking policy,
-    /// you can use the AddMaskingColumnsFromSdm operation to automatically add all the columns from
-    /// the associated sensitive data model. In this case, the target database associated with the
-    /// sensitive data model is used for column and masking format validations.
-    /// 
-    /// You can also create a masking policy without using a sensitive data model. In this case,
-    /// you need to associate your masking policy with a target database by setting the columnSource
-    /// attribute to TARGET and providing the targetId attribute. The specified target database
-    /// is used for column and masking format validations.
-    /// 
-    /// After creating a masking policy, you can use the CreateMaskingColumn or PatchMaskingColumns
-    /// operation to manually add columns to the policy. You need to add the parent columns only,
-    /// and it automatically adds the child columns (in referential relationship with the parent columns)
-    /// from the associated sensitive data model or target database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

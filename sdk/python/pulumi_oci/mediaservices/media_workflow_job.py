@@ -571,10 +571,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
-
         ## Example Usage
 
         ```python
@@ -636,10 +632,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  args: MediaWorkflowJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
-
         ## Example Usage
 
         ```python

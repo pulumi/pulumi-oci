@@ -19,9 +19,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the Managed Database specified by managedDatabaseId.
+ * ## Example Usage
  * 
  * ## Import
  * 

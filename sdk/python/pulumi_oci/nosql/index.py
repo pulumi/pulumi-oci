@@ -285,10 +285,6 @@ class Index(pulumi.CustomResource):
                  table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Create a new index on the table identified by tableNameOrId.
-
         ## Example Usage
 
         ```python
@@ -334,10 +330,6 @@ class Index(pulumi.CustomResource):
                  args: IndexArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Create a new index on the table identified by tableNameOrId.
-
         ## Example Usage
 
         ```python

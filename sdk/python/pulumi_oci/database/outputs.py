@@ -48,6 +48,9 @@ __all__ = [
     'AutonomousDatabaseApexDetail',
     'AutonomousDatabaseBackupBackupDestinationDetails',
     'AutonomousDatabaseBackupConfig',
+    'AutonomousDatabaseBackupSourceDatabaseDetail',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact',
     'AutonomousDatabaseConnectionString',
     'AutonomousDatabaseConnectionStringProfile',
     'AutonomousDatabaseConnectionUrl',
@@ -65,6 +68,8 @@ __all__ = [
     'AutonomousDatabaseScheduledOperation',
     'AutonomousDatabaseScheduledOperationDayOfWeek',
     'AutonomousDatabaseStandbyDb',
+    'AutonomousDatabaseVanityConnectionUrl',
+    'AutonomousDatabaseVanityUrlDetail',
     'AutonomousExadataInfrastructureMaintenanceWindow',
     'AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'AutonomousExadataInfrastructureMaintenanceWindowDetails',
@@ -78,6 +83,7 @@ __all__ = [
     'AutonomousVmClusterMaintenanceWindowDetailMonth',
     'AutonomousVmClusterMaintenanceWindowMonth',
     'BackupDestinationAssociatedDatabase',
+    'BackupDestinationAssociatedLongTermBackup',
     'BackupDestinationMountTypeDetails',
     'BackupEncryptionKeyLocationDetail',
     'CloudAutonomousVmClusterMaintenanceWindow',
@@ -121,6 +127,12 @@ __all__ = [
     'DatabaseDatabaseStorageSizeDetails',
     'DatabaseDbBackupConfig',
     'DatabaseDbBackupConfigBackupDestinationDetail',
+    'DatabaseSnapshotStandbyConnectionString',
+    'DatabaseSnapshotStandbyDataGuardGroup',
+    'DatabaseSnapshotStandbyDataGuardGroupMember',
+    'DatabaseSnapshotStandbyDatabaseManagementConfig',
+    'DatabaseSnapshotStandbyDbBackupConfig',
+    'DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail',
     'DatabaseStorageSizeDetail',
     'DatabaseUpgradeConnectionString',
     'DatabaseUpgradeDataGuardGroup',
@@ -196,6 +208,7 @@ __all__ = [
     'ExternalPluggableDatabaseOperationsInsightsConfig',
     'ExternalPluggableDatabaseStackMonitoringConfig',
     'KeyStoreAssociatedDatabase',
+    'KeyStoreAssociatedLongTermBackup',
     'KeyStoreTypeDetails',
     'MaintenanceRunEstimatedPatchingTime',
     'PluggableDatabaseConnectionString',
@@ -300,8 +313,14 @@ __all__ = [
     'GetAutonomousDatabaseApexDetailResult',
     'GetAutonomousDatabaseBackupBackupDestinationDetailResult',
     'GetAutonomousDatabaseBackupConfigResult',
+    'GetAutonomousDatabaseBackupSourceDatabaseDetailResult',
+    'GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult',
+    'GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult',
     'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult',
+    'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailResult',
+    'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult',
+    'GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabaseBackupsFilterResult',
     'GetAutonomousDatabaseConnectionStringResult',
     'GetAutonomousDatabaseConnectionStringProfileResult',
@@ -334,6 +353,8 @@ __all__ = [
     'GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult',
     'GetAutonomousDatabaseSoftwareImagesFilterResult',
     'GetAutonomousDatabaseStandbyDbResult',
+    'GetAutonomousDatabaseVanityConnectionUrlResult',
+    'GetAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesAutonomousDatabaseResult',
     'GetAutonomousDatabasesAutonomousDatabaseApexDetailResult',
     'GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult',
@@ -354,6 +375,8 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult',
+    'GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult',
+    'GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult',
@@ -374,6 +397,8 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesClonesFilterResult',
     'GetAutonomousDatabasesFilterResult',
     'GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult',
@@ -419,9 +444,11 @@ __all__ = [
     'GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthResult',
     'GetAutonomousVmClustersFilterResult',
     'GetBackupDestinationAssociatedDatabaseResult',
+    'GetBackupDestinationAssociatedLongTermBackupResult',
     'GetBackupDestinationMountTypeDetailResult',
     'GetBackupDestinationsBackupDestinationResult',
     'GetBackupDestinationsBackupDestinationAssociatedDatabaseResult',
+    'GetBackupDestinationsBackupDestinationAssociatedLongTermBackupResult',
     'GetBackupDestinationsBackupDestinationMountTypeDetailResult',
     'GetBackupDestinationsFilterResult',
     'GetBackupsBackupResult',
@@ -683,10 +710,12 @@ __all__ = [
     'GetGiVersionsFilterResult',
     'GetGiVersionsGiVersionResult',
     'GetKeyStoreAssociatedDatabaseResult',
+    'GetKeyStoreAssociatedLongTermBackupResult',
     'GetKeyStoreTypeDetailResult',
     'GetKeyStoresFilterResult',
     'GetKeyStoresKeyStoreResult',
     'GetKeyStoresKeyStoreAssociatedDatabaseResult',
+    'GetKeyStoresKeyStoreAssociatedLongTermBackupResult',
     'GetKeyStoresKeyStoreTypeDetailResult',
     'GetMaintenanceRunEstimatedPatchingTimeResult',
     'GetMaintenanceRunsFilterResult',
@@ -809,7 +838,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfig(dict):
                  recovery_window_in_days: Optional[_builtins.int] = None):
         """
         :param Sequence['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
-        :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        :param _builtins.int recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
@@ -828,7 +857,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfig(dict):
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[_builtins.int]:
         """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
 
@@ -838,10 +867,14 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail(d
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "internetProxy":
             suggest = "internet_proxy"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "vpcPassword":
             suggest = "vpc_password"
         elif key == "vpcUser":
@@ -859,32 +892,48 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail(d
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -898,7 +947,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail(d
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -909,6 +958,14 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail(d
         Proxy URL to connect to object store.
         """
         return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter
@@ -1011,7 +1068,7 @@ class AutonomousContainerDatabaseAddStandbyDataguard(dict):
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -1138,7 +1195,7 @@ class AutonomousContainerDatabaseAddStandbyDataguard(dict):
     @pulumi.getter
     def role(self) -> Optional[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1267,7 +1324,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMember(dict):
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -1394,7 +1451,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMember(dict):
     @pulumi.getter
     def role(self) -> Optional[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1476,8 +1533,8 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntry(dict):
                  time_activated: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -1494,7 +1551,7 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntry(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -1502,7 +1559,7 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntry(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -1788,10 +1845,14 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "internetProxy":
             suggest = "internet_proxy"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "vpcPassword":
             suggest = "vpc_password"
         elif key == "vpcUser":
@@ -1810,26 +1871,34 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
 
     def __init__(__self__, *,
                  type: _builtins.str,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: Type of the database backup destination.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -1842,6 +1911,14 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
         Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -1868,6 +1945,14 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
         return pulumi.get(self, "internet_proxy")
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[_builtins.str]:
         """
@@ -1891,10 +1976,14 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
         suggest = None
         if key == "backupDestinationAttachHistories":
             suggest = "backup_destination_attach_histories"
+        elif key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
         elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "internetProxy":
             suggest = "internet_proxy"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
         elif key == "spaceUtilizedInGbs":
@@ -1919,9 +2008,11 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
 
     def __init__(__self__, *,
                  backup_destination_attach_histories: Optional[Sequence[_builtins.str]] = None,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  recovery_window_in_days: Optional[_builtins.int] = None,
                  space_utilized_in_gbs: Optional[_builtins.int] = None,
                  time_at_which_storage_details_are_updated: Optional[_builtins.str] = None,
@@ -1930,9 +2021,11 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param Sequence[_builtins.str] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.int recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         :param _builtins.int space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
         :param _builtins.str time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
@@ -1942,12 +2035,16 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
         """
         if backup_destination_attach_histories is not None:
             pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
         if space_utilized_in_gbs is not None:
@@ -1970,6 +2067,14 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
         return pulumi.get(self, "backup_destination_attach_histories")
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[_builtins.str]:
         """
@@ -1981,7 +2086,7 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -1992,6 +2097,14 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetail(dict):
         Proxy URL to connect to object store.
         """
         return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="recoveryWindowInDays")
@@ -2097,10 +2210,14 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "internetProxy":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -2121,30 +2238,36 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(dict):
 
     def __init__(__self__, *,
                  type: _builtins.str,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: (Updatable) Type of the database backup destination.
+        :param _builtins.str backup_retention_policy_on_terminate: (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.str internet_proxy: (Updatable) Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: (Updatable) Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: (Updatable) Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str vpc_password: (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -2159,6 +2282,14 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(dict):
         (Updatable) Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter
@@ -2180,17 +2311,23 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Indicates whether the backup destination is cross-region or local region.
+        (Updatable) Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -2363,14 +2500,14 @@ class AutonomousContainerDatabaseDataguard(dict):
         :param _builtins.str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param _builtins.str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param _builtins.str automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param _builtins.str availability_domain: The domain of the Autonomous Container Database
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param _builtins.bool is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -2441,7 +2578,7 @@ class AutonomousContainerDatabaseDataguard(dict):
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -2465,7 +2602,7 @@ class AutonomousContainerDatabaseDataguard(dict):
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -2497,7 +2634,7 @@ class AutonomousContainerDatabaseDataguard(dict):
     @pulumi.getter
     def role(self) -> Optional[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -2605,12 +2742,16 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -2631,26 +2772,30 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
 
     def __init__(__self__, *,
                  type: _builtins.str,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: Type of the database backup destination.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -2659,6 +2804,8 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -2673,6 +2820,14 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
         Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -2702,17 +2857,23 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -2802,14 +2963,14 @@ class AutonomousContainerDatabaseDataguardGroupMember(dict):
         :param _builtins.str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param _builtins.str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param _builtins.str automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param _builtins.str availability_domain: The domain of the Autonomous Container Database
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param _builtins.bool is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -2880,7 +3041,7 @@ class AutonomousContainerDatabaseDataguardGroupMember(dict):
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -2904,7 +3065,7 @@ class AutonomousContainerDatabaseDataguardGroupMember(dict):
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -2936,7 +3097,7 @@ class AutonomousContainerDatabaseDataguardGroupMember(dict):
     @pulumi.getter
     def role(self) -> Optional[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -3018,8 +3179,8 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
                  time_activated: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -3036,7 +3197,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -3044,7 +3205,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -3115,15 +3276,14 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param _builtins.str preference: The maintenance window scheduling preference.
-        :param Sequence[_builtins.bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param Sequence[_builtins.bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[_builtins.int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3169,8 +3329,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[Sequence[_builtins.int]]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -3226,7 +3385,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[_builtins.bool]]:
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         return pulumi.get(self, "skip_rus")
 
@@ -3308,8 +3467,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -3319,7 +3477,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param _builtins.str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[_builtins.bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        :param Sequence[_builtins.int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        :param Sequence[_builtins.int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -3364,8 +3522,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[Sequence[_builtins.int]]:
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -3431,7 +3588,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[_builtins.int]]:
         """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         return pulumi.get(self, "weeks_of_months")
 
@@ -3546,10 +3703,14 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "internetProxy":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -3570,30 +3731,36 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
 
     def __init__(__self__, *,
                  type: _builtins.str,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: Type of the database backup destination.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -3608,6 +3775,14 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
         Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter
@@ -3629,17 +3804,23 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -3749,7 +3930,7 @@ class AutonomousDatabaseApexDetail(dict):
                  apex_version: Optional[_builtins.str] = None,
                  ords_version: Optional[_builtins.str] = None):
         """
-        :param _builtins.str apex_version: The Oracle APEX Application Development version.
+        :param _builtins.str apex_version: The Oracle APEX AI Application Development version.
         :param _builtins.str ords_version: The Oracle REST Data Services (ORDS) version.
         """
         if apex_version is not None:
@@ -3761,7 +3942,7 @@ class AutonomousDatabaseApexDetail(dict):
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> Optional[_builtins.str]:
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         return pulumi.get(self, "apex_version")
 
@@ -3779,10 +3960,14 @@ class AutonomousDatabaseBackupBackupDestinationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "internetProxy":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -3803,28 +3988,36 @@ class AutonomousDatabaseBackupBackupDestinationDetails(dict):
 
     def __init__(__self__, *,
                  type: _builtins.str,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: The type of backup.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param _builtins.str type: Type of the database backup destination.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -3836,15 +4029,23 @@ class AutonomousDatabaseBackupBackupDestinationDetails(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of backup.
+        Type of the database backup destination.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
         return pulumi.get(self, "id")
 
@@ -3860,15 +4061,23 @@ class AutonomousDatabaseBackupBackupDestinationDetails(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -3940,6 +4149,186 @@ class AutonomousDatabaseBackupConfig(dict):
 
 
 @pulumi.output_type
+class AutonomousDatabaseBackupSourceDatabaseDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autonomousContainerDatabaseCustomerContacts":
+            suggest = "autonomous_container_database_customer_contacts"
+        elif key == "autonomousContainerDatabaseDisplayName":
+            suggest = "autonomous_container_database_display_name"
+        elif key == "autonomousContainerDatabaseDstFileVersion":
+            suggest = "autonomous_container_database_dst_file_version"
+        elif key == "autonomousContainerDatabaseName":
+            suggest = "autonomous_container_database_name"
+        elif key == "autonomousDatabaseCustomerContacts":
+            suggest = "autonomous_database_customer_contacts"
+        elif key == "autonomousDatabaseName":
+            suggest = "autonomous_database_name"
+        elif key == "autonomousVmClusterDisplayName":
+            suggest = "autonomous_vm_cluster_display_name"
+        elif key == "dbWorkload":
+            suggest = "db_workload"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseBackupSourceDatabaseDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseBackupSourceDatabaseDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseBackupSourceDatabaseDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autonomous_container_database_customer_contacts: Optional[Sequence['outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact']] = None,
+                 autonomous_container_database_display_name: Optional[_builtins.str] = None,
+                 autonomous_container_database_dst_file_version: Optional[_builtins.str] = None,
+                 autonomous_container_database_name: Optional[_builtins.str] = None,
+                 autonomous_database_customer_contacts: Optional[Sequence['outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact']] = None,
+                 autonomous_database_name: Optional[_builtins.str] = None,
+                 autonomous_vm_cluster_display_name: Optional[_builtins.str] = None,
+                 db_workload: Optional[_builtins.str] = None):
+        """
+        :param Sequence['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs'] autonomous_container_database_customer_contacts: Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
+        :param Sequence['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param _builtins.str autonomous_database_name: Autonomous Database's name.
+        :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
+        :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous Transaction Processing database
+               * DW - indicates an Autonomous Data Warehouse database
+               * AJD - indicates an Autonomous JSON Database
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        if autonomous_container_database_customer_contacts is not None:
+            pulumi.set(__self__, "autonomous_container_database_customer_contacts", autonomous_container_database_customer_contacts)
+        if autonomous_container_database_display_name is not None:
+            pulumi.set(__self__, "autonomous_container_database_display_name", autonomous_container_database_display_name)
+        if autonomous_container_database_dst_file_version is not None:
+            pulumi.set(__self__, "autonomous_container_database_dst_file_version", autonomous_container_database_dst_file_version)
+        if autonomous_container_database_name is not None:
+            pulumi.set(__self__, "autonomous_container_database_name", autonomous_container_database_name)
+        if autonomous_database_customer_contacts is not None:
+            pulumi.set(__self__, "autonomous_database_customer_contacts", autonomous_database_customer_contacts)
+        if autonomous_database_name is not None:
+            pulumi.set(__self__, "autonomous_database_name", autonomous_database_name)
+        if autonomous_vm_cluster_display_name is not None:
+            pulumi.set(__self__, "autonomous_vm_cluster_display_name", autonomous_vm_cluster_display_name)
+        if db_workload is not None:
+            pulumi.set(__self__, "db_workload", db_workload)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseCustomerContacts")
+    def autonomous_container_database_customer_contacts(self) -> Optional[Sequence['outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact']]:
+        """
+        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "autonomous_container_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDisplayName")
+    def autonomous_container_database_display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-provided name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDstFileVersion")
+    def autonomous_container_database_dst_file_version(self) -> Optional[_builtins.str]:
+        """
+        DST Time-Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseName")
+    def autonomous_container_database_name(self) -> Optional[_builtins.str]:
+        """
+        Autonomous Container Database name.
+        """
+        return pulumi.get(self, "autonomous_container_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseCustomerContacts")
+    def autonomous_database_customer_contacts(self) -> Optional[Sequence['outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact']]:
+        """
+        Customer Contacts for the Autonomous database.
+        """
+        return pulumi.get(self, "autonomous_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseName")
+    def autonomous_database_name(self) -> Optional[_builtins.str]:
+        """
+        Autonomous Database's name.
+        """
+        return pulumi.get(self, "autonomous_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousVmClusterDisplayName")
+    def autonomous_vm_cluster_display_name(self) -> Optional[_builtins.str]:
+        """
+        Autonomous VM cluster's user-friendly name.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> Optional[_builtins.str]:
+        """
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        return pulumi.get(self, "db_workload")
+
+
+@pulumi.output_type
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact(dict):
+    def __init__(__self__, *,
+                 email: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[_builtins.str]:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact(dict):
+    def __init__(__self__, *,
+                 email: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[_builtins.str]:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
 class AutonomousDatabaseConnectionString(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -3966,7 +4355,7 @@ class AutonomousDatabaseConnectionString(dict):
                  medium: Optional[_builtins.str] = None,
                  profiles: Optional[Sequence['outputs.AutonomousDatabaseConnectionStringProfile']] = None):
         """
-        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param _builtins.str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param _builtins.str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param _builtins.str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -3990,7 +4379,7 @@ class AutonomousDatabaseConnectionString(dict):
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[Mapping[str, _builtins.str]]:
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
@@ -4078,12 +4467,12 @@ class AutonomousDatabaseConnectionStringProfile(dict):
                  value: Optional[_builtins.str] = None):
         """
         :param _builtins.str consumer_group: Consumer group used by the connection.
-        :param _builtins.str display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         :param _builtins.str host_format: Host format used in connection string.
         :param _builtins.bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param _builtins.str protocol: Protocol used by the connection.
         :param _builtins.str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         :param _builtins.str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param _builtins.str value: Connection string value.
         """
@@ -4118,7 +4507,7 @@ class AutonomousDatabaseConnectionStringProfile(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -4158,7 +4547,7 @@ class AutonomousDatabaseConnectionStringProfile(dict):
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> Optional[_builtins.str]:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -4428,8 +4817,12 @@ class AutonomousDatabaseEncryptionKey(dict):
             suggest = "key_arn"
         elif key == "keyName":
             suggest = "key_name"
+        elif key == "keyRing":
+            suggest = "key_ring"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
+        elif key == "kmsRestEndpoint":
+            suggest = "kms_rest_endpoint"
         elif key == "okvKmsKey":
             suggest = "okv_kms_key"
         elif key == "okvUri":
@@ -4461,24 +4854,32 @@ class AutonomousDatabaseEncryptionKey(dict):
                  external_id: Optional[_builtins.str] = None,
                  key_arn: Optional[_builtins.str] = None,
                  key_name: Optional[_builtins.str] = None,
+                 key_ring: Optional[_builtins.str] = None,
                  kms_key_id: Optional[_builtins.str] = None,
+                 kms_rest_endpoint: Optional[_builtins.str] = None,
+                 location: Optional[_builtins.str] = None,
                  okv_kms_key: Optional[_builtins.str] = None,
                  okv_uri: Optional[_builtins.str] = None,
+                 project: Optional[_builtins.str] = None,
                  service_endpoint_uri: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None,
                  vault_uri: Optional[_builtins.str] = None):
         """
         :param _builtins.str arn_role: (Updatable) AWS ARN role
-        :param _builtins.str autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: (Updatable) The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: (Updatable) OKV certificate directory name
         :param _builtins.str certificate_id: (Updatable) OKV certificate id
         :param _builtins.str directory_name: (Updatable) OKV wallet directory name
         :param _builtins.str external_id: (Updatable) AWS external ID
         :param _builtins.str key_arn: (Updatable) AWS key ARN
         :param _builtins.str key_name: (Updatable) Azure key name
+        :param _builtins.str key_ring: (Updatable) GCP key ring
         :param _builtins.str kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: (Updatable) GCP kms REST API endpoint
+        :param _builtins.str location: (Updatable) GCP key ring location
         :param _builtins.str okv_kms_key: (Updatable) UUID of OKV KMS Key
         :param _builtins.str okv_uri: (Updatable) URI of OKV server
+        :param _builtins.str project: (Updatable) GCP project name
         :param _builtins.str service_endpoint_uri: (Updatable) AWS key service endpoint URI
         :param _builtins.str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str vault_uri: (Updatable) Azure vault URI
@@ -4499,12 +4900,20 @@ class AutonomousDatabaseEncryptionKey(dict):
             pulumi.set(__self__, "key_arn", key_arn)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_ring is not None:
+            pulumi.set(__self__, "key_ring", key_ring)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_rest_endpoint is not None:
+            pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if okv_kms_key is not None:
             pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         if okv_uri is not None:
             pulumi.set(__self__, "okv_uri", okv_uri)
+        if project is not None:
+            pulumi.set(__self__, "project", project)
         if service_endpoint_uri is not None:
             pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         if vault_id is not None:
@@ -4524,7 +4933,7 @@ class AutonomousDatabaseEncryptionKey(dict):
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -4577,12 +4986,36 @@ class AutonomousDatabaseEncryptionKey(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -4599,6 +5032,14 @@ class AutonomousDatabaseEncryptionKey(dict):
         (Updatable) URI of OKV server
         """
         return pulumi.get(self, "okv_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def project(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP project name
+        """
+        return pulumi.get(self, "project")
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
@@ -4650,7 +5091,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntry(dict):
                  encryption_keys: Optional[Sequence['outputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey']] = None,
                  time_activated: Optional[_builtins.str] = None):
         """
-        :param Sequence['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: (Updatable) Details of the Autonomous Database encryption key.
+        :param Sequence['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: (Updatable) Details of the Autonomous AI Database encryption key.
         :param _builtins.str time_activated: The date and time the kms key activated.
         """
         if encryption_keys is not None:
@@ -4662,7 +5103,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntry(dict):
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Optional[Sequence['outputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey']]:
         """
-        (Updatable) Details of the Autonomous Database encryption key.
+        (Updatable) Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -4696,8 +5137,12 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
             suggest = "key_arn"
         elif key == "keyName":
             suggest = "key_name"
+        elif key == "keyRing":
+            suggest = "key_ring"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
+        elif key == "kmsRestEndpoint":
+            suggest = "kms_rest_endpoint"
         elif key == "okvKmsKey":
             suggest = "okv_kms_key"
         elif key == "okvUri":
@@ -4729,24 +5174,32 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
                  external_id: Optional[_builtins.str] = None,
                  key_arn: Optional[_builtins.str] = None,
                  key_name: Optional[_builtins.str] = None,
+                 key_ring: Optional[_builtins.str] = None,
                  kms_key_id: Optional[_builtins.str] = None,
+                 kms_rest_endpoint: Optional[_builtins.str] = None,
+                 location: Optional[_builtins.str] = None,
                  okv_kms_key: Optional[_builtins.str] = None,
                  okv_uri: Optional[_builtins.str] = None,
+                 project: Optional[_builtins.str] = None,
                  service_endpoint_uri: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None,
                  vault_uri: Optional[_builtins.str] = None):
         """
         :param _builtins.str arn_role: (Updatable) AWS ARN role
-        :param _builtins.str autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: (Updatable) The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: (Updatable) OKV certificate directory name
         :param _builtins.str certificate_id: (Updatable) OKV certificate id
         :param _builtins.str directory_name: (Updatable) OKV wallet directory name
         :param _builtins.str external_id: (Updatable) AWS external ID
         :param _builtins.str key_arn: (Updatable) AWS key ARN
         :param _builtins.str key_name: (Updatable) Azure key name
+        :param _builtins.str key_ring: (Updatable) GCP key ring
         :param _builtins.str kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: (Updatable) GCP kms REST API endpoint
+        :param _builtins.str location: (Updatable) GCP key ring location
         :param _builtins.str okv_kms_key: (Updatable) UUID of OKV KMS Key
         :param _builtins.str okv_uri: (Updatable) URI of OKV server
+        :param _builtins.str project: (Updatable) GCP project name
         :param _builtins.str service_endpoint_uri: (Updatable) AWS key service endpoint URI
         :param _builtins.str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str vault_uri: (Updatable) Azure vault URI
@@ -4767,12 +5220,20 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
             pulumi.set(__self__, "key_arn", key_arn)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_ring is not None:
+            pulumi.set(__self__, "key_ring", key_ring)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_rest_endpoint is not None:
+            pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if okv_kms_key is not None:
             pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         if okv_uri is not None:
             pulumi.set(__self__, "okv_uri", okv_uri)
+        if project is not None:
+            pulumi.set(__self__, "project", project)
         if service_endpoint_uri is not None:
             pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         if vault_id is not None:
@@ -4792,7 +5253,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -4845,12 +5306,36 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -4867,6 +5352,14 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
         (Updatable) URI of OKV server
         """
         return pulumi.get(self, "okv_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def project(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) GCP project name
+        """
+        return pulumi.get(self, "project")
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
@@ -4922,8 +5415,8 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
                  time_activated: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -4940,7 +5433,7 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -4948,7 +5441,7 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -5013,13 +5506,13 @@ class AutonomousDatabaseLocalStandbyDb(dict):
                  time_maintenance_begin: Optional[_builtins.str] = None,
                  time_maintenance_end: Optional[_builtins.str] = None):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.str state: The current state of the Autonomous Database.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str state: The current state of the Autonomous AI Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -5046,7 +5539,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[_builtins.str]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5078,7 +5571,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -5086,7 +5579,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[_builtins.str]:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -5094,7 +5587,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[_builtins.str]:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -5146,7 +5639,7 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
                  retention_period_in_days: Optional[_builtins.int] = None,
                  time_of_backup: Optional[_builtins.str] = None):
         """
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.str repeat_cadence: The frequency of the long-term backup schedule
         :param _builtins.int retention_period_in_days: Retention period, in days, for long-term backups
         :param _builtins.str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -5164,7 +5657,7 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[_builtins.bool]:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -5358,7 +5851,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
                  is_snapshot_standby: Optional[_builtins.bool] = None,
                  time_snapshot_standby_enabled_till: Optional[_builtins.str] = None):
         """
-        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param _builtins.bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param _builtins.bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param _builtins.str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -5376,7 +5869,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[_builtins.str]:
         """
-        Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -5436,8 +5929,8 @@ class AutonomousDatabaseResourcePoolSummary(dict):
                  pool_size: Optional[_builtins.int] = None,
                  total_compute_capacity: Optional[_builtins.int] = None):
         """
-        :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
-        :param _builtins.bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.int available_compute_capacity: (Updatable) Available capacity left for new elastic pool members provision
+        :param _builtins.bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         :param _builtins.int pool_size: (Updatable) Resource pool size.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
@@ -5454,7 +5947,7 @@ class AutonomousDatabaseResourcePoolSummary(dict):
     @pulumi.getter(name="availableComputeCapacity")
     def available_compute_capacity(self) -> Optional[_builtins.int]:
         """
-        Available capacity left for new elastic pool members provision
+        (Updatable) Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
 
@@ -5462,7 +5955,7 @@ class AutonomousDatabaseResourcePoolSummary(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -5609,13 +6102,13 @@ class AutonomousDatabaseStandbyDb(dict):
                  time_maintenance_begin: Optional[_builtins.str] = None,
                  time_maintenance_end: Optional[_builtins.str] = None):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.str state: The current state of the Autonomous Database.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str state: The current state of the Autonomous AI Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -5642,7 +6135,7 @@ class AutonomousDatabaseStandbyDb(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[_builtins.str]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5674,7 +6167,7 @@ class AutonomousDatabaseStandbyDb(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -5682,7 +6175,7 @@ class AutonomousDatabaseStandbyDb(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[_builtins.str]:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -5690,7 +6183,7 @@ class AutonomousDatabaseStandbyDb(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[_builtins.str]:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -5709,6 +6202,204 @@ class AutonomousDatabaseStandbyDb(dict):
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
+
+
+@pulumi.output_type
+class AutonomousDatabaseVanityConnectionUrl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apexUrl":
+            suggest = "apex_url"
+        elif key == "databaseTransformsUrl":
+            suggest = "database_transforms_url"
+        elif key == "graphStudioUrl":
+            suggest = "graph_studio_url"
+        elif key == "machineLearningNotebookUrl":
+            suggest = "machine_learning_notebook_url"
+        elif key == "machineLearningUserManagementUrl":
+            suggest = "machine_learning_user_management_url"
+        elif key == "mongoDbUrl":
+            suggest = "mongo_db_url"
+        elif key == "ordsUrl":
+            suggest = "ords_url"
+        elif key == "sqlDevWebUrl":
+            suggest = "sql_dev_web_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseVanityConnectionUrl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseVanityConnectionUrl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseVanityConnectionUrl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apex_url: Optional[_builtins.str] = None,
+                 database_transforms_url: Optional[_builtins.str] = None,
+                 graph_studio_url: Optional[_builtins.str] = None,
+                 machine_learning_notebook_url: Optional[_builtins.str] = None,
+                 machine_learning_user_management_url: Optional[_builtins.str] = None,
+                 mongo_db_url: Optional[_builtins.str] = None,
+                 ords_url: Optional[_builtins.str] = None,
+                 sql_dev_web_url: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
+        :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        if apex_url is not None:
+            pulumi.set(__self__, "apex_url", apex_url)
+        if database_transforms_url is not None:
+            pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if graph_studio_url is not None:
+            pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        if machine_learning_notebook_url is not None:
+            pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        if machine_learning_user_management_url is not None:
+            pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mongo_db_url is not None:
+            pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        if ords_url is not None:
+            pulumi.set(__self__, "ords_url", ords_url)
+        if sql_dev_web_url is not None:
+            pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> Optional[_builtins.str]:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> Optional[_builtins.str]:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @_builtins.property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @_builtins.property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> Optional[_builtins.str]:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> Optional[_builtins.str]:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
+class AutonomousDatabaseVanityUrlDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiGatewayId":
+            suggest = "api_gateway_id"
+        elif key == "isDisabled":
+            suggest = "is_disabled"
+        elif key == "vanityUrlHostName":
+            suggest = "vanity_url_host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseVanityUrlDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseVanityUrlDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseVanityUrlDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_gateway_id: Optional[_builtins.str] = None,
+                 is_disabled: Optional[_builtins.bool] = None,
+                 vanity_url_host_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str api_gateway_id: API Gateway ID.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
+        :param _builtins.str vanity_url_host_name: Custom URL prefix provided by the customer to access dbTools.
+        """
+        if api_gateway_id is not None:
+            pulumi.set(__self__, "api_gateway_id", api_gateway_id)
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if vanity_url_host_name is not None:
+            pulumi.set(__self__, "vanity_url_host_name", vanity_url_host_name)
+
+    @_builtins.property
+    @pulumi.getter(name="apiGatewayId")
+    def api_gateway_id(self) -> Optional[_builtins.str]:
+        """
+        API Gateway ID.
+        """
+        return pulumi.get(self, "api_gateway_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlHostName")
+    def vanity_url_host_name(self) -> Optional[_builtins.str]:
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+        return pulumi.get(self, "vanity_url_host_name")
 
 
 @pulumi.output_type
@@ -6565,6 +7256,54 @@ class BackupDestinationAssociatedDatabase(dict):
         The display name of the database that is associated with the backup destination.
         """
         return pulumi.get(self, "db_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class BackupDestinationAssociatedLongTermBackup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupDestinationAssociatedLongTermBackup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupDestinationAssociatedLongTermBackup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupDestinationAssociatedLongTermBackup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str display_name: The user-provided name of the backup destination.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-provided name of the backup destination.
+        """
+        return pulumi.get(self, "display_name")
 
     @_builtins.property
     @pulumi.getter
@@ -8900,7 +9639,7 @@ class DatabaseDatabase(dict):
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param Sequence[_builtins.str] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
@@ -9108,7 +9847,7 @@ class DatabaseDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -9263,7 +10002,7 @@ class DatabaseDatabaseDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -9321,7 +10060,7 @@ class DatabaseDatabaseDbBackupConfig(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[_builtins.str]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -9355,10 +10094,14 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -9378,30 +10121,34 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
-        :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -9410,6 +10157,14 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -9431,17 +10186,23 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -9456,17 +10217,11 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @_builtins.property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[_builtins.str]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @_builtins.property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[_builtins.str]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
 
@@ -9740,8 +10495,592 @@ class DatabaseDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
+        :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        if auto_backup_enabled is not None:
+            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+        if auto_backup_window is not None:
+            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+
+    @_builtins.property
+    @pulumi.getter(name="autoBackupEnabled")
+    def auto_backup_enabled(self) -> Optional[_builtins.bool]:
+        """
+        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        """
+        return pulumi.get(self, "auto_backup_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="autoBackupWindow")
+    def auto_backup_window(self) -> Optional[_builtins.str]:
+        """
+        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_backup_window")
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[_builtins.str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[_builtins.str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
+
+    @_builtins.property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[_builtins.str]:
+        """
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[Sequence['outputs.DatabaseDbBackupConfigBackupDestinationDetail']]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @_builtins.property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[_builtins.int]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @_builtins.property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[_builtins.bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
+
+
+@pulumi.output_type
+class DatabaseDbBackupConfigBackupDestinationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
+            suggest = "dbrs_policy_id"
+        elif key == "isRemote":
+            suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
+        elif key == "remoteRegion":
+            suggest = "remote_region"
+        elif key == "vpcPassword":
+            suggest = "vpc_password"
+        elif key == "vpcUser":
+            suggest = "vpc_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
+                 dbrs_policy_id: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
+                 remote_region: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None,
+                 vpc_password: Optional[_builtins.str] = None,
+                 vpc_user: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.str type: Type of the database backup destination.
+        """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the backup destination is cross-region or local.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[_builtins.str]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "vpc_password")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class DatabaseSnapshotStandbyConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allConnectionStrings":
+            suggest = "all_connection_strings"
+        elif key == "cdbDefault":
+            suggest = "cdb_default"
+        elif key == "cdbIpDefault":
+            suggest = "cdb_ip_default"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseSnapshotStandbyConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseSnapshotStandbyConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 all_connection_strings: Optional[Mapping[str, _builtins.str]] = None,
+                 cdb_default: Optional[_builtins.str] = None,
+                 cdb_ip_default: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, _builtins.str] all_connection_strings: All connection strings to use to connect to the Database.
+        :param _builtins.str cdb_default: Host name based CDB Connection String.
+        :param _builtins.str cdb_ip_default: IP based CDB Connection String.
+        """
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+        if cdb_default is not None:
+            pulumi.set(__self__, "cdb_default", cdb_default)
+        if cdb_ip_default is not None:
+            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+
+    @_builtins.property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        All connection strings to use to connect to the Database.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @_builtins.property
+    @pulumi.getter(name="cdbDefault")
+    def cdb_default(self) -> Optional[_builtins.str]:
+        """
+        Host name based CDB Connection String.
+        """
+        return pulumi.get(self, "cdb_default")
+
+    @_builtins.property
+    @pulumi.getter(name="cdbIpDefault")
+    def cdb_ip_default(self) -> Optional[_builtins.str]:
+        """
+        IP based CDB Connection String.
+        """
+        return pulumi.get(self, "cdb_ip_default")
+
+
+@pulumi.output_type
+class DatabaseSnapshotStandbyDataGuardGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "protectionMode":
+            suggest = "protection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyDataGuardGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseSnapshotStandbyDataGuardGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseSnapshotStandbyDataGuardGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 members: Optional[Sequence['outputs.DatabaseSnapshotStandbyDataGuardGroupMember']] = None,
+                 protection_mode: Optional[_builtins.str] = None):
+        """
+        :param Sequence['DatabaseSnapshotStandbyDataGuardGroupMemberArgs'] members: List of Data Guard members, representing each database that is part of Data Guard.
+        :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        if members is not None:
+            pulumi.set(__self__, "members", members)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def members(self) -> Optional[Sequence['outputs.DatabaseSnapshotStandbyDataGuardGroupMember']]:
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        return pulumi.get(self, "members")
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[_builtins.str]:
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+
+@pulumi.output_type
+class DatabaseSnapshotStandbyDataGuardGroupMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyLag":
+            suggest = "apply_lag"
+        elif key == "applyRate":
+            suggest = "apply_rate"
+        elif key == "databaseId":
+            suggest = "database_id"
+        elif key == "dbSystemId":
+            suggest = "db_system_id"
+        elif key == "isActiveDataGuardEnabled":
+            suggest = "is_active_data_guard_enabled"
+        elif key == "transportLag":
+            suggest = "transport_lag"
+        elif key == "transportLagRefresh":
+            suggest = "transport_lag_refresh"
+        elif key == "transportType":
+            suggest = "transport_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyDataGuardGroupMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseSnapshotStandbyDataGuardGroupMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseSnapshotStandbyDataGuardGroupMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_lag: Optional[_builtins.str] = None,
+                 apply_rate: Optional[_builtins.str] = None,
+                 database_id: Optional[_builtins.str] = None,
+                 db_system_id: Optional[_builtins.str] = None,
+                 is_active_data_guard_enabled: Optional[_builtins.bool] = None,
+                 role: Optional[_builtins.str] = None,
+                 transport_lag: Optional[_builtins.str] = None,
+                 transport_lag_refresh: Optional[_builtins.str] = None,
+                 transport_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str role: The role of the reporting database in this Data Guard association.
+        :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        :param _builtins.str transport_lag_refresh: The date and time when last redo transport has been done.
+        :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+        if transport_lag_refresh is not None:
+            pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @_builtins.property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[_builtins.str]:
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @_builtins.property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[_builtins.str]:
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[_builtins.str]:
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[_builtins.str]:
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        return pulumi.get(self, "transport_lag")
+
+    @_builtins.property
+    @pulumi.getter(name="transportLagRefresh")
+    def transport_lag_refresh(self) -> Optional[_builtins.str]:
+        """
+        The date and time when last redo transport has been done.
+        """
+        return pulumi.get(self, "transport_lag_refresh")
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[_builtins.str]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+        return pulumi.get(self, "transport_type")
+
+
+@pulumi.output_type
+class DatabaseSnapshotStandbyDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "managementStatus":
+            suggest = "management_status"
+        elif key == "managementType":
+            suggest = "management_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseSnapshotStandbyDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseSnapshotStandbyDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 management_status: Optional[_builtins.str] = None,
+                 management_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str management_status: The status of the Database Management service.
+        :param _builtins.str management_type: The Database Management type.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @_builtins.property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[_builtins.str]:
+        """
+        The status of the Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @_builtins.property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[_builtins.str]:
+        """
+        The Database Management type.
+        """
+        return pulumi.get(self, "management_type")
+
+
+@pulumi.output_type
+class DatabaseSnapshotStandbyDbBackupConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoBackupEnabled":
+            suggest = "auto_backup_enabled"
+        elif key == "autoBackupWindow":
+            suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
+        elif key == "backupDeletionPolicy":
+            suggest = "backup_deletion_policy"
+        elif key == "backupDestinationDetails":
+            suggest = "backup_destination_details"
+        elif key == "recoveryWindowInDays":
+            suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseSnapshotStandbyDbBackupConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseSnapshotStandbyDbBackupConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auto_backup_enabled: Optional[_builtins.bool] = None,
+                 auto_backup_window: Optional[_builtins.str] = None,
+                 auto_full_backup_day: Optional[_builtins.str] = None,
+                 auto_full_backup_window: Optional[_builtins.str] = None,
+                 backup_deletion_policy: Optional[_builtins.str] = None,
+                 backup_destination_details: Optional[Sequence['outputs.DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail']] = None,
+                 recovery_window_in_days: Optional[_builtins.int] = None,
+                 run_immediate_full_backup: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param Sequence['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
@@ -9804,7 +11143,7 @@ class DatabaseDbBackupConfig(dict):
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationDetails")
-    def backup_destination_details(self) -> Optional[Sequence['outputs.DatabaseDbBackupConfigBackupDestinationDetail']]:
+    def backup_destination_details(self) -> Optional[Sequence['outputs.DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail']]:
         """
         Backup destination details.
         """
@@ -9828,45 +11167,41 @@ class DatabaseDbBackupConfig(dict):
 
 
 @pulumi.output_type
-class DatabaseDbBackupConfigBackupDestinationDetail(dict):
+class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
-        elif key == "isRemote":
-            suggest = "is_remote"
-        elif key == "remoteRegion":
-            suggest = "remote_region"
+        elif key == "internetProxy":
+            suggest = "internet_proxy"
         elif key == "vpcPassword":
             suggest = "vpc_password"
         elif key == "vpcUser":
             suggest = "vpc_user"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DatabaseDbBackupConfigBackupDestinationDetail.__key_warning(key)
+        DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
-                 is_remote: Optional[_builtins.bool] = None,
-                 remote_region: Optional[_builtins.str] = None,
+                 internet_proxy: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.str internet_proxy: Proxy URL to connect to object store.
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
@@ -9875,10 +11210,8 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
-        if is_remote is not None:
-            pulumi.set(__self__, "is_remote", is_remote)
-        if remote_region is not None:
-            pulumi.set(__self__, "remote_region", remote_region)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_password is not None:
@@ -9903,20 +11236,12 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
-    @pulumi.getter(name="isRemote")
-    def is_remote(self) -> Optional[_builtins.bool]:
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[_builtins.str]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Proxy URL to connect to object store.
         """
-        return pulumi.get(self, "is_remote")
-
-    @_builtins.property
-    @pulumi.getter(name="remoteRegion")
-    def remote_region(self) -> Optional[_builtins.str]:
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-        """
-        return pulumi.get(self, "remote_region")
+        return pulumi.get(self, "internet_proxy")
 
     @_builtins.property
     @pulumi.getter
@@ -10408,7 +11733,7 @@ class DatabaseUpgradeDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -10466,7 +11791,7 @@ class DatabaseUpgradeDbBackupConfig(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[_builtins.str]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -10500,12 +11825,16 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "internetProxy":
             suggest = "internet_proxy"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -10525,24 +11854,30 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  internet_proxy: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -10551,6 +11886,8 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -10559,6 +11896,14 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -10588,15 +11933,23 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -10749,7 +12102,7 @@ class DbHomeDatabase(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param Sequence[_builtins.str] one_off_patches: List of one-off patches for Database Homes.
@@ -10961,7 +12314,7 @@ class DbHomeDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -11159,7 +12512,7 @@ class DbHomeDatabaseDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -11217,7 +12570,7 @@ class DbHomeDatabaseDbBackupConfig(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[_builtins.str]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -11251,10 +12604,14 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -11274,28 +12631,34 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination. Supported values: `NFS`.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -11304,6 +12667,14 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -11325,17 +12696,23 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -11858,7 +13235,6 @@ class DbSystemDbHomeDatabase(dict):
         :param 'DbSystemDbHomeDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param _builtins.str db_domain: The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
         :param _builtins.str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database.
         :param _builtins.str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
@@ -11866,7 +13242,7 @@ class DbSystemDbHomeDatabase(dict):
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -12011,9 +13387,6 @@ class DbSystemDbHomeDatabase(dict):
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[_builtins.str]:
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @_builtins.property
@@ -12062,7 +13435,7 @@ class DbSystemDbHomeDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -12236,7 +13609,7 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: (Updatable) Backup destination details.
         :param _builtins.int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -12294,7 +13667,7 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[_builtins.str]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -12328,10 +13701,14 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dbrsPolicyId":
+        if key == "backupRetentionPolicyOnTerminate":
+            suggest = "backup_retention_policy_on_terminate"
+        elif key == "dbrsPolicyId":
             suggest = "dbrs_policy_id"
         elif key == "isRemote":
             suggest = "is_remote"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
 
@@ -12347,28 +13724,44 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[_builtins.str] = None,
                  dbrs_policy_id: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -12393,6 +13786,14 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -12643,14 +14044,14 @@ class DbSystemMaintenanceWindow(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['DbSystemMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['DbSystemMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param _builtins.str preference: The maintenance window scheduling preference.
+        :param Sequence[_builtins.bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[_builtins.int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -12696,8 +14097,7 @@ class DbSystemMaintenanceWindow(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[Sequence[_builtins.int]]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -12752,6 +14152,9 @@ class DbSystemMaintenanceWindow(dict):
     @_builtins.property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[_builtins.bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @_builtins.property
@@ -12832,8 +14235,7 @@ class DbSystemMaintenanceWindowDetails(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -12842,6 +14244,7 @@ class DbSystemMaintenanceWindowDetails(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param _builtins.str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[_builtins.bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[_builtins.int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -12887,8 +14290,7 @@ class DbSystemMaintenanceWindowDetails(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[Sequence[_builtins.int]]:
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -12945,6 +14347,9 @@ class DbSystemMaintenanceWindowDetails(dict):
     @_builtins.property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[_builtins.bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @_builtins.property
@@ -16005,6 +17410,54 @@ class KeyStoreAssociatedDatabase(dict):
 
 
 @pulumi.output_type
+class KeyStoreAssociatedLongTermBackup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyStoreAssociatedLongTermBackup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyStoreAssociatedLongTermBackup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyStoreAssociatedLongTermBackup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class KeyStoreTypeDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -18828,9 +20281,11 @@ class GetAutonomousCharacterSetsFilterResult(dict):
 class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  backup_destination_attach_histories: Sequence[_builtins.str],
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
+                 is_retention_lock_enabled: _builtins.bool,
                  recovery_window_in_days: _builtins.int,
                  space_utilized_in_gbs: _builtins.int,
                  time_at_which_storage_details_are_updated: _builtins.str,
@@ -18839,9 +20294,11 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
                  vpc_user: _builtins.str):
         """
         :param Sequence[_builtins.str] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.int recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         :param _builtins.int space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
         :param _builtins.str time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
@@ -18850,9 +20307,11 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
         pulumi.set(__self__, "space_utilized_in_gbs", space_utilized_in_gbs)
         pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
@@ -18869,6 +20328,14 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
         return pulumi.get(self, "backup_destination_attach_histories")
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> _builtins.str:
         """
@@ -18880,7 +20347,7 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -18891,6 +20358,14 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
         Proxy URL to connect to object store.
         """
         return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="recoveryWindowInDays")
@@ -18973,35 +20448,49 @@ class GetAutonomousContainerDatabaseBackupConfigResult(dict):
 @pulumi.output_type
 class GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -19017,15 +20506,23 @@ class GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(di
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -19136,12 +20633,12 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
         """
         :param _builtins.str acd_display_name: The user-friendly name for the Autonomous Container Database when the Backup was initiated. This name need not be unique. This field captures the name at the time of backup creation, accounting for possible later updates to the display name.
         :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Sequence['GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseArgs'] autonomous_databases: List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        :param Sequence['GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseArgs'] autonomous_databases: List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param _builtins.bool is_automatic: Indicates whether the backup is user-initiated or automatic.
         :param _builtins.bool is_remote_backup: Whether backup is for remote-region or local region
@@ -19192,7 +20689,7 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
     @pulumi.getter(name="autonomousDatabases")
     def autonomous_databases(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult']:
         """
-        List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
         """
         return pulumi.get(self, "autonomous_databases")
 
@@ -19232,7 +20729,7 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "id")
 
@@ -19422,7 +20919,7 @@ class GetAutonomousContainerDatabaseDataguardResult(dict):
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -19532,7 +21029,7 @@ class GetAutonomousContainerDatabaseDataguardResult(dict):
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -19607,10 +21104,12 @@ class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerD
 @pulumi.output_type
 class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -19618,14 +21117,21 @@ class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerD
         """
         :param _builtins.str id: The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -19649,6 +21155,11 @@ class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerD
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -19712,9 +21223,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         :param _builtins.str peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param _builtins.str peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         :param _builtins.str peer_lifecycle_state: The current state of the Autonomous Container Database.
-        :param _builtins.str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of Autonomous Data Guard.
         :param _builtins.str time_created: The date and time the Autonomous DataGuard association was created.
         :param _builtins.str time_last_role_changed: The date and time when the last role change action happened.
@@ -19873,7 +21384,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
     @pulumi.getter(name="peerRole")
     def peer_role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "peer_role")
 
@@ -19889,7 +21400,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -19961,10 +21472,12 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
 @pulumi.output_type
 class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -19972,14 +21485,21 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         """
         :param _builtins.str id: The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -20003,6 +21523,11 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -20083,7 +21608,7 @@ class GetAutonomousContainerDatabaseDataguardGroupMemberResult(dict):
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of the Autonomous Container Database.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -20193,7 +21718,7 @@ class GetAutonomousContainerDatabaseDataguardGroupMemberResult(dict):
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -20254,10 +21779,10 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
                  time_activated: _builtins.str,
                  vault_id: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -20268,7 +21793,7 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -20276,7 +21801,7 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -20292,7 +21817,7 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -20314,8 +21839,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -20357,8 +21881,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Sequence[_builtins.int]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -20462,8 +21985,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -20505,8 +22027,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Sequence[_builtins.int]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -20661,35 +22182,49 @@ class GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigR
 @pulumi.output_type
 class GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -20705,15 +22240,23 @@ class GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigB
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -21020,6 +22563,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  list_one_off_patches: Sequence[_builtins.str],
                  maintenance_window_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult'],
+                 memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  net_services_architecture: _builtins.str,
                  next_maintenance_run_id: _builtins.str,
@@ -21060,62 +22604,63 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param _builtins.str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param _builtins.float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param _builtins.float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesListArgs'] backup_destination_properties_lists: This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         :param _builtins.str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param _builtins.str compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts. Setting this to an empty list removes all customer contacts.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberArgs'] dataguard_group_members: Array of Dg associations.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardArgs'] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param _builtins.str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param _builtins.int db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-        :param _builtins.str db_version: Oracle Database version of the Autonomous Container Database.
+        :param _builtins.int db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param _builtins.str db_version: Oracle AI Database version of the Autonomous Container Database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param _builtins.str distribution_affinity: Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
-        :param _builtins.str dst_file_version: DST Time-zone File version of the Autonomous Container Database.
+        :param _builtins.str distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        :param _builtins.str dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        :param _builtins.bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param _builtins.bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param _builtins.bool is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        :param _builtins.float largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param _builtins.float largest_provisionable_autonomous_database_in_cpus: The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence[_builtins.str] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param _builtins.str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param _builtins.str okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
         :param _builtins.str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param _builtins.str patch_model: Database patch model preference.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         :param _builtins.float provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param _builtins.float reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param _builtins.float reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseRecoveryApplianceDetailArgs'] recovery_appliance_details: Information about the recovery appliance configuration associated with the Autonomous Container Database.
         :param _builtins.float reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service-level agreement type exactly.
         :param _builtins.int standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param _builtins.str time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param _builtins.int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str version_preference: The next maintenance version preference.
         :param _builtins.int vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
@@ -21163,6 +22708,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "list_one_off_patches", list_one_off_patches)
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -21240,7 +22786,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -21280,7 +22826,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -21325,7 +22871,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> _builtins.int:
         """
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -21338,7 +22884,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -21362,7 +22908,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> _builtins.str:
         """
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -21370,7 +22916,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="dstFileVersion")
     def dst_file_version(self) -> _builtins.str:
         """
-        DST Time-zone File version of the Autonomous Container Database.
+        DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
 
@@ -21399,7 +22945,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -21423,7 +22969,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> _builtins.bool:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -21484,7 +23030,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -21492,7 +23038,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> _builtins.float:
         """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
@@ -21534,10 +23080,18 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "maintenance_windows")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -21628,7 +23182,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -21644,7 +23198,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -21673,7 +23227,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -21686,7 +23240,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="serviceLevelAgreementType")
     def service_level_agreement_type(self) -> _builtins.str:
         """
-        A filter to return only resources that match the given service level agreement type exactly.
+        A filter to return only resources that match the given service-level agreement type exactly.
         """
         return pulumi.get(self, "service_level_agreement_type")
 
@@ -21752,7 +23306,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> _builtins.int:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        The number of CPUs allocated to the Autonomous VM cluster.
         """
         return pulumi.get(self, "total_cpus")
 
@@ -21760,7 +23314,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -21785,9 +23339,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
 class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  backup_destination_attach_histories: Sequence[_builtins.str],
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
+                 is_retention_lock_enabled: _builtins.bool,
                  recovery_window_in_days: _builtins.int,
                  space_utilized_in_gbs: _builtins.int,
                  time_at_which_storage_details_are_updated: _builtins.str,
@@ -21796,9 +23352,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackup
                  vpc_user: _builtins.str):
         """
         :param Sequence[_builtins.str] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param _builtins.int recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         :param _builtins.int space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
         :param _builtins.str time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
@@ -21807,9 +23365,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackup
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
         pulumi.set(__self__, "space_utilized_in_gbs", space_utilized_in_gbs)
         pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
@@ -21826,6 +23386,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackup
         return pulumi.get(self, "backup_destination_attach_histories")
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> _builtins.str:
         """
@@ -21837,7 +23405,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackup
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -21848,6 +23416,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackup
         Proxy URL to connect to object store.
         """
         return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="recoveryWindowInDays")
@@ -21930,35 +23506,49 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResu
 @pulumi.output_type
 class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -21974,15 +23564,23 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBack
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -22093,14 +23691,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult(
         :param _builtins.str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param _builtins.str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param _builtins.str automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -22154,7 +23752,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult(
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -22210,7 +23808,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult(
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -22287,14 +23885,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMe
         :param _builtins.str apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param _builtins.str apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param _builtins.str automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param _builtins.str autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str time_created: The date and time the Autonomous Container Database was created.
         :param _builtins.str time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -22348,7 +23946,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMe
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -22404,7 +24002,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMe
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -22465,10 +24063,10 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
                  time_activated: _builtins.str,
                  vault_id: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -22479,7 +24077,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -22487,7 +24085,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -22503,7 +24101,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -22525,8 +24123,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -22568,8 +24165,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Sequence[_builtins.int]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -22673,8 +24269,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         """
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
-        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -22716,8 +24311,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Sequence[_builtins.int]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -22872,35 +24466,49 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousCo
 @pulumi.output_type
 class GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -22916,15 +24524,23 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousCo
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -23187,7 +24803,7 @@ class GetAutonomousDatabaseApexDetailResult(dict):
                  apex_version: _builtins.str,
                  ords_version: _builtins.str):
         """
-        :param _builtins.str apex_version: The Oracle APEX Application Development version.
+        :param _builtins.str apex_version: The Oracle APEX AI Application Development version.
         :param _builtins.str ords_version: The Oracle REST Data Services (ORDS) version.
         """
         pulumi.set(__self__, "apex_version", apex_version)
@@ -23197,7 +24813,7 @@ class GetAutonomousDatabaseApexDetailResult(dict):
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> _builtins.str:
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         return pulumi.get(self, "apex_version")
 
@@ -23213,35 +24829,49 @@ class GetAutonomousDatabaseApexDetailResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: The type of backup.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "id")
 
@@ -23257,15 +24887,23 @@ class GetAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -23324,6 +24962,145 @@ class GetAutonomousDatabaseBackupConfigResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseBackupSourceDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_container_database_customer_contacts: Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult'],
+                 autonomous_container_database_display_name: _builtins.str,
+                 autonomous_container_database_dst_file_version: _builtins.str,
+                 autonomous_container_database_name: _builtins.str,
+                 autonomous_database_customer_contacts: Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult'],
+                 autonomous_database_name: _builtins.str,
+                 autonomous_vm_cluster_display_name: _builtins.str,
+                 db_workload: _builtins.str):
+        """
+        :param Sequence['GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs'] autonomous_container_database_customer_contacts: Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
+        :param Sequence['GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param _builtins.str autonomous_database_name: Autonomous Database's name.
+        :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
+        :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous Transaction Processing database
+               * DW - indicates an Autonomous Data Warehouse database
+               * AJD - indicates an Autonomous JSON Database
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        pulumi.set(__self__, "autonomous_container_database_customer_contacts", autonomous_container_database_customer_contacts)
+        pulumi.set(__self__, "autonomous_container_database_display_name", autonomous_container_database_display_name)
+        pulumi.set(__self__, "autonomous_container_database_dst_file_version", autonomous_container_database_dst_file_version)
+        pulumi.set(__self__, "autonomous_container_database_name", autonomous_container_database_name)
+        pulumi.set(__self__, "autonomous_database_customer_contacts", autonomous_database_customer_contacts)
+        pulumi.set(__self__, "autonomous_database_name", autonomous_database_name)
+        pulumi.set(__self__, "autonomous_vm_cluster_display_name", autonomous_vm_cluster_display_name)
+        pulumi.set(__self__, "db_workload", db_workload)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseCustomerContacts")
+    def autonomous_container_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult']:
+        """
+        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "autonomous_container_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDisplayName")
+    def autonomous_container_database_display_name(self) -> _builtins.str:
+        """
+        The user-provided name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDstFileVersion")
+    def autonomous_container_database_dst_file_version(self) -> _builtins.str:
+        """
+        DST Time-Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseName")
+    def autonomous_container_database_name(self) -> _builtins.str:
+        """
+        Autonomous Container Database name.
+        """
+        return pulumi.get(self, "autonomous_container_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseCustomerContacts")
+    def autonomous_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult']:
+        """
+        Customer Contacts for the Autonomous database.
+        """
+        return pulumi.get(self, "autonomous_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseName")
+    def autonomous_database_name(self) -> _builtins.str:
+        """
+        Autonomous Database's name.
+        """
+        return pulumi.get(self, "autonomous_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousVmClusterDisplayName")
+    def autonomous_vm_cluster_display_name(self) -> _builtins.str:
+        """
+        Autonomous VM cluster's user-friendly name.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> _builtins.str:
+        """
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        return pulumi.get(self, "db_workload")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     def __init__(__self__, *,
                  autonomous_database_id: _builtins.str,
@@ -23333,6 +25110,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
                  db_version: _builtins.str,
                  display_name: _builtins.str,
                  id: _builtins.str,
+                 infrastructure_type: _builtins.str,
                  is_automatic: _builtins.bool,
                  is_long_term_backup: _builtins.bool,
                  is_restorable: _builtins.bool,
@@ -23341,8 +25119,10 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 region: _builtins.str,
                  retention_period_in_days: _builtins.int,
                  size_in_tbs: _builtins.float,
+                 source_database_details: Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailResult'],
                  state: _builtins.str,
                  time_available_till: _builtins.str,
                  time_ended: _builtins.str,
@@ -23354,18 +25134,21 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailArgs'] backup_destination_details: Backup destination details
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.float database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
-        :param _builtins.str db_version: A valid Oracle Database version for Autonomous Database.
+        :param _builtins.str db_version: A valid Oracle AI Database version for Autonomous AI Database.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+        :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param _builtins.bool is_automatic: Indicates whether the backup is user-initiated or automatic.
-        :param _builtins.bool is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
-        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.bool is_restorable: Indicates whether the backup can be used to restore the associated Autonomous AI Database.
+        :param _builtins.str key_store_id: A filter to return only resources that have the given key store id.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str region: Name of the region in which backup is taken in.
         :param _builtins.int retention_period_in_days: Retention period, in days, for long-term backups
         :param _builtins.float size_in_tbs: The backup size in terrabytes (TB).
+        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailArgs'] source_database_details: Source Autonomous Database details.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str time_available_till: Timestamp until when the backup will be available
         :param _builtins.str time_ended: The date and time the backup completed.
@@ -23380,6 +25163,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         pulumi.set(__self__, "is_automatic", is_automatic)
         pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
         pulumi.set(__self__, "is_restorable", is_restorable)
@@ -23388,8 +25172,10 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
         pulumi.set(__self__, "size_in_tbs", size_in_tbs)
+        pulumi.set(__self__, "source_database_details", source_database_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_available_till", time_available_till)
         pulumi.set(__self__, "time_ended", time_ended)
@@ -23433,7 +25219,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -23449,9 +25235,17 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given Infrastructure Type.
+        """
+        return pulumi.get(self, "infrastructure_type")
 
     @_builtins.property
     @pulumi.getter(name="isAutomatic")
@@ -23470,7 +25264,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="isRestorable")
     def is_restorable(self) -> _builtins.bool:
         """
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
+        Indicates whether the backup can be used to restore the associated Autonomous AI Database.
         """
         return pulumi.get(self, "is_restorable")
 
@@ -23478,7 +25272,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        A filter to return only resources that have the given key store id.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -23502,7 +25296,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -23513,6 +25307,14 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Name of the region in which backup is taken in.
+        """
+        return pulumi.get(self, "region")
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
@@ -23529,6 +25331,14 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         The backup size in terrabytes (TB).
         """
         return pulumi.get(self, "size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDatabaseDetails")
+    def source_database_details(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailResult']:
+        """
+        Source Autonomous Database details.
+        """
+        return pulumi.get(self, "source_database_details")
 
     @_builtins.property
     @pulumi.getter
@@ -23582,35 +25392,49 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  id: _builtins.str,
                  internet_proxy: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         :param _builtins.str internet_proxy: Proxy URL to connect to object store.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: A filter to return only backups that matches with the given type of Backup.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internet_proxy", internet_proxy)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         """
         return pulumi.get(self, "id")
 
@@ -23626,15 +25450,23 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetai
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -23661,6 +25493,145 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetai
         For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_container_database_customer_contacts: Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult'],
+                 autonomous_container_database_display_name: _builtins.str,
+                 autonomous_container_database_dst_file_version: _builtins.str,
+                 autonomous_container_database_name: _builtins.str,
+                 autonomous_database_customer_contacts: Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult'],
+                 autonomous_database_name: _builtins.str,
+                 autonomous_vm_cluster_display_name: _builtins.str,
+                 db_workload: _builtins.str):
+        """
+        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs'] autonomous_container_database_customer_contacts: Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
+        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param _builtins.str autonomous_database_name: Autonomous Database's name.
+        :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
+        :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous Transaction Processing database
+               * DW - indicates an Autonomous Data Warehouse database
+               * AJD - indicates an Autonomous JSON Database
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        pulumi.set(__self__, "autonomous_container_database_customer_contacts", autonomous_container_database_customer_contacts)
+        pulumi.set(__self__, "autonomous_container_database_display_name", autonomous_container_database_display_name)
+        pulumi.set(__self__, "autonomous_container_database_dst_file_version", autonomous_container_database_dst_file_version)
+        pulumi.set(__self__, "autonomous_container_database_name", autonomous_container_database_name)
+        pulumi.set(__self__, "autonomous_database_customer_contacts", autonomous_database_customer_contacts)
+        pulumi.set(__self__, "autonomous_database_name", autonomous_database_name)
+        pulumi.set(__self__, "autonomous_vm_cluster_display_name", autonomous_vm_cluster_display_name)
+        pulumi.set(__self__, "db_workload", db_workload)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseCustomerContacts")
+    def autonomous_container_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult']:
+        """
+        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "autonomous_container_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDisplayName")
+    def autonomous_container_database_display_name(self) -> _builtins.str:
+        """
+        The user-provided name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDstFileVersion")
+    def autonomous_container_database_dst_file_version(self) -> _builtins.str:
+        """
+        DST Time-Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseName")
+    def autonomous_container_database_name(self) -> _builtins.str:
+        """
+        Autonomous Container Database name.
+        """
+        return pulumi.get(self, "autonomous_container_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseCustomerContacts")
+    def autonomous_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult']:
+        """
+        Customer Contacts for the Autonomous database.
+        """
+        return pulumi.get(self, "autonomous_database_customer_contacts")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseName")
+    def autonomous_database_name(self) -> _builtins.str:
+        """
+        Autonomous Database's name.
+        """
+        return pulumi.get(self, "autonomous_database_name")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousVmClusterDisplayName")
+    def autonomous_vm_cluster_display_name(self) -> _builtins.str:
+        """
+        Autonomous VM cluster's user-friendly name.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> _builtins.str:
+        """
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        return pulumi.get(self, "db_workload")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
 
 
 @pulumi.output_type
@@ -23700,7 +25671,7 @@ class GetAutonomousDatabaseConnectionStringResult(dict):
                  medium: _builtins.str,
                  profiles: Sequence['outputs.GetAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param _builtins.str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param _builtins.str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param _builtins.str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -23718,7 +25689,7 @@ class GetAutonomousDatabaseConnectionStringResult(dict):
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Mapping[str, _builtins.str]:
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
@@ -23777,11 +25748,12 @@ class GetAutonomousDatabaseConnectionStringProfileResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str consumer_group: Consumer group used by the connection.
-        :param _builtins.str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param _builtins.str display_name: The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         :param _builtins.str host_format: Host format used in connection string.
+        :param _builtins.bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param _builtins.str protocol: Protocol used by the connection.
         :param _builtins.str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         :param _builtins.str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param _builtins.str value: Connection string value.
         """
@@ -23807,7 +25779,7 @@ class GetAutonomousDatabaseConnectionStringProfileResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -23822,6 +25794,9 @@ class GetAutonomousDatabaseConnectionStringProfileResult(dict):
     @_builtins.property
     @pulumi.getter(name="isRegional")
     def is_regional(self) -> _builtins.bool:
+        """
+        True for a regional connection string, applicable to cross-region DG only.
+        """
         return pulumi.get(self, "is_regional")
 
     @_builtins.property
@@ -23844,7 +25819,7 @@ class GetAutonomousDatabaseConnectionStringProfileResult(dict):
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> _builtins.str:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -24001,14 +25976,14 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
         :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param _builtins.str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str id: The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
-        :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        :param _builtins.str id: The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
+        :param _builtins.bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param _builtins.str lifecycle_details: Additional information about the current lifecycleState, if available.
-        :param _builtins.str peer_autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
-        :param _builtins.str peer_autonomous_database_life_cycle_state: The current state of the Autonomous Database.
-        :param _builtins.str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str peer_autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous AI Database.
+        :param _builtins.str peer_autonomous_database_life_cycle_state: The current state of the Autonomous AI Database.
+        :param _builtins.str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param _builtins.str state: The current state of Autonomous Data Guard.
         :param _builtins.str time_created: The date and time the Data Guard association was created.
         :param _builtins.str time_last_role_changed: The date and time when the last role change action happened.
@@ -24060,7 +26035,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
         """
         return pulumi.get(self, "id")
 
@@ -24068,7 +26043,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> _builtins.bool:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -24084,7 +26059,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="peerAutonomousDatabaseId")
     def peer_autonomous_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous AI Database.
         """
         return pulumi.get(self, "peer_autonomous_database_id")
 
@@ -24092,7 +26067,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="peerAutonomousDatabaseLifeCycleState")
     def peer_autonomous_database_life_cycle_state(self) -> _builtins.str:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "peer_autonomous_database_life_cycle_state")
 
@@ -24100,7 +26075,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="peerRole")
     def peer_role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "peer_role")
 
@@ -24116,7 +26091,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -24250,26 +26225,34 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -24280,9 +26263,13 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -24299,7 +26286,7 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -24352,12 +26339,36 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -24376,6 +26387,14 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -24387,7 +26406,7 @@ class GetAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -24406,7 +26425,7 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryResult(dict):
                  encryption_keys: Sequence['outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
                  time_activated: _builtins.str):
         """
-        :param Sequence['GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param Sequence['GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.str time_activated: The date and time the kms key activated.
         """
         pulumi.set(__self__, "encryption_keys", encryption_keys)
@@ -24416,7 +26435,7 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryResult(dict):
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
         """
-        Details of the Autonomous Database encryption key.
+        Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -24440,26 +26459,34 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -24470,9 +26497,13 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -24489,7 +26520,7 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -24542,12 +26573,36 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -24566,6 +26621,14 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -24577,7 +26640,7 @@ class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -24598,10 +26661,10 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
                  time_activated: _builtins.str,
                  vault_id: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -24612,7 +26675,7 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -24620,7 +26683,7 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -24636,7 +26699,7 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -24654,13 +26717,13 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.str state: The current state of the Autonomous Database.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str state: The current state of the Autonomous AI Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -24678,7 +26741,7 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -24710,7 +26773,7 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -24718,7 +26781,7 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -24726,7 +26789,7 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -24755,7 +26818,7 @@ class GetAutonomousDatabaseLongTermBackupScheduleResult(dict):
                  retention_period_in_days: _builtins.int,
                  time_of_backup: _builtins.str):
         """
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.str repeat_cadence: The frequency of the long-term backup schedule
         :param _builtins.int retention_period_in_days: Retention period, in days, for long-term backups
         :param _builtins.str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -24769,7 +26832,7 @@ class GetAutonomousDatabaseLongTermBackupScheduleResult(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -24803,7 +26866,7 @@ class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult']):
         """
-        :param Sequence['GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemArgs'] items: This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        :param Sequence['GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemArgs'] items: This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
         """
         pulumi.set(__self__, "items", items)
 
@@ -24811,7 +26874,7 @@ class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult']:
         """
-        This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
         """
         return pulumi.get(self, "items")
 
@@ -24822,8 +26885,8 @@ class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult(dict)
                  id: _builtins.str,
                  region: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
-        :param _builtins.str region: The name of the region where this peer Autonomous Database clone exists.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
+        :param _builtins.str region: The name of the region where this peer Autonomous AI Database clone exists.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "region", region)
@@ -24832,7 +26895,7 @@ class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult(dict)
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         """
         return pulumi.get(self, "id")
 
@@ -24840,7 +26903,7 @@ class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult(dict)
     @pulumi.getter
     def region(self) -> _builtins.str:
         """
-        The name of the region where this peer Autonomous Database clone exists.
+        The name of the region where this peer Autonomous AI Database clone exists.
         """
         return pulumi.get(self, "region")
 
@@ -25012,7 +27075,7 @@ class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult
                  id: _builtins.str,
                  region: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         :param _builtins.str region: The name of the region where the refreshable clone exists.
         """
         pulumi.set(__self__, "id", id)
@@ -25022,7 +27085,7 @@ class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         """
         return pulumi.get(self, "id")
 
@@ -25043,7 +27106,7 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
                  is_snapshot_standby: _builtins.bool,
                  time_snapshot_standby_enabled_till: _builtins.str):
         """
-        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param _builtins.bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param _builtins.bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param _builtins.str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -25057,7 +27120,7 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> _builtins.str:
         """
-        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -25136,7 +27199,7 @@ class GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemRe
     def __init__(__self__, *,
                  id: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         """
         pulumi.set(__self__, "id", id)
 
@@ -25144,7 +27207,7 @@ class GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemRe
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         """
         return pulumi.get(self, "id")
 
@@ -25158,7 +27221,7 @@ class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
@@ -25179,7 +27242,7 @@ class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -25288,19 +27351,19 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str):
         """
-        :param Sequence[_builtins.str] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous Database Software Image
+        :param Sequence[_builtins.str] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous AI Database Software Image
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str database_version: The database version with which the Autonomous Database Software Image is to be built.
+        :param _builtins.str database_version: The database version with which the Autonomous AI Database Software Image is to be built.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
         :param _builtins.str image_shape_family: A filter to return only resources that match the given image shape family exactly.
         :param _builtins.str lifecycle_details: Detailed message for the lifecycle state.
         :param _builtins.str release_update: The Release Updates.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param _builtins.str time_created: The date and time the Autonomous Database Software Image was created.
+        :param _builtins.str time_created: The date and time the Autonomous AI Database Software Image was created.
         """
         pulumi.set(__self__, "autonomous_dsi_one_off_patches", autonomous_dsi_one_off_patches)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -25321,7 +27384,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
     @pulumi.getter(name="autonomousDsiOneOffPatches")
     def autonomous_dsi_one_off_patches(self) -> Sequence[_builtins.str]:
         """
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
         """
         return pulumi.get(self, "autonomous_dsi_one_off_patches")
 
@@ -25337,7 +27400,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> _builtins.str:
         """
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
         """
         return pulumi.get(self, "database_version")
 
@@ -25369,7 +27432,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "id")
 
@@ -25422,7 +27485,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -25467,13 +27530,13 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.str state: The current state of the Autonomous Database.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str state: The current state of the Autonomous AI Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -25491,7 +27554,7 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -25523,7 +27586,7 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -25531,7 +27594,7 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -25539,7 +27602,7 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -25561,9 +27624,145 @@ class GetAutonomousDatabaseStandbyDbResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseVanityConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: _builtins.str,
+                 database_transforms_url: _builtins.str,
+                 graph_studio_url: _builtins.str,
+                 machine_learning_notebook_url: _builtins.str,
+                 machine_learning_user_management_url: _builtins.str,
+                 mongo_db_url: _builtins.str,
+                 ords_url: _builtins.str,
+                 sql_dev_web_url: _builtins.str):
+        """
+        :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
+        :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> _builtins.str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> _builtins.str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> _builtins.str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> _builtins.str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @_builtins.property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> _builtins.str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @_builtins.property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> _builtins.str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> _builtins.str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseVanityUrlDetailResult(dict):
+    def __init__(__self__, *,
+                 api_gateway_id: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 vanity_url_host_name: _builtins.str):
+        """
+        :param _builtins.str api_gateway_id: API Gateway ID.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
+        :param _builtins.str vanity_url_host_name: Custom URL prefix provided by the customer to access dbTools.
+        """
+        pulumi.set(__self__, "api_gateway_id", api_gateway_id)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "vanity_url_host_name", vanity_url_host_name)
+
+    @_builtins.property
+    @pulumi.getter(name="apiGatewayId")
+    def api_gateway_id(self) -> _builtins.str:
+        """
+        API Gateway ID.
+        """
+        return pulumi.get(self, "api_gateway_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlHostName")
+    def vanity_url_host_name(self) -> _builtins.str:
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+        return pulumi.get(self, "vanity_url_host_name")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     def __init__(__self__, *,
                  actual_used_data_storage_size_in_tbs: _builtins.float,
+                 additional_attributes: Mapping[str, _builtins.str],
                  admin_password: _builtins.str,
                  allocated_storage_size_in_tbs: _builtins.float,
                  apex_details: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseApexDetailResult'],
@@ -25648,6 +27847,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult'],
                  maintenance_target_component: _builtins.str,
                  max_cpu_core_count: _builtins.int,
+                 memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  ncharacter_set: _builtins.str,
                  net_services_architecture: _builtins.str,
@@ -25715,144 +27915,154 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  use_latest_available_backup_time_stamp: _builtins.bool,
                  used_data_storage_size_in_gbs: _builtins.int,
                  used_data_storage_size_in_tbs: _builtins.int,
+                 vanity_connection_urls: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult'],
+                 vanity_url_details: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailResult'],
                  vault_id: _builtins.str,
                  whitelisted_ips: Sequence[_builtins.str]):
         """
         :param _builtins.float actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
+        :param Mapping[str, _builtins.str] additional_attributes: Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         :param _builtins.float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
-        :param _builtins.bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX AI Application Development.
+        :param _builtins.bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         :param _builtins.int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param _builtins.int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
-        :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
-        :param _builtins.int backup_retention_period_in_days: Retention period, in days, for long-term backups
-        :param _builtins.float byol_compute_count_limit: The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-        :param _builtins.str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
-        :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-        :param _builtins.str clone_type: The Autonomous Database clone type.
+        :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param _builtins.int backup_retention_period_in_days: Retention period, in days, for backups.
+        :param _builtins.str character_set: The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
+        :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
+        :param _builtins.str clone_type: The Autonomous AI Database clone type.
         :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.float compute_count: Compute used by database tools.
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param _builtins.int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param _builtins.int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
         :param _builtins.str data_safe_status: Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         :param _builtins.int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
         :param _builtins.int data_storage_size_in_tbs: The quantity of data in the database, in terabytes.
-        :param _builtins.str database_edition: The Oracle Database Edition that applies to the Autonomous databases.
-        :param _builtins.str database_management_status: Status of Database Management for this Autonomous Database.
-        :param _builtins.str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        :param _builtins.str database_edition: The Oracle AI Database Edition that applies to the Autonomous AI Databases.
+        :param _builtins.str database_management_status: Status of Database Management for this Autonomous AI Database.
+        :param _builtins.str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param _builtins.str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
-        :param _builtins.str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
-        :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+        :param _builtins.str db_version: A filter to return only Autonomous AI Database resources that match the specified dbVersion.
+        :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param _builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
-        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param _builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param _builtins.bool enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
-        :param _builtins.int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
+        :param _builtins.int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param _builtins.bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-        :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
-        :param _builtins.bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        :param _builtins.bool is_backup_retention_locked: Indicates if the Autonomous Database is backup retention locked.
+        :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
+        :param _builtins.bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
+        :param _builtins.bool is_backup_retention_locked: Indicates if the Autonomous AI Database is backup retention locked.
         :param _builtins.bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param _builtins.bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        :param _builtins.bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        :param _builtins.bool is_dev_tier: Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        :param _builtins.bool is_disconnect_peer: If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         :param _builtins.bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
-        :param _builtins.bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
-        :param _builtins.bool is_preview: Indicates if the Autonomous Database version is a preview version.
+        :param _builtins.bool is_local_data_guard_enabled: Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous AI Database requires mTLS connections.
+        :param _builtins.bool is_preview: Indicates if the Autonomous AI Database version is a preview version.
         :param _builtins.bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param _builtins.bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
-        :param _builtins.bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_remote_data_guard_enabled: Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param _builtins.bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_lifecycle_details: KMS key lifecycle details.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         :param _builtins.str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU.
-        :param _builtins.str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param _builtins.int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+        :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+        :param _builtins.str ncharacter_set: The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param _builtins.str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param _builtins.str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.float ocpu_count: The number of OCPU cores to be made available to the database.
-        :param _builtins.str open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
-        :param _builtins.str operations_insights_status: Status of Operations Insights for this Autonomous Database.
-        :param Sequence[_builtins.str] peer_db_ids: The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
-        :param _builtins.str permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        :param _builtins.str open_mode: Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        :param _builtins.str operations_insights_status: Status of Operations Insights for this Autonomous AI Database.
+        :param _builtins.str peer_db_id: The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        :param Sequence[_builtins.str] peer_db_ids: The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        :param _builtins.str permission_level: The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
         :param _builtins.str private_endpoint: The private endpoint for the resource.
         :param _builtins.str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param _builtins.str private_endpoint_label: The private endpoint label for the resource.
-        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that an Autonomous AI Database can be scaled to.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlArgs'] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
         :param _builtins.str public_endpoint: The public endpoint for the private endpoint enabled resource.
-        :param _builtins.str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-        :param _builtins.str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param _builtins.str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
+        :param _builtins.str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
-        :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param _builtins.str service_console_url: The URL of the Service Console for the Autonomous Database.
-        :param _builtins.str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+        :param _builtins.str service_console_url: The URL of the Service Console for the Autonomous AI Database.
+        :param _builtins.str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[_builtins.str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param Sequence[_builtins.str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-        :param Sequence[_builtins.str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        :param Sequence[_builtins.str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param _builtins.str time_created: The date and time the Autonomous Database was created.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_created: The date and time the Autonomous AI Database was created.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param _builtins.str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        :param _builtins.str time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
-        :param _builtins.str time_latest_available_db_version_upgrade: The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
-        :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+        :param _builtins.str time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param _builtins.str time_latest_available_db_version_upgrade: The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
-        :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param _builtins.str time_of_joining_resource_pool: The time the member joined the resource pool.
         :param _builtins.str time_of_last_failover: The timestamp of the last failover operation.
         :param _builtins.str time_of_last_refresh: The date and time when last refresh happened.
         :param _builtins.str time_of_last_refresh_point: The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
-        :param _builtins.str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous Database.
+        :param _builtins.str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous AI Database.
         :param _builtins.str time_of_next_refresh: The date and time of next refresh.
         :param _builtins.str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
-        :param _builtins.str time_scheduled_db_version_upgrade: The date and time the Autonomous Database scheduled to upgrade to 23ai.
-        :param _builtins.str time_undeleted: The date and time the Autonomous Database was most recently undeleted.
+        :param _builtins.str time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param _builtins.str time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param _builtins.str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param _builtins.float total_backup_storage_size_in_gbs: The backup storage to the database.
-        :param _builtins.int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
-        :param _builtins.int used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        :param Sequence[_builtins.str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param _builtins.int used_data_storage_size_in_gbs: The storage space consumed by Autonomous AI Database in GBs.
+        :param _builtins.int used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlArgs'] vanity_connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailArgs'] vanity_url_details: Details for api gateway and vanity url(custom url) for dbTools.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param Sequence[_builtins.str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
         pulumi.set(__self__, "apex_details", apex_details)
@@ -25937,6 +28147,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "net_services_architecture", net_services_architecture)
@@ -26004,6 +28215,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
+        pulumi.set(__self__, "vanity_connection_urls", vanity_connection_urls)
+        pulumi.set(__self__, "vanity_url_details", vanity_url_details)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
 
@@ -26014,6 +28227,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The current amount of storage in use for user and system data, in terabytes (TB).
         """
         return pulumi.get(self, "actual_used_data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="additionalAttributes")
+    def additional_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
+        """
+        return pulumi.get(self, "additional_attributes")
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -26032,7 +28253,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="apexDetails")
     def apex_details(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseApexDetailResult']:
         """
-        Information about Oracle APEX Application Development.
+        Information about Oracle APEX AI Application Development.
         """
         return pulumi.get(self, "apex_details")
 
@@ -26040,7 +28261,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
     def are_primary_whitelisted_ips_used(self) -> _builtins.bool:
         """
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
@@ -26082,7 +28303,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
     def autonomous_maintenance_schedule_type(self) -> _builtins.str:
         """
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
@@ -26090,7 +28311,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -26098,7 +28319,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="availableUpgradeVersions")
     def available_upgrade_versions(self) -> Sequence[_builtins.str]:
         """
-        List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         """
         return pulumi.get(self, "available_upgrade_versions")
 
@@ -26106,7 +28327,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="backupConfigs")
     def backup_configs(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult']:
         """
-        Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
 
@@ -26114,23 +28335,20 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="backupRetentionPeriodInDays")
     def backup_retention_period_in_days(self) -> _builtins.int:
         """
-        Retention period, in days, for long-term backups
+        Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="byolComputeCountLimit")
     def byol_compute_count_limit(self) -> _builtins.float:
-        """
-        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-        """
         return pulumi.get(self, "byol_compute_count_limit")
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> _builtins.str:
         """
-        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
         """
         return pulumi.get(self, "character_set")
 
@@ -26138,7 +28356,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cloneTableSpaceLists")
     def clone_table_space_lists(self) -> Sequence[_builtins.int]:
         """
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
         """
         return pulumi.get(self, "clone_table_space_lists")
 
@@ -26146,7 +28364,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> _builtins.str:
         """
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
         """
         return pulumi.get(self, "clone_type")
 
@@ -26178,7 +28396,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -26186,7 +28404,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult']:
         """
-        The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
         """
         return pulumi.get(self, "connection_strings")
 
@@ -26202,7 +28420,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> _builtins.int:
         """
-        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -26242,7 +28460,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> _builtins.str:
         """
-        The Oracle Database Edition that applies to the Autonomous databases.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases.
         """
         return pulumi.get(self, "database_edition")
 
@@ -26250,7 +28468,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="databaseManagementStatus")
     def database_management_status(self) -> _builtins.str:
         """
-        Status of Database Management for this Autonomous Database.
+        Status of Database Management for this Autonomous AI Database.
         """
         return pulumi.get(self, "database_management_status")
 
@@ -26258,7 +28476,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataguardRegionType")
     def dataguard_region_type(self) -> _builtins.str:
         """
-        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
@@ -26282,7 +28500,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        A filter to return only autonomous database resources that match the specified dbVersion.
+        A filter to return only Autonomous AI Database resources that match the specified dbVersion.
         """
         return pulumi.get(self, "db_version")
 
@@ -26290,7 +28508,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> _builtins.str:
         """
-        A filter to return only autonomous database resources that match the specified workload type.
+        A filter to return only Autonomous AI Database resources that match the specified workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -26306,7 +28524,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryRegionType")
     def disaster_recovery_region_type(self) -> _builtins.str:
         """
-        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
@@ -26314,7 +28532,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> _builtins.str:
         """
-        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -26329,6 +28547,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="enableDeleteScheduledOperations")
     def enable_delete_scheduled_operations(self) -> _builtins.bool:
+        """
+        If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        """
         return pulumi.get(self, "enable_delete_scheduled_operations")
 
     @_builtins.property
@@ -26343,7 +28564,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult']:
         """
-        Details of the Autonomous Database encryption key.
+        Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -26367,7 +28588,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -26375,7 +28596,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryAreaInGbs")
     def in_memory_area_in_gbs(self) -> _builtins.int:
         """
-        The area assigned to In-Memory tables in Autonomous Database.
+        The area assigned to In-Memory tables in Autonomous AI Database.
         """
         return pulumi.get(self, "in_memory_area_in_gbs")
 
@@ -26383,7 +28604,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryPercentage")
     def in_memory_percentage(self) -> _builtins.int:
         """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
@@ -26407,7 +28628,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> _builtins.bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -26415,7 +28636,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingForStorageEnabled")
     def is_auto_scaling_for_storage_enabled(self) -> _builtins.bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
 
@@ -26423,7 +28644,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isBackupRetentionLocked")
     def is_backup_retention_locked(self) -> _builtins.bool:
         """
-        Indicates if the Autonomous Database is backup retention locked.
+        Indicates if the Autonomous AI Database is backup retention locked.
         """
         return pulumi.get(self, "is_backup_retention_locked")
 
@@ -26447,7 +28668,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDevTier")
     def is_dev_tier(self) -> _builtins.bool:
         """
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
         """
         return pulumi.get(self, "is_dev_tier")
 
@@ -26459,6 +28680,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="isDisconnectPeer")
     def is_disconnect_peer(self) -> _builtins.bool:
+        """
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        """
         return pulumi.get(self, "is_disconnect_peer")
 
     @_builtins.property
@@ -26473,7 +28697,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isLocalDataGuardEnabled")
     def is_local_data_guard_enabled(self) -> _builtins.bool:
         """
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_local_data_guard_enabled")
 
@@ -26481,7 +28705,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isMtlsConnectionRequired")
     def is_mtls_connection_required(self) -> _builtins.bool:
         """
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
         """
         return pulumi.get(self, "is_mtls_connection_required")
 
@@ -26489,7 +28713,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isPreview")
     def is_preview(self) -> _builtins.bool:
         """
-        Indicates if the Autonomous Database version is a preview version.
+        Indicates if the Autonomous AI Database version is a preview version.
         """
         return pulumi.get(self, "is_preview")
 
@@ -26518,7 +28742,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRemoteDataGuardEnabled")
     def is_remote_data_guard_enabled(self) -> _builtins.bool:
         """
-        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_remote_data_guard_enabled")
 
@@ -26590,7 +28814,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -26598,7 +28822,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> _builtins.str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -26653,13 +28877,24 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> _builtins.int:
+        """
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+        """
         return pulumi.get(self, "max_cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -26667,7 +28902,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> _builtins.str:
         """
-        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
 
@@ -26692,7 +28927,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -26708,7 +28943,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="openMode")
     def open_mode(self) -> _builtins.str:
         """
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -26716,20 +28951,23 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="operationsInsightsStatus")
     def operations_insights_status(self) -> _builtins.str:
         """
-        Status of Operations Insights for this Autonomous Database.
+        Status of Operations Insights for this Autonomous AI Database.
         """
         return pulumi.get(self, "operations_insights_status")
 
     @_builtins.property
     @pulumi.getter(name="peerDbId")
     def peer_db_id(self) -> _builtins.str:
+        """
+        The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        """
         return pulumi.get(self, "peer_db_id")
 
     @_builtins.property
     @pulumi.getter(name="peerDbIds")
     def peer_db_ids(self) -> Sequence[_builtins.str]:
         """
-        The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         """
         return pulumi.get(self, "peer_db_ids")
 
@@ -26737,7 +28975,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> _builtins.str:
         """
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -26769,7 +29007,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        An array of CPU values that an Autonomous Database can be scaled to.
+        An array of CPU values that an Autonomous AI Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -26793,7 +29031,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="refreshableMode")
     def refreshable_mode(self) -> _builtins.str:
         """
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_mode")
 
@@ -26801,7 +29039,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="refreshableStatus")
     def refreshable_status(self) -> _builtins.str:
         """
-        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_status")
 
@@ -26822,7 +29060,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> _builtins.str:
         """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
@@ -26838,7 +29076,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -26877,7 +29115,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> _builtins.str:
         """
-        The URL of the Service Console for the Autonomous Database.
+        The URL of the Service Console for the Autonomous AI Database.
         """
         return pulumi.get(self, "service_console_url")
 
@@ -26895,7 +29133,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="sourceId")
     def source_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
         """
         return pulumi.get(self, "source_id")
 
@@ -26911,7 +29149,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[_builtins.str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -26943,7 +29181,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="supportedRegionsToCloneTos")
     def supported_regions_to_clone_tos(self) -> Sequence[_builtins.str]:
         """
-        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
         """
         return pulumi.get(self, "supported_regions_to_clone_tos")
 
@@ -26969,7 +29207,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database was created.
+        The date and time the Autonomous AI Database was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -26977,7 +29215,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -26993,7 +29231,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -27001,7 +29239,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
     def time_earliest_available_db_version_upgrade(self) -> _builtins.str:
         """
-        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_earliest_available_db_version_upgrade")
 
@@ -27009,7 +29247,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
     def time_latest_available_db_version_upgrade(self) -> _builtins.str:
         """
-        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_latest_available_db_version_upgrade")
 
@@ -27017,7 +29255,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeLocalDataGuardEnabled")
     def time_local_data_guard_enabled(self) -> _builtins.str:
         """
-        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         """
         return pulumi.get(self, "time_local_data_guard_enabled")
 
@@ -27041,7 +29279,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> _builtins.str:
         """
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         """
         return pulumi.get(self, "time_of_auto_refresh_start")
 
@@ -27081,7 +29319,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeOfLastSwitchover")
     def time_of_last_switchover(self) -> _builtins.str:
         """
-        The timestamp of the last switchover operation for the Autonomous Database.
+        The timestamp of the last switchover operation for the Autonomous AI Database.
         """
         return pulumi.get(self, "time_of_last_switchover")
 
@@ -27105,7 +29343,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
     def time_scheduled_db_version_upgrade(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_scheduled_db_version_upgrade")
 
@@ -27113,7 +29351,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeUndeleted")
     def time_undeleted(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database was most recently undeleted.
+        The date and time the Autonomous AI Database was most recently undeleted.
         """
         return pulumi.get(self, "time_undeleted")
 
@@ -27147,7 +29385,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="usedDataStorageSizeInGbs")
     def used_data_storage_size_in_gbs(self) -> _builtins.int:
         """
-        The storage space consumed by Autonomous Database in GBs.
+        The storage space consumed by Autonomous AI Database in GBs.
         """
         return pulumi.get(self, "used_data_storage_size_in_gbs")
 
@@ -27155,15 +29393,31 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> _builtins.int:
         """
-        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+        The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityConnectionUrls")
+    def vanity_connection_urls(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult']:
+        """
+        The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
+        """
+        return pulumi.get(self, "vanity_connection_urls")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlDetails")
+    def vanity_url_details(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailResult']:
+        """
+        Details for api gateway and vanity url(custom url) for dbTools.
+        """
+        return pulumi.get(self, "vanity_url_details")
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -27171,7 +29425,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[_builtins.str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -27182,7 +29436,7 @@ class GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(dict):
                  apex_version: _builtins.str,
                  ords_version: _builtins.str):
         """
-        :param _builtins.str apex_version: The Oracle APEX Application Development version.
+        :param _builtins.str apex_version: The Oracle APEX AI Application Development version.
         :param _builtins.str ords_version: The Oracle REST Data Services (ORDS) version.
         """
         pulumi.set(__self__, "apex_version", apex_version)
@@ -27192,7 +29446,7 @@ class GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(dict):
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> _builtins.str:
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         return pulumi.get(self, "apex_version")
 
@@ -27244,7 +29498,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult(dict):
                  medium: _builtins.str,
                  profiles: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param _builtins.str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param _builtins.str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param _builtins.str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -27262,7 +29516,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult(dict):
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Mapping[str, _builtins.str]:
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
@@ -27323,10 +29577,9 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
         :param _builtins.str consumer_group: Consumer group used by the connection.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param _builtins.str host_format: Host format used in connection string.
-        :param _builtins.bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param _builtins.str protocol: Protocol used by the connection.
         :param _builtins.str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         :param _builtins.str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param _builtins.str value: Connection string value.
         """
@@ -27367,9 +29620,6 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @_builtins.property
     @pulumi.getter(name="isRegional")
     def is_regional(self) -> _builtins.bool:
-        """
-        True for a regional connection string, applicable to cross-region DG only.
-        """
         return pulumi.get(self, "is_regional")
 
     @_builtins.property
@@ -27392,7 +29642,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> _builtins.str:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -27588,26 +29838,34 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -27618,9 +29876,13 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -27637,7 +29899,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -27690,12 +29952,36 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -27714,6 +30000,14 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -27725,7 +30019,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -27744,7 +30038,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult(di
                  encryption_keys: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
                  time_activated: _builtins.str):
         """
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.str time_activated: The date and time the kms key activated.
         """
         pulumi.set(__self__, "encryption_keys", encryption_keys)
@@ -27754,7 +30048,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult(di
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
         """
-        Details of the Autonomous Database encryption key.
+        Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -27778,26 +30072,34 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_database_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -27808,9 +30110,13 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -27827,7 +30133,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -27880,12 +30186,36 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -27904,6 +30234,14 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -27915,7 +30253,7 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptio
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -27936,10 +30274,10 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
                  time_activated: _builtins.str,
                  vault_id: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str time_activated: The date and time the kms key activated.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -27950,7 +30288,7 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -27958,7 +30296,7 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -27974,7 +30312,7 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -27992,13 +30330,13 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -28016,7 +30354,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -28056,7 +30394,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -28064,7 +30402,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -28093,7 +30431,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict)
                  retention_period_in_days: _builtins.int,
                  time_of_backup: _builtins.str):
         """
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.str repeat_cadence: The frequency of the long-term backup schedule
         :param _builtins.int retention_period_in_days: Retention period, in days, for long-term backups
         :param _builtins.str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -28107,7 +30445,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict)
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -28239,7 +30577,7 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
                  is_snapshot_standby: _builtins.bool,
                  time_snapshot_standby_enabled_till: _builtins.str):
         """
-        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param _builtins.bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param _builtins.bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param _builtins.str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -28253,7 +30591,7 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> _builtins.str:
         """
-        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -28291,7 +30629,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
@@ -28312,7 +30650,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -28404,13 +30742,13 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -28428,7 +30766,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -28468,7 +30806,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -28476,7 +30814,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -28498,9 +30836,145 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: _builtins.str,
+                 database_transforms_url: _builtins.str,
+                 graph_studio_url: _builtins.str,
+                 machine_learning_notebook_url: _builtins.str,
+                 machine_learning_user_management_url: _builtins.str,
+                 mongo_db_url: _builtins.str,
+                 ords_url: _builtins.str,
+                 sql_dev_web_url: _builtins.str):
+        """
+        :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
+        :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> _builtins.str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> _builtins.str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> _builtins.str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> _builtins.str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @_builtins.property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> _builtins.str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @_builtins.property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> _builtins.str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> _builtins.str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailResult(dict):
+    def __init__(__self__, *,
+                 api_gateway_id: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 vanity_url_host_name: _builtins.str):
+        """
+        :param _builtins.str api_gateway_id: API Gateway ID.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
+        :param _builtins.str vanity_url_host_name: Custom URL prefix provided by the customer to access dbTools.
+        """
+        pulumi.set(__self__, "api_gateway_id", api_gateway_id)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "vanity_url_host_name", vanity_url_host_name)
+
+    @_builtins.property
+    @pulumi.getter(name="apiGatewayId")
+    def api_gateway_id(self) -> _builtins.str:
+        """
+        API Gateway ID.
+        """
+        return pulumi.get(self, "api_gateway_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlHostName")
+    def vanity_url_host_name(self) -> _builtins.str:
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+        return pulumi.get(self, "vanity_url_host_name")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     def __init__(__self__, *,
                  actual_used_data_storage_size_in_tbs: _builtins.float,
+                 additional_attributes: Mapping[str, _builtins.str],
                  allocated_storage_size_in_tbs: _builtins.float,
                  apex_details: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult'],
                  are_primary_whitelisted_ips_used: _builtins.bool,
@@ -28573,6 +31047,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult'],
                  maintenance_target_component: _builtins.str,
                  max_cpu_core_count: _builtins.int,
+                 memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  ncharacter_set: _builtins.str,
                  net_services_architecture: _builtins.str,
@@ -28627,147 +31102,154 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  total_backup_storage_size_in_gbs: _builtins.float,
                  used_data_storage_size_in_gbs: _builtins.int,
                  used_data_storage_size_in_tbs: _builtins.int,
+                 vanity_connection_urls: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult'],
+                 vanity_url_details: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailResult'],
                  vault_id: _builtins.str,
                  whitelisted_ips: Sequence[_builtins.str]):
         """
         :param _builtins.float actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
+        :param Mapping[str, _builtins.str] additional_attributes: Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         :param _builtins.float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
-        :param _builtins.bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX AI Application Development.
+        :param _builtins.bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         :param _builtins.int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param _builtins.int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
-        :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
-        :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
-        :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
-        :param _builtins.int backup_retention_period_in_days: Retention period, in days, for long-term backups
-        :param _builtins.float byol_compute_count_limit: The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-        :param _builtins.str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
-        :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
+        :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param _builtins.str availability_domain: The availability domain where the Autonomous AI Database Serverless instance is located.
+        :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param _builtins.int backup_retention_period_in_days: Retention period, in days, for backups.
+        :param _builtins.str character_set: The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
+        :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
         :param _builtins.str clone_type: A filter to return only resources that match the given clone type exactly.
         :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.float compute_count: Compute used by database tools.
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param _builtins.int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param _builtins.int cpu_core_count: The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
-        :param _builtins.str data_safe_status: Status of the Data Safe registration for this Autonomous Database.
+        :param _builtins.str data_safe_status: Status of the Data Safe registration for this Autonomous AI Database.
         :param _builtins.int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
         :param _builtins.int data_storage_size_in_tbs: The quantity of data in the database, in terabytes.
-        :param _builtins.str database_edition: The Oracle Database Edition that applies to the Autonomous databases.
-        :param _builtins.str database_management_status: Status of Database Management for this Autonomous Database.
-        :param _builtins.str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        :param _builtins.str database_edition: The Oracle AI Database Edition that applies to the Autonomous AI Databases.
+        :param _builtins.str database_management_status: Status of Database Management for this Autonomous AI Database.
+        :param _builtins.str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param _builtins.str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
-        :param _builtins.str db_version: A valid Oracle Database version for Autonomous Database.
-        :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
-               * OLTP - indicates an Autonomous Transaction Processing database
-               * DW - indicates an Autonomous Data Warehouse database
-               * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        :param _builtins.str db_version: A valid Oracle AI Database version for Autonomous AI Database.
+        :param _builtins.str db_workload: The Autonomous AI Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous AI Transaction Processing database
+               * DW - indicates an Autonomous AI Lakehouse database
+               * AJD - indicates an Autonomous AI JSON Database
+               * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+               * LH - indicates an Oracle Autonomous AI Lakehouse database
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param _builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param _builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
-        :param _builtins.int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
+        :param _builtins.int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         :param _builtins.str infrastructure_type: The infrastructure type this resource belongs to.
         :param _builtins.bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
-        :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
-        :param _builtins.bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        :param _builtins.bool is_backup_retention_locked: Indicates if the Autonomous Database is backup retention locked.
-        :param _builtins.bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
+        :param _builtins.bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
+        :param _builtins.bool is_backup_retention_locked: Indicates if the Autonomous AI Database is backup retention locked.
+        :param _builtins.bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param _builtins.bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        :param _builtins.bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
-        :param _builtins.bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-        :param _builtins.bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
-        :param _builtins.bool is_preview: Indicates if the Autonomous Database version is a preview version.
+        :param _builtins.bool is_dev_tier: Autonomous AI Database for Developers are free Autonomous AI Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        :param _builtins.bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        :param _builtins.bool is_local_data_guard_enabled: Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous AI Database requires mTLS connections.
+        :param _builtins.bool is_preview: Indicates if the Autonomous AI Database version is a preview version.
         :param _builtins.bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
-        :param _builtins.bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
-        :param _builtins.bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param _builtins.bool is_refreshable_clone: Indicates if the Autonomous AI Database is a refreshable clone.
+        :param _builtins.bool is_remote_data_guard_enabled: Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_lifecycle_details: KMS key lifecycle details.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-        :param _builtins.str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
+        :param _builtins.str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
-        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU.
-        :param _builtins.str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param _builtins.int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+        :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+        :param _builtins.str ncharacter_set: The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param _builtins.str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param _builtins.str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.float ocpu_count: The number of OCPU cores to be made available to the database.
-        :param _builtins.str open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
-        :param Sequence[_builtins.str] peer_db_ids: The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        :param _builtins.str open_mode: Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        :param Sequence[_builtins.str] peer_db_ids: The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         :param _builtins.str private_endpoint: The private endpoint for the resource.
         :param _builtins.str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param _builtins.str private_endpoint_label: The resource's private endpoint label.
                * Setting the endpoint label to a non-empty string creates a private endpoint database.
                * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
                * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
-        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param Sequence[_builtins.float] provisionable_cpuses: An array of CPU values that an Autonomous AI Database can be scaled to.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs'] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
         :param _builtins.str public_endpoint: The public endpoint for the private endpoint enabled resource.
-        :param _builtins.str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
-        :param _builtins.str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        :param _builtins.str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
+        :param _builtins.str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
-        :param _builtins.str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str resource_pool_leader_id: The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
-        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param _builtins.str role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param _builtins.str service_console_url: The URL of the Service Console for the Autonomous Database.
-        :param _builtins.str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[_builtins.str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param _builtins.str service_console_url: The URL of the Service Console for the Autonomous AI Database.
+        :param _builtins.str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param Sequence[_builtins.str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-        :param Sequence[_builtins.str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        :param Sequence[_builtins.str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param _builtins.str time_created: The date and time the Autonomous Database was created.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_created: The date and time the Autonomous AI Database was created.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param _builtins.str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        :param _builtins.str time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
-        :param _builtins.str time_latest_available_db_version_upgrade: The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
-        :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+        :param _builtins.str time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param _builtins.str time_latest_available_db_version_upgrade: The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
-        :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
-        :param _builtins.str time_of_joining_resource_pool: The time the member joined the resource pool.
+        :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param _builtins.str time_of_last_failover: The timestamp of the last failover operation.
         :param _builtins.str time_of_last_refresh: The date and time when last refresh happened.
         :param _builtins.str time_of_last_refresh_point: The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
-        :param _builtins.str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous Database.
+        :param _builtins.str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous AI Database.
         :param _builtins.str time_of_next_refresh: The date and time of next refresh.
         :param _builtins.str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
-        :param _builtins.str time_scheduled_db_version_upgrade: The date and time the Autonomous Database scheduled to upgrade to 23ai.
-        :param _builtins.str time_undeleted: The date and time the Autonomous Database was most recently undeleted.
+        :param _builtins.str time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param _builtins.str time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param _builtins.str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param _builtins.float total_backup_storage_size_in_gbs: The backup storage to the database.
-        :param _builtins.int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
-        :param _builtins.int used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        :param Sequence[_builtins.str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        :param _builtins.int used_data_storage_size_in_gbs: The storage space consumed by Autonomous AI Database in GBs.
+        :param _builtins.int used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlArgs'] vanity_connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailArgs'] vanity_url_details: Details for api gateway and vanity url(custom url) for dbTools.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param Sequence[_builtins.str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
         pulumi.set(__self__, "apex_details", apex_details)
         pulumi.set(__self__, "are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
@@ -28840,6 +31322,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         pulumi.set(__self__, "maintenance_target_component", maintenance_target_component)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "net_services_architecture", net_services_architecture)
@@ -28894,6 +31377,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
+        pulumi.set(__self__, "vanity_connection_urls", vanity_connection_urls)
+        pulumi.set(__self__, "vanity_url_details", vanity_url_details)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
 
@@ -28904,6 +31389,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The current amount of storage in use for user and system data, in terabytes (TB).
         """
         return pulumi.get(self, "actual_used_data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="additionalAttributes")
+    def additional_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
+        """
+        return pulumi.get(self, "additional_attributes")
 
     @_builtins.property
     @pulumi.getter(name="allocatedStorageSizeInTbs")
@@ -28917,7 +31410,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="apexDetails")
     def apex_details(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult']:
         """
-        Information about Oracle APEX Application Development.
+        Information about Oracle APEX AI Application Development.
         """
         return pulumi.get(self, "apex_details")
 
@@ -28925,7 +31418,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
     def are_primary_whitelisted_ips_used(self) -> _builtins.bool:
         """
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
@@ -28949,7 +31442,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> _builtins.str:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -28957,7 +31450,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
     def autonomous_maintenance_schedule_type(self) -> _builtins.str:
         """
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
@@ -28965,7 +31458,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain where the Autonomous AI Database Serverless instance is located.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -28973,7 +31466,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="availableUpgradeVersions")
     def available_upgrade_versions(self) -> Sequence[_builtins.str]:
         """
-        List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         """
         return pulumi.get(self, "available_upgrade_versions")
 
@@ -28981,7 +31474,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="backupConfigs")
     def backup_configs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult']:
         """
-        Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
 
@@ -28989,23 +31482,20 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="backupRetentionPeriodInDays")
     def backup_retention_period_in_days(self) -> _builtins.int:
         """
-        Retention period, in days, for long-term backups
+        Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="byolComputeCountLimit")
     def byol_compute_count_limit(self) -> _builtins.float:
-        """
-        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-        """
         return pulumi.get(self, "byol_compute_count_limit")
 
     @_builtins.property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> _builtins.str:
         """
-        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
         """
         return pulumi.get(self, "character_set")
 
@@ -29013,7 +31503,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cloneTableSpaceLists")
     def clone_table_space_lists(self) -> Sequence[_builtins.int]:
         """
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
         """
         return pulumi.get(self, "clone_table_space_lists")
 
@@ -29053,7 +31543,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -29061,7 +31551,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult']:
         """
-        The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
         """
         return pulumi.get(self, "connection_strings")
 
@@ -29077,7 +31567,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> _builtins.int:
         """
-        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -29093,7 +31583,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataSafeStatus")
     def data_safe_status(self) -> _builtins.str:
         """
-        Status of the Data Safe registration for this Autonomous Database.
+        Status of the Data Safe registration for this Autonomous AI Database.
         """
         return pulumi.get(self, "data_safe_status")
 
@@ -29117,7 +31607,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> _builtins.str:
         """
-        The Oracle Database Edition that applies to the Autonomous databases.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases.
         """
         return pulumi.get(self, "database_edition")
 
@@ -29125,7 +31615,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="databaseManagementStatus")
     def database_management_status(self) -> _builtins.str:
         """
-        Status of Database Management for this Autonomous Database.
+        Status of Database Management for this Autonomous AI Database.
         """
         return pulumi.get(self, "database_management_status")
 
@@ -29133,7 +31623,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataguardRegionType")
     def dataguard_region_type(self) -> _builtins.str:
         """
-        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
@@ -29157,7 +31647,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -29165,11 +31655,12 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> _builtins.str:
         """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        The Autonomous AI Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous AI Transaction Processing database
+        * DW - indicates an Autonomous AI Lakehouse database
+        * AJD - indicates an Autonomous AI JSON Database
+        * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        * LH - indicates an Oracle Autonomous AI Lakehouse database
         """
         return pulumi.get(self, "db_workload")
 
@@ -29185,7 +31676,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryRegionType")
     def disaster_recovery_region_type(self) -> _builtins.str:
         """
-        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
@@ -29209,7 +31700,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult']:
         """
-        Details of the Autonomous Database encryption key.
+        Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -29233,7 +31724,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -29241,7 +31732,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryAreaInGbs")
     def in_memory_area_in_gbs(self) -> _builtins.int:
         """
-        The area assigned to In-Memory tables in Autonomous Database.
+        The area assigned to In-Memory tables in Autonomous AI Database.
         """
         return pulumi.get(self, "in_memory_area_in_gbs")
 
@@ -29249,7 +31740,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="inMemoryPercentage")
     def in_memory_percentage(self) -> _builtins.int:
         """
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
         """
         return pulumi.get(self, "in_memory_percentage")
 
@@ -29273,7 +31764,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> _builtins.bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -29281,7 +31772,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isAutoScalingForStorageEnabled")
     def is_auto_scaling_for_storage_enabled(self) -> _builtins.bool:
         """
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
 
@@ -29289,7 +31780,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isBackupRetentionLocked")
     def is_backup_retention_locked(self) -> _builtins.bool:
         """
-        Indicates if the Autonomous Database is backup retention locked.
+        Indicates if the Autonomous AI Database is backup retention locked.
         """
         return pulumi.get(self, "is_backup_retention_locked")
 
@@ -29297,7 +31788,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> _builtins.bool:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -29313,7 +31804,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDevTier")
     def is_dev_tier(self) -> _builtins.bool:
         """
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are free Autonomous AI Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
         """
         return pulumi.get(self, "is_dev_tier")
 
@@ -29321,7 +31812,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> _builtins.bool:
         """
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -29329,7 +31820,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isLocalDataGuardEnabled")
     def is_local_data_guard_enabled(self) -> _builtins.bool:
         """
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_local_data_guard_enabled")
 
@@ -29337,7 +31828,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isMtlsConnectionRequired")
     def is_mtls_connection_required(self) -> _builtins.bool:
         """
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
         """
         return pulumi.get(self, "is_mtls_connection_required")
 
@@ -29345,7 +31836,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isPreview")
     def is_preview(self) -> _builtins.bool:
         """
-        Indicates if the Autonomous Database version is a preview version.
+        Indicates if the Autonomous AI Database version is a preview version.
         """
         return pulumi.get(self, "is_preview")
 
@@ -29361,7 +31852,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> _builtins.bool:
         """
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -29369,7 +31860,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRemoteDataGuardEnabled")
     def is_remote_data_guard_enabled(self) -> _builtins.bool:
         """
-        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_remote_data_guard_enabled")
 
@@ -29417,7 +31908,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -29425,7 +31916,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> _builtins.str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -29449,7 +31940,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> _builtins.str:
         """
-        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "local_disaster_recovery_type")
 
@@ -29457,7 +31948,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="localStandbyDbs")
     def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult']:
         """
-        Autonomous Data Guard standby database details.
+        Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "local_standby_dbs")
 
@@ -29480,13 +31971,24 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> _builtins.int:
+        """
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+        """
         return pulumi.get(self, "max_cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -29494,7 +31996,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> _builtins.str:
         """
-        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         """
         return pulumi.get(self, "ncharacter_set")
 
@@ -29519,7 +32021,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -29535,7 +32037,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="openMode")
     def open_mode(self) -> _builtins.str:
         """
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -29543,7 +32045,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="peerDbIds")
     def peer_db_ids(self) -> Sequence[_builtins.str]:
         """
-        The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         """
         return pulumi.get(self, "peer_db_ids")
 
@@ -29578,7 +32080,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        An array of CPU values that an Autonomous Database can be scaled to.
+        An array of CPU values that an Autonomous AI Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -29602,7 +32104,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="refreshableMode")
     def refreshable_mode(self) -> _builtins.str:
         """
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_mode")
 
@@ -29610,7 +32112,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="refreshableStatus")
     def refreshable_status(self) -> _builtins.str:
         """
-        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
         """
         return pulumi.get(self, "refreshable_status")
 
@@ -29626,7 +32128,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> _builtins.str:
         """
-        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
@@ -29642,7 +32144,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -29666,7 +32168,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> _builtins.str:
         """
-        The URL of the Service Console for the Autonomous Database.
+        The URL of the Service Console for the Autonomous AI Database.
         """
         return pulumi.get(self, "service_console_url")
 
@@ -29674,7 +32176,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="sourceId")
     def source_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
         """
         return pulumi.get(self, "source_id")
 
@@ -29682,7 +32184,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyDbs")
     def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult']:
         """
-        **Deprecated** Autonomous Data Guard standby database details.
+        **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "standby_dbs")
 
@@ -29690,7 +32192,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[_builtins.str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -29722,7 +32224,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="supportedRegionsToCloneTos")
     def supported_regions_to_clone_tos(self) -> Sequence[_builtins.str]:
         """
-        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
         """
         return pulumi.get(self, "supported_regions_to_clone_tos")
 
@@ -29738,7 +32240,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database was created.
+        The date and time the Autonomous AI Database was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -29746,7 +32248,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -29762,7 +32264,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -29770,7 +32272,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
     def time_earliest_available_db_version_upgrade(self) -> _builtins.str:
         """
-        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_earliest_available_db_version_upgrade")
 
@@ -29778,7 +32280,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
     def time_latest_available_db_version_upgrade(self) -> _builtins.str:
         """
-        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_latest_available_db_version_upgrade")
 
@@ -29786,7 +32288,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeLocalDataGuardEnabled")
     def time_local_data_guard_enabled(self) -> _builtins.str:
         """
-        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         """
         return pulumi.get(self, "time_local_data_guard_enabled")
 
@@ -29810,16 +32312,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> _builtins.str:
         """
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         """
         return pulumi.get(self, "time_of_auto_refresh_start")
 
     @_builtins.property
     @pulumi.getter(name="timeOfJoiningResourcePool")
     def time_of_joining_resource_pool(self) -> _builtins.str:
-        """
-        The time the member joined the resource pool.
-        """
         return pulumi.get(self, "time_of_joining_resource_pool")
 
     @_builtins.property
@@ -29850,7 +32349,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeOfLastSwitchover")
     def time_of_last_switchover(self) -> _builtins.str:
         """
-        The timestamp of the last switchover operation for the Autonomous Database.
+        The timestamp of the last switchover operation for the Autonomous AI Database.
         """
         return pulumi.get(self, "time_of_last_switchover")
 
@@ -29874,7 +32373,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
     def time_scheduled_db_version_upgrade(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_scheduled_db_version_upgrade")
 
@@ -29882,7 +32381,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="timeUndeleted")
     def time_undeleted(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database was most recently undeleted.
+        The date and time the Autonomous AI Database was most recently undeleted.
         """
         return pulumi.get(self, "time_undeleted")
 
@@ -29906,7 +32405,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="usedDataStorageSizeInGbs")
     def used_data_storage_size_in_gbs(self) -> _builtins.int:
         """
-        The storage space consumed by Autonomous Database in GBs.
+        The storage space consumed by Autonomous AI Database in GBs.
         """
         return pulumi.get(self, "used_data_storage_size_in_gbs")
 
@@ -29914,15 +32413,31 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> _builtins.int:
         """
-        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+        The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityConnectionUrls")
+    def vanity_connection_urls(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult']:
+        """
+        The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
+        """
+        return pulumi.get(self, "vanity_connection_urls")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlDetails")
+    def vanity_url_details(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailResult']:
+        """
+        Details for api gateway and vanity url(custom url) for dbTools.
+        """
+        return pulumi.get(self, "vanity_url_details")
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -29930,7 +32445,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[_builtins.str]:
         """
-        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -29941,7 +32456,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult(dict):
                  apex_version: _builtins.str,
                  ords_version: _builtins.str):
         """
-        :param _builtins.str apex_version: The Oracle APEX Application Development version.
+        :param _builtins.str apex_version: The Oracle APEX AI Application Development version.
         :param _builtins.str ords_version: The Oracle REST Data Services (ORDS) version.
         """
         pulumi.set(__self__, "apex_version", apex_version)
@@ -29951,7 +32466,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult(dict):
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> _builtins.str:
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         return pulumi.get(self, "apex_version")
 
@@ -30003,7 +32518,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult(dict)
                  medium: _builtins.str,
                  profiles: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, _builtins.str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param _builtins.str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param _builtins.str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param _builtins.str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -30021,7 +32536,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult(dict)
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Mapping[str, _builtins.str]:
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
@@ -30085,7 +32600,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResul
         :param _builtins.bool is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param _builtins.str protocol: Protocol used by the connection.
         :param _builtins.str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        :param _builtins.str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         :param _builtins.str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param _builtins.str value: Connection string value.
         """
@@ -30151,7 +32666,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResul
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> _builtins.str:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -30347,26 +32862,34 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_databases_clone_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_databases_clone_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -30377,9 +32900,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -30396,7 +32923,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="autonomousDatabasesCloneProvider")
     def autonomous_databases_clone_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_databases_clone_provider")
 
@@ -30449,12 +32976,36 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -30473,6 +33024,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -30484,7 +33043,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -30503,7 +33062,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryRes
                  encryption_keys: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
                  time_activated: _builtins.str):
         """
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.str time_activated: The date and time the kms key activated.
         """
         pulumi.set(__self__, "encryption_keys", encryption_keys)
@@ -30513,7 +33072,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryRes
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
         """
-        Details of the Autonomous Database encryption key.
+        Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -30537,26 +33096,34 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
                  external_id: _builtins.str,
                  key_arn: _builtins.str,
                  key_name: _builtins.str,
+                 key_ring: _builtins.str,
                  kms_key_id: _builtins.str,
+                 kms_rest_endpoint: _builtins.str,
+                 location: _builtins.str,
                  okv_kms_key: _builtins.str,
                  okv_uri: _builtins.str,
+                 project: _builtins.str,
                  service_endpoint_uri: _builtins.str,
                  vault_id: _builtins.str,
                  vault_uri: _builtins.str):
         """
         :param _builtins.str arn_role: AWS ARN role
-        :param _builtins.str autonomous_databases_clone_provider: The provider for the Autonomous Database encryption key.
+        :param _builtins.str autonomous_databases_clone_provider: The provider for the Autonomous AI Database encryption key.
         :param _builtins.str certificate_directory_name: OKV certificate directory name
         :param _builtins.str certificate_id: OKV certificate id
         :param _builtins.str directory_name: OKV wallet directory name
         :param _builtins.str external_id: AWS external ID
         :param _builtins.str key_arn: AWS key ARN
         :param _builtins.str key_name: Azure key name
+        :param _builtins.str key_ring: GCP key ring
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param _builtins.str kms_rest_endpoint: GCP kms REST API endpoint
+        :param _builtins.str location: GCP key ring location
         :param _builtins.str okv_kms_key: UUID of OKV KMS Key
         :param _builtins.str okv_uri: URI of OKV server
+        :param _builtins.str project: GCP project name
         :param _builtins.str service_endpoint_uri: AWS key service endpoint URI
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param _builtins.str vault_uri: Azure vault URI
         """
         pulumi.set(__self__, "arn_role", arn_role)
@@ -30567,9 +33134,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "key_arn", key_arn)
         pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_ring", key_ring)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "project", project)
         pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "vault_uri", vault_uri)
@@ -30586,7 +33157,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
     @pulumi.getter(name="autonomousDatabasesCloneProvider")
     def autonomous_databases_clone_provider(self) -> _builtins.str:
         """
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_databases_clone_provider")
 
@@ -30639,12 +33210,36 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
         return pulumi.get(self, "key_name")
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> _builtins.str:
+        """
+        GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> _builtins.str:
+        """
+        GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        GCP key ring location
+        """
+        return pulumi.get(self, "location")
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -30663,6 +33258,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
         return pulumi.get(self, "okv_uri")
 
     @_builtins.property
+    @pulumi.getter
+    def project(self) -> _builtins.str:
+        """
+        GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
     def service_endpoint_uri(self) -> _builtins.str:
         """
@@ -30674,7 +33277,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -30695,10 +33298,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
                  time_activated: _builtins.str,
                  vault_id: _builtins.str):
         """
-        :param _builtins.str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param _builtins.str time_activated: The date and time the kms key activated.
-        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
@@ -30709,7 +33312,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -30717,7 +33320,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -30733,7 +33336,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -30751,13 +33354,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain where the Autonomous AI Database Serverless instance is located.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -30775,7 +33378,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain where the Autonomous AI Database Serverless instance is located.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -30815,7 +33418,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -30823,7 +33426,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -30852,7 +33455,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult
                  retention_period_in_days: _builtins.int,
                  time_of_backup: _builtins.str):
         """
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.str repeat_cadence: The frequency of the long-term backup schedule
         :param _builtins.int retention_period_in_days: Retention period, in days, for long-term backups
         :param _builtins.str time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -30866,7 +33469,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -30998,8 +33601,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
                  is_snapshot_standby: _builtins.bool,
                  time_snapshot_standby_enabled_till: _builtins.str):
         """
-        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param _builtins.bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        :param _builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param _builtins.bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param _builtins.str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
@@ -31012,16 +33614,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> _builtins.str:
         """
-        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
     @_builtins.property
     @pulumi.getter(name="isReplicateAutomaticBackups")
     def is_replicate_automatic_backups(self) -> _builtins.bool:
-        """
-        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-        """
         return pulumi.get(self, "is_replicate_automatic_backups")
 
     @_builtins.property
@@ -31050,7 +33649,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(di
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
-        :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
@@ -31071,7 +33670,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(di
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> _builtins.bool:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -31163,13 +33762,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param _builtins.str availability_domain: The availability domain where the Autonomous AI Database Serverless instance is located.
         :param _builtins.int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_target_component: The component chosen for maintenance.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
-        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param _builtins.str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param _builtins.str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
         """
@@ -31187,7 +33786,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain where the Autonomous AI Database Serverless instance is located.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -31227,7 +33826,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> _builtins.str:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -31235,7 +33834,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> _builtins.str:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -31254,6 +33853,141 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(dict):
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: _builtins.str,
+                 database_transforms_url: _builtins.str,
+                 graph_studio_url: _builtins.str,
+                 machine_learning_notebook_url: _builtins.str,
+                 machine_learning_user_management_url: _builtins.str,
+                 mongo_db_url: _builtins.str,
+                 ords_url: _builtins.str,
+                 sql_dev_web_url: _builtins.str):
+        """
+        :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
+        :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> _builtins.str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> _builtins.str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> _builtins.str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> _builtins.str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @_builtins.property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> _builtins.str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @_builtins.property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> _builtins.str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> _builtins.str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailResult(dict):
+    def __init__(__self__, *,
+                 api_gateway_id: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 vanity_url_host_name: _builtins.str):
+        """
+        :param _builtins.str api_gateway_id: API Gateway ID.
+        :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
+        :param _builtins.str vanity_url_host_name: Custom URL prefix provided by the customer to access dbTools.
+        """
+        pulumi.set(__self__, "api_gateway_id", api_gateway_id)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "vanity_url_host_name", vanity_url_host_name)
+
+    @_builtins.property
+    @pulumi.getter(name="apiGatewayId")
+    def api_gateway_id(self) -> _builtins.str:
+        """
+        API Gateway ID.
+        """
+        return pulumi.get(self, "api_gateway_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlHostName")
+    def vanity_url_host_name(self) -> _builtins.str:
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+        return pulumi.get(self, "vanity_url_host_name")
 
 
 @pulumi.output_type
@@ -31331,15 +34065,16 @@ class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult(dict):
                  time_preview_end: _builtins.str,
                  version: _builtins.str):
         """
-        :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
-               * OLTP - indicates an Autonomous Transaction Processing database
-               * DW - indicates an Autonomous Data Warehouse database
-               * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        :param _builtins.str db_workload: The Autonomous AI Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous AI Transaction Processing database
+               * DW - indicates an Autonomous AI Lakehouse database
+               * AJD - indicates an Autonomous AI JSON Database
+               * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+               * LH - indicates an Oracle Autonomous AI Lakehouse database
         :param _builtins.str details: A URL that points to a detailed description of the preview version.
         :param _builtins.str time_preview_begin: The date and time when the preview version availability begins.
         :param _builtins.str time_preview_end: The date and time when the preview version availability ends.
-        :param _builtins.str version: A valid Autonomous Database preview version.
+        :param _builtins.str version: A valid Autonomous AI Database preview version.
         """
         pulumi.set(__self__, "db_workload", db_workload)
         pulumi.set(__self__, "details", details)
@@ -31351,11 +34086,12 @@ class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> _builtins.str:
         """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        The Autonomous AI Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous AI Transaction Processing database
+        * DW - indicates an Autonomous AI Lakehouse database
+        * AJD - indicates an Autonomous AI JSON Database
+        * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        * LH - indicates an Oracle Autonomous AI Lakehouse database
         """
         return pulumi.get(self, "db_workload")
 
@@ -31387,7 +34123,7 @@ class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        A valid Autonomous Database preview version.
+        A valid Autonomous AI Database preview version.
         """
         return pulumi.get(self, "version")
 
@@ -31431,14 +34167,14 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
                  is_paid_enabled: _builtins.bool,
                  version: _builtins.str):
         """
-        :param _builtins.str db_workload: A filter to return only autonomous database resources that match the specified workload type.
-        :param _builtins.str details: A URL that points to a detailed description of the Autonomous Database version.
+        :param _builtins.str db_workload: A filter to return only Autonomous AI Database resources that match the specified workload type.
+        :param _builtins.str details: A URL that points to a detailed description of the Autonomous AI Database version.
         :param _builtins.bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-        :param _builtins.bool is_default_for_free: True if this version of the Oracle Database software's default is free.
-        :param _builtins.bool is_default_for_paid: True if this version of the Oracle Database software's default is paid.
-        :param _builtins.bool is_free_tier_enabled: True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
-        :param _builtins.bool is_paid_enabled: True if this version of the Oracle Database software has payments enabled.
-        :param _builtins.str version: A valid Oracle Database version for Autonomous Database.
+        :param _builtins.bool is_default_for_free: True if this version of the Oracle AI Database software's default is free.
+        :param _builtins.bool is_default_for_paid: True if this version of the Oracle AI Database software's default is paid.
+        :param _builtins.bool is_free_tier_enabled: True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
+        :param _builtins.bool is_paid_enabled: True if this version of the Oracle AI Database software has payments enabled.
+        :param _builtins.str version: A valid Oracle AI Database version for Autonomous AI Database.
         """
         pulumi.set(__self__, "db_workload", db_workload)
         pulumi.set(__self__, "details", details)
@@ -31453,7 +34189,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> _builtins.str:
         """
-        A filter to return only autonomous database resources that match the specified workload type.
+        A filter to return only Autonomous AI Database resources that match the specified workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -31461,7 +34197,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter
     def details(self) -> _builtins.str:
         """
-        A URL that points to a detailed description of the Autonomous Database version.
+        A URL that points to a detailed description of the Autonomous AI Database version.
         """
         return pulumi.get(self, "details")
 
@@ -31477,7 +34213,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter(name="isDefaultForFree")
     def is_default_for_free(self) -> _builtins.bool:
         """
-        True if this version of the Oracle Database software's default is free.
+        True if this version of the Oracle AI Database software's default is free.
         """
         return pulumi.get(self, "is_default_for_free")
 
@@ -31485,7 +34221,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter(name="isDefaultForPaid")
     def is_default_for_paid(self) -> _builtins.bool:
         """
-        True if this version of the Oracle Database software's default is paid.
+        True if this version of the Oracle AI Database software's default is paid.
         """
         return pulumi.get(self, "is_default_for_paid")
 
@@ -31493,7 +34229,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter(name="isFreeTierEnabled")
     def is_free_tier_enabled(self) -> _builtins.bool:
         """
-        True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+        True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
         """
         return pulumi.get(self, "is_free_tier_enabled")
 
@@ -31501,7 +34237,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter(name="isPaidEnabled")
     def is_paid_enabled(self) -> _builtins.bool:
         """
-        True if this version of the Oracle Database software has payments enabled.
+        True if this version of the Oracle AI Database software has payments enabled.
         """
         return pulumi.get(self, "is_paid_enabled")
 
@@ -31509,7 +34245,7 @@ class GetAutonomousDbVersionsAutonomousDbVersionResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
         """
         return pulumi.get(self, "version")
 
@@ -31871,8 +34607,8 @@ class GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult(dict):
                  adw: _builtins.float,
                  atp: _builtins.float):
         """
-        :param _builtins.float adw: The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
-        :param _builtins.float atp: The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+        :param _builtins.float adw: The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
+        :param _builtins.float atp: The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
         """
         pulumi.set(__self__, "adw", adw)
         pulumi.set(__self__, "atp", atp)
@@ -31881,7 +34617,7 @@ class GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult(dict):
     @pulumi.getter
     def adw(self) -> _builtins.float:
         """
-        The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
         """
         return pulumi.get(self, "adw")
 
@@ -31889,7 +34625,7 @@ class GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult(dict):
     @pulumi.getter
     def atp(self) -> _builtins.float:
         """
-        The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
         """
         return pulumi.get(self, "atp")
 
@@ -32040,7 +34776,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
         :param Sequence['GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
         :param _builtins.str shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -32191,7 +34927,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -32795,13 +35531,13 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
                  used_cpus: _builtins.float):
         """
         :param Sequence['GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: list of autonomous container database resource usage per autonomous virtual machine.
-        :param _builtins.float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        :param _builtins.float available_cpus: CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param _builtins.float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
-        :param Sequence[_builtins.float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
+        :param Sequence[_builtins.float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous AI Database.
         :param _builtins.float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
         :param _builtins.float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param _builtins.float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
@@ -32832,7 +35568,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -32880,7 +35616,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        Valid list of provisionable CPUs for Autonomous Database.
+        Valid list of provisionable CPUs for Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -33521,6 +36257,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  maintenance_window_details: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult'],
                  max_acds_lowest_scaled_value: _builtins.int,
+                 memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  memory_size_in_gbs: _builtins.int,
                  next_maintenance_run_id: _builtins.str,
@@ -33571,7 +36308,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param _builtins.int max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
-        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param _builtins.int memory_size_in_gbs: The memory allocated in GBs.
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param _builtins.int node_count: The number of nodes in the Autonomous VM Cluster.
@@ -33624,6 +36362,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -33879,10 +36618,18 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -34406,6 +37153,35 @@ class GetBackupDestinationAssociatedDatabaseResult(dict):
 
 
 @pulumi.output_type
+class GetBackupDestinationAssociatedLongTermBackupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-provided name of the backup destination.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-provided name of the backup destination.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetBackupDestinationMountTypeDetailResult(dict):
     def __init__(__self__, *,
                  local_mount_point_path: _builtins.str,
@@ -34456,6 +37232,8 @@ class GetBackupDestinationMountTypeDetailResult(dict):
 class GetBackupDestinationsBackupDestinationResult(dict):
     def __init__(__self__, *,
                  associated_databases: Sequence['outputs.GetBackupDestinationsBackupDestinationAssociatedDatabaseResult'],
+                 associated_long_term_backup_count: _builtins.int,
+                 associated_long_term_backups: Sequence['outputs.GetBackupDestinationsBackupDestinationAssociatedLongTermBackupResult'],
                  compartment_id: _builtins.str,
                  connection_string: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -34478,6 +37256,8 @@ class GetBackupDestinationsBackupDestinationResult(dict):
                  vpc_users: Sequence[_builtins.str]):
         """
         :param Sequence['GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs'] associated_databases: List of databases associated with the backup destination.
+        :param _builtins.int associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param Sequence['GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs'] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str connection_string: For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -34499,6 +37279,8 @@ class GetBackupDestinationsBackupDestinationResult(dict):
         :param Sequence[_builtins.str] vpc_users: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "associated_databases", associated_databases)
+        pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_string", connection_string)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -34527,6 +37309,22 @@ class GetBackupDestinationsBackupDestinationResult(dict):
         List of databases associated with the backup destination.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> _builtins.int:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Sequence['outputs.GetBackupDestinationsBackupDestinationAssociatedLongTermBackupResult']:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -34717,6 +37515,35 @@ class GetBackupDestinationsBackupDestinationAssociatedDatabaseResult(dict):
 
 
 @pulumi.output_type
+class GetBackupDestinationsBackupDestinationAssociatedLongTermBackupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-provided name of the backup destination.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-provided name of the backup destination.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetBackupDestinationsBackupDestinationMountTypeDetailResult(dict):
     def __init__(__self__, *,
                  local_mount_point_path: _builtins.str,
@@ -34833,7 +37660,7 @@ class GetBackupsBackupResult(dict):
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int retention_period_in_days: The retention period of the long term backup in days.
         :param _builtins.int retention_period_in_years: The retention period of the long term backup in years.
@@ -34982,7 +37809,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -35167,13 +37994,13 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
                  used_cpus: _builtins.float):
         """
         :param Sequence['GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: List of autonomous container database resource usage per autonomous virtual machine.
-        :param _builtins.float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        :param _builtins.float available_cpus: CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param _builtins.float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
-        :param Sequence[_builtins.float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
+        :param Sequence[_builtins.float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous AI Database.
         :param _builtins.float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
         :param _builtins.float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param _builtins.float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
@@ -35204,7 +38031,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -35252,7 +38079,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        Valid list of provisionable CPUs for Autonomous Database.
+        Valid list of provisionable CPUs for Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -35738,7 +38565,7 @@ class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult(di
         :param _builtins.str display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         :param _builtins.float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param _builtins.float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param _builtins.float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param _builtins.float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param _builtins.float used_cpus: The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
         """
@@ -35795,7 +38622,7 @@ class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult(di
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -35831,7 +38658,7 @@ class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomou
         :param _builtins.str display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         :param _builtins.float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param _builtins.float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param _builtins.float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param _builtins.float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param _builtins.float used_cpus: The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
         """
@@ -35879,7 +38706,7 @@ class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomou
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -35936,6 +38763,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  maintenance_window_details: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult'],
                  max_acds_lowest_scaled_value: _builtins.int,
+                 memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  memory_size_in_gbs: _builtins.int,
                  next_maintenance_run_id: _builtins.str,
@@ -35966,16 +38794,16 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  total_container_databases: _builtins.int,
                  total_cpus: _builtins.float):
         """
-        :param _builtins.float autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
-        :param _builtins.float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous Databases, in TBs.
+        :param _builtins.float autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
+        :param _builtins.float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous AI Databases, in TBs.
         :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param _builtins.float available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
+        :param _builtins.float available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous AI Databases, in TBs.
         :param _builtins.int available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
-        :param _builtins.float available_cpus: CPU cores available for allocation to Autonomous Databases.
+        :param _builtins.float available_cpus: CPU cores available for allocation to Autonomous AI Databases.
         :param _builtins.str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param _builtins.str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str compute_model: The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param _builtins.str compute_model: The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param _builtins.int cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
         :param _builtins.int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param _builtins.float cpu_percentage: The percentage of total number of CPUs used in an Autonomous VM Cluster.
@@ -35994,25 +38822,24 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
-        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param _builtins.int max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
-        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
+        :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param _builtins.int memory_size_in_gbs: The memory allocated in GBs.
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param _builtins.int node_count: The number of database servers in the cloud VM cluster.
         :param _builtins.int non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.float ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param _builtins.int ocpus_lowest_scaled_value: The lowest value to which ocpus can be scaled down.
         :param _builtins.int provisionable_autonomous_container_databases: The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         :param _builtins.int provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param _builtins.float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param _builtins.float reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param _builtins.float reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         :param _builtins.float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param _builtins.int scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param _builtins.int scan_listener_port_tls: The SCAN Listenenr TLS port. Default is 2484.
@@ -36026,7 +38853,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.str time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param _builtins.str time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param _builtins.str time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
-        :param _builtins.float total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous Databases, in TBs.
+        :param _builtins.float total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous AI Databases, in TBs.
         :param _builtins.int total_container_databases: The total number of Autonomous Container Databases that can be created with the allocated local storage.
         :param _builtins.float total_cpus: The total number of CPUs in an Autonomous VM Cluster.
         """
@@ -36063,6 +38890,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -36097,7 +38925,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="autonomousDataStoragePercentage")
     def autonomous_data_storage_percentage(self) -> _builtins.float:
         """
-        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
         """
         return pulumi.get(self, "autonomous_data_storage_percentage")
 
@@ -36105,7 +38933,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
     def autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
@@ -36121,7 +38949,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
     def available_autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
 
@@ -36137,7 +38965,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        CPU cores available for allocation to Autonomous Databases.
+        CPU cores available for allocation to Autonomous AI Databases.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -36169,7 +38997,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -36321,7 +39149,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> _builtins.str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -36355,10 +39183,18 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -36399,7 +39235,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -36452,9 +39288,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -36566,7 +39400,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="totalAutonomousDataStorageInTbs")
     def total_autonomous_data_storage_in_tbs(self) -> _builtins.float:
         """
-        The total data disk group size for Autonomous Databases, in TBs.
+        The total data disk group size for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
 
@@ -37293,7 +40127,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param _builtins.str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.int compute_count: The number of compute servers for the cloud Exadata infrastructure.
-        :param _builtins.str compute_model: The compute model of the Exadata infrastructure.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpu_count: The total number of CPU cores allocated.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         :param _builtins.float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
@@ -37430,7 +40264,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Exadata infrastructure.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -38402,7 +41236,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param _builtins.str cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str compute_model: The compute model of the cloud VM cluster.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpu_core_count: The number of CPU cores enabled on the cloud VM cluster.
         :param Sequence['GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param _builtins.int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -38429,7 +41263,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param Sequence['GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs'] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param _builtins.int node_count: The number of nodes in the cloud VM cluster.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.float ocpu_count: The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param _builtins.str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param _builtins.str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -38577,7 +41411,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the cloud VM cluster.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -38796,7 +41630,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -40032,7 +42866,7 @@ class GetDatabaseDatabaseResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str ncharacter_set: The national character set for the database.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -40185,7 +43019,7 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -40290,7 +43124,7 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -40340,7 +43174,7 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> _builtins.str:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -40372,14 +43206,17 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
@@ -40388,13 +43225,23 @@ class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -40419,6 +43266,11 @@ class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         Indicates whether the backup destination is cross-region or local region.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -40607,7 +43459,7 @@ class GetDatabaseDbBackupConfigResult(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -40657,7 +43509,7 @@ class GetDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> _builtins.str:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -40689,14 +43541,17 @@ class GetDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
@@ -40705,13 +43560,23 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -40736,6 +43601,11 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         Indicates whether the backup destination is cross-region or local region.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -41529,7 +44399,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param _builtins.str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        :param _builtins.str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param _builtins.str description: Description of the maintenance run.
         :param _builtins.str display_name: The user-friendly name for the maintenance run.
         :param _builtins.str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -41542,7 +44412,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param _builtins.str maintenance_subtype: Maintenance sub-type.
         :param _builtins.str maintenance_type: The maintenance type.
         :param _builtins.int patch_failure_count: Contain the patch failure count.
-        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         :param _builtins.str patching_end_time: The time when the patching operation ended.
         :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param _builtins.str patching_start_time: The time when the patching operation started.
@@ -41631,7 +44501,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> _builtins.str:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -41735,7 +44605,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
     @pulumi.getter(name="patchId")
     def patch_id(self) -> _builtins.str:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -42075,7 +44945,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionR
         :param _builtins.str id: The OCID of the maintenance run.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
-        :param _builtins.str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param _builtins.str state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param _builtins.str time_created: The date and time the execution window was created.
         :param _builtins.str time_updated: The last date and time that the execution window was updated.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
@@ -42215,7 +45085,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionR
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -42355,7 +45225,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
         :param _builtins.bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
-        :param _builtins.str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param _builtins.str state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param _builtins.str time_created: The date and time the execution window was created.
         :param _builtins.str time_ended: The date and time the maintenance run was completed.
         :param _builtins.str time_scheduled: The date and time the maintenance run is scheduled to occur.
@@ -42478,7 +45348,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -42589,7 +45459,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param _builtins.str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        :param _builtins.str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param _builtins.str description: Description of the maintenance run.
         :param _builtins.str display_name: The user-friendly name for the maintenance run.
         :param _builtins.str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -42602,14 +45472,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param _builtins.str maintenance_subtype: Maintenance sub-type.
         :param _builtins.str maintenance_type: Maintenance type.
         :param _builtins.int patch_failure_count: Contain the patch failure count.
-        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         :param _builtins.str patching_end_time: The time when the patching operation ended.
         :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param _builtins.str patching_start_time: The time when the patching operation started.
         :param _builtins.str patching_status: The status of the patching operation.
         :param _builtins.str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param Sequence[_builtins.str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
-        :param _builtins.str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param _builtins.str state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str target_db_server_version: The target software version for the database server patching operation.
         :param _builtins.str target_resource_id: The ID of the target resource on which the maintenance run occurs.
@@ -42691,7 +45561,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> _builtins.str:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -42795,7 +45665,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     @pulumi.getter(name="patchId")
     def patch_id(self) -> _builtins.str:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -42851,7 +45721,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -43657,7 +46527,7 @@ class GetDatabasesDatabaseResult(dict):
         :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.int last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param _builtins.str last_backup_timestamp: The date and time when the latest database backup was created.
         :param _builtins.str last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -43901,7 +46771,7 @@ class GetDatabasesDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -44247,7 +47117,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str ncharacter_set: The national character set for the database.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -44400,7 +47270,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -44505,7 +47375,7 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -44555,7 +47425,7 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> _builtins.str:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -44587,27 +47457,41 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -44629,15 +47513,23 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(di
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -44814,7 +47706,7 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -44864,7 +47756,7 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> _builtins.str:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -44896,27 +47788,41 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
                  vpc_user: _builtins.str):
         """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -44938,15 +47844,23 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> _builtins.str:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -45379,9 +48293,11 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -45389,13 +48305,20 @@ class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         """
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -45414,6 +48337,11 @@ class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -46315,9 +49243,11 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -46325,13 +49255,20 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         """
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
         pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -46350,6 +49287,11 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -47199,7 +50141,7 @@ class GetDbServersDbServerResult(dict):
         :param Sequence[_builtins.str] autonomous_virtual_machine_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
         :param Sequence[_builtins.str] autonomous_vm_cluster_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpu_core_count: The number of CPU cores enabled on the Db server.
         :param Sequence[_builtins.str] db_node_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
         :param _builtins.int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db server.
@@ -47272,7 +50214,7 @@ class GetDbServersDbServerResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -47908,7 +50850,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param _builtins.int available_db_node_storage_in_gbs: The maximum Db Node storage that can be enabled for this shape.
         :param _builtins.int available_memory_in_gbs: The maximum memory that can be enabled for this shape.
         :param _builtins.int available_memory_per_node_in_gbs: The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int core_count_increment: The discrete number by which the CPU core count for this shape can be increased or decreased.
         :param _builtins.str display_name: The display name of the shape used for the DB system.
         :param _builtins.int max_storage_count: The maximum number of Exadata storage servers available for the Exadata infrastructure.
@@ -48029,7 +50971,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -48559,7 +51501,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param _builtins.int node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.str os_version: The most recent OS Patch Version applied on the DB system.
         :param _builtins.str point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.int reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -48931,7 +51873,7 @@ class GetDbSystemsDbSystemResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -49625,19 +52567,28 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
 @pulumi.output_type
 class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
                  dbrs_policy_id: _builtins.str,
                  id: _builtins.str,
                  is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str):
         """
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -49656,6 +52607,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> _builtins.bool:
         return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_retention_lock_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -50805,7 +53761,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param _builtins.str cloud_control_plane_server2: The IP address for the second control plane server.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.int compute_count: The number of compute servers for the Exadata infrastructure.
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureContactArgs'] contacts: The list of contacts for the Exadata infrastructure.
         :param _builtins.str corporate_proxy: The corporate network proxy for access to the control plane network.
         :param _builtins.int cpus_enabled: The number of enabled CPU cores.
@@ -50994,7 +53950,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -52347,7 +55303,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeConfigArgs'] node_configs: The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeResourceArgs'] node_resources: The list of node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.str private_zone_id: The private zone ID in which you want DNS records to be created.
         :param _builtins.str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -52610,7 +55566,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -54548,7 +57504,7 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs'] connection_credentials: Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         :param _builtins.str connection_status: The status of connectivity to the external database.
-        :param Sequence['GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        :param Sequence['GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs'] connection_strings: The Oracle AI Database connection string.
         :param _builtins.str connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param _builtins.str connector_type: The type of connector used by the external database resource.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -54607,7 +57563,7 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Sequence['outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringResult']:
         """
-        The Oracle Database connection string.
+        The Oracle AI Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
@@ -56118,6 +59074,35 @@ class GetKeyStoreAssociatedDatabaseResult(dict):
 
 
 @pulumi.output_type
+class GetKeyStoreAssociatedLongTermBackupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetKeyStoreTypeDetailResult(dict):
     def __init__(__self__, *,
                  admin_username: _builtins.str,
@@ -56210,6 +59195,8 @@ class GetKeyStoresFilterResult(dict):
 class GetKeyStoresKeyStoreResult(dict):
     def __init__(__self__, *,
                  associated_databases: Sequence['outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult'],
+                 associated_long_term_backup_count: _builtins.int,
+                 associated_long_term_backups: Sequence['outputs.GetKeyStoresKeyStoreAssociatedLongTermBackupResult'],
                  compartment_id: _builtins.str,
                  confirm_details_trigger: _builtins.int,
                  defined_tags: Mapping[str, _builtins.str],
@@ -56223,6 +59210,8 @@ class GetKeyStoresKeyStoreResult(dict):
                  type_details: Sequence['outputs.GetKeyStoresKeyStoreTypeDetailResult']):
         """
         :param Sequence['GetKeyStoresKeyStoreAssociatedDatabaseArgs'] associated_databases: List of databases associated with the key store.
+        :param _builtins.int associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        :param Sequence['GetKeyStoresKeyStoreAssociatedLongTermBackupArgs'] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
@@ -56235,6 +59224,8 @@ class GetKeyStoresKeyStoreResult(dict):
         :param Sequence['GetKeyStoresKeyStoreTypeDetailArgs'] type_details: Key store type details.
         """
         pulumi.set(__self__, "associated_databases", associated_databases)
+        pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
+        pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "confirm_details_trigger", confirm_details_trigger)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -56254,6 +59245,22 @@ class GetKeyStoresKeyStoreResult(dict):
         List of databases associated with the key store.
         """
         return pulumi.get(self, "associated_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackupCount")
+    def associated_long_term_backup_count(self) -> _builtins.int:
+        """
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        """
+        return pulumi.get(self, "associated_long_term_backup_count")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedLongTermBackups")
+    def associated_long_term_backups(self) -> Sequence['outputs.GetKeyStoresKeyStoreAssociatedLongTermBackupResult']:
+        """
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        """
+        return pulumi.get(self, "associated_long_term_backups")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -56371,6 +59378,35 @@ class GetKeyStoresKeyStoreAssociatedDatabaseResult(dict):
         The unique name of the database that is associated with the key store.
         """
         return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetKeyStoresKeyStoreAssociatedLongTermBackupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
 
     @_builtins.property
     @pulumi.getter
@@ -56564,7 +59600,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param _builtins.str current_patching_component: The name of the current infrastruture component that is getting patched.
         :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        :param _builtins.str database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param _builtins.str description: Description of the maintenance run.
         :param _builtins.str display_name: The user-friendly name for the maintenance run.
         :param _builtins.str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -56577,7 +59613,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param _builtins.str maintenance_subtype: The sub-type of the maintenance run.
         :param _builtins.str maintenance_type: The maintenance type.
         :param _builtins.int patch_failure_count: Contain the patch failure count.
-        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param _builtins.str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         :param _builtins.str patching_end_time: The time when the patching operation ended.
         :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param _builtins.str patching_start_time: The time when the patching operation started.
@@ -56667,7 +59703,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> _builtins.str:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -56771,7 +59807,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
     @pulumi.getter(name="patchId")
     def patch_id(self) -> _builtins.str:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -57720,6 +60756,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
         :param _builtins.bool is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Detailed message for the lifecycle state.
         :param _builtins.str open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param _builtins.str pdb_name: A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
@@ -57826,6 +60863,9 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        """
         return pulumi.get(self, "kms_key_version_id")
 
     @_builtins.property
@@ -61455,7 +64495,7 @@ class GetVmClustersVmClusterResult(dict):
         :param _builtins.str availability_domain: The name of the availability domain that the VM cluster is located in.
         :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailArgs'] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpus_enabled: The number of enabled CPU cores.
         :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param _builtins.float data_storage_size_in_gb: Size of the DATA disk group in GBs.
@@ -61553,7 +64593,7 @@ class GetVmClustersVmClusterResult(dict):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 

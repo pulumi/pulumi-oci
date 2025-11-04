@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
- * 
- * Imports the specified custom content from the input in zip format.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Report resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Updates the specified report. Only tags can be updated.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

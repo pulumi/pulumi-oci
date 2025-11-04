@@ -615,12 +615,6 @@ class SensitiveDataModel(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive data model. If schemas and sensitive types are provided, it automatically runs data discovery
-        and adds the discovered columns to the sensitive data model. Otherwise, it creates an empty sensitive data model
-        that can be updated later.
-
         ## Example Usage
 
         ```python
@@ -689,12 +683,6 @@ class SensitiveDataModel(pulumi.CustomResource):
                  args: SensitiveDataModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive data model. If schemas and sensitive types are provided, it automatically runs data discovery
-        and adds the discovered columns to the sensitive data model. Otherwise, it creates an empty sensitive data model
-        that can be updated later.
-
         ## Example Usage
 
         ```python

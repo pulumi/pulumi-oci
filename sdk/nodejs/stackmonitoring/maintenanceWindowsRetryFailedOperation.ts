@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Maintenance Windows Retry Failed Operation resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Retry the last failed operation. The operation failed will be the most recent one. It won't apply for previous failed operations.
- *
  * ## Example Usage
  *
  * ```typescript

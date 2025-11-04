@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
-//
-// Creates a new function.
-//
 // ## Example Usage
 //
 // ```go
@@ -38,6 +34,14 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
+//				DetachedModeTimeoutInSeconds: pulumi.Any(functionDetachedModeTimeoutInSeconds),
+//				FailureDestination: &functions.FunctionFailureDestinationArgs{
+//					Kind:      pulumi.Any(functionFailureDestinationKind),
+//					ChannelId: pulumi.Any(testChannel.Id),
+//					QueueId:   pulumi.Any(testQueue.Id),
+//					StreamId:  pulumi.Any(testStream.Id),
+//					TopicId:   pulumi.Any(testNotificationTopic.Id),
+//				},
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -50,6 +54,13 @@ import (
 //				SourceDetails: &functions.FunctionSourceDetailsArgs{
 //					PbfListingId: pulumi.Any(testPbfListing.Id),
 //					SourceType:   pulumi.Any(functionSourceDetailsSourceType),
+//				},
+//				SuccessDestination: &functions.FunctionSuccessDestinationArgs{
+//					Kind:      pulumi.Any(functionSuccessDestinationKind),
+//					ChannelId: pulumi.Any(testChannel.Id),
+//					QueueId:   pulumi.Any(testQueue.Id),
+//					StreamId:  pulumi.Any(testStream.Id),
+//					TopicId:   pulumi.Any(testNotificationTopic.Id),
 //				},
 //				TimeoutInSeconds: pulumi.Any(functionTimeoutInSeconds),
 //				TraceConfig: &functions.FunctionTraceConfigArgs{
@@ -85,8 +96,12 @@ type Function struct {
 	Config pulumi.StringMapOutput `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) Timeout for detached function invocations. Value in seconds.
+	DetachedModeTimeoutInSeconds pulumi.IntOutput `pulumi:"detachedModeTimeoutInSeconds"`
 	// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestination FunctionFailureDestinationOutput `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -105,6 +120,8 @@ type Function struct {
 	SourceDetails FunctionSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestination FunctionSuccessDestinationOutput `pulumi:"successDestination"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -164,8 +181,12 @@ type functionState struct {
 	Config map[string]string `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Timeout for detached function invocations. Value in seconds.
+	DetachedModeTimeoutInSeconds *int `pulumi:"detachedModeTimeoutInSeconds"`
 	// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestination *FunctionFailureDestination `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -184,6 +205,8 @@ type functionState struct {
 	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State *string `pulumi:"state"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestination *FunctionSuccessDestination `pulumi:"successDestination"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -205,8 +228,12 @@ type FunctionState struct {
 	Config pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) Timeout for detached function invocations. Value in seconds.
+	DetachedModeTimeoutInSeconds pulumi.IntPtrInput
 	// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestination FunctionFailureDestinationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -225,6 +252,8 @@ type FunctionState struct {
 	SourceDetails FunctionSourceDetailsPtrInput
 	// The current state of the function.
 	State pulumi.StringPtrInput
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestination FunctionSuccessDestinationPtrInput
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated pulumi.StringPtrInput
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -248,8 +277,12 @@ type functionArgs struct {
 	Config map[string]string `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Timeout for detached function invocations. Value in seconds.
+	DetachedModeTimeoutInSeconds *int `pulumi:"detachedModeTimeoutInSeconds"`
 	// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestination *FunctionFailureDestination `pulumi:"failureDestination"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -262,6 +295,8 @@ type functionArgs struct {
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestination *FunctionSuccessDestination `pulumi:"successDestination"`
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Define the tracing configuration for a function.
@@ -278,8 +313,12 @@ type FunctionArgs struct {
 	Config pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) Timeout for detached function invocations. Value in seconds.
+	DetachedModeTimeoutInSeconds pulumi.IntPtrInput
 	// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestination FunctionFailureDestinationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -292,6 +331,8 @@ type FunctionArgs struct {
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsPtrInput
+	// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestination FunctionSuccessDestinationPtrInput
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Define the tracing configuration for a function.
@@ -407,9 +448,19 @@ func (o FunctionOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) Timeout for detached function invocations. Value in seconds.
+func (o FunctionOutput) DetachedModeTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *Function) pulumi.IntOutput { return v.DetachedModeTimeoutInSeconds }).(pulumi.IntOutput)
+}
+
 // The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 func (o FunctionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+func (o FunctionOutput) FailureDestination() FunctionFailureDestinationOutput {
+	return o.ApplyT(func(v *Function) FunctionFailureDestinationOutput { return v.FailureDestination }).(FunctionFailureDestinationOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -455,6 +506,11 @@ func (o FunctionOutput) SourceDetails() FunctionSourceDetailsOutput {
 // The current state of the function.
 func (o FunctionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+func (o FunctionOutput) SuccessDestination() FunctionSuccessDestinationOutput {
+	return o.ApplyT(func(v *Function) FunctionSuccessDestinationOutput { return v.SuccessDestination }).(FunctionSuccessDestinationOutput)
 }
 
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`

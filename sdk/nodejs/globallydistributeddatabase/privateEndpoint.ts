@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
- *
- * Creates a PrivateEndpoint.
- *
  * ## Example Usage
  *
  * ```typescript

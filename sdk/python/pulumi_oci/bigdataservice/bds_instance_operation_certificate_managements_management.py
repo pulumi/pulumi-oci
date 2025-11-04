@@ -317,10 +317,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Configuring TLS/SSL for various ODH services running on the BDS cluster.
-
         ## Example Usage
 
         ```python
@@ -364,10 +360,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
                  args: BdsInstanceOperationCertificateManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Configuring TLS/SSL for various ODH services running on the BDS cluster.
-
         ## Example Usage
 
         ```python

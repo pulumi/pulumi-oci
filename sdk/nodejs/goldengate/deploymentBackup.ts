@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
- *
- * Creates a new DeploymentBackup.
- *
  * ## Example Usage
  *
  * ```typescript

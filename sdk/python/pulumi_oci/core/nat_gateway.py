@@ -374,11 +374,6 @@ class NatGateway(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Nat Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
-        NAT gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
-
         ## Example Usage
 
         ```python
@@ -432,11 +427,6 @@ class NatGateway(pulumi.CustomResource):
                  args: NatGatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Nat Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
-        NAT gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
-
         ## Example Usage
 
         ```python

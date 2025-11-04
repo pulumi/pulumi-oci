@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
-//
-// Creates DB GCP Key Rings based on the provided information and retrieves the associated keys.
-//
 // ## Example Usage
 //
 // ```go

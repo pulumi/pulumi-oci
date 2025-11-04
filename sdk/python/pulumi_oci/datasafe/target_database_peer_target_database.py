@@ -334,10 +334,6 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                  tls_config: Optional[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates the peer target database under the primary target database in Data Safe.
-
         ## Example Usage
 
         ```python
@@ -394,10 +390,6 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                  args: TargetDatabasePeerTargetDatabaseInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates the peer target database under the primary target database in Data Safe.
-
         ## Example Usage
 
         ```python

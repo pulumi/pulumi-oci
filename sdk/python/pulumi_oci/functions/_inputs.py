@@ -21,10 +21,14 @@ __all__ = [
     'ApplicationImagePolicyConfigKeyDetailArgsDict',
     'ApplicationTraceConfigArgs',
     'ApplicationTraceConfigArgsDict',
+    'FunctionFailureDestinationArgs',
+    'FunctionFailureDestinationArgsDict',
     'FunctionProvisionedConcurrencyConfigArgs',
     'FunctionProvisionedConcurrencyConfigArgsDict',
     'FunctionSourceDetailsArgs',
     'FunctionSourceDetailsArgsDict',
+    'FunctionSuccessDestinationArgs',
+    'FunctionSuccessDestinationArgsDict',
     'FunctionTraceConfigArgs',
     'FunctionTraceConfigArgsDict',
     'GetApplicationsFilterArgs',
@@ -204,6 +208,117 @@ class ApplicationTraceConfigArgs:
 
 
 if not MYPY:
+    class FunctionFailureDestinationArgsDict(TypedDict):
+        kind: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The type of destination for the response to a failed detached function invocation.
+        """
+        channel_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The ID of the channel in the queue.
+        """
+        queue_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        """
+        stream_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+        topic_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+elif False:
+    FunctionFailureDestinationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FunctionFailureDestinationArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[_builtins.str],
+                 channel_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 queue_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: (Updatable) The type of destination for the response to a failed detached function invocation.
+        :param pulumi.Input[_builtins.str] channel_id: (Updatable) The ID of the channel in the queue.
+        :param pulumi.Input[_builtins.str] queue_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        :param pulumi.Input[_builtins.str] topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if channel_id is not None:
+            pulumi.set(__self__, "channel_id", channel_id)
+        if queue_id is not None:
+            pulumi.set(__self__, "queue_id", queue_id)
+        if stream_id is not None:
+            pulumi.set(__self__, "stream_id", stream_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of destination for the response to a failed detached function invocation.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter(name="channelId")
+    def channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the channel in the queue.
+        """
+        return pulumi.get(self, "channel_id")
+
+    @channel_id.setter
+    def channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="queueId")
+    def queue_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        """
+        return pulumi.get(self, "queue_id")
+
+    @queue_id.setter
+    def queue_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "queue_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @stream_id.setter
+    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "stream_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "topic_id", value)
+
+
+if not MYPY:
     class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
         strategy: pulumi.Input[_builtins.str]
         """
@@ -262,7 +377,7 @@ if not MYPY:
         """
         source_type: pulumi.Input[_builtins.str]
         """
-        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        Type of the Function Source. Possible values: PBF.
         """
 elif False:
     FunctionSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -274,7 +389,7 @@ class FunctionSourceDetailsArgs:
                  source_type: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        :param pulumi.Input[_builtins.str] source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        :param pulumi.Input[_builtins.str] source_type: Type of the Function Source. Possible values: PBF.
         """
         pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
         pulumi.set(__self__, "source_type", source_type)
@@ -295,13 +410,124 @@ class FunctionSourceDetailsArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        Type of the Function Source. Possible values: PBF.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
     def source_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "source_type", value)
+
+
+if not MYPY:
+    class FunctionSuccessDestinationArgsDict(TypedDict):
+        kind: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The type of destination for the response to a successful detached function invocation.
+        """
+        channel_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The ID of the channel in the queue.
+        """
+        queue_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        """
+        stream_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+        topic_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+elif False:
+    FunctionSuccessDestinationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FunctionSuccessDestinationArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[_builtins.str],
+                 channel_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 queue_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: (Updatable) The type of destination for the response to a successful detached function invocation.
+        :param pulumi.Input[_builtins.str] channel_id: (Updatable) The ID of the channel in the queue.
+        :param pulumi.Input[_builtins.str] queue_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        :param pulumi.Input[_builtins.str] topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if channel_id is not None:
+            pulumi.set(__self__, "channel_id", channel_id)
+        if queue_id is not None:
+            pulumi.set(__self__, "queue_id", queue_id)
+        if stream_id is not None:
+            pulumi.set(__self__, "stream_id", stream_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of destination for the response to a successful detached function invocation.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter(name="channelId")
+    def channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the channel in the queue.
+        """
+        return pulumi.get(self, "channel_id")
+
+    @channel_id.setter
+    def channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="queueId")
+    def queue_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+        """
+        return pulumi.get(self, "queue_id")
+
+    @queue_id.setter
+    def queue_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "queue_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @stream_id.setter
+    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "stream_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "topic_id", value)
 
 
 if not MYPY:

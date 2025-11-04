@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetFsuCollectionsResult {
     /**
-     * @return Compartment Identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     private String compartmentId;
     /**
-     * @return Exadata Fleet Update Collection resource display name.
+     * @return The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     private @Nullable String displayName;
@@ -49,14 +49,14 @@ public final class GetFsuCollectionsResult {
 
     private GetFsuCollectionsResult() {}
     /**
-     * @return Compartment Identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Exadata Fleet Update Collection resource display name.
+     * @return The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public Optional<String> displayName() {

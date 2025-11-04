@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
- * 
- * Creates a sender for a tenancy in a given compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

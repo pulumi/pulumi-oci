@@ -13,6 +13,200 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ClusterCertificateConfig struct {
+	// (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode *string `pulumi:"clusterCertificateMode"`
+	// (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode *string `pulumi:"dashboardCertificateMode"`
+	// (Updatable) certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId *string `pulumi:"openSearchApiCertificateId"`
+	// (Updatable) certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId *string `pulumi:"openSearchDashboardCertificateId"`
+}
+
+// ClusterCertificateConfigInput is an input type that accepts ClusterCertificateConfigArgs and ClusterCertificateConfigOutput values.
+// You can construct a concrete instance of `ClusterCertificateConfigInput` via:
+//
+//	ClusterCertificateConfigArgs{...}
+type ClusterCertificateConfigInput interface {
+	pulumi.Input
+
+	ToClusterCertificateConfigOutput() ClusterCertificateConfigOutput
+	ToClusterCertificateConfigOutputWithContext(context.Context) ClusterCertificateConfigOutput
+}
+
+type ClusterCertificateConfigArgs struct {
+	// (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode pulumi.StringPtrInput `pulumi:"clusterCertificateMode"`
+	// (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode pulumi.StringPtrInput `pulumi:"dashboardCertificateMode"`
+	// (Updatable) certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId pulumi.StringPtrInput `pulumi:"openSearchApiCertificateId"`
+	// (Updatable) certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId pulumi.StringPtrInput `pulumi:"openSearchDashboardCertificateId"`
+}
+
+func (ClusterCertificateConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterCertificateConfig)(nil)).Elem()
+}
+
+func (i ClusterCertificateConfigArgs) ToClusterCertificateConfigOutput() ClusterCertificateConfigOutput {
+	return i.ToClusterCertificateConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterCertificateConfigArgs) ToClusterCertificateConfigOutputWithContext(ctx context.Context) ClusterCertificateConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterCertificateConfigOutput)
+}
+
+func (i ClusterCertificateConfigArgs) ToClusterCertificateConfigPtrOutput() ClusterCertificateConfigPtrOutput {
+	return i.ToClusterCertificateConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterCertificateConfigArgs) ToClusterCertificateConfigPtrOutputWithContext(ctx context.Context) ClusterCertificateConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterCertificateConfigOutput).ToClusterCertificateConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterCertificateConfigPtrInput is an input type that accepts ClusterCertificateConfigArgs, ClusterCertificateConfigPtr and ClusterCertificateConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterCertificateConfigPtrInput` via:
+//
+//	        ClusterCertificateConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterCertificateConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterCertificateConfigPtrOutput() ClusterCertificateConfigPtrOutput
+	ToClusterCertificateConfigPtrOutputWithContext(context.Context) ClusterCertificateConfigPtrOutput
+}
+
+type clusterCertificateConfigPtrType ClusterCertificateConfigArgs
+
+func ClusterCertificateConfigPtr(v *ClusterCertificateConfigArgs) ClusterCertificateConfigPtrInput {
+	return (*clusterCertificateConfigPtrType)(v)
+}
+
+func (*clusterCertificateConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterCertificateConfig)(nil)).Elem()
+}
+
+func (i *clusterCertificateConfigPtrType) ToClusterCertificateConfigPtrOutput() ClusterCertificateConfigPtrOutput {
+	return i.ToClusterCertificateConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterCertificateConfigPtrType) ToClusterCertificateConfigPtrOutputWithContext(ctx context.Context) ClusterCertificateConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterCertificateConfigPtrOutput)
+}
+
+type ClusterCertificateConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterCertificateConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterCertificateConfig)(nil)).Elem()
+}
+
+func (o ClusterCertificateConfigOutput) ToClusterCertificateConfigOutput() ClusterCertificateConfigOutput {
+	return o
+}
+
+func (o ClusterCertificateConfigOutput) ToClusterCertificateConfigOutputWithContext(ctx context.Context) ClusterCertificateConfigOutput {
+	return o
+}
+
+func (o ClusterCertificateConfigOutput) ToClusterCertificateConfigPtrOutput() ClusterCertificateConfigPtrOutput {
+	return o.ToClusterCertificateConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterCertificateConfigOutput) ToClusterCertificateConfigPtrOutputWithContext(ctx context.Context) ClusterCertificateConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterCertificateConfig) *ClusterCertificateConfig {
+		return &v
+	}).(ClusterCertificateConfigPtrOutput)
+}
+
+// (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o ClusterCertificateConfigOutput) ClusterCertificateMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterCertificateConfig) *string { return v.ClusterCertificateMode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o ClusterCertificateConfigOutput) DashboardCertificateMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterCertificateConfig) *string { return v.DashboardCertificateMode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) certificate to be used for OpenSearch cluster api communication
+func (o ClusterCertificateConfigOutput) OpenSearchApiCertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterCertificateConfig) *string { return v.OpenSearchApiCertificateId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) certificate to be used for OpenSearch dashboard api communication
+func (o ClusterCertificateConfigOutput) OpenSearchDashboardCertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterCertificateConfig) *string { return v.OpenSearchDashboardCertificateId }).(pulumi.StringPtrOutput)
+}
+
+type ClusterCertificateConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterCertificateConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterCertificateConfig)(nil)).Elem()
+}
+
+func (o ClusterCertificateConfigPtrOutput) ToClusterCertificateConfigPtrOutput() ClusterCertificateConfigPtrOutput {
+	return o
+}
+
+func (o ClusterCertificateConfigPtrOutput) ToClusterCertificateConfigPtrOutputWithContext(ctx context.Context) ClusterCertificateConfigPtrOutput {
+	return o
+}
+
+func (o ClusterCertificateConfigPtrOutput) Elem() ClusterCertificateConfigOutput {
+	return o.ApplyT(func(v *ClusterCertificateConfig) ClusterCertificateConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterCertificateConfig
+		return ret
+	}).(ClusterCertificateConfigOutput)
+}
+
+// (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o ClusterCertificateConfigPtrOutput) ClusterCertificateMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClusterCertificateMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o ClusterCertificateConfigPtrOutput) DashboardCertificateMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DashboardCertificateMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) certificate to be used for OpenSearch cluster api communication
+func (o ClusterCertificateConfigPtrOutput) OpenSearchApiCertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OpenSearchApiCertificateId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) certificate to be used for OpenSearch dashboard api communication
+func (o ClusterCertificateConfigPtrOutput) OpenSearchDashboardCertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OpenSearchDashboardCertificateId
+	}).(pulumi.StringPtrOutput)
+}
+
 type ClusterMaintenanceDetails struct {
 	// End time of the maintenance activity
 	EndTime *string `pulumi:"endTime"`
@@ -959,6 +1153,130 @@ func (o OpensearchClusterPipelineReverseConnectionEndpointArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpensearchClusterPipelineReverseConnectionEndpoint {
 		return vs[0].([]OpensearchClusterPipelineReverseConnectionEndpoint)[vs[1].(int)]
 	}).(OpensearchClusterPipelineReverseConnectionEndpointOutput)
+}
+
+type GetOpensearchClusterCertificateConfig struct {
+	// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode string `pulumi:"clusterCertificateMode"`
+	// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode string `pulumi:"dashboardCertificateMode"`
+	// certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId string `pulumi:"openSearchApiCertificateId"`
+	// certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId string `pulumi:"openSearchDashboardCertificateId"`
+}
+
+// GetOpensearchClusterCertificateConfigInput is an input type that accepts GetOpensearchClusterCertificateConfigArgs and GetOpensearchClusterCertificateConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterCertificateConfigInput` via:
+//
+//	GetOpensearchClusterCertificateConfigArgs{...}
+type GetOpensearchClusterCertificateConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterCertificateConfigOutput() GetOpensearchClusterCertificateConfigOutput
+	ToGetOpensearchClusterCertificateConfigOutputWithContext(context.Context) GetOpensearchClusterCertificateConfigOutput
+}
+
+type GetOpensearchClusterCertificateConfigArgs struct {
+	// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode pulumi.StringInput `pulumi:"clusterCertificateMode"`
+	// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode pulumi.StringInput `pulumi:"dashboardCertificateMode"`
+	// certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId pulumi.StringInput `pulumi:"openSearchApiCertificateId"`
+	// certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId pulumi.StringInput `pulumi:"openSearchDashboardCertificateId"`
+}
+
+func (GetOpensearchClusterCertificateConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterCertificateConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterCertificateConfigArgs) ToGetOpensearchClusterCertificateConfigOutput() GetOpensearchClusterCertificateConfigOutput {
+	return i.ToGetOpensearchClusterCertificateConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterCertificateConfigArgs) ToGetOpensearchClusterCertificateConfigOutputWithContext(ctx context.Context) GetOpensearchClusterCertificateConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterCertificateConfigOutput)
+}
+
+// GetOpensearchClusterCertificateConfigArrayInput is an input type that accepts GetOpensearchClusterCertificateConfigArray and GetOpensearchClusterCertificateConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterCertificateConfigArrayInput` via:
+//
+//	GetOpensearchClusterCertificateConfigArray{ GetOpensearchClusterCertificateConfigArgs{...} }
+type GetOpensearchClusterCertificateConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterCertificateConfigArrayOutput() GetOpensearchClusterCertificateConfigArrayOutput
+	ToGetOpensearchClusterCertificateConfigArrayOutputWithContext(context.Context) GetOpensearchClusterCertificateConfigArrayOutput
+}
+
+type GetOpensearchClusterCertificateConfigArray []GetOpensearchClusterCertificateConfigInput
+
+func (GetOpensearchClusterCertificateConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterCertificateConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterCertificateConfigArray) ToGetOpensearchClusterCertificateConfigArrayOutput() GetOpensearchClusterCertificateConfigArrayOutput {
+	return i.ToGetOpensearchClusterCertificateConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterCertificateConfigArray) ToGetOpensearchClusterCertificateConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterCertificateConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterCertificateConfigArrayOutput)
+}
+
+type GetOpensearchClusterCertificateConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterCertificateConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterCertificateConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterCertificateConfigOutput) ToGetOpensearchClusterCertificateConfigOutput() GetOpensearchClusterCertificateConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterCertificateConfigOutput) ToGetOpensearchClusterCertificateConfigOutputWithContext(ctx context.Context) GetOpensearchClusterCertificateConfigOutput {
+	return o
+}
+
+// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o GetOpensearchClusterCertificateConfigOutput) ClusterCertificateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterCertificateConfig) string { return v.ClusterCertificateMode }).(pulumi.StringOutput)
+}
+
+// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o GetOpensearchClusterCertificateConfigOutput) DashboardCertificateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterCertificateConfig) string { return v.DashboardCertificateMode }).(pulumi.StringOutput)
+}
+
+// certificate to be used for OpenSearch cluster api communication
+func (o GetOpensearchClusterCertificateConfigOutput) OpenSearchApiCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterCertificateConfig) string { return v.OpenSearchApiCertificateId }).(pulumi.StringOutput)
+}
+
+// certificate to be used for OpenSearch dashboard api communication
+func (o GetOpensearchClusterCertificateConfigOutput) OpenSearchDashboardCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterCertificateConfig) string { return v.OpenSearchDashboardCertificateId }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterCertificateConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterCertificateConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterCertificateConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterCertificateConfigArrayOutput) ToGetOpensearchClusterCertificateConfigArrayOutput() GetOpensearchClusterCertificateConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterCertificateConfigArrayOutput) ToGetOpensearchClusterCertificateConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterCertificateConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterCertificateConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterCertificateConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterCertificateConfig {
+		return vs[0].([]GetOpensearchClusterCertificateConfig)[vs[1].(int)]
+	}).(GetOpensearchClusterCertificateConfigOutput)
 }
 
 type GetOpensearchClusterMaintenanceDetail struct {
@@ -2530,6 +2848,8 @@ func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) Index(i pul
 type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
+	// Custom certificate config for customer provided certs.
+	CertificateConfigs []GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig `pulumi:"certificateConfigs"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId                   string `pulumi:"compartmentId"`
 	ConfigureOutboundClusterTrigger int    `pulumi:"configureOutboundClusterTrigger"`
@@ -2575,6 +2895,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	MasterNodeHostShape string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId string `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn string `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
@@ -2609,6 +2931,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	SearchNodeHostType string `pulumi:"searchNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb int `pulumi:"searchNodeStorageGb"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -2655,6 +2979,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemInput interface {
 type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains pulumi.StringArrayInput `pulumi:"availabilityDomains"`
+	// Custom certificate config for customer provided certs.
+	CertificateConfigs GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput `pulumi:"certificateConfigs"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId                   pulumi.StringInput `pulumi:"compartmentId"`
 	ConfigureOutboundClusterTrigger pulumi.IntInput    `pulumi:"configureOutboundClusterTrigger"`
@@ -2700,6 +3026,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	MasterNodeHostShape pulumi.StringInput `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringInput `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId pulumi.StringInput `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringInput `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
@@ -2734,6 +3062,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	SearchNodeHostType pulumi.StringInput `pulumi:"searchNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb pulumi.IntInput `pulumi:"searchNodeStorageGb"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -2820,6 +3150,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToGetOpensea
 // The availability domains to distribute the cluser nodes across.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) AvailabilityDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []string { return v.AvailabilityDomains }).(pulumi.StringArrayOutput)
+}
+
+// Custom certificate config for customer provided certs.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) CertificateConfigs() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig {
+		return v.CertificateConfigs
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -2944,6 +3281,11 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHo
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
 }
 
+// The OCID of the NSG where the private endpoint vnic will be attached.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) NsgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.NsgId }).(pulumi.StringOutput)
+}
+
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpendashboardFqdn }).(pulumi.StringOutput)
@@ -3039,6 +3381,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeHo
 // The amount of storage in GB, to configure per node for the cluster's search nodes.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.SearchNodeStorageGb }).(pulumi.IntOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // The name of the master user that are used to manage security config
@@ -3141,6 +3490,138 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItem {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItem)[vs[1].(int)]
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig struct {
+	// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode string `pulumi:"clusterCertificateMode"`
+	// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode string `pulumi:"dashboardCertificateMode"`
+	// certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId string `pulumi:"openSearchApiCertificateId"`
+	// certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId string `pulumi:"openSearchDashboardCertificateId"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs and GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs struct {
+	// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	ClusterCertificateMode pulumi.StringInput `pulumi:"clusterCertificateMode"`
+	// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+	DashboardCertificateMode pulumi.StringInput `pulumi:"dashboardCertificateMode"`
+	// certificate to be used for OpenSearch cluster api communication
+	OpenSearchApiCertificateId pulumi.StringInput `pulumi:"openSearchApiCertificateId"`
+	// certificate to be used for OpenSearch dashboard api communication
+	OpenSearchDashboardCertificateId pulumi.StringInput `pulumi:"openSearchDashboardCertificateId"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray and GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray{ GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray []GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput {
+	return o
+}
+
+// Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) ClusterCertificateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig) string {
+		return v.ClusterCertificateMode
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) DashboardCertificateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig) string {
+		return v.DashboardCertificateMode
+	}).(pulumi.StringOutput)
+}
+
+// certificate to be used for OpenSearch cluster api communication
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) OpenSearchApiCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig) string {
+		return v.OpenSearchApiCertificateId
+	}).(pulumi.StringOutput)
+}
+
+// certificate to be used for OpenSearch dashboard api communication
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput) OpenSearchDashboardCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig) string {
+		return v.OpenSearchDashboardCertificateId
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput)
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail struct {
@@ -4181,6 +4662,8 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterCertificateConfigInput)(nil)).Elem(), ClusterCertificateConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterCertificateConfigPtrInput)(nil)).Elem(), ClusterCertificateConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsPtrInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigInput)(nil)).Elem(), ClusterOutboundClusterConfigArgs{})
@@ -4193,6 +4676,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecuritySamlConfigPtrInput)(nil)).Elem(), ClusterSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointArrayInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterCertificateConfigInput)(nil)).Elem(), GetOpensearchClusterCertificateConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterCertificateConfigArrayInput)(nil)).Elem(), GetOpensearchClusterCertificateConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArgs{})
@@ -4219,6 +4704,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs{})
@@ -4237,6 +4724,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionArrayInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionItemInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionItemArray{})
+	pulumi.RegisterOutputType(ClusterCertificateConfigOutput{})
+	pulumi.RegisterOutputType(ClusterCertificateConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterMaintenanceDetailsOutput{})
 	pulumi.RegisterOutputType(ClusterMaintenanceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutput{})
@@ -4249,6 +4738,8 @@ func init() {
 	pulumi.RegisterOutputType(ClusterSecuritySamlConfigPtrOutput{})
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterCertificateConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterCertificateConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutput{})
@@ -4275,6 +4766,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput{})

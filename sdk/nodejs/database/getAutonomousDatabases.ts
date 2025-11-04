@@ -7,9 +7,22 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * ## 
+ *
+ * ***
+ * ## subcategory: "Database"
+ *
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
  * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of Autonomous Databases based on the query parameters specified.
+ * Gets a list of Autonomous AI Databases based on the query parameters specified.
  *
  * ## Example Usage
  *
@@ -67,11 +80,11 @@ export interface GetAutonomousDatabasesArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      */
     dbVersion?: string;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     dbWorkload?: string;
     /**
@@ -99,12 +112,9 @@ export interface GetAutonomousDatabasesArgs {
      * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
      */
     isResourcePoolLeader?: boolean;
-    /**
-     * A filter to return only resources that not match the given lifecycle state.
-     */
     lifecycleStateNotEqualTo?: string;
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      */
     resourcePoolLeaderId?: string;
     /**
@@ -118,7 +128,7 @@ export interface GetAutonomousDatabasesArgs {
  */
 export interface GetAutonomousDatabasesResult {
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId?: string;
     /**
@@ -130,19 +140,20 @@ export interface GetAutonomousDatabasesResult {
      */
     readonly compartmentId: string;
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      */
     readonly dbVersion?: string;
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      */
     readonly dbWorkload?: string;
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Database.GetAutonomousDatabasesFilter[];
@@ -155,32 +166,45 @@ export interface GetAutonomousDatabasesResult {
      */
     readonly infrastructureType?: string;
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     readonly isDataGuardEnabled?: boolean;
     /**
-     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
     readonly isFreeTier?: boolean;
     /**
-     * Indicates if the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous AI Database is a refreshable clone.
      */
     readonly isRefreshableClone?: boolean;
     readonly isResourcePoolLeader?: boolean;
     readonly lifecycleStateNotEqualTo?: string;
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly resourcePoolLeaderId?: string;
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      */
     readonly state?: string;
 }
 /**
+ * ## 
+ *
+ * ***
+ * ## subcategory: "Database"
+ *
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
  * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of Autonomous Databases based on the query parameters specified.
+ * Gets a list of Autonomous AI Databases based on the query parameters specified.
  *
  * ## Example Usage
  *
@@ -238,11 +262,11 @@ export interface GetAutonomousDatabasesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      */
     dbVersion?: pulumi.Input<string>;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     dbWorkload?: pulumi.Input<string>;
     /**
@@ -270,12 +294,9 @@ export interface GetAutonomousDatabasesOutputArgs {
      * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
      */
     isResourcePoolLeader?: pulumi.Input<boolean>;
-    /**
-     * A filter to return only resources that not match the given lifecycle state.
-     */
     lifecycleStateNotEqualTo?: pulumi.Input<string>;
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      */
     resourcePoolLeaderId?: pulumi.Input<string>;
     /**

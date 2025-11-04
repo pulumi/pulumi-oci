@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunLogConfigura
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepRun;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -83,6 +84,11 @@ public final class GetPipelineRunsPipelineRun {
     private List<GetPipelineRunsPipelineRunLogDetail> logDetails;
     private String opcParentRptUrl;
     /**
+     * @return Parameters override used in the pipeline run.
+     * 
+     */
+    private Map<String,String> parametersOverride;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      * 
      */
@@ -107,6 +113,11 @@ public final class GetPipelineRunsPipelineRun {
      * 
      */
     private List<GetPipelineRunsPipelineRunStepRun> stepRuns;
+    /**
+     * @return The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    private List<GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList> storageMountConfigurationOverrideDetailsLists;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -225,6 +236,13 @@ public final class GetPipelineRunsPipelineRun {
         return this.opcParentRptUrl;
     }
     /**
+     * @return Parameters override used in the pipeline run.
+     * 
+     */
+    public Map<String,String> parametersOverride() {
+        return this.parametersOverride;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      * 
      */
@@ -258,6 +276,13 @@ public final class GetPipelineRunsPipelineRun {
      */
     public List<GetPipelineRunsPipelineRunStepRun> stepRuns() {
         return this.stepRuns;
+    }
+    /**
+     * @return The storage mount override details to mount to the instance running the pipeline step.
+     * 
+     */
+    public List<GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList> storageMountConfigurationOverrideDetailsLists() {
+        return this.storageMountConfigurationOverrideDetailsLists;
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -318,11 +343,13 @@ public final class GetPipelineRunsPipelineRun {
         private List<GetPipelineRunsPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
         private List<GetPipelineRunsPipelineRunLogDetail> logDetails;
         private String opcParentRptUrl;
+        private Map<String,String> parametersOverride;
         private String pipelineId;
         private String projectId;
         private String state;
         private List<GetPipelineRunsPipelineRunStepOverrideDetail> stepOverrideDetails;
         private List<GetPipelineRunsPipelineRunStepRun> stepRuns;
+        private List<GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList> storageMountConfigurationOverrideDetailsLists;
         private Map<String,String> systemTags;
         private String timeAccepted;
         private String timeFinished;
@@ -345,11 +372,13 @@ public final class GetPipelineRunsPipelineRun {
     	      this.logConfigurationOverrideDetails = defaults.logConfigurationOverrideDetails;
     	      this.logDetails = defaults.logDetails;
     	      this.opcParentRptUrl = defaults.opcParentRptUrl;
+    	      this.parametersOverride = defaults.parametersOverride;
     	      this.pipelineId = defaults.pipelineId;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.stepOverrideDetails = defaults.stepOverrideDetails;
     	      this.stepRuns = defaults.stepRuns;
+    	      this.storageMountConfigurationOverrideDetailsLists = defaults.storageMountConfigurationOverrideDetailsLists;
     	      this.systemTags = defaults.systemTags;
     	      this.timeAccepted = defaults.timeAccepted;
     	      this.timeFinished = defaults.timeFinished;
@@ -485,6 +514,14 @@ public final class GetPipelineRunsPipelineRun {
             return this;
         }
         @CustomType.Setter
+        public Builder parametersOverride(Map<String,String> parametersOverride) {
+            if (parametersOverride == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "parametersOverride");
+            }
+            this.parametersOverride = parametersOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
             if (pipelineId == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "pipelineId");
@@ -529,6 +566,17 @@ public final class GetPipelineRunsPipelineRun {
         }
         public Builder stepRuns(GetPipelineRunsPipelineRunStepRun... stepRuns) {
             return stepRuns(List.of(stepRuns));
+        }
+        @CustomType.Setter
+        public Builder storageMountConfigurationOverrideDetailsLists(List<GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList> storageMountConfigurationOverrideDetailsLists) {
+            if (storageMountConfigurationOverrideDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "storageMountConfigurationOverrideDetailsLists");
+            }
+            this.storageMountConfigurationOverrideDetailsLists = storageMountConfigurationOverrideDetailsLists;
+            return this;
+        }
+        public Builder storageMountConfigurationOverrideDetailsLists(GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList... storageMountConfigurationOverrideDetailsLists) {
+            return storageMountConfigurationOverrideDetailsLists(List.of(storageMountConfigurationOverrideDetailsLists));
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
@@ -586,11 +634,13 @@ public final class GetPipelineRunsPipelineRun {
             _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             _resultValue.logDetails = logDetails;
             _resultValue.opcParentRptUrl = opcParentRptUrl;
+            _resultValue.parametersOverride = parametersOverride;
             _resultValue.pipelineId = pipelineId;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.stepOverrideDetails = stepOverrideDetails;
             _resultValue.stepRuns = stepRuns;
+            _resultValue.storageMountConfigurationOverrideDetailsLists = storageMountConfigurationOverrideDetailsLists;
             _resultValue.systemTags = systemTags;
             _resultValue.timeAccepted = timeAccepted;
             _resultValue.timeFinished = timeFinished;

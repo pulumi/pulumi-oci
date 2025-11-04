@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a job.
- *
  * ## Example Usage
  *
  * ## Import

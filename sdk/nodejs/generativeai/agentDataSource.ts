@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * Creates a data source.
- *
  * ## Example Usage
  *
  * ## Import

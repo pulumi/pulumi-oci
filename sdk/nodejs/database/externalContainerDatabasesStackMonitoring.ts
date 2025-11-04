@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
- *
- * Enable Stack Monitoring for the external container database.
- *
  * ## Example Usage
  *
  * ```typescript

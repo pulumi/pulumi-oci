@@ -185,6 +185,10 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult> ReverseConnectionConfigurations;
         /// <summary>
+        /// Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the Database Tools private endpoint.
         /// </summary>
         public readonly string State;
@@ -243,6 +247,8 @@ namespace Pulumi.Oci.DatabaseTools
 
             ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult> reverseConnectionConfigurations,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -271,6 +277,7 @@ namespace Pulumi.Oci.DatabaseTools
             PrivateEndpointIp = privateEndpointIp;
             PrivateEndpointVnicId = privateEndpointVnicId;
             ReverseConnectionConfigurations = reverseConnectionConfigurations;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

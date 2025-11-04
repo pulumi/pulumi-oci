@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
-//
-// # Creates an Exadata Database Storage Vault
-//
 // ## Example Usage
 //
 // ```go

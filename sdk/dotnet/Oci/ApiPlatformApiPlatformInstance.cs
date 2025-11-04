@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
-    /// 
-    /// Creates an API Platform Instance
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

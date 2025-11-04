@@ -172,10 +172,6 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Install Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
-
         ## Example Usage
 
         ```python
@@ -214,10 +210,6 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
                  args: ManagedInstanceGroupInstallPackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Install Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
-
         ## Example Usage
 
         ```python

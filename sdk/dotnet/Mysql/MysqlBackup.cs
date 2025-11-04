@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql
 {
     /// <summary>
-    /// This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-    /// 
-    /// Create a backup of a DB System.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

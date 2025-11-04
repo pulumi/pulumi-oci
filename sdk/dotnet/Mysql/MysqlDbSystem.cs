@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql
 {
     /// <summary>
-    /// This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-    /// 
-    /// Creates and launches a DB System.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -108,6 +104,9 @@ namespace Pulumi.Oci.Mysql
     ///         Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
     ///         {
     ///             WindowStartTime = mysqlDbSystemMaintenanceWindowStartTime,
+    ///             MaintenanceScheduleType = mysqlDbSystemMaintenanceMaintenanceScheduleType,
+    ///             VersionPreference = mysqlDbSystemMaintenanceVersionPreference,
+    ///             VersionTrackPreference = mysqlDbSystemMaintenanceVersionTrackPreference,
     ///         },
     ///         NsgIds = mysqlDbSystemNsgIds,
     ///         Port = mysqlDbSystemPort,
@@ -129,6 +128,7 @@ namespace Pulumi.Oci.Mysql
     ///             CertificateGenerationType = mysqlDbSystemSecureConnectionsCertificateGenerationType,
     ///             CertificateId = testCertificate.Id,
     ///         },
+    ///         SecurityAttributes = mysqlDbSystemSecurityAttributes,
     ///         Source = new Oci.Mysql.Inputs.MysqlDbSystemSourceArgs
     ///         {
     ///             SourceType = mysqlDbSystemSourceSourceType,
@@ -395,6 +395,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("secureConnections")]
         public Output<Outputs.MysqlDbSystemSecureConnections> SecureConnections { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -741,6 +747,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("secureConnections")]
         public Input<Inputs.MysqlDbSystemSecureConnectionsArgs>? SecureConnections { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -1099,6 +1117,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("secureConnections")]
         public Input<Inputs.MysqlDbSystemSecureConnectionsGetArgs>? SecureConnections { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated

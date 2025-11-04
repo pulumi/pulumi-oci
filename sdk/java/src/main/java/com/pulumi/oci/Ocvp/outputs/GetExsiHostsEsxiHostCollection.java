@@ -5,14 +5,17 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.outputs.GetExsiHostsEsxiHostCollectionDatastoreAttachment;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetExsiHostsEsxiHostCollection {
+    private List<String> attachDatastoreClusterIds;
     /**
      * @return Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -67,10 +70,21 @@ public final class GetExsiHostsEsxiHostCollection {
     @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     private String currentSku;
     /**
+     * @return List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    private List<GetExsiHostsEsxiHostCollectionDatastoreAttachment> datastoreAttachments;
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    private List<String> datastoreClusterIds;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,String> definedTags;
+    private List<String> detachDatastoreClusterIds;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
@@ -194,6 +208,9 @@ public final class GetExsiHostsEsxiHostCollection {
     private String vmwareSoftwareVersion;
 
     private GetExsiHostsEsxiHostCollection() {}
+    public List<String> attachDatastoreClusterIds() {
+        return this.attachDatastoreClusterIds;
+    }
     /**
      * @return Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -266,11 +283,28 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.currentSku;
     }
     /**
+     * @return List of DatastoreAttachment objects containing information about attachment details
+     * 
+     */
+    public List<GetExsiHostsEsxiHostCollectionDatastoreAttachment> datastoreAttachments() {
+        return this.datastoreAttachments;
+    }
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public List<String> datastoreClusterIds() {
+        return this.datastoreClusterIds;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    public List<String> detachDatastoreClusterIds() {
+        return this.detachDatastoreClusterIds;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -445,6 +479,7 @@ public final class GetExsiHostsEsxiHostCollection {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> attachDatastoreClusterIds;
         private String billingContractEndDate;
         private String billingDonorHostId;
         private String capacityReservationId;
@@ -454,7 +489,10 @@ public final class GetExsiHostsEsxiHostCollection {
         private String computeInstanceId;
         private String currentCommitment;
         private String currentSku;
+        private List<GetExsiHostsEsxiHostCollectionDatastoreAttachment> datastoreAttachments;
+        private List<String> datastoreClusterIds;
         private Map<String,String> definedTags;
+        private List<String> detachDatastoreClusterIds;
         private String displayName;
         private String esxiSoftwareVersion;
         private String failedEsxiHostId;
@@ -479,6 +517,7 @@ public final class GetExsiHostsEsxiHostCollection {
         public Builder() {}
         public Builder(GetExsiHostsEsxiHostCollection defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.attachDatastoreClusterIds = defaults.attachDatastoreClusterIds;
     	      this.billingContractEndDate = defaults.billingContractEndDate;
     	      this.billingDonorHostId = defaults.billingDonorHostId;
     	      this.capacityReservationId = defaults.capacityReservationId;
@@ -488,7 +527,10 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.computeInstanceId = defaults.computeInstanceId;
     	      this.currentCommitment = defaults.currentCommitment;
     	      this.currentSku = defaults.currentSku;
+    	      this.datastoreAttachments = defaults.datastoreAttachments;
+    	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.definedTags = defaults.definedTags;
+    	      this.detachDatastoreClusterIds = defaults.detachDatastoreClusterIds;
     	      this.displayName = defaults.displayName;
     	      this.esxiSoftwareVersion = defaults.esxiSoftwareVersion;
     	      this.failedEsxiHostId = defaults.failedEsxiHostId;
@@ -512,6 +554,17 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.vmwareSoftwareVersion = defaults.vmwareSoftwareVersion;
         }
 
+        @CustomType.Setter
+        public Builder attachDatastoreClusterIds(List<String> attachDatastoreClusterIds) {
+            if (attachDatastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "attachDatastoreClusterIds");
+            }
+            this.attachDatastoreClusterIds = attachDatastoreClusterIds;
+            return this;
+        }
+        public Builder attachDatastoreClusterIds(String... attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(List.of(attachDatastoreClusterIds));
+        }
         @CustomType.Setter
         public Builder billingContractEndDate(String billingContractEndDate) {
             if (billingContractEndDate == null) {
@@ -585,12 +638,45 @@ public final class GetExsiHostsEsxiHostCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder datastoreAttachments(List<GetExsiHostsEsxiHostCollectionDatastoreAttachment> datastoreAttachments) {
+            if (datastoreAttachments == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "datastoreAttachments");
+            }
+            this.datastoreAttachments = datastoreAttachments;
+            return this;
+        }
+        public Builder datastoreAttachments(GetExsiHostsEsxiHostCollectionDatastoreAttachment... datastoreAttachments) {
+            return datastoreAttachments(List.of(datastoreAttachments));
+        }
+        @CustomType.Setter
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            if (datastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "datastoreClusterIds");
+            }
+            this.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
+        }
+        @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "definedTags");
             }
             this.definedTags = definedTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder detachDatastoreClusterIds(List<String> detachDatastoreClusterIds) {
+            if (detachDatastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "detachDatastoreClusterIds");
+            }
+            this.detachDatastoreClusterIds = detachDatastoreClusterIds;
+            return this;
+        }
+        public Builder detachDatastoreClusterIds(String... detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(List.of(detachDatastoreClusterIds));
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
@@ -762,6 +848,7 @@ public final class GetExsiHostsEsxiHostCollection {
         }
         public GetExsiHostsEsxiHostCollection build() {
             final var _resultValue = new GetExsiHostsEsxiHostCollection();
+            _resultValue.attachDatastoreClusterIds = attachDatastoreClusterIds;
             _resultValue.billingContractEndDate = billingContractEndDate;
             _resultValue.billingDonorHostId = billingDonorHostId;
             _resultValue.capacityReservationId = capacityReservationId;
@@ -771,7 +858,10 @@ public final class GetExsiHostsEsxiHostCollection {
             _resultValue.computeInstanceId = computeInstanceId;
             _resultValue.currentCommitment = currentCommitment;
             _resultValue.currentSku = currentSku;
+            _resultValue.datastoreAttachments = datastoreAttachments;
+            _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.definedTags = definedTags;
+            _resultValue.detachDatastoreClusterIds = detachDatastoreClusterIds;
             _resultValue.displayName = displayName;
             _resultValue.esxiSoftwareVersion = esxiSoftwareVersion;
             _resultValue.failedEsxiHostId = failedEsxiHostId;

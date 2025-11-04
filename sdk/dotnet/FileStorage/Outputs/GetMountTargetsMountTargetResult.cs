@@ -85,6 +85,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string ReservedStorageCapacity;
         /// <summary>
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
         public readonly string State;
@@ -147,6 +151,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string reservedStorageCapacity,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -177,6 +183,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             PrivateIpIds = privateIpIds;
             RequestedThroughput = requestedThroughput;
             ReservedStorageCapacity = reservedStorageCapacity;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

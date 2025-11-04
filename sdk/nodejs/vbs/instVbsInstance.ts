@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
- *
- * Creates a new VbsInstance.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Redis Cluster Create Identity Token resource in Oracle Cloud Infrastructure Redis service.
-//
-// # Generates an identity token to sign in with the specified redis user for the redis cluster
-//
 // ## Example Usage
 //
 // ```go

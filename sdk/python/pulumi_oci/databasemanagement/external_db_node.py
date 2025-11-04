@@ -411,9 +411,7 @@ class ExternalDbNode(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB node specified by `externalDbNodeId`.
+        ## Example Usage
 
         ## Import
 
@@ -441,9 +439,7 @@ class ExternalDbNode(pulumi.CustomResource):
                  args: ExternalDbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external DB node specified by `externalDbNodeId`.
+        ## Example Usage
 
         ## Import
 

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetSoftwareUpdate
 {
     /// <summary>
-    /// This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
-    /// 
-    /// Creates a new Exadata Fleet Update Cycle.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,6 +27,21 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///         GoalVersionDetails = new Oci.FleetSoftwareUpdate.Inputs.FsuCycleGoalVersionDetailsArgs
     ///         {
     ///             Type = fsuCycleGoalVersionDetailsType,
+    ///             Components = new[]
+    ///             {
+    ///                 new Oci.FleetSoftwareUpdate.Inputs.FsuCycleGoalVersionDetailsComponentArgs
+    ///                 {
+    ///                     ComponentType = fsuCycleGoalVersionDetailsComponentsComponentType,
+    ///                     GoalVersionDetails = new Oci.FleetSoftwareUpdate.Inputs.FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs
+    ///                     {
+    ///                         GoalSoftwareImageId = testImage.Id,
+    ///                         GoalType = fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalType,
+    ///                         GoalVersion = fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalVersion,
+    ///                     },
+    ///                     HomePolicy = fsuCycleGoalVersionDetailsComponentsHomePolicy,
+    ///                     NewHomePrefix = fsuCycleGoalVersionDetailsComponentsNewHomePrefix,
+    ///                 },
+    ///             },
     ///             HomePolicy = fsuCycleGoalVersionDetailsHomePolicy,
     ///             NewHomePrefix = fsuCycleGoalVersionDetailsNewHomePrefix,
     ///             SoftwareImageId = testImage.Id,
@@ -74,8 +85,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///         UpgradeDetails = new Oci.FleetSoftwareUpdate.Inputs.FsuCycleUpgradeDetailsArgs
     ///         {
     ///             CollectionType = fsuCycleUpgradeDetailsCollectionType,
+    ///             IsIgnorePostUpgradeErrors = fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors,
+    ///             IsIgnorePrerequisites = fsuCycleUpgradeDetailsIsIgnorePrerequisites,
     ///             IsRecompileInvalidObjects = fsuCycleUpgradeDetailsIsRecompileInvalidObjects,
     ///             IsTimeZoneUpgrade = fsuCycleUpgradeDetailsIsTimeZoneUpgrade,
+    ///             MaxDrainTimeoutInSeconds = fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds,
     ///         },
     ///     });
     /// 
@@ -112,7 +126,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> CollectionType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -130,13 +144,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<Outputs.FsuCycleDiagnosticsCollection> DiagnosticsCollection { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Cycle display name.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// OCID identifier for the Action that is currently in execution, if applicable.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         /// </summary>
         [Output("executingFsuActionId")]
         public Output<string> ExecutingFsuActionId { get; private set; } = null!;
@@ -148,7 +162,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         /// </summary>
         [Output("fsuCollectionId")]
         public Output<string> FsuCollectionId { get; private set; } = null!;
@@ -160,19 +174,19 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<Outputs.FsuCycleGoalVersionDetails> GoalVersionDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of patch IDs to ignore.
+        /// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         [Output("isIgnoreMissingPatches")]
         public Output<ImmutableArray<string>> IsIgnoreMissingPatches { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Ignore all patches between the source and target homes during patching.
+        /// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         [Output("isIgnorePatches")]
         public Output<bool> IsIgnorePatches { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        /// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         /// </summary>
         [Output("isKeepPlacement")]
         public Output<bool> IsKeepPlacement { get; private set; } = null!;
@@ -196,13 +210,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Service drain timeout specified in seconds.
+        /// (Updatable) Timeout for session draining for database services specified in seconds.
         /// </summary>
         [Output("maxDrainTimeoutInSeconds")]
         public Output<int> MaxDrainTimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// In this array all the possible actions will be listed. The first element is the suggested Action.
+        /// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         /// </summary>
         [Output("nextActionToExecutes")]
         public Output<ImmutableArray<Outputs.FsuCycleNextActionToExecute>> NextActionToExecutes { get; private set; } = null!;
@@ -320,7 +334,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<Inputs.FsuCycleBatchingStrategyArgs>? BatchingStrategy { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -344,7 +358,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<Inputs.FsuCycleDiagnosticsCollectionArgs>? DiagnosticsCollection { get; set; }
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Cycle display name.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -362,7 +376,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         /// </summary>
         [Input("fsuCollectionId", required: true)]
         public Input<string> FsuCollectionId { get; set; } = null!;
@@ -377,7 +391,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         private InputList<string>? _isIgnoreMissingPatches;
 
         /// <summary>
-        /// (Updatable) List of patch IDs to ignore.
+        /// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         public InputList<string> IsIgnoreMissingPatches
         {
@@ -386,19 +400,19 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// (Updatable) Ignore all patches between the source and target homes during patching.
+        /// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         [Input("isIgnorePatches")]
         public Input<bool>? IsIgnorePatches { get; set; }
 
         /// <summary>
-        /// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        /// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         /// </summary>
         [Input("isKeepPlacement")]
         public Input<bool>? IsKeepPlacement { get; set; }
 
         /// <summary>
-        /// (Updatable) Service drain timeout specified in seconds.
+        /// (Updatable) Timeout for session draining for database services specified in seconds.
         /// </summary>
         [Input("maxDrainTimeoutInSeconds")]
         public Input<int>? MaxDrainTimeoutInSeconds { get; set; }
@@ -448,7 +462,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? CollectionType { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -472,13 +486,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<Inputs.FsuCycleDiagnosticsCollectionGetArgs>? DiagnosticsCollection { get; set; }
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Cycle display name.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// OCID identifier for the Action that is currently in execution, if applicable.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
         /// </summary>
         [Input("executingFsuActionId")]
         public Input<string>? ExecutingFsuActionId { get; set; }
@@ -496,7 +510,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         /// </summary>
         [Input("fsuCollectionId")]
         public Input<string>? FsuCollectionId { get; set; }
@@ -511,7 +525,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         private InputList<string>? _isIgnoreMissingPatches;
 
         /// <summary>
-        /// (Updatable) List of patch IDs to ignore.
+        /// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         public InputList<string> IsIgnoreMissingPatches
         {
@@ -520,13 +534,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// (Updatable) Ignore all patches between the source and target homes during patching.
+        /// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
         /// </summary>
         [Input("isIgnorePatches")]
         public Input<bool>? IsIgnorePatches { get; set; }
 
         /// <summary>
-        /// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+        /// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
         /// </summary>
         [Input("isKeepPlacement")]
         public Input<bool>? IsKeepPlacement { get; set; }
@@ -550,7 +564,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Service drain timeout specified in seconds.
+        /// (Updatable) Timeout for session draining for database services specified in seconds.
         /// </summary>
         [Input("maxDrainTimeoutInSeconds")]
         public Input<int>? MaxDrainTimeoutInSeconds { get; set; }
@@ -559,7 +573,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         private InputList<Inputs.FsuCycleNextActionToExecuteGetArgs>? _nextActionToExecutes;
 
         /// <summary>
-        /// In this array all the possible actions will be listed. The first element is the suggested Action.
+        /// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
         /// </summary>
         public InputList<Inputs.FsuCycleNextActionToExecuteGetArgs> NextActionToExecutes
         {

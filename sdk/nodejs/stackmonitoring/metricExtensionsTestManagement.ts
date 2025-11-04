@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Performs test of Metric Extension on a specific resource Id
- *
  * ## Example Usage
  *
  * ```typescript

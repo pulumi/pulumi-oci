@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new NAT Rule for the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

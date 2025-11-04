@@ -5,12 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
- *
- * This is a post API which is used to create a demand signal delivery resource.
- * operationId: CreateInternalOccmDemandSignalDelivery
- * summary: A post call to create a demand signal delivery.
- *
  * ## Example Usage
  *
  * ```typescript

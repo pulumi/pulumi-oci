@@ -171,10 +171,6 @@ class Osn(pulumi.CustomResource):
                  ocpu_allocation_param: Optional[pulumi.Input[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Osn
-
         ## Example Usage
 
         ```python
@@ -210,10 +206,6 @@ class Osn(pulumi.CustomResource):
                  args: OsnArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Osn
-
         ## Example Usage
 
         ```python

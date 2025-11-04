@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
-//
-// Add a replica for this table. The table's schema must be frozen prior to this operation.
-//
 // ## Example Usage
 //
 // ```go

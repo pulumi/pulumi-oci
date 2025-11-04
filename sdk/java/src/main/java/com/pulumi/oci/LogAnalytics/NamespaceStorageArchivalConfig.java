@@ -16,10 +16,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
- * 
- * This API updates the archiving configuration
- * 
  * ## Example Usage
  * 
  * <pre>

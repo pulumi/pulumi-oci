@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates a named credential.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-//
-// Creates a PrivilegedApiRequest.
-//
 // ## Example Usage
 //
 // ```go

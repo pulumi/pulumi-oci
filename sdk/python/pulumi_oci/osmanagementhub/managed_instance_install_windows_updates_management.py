@@ -173,10 +173,6 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Installs Windows updates on the specified managed instance.
-
         ## Example Usage
 
         ```python
@@ -215,10 +211,6 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
                  args: ManagedInstanceInstallWindowsUpdatesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Installs Windows updates on the specified managed instance.
-
         ## Example Usage
 
         ```python

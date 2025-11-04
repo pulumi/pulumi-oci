@@ -5,9 +5,11 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionAutomaticExecutionDetailArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionExecutionOptionsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionGroupExecutionArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionLogLocationArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,6 +22,21 @@ import javax.annotation.Nullable;
 public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArgs {
 
     public static final DrPlanExecutionState Empty = new DrPlanExecutionState();
+
+    /**
+     * The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    @Import(name="automaticExecutionDetails")
+    private @Nullable Output<List<DrPlanExecutionAutomaticExecutionDetailArgs>> automaticExecutionDetails;
+
+    /**
+     * @return The details of the event that started the automatic DR plan execution.
+     * 
+     */
+    public Optional<Output<List<DrPlanExecutionAutomaticExecutionDetailArgs>>> automaticExecutionDetails() {
+        return Optional.ofNullable(this.automaticExecutionDetails);
+    }
 
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -139,6 +156,21 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<List<DrPlanExecutionGroupExecutionArgs>>> groupExecutions() {
         return Optional.ofNullable(this.groupExecutions);
+    }
+
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    @Import(name="isAutomatic")
+    private @Nullable Output<Boolean> isAutomatic;
+
+    /**
+     * @return A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     * 
+     */
+    public Optional<Output<Boolean>> isAutomatic() {
+        return Optional.ofNullable(this.isAutomatic);
     }
 
     /**
@@ -330,6 +362,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     private DrPlanExecutionState() {}
 
     private DrPlanExecutionState(DrPlanExecutionState $) {
+        this.automaticExecutionDetails = $.automaticExecutionDetails;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -338,6 +371,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         this.executionOptions = $.executionOptions;
         this.freeformTags = $.freeformTags;
         this.groupExecutions = $.groupExecutions;
+        this.isAutomatic = $.isAutomatic;
         this.lifeCycleDetails = $.lifeCycleDetails;
         this.logLocations = $.logLocations;
         this.peerDrProtectionGroupId = $.peerDrProtectionGroupId;
@@ -368,6 +402,37 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
 
         public Builder(DrPlanExecutionState defaults) {
             $ = new DrPlanExecutionState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param automaticExecutionDetails The details of the event that started the automatic DR plan execution.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder automaticExecutionDetails(@Nullable Output<List<DrPlanExecutionAutomaticExecutionDetailArgs>> automaticExecutionDetails) {
+            $.automaticExecutionDetails = automaticExecutionDetails;
+            return this;
+        }
+
+        /**
+         * @param automaticExecutionDetails The details of the event that started the automatic DR plan execution.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder automaticExecutionDetails(List<DrPlanExecutionAutomaticExecutionDetailArgs> automaticExecutionDetails) {
+            return automaticExecutionDetails(Output.of(automaticExecutionDetails));
+        }
+
+        /**
+         * @param automaticExecutionDetails The details of the event that started the automatic DR plan execution.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder automaticExecutionDetails(DrPlanExecutionAutomaticExecutionDetailArgs... automaticExecutionDetails) {
+            return automaticExecutionDetails(List.of(automaticExecutionDetails));
         }
 
         /**
@@ -546,6 +611,27 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
          */
         public Builder groupExecutions(DrPlanExecutionGroupExecutionArgs... groupExecutions) {
             return groupExecutions(List.of(groupExecutions));
+        }
+
+        /**
+         * @param isAutomatic A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutomatic(@Nullable Output<Boolean> isAutomatic) {
+            $.isAutomatic = isAutomatic;
+            return this;
+        }
+
+        /**
+         * @param isAutomatic A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutomatic(Boolean isAutomatic) {
+            return isAutomatic(Output.of(isAutomatic));
         }
 
         /**

@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Removes the specified packages from each managed instance in a managed instance group.
- * 
  * ## Example Usage
  * 
  * <pre>

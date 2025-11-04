@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testTaskSchedules = Oci.Jms.GetTaskSchedules.Invoke(new()
         ///     {
-        ///         FleetId = testFleet.Id,
-        ///         Id = taskScheduleId,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         Name = taskScheduleName,
-        ///         TaskScheduleNameContains = taskScheduleTaskScheduleNameContains,
+        ///         FleetId = "example-fleet-ocid",
+        ///         Id = "example-task-schedule-ocid",
+        ///         ManagedInstanceId = "example-managed-instance-ocid",
+        ///         Name = "JFR",
+        ///         TaskScheduleNameContains = "JFR",
         ///     });
         /// 
         /// });
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testTaskSchedules = Oci.Jms.GetTaskSchedules.Invoke(new()
         ///     {
-        ///         FleetId = testFleet.Id,
-        ///         Id = taskScheduleId,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         Name = taskScheduleName,
-        ///         TaskScheduleNameContains = taskScheduleTaskScheduleNameContains,
+        ///         FleetId = "example-fleet-ocid",
+        ///         Id = "example-task-schedule-ocid",
+        ///         ManagedInstanceId = "example-managed-instance-ocid",
+        ///         Name = "JFR",
+        ///         TaskScheduleNameContains = "JFR",
         ///     });
         /// 
         /// });
@@ -91,11 +91,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testTaskSchedules = Oci.Jms.GetTaskSchedules.Invoke(new()
         ///     {
-        ///         FleetId = testFleet.Id,
-        ///         Id = taskScheduleId,
-        ///         ManagedInstanceId = testManagedInstance.Id,
-        ///         Name = taskScheduleName,
-        ///         TaskScheduleNameContains = taskScheduleTaskScheduleNameContains,
+        ///         FleetId = "example-fleet-ocid",
+        ///         Id = "example-task-schedule-ocid",
+        ///         ManagedInstanceId = "example-managed-instance-ocid",
+        ///         Name = "JFR",
+        ///         TaskScheduleNameContains = "JFR",
         ///     });
         /// 
         /// });

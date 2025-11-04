@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
- *
- * Creates a new OpaInstance.
- *
  * ## Example Usage
  *
  * ```typescript

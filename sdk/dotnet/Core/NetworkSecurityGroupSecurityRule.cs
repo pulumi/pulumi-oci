@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

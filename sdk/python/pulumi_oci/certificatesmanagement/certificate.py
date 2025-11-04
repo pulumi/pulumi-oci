@@ -479,10 +479,6 @@ class Certificate(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate according to the details of the request.
-
         ## Example Usage
 
         ## Import
@@ -514,10 +510,6 @@ class Certificate(pulumi.CustomResource):
                  args: CertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate according to the details of the request.
-
         ## Example Usage
 
         ## Import

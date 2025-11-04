@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Management Station Mirror Synchronize Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Synchronize the specified software source mirrors on the management station.
-//
 // ## Example Usage
 //
 // ```go

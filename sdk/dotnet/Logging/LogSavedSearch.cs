@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging
 {
     /// <summary>
-    /// This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-    /// 
-    /// Creates a new LogSavedSearch.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

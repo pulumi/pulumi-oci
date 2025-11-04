@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Creates a named credential.
- * 
  * ## Example Usage
  * 
  * <pre>

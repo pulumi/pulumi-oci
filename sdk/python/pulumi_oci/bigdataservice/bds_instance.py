@@ -1127,10 +1127,6 @@ class BdsInstance(pulumi.CustomResource):
                  worker_node: Optional[pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Creates a new BDS instance.
-
         ## Example Usage
 
         ## Import
@@ -1177,10 +1173,6 @@ class BdsInstance(pulumi.CustomResource):
                  args: BdsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Creates a new BDS instance.
-
         ## Example Usage
 
         ## Import

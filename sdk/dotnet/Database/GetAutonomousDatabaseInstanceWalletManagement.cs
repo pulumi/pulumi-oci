@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets the wallet details for the specified Autonomous Database.
+        /// Gets the wallet details for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets the wallet details for the specified Autonomous Database.
+        /// Gets the wallet details for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets the wallet details for the specified Autonomous Database.
+        /// Gets the wallet details for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool ShouldRotate;
         /// <summary>
-        /// The current lifecycle state of the Autonomous Database wallet.
+        /// The current lifecycle state of the Autonomous AI Database wallet.
         /// </summary>
         public readonly string State;
         /// <summary>

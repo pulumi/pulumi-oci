@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService
 {
     /// <summary>
-    /// This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-    /// 
-    /// Creates a new Dataset.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

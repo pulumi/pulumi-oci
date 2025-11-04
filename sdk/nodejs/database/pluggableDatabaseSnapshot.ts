@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a Pluggable Database Snapshot
- *
  * ## Example Usage
  *
  * ```typescript

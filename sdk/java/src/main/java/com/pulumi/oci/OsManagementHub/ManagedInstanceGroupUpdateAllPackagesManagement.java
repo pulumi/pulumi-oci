@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Group Update All Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Updates all packages on each managed instance in the specified managed instance group.
- * 
  * ## Example Usage
  * 
  * <pre>

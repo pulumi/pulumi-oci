@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
-//
-// Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
-// For more information, please see the documentation.
-//
 // ## Example Usage
 //
 // ```go

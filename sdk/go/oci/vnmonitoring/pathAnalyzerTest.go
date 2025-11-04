@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-//
-// Creates a new `PathAnalyzerTest` resource.
-//
 // ## Example Usage
 //
 // ```go

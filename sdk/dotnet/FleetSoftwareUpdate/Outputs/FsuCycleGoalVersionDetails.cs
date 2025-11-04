@@ -14,6 +14,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
     public sealed class FsuCycleGoalVersionDetails
     {
         /// <summary>
+        /// (Updatable) Details of goal versions for components in an Exadata software stack.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.FsuCycleGoalVersionDetailsComponent> Components;
+        /// <summary>
         /// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         /// </summary>
         public readonly string? HomePolicy;
@@ -22,20 +26,22 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string? NewHomePrefix;
         /// <summary>
-        /// (Updatable) Target database software image OCID.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         /// </summary>
         public readonly string? SoftwareImageId;
         /// <summary>
-        /// (Updatable) Type of goal target version specified
+        /// (Updatable) Type of goal version specified
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+        /// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
         /// </summary>
         public readonly string? Version;
 
         [OutputConstructor]
         private FsuCycleGoalVersionDetails(
+            ImmutableArray<Outputs.FsuCycleGoalVersionDetailsComponent> components,
+
             string? homePolicy,
 
             string? newHomePrefix,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string? version)
         {
+            Components = components;
             HomePolicy = homePolicy;
             NewHomePrefix = newHomePrefix;
             SoftwareImageId = softwareImageId;

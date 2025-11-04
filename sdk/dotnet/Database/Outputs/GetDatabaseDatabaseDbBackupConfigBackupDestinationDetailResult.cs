@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult
     {
         /// <summary>
+        /// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        /// </summary>
+        public readonly string BackupRetentionPolicyOnTerminate;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         /// </summary>
         public readonly string DbrsPolicyId;
@@ -25,6 +29,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Indicates whether the backup destination is cross-region or local region.
         /// </summary>
         public readonly bool IsRemote;
+        public readonly bool IsRetentionLockEnabled;
         /// <summary>
         /// The name of the remote region where the remote automatic incremental backups will be stored.
         /// </summary>
@@ -44,11 +49,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(
+            string backupRetentionPolicyOnTerminate,
+
             string dbrsPolicyId,
 
             string id,
 
             bool isRemote,
+
+            bool isRetentionLockEnabled,
 
             string remoteRegion,
 
@@ -58,9 +67,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vpcUser)
         {
+            BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             IsRemote = isRemote;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;

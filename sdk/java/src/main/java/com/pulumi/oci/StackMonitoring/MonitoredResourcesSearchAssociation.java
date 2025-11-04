@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Search associations in the given compartment based on the search criteria.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-//
-// # Export Metadata Object
-//
 // ## Example Usage
 //
 // ```go

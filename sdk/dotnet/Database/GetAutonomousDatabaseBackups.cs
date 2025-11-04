@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+        /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
         /// 
         /// 
         /// ## Example Usage
@@ -30,8 +30,11 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
         ///     {
         ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         BackupDestinationId = testBackupDestination.Id,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
+        ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
         ///     });
@@ -45,7 +48,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+        /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
         /// 
         /// 
         /// ## Example Usage
@@ -61,8 +64,11 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
         ///     {
         ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         BackupDestinationId = testBackupDestination.Id,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
+        ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
         ///     });
@@ -76,7 +82,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+        /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
         /// 
         /// 
         /// ## Example Usage
@@ -92,8 +98,11 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
         ///     {
         ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         BackupDestinationId = testBackupDestination.Id,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
+        ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
         ///     });
@@ -115,6 +124,12 @@ namespace Pulumi.Oci.Database
         public string? AutonomousDatabaseId { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that have the given backup destination id.
+        /// </summary>
+        [Input("backupDestinationId")]
+        public string? BackupDestinationId { get; set; }
+
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId")]
@@ -133,6 +148,18 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetAutonomousDatabaseBackupsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources that match the given Infrastructure Type.
+        /// </summary>
+        [Input("infrastructureType")]
+        public string? InfrastructureType { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that have the given key store id.
+        /// </summary>
+        [Input("keyStoreId")]
+        public string? KeyStoreId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -161,6 +188,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousDatabaseId { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that have the given backup destination id.
+        /// </summary>
+        [Input("backupDestinationId")]
+        public Input<string>? BackupDestinationId { get; set; }
+
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId")]
@@ -179,6 +212,18 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new InputList<Inputs.GetAutonomousDatabaseBackupsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources that match the given Infrastructure Type.
+        /// </summary>
+        [Input("infrastructureType")]
+        public Input<string>? InfrastructureType { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that have the given key store id.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -207,9 +252,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult> AutonomousDatabaseBackups;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
         /// </summary>
         public readonly string? AutonomousDatabaseId;
+        public readonly string? BackupDestinationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -223,6 +269,14 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The infrastructure type this resource belongs to.
+        /// </summary>
+        public readonly string? InfrastructureType;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The current state of the backup.
         /// </summary>
@@ -238,6 +292,8 @@ namespace Pulumi.Oci.Database
 
             string? autonomousDatabaseId,
 
+            string? backupDestinationId,
+
             string? compartmentId,
 
             string? displayName,
@@ -246,16 +302,23 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            string? infrastructureType,
+
+            string? keyStoreId,
+
             string? state,
 
             string? type)
         {
             AutonomousDatabaseBackups = autonomousDatabaseBackups;
             AutonomousDatabaseId = autonomousDatabaseId;
+            BackupDestinationId = backupDestinationId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            InfrastructureType = infrastructureType;
+            KeyStoreId = keyStoreId;
             State = state;
             Type = type;
         }

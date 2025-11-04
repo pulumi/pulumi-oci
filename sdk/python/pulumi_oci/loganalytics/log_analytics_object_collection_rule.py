@@ -1024,10 +1024,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a configuration to collect logs from object storage bucket.
-
         ## Example Usage
 
         ```python
@@ -1117,10 +1113,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  args: LogAnalyticsObjectCollectionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a configuration to collect logs from object storage bucket.
-
         ## Example Usage
 
         ```python

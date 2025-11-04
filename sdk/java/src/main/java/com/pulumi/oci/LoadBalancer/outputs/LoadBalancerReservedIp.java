@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LoadBalancerReservedIp {
     /**
-     * @return Ocid of the Reserved IP/Public Ip created with VCN.
+     * @return (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      * Reserved IPs are IPs which already registered using VCN API.
      * 
@@ -29,7 +29,7 @@ public final class LoadBalancerReservedIp {
 
     private LoadBalancerReservedIp() {}
     /**
-     * @return Ocid of the Reserved IP/Public Ip created with VCN.
+     * @return (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      * Reserved IPs are IPs which already registered using VCN API.
      * 

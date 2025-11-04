@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Creates a new Database Management private endpoint.
-//
 // ## Example Usage
 //
 // ```go

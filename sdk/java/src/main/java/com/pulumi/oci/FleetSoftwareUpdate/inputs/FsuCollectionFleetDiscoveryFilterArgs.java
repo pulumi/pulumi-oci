@@ -34,14 +34,29 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
     }
 
     /**
-     * Related resource Ids to include in the discovery.  All must match the specified entityType.
+     * List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+     * 
+     */
+    @Import(name="exadataReleases")
+    private @Nullable Output<List<String>> exadataReleases;
+
+    /**
+     * @return List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+     * 
+     */
+    public Optional<Output<List<String>>> exadataReleases() {
+        return Optional.ofNullable(this.exadataReleases);
+    }
+
+    /**
+     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
      * 
      */
     @Import(name="identifiers")
     private @Nullable Output<List<String>> identifiers;
 
     /**
-     * @return Related resource Ids to include in the discovery.  All must match the specified entityType.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
      * 
      */
     public Optional<Output<List<String>>> identifiers() {
@@ -49,14 +64,14 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
     }
 
     /**
-     * INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+     * INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+     * @return INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
      * 
      */
     public Optional<Output<String>> mode() {
@@ -94,14 +109,14 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
     }
 
     /**
-     * Freeform tags to include in the discovery.
+     * [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     @Import(name="tags")
     private @Nullable Output<List<FsuCollectionFleetDiscoveryFilterTagArgs>> tags;
 
     /**
-     * @return Freeform tags to include in the discovery.
+     * @return [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public Optional<Output<List<FsuCollectionFleetDiscoveryFilterTagArgs>>> tags() {
@@ -109,14 +124,14 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
     }
 
     /**
-     * Type of filters supported for Database targets discovery.
+     * Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Type of filters supported for Database targets discovery.
+     * @return Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public Output<String> type() {
@@ -124,14 +139,14 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
     }
 
     /**
-     * List of Versions strings to include in the discovery.
+     * List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     @Import(name="versions")
     private @Nullable Output<List<String>> versions;
 
     /**
-     * @return List of Versions strings to include in the discovery.
+     * @return List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
      * 
      */
     public Optional<Output<List<String>>> versions() {
@@ -142,6 +157,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
 
     private FsuCollectionFleetDiscoveryFilterArgs(FsuCollectionFleetDiscoveryFilterArgs $) {
         this.entityType = $.entityType;
+        this.exadataReleases = $.exadataReleases;
         this.identifiers = $.identifiers;
         this.mode = $.mode;
         this.names = $.names;
@@ -191,7 +207,38 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param identifiers Related resource Ids to include in the discovery.  All must match the specified entityType.
+         * @param exadataReleases List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataReleases(@Nullable Output<List<String>> exadataReleases) {
+            $.exadataReleases = exadataReleases;
+            return this;
+        }
+
+        /**
+         * @param exadataReleases List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataReleases(List<String> exadataReleases) {
+            return exadataReleases(Output.of(exadataReleases));
+        }
+
+        /**
+         * @param exadataReleases List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataReleases(String... exadataReleases) {
+            return exadataReleases(List.of(exadataReleases));
+        }
+
+        /**
+         * @param identifiers The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
          * 
          * @return builder
          * 
@@ -202,7 +249,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param identifiers Related resource Ids to include in the discovery.  All must match the specified entityType.
+         * @param identifiers The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
          * 
          * @return builder
          * 
@@ -212,7 +259,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param identifiers Related resource Ids to include in the discovery.  All must match the specified entityType.
+         * @param identifiers The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.  Specified resources must match the specified &#39;entityType&#39;. FsuCollection of type &#39;GI&#39; or &#39;GUEST_OS&#39; can be specified.
          * 
          * @return builder
          * 
@@ -222,7 +269,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param mode INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+         * @param mode INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
          * 
          * @return builder
          * 
@@ -233,7 +280,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param mode INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for &#39;FSUCOLLECTION&#39; RESOURCE_ID filter only.
+         * @param mode INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection. Supported only for RESOURCE_ID filter.
          * 
          * @return builder
          * 
@@ -295,7 +342,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param tags Freeform tags to include in the discovery.
+         * @param tags [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -306,7 +353,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param tags Freeform tags to include in the discovery.
+         * @param tags [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -316,7 +363,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param tags Freeform tags to include in the discovery.
+         * @param tags [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -326,7 +373,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param type Type of filters supported for Database targets discovery.
+         * @param type Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -337,7 +384,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param type Type of filters supported for Database targets discovery.
+         * @param type Filters supported for searching Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -347,7 +394,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param versions List of Versions strings to include in the discovery.
+         * @param versions List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -358,7 +405,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param versions List of Versions strings to include in the discovery.
+         * @param versions List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 
@@ -368,7 +415,7 @@ public final class FsuCollectionFleetDiscoveryFilterArgs extends com.pulumi.reso
         }
 
         /**
-         * @param versions List of Versions strings to include in the discovery.
+         * @param versions List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a &#39;GUEST_OS&#39; collection.
          * 
          * @return builder
          * 

@@ -38,6 +38,11 @@ public final class GetDatabaseToolsConnectionsResult {
     private String id;
     private @Nullable String relatedResourceIdentifier;
     /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    private @Nullable List<String> runtimeIdentities;
+    /**
      * @return Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -89,6 +94,13 @@ public final class GetDatabaseToolsConnectionsResult {
         return Optional.ofNullable(this.relatedResourceIdentifier);
     }
     /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    public List<String> runtimeIdentities() {
+        return this.runtimeIdentities == null ? List.of() : this.runtimeIdentities;
+    }
+    /**
      * @return Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -125,6 +137,7 @@ public final class GetDatabaseToolsConnectionsResult {
         private @Nullable List<GetDatabaseToolsConnectionsFilter> filters;
         private String id;
         private @Nullable String relatedResourceIdentifier;
+        private @Nullable List<String> runtimeIdentities;
         private @Nullable List<String> runtimeSupports;
         private @Nullable String state;
         private @Nullable List<String> types;
@@ -137,6 +150,7 @@ public final class GetDatabaseToolsConnectionsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.relatedResourceIdentifier = defaults.relatedResourceIdentifier;
+    	      this.runtimeIdentities = defaults.runtimeIdentities;
     	      this.runtimeSupports = defaults.runtimeSupports;
     	      this.state = defaults.state;
     	      this.types = defaults.types;
@@ -191,6 +205,15 @@ public final class GetDatabaseToolsConnectionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder runtimeIdentities(@Nullable List<String> runtimeIdentities) {
+
+            this.runtimeIdentities = runtimeIdentities;
+            return this;
+        }
+        public Builder runtimeIdentities(String... runtimeIdentities) {
+            return runtimeIdentities(List.of(runtimeIdentities));
+        }
+        @CustomType.Setter
         public Builder runtimeSupports(@Nullable List<String> runtimeSupports) {
 
             this.runtimeSupports = runtimeSupports;
@@ -222,6 +245,7 @@ public final class GetDatabaseToolsConnectionsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.relatedResourceIdentifier = relatedResourceIdentifier;
+            _resultValue.runtimeIdentities = runtimeIdentities;
             _resultValue.runtimeSupports = runtimeSupports;
             _resultValue.state = state;
             _resultValue.types = types;

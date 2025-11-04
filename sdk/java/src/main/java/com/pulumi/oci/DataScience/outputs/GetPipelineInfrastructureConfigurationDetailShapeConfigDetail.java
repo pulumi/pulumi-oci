@@ -17,15 +17,25 @@ public final class GetPipelineInfrastructureConfigurationDetailShapeConfigDetail
      */
     private String cpuBaseline;
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     private Double memoryInGbs;
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private String memoryInGbsParameterized;
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     private Double ocpus;
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private String ocpusParameterized;
 
     private GetPipelineInfrastructureConfigurationDetailShapeConfigDetail() {}
     /**
@@ -36,18 +46,32 @@ public final class GetPipelineInfrastructureConfigurationDetailShapeConfigDetail
         return this.cpuBaseline;
     }
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public String memoryInGbsParameterized() {
+        return this.memoryInGbsParameterized;
+    }
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     public Double ocpus() {
         return this.ocpus;
+    }
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public String ocpusParameterized() {
+        return this.ocpusParameterized;
     }
 
     public static Builder builder() {
@@ -61,13 +85,17 @@ public final class GetPipelineInfrastructureConfigurationDetailShapeConfigDetail
     public static final class Builder {
         private String cpuBaseline;
         private Double memoryInGbs;
+        private String memoryInGbsParameterized;
         private Double ocpus;
+        private String ocpusParameterized;
         public Builder() {}
         public Builder(GetPipelineInfrastructureConfigurationDetailShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.memoryInGbsParameterized = defaults.memoryInGbsParameterized;
     	      this.ocpus = defaults.ocpus;
+    	      this.ocpusParameterized = defaults.ocpusParameterized;
         }
 
         @CustomType.Setter
@@ -87,6 +115,14 @@ public final class GetPipelineInfrastructureConfigurationDetailShapeConfigDetail
             return this;
         }
         @CustomType.Setter
+        public Builder memoryInGbsParameterized(String memoryInGbsParameterized) {
+            if (memoryInGbsParameterized == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetailShapeConfigDetail", "memoryInGbsParameterized");
+            }
+            this.memoryInGbsParameterized = memoryInGbsParameterized;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             if (ocpus == null) {
               throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetailShapeConfigDetail", "ocpus");
@@ -94,11 +130,21 @@ public final class GetPipelineInfrastructureConfigurationDetailShapeConfigDetail
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder ocpusParameterized(String ocpusParameterized) {
+            if (ocpusParameterized == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetailShapeConfigDetail", "ocpusParameterized");
+            }
+            this.ocpusParameterized = ocpusParameterized;
+            return this;
+        }
         public GetPipelineInfrastructureConfigurationDetailShapeConfigDetail build() {
             final var _resultValue = new GetPipelineInfrastructureConfigurationDetailShapeConfigDetail();
             _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.memoryInGbsParameterized = memoryInGbsParameterized;
             _resultValue.ocpus = ocpus;
+            _resultValue.ocpusParameterized = ocpusParameterized;
             return _resultValue;
         }
     }

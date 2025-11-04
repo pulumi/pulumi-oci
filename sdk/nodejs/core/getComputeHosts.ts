@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree,
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,
@@ -35,6 +36,7 @@ export function getComputeHosts(args: GetComputeHostsArgs, opts?: pulumi.InvokeO
         "compartmentId": args.compartmentId,
         "computeHostGroupId": args.computeHostGroupId,
         "computeHostHealth": args.computeHostHealth,
+        "computeHostInSubtree": args.computeHostInSubtree,
         "computeHostLifecycleState": args.computeHostLifecycleState,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -62,6 +64,10 @@ export interface GetComputeHostsArgs {
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      */
     computeHostHealth?: string;
+    /**
+     * When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+     */
+    computeHostInSubtree?: boolean;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
      */
@@ -101,6 +107,7 @@ export interface GetComputeHostsResult {
      */
     readonly computeHostGroupId?: string;
     readonly computeHostHealth?: string;
+    readonly computeHostInSubtree?: boolean;
     readonly computeHostLifecycleState?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -133,6 +140,7 @@ export interface GetComputeHostsResult {
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree,
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,
@@ -146,6 +154,7 @@ export function getComputeHostsOutput(args: GetComputeHostsOutputArgs, opts?: pu
         "compartmentId": args.compartmentId,
         "computeHostGroupId": args.computeHostGroupId,
         "computeHostHealth": args.computeHostHealth,
+        "computeHostInSubtree": args.computeHostInSubtree,
         "computeHostLifecycleState": args.computeHostLifecycleState,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -173,6 +182,10 @@ export interface GetComputeHostsOutputArgs {
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      */
     computeHostHealth?: pulumi.Input<string>;
+    /**
+     * When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+     */
+    computeHostInSubtree?: pulumi.Input<boolean>;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
      */

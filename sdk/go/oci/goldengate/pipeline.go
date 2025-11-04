@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
-//
-// Creates a new Pipeline.
-//
 // ## Example Usage
 //
 // ## Import

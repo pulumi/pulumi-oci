@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager
 {
     /// <summary>
-    /// This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
-    /// 
-    /// Updates the configuration for the compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

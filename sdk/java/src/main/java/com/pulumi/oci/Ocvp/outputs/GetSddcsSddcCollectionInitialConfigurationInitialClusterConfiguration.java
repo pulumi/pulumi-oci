@@ -21,12 +21,25 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
      * 
      */
     private Integer actualEsxiHostsCount;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
     private String capacityReservationId;
     /**
      * @return The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private String computeAvailabilityDomain;
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    private List<String> datastoreClusterIds;
+    /**
+     * @return A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
     private List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore> datastores;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -34,10 +47,14 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
      */
     private String displayName;
     /**
-     * @return (**Deprecated**) The number of ESXi hosts in the SDDC.
+     * @return The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
      * 
      */
     private Integer esxiHostsCount;
+    /**
+     * @return The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
     private String initialCommitment;
     /**
      * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts.
@@ -49,14 +66,30 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
      * 
      */
     private String initialHostShapeName;
+    /**
+     * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
+     * 
+     */
     private String instanceDisplayNamePrefix;
     /**
      * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
      * 
      */
     private Boolean isShieldedInstanceEnabled;
+    /**
+     * @return The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+     * 
+     */
     private List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration> networkConfigurations;
+    /**
+     * @return vSphere Cluster types.
+     * 
+     */
     private String vsphereType;
+    /**
+     * @return The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+     * 
+     */
     private String workloadNetworkCidr;
 
     private GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration() {}
@@ -67,6 +100,10 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
     public Integer actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
     public String capacityReservationId() {
         return this.capacityReservationId;
     }
@@ -77,6 +114,17 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
     public String computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
     }
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public List<String> datastoreClusterIds() {
+        return this.datastoreClusterIds;
+    }
+    /**
+     * @return A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     */
     public List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore> datastores() {
         return this.datastores;
     }
@@ -88,12 +136,16 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
         return this.displayName;
     }
     /**
-     * @return (**Deprecated**) The number of ESXi hosts in the SDDC.
+     * @return The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
      * 
      */
     public Integer esxiHostsCount() {
         return this.esxiHostsCount;
     }
+    /**
+     * @return The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
     public String initialCommitment() {
         return this.initialCommitment;
     }
@@ -111,6 +163,10 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
     public String initialHostShapeName() {
         return this.initialHostShapeName;
     }
+    /**
+     * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
+     * 
+     */
     public String instanceDisplayNamePrefix() {
         return this.instanceDisplayNamePrefix;
     }
@@ -121,12 +177,24 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
     public Boolean isShieldedInstanceEnabled() {
         return this.isShieldedInstanceEnabled;
     }
+    /**
+     * @return The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+     * 
+     */
     public List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration> networkConfigurations() {
         return this.networkConfigurations;
     }
+    /**
+     * @return vSphere Cluster types.
+     * 
+     */
     public String vsphereType() {
         return this.vsphereType;
     }
+    /**
+     * @return The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+     * 
+     */
     public String workloadNetworkCidr() {
         return this.workloadNetworkCidr;
     }
@@ -143,6 +211,7 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
         private Integer actualEsxiHostsCount;
         private String capacityReservationId;
         private String computeAvailabilityDomain;
+        private List<String> datastoreClusterIds;
         private List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore> datastores;
         private String displayName;
         private Integer esxiHostsCount;
@@ -160,6 +229,7 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.datastores = defaults.datastores;
     	      this.displayName = defaults.displayName;
     	      this.esxiHostsCount = defaults.esxiHostsCount;
@@ -196,6 +266,17 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
             }
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            if (datastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration", "datastoreClusterIds");
+            }
+            this.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
         }
         @CustomType.Setter
         public Builder datastores(List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore> datastores) {
@@ -296,6 +377,7 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.datastores = datastores;
             _resultValue.displayName = displayName;
             _resultValue.esxiHostsCount = esxiHostsCount;

@@ -404,10 +404,6 @@ class ProtectionPolicy(pulumi.CustomResource):
                  policy_locked_date_time: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Protection Policy.
-
         ## Example Usage
 
         ```python
@@ -463,10 +459,6 @@ class ProtectionPolicy(pulumi.CustomResource):
                  args: ProtectionPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Protection Policy.
-
         ## Example Usage
 
         ```python

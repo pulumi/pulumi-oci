@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new security policy configuration resource.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -266,13 +266,6 @@ class Sign(pulumi.CustomResource):
                  signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sign resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a digital signature for a message or message digest by using the private key of a public-private key pair,
-        also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
-        operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
-        This operation is not supported for keys having protection mode `EXTERNAL`.
-
         ## Example Usage
 
         ## Import
@@ -303,13 +296,6 @@ class Sign(pulumi.CustomResource):
                  args: SignArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sign resource in Oracle Cloud Infrastructure Kms service.
-
-        Creates a digital signature for a message or message digest by using the private key of a public-private key pair,
-        also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
-        operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
-        This operation is not supported for keys having protection mode `EXTERNAL`.
-
         ## Example Usage
 
         ## Import

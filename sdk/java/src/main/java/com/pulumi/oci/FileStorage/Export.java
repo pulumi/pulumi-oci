@@ -17,11 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
- * 
- * Creates a new export in the specified export set, path, and
- * file system.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult
     {
         /// <summary>
-        /// The Oracle APEX Application Development version.
+        /// The Oracle APEX AI Application Development version.
         /// </summary>
         public readonly string ApexVersion;
         /// <summary>

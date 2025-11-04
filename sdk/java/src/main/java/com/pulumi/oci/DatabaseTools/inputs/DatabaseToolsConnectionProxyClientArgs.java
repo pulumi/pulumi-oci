@@ -64,14 +64,14 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      * 
      */
     @Import(name="userPassword")
     private @Nullable Output<DatabaseToolsConnectionProxyClientUserPasswordArgs> userPassword;
 
     /**
-     * @return (Updatable) The user password.
+     * @return (Updatable) The database user password.
      * 
      */
     public Optional<Output<DatabaseToolsConnectionProxyClientUserPasswordArgs>> userPassword() {
@@ -179,7 +179,7 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
         }
 
         /**
-         * @param userPassword (Updatable) The user password.
+         * @param userPassword (Updatable) The database user password.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
         }
 
         /**
-         * @param userPassword (Updatable) The user password.
+         * @param userPassword (Updatable) The database user password.
          * 
          * @return builder
          * 

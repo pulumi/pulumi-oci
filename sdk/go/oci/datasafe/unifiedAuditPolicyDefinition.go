@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Updates the unified audit policy definition.
+// ## Example Usage
 //
 // ## Import
 //

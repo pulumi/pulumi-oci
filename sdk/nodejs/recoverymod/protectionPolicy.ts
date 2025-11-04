@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
- *
- * Creates a new Protection Policy.
- *
  * ## Example Usage
  *
  * ```typescript

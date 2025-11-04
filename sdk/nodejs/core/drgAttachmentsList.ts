@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Drg Attachments List resource in Oracle Cloud Infrastructure Core service.
- *
- * Returns a complete list of DRG attachments that belong to a particular DRG.
- *
  * ## Example Usage
  *
  * ```typescript

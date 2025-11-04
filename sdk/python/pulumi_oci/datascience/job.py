@@ -684,10 +684,6 @@ class Job(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a job.
-
         ## Example Usage
 
         ## Import
@@ -728,10 +724,6 @@ class Job(pulumi.CustomResource):
                  args: JobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a job.
-
         ## Example Usage
 
         ## Import

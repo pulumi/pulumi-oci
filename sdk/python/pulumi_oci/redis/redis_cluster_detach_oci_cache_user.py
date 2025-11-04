@@ -120,10 +120,6 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
                  redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Redis Cluster Detach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
-
-        Detach existing Oracle Cloud Infrastructure cache users to a redis cluster.
-
         ## Example Usage
 
         ```python
@@ -155,10 +151,6 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
                  args: RedisClusterDetachOciCacheUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Redis Cluster Detach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
-
-        Detach existing Oracle Cloud Infrastructure cache users to a redis cluster.
-
         ## Example Usage
 
         ```python

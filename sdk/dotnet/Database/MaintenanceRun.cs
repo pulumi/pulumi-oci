@@ -10,13 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a maintenance run with one of the following:
-    /// The latest available release update patch (RUP) for the Autonomous Container Database.
-    /// The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
-    /// Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -77,7 +70,7 @@ namespace Pulumi.Oci.Database
         public Output<int> CustomActionTimeoutInMins { get; private set; } = null!;
 
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Output("databaseSoftwareImageId")]
         public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
@@ -149,7 +142,7 @@ namespace Pulumi.Oci.Database
         public Output<int> PatchFailureCount { get; private set; } = null!;
 
         /// <summary>
-        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         /// </summary>
         [Output("patchId")]
         public Output<string> PatchId { get; private set; } = null!;
@@ -199,7 +192,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> PeerMaintenanceRunIds { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -315,7 +308,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }
@@ -389,7 +382,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? CustomActionTimeoutInMins { get; set; }
 
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }
@@ -467,7 +460,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? PatchFailureCount { get; set; }
 
         /// <summary>
-        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         /// </summary>
         [Input("patchId")]
         public Input<string>? PatchId { get; set; }
@@ -523,7 +516,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -128,6 +128,84 @@ public final class DomainsSocialIdentityProviderArgs extends com.pulumi.resource
     }
 
     /**
+     * (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="appleDevId")
+    private @Nullable Output<String> appleDevId;
+
+    /**
+     * @return (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> appleDevId() {
+        return Optional.ofNullable(this.appleDevId);
+    }
+
+    /**
+     * (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="appleKeyId")
+    private @Nullable Output<String> appleKeyId;
+
+    /**
+     * @return (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> appleKeyId() {
+        return Optional.ofNullable(this.appleKeyId);
+    }
+
+    /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
@@ -1163,6 +1241,8 @@ public final class DomainsSocialIdentityProviderArgs extends com.pulumi.resource
         this.accessTokenUrl = $.accessTokenUrl;
         this.accountLinkingEnabled = $.accountLinkingEnabled;
         this.adminScopes = $.adminScopes;
+        this.appleDevId = $.appleDevId;
+        this.appleKeyId = $.appleKeyId;
         this.authorization = $.authorization;
         this.authzUrl = $.authzUrl;
         this.autoRedirectEnabled = $.autoRedirectEnabled;
@@ -1354,6 +1434,96 @@ public final class DomainsSocialIdentityProviderArgs extends com.pulumi.resource
          */
         public Builder adminScopes(String... adminScopes) {
             return adminScopes(List.of(adminScopes));
+        }
+
+        /**
+         * @param appleDevId (Updatable) Apple Developer ID
+         * 
+         * **Added In:** 2311180004
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appleDevId(@Nullable Output<String> appleDevId) {
+            $.appleDevId = appleDevId;
+            return this;
+        }
+
+        /**
+         * @param appleDevId (Updatable) Apple Developer ID
+         * 
+         * **Added In:** 2311180004
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appleDevId(String appleDevId) {
+            return appleDevId(Output.of(appleDevId));
+        }
+
+        /**
+         * @param appleKeyId (Updatable) Apple Private Key ID
+         * 
+         * **Added In:** 2311180004
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appleKeyId(@Nullable Output<String> appleKeyId) {
+            $.appleKeyId = appleKeyId;
+            return this;
+        }
+
+        /**
+         * @param appleKeyId (Updatable) Apple Private Key ID
+         * 
+         * **Added In:** 2311180004
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appleKeyId(String appleKeyId) {
+            return appleKeyId(Output.of(appleKeyId));
         }
 
         /**

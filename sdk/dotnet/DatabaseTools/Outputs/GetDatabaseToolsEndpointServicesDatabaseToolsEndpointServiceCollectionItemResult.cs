@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
     public sealed class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

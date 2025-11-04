@@ -49,14 +49,14 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
     }
 
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable String dbVersion;
 
     /**
-     * @return A filter to return only autonomous database resources that match the specified dbVersion.
+     * @return A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      * 
      */
     public Optional<String> dbVersion() {
@@ -64,14 +64,14 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
     }
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     @Import(name="dbWorkload")
     private @Nullable String dbWorkload;
 
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     public Optional<String> dbWorkload() {
@@ -175,30 +175,22 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
 
-    /**
-     * A filter to return only resources that not match the given lifecycle state.
-     * 
-     */
     @Import(name="lifecycleStateNotEqualTo")
     private @Nullable String lifecycleStateNotEqualTo;
 
-    /**
-     * @return A filter to return only resources that not match the given lifecycle state.
-     * 
-     */
     public Optional<String> lifecycleStateNotEqualTo() {
         return Optional.ofNullable(this.lifecycleStateNotEqualTo);
     }
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      * 
      */
     @Import(name="resourcePoolLeaderId")
     private @Nullable String resourcePoolLeaderId;
 
     /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      * 
      */
     public Optional<String> resourcePoolLeaderId() {
@@ -280,7 +272,7 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dbVersion A filter to return only autonomous database resources that match the specified dbVersion.
+         * @param dbVersion A filter to return only Autonomous AI Database resources that match the specified dbVersion.
          * 
          * @return builder
          * 
@@ -291,7 +283,7 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload A filter to return only Autonomous AI Database resources that match the specified workload type.
          * 
          * @return builder
          * 
@@ -376,19 +368,13 @@ public final class GetAutonomousDatabasesPlainArgs extends com.pulumi.resources.
             return this;
         }
 
-        /**
-         * @param lifecycleStateNotEqualTo A filter to return only resources that not match the given lifecycle state.
-         * 
-         * @return builder
-         * 
-         */
         public Builder lifecycleStateNotEqualTo(@Nullable String lifecycleStateNotEqualTo) {
             $.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             return this;
         }
 
         /**
-         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
          * 
          * @return builder
          * 

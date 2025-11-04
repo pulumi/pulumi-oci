@@ -28,7 +28,7 @@ class GetDatabaseToolsConnectionsResult:
     """
     A collection of values returned by getDatabaseToolsConnections.
     """
-    def __init__(__self__, compartment_id=None, database_tools_connection_collections=None, display_name=None, filters=None, id=None, related_resource_identifier=None, runtime_supports=None, state=None, types=None):
+    def __init__(__self__, compartment_id=None, database_tools_connection_collections=None, display_name=None, filters=None, id=None, related_resource_identifier=None, runtime_identities=None, runtime_supports=None, state=None, types=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetDatabaseToolsConnectionsResult:
         if related_resource_identifier and not isinstance(related_resource_identifier, str):
             raise TypeError("Expected argument 'related_resource_identifier' to be a str")
         pulumi.set(__self__, "related_resource_identifier", related_resource_identifier)
+        if runtime_identities and not isinstance(runtime_identities, list):
+            raise TypeError("Expected argument 'runtime_identities' to be a list")
+        pulumi.set(__self__, "runtime_identities", runtime_identities)
         if runtime_supports and not isinstance(runtime_supports, list):
             raise TypeError("Expected argument 'runtime_supports' to be a list")
         pulumi.set(__self__, "runtime_supports", runtime_supports)
@@ -100,6 +103,14 @@ class GetDatabaseToolsConnectionsResult:
         return pulumi.get(self, "related_resource_identifier")
 
     @_builtins.property
+    @pulumi.getter(name="runtimeIdentities")
+    def runtime_identities(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identities")
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupports")
     def runtime_supports(self) -> Optional[Sequence[_builtins.str]]:
         """
@@ -136,6 +147,7 @@ class AwaitableGetDatabaseToolsConnectionsResult(GetDatabaseToolsConnectionsResu
             filters=self.filters,
             id=self.id,
             related_resource_identifier=self.related_resource_identifier,
+            runtime_identities=self.runtime_identities,
             runtime_supports=self.runtime_supports,
             state=self.state,
             types=self.types)
@@ -145,6 +157,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
                                    display_name: Optional[_builtins.str] = None,
                                    filters: Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]] = None,
                                    related_resource_identifier: Optional[_builtins.str] = None,
+                                   runtime_identities: Optional[Sequence[_builtins.str]] = None,
                                    runtime_supports: Optional[Sequence[_builtins.str]] = None,
                                    state: Optional[_builtins.str] = None,
                                    types: Optional[Sequence[_builtins.str]] = None,
@@ -163,16 +176,18 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
     test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
+        runtime_identities=database_tools_connection_runtime_identity,
         runtime_supports=database_tools_connection_runtime_support,
         state=database_tools_connection_state,
         types=database_tools_connection_type)
     ```
 
 
-    :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
-    :param _builtins.str related_resource_identifier: A filter to return only resources associated to the related resource identifier OCID passed in the query string.
-    :param Sequence[_builtins.str] runtime_supports: A filter to return only resources with one of the specified runtimeSupport values.
+    :param _builtins.str related_resource_identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+    :param Sequence[_builtins.str] runtime_identities: A filter to return only resources with one of the specified runtimeIdentity values.
+    :param Sequence[_builtins.str] runtime_supports: A filter to return only resources with one of the specified type values.
     :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     :param Sequence[_builtins.str] types: A filter to return only resources their type matches the specified type.
     """
@@ -181,6 +196,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['relatedResourceIdentifier'] = related_resource_identifier
+    __args__['runtimeIdentities'] = runtime_identities
     __args__['runtimeSupports'] = runtime_supports
     __args__['state'] = state
     __args__['types'] = types
@@ -194,6 +210,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         related_resource_identifier=pulumi.get(__ret__, 'related_resource_identifier'),
+        runtime_identities=pulumi.get(__ret__, 'runtime_identities'),
         runtime_supports=pulumi.get(__ret__, 'runtime_supports'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
@@ -201,6 +218,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]]]] = None,
                                           related_resource_identifier: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                          runtime_identities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                           runtime_supports: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -219,16 +237,18 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
+        runtime_identities=database_tools_connection_runtime_identity,
         runtime_supports=database_tools_connection_runtime_support,
         state=database_tools_connection_state,
         types=database_tools_connection_type)
     ```
 
 
-    :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
-    :param _builtins.str related_resource_identifier: A filter to return only resources associated to the related resource identifier OCID passed in the query string.
-    :param Sequence[_builtins.str] runtime_supports: A filter to return only resources with one of the specified runtimeSupport values.
+    :param _builtins.str related_resource_identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+    :param Sequence[_builtins.str] runtime_identities: A filter to return only resources with one of the specified runtimeIdentity values.
+    :param Sequence[_builtins.str] runtime_supports: A filter to return only resources with one of the specified type values.
     :param _builtins.str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     :param Sequence[_builtins.str] types: A filter to return only resources their type matches the specified type.
     """
@@ -237,6 +257,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['relatedResourceIdentifier'] = related_resource_identifier
+    __args__['runtimeIdentities'] = runtime_identities
     __args__['runtimeSupports'] = runtime_supports
     __args__['state'] = state
     __args__['types'] = types
@@ -249,6 +270,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         related_resource_identifier=pulumi.get(__response__, 'related_resource_identifier'),
+        runtime_identities=pulumi.get(__response__, 'runtime_identities'),
         runtime_supports=pulumi.get(__response__, 'runtime_supports'),
         state=pulumi.get(__response__, 'state'),
         types=pulumi.get(__response__, 'types')))

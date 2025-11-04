@@ -112,8 +112,6 @@ class ContainerConfiguration(pulumi.CustomResource):
                  is_repository_created_on_first_push: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
         ## Example Usage
 
         ```python
@@ -142,8 +140,6 @@ class ContainerConfiguration(pulumi.CustomResource):
                  args: ContainerConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
         ## Example Usage
 
         ```python

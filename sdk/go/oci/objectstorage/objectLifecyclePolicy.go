@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
-//
-// Creates or replaces the object lifecycle policy for the bucket.
-//
 // ## Example Usage
 //
 // ```go

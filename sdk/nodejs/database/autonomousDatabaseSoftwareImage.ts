@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
- *
- * create Autonomous Database Software Image in the specified compartment.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -64,7 +60,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
     }
 
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      */
     declare public /*out*/ readonly autonomousDsiOneOffPatches: pulumi.Output<string[]>;
     /**
@@ -72,7 +68,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      */
     declare public /*out*/ readonly databaseVersion: pulumi.Output<string>;
     /**
@@ -80,7 +76,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
@@ -100,7 +96,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly releaseUpdate: pulumi.Output<string>;
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      *
      *
      * ** IMPORTANT **
@@ -108,7 +104,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public readonly sourceCdbId: pulumi.Output<string>;
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -116,7 +112,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
@@ -184,7 +180,7 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
  */
 export interface AutonomousDatabaseSoftwareImageState {
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      */
     autonomousDsiOneOffPatches?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -192,7 +188,7 @@ export interface AutonomousDatabaseSoftwareImageState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      */
     databaseVersion?: pulumi.Input<string>;
     /**
@@ -200,7 +196,7 @@ export interface AutonomousDatabaseSoftwareImageState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -220,7 +216,7 @@ export interface AutonomousDatabaseSoftwareImageState {
      */
     releaseUpdate?: pulumi.Input<string>;
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      *
      *
      * ** IMPORTANT **
@@ -228,7 +224,7 @@ export interface AutonomousDatabaseSoftwareImageState {
      */
     sourceCdbId?: pulumi.Input<string>;
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      */
     state?: pulumi.Input<string>;
     /**
@@ -236,7 +232,7 @@ export interface AutonomousDatabaseSoftwareImageState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      */
     timeCreated?: pulumi.Input<string>;
 }
@@ -254,7 +250,7 @@ export interface AutonomousDatabaseSoftwareImageArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -266,7 +262,7 @@ export interface AutonomousDatabaseSoftwareImageArgs {
      */
     imageShapeFamily: pulumi.Input<string>;
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      *
      *
      * ** IMPORTANT **

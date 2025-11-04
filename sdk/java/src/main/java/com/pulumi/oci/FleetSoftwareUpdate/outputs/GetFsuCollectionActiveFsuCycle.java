@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetFsuCollectionActiveFsuCycle {
     /**
-     * @return Exadata Fleet Update Collection resource display name.
+     * @return The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     private String displayName;
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     private String id;
 
     private GetFsuCollectionActiveFsuCycle() {}
     /**
-     * @return Exadata Fleet Update Collection resource display name.
+     * @return The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     public String id() {

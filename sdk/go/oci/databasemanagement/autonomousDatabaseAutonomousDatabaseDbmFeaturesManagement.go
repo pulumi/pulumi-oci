@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Enables a Database Management feature for the specified Autonomous Database.
-//
 // ## Example Usage
 type AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement struct {
 	pulumi.CustomResourceState

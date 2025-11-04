@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Attach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Adds profile to a managed instance. After the profile has been added,
-    /// the instance can be registered as a managed instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

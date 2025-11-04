@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
-//
-// Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
-//
 // ## Example Usage
 //
 // ```go

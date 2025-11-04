@@ -31,6 +31,18 @@ __all__ = [
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict',
+    'IotDigitalTwinAdapterInboundEnvelopeArgs',
+    'IotDigitalTwinAdapterInboundEnvelopeArgsDict',
+    'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs',
+    'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict',
+    'IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs',
+    'IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict',
+    'IotDigitalTwinAdapterInboundRouteArgs',
+    'IotDigitalTwinAdapterInboundRouteArgsDict',
+    'IotDigitalTwinAdapterInboundRouteReferencePayloadArgs',
+    'IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict',
+    'IotIotDomainDataRetentionPeriodsInDayArgs',
+    'IotIotDomainDataRetentionPeriodsInDayArgsDict',
     'ManagedKafkaKafkaClusterAccessSubnetArgs',
     'ManagedKafkaKafkaClusterAccessSubnetArgsDict',
     'ManagedKafkaKafkaClusterBrokerShapeArgs',
@@ -39,6 +51,14 @@ __all__ = [
     'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict',
+    'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs',
+    'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict',
+    'GetAiDataPlatformAiDataPlatformsFilterArgs',
+    'GetAiDataPlatformAiDataPlatformsFilterArgsDict',
     'GetApiPlatformApiPlatformInstancesFilterArgs',
     'GetApiPlatformApiPlatformInstancesFilterArgsDict',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs',
@@ -69,12 +89,38 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict',
     'GetDbmulticloudOracleDbGcpKeysFilterArgs',
     'GetDbmulticloudOracleDbGcpKeysFilterArgsDict',
+    'GetIotDigitalTwinAdaptersFilterArgs',
+    'GetIotDigitalTwinAdaptersFilterArgsDict',
+    'GetIotDigitalTwinInstancesFilterArgs',
+    'GetIotDigitalTwinInstancesFilterArgsDict',
+    'GetIotDigitalTwinModelsFilterArgs',
+    'GetIotDigitalTwinModelsFilterArgsDict',
+    'GetIotDigitalTwinRelationshipsFilterArgs',
+    'GetIotDigitalTwinRelationshipsFilterArgsDict',
+    'GetIotIotDomainGroupsFilterArgs',
+    'GetIotIotDomainGroupsFilterArgsDict',
+    'GetIotIotDomainsFilterArgs',
+    'GetIotIotDomainsFilterArgsDict',
     'GetManagedKafkaKafkaClusterConfigVersionsFilterArgs',
     'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict',
     'GetManagedKafkaKafkaClusterConfigsFilterArgs',
     'GetManagedKafkaKafkaClusterConfigsFilterArgsDict',
     'GetManagedKafkaKafkaClustersFilterArgs',
     'GetManagedKafkaKafkaClustersFilterArgsDict',
+    'GetMulticloudExternalLocationMappingMetadataFilterArgs',
+    'GetMulticloudExternalLocationMappingMetadataFilterArgsDict',
+    'GetMulticloudExternalLocationSummariesMetadataFilterArgs',
+    'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict',
+    'GetMulticloudExternalLocationsMetadataFilterArgs',
+    'GetMulticloudExternalLocationsMetadataFilterArgsDict',
+    'GetMulticloudResourceAnchorsFilterArgs',
+    'GetMulticloudResourceAnchorsFilterArgsDict',
+    'GetResourceAnalyticsMonitoredRegionsFilterArgs',
+    'GetResourceAnalyticsMonitoredRegionsFilterArgsDict',
+    'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs',
+    'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict',
+    'GetResourceAnalyticsTenancyAttachmentsFilterArgs',
+    'GetResourceAnalyticsTenancyAttachmentsFilterArgsDict',
     'GetWlmsManagedInstanceScanResultsFilterArgs',
     'GetWlmsManagedInstanceScanResultsFilterArgsDict',
     'GetWlmsManagedInstanceServerInstalledPatchesFilterArgs',
@@ -756,6 +802,404 @@ class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs:
 
 
 if not MYPY:
+    class IotDigitalTwinAdapterInboundEnvelopeArgsDict(TypedDict):
+        reference_endpoint: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The device endpoint.
+        """
+        envelope_mapping: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict']]
+        """
+        (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        """
+        reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict']]
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+elif False:
+    IotDigitalTwinAdapterInboundEnvelopeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotDigitalTwinAdapterInboundEnvelopeArgs:
+    def __init__(__self__, *,
+                 reference_endpoint: pulumi.Input[_builtins.str],
+                 envelope_mapping: Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs']] = None,
+                 reference_payload: Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] reference_endpoint: (Updatable) The device endpoint.
+        :param pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs'] envelope_mapping: (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        :param pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs'] reference_payload: (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "reference_endpoint", reference_endpoint)
+        if envelope_mapping is not None:
+            pulumi.set(__self__, "envelope_mapping", envelope_mapping)
+        if reference_payload is not None:
+            pulumi.set(__self__, "reference_payload", reference_payload)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceEndpoint")
+    def reference_endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The device endpoint.
+        """
+        return pulumi.get(self, "reference_endpoint")
+
+    @reference_endpoint.setter
+    def reference_endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "reference_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="envelopeMapping")
+    def envelope_mapping(self) -> Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs']]:
+        """
+        (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        """
+        return pulumi.get(self, "envelope_mapping")
+
+    @envelope_mapping.setter
+    def envelope_mapping(self, value: Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs']]):
+        pulumi.set(self, "envelope_mapping", value)
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayload")
+    def reference_payload(self) -> Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs']]:
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payload")
+
+    @reference_payload.setter
+    def reference_payload(self, value: Optional[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs']]):
+        pulumi.set(self, "reference_payload", value)
+
+
+if not MYPY:
+    class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict(TypedDict):
+        time_observed: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+elif False:
+    IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs:
+    def __init__(__self__, *,
+                 time_observed: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] time_observed: (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        if time_observed is not None:
+            pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="timeObserved")
+    def time_observed(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        return pulumi.get(self, "time_observed")
+
+    @time_observed.setter
+    def time_observed(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_observed", value)
+
+
+if not MYPY:
+    class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict(TypedDict):
+        data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) JSON raw data.
+        """
+        data_format: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Data format of the payload.
+        """
+elif False:
+    IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs:
+    def __init__(__self__, *,
+                 data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
+                 data_format: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] data: (Updatable) JSON raw data.
+        :param pulumi.Input[_builtins.str] data_format: (Updatable) Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @data.setter
+    def data(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+    @data_format.setter
+    def data_format(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "data_format", value)
+
+
+if not MYPY:
+    class IotDigitalTwinAdapterInboundRouteArgsDict(TypedDict):
+        condition: pulumi.Input[_builtins.str]
+        """
+        (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        """
+        description: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Meaningful write up about the inbound route.
+        """
+        payload_mapping: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+
+        The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+
+        Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+        """
+        reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict']]
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+elif False:
+    IotDigitalTwinAdapterInboundRouteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotDigitalTwinAdapterInboundRouteArgs:
+    def __init__(__self__, *,
+                 condition: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 payload_mapping: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 reference_payload: Optional[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] condition: (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        :param pulumi.Input[_builtins.str] description: (Updatable) Meaningful write up about the inbound route.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] payload_mapping: (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+               
+               The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+               
+               Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+        :param pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgs'] reference_payload: (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "condition", condition)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if payload_mapping is not None:
+            pulumi.set(__self__, "payload_mapping", payload_mapping)
+        if reference_payload is not None:
+            pulumi.set(__self__, "reference_payload", reference_payload)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        """
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "condition", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Meaningful write up about the inbound route.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="payloadMapping")
+    def payload_mapping(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+
+        The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+
+        Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+        """
+        return pulumi.get(self, "payload_mapping")
+
+    @payload_mapping.setter
+    def payload_mapping(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "payload_mapping", value)
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayload")
+    def reference_payload(self) -> Optional[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgs']]:
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payload")
+
+    @reference_payload.setter
+    def reference_payload(self, value: Optional[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgs']]):
+        pulumi.set(self, "reference_payload", value)
+
+
+if not MYPY:
+    class IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict(TypedDict):
+        data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) JSON raw data.
+        """
+        data_format: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Data format of the payload.
+        """
+elif False:
+    IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotDigitalTwinAdapterInboundRouteReferencePayloadArgs:
+    def __init__(__self__, *,
+                 data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
+                 data_format: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] data: (Updatable) JSON raw data.
+        :param pulumi.Input[_builtins.str] data_format: (Updatable) Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @data.setter
+    def data(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+    @data_format.setter
+    def data_format(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "data_format", value)
+
+
+if not MYPY:
+    class IotIotDomainDataRetentionPeriodsInDayArgsDict(TypedDict):
+        historized_data: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of days for which any normalized data sent to IoT devices would be retained for.
+        """
+        raw_command_data: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of days for which any raw command data sent to IoT devices would be retained for.
+        """
+        raw_data: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of days for which any raw data sent to IoT devices would be retained for.
+        """
+        rejected_data: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of days for which any data sent to IoT devices would be retained for.
+        """
+elif False:
+    IotIotDomainDataRetentionPeriodsInDayArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IotIotDomainDataRetentionPeriodsInDayArgs:
+    def __init__(__self__, *,
+                 historized_data: Optional[pulumi.Input[_builtins.int]] = None,
+                 raw_command_data: Optional[pulumi.Input[_builtins.int]] = None,
+                 raw_data: Optional[pulumi.Input[_builtins.int]] = None,
+                 rejected_data: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] historized_data: Number of days for which any normalized data sent to IoT devices would be retained for.
+        :param pulumi.Input[_builtins.int] raw_command_data: Number of days for which any raw command data sent to IoT devices would be retained for.
+        :param pulumi.Input[_builtins.int] raw_data: Number of days for which any raw data sent to IoT devices would be retained for.
+        :param pulumi.Input[_builtins.int] rejected_data: Number of days for which any data sent to IoT devices would be retained for.
+        """
+        if historized_data is not None:
+            pulumi.set(__self__, "historized_data", historized_data)
+        if raw_command_data is not None:
+            pulumi.set(__self__, "raw_command_data", raw_command_data)
+        if raw_data is not None:
+            pulumi.set(__self__, "raw_data", raw_data)
+        if rejected_data is not None:
+            pulumi.set(__self__, "rejected_data", rejected_data)
+
+    @_builtins.property
+    @pulumi.getter(name="historizedData")
+    def historized_data(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days for which any normalized data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "historized_data")
+
+    @historized_data.setter
+    def historized_data(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "historized_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rawCommandData")
+    def raw_command_data(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days for which any raw command data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_command_data")
+
+    @raw_command_data.setter
+    def raw_command_data(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "raw_command_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rawData")
+    def raw_data(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days for which any raw data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_data")
+
+    @raw_data.setter
+    def raw_data(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "raw_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rejectedData")
+    def rejected_data(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days for which any data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "rejected_data")
+
+    @rejected_data.setter
+    def rejected_data(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "rejected_data", value)
+
+
+if not MYPY:
     class ManagedKafkaKafkaClusterAccessSubnetArgsDict(TypedDict):
         subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
         """
@@ -1009,6 +1453,235 @@ class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs:
     @url.setter
     def url(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "url", value)
+
+
+if not MYPY:
+    class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict(TypedDict):
+        password_type: pulumi.Input[_builtins.str]
+        """
+        Password type
+        """
+        password: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+        """
+        secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+        """
+elif False:
+    ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs:
+    def __init__(__self__, *,
+                 password_type: pulumi.Input[_builtins.str],
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] password_type: Password type
+        :param pulumi.Input[_builtins.str] password: Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+        """
+        pulumi.set(__self__, "password_type", password_type)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Password type
+        """
+        return pulumi.get(self, "password_type")
+
+    @password_type.setter
+    def password_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "password_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+
+if not MYPY:
+    class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict(TypedDict):
+        idcs_domain_id: NotRequired[pulumi.Input[_builtins.str]]
+        license_model: NotRequired[pulumi.Input[_builtins.str]]
+        network_details: NotRequired[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict']]
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs:
+    def __init__(__self__, *,
+                 idcs_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_details: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+        if idcs_domain_id is not None:
+            pulumi.set(__self__, "idcs_domain_id", idcs_domain_id)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if network_details is not None:
+            pulumi.set(__self__, "network_details", network_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="idcsDomainId")
+    def idcs_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "idcs_domain_id")
+
+    @idcs_domain_id.setter
+    def idcs_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "idcs_domain_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "license_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkDetails")
+    def network_details(self) -> Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']]:
+        return pulumi.get(self, "network_details")
+
+    @network_details.setter
+    def network_details(self, value: Optional[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']]):
+        pulumi.set(self, "network_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+if not MYPY:
+    class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict(TypedDict):
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs:
+    def __init__(__self__, *,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+if not MYPY:
+    class GetAiDataPlatformAiDataPlatformsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAiDataPlatformAiDataPlatformsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAiDataPlatformAiDataPlatformsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:
@@ -1735,6 +2408,288 @@ class GetDbmulticloudOracleDbGcpKeysFilterArgs:
 
 
 if not MYPY:
+    class GetIotDigitalTwinAdaptersFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotDigitalTwinAdaptersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotDigitalTwinAdaptersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetIotDigitalTwinInstancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotDigitalTwinInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotDigitalTwinInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetIotDigitalTwinModelsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotDigitalTwinModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotDigitalTwinModelsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetIotDigitalTwinRelationshipsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotDigitalTwinRelationshipsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotDigitalTwinRelationshipsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetIotIotDomainGroupsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotIotDomainGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotIotDomainGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetIotIotDomainsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetIotIotDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetIotIotDomainsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -1859,6 +2814,335 @@ class GetManagedKafkaKafkaClustersFilterArgs:
         """
         Name of the Kafka listener providing this bootstrap URL
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudExternalLocationMappingMetadataFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudExternalLocationMappingMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudExternalLocationMappingMetadataFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudExternalLocationSummariesMetadataFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudExternalLocationSummariesMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudExternalLocationSummariesMetadataFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudExternalLocationsMetadataFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudExternalLocationsMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudExternalLocationsMetadataFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudResourceAnchorsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudResourceAnchorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudResourceAnchorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetResourceAnalyticsMonitoredRegionsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetResourceAnalyticsMonitoredRegionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetResourceAnalyticsMonitoredRegionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetResourceAnalyticsTenancyAttachmentsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetResourceAnalyticsTenancyAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetResourceAnalyticsTenancyAttachmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

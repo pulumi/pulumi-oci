@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
- *
- * Creates a new Certificate.
- *
  * ## Example Usage
  *
  * ```typescript

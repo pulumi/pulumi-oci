@@ -184,10 +184,6 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Resource Categories Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
-
         ## Example Usage
 
         ```python
@@ -223,10 +219,6 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
                  args: LogAnalyticsResourceCategoriesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Resource Categories Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
-
         ## Example Usage
 
         ```python

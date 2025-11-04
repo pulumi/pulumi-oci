@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// Install the specified patch to this cluster.
-//
 // ## Example Usage
 //
 // ```go

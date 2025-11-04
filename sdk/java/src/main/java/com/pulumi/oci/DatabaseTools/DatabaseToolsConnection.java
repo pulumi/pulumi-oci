@@ -21,9 +21,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
- * 
- * Creates a new Database Tools connection.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -205,6 +203,34 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.relatedResource;
     }
     /**
+     * Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    @Export(name="runtimeEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> runtimeEndpoint;
+
+    /**
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    public Output<String> runtimeEndpoint() {
+        return this.runtimeEndpoint;
+    }
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    @Export(name="runtimeIdentity", refs={String.class}, tree="[0]")
+    private Output<String> runtimeIdentity;
+
+    /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    public Output<String> runtimeIdentity() {
+        return this.runtimeIdentity;
+    }
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -261,28 +287,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.timeCreated;
     }
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * (Updatable) The Database Tools connection type.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return (Updatable) The DatabaseToolsConnection type.
+     * @return (Updatable) The Database Tools connection type.
      * 
      */
     public Output<String> type() {
@@ -317,14 +343,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.userName;
     }
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      * 
      */
     @Export(name="userPassword", refs={DatabaseToolsConnectionUserPassword.class}, tree="[0]")
     private Output<DatabaseToolsConnectionUserPassword> userPassword;
 
     /**
-     * @return (Updatable) The user password.
+     * @return (Updatable) The database user password.
      * 
      */
     public Output<DatabaseToolsConnectionUserPassword> userPassword() {

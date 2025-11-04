@@ -79,6 +79,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["auth"] = args?.auth;
             resourceInputs["configFileProfile"] = args?.configFileProfile;
             resourceInputs["disableAutoRetries"] = pulumi.output(args?.disableAutoRetries).apply(JSON.stringify);
+            resourceInputs["dualStackEndpointEnabled"] = pulumi.output(args?.dualStackEndpointEnabled).apply(JSON.stringify);
             resourceInputs["fingerprint"] = args?.fingerprint;
             resourceInputs["ignoreDefinedTags"] = pulumi.output(args?.ignoreDefinedTags).apply(JSON.stringify);
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
@@ -124,6 +125,10 @@ export interface ProviderArgs {
      * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
      */
     disableAutoRetries?: pulumi.Input<boolean>;
+    /**
+     * (Optional) flags to enable Dual Stack endpoint.
+     */
+    dualStackEndpointEnabled?: pulumi.Input<boolean>;
     /**
      * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */

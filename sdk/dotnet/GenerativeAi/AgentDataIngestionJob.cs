@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
-    /// This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-    /// 
-    /// **CreateDataIngestionJob**
-    /// 
-    /// Creates a data ingestion job.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Profile Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Attaches the specified software sources to a profile.
- * 
  * ## Example Usage
  * 
  * <pre>

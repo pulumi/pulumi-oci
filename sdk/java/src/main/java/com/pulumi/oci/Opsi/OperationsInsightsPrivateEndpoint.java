@@ -17,11 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a private endpoint resource for the tenant in Ops Insights.
- * This resource will be created in customer compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

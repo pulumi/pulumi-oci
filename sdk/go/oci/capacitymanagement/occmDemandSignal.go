@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
-//
-// This is a post API to create occm demand signal.
-//
 // ## Example Usage
 //
 // ```go

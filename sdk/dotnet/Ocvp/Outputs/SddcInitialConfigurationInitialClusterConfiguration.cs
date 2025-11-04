@@ -26,11 +26,15 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
         /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public readonly ImmutableArray<string> DatastoreClusterIds;
+        /// <summary>
         /// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         /// </summary>
         public readonly ImmutableArray<Outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore> Datastores;
         /// <summary>
-        /// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -82,6 +86,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string computeAvailabilityDomain,
 
+            ImmutableArray<string> datastoreClusterIds,
+
             ImmutableArray<Outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores,
 
             string? displayName,
@@ -107,6 +113,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             ActualEsxiHostsCount = actualEsxiHostsCount;
             CapacityReservationId = capacityReservationId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
+            DatastoreClusterIds = datastoreClusterIds;
             Datastores = datastores;
             DisplayName = displayName;
             EsxiHostsCount = esxiHostsCount;

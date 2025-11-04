@@ -405,10 +405,6 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Recovery Service Subnet.
-
         ## Example Usage
 
         ```python
@@ -460,10 +456,6 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                  args: RecoveryServiceSubnetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Recovery Service Subnet.
-
         ## Example Usage
 
         ```python

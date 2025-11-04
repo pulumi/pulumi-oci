@@ -19,10 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- *   Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
- * 
  * ## Example Usage
  * 
  * <pre>

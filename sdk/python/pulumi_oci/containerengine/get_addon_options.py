@@ -28,7 +28,7 @@ class GetAddonOptionsResult:
     """
     A collection of values returned by getAddonOptions.
     """
-    def __init__(__self__, addon_name=None, addon_options=None, filters=None, id=None, kubernetes_version=None):
+    def __init__(__self__, addon_name=None, addon_options=None, filters=None, id=None, kubernetes_version=None, should_show_all_versions=None):
         if addon_name and not isinstance(addon_name, str):
             raise TypeError("Expected argument 'addon_name' to be a str")
         pulumi.set(__self__, "addon_name", addon_name)
@@ -44,6 +44,9 @@ class GetAddonOptionsResult:
         if kubernetes_version and not isinstance(kubernetes_version, str):
             raise TypeError("Expected argument 'kubernetes_version' to be a str")
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        if should_show_all_versions and not isinstance(should_show_all_versions, bool):
+            raise TypeError("Expected argument 'should_show_all_versions' to be a bool")
+        pulumi.set(__self__, "should_show_all_versions", should_show_all_versions)
 
     @_builtins.property
     @pulumi.getter(name="addonName")
@@ -76,6 +79,11 @@ class GetAddonOptionsResult:
     def kubernetes_version(self) -> _builtins.str:
         return pulumi.get(self, "kubernetes_version")
 
+    @_builtins.property
+    @pulumi.getter(name="shouldShowAllVersions")
+    def should_show_all_versions(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_show_all_versions")
+
 
 class AwaitableGetAddonOptionsResult(GetAddonOptionsResult):
     # pylint: disable=using-constant-test
@@ -87,12 +95,14 @@ class AwaitableGetAddonOptionsResult(GetAddonOptionsResult):
             addon_options=self.addon_options,
             filters=self.filters,
             id=self.id,
-            kubernetes_version=self.kubernetes_version)
+            kubernetes_version=self.kubernetes_version,
+            should_show_all_versions=self.should_show_all_versions)
 
 
 def get_addon_options(addon_name: Optional[_builtins.str] = None,
                       filters: Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]] = None,
                       kubernetes_version: Optional[_builtins.str] = None,
+                      should_show_all_versions: Optional[_builtins.bool] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonOptionsResult:
     """
     This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
@@ -106,17 +116,20 @@ def get_addon_options(addon_name: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
-        addon_name=test_addon["name"])
+        addon_name=test_addon["name"],
+        should_show_all_versions=addon_option_should_show_all_versions)
     ```
 
 
     :param _builtins.str addon_name: The name of the addon.
     :param _builtins.str kubernetes_version: The kubernetes version to fetch the addons.
+    :param _builtins.bool should_show_all_versions: Whether to show all add-on versions
     """
     __args__ = dict()
     __args__['addonName'] = addon_name
     __args__['filters'] = filters
     __args__['kubernetesVersion'] = kubernetes_version
+    __args__['shouldShowAllVersions'] = should_show_all_versions
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getAddonOptions:getAddonOptions', __args__, opts=opts, typ=GetAddonOptionsResult).value
 
@@ -125,10 +138,12 @@ def get_addon_options(addon_name: Optional[_builtins.str] = None,
         addon_options=pulumi.get(__ret__, 'addon_options'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'))
+        kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'),
+        should_show_all_versions=pulumi.get(__ret__, 'should_show_all_versions'))
 def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]]]] = None,
                              kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
+                             should_show_all_versions: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonOptionsResult]:
     """
     This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
@@ -142,17 +157,20 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[_builtin
     import pulumi_oci as oci
 
     test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
-        addon_name=test_addon["name"])
+        addon_name=test_addon["name"],
+        should_show_all_versions=addon_option_should_show_all_versions)
     ```
 
 
     :param _builtins.str addon_name: The name of the addon.
     :param _builtins.str kubernetes_version: The kubernetes version to fetch the addons.
+    :param _builtins.bool should_show_all_versions: Whether to show all add-on versions
     """
     __args__ = dict()
     __args__['addonName'] = addon_name
     __args__['filters'] = filters
     __args__['kubernetesVersion'] = kubernetes_version
+    __args__['shouldShowAllVersions'] = should_show_all_versions
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getAddonOptions:getAddonOptions', __args__, opts=opts, typ=GetAddonOptionsResult)
     return __ret__.apply(lambda __response__: GetAddonOptionsResult(
@@ -160,4 +178,5 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[_builtin
         addon_options=pulumi.get(__response__, 'addon_options'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
-        kubernetes_version=pulumi.get(__response__, 'kubernetes_version')))
+        kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
+        should_show_all_versions=pulumi.get(__response__, 'should_show_all_versions')))

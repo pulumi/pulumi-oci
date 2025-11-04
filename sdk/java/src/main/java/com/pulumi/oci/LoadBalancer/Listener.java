@@ -19,10 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
- * 
- * Adds a listener to a load balancer.
- * 
  * ## Example Usage
  * 
  * <pre>

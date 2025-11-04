@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
- * 
- * Creates a publication of the specified listing type with an optional default package.
- * 
  * ## Example Usage
  * 
  * <pre>

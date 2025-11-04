@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Security Assessment Check resource in Oracle Cloud Infrastructure Data Safe service.
-//
-//	Patches one or more checks in the specified template type security assessment. Use it to add or delete checks.
-//
-// To add check, use CreateCheckDetails as the patch value.
-//
 // ## Example Usage
 //
 // ```go

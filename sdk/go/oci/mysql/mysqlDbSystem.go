@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
-//
-// Creates and launches a DB System.
-//
 // ## Example Usage
 //
 // ```go
@@ -97,7 +93,10 @@ import (
 //				IpAddress:         pulumi.Any(mysqlDbSystemIpAddress),
 //				IsHighlyAvailable: pulumi.Any(mysqlDbSystemIsHighlyAvailable),
 //				Maintenance: &mysql.MysqlDbSystemMaintenanceArgs{
-//					WindowStartTime: pulumi.Any(mysqlDbSystemMaintenanceWindowStartTime),
+//					WindowStartTime:         pulumi.Any(mysqlDbSystemMaintenanceWindowStartTime),
+//					MaintenanceScheduleType: pulumi.Any(mysqlDbSystemMaintenanceMaintenanceScheduleType),
+//					VersionPreference:       pulumi.Any(mysqlDbSystemMaintenanceVersionPreference),
+//					VersionTrackPreference:  pulumi.Any(mysqlDbSystemMaintenanceVersionTrackPreference),
 //				},
 //				NsgIds: pulumi.Any(mysqlDbSystemNsgIds),
 //				Port:   pulumi.Any(mysqlDbSystemPort),
@@ -116,6 +115,7 @@ import (
 //					CertificateGenerationType: pulumi.Any(mysqlDbSystemSecureConnectionsCertificateGenerationType),
 //					CertificateId:             pulumi.Any(testCertificate.Id),
 //				},
+//				SecurityAttributes: pulumi.Any(mysqlDbSystemSecurityAttributes),
 //				Source: &mysql.MysqlDbSystemSourceArgs{
 //					SourceType: pulumi.Any(mysqlDbSystemSourceSourceType),
 //					BackupId:   pulumi.Any(testBackup.Id),
@@ -234,6 +234,8 @@ type MysqlDbSystem struct {
 	Rest MysqlDbSystemRestOutput `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsOutput `pulumi:"secureConnections"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
@@ -399,6 +401,8 @@ type mysqlDbSystemState struct {
 	Rest *MysqlDbSystemRest `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
@@ -516,6 +520,8 @@ type MysqlDbSystemState struct {
 	Rest MysqlDbSystemRestPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
@@ -623,6 +629,8 @@ type mysqlDbSystemArgs struct {
 	Rest *MysqlDbSystemRest `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
@@ -721,6 +729,8 @@ type MysqlDbSystemArgs struct {
 	Rest MysqlDbSystemRestPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput
@@ -1032,6 +1042,11 @@ func (o MysqlDbSystemOutput) Rest() MysqlDbSystemRestOutput {
 // (Updatable) Secure connection configuration details.
 func (o MysqlDbSystemOutput) SecureConnections() MysqlDbSystemSecureConnectionsOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemSecureConnectionsOutput { return v.SecureConnections }).(MysqlDbSystemSecureConnectionsOutput)
+}
+
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o MysqlDbSystemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The name of the shape. The shape determines the resources allocated

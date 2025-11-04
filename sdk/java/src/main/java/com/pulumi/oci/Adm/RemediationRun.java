@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
- * 
- * Creates a new remediation run.
- * 
  * ## Example Usage
  * 
  * <pre>

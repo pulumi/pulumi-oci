@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a Cloud Gate mapping
- *
  * ## Example Usage
  *
  * ## Import

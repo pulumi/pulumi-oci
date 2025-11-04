@@ -1456,6 +1456,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	Rests []MysqlBackupDbSystemSnapshotRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []MysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the DB System instance used for backup.
 	ShapeName *string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -1534,6 +1536,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Rests MysqlBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections MysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -1743,6 +1747,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) SecureConnections() MysqlBackupDbSyst
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotSecureConnection {
 		return v.SecureConnections
 	}).(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o MysqlBackupDbSystemSnapshotOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the DB System instance used for backup.
@@ -2666,6 +2675,16 @@ func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput)
 }
 
 type MysqlBackupDbSystemSnapshotMaintenance struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType *string `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion *string `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled *string `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference *string `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference *string `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime *string `pulumi:"windowStartTime"`
 }
@@ -2682,6 +2701,16 @@ type MysqlBackupDbSystemSnapshotMaintenanceInput interface {
 }
 
 type MysqlBackupDbSystemSnapshotMaintenanceArgs struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType pulumi.StringPtrInput `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion pulumi.StringPtrInput `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled pulumi.StringPtrInput `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference pulumi.StringPtrInput `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference pulumi.StringPtrInput `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
@@ -2735,6 +2764,31 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnaps
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return o
+}
+
+// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.MaintenanceScheduleType }).(pulumi.StringPtrOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) TargetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.TargetVersion }).(pulumi.StringPtrOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) TimeScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.TimeScheduled }).(pulumi.StringPtrOutput)
+}
+
+// The preferred version to target when performing an automatic MySQL upgrade.
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) VersionPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.VersionPreference }).(pulumi.StringPtrOutput)
+}
+
+// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) VersionTrackPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.VersionTrackPreference }).(pulumi.StringPtrOutput)
 }
 
 // The start time of the maintenance window.
@@ -9412,6 +9466,18 @@ func (o MysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) MysqlD
 }
 
 type MysqlDbSystemMaintenance struct {
+	// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType *string `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion *string `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled *string `pulumi:"timeScheduled"`
+	// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+	//
+	// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+	VersionPreference *string `pulumi:"versionPreference"`
+	// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference *string `pulumi:"versionTrackPreference"`
 	// (Updatable) The start of the 2 hour maintenance window.
 	//
 	// This string is of the format: "{day-of-week} {time-of-day}".
@@ -9436,6 +9502,18 @@ type MysqlDbSystemMaintenanceInput interface {
 }
 
 type MysqlDbSystemMaintenanceArgs struct {
+	// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType pulumi.StringPtrInput `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion pulumi.StringPtrInput `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled pulumi.StringPtrInput `pulumi:"timeScheduled"`
+	// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+	//
+	// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+	VersionPreference pulumi.StringPtrInput `pulumi:"versionPreference"`
+	// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference pulumi.StringPtrInput `pulumi:"versionTrackPreference"`
 	// (Updatable) The start of the 2 hour maintenance window.
 	//
 	// This string is of the format: "{day-of-week} {time-of-day}".
@@ -9525,6 +9603,33 @@ func (o MysqlDbSystemMaintenanceOutput) ToMysqlDbSystemMaintenancePtrOutputWithC
 	}).(MysqlDbSystemMaintenancePtrOutput)
 }
 
+// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o MysqlDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.MaintenanceScheduleType }).(pulumi.StringPtrOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o MysqlDbSystemMaintenanceOutput) TargetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.TargetVersion }).(pulumi.StringPtrOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemMaintenanceOutput) TimeScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.TimeScheduled }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+//
+// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+func (o MysqlDbSystemMaintenanceOutput) VersionPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.VersionPreference }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o MysqlDbSystemMaintenanceOutput) VersionTrackPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.VersionTrackPreference }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The start of the 2 hour maintenance window.
 //
 // This string is of the format: "{day-of-week} {time-of-day}".
@@ -9560,6 +9665,58 @@ func (o MysqlDbSystemMaintenancePtrOutput) Elem() MysqlDbSystemMaintenanceOutput
 		var ret MysqlDbSystemMaintenance
 		return ret
 	}).(MysqlDbSystemMaintenanceOutput)
+}
+
+// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o MysqlDbSystemMaintenancePtrOutput) MaintenanceScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceScheduleType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o MysqlDbSystemMaintenancePtrOutput) TargetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TargetVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemMaintenancePtrOutput) TimeScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeScheduled
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+//
+// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+func (o MysqlDbSystemMaintenancePtrOutput) VersionPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VersionPreference
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o MysqlDbSystemMaintenancePtrOutput) VersionTrackPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VersionTrackPreference
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The start of the 2 hour maintenance window.
@@ -10534,6 +10691,8 @@ type ReplicaReplicaOverrides struct {
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -10559,6 +10718,8 @@ type ReplicaReplicaOverridesArgs struct {
 	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -10658,6 +10819,11 @@ func (o ReplicaReplicaOverridesOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ReplicaReplicaOverrides) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o ReplicaReplicaOverridesOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 //
 // ** IMPORTANT **
@@ -10718,6 +10884,16 @@ func (o ReplicaReplicaOverridesPtrOutput) NsgIds() pulumi.StringArrayOutput {
 		}
 		return v.NsgIds
 	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o ReplicaReplicaOverridesPtrOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -12892,6 +13068,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Rests []GetMysqlBackupDbSystemSnapshotRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the DB System instance used for backup.
 	ShapeName string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -12970,6 +13148,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Rests GetMysqlBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -13189,6 +13369,11 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) SecureConnections() GetMysqlBackup
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotSecureConnection {
 		return v.SecureConnections
 	}).(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetMysqlBackupDbSystemSnapshotOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the DB System instance used for backup.
@@ -14112,6 +14297,16 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetMysqlBackupDbSystemSnapshotMaintenance struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion string `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference string `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference string `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -14128,6 +14323,16 @@ type GetMysqlBackupDbSystemSnapshotMaintenanceInput interface {
 }
 
 type GetMysqlBackupDbSystemSnapshotMaintenanceArgs struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference pulumi.StringInput `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -14181,6 +14386,31 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSyste
 
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return o
+}
+
+// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) TargetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The preferred version to target when performing an automatic MySQL upgrade.
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.VersionPreference }).(pulumi.StringOutput)
+}
+
+// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) VersionTrackPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.VersionTrackPreference }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -20654,6 +20884,16 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetMysqlDbSystemMaintenance struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion string `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference string `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference string `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -20670,6 +20910,16 @@ type GetMysqlDbSystemMaintenanceInput interface {
 }
 
 type GetMysqlDbSystemMaintenanceArgs struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference pulumi.StringInput `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -20723,6 +20973,31 @@ func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutput()
 
 func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceOutput {
 	return o
+}
+
+// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o GetMysqlDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o GetMysqlDbSystemMaintenanceOutput) TargetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemMaintenanceOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The preferred version to target when performing an automatic MySQL upgrade.
+func (o GetMysqlDbSystemMaintenanceOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.VersionPreference }).(pulumi.StringOutput)
+}
+
+// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o GetMysqlDbSystemMaintenanceOutput) VersionTrackPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.VersionTrackPreference }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -21403,6 +21678,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	Rests []GetMysqlDbSystemsDbSystemRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemsDbSystemSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    string `pulumi:"shapeName"`
 	ShutdownType string `pulumi:"shutdownType"`
@@ -21512,6 +21789,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Rests GetMysqlDbSystemsDbSystemRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlDbSystemsDbSystemSecureConnectionArrayInput `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    pulumi.StringInput `pulumi:"shapeName"`
 	ShutdownType pulumi.StringInput `pulumi:"shutdownType"`
@@ -21785,6 +22064,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) SecureConnections() GetMysqlDbSystemsDb
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemSecureConnection {
 		return v.SecureConnections
 	}).(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetMysqlDbSystemsDbSystemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -23935,6 +24219,16 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntI
 }
 
 type GetMysqlDbSystemsDbSystemMaintenance struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion string `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference string `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference string `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -23951,6 +24245,16 @@ type GetMysqlDbSystemsDbSystemMaintenanceInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemMaintenanceArgs struct {
+	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
+	// The version that is expected to be targeted during the next scheduled maintenance run.
+	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
+	// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The preferred version to target when performing an automatic MySQL upgrade.
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+	// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+	VersionTrackPreference pulumi.StringInput `pulumi:"versionTrackPreference"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -24004,6 +24308,31 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemM
 
 func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceOutput {
 	return o
+}
+
+// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
+}
+
+// The version that is expected to be targeted during the next scheduled maintenance run.
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) TargetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The preferred version to target when performing an automatic MySQL upgrade.
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.VersionPreference }).(pulumi.StringOutput)
+}
+
+// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) VersionTrackPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.VersionTrackPreference }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -25140,6 +25469,8 @@ type GetReplicaReplicaOverride struct {
 	MysqlVersion string `pulumi:"mysqlVersion"`
 	// Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds []string `pulumi:"nsgIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 }
@@ -25162,6 +25493,8 @@ type GetReplicaReplicaOverrideArgs struct {
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
 	// Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 }
@@ -25230,6 +25563,11 @@ func (o GetReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
 // Network Security Group OCIDs used for the VNIC attachment.
 func (o GetReplicaReplicaOverrideOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetReplicaReplicaOverride) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetReplicaReplicaOverrideOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -25510,6 +25848,8 @@ type GetReplicasReplica struct {
 	ReplicaOverrides []GetReplicasReplicaReplicaOverride `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections []GetReplicasReplicaSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
@@ -25572,6 +25912,8 @@ type GetReplicasReplicaArgs struct {
 	ReplicaOverrides GetReplicasReplicaReplicaOverrideArrayInput `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections GetReplicasReplicaSecureConnectionArrayInput `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
@@ -25733,6 +26075,11 @@ func (o GetReplicasReplicaOutput) SecureConnections() GetReplicasReplicaSecureCo
 	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaSecureConnection { return v.SecureConnections }).(GetReplicasReplicaSecureConnectionArrayOutput)
 }
 
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetReplicasReplicaOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicasReplica) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 func (o GetReplicasReplicaOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.ShapeName }).(pulumi.StringOutput)
@@ -25886,6 +26233,8 @@ type GetReplicasReplicaReplicaOverride struct {
 	MysqlVersion string `pulumi:"mysqlVersion"`
 	// Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds []string `pulumi:"nsgIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 }
@@ -25908,6 +26257,8 @@ type GetReplicasReplicaReplicaOverrideArgs struct {
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
 	// Network Security Group OCIDs used for the VNIC attachment.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 }
@@ -25976,6 +26327,11 @@ func (o GetReplicasReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOut
 // Network Security Group OCIDs used for the VNIC attachment.
 func (o GetReplicasReplicaReplicaOverrideOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetReplicasReplicaReplicaOverrideOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

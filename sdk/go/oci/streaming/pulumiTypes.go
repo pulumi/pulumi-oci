@@ -369,9 +369,6 @@ type StreamPoolPrivateEndpointSettings struct {
 	// The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -392,9 +389,6 @@ type StreamPoolPrivateEndpointSettingsArgs struct {
 	// The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
 	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -486,9 +480,6 @@ func (o StreamPoolPrivateEndpointSettingsOutput) PrivateEndpointIp() pulumi.Stri
 }
 
 // If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamPoolPrivateEndpointSettingsOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v StreamPoolPrivateEndpointSettings) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -538,9 +529,6 @@ func (o StreamPoolPrivateEndpointSettingsPtrOutput) PrivateEndpointIp() pulumi.S
 }
 
 // If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *StreamPoolPrivateEndpointSettings) *string {
 		if v == nil {
@@ -1296,6 +1284,8 @@ type GetStreamPoolsStreamPool struct {
 	Name string `pulumi:"name"`
 	// Optional settings if the stream pool is private.
 	PrivateEndpointSettings []GetStreamPoolsStreamPoolPrivateEndpointSetting `pulumi:"privateEndpointSettings"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -1336,6 +1326,8 @@ type GetStreamPoolsStreamPoolArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// Optional settings if the stream pool is private.
 	PrivateEndpointSettings GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput `pulumi:"privateEndpointSettings"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -1450,6 +1442,11 @@ func (o GetStreamPoolsStreamPoolOutput) PrivateEndpointSettings() GetStreamPools
 	return o.ApplyT(func(v GetStreamPoolsStreamPool) []GetStreamPoolsStreamPoolPrivateEndpointSetting {
 		return v.PrivateEndpointSettings
 	}).(GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetStreamPoolsStreamPoolOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.

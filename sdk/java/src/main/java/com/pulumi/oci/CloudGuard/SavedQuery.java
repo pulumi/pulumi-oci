@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a SavedQuery resource.
- * 
  * ## Example Usage
  * 
  * <pre>

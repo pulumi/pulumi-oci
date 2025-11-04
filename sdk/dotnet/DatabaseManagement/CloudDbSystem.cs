@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates a cloud DB system and its related resources.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

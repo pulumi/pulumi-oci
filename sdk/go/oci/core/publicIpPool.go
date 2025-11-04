@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a public IP pool.
-//
 // ## Example Usage
 //
 // ```go

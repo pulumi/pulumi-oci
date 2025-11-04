@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
 //
-// Gets a list of the Autonomous Database Software Images in the specified compartment.
+// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
 //
 // ## Example Usage
 //
@@ -72,14 +72,14 @@ type GetAutonomousDatabaseSoftwareImagesResult struct {
 	AutonomousDatabaseSoftwareImageCollections []GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollection `pulumi:"autonomousDatabaseSoftwareImageCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+	// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 	DisplayName *string                                     `pulumi:"displayName"`
 	Filters     []GetAutonomousDatabaseSoftwareImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// To what shape the image is meant for.
 	ImageShapeFamily string `pulumi:"imageShapeFamily"`
-	// The current state of the Autonomous Database Software Image.
+	// The current state of the Autonomous AI Database Software Image.
 	State *string `pulumi:"state"`
 }
 
@@ -136,7 +136,7 @@ func (o GetAutonomousDatabaseSoftwareImagesResultOutput) CompartmentId() pulumi.
 	return o.ApplyT(func(v GetAutonomousDatabaseSoftwareImagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 func (o GetAutonomousDatabaseSoftwareImagesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseSoftwareImagesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -157,7 +157,7 @@ func (o GetAutonomousDatabaseSoftwareImagesResultOutput) ImageShapeFamily() pulu
 	return o.ApplyT(func(v GetAutonomousDatabaseSoftwareImagesResult) string { return v.ImageShapeFamily }).(pulumi.StringOutput)
 }
 
-// The current state of the Autonomous Database Software Image.
+// The current state of the Autonomous AI Database Software Image.
 func (o GetAutonomousDatabaseSoftwareImagesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseSoftwareImagesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

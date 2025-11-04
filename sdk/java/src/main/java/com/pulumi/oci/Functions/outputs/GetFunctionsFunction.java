@@ -5,8 +5,10 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionFailureDestination;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionSourceDetail;
+import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionSuccessDestination;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionTraceConfig;
 import java.lang.Integer;
 import java.lang.String;
@@ -37,10 +39,20 @@ public final class GetFunctionsFunction {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Timeout for detached function invocations. Value in seconds.  Example: `{&#34;detachedModeTimeoutInSeconds&#34;: 900}`
+     * 
+     */
+    private Integer detachedModeTimeoutInSeconds;
+    /**
      * @return A filter to return only functions with display names that match the display name string. Matching is exact.
      * 
      */
     private String displayName;
+    /**
+     * @return An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    private List<GetFunctionsFunctionFailureDestination> failureDestinations;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -92,6 +104,11 @@ public final class GetFunctionsFunction {
      */
     private String state;
     /**
+     * @return An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    private List<GetFunctionsFunctionSuccessDestination> successDestinations;
+    /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
@@ -142,11 +159,25 @@ public final class GetFunctionsFunction {
         return this.definedTags;
     }
     /**
+     * @return Timeout for detached function invocations. Value in seconds.  Example: `{&#34;detachedModeTimeoutInSeconds&#34;: 900}`
+     * 
+     */
+    public Integer detachedModeTimeoutInSeconds() {
+        return this.detachedModeTimeoutInSeconds;
+    }
+    /**
      * @return A filter to return only functions with display names that match the display name string. Matching is exact.
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    public List<GetFunctionsFunctionFailureDestination> failureDestinations() {
+        return this.failureDestinations;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -219,6 +250,13 @@ public final class GetFunctionsFunction {
         return this.state;
     }
     /**
+     * @return An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    public List<GetFunctionsFunctionSuccessDestination> successDestinations() {
+        return this.successDestinations;
+    }
+    /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
@@ -260,7 +298,9 @@ public final class GetFunctionsFunction {
         private String compartmentId;
         private Map<String,String> config;
         private Map<String,String> definedTags;
+        private Integer detachedModeTimeoutInSeconds;
         private String displayName;
+        private List<GetFunctionsFunctionFailureDestination> failureDestinations;
         private Map<String,String> freeformTags;
         private String id;
         private String image;
@@ -271,6 +311,7 @@ public final class GetFunctionsFunction {
         private String shape;
         private List<GetFunctionsFunctionSourceDetail> sourceDetails;
         private String state;
+        private List<GetFunctionsFunctionSuccessDestination> successDestinations;
         private String timeCreated;
         private String timeUpdated;
         private Integer timeoutInSeconds;
@@ -282,7 +323,9 @@ public final class GetFunctionsFunction {
     	      this.compartmentId = defaults.compartmentId;
     	      this.config = defaults.config;
     	      this.definedTags = defaults.definedTags;
+    	      this.detachedModeTimeoutInSeconds = defaults.detachedModeTimeoutInSeconds;
     	      this.displayName = defaults.displayName;
+    	      this.failureDestinations = defaults.failureDestinations;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.image = defaults.image;
@@ -293,6 +336,7 @@ public final class GetFunctionsFunction {
     	      this.shape = defaults.shape;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
+    	      this.successDestinations = defaults.successDestinations;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeoutInSeconds = defaults.timeoutInSeconds;
@@ -332,12 +376,31 @@ public final class GetFunctionsFunction {
             return this;
         }
         @CustomType.Setter
+        public Builder detachedModeTimeoutInSeconds(Integer detachedModeTimeoutInSeconds) {
+            if (detachedModeTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "detachedModeTimeoutInSeconds");
+            }
+            this.detachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetFunctionsFunction", "displayName");
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder failureDestinations(List<GetFunctionsFunctionFailureDestination> failureDestinations) {
+            if (failureDestinations == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "failureDestinations");
+            }
+            this.failureDestinations = failureDestinations;
+            return this;
+        }
+        public Builder failureDestinations(GetFunctionsFunctionFailureDestination... failureDestinations) {
+            return failureDestinations(List.of(failureDestinations));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -426,6 +489,17 @@ public final class GetFunctionsFunction {
             return this;
         }
         @CustomType.Setter
+        public Builder successDestinations(List<GetFunctionsFunctionSuccessDestination> successDestinations) {
+            if (successDestinations == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "successDestinations");
+            }
+            this.successDestinations = successDestinations;
+            return this;
+        }
+        public Builder successDestinations(GetFunctionsFunctionSuccessDestination... successDestinations) {
+            return successDestinations(List.of(successDestinations));
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetFunctionsFunction", "timeCreated");
@@ -466,7 +540,9 @@ public final class GetFunctionsFunction {
             _resultValue.compartmentId = compartmentId;
             _resultValue.config = config;
             _resultValue.definedTags = definedTags;
+            _resultValue.detachedModeTimeoutInSeconds = detachedModeTimeoutInSeconds;
             _resultValue.displayName = displayName;
+            _resultValue.failureDestinations = failureDestinations;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.image = image;
@@ -477,6 +553,7 @@ public final class GetFunctionsFunction {
             _resultValue.shape = shape;
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.state = state;
+            _resultValue.successDestinations = successDestinations;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.timeoutInSeconds = timeoutInSeconds;

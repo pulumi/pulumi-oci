@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
 //
-// Lists the Autonomous Database peers for the specified Autonomous Database.
+// Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
 //
 // ## Example Usage
 //

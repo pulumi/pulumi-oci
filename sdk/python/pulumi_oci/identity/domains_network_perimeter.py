@@ -1033,10 +1033,6 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a NetworkPerimeter
-
         ## Example Usage
 
         ## Import
@@ -1138,10 +1134,6 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  args: DomainsNetworkPerimeterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a NetworkPerimeter
-
         ## Example Usage
 
         ## Import

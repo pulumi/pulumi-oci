@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates an external MySQL database.
- *
  * ## Example Usage
  *
  * ```typescript

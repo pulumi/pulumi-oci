@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets the Autonomous Database regional wallet details.
+ * Gets the Autonomous AI Database regional wallet details.
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export interface GetAutonomousDatabaseRegionalWalletManagementResult {
     readonly id: string;
     readonly shouldRotate: boolean;
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      */
     readonly state: string;
     /**
@@ -43,7 +43,7 @@ export interface GetAutonomousDatabaseRegionalWalletManagementResult {
 /**
  * This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets the Autonomous Database regional wallet details.
+ * Gets the Autonomous AI Database regional wallet details.
  *
  * ## Example Usage
  *

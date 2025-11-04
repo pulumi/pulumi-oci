@@ -334,10 +334,6 @@ class Project(pulumi.CustomResource):
                  notification_config: Optional[pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new project.
-
         ## Example Usage
 
         ```python
@@ -383,10 +379,6 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new project.
-
         ## Example Usage
 
         ```python

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a self-registration profile.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

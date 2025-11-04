@@ -431,9 +431,7 @@ class MigrationPlan(pulumi.CustomResource):
                  target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration plan.
+        ## Example Usage
 
         ## Import
 
@@ -461,9 +459,7 @@ class MigrationPlan(pulumi.CustomResource):
                  args: MigrationPlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration plan.
+        ## Example Usage
 
         ## Import
 

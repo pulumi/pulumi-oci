@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-//
-// Generates a key that you can use to encrypt or decrypt data.
-//
 // ## Example Usage
 //
 // ```go

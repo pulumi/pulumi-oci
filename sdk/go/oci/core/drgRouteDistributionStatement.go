@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
-//
-// Adds one route distribution statement to the specified route distribution.
-//
 // ## Example Usage
 //
 // ```go

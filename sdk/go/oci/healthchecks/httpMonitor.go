@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-//
-// Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
-// and probes will be initiated from each vantage point to each of the targets at the frequency
-// specified by `intervalInSeconds`.
-//
 // ## Example Usage
 //
 // ```go

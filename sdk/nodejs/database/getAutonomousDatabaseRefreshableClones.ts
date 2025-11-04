@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
  *
- * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+ * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
  *
  * ## Example Usage
  *
@@ -59,7 +59,7 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
 /**
  * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
  *
- * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+ * Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
  *
  * ## Example Usage
  *

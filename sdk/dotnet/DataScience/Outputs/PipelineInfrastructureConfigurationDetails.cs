@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int BlockStorageSizeInGbs;
         /// <summary>
+        /// (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        public readonly string? BlockStorageSizeInGbsParameterized;
+        /// <summary>
         /// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         public readonly Outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails? ShapeConfigDetails;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         private PipelineInfrastructureConfigurationDetails(
             int blockStorageSizeInGbs,
 
+            string? blockStorageSizeInGbsParameterized,
+
             Outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails? shapeConfigDetails,
 
             string shapeName,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
+            BlockStorageSizeInGbsParameterized = blockStorageSizeInGbsParameterized;
             ShapeConfigDetails = shapeConfigDetails;
             ShapeName = shapeName;
             SubnetId = subnetId;

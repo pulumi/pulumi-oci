@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Trigger resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new trigger.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -298,13 +298,6 @@ class Rrset(pulumi.CustomResource):
                  zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
-
-          Updates records in the specified RRSet.
-
-        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-        parameter then the viewId query parameter is required.
-
         ## Example Usage
 
         ```python
@@ -363,13 +356,6 @@ class Rrset(pulumi.CustomResource):
                  args: RrsetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
-
-          Updates records in the specified RRSet.
-
-        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-        parameter then the viewId query parameter is required.
-
         ## Example Usage
 
         ```python

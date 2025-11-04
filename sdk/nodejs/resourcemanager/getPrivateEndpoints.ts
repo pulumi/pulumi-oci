@@ -10,7 +10,9 @@ import * as utilities from "../utilities";
  * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
  *
  * Lists private endpoints according to the specified filter.
- * - For `compartmentId`, lists all private endpoint in the matching compartment.
+ * For more information, see
+ * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+ * - For `compartmentId`, lists all private endpoints in the matching compartment.
  * - For `privateEndpointId`, lists the matching private endpoint.
  *
  * ## Example Usage
@@ -67,7 +69,7 @@ export interface GetPrivateEndpointsArgs {
  */
 export interface GetPrivateEndpointsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      */
     readonly compartmentId?: string;
     /**
@@ -93,7 +95,9 @@ export interface GetPrivateEndpointsResult {
  * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
  *
  * Lists private endpoints according to the specified filter.
- * - For `compartmentId`, lists all private endpoint in the matching compartment.
+ * For more information, see
+ * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+ * - For `compartmentId`, lists all private endpoints in the matching compartment.
  * - For `privateEndpointId`, lists the matching private endpoint.
  *
  * ## Example Usage

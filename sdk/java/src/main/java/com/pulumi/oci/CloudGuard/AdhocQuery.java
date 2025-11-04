@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a AdhocQuery resource.
- * 
  * ## Example Usage
  * 
  * <pre>

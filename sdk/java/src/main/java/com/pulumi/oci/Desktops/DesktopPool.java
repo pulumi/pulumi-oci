@@ -26,10 +26,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
- * 
- * Creates a desktop pool with the given configuration parameters.
- * 
  * ## Example Usage
  * 
  * <pre>

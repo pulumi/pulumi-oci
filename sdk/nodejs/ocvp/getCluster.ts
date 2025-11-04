@@ -44,6 +44,7 @@ export interface GetClusterArgs {
  */
 export interface GetClusterResult {
     readonly actualEsxiHostsCount: number;
+    readonly attachDatastoreClusterIds: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
@@ -58,6 +59,10 @@ export interface GetClusterResult {
      */
     readonly computeAvailabilityDomain: string;
     /**
+     * A list of datastore clusters.
+     */
+    readonly datastoreClusterIds: string[];
+    /**
      * Datastores used for the Cluster.
      */
     readonly datastores: outputs.Ocvp.GetClusterDatastore[];
@@ -65,6 +70,7 @@ export interface GetClusterResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
+    readonly detachDatastoreClusterIds: string[];
     /**
      * A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      */

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
-//
-// # Creates an API Platform Instance
-//
 // ## Example Usage
 //
 // ```go

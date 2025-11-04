@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Cloud Db System Cloud Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Enables Stack Monitoring for all the components of the specified
-    /// cloud DB system (except databases).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

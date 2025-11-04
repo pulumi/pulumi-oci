@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Sql Firewall Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Updates the SQL firewall policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

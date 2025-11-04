@@ -542,10 +542,6 @@ class Queue(pulumi.CustomResource):
                  visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
-
-        Creates a new queue.
-
         ## Example Usage
 
         ```python
@@ -604,10 +600,6 @@ class Queue(pulumi.CustomResource):
                  args: QueueArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
-
-        Creates a new queue.
-
         ## Example Usage
 
         ```python

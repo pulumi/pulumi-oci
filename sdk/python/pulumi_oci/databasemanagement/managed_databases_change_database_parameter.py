@@ -228,22 +228,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Databases Change Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Changes database parameter values. There are two kinds of database
-        parameters:
-
-        - Dynamic parameters: They can be changed for the current Oracle
-          Database instance. The changes take effect immediately.
-        - Static parameters: They cannot be changed for the current instance.
-          You must change these parameters and then restart the database before
-          changes take effect.
-
-        **Note:** If the instance is started using a text initialization
-        parameter file, the parameter changes are applicable only for the
-        current instance. You must update them manually to be passed to
-        a future instance.
-
         ## Example Usage
 
         ```python
@@ -299,22 +283,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  args: ManagedDatabasesChangeDatabaseParameterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Databases Change Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Changes database parameter values. There are two kinds of database
-        parameters:
-
-        - Dynamic parameters: They can be changed for the current Oracle
-          Database instance. The changes take effect immediately.
-        - Static parameters: They cannot be changed for the current instance.
-          You must change these parameters and then restart the database before
-          changes take effect.
-
-        **Note:** If the instance is started using a text initialization
-        parameter file, the parameter changes are applicable only for the
-        current instance. You must update them manually to be passed to
-        a future instance.
-
         ## Example Usage
 
         ```python

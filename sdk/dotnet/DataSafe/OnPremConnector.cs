@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new on-premises connector.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

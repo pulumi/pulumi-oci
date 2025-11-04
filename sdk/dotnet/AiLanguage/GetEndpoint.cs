@@ -76,6 +76,10 @@ namespace Pulumi.Oci.AiLanguage
     public sealed class GetEndpointResult
     {
         /// <summary>
+        /// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        /// </summary>
+        public readonly string Alias;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -134,6 +138,8 @@ namespace Pulumi.Oci.AiLanguage
 
         [OutputConstructor]
         private GetEndpointResult(
+            string alias,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -162,6 +168,7 @@ namespace Pulumi.Oci.AiLanguage
 
             string timeUpdated)
         {
+            Alias = alias;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

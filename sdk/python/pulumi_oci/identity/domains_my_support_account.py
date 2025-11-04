@@ -905,10 +905,6 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own support account.
-
         ## Example Usage
 
         ## Import
@@ -987,10 +983,6 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  args: DomainsMySupportAccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own support account.
-
         ## Example Usage
 
         ## Import

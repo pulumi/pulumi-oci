@@ -16,12 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
- * 
- * Creates a new announcement subscription.
- * 
- * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
- * 
  * ## Example Usage
  * 
  * <pre>

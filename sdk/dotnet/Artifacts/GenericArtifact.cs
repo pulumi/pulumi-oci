@@ -10,8 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
-    /// This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

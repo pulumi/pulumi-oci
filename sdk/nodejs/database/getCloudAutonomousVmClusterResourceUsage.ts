@@ -44,7 +44,7 @@ export interface GetCloudAutonomousVmClusterResourceUsageArgs {
  */
 export interface GetCloudAutonomousVmClusterResourceUsageResult {
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size allocated for Autonomous AI Databases, in TBs.
      */
     readonly autonomousDataStorageSizeInTbs: number;
     /**
@@ -52,7 +52,7 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
      */
     readonly autonomousVmResourceUsages: outputs.Database.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage[];
     /**
-     * The data disk group size available for Autonomous Databases, in TBs.
+     * The data disk group size available for Autonomous AI Databases, in TBs.
      */
     readonly availableAutonomousDataStorageSizeInTbs: number;
     /**
@@ -77,7 +77,11 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
      */
     readonly id: string;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    readonly memoryPerComputeUnitInGbs: number;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
@@ -101,7 +105,7 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
      */
     readonly provisionedCpus: number;
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      */
     readonly reclaimableCpus: number;
     /**
@@ -117,7 +121,7 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
      */
     readonly totalCpus: number;
     /**
-     * The data disk group size used for Autonomous Databases, in TBs.
+     * The data disk group size used for Autonomous AI Databases, in TBs.
      */
     readonly usedAutonomousDataStorageSizeInTbs: number;
     /**

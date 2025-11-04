@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
- * 
- * Creates a new email domain. Avoid entering confidential information.
- * 
  * ## Example Usage
  * 
  * <pre>

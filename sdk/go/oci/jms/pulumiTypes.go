@@ -2141,6 +2141,474 @@ func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) IsE
 	}).(pulumi.BoolPtrOutput)
 }
 
+type FleetAgentConfigurationLinuxConfiguration struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// FleetAgentConfigurationLinuxConfigurationInput is an input type that accepts FleetAgentConfigurationLinuxConfigurationArgs and FleetAgentConfigurationLinuxConfigurationOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationLinuxConfigurationInput` via:
+//
+//	FleetAgentConfigurationLinuxConfigurationArgs{...}
+type FleetAgentConfigurationLinuxConfigurationInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationLinuxConfigurationOutput() FleetAgentConfigurationLinuxConfigurationOutput
+	ToFleetAgentConfigurationLinuxConfigurationOutputWithContext(context.Context) FleetAgentConfigurationLinuxConfigurationOutput
+}
+
+type FleetAgentConfigurationLinuxConfigurationArgs struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (FleetAgentConfigurationLinuxConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (i FleetAgentConfigurationLinuxConfigurationArgs) ToFleetAgentConfigurationLinuxConfigurationOutput() FleetAgentConfigurationLinuxConfigurationOutput {
+	return i.ToFleetAgentConfigurationLinuxConfigurationOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationLinuxConfigurationArgs) ToFleetAgentConfigurationLinuxConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationLinuxConfigurationOutput)
+}
+
+func (i FleetAgentConfigurationLinuxConfigurationArgs) ToFleetAgentConfigurationLinuxConfigurationPtrOutput() FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationLinuxConfigurationArgs) ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationLinuxConfigurationOutput).ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(ctx)
+}
+
+// FleetAgentConfigurationLinuxConfigurationPtrInput is an input type that accepts FleetAgentConfigurationLinuxConfigurationArgs, FleetAgentConfigurationLinuxConfigurationPtr and FleetAgentConfigurationLinuxConfigurationPtrOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationLinuxConfigurationPtrInput` via:
+//
+//	        FleetAgentConfigurationLinuxConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAgentConfigurationLinuxConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationLinuxConfigurationPtrOutput() FleetAgentConfigurationLinuxConfigurationPtrOutput
+	ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(context.Context) FleetAgentConfigurationLinuxConfigurationPtrOutput
+}
+
+type fleetAgentConfigurationLinuxConfigurationPtrType FleetAgentConfigurationLinuxConfigurationArgs
+
+func FleetAgentConfigurationLinuxConfigurationPtr(v *FleetAgentConfigurationLinuxConfigurationArgs) FleetAgentConfigurationLinuxConfigurationPtrInput {
+	return (*fleetAgentConfigurationLinuxConfigurationPtrType)(v)
+}
+
+func (*fleetAgentConfigurationLinuxConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (i *fleetAgentConfigurationLinuxConfigurationPtrType) ToFleetAgentConfigurationLinuxConfigurationPtrOutput() FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAgentConfigurationLinuxConfigurationPtrType) ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationLinuxConfigurationPtrOutput)
+}
+
+type FleetAgentConfigurationLinuxConfigurationOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationLinuxConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationOutput) ToFleetAgentConfigurationLinuxConfigurationOutput() FleetAgentConfigurationLinuxConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationOutput) ToFleetAgentConfigurationLinuxConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationOutput) ToFleetAgentConfigurationLinuxConfigurationPtrOutput() FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return o.ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationOutput) ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAgentConfigurationLinuxConfiguration) *FleetAgentConfigurationLinuxConfiguration {
+		return &v
+	}).(FleetAgentConfigurationLinuxConfigurationPtrOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationLinuxConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationLinuxConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationLinuxConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationLinuxConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type FleetAgentConfigurationLinuxConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationLinuxConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationPtrOutput) ToFleetAgentConfigurationLinuxConfigurationPtrOutput() FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationPtrOutput) ToFleetAgentConfigurationLinuxConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationLinuxConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationLinuxConfigurationPtrOutput) Elem() FleetAgentConfigurationLinuxConfigurationOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationLinuxConfiguration) FleetAgentConfigurationLinuxConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAgentConfigurationLinuxConfiguration
+		return ret
+	}).(FleetAgentConfigurationLinuxConfigurationOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationLinuxConfigurationPtrOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationLinuxConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationLinuxConfigurationPtrOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationLinuxConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IncludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+type FleetAgentConfigurationMacOsConfiguration struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// FleetAgentConfigurationMacOsConfigurationInput is an input type that accepts FleetAgentConfigurationMacOsConfigurationArgs and FleetAgentConfigurationMacOsConfigurationOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationMacOsConfigurationInput` via:
+//
+//	FleetAgentConfigurationMacOsConfigurationArgs{...}
+type FleetAgentConfigurationMacOsConfigurationInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationMacOsConfigurationOutput() FleetAgentConfigurationMacOsConfigurationOutput
+	ToFleetAgentConfigurationMacOsConfigurationOutputWithContext(context.Context) FleetAgentConfigurationMacOsConfigurationOutput
+}
+
+type FleetAgentConfigurationMacOsConfigurationArgs struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (FleetAgentConfigurationMacOsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (i FleetAgentConfigurationMacOsConfigurationArgs) ToFleetAgentConfigurationMacOsConfigurationOutput() FleetAgentConfigurationMacOsConfigurationOutput {
+	return i.ToFleetAgentConfigurationMacOsConfigurationOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationMacOsConfigurationArgs) ToFleetAgentConfigurationMacOsConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationMacOsConfigurationOutput)
+}
+
+func (i FleetAgentConfigurationMacOsConfigurationArgs) ToFleetAgentConfigurationMacOsConfigurationPtrOutput() FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationMacOsConfigurationArgs) ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationMacOsConfigurationOutput).ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(ctx)
+}
+
+// FleetAgentConfigurationMacOsConfigurationPtrInput is an input type that accepts FleetAgentConfigurationMacOsConfigurationArgs, FleetAgentConfigurationMacOsConfigurationPtr and FleetAgentConfigurationMacOsConfigurationPtrOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationMacOsConfigurationPtrInput` via:
+//
+//	        FleetAgentConfigurationMacOsConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAgentConfigurationMacOsConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationMacOsConfigurationPtrOutput() FleetAgentConfigurationMacOsConfigurationPtrOutput
+	ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(context.Context) FleetAgentConfigurationMacOsConfigurationPtrOutput
+}
+
+type fleetAgentConfigurationMacOsConfigurationPtrType FleetAgentConfigurationMacOsConfigurationArgs
+
+func FleetAgentConfigurationMacOsConfigurationPtr(v *FleetAgentConfigurationMacOsConfigurationArgs) FleetAgentConfigurationMacOsConfigurationPtrInput {
+	return (*fleetAgentConfigurationMacOsConfigurationPtrType)(v)
+}
+
+func (*fleetAgentConfigurationMacOsConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (i *fleetAgentConfigurationMacOsConfigurationPtrType) ToFleetAgentConfigurationMacOsConfigurationPtrOutput() FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAgentConfigurationMacOsConfigurationPtrType) ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationMacOsConfigurationPtrOutput)
+}
+
+type FleetAgentConfigurationMacOsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationMacOsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationOutput) ToFleetAgentConfigurationMacOsConfigurationOutput() FleetAgentConfigurationMacOsConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationOutput) ToFleetAgentConfigurationMacOsConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationOutput) ToFleetAgentConfigurationMacOsConfigurationPtrOutput() FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return o.ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationOutput) ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAgentConfigurationMacOsConfiguration) *FleetAgentConfigurationMacOsConfiguration {
+		return &v
+	}).(FleetAgentConfigurationMacOsConfigurationPtrOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationMacOsConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationMacOsConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationMacOsConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationMacOsConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type FleetAgentConfigurationMacOsConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationMacOsConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationPtrOutput) ToFleetAgentConfigurationMacOsConfigurationPtrOutput() FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationPtrOutput) ToFleetAgentConfigurationMacOsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationMacOsConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationMacOsConfigurationPtrOutput) Elem() FleetAgentConfigurationMacOsConfigurationOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationMacOsConfiguration) FleetAgentConfigurationMacOsConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAgentConfigurationMacOsConfiguration
+		return ret
+	}).(FleetAgentConfigurationMacOsConfigurationOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationMacOsConfigurationPtrOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationMacOsConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationMacOsConfigurationPtrOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationMacOsConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IncludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+type FleetAgentConfigurationWindowsConfiguration struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// FleetAgentConfigurationWindowsConfigurationInput is an input type that accepts FleetAgentConfigurationWindowsConfigurationArgs and FleetAgentConfigurationWindowsConfigurationOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationWindowsConfigurationInput` via:
+//
+//	FleetAgentConfigurationWindowsConfigurationArgs{...}
+type FleetAgentConfigurationWindowsConfigurationInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationWindowsConfigurationOutput() FleetAgentConfigurationWindowsConfigurationOutput
+	ToFleetAgentConfigurationWindowsConfigurationOutputWithContext(context.Context) FleetAgentConfigurationWindowsConfigurationOutput
+}
+
+type FleetAgentConfigurationWindowsConfigurationArgs struct {
+	// (Updatable) An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// (Updatable) An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (FleetAgentConfigurationWindowsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (i FleetAgentConfigurationWindowsConfigurationArgs) ToFleetAgentConfigurationWindowsConfigurationOutput() FleetAgentConfigurationWindowsConfigurationOutput {
+	return i.ToFleetAgentConfigurationWindowsConfigurationOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationWindowsConfigurationArgs) ToFleetAgentConfigurationWindowsConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationWindowsConfigurationOutput)
+}
+
+func (i FleetAgentConfigurationWindowsConfigurationArgs) ToFleetAgentConfigurationWindowsConfigurationPtrOutput() FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAgentConfigurationWindowsConfigurationArgs) ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationWindowsConfigurationOutput).ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(ctx)
+}
+
+// FleetAgentConfigurationWindowsConfigurationPtrInput is an input type that accepts FleetAgentConfigurationWindowsConfigurationArgs, FleetAgentConfigurationWindowsConfigurationPtr and FleetAgentConfigurationWindowsConfigurationPtrOutput values.
+// You can construct a concrete instance of `FleetAgentConfigurationWindowsConfigurationPtrInput` via:
+//
+//	        FleetAgentConfigurationWindowsConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAgentConfigurationWindowsConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToFleetAgentConfigurationWindowsConfigurationPtrOutput() FleetAgentConfigurationWindowsConfigurationPtrOutput
+	ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(context.Context) FleetAgentConfigurationWindowsConfigurationPtrOutput
+}
+
+type fleetAgentConfigurationWindowsConfigurationPtrType FleetAgentConfigurationWindowsConfigurationArgs
+
+func FleetAgentConfigurationWindowsConfigurationPtr(v *FleetAgentConfigurationWindowsConfigurationArgs) FleetAgentConfigurationWindowsConfigurationPtrInput {
+	return (*fleetAgentConfigurationWindowsConfigurationPtrType)(v)
+}
+
+func (*fleetAgentConfigurationWindowsConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (i *fleetAgentConfigurationWindowsConfigurationPtrType) ToFleetAgentConfigurationWindowsConfigurationPtrOutput() FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return i.ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAgentConfigurationWindowsConfigurationPtrType) ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAgentConfigurationWindowsConfigurationPtrOutput)
+}
+
+type FleetAgentConfigurationWindowsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationWindowsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationOutput) ToFleetAgentConfigurationWindowsConfigurationOutput() FleetAgentConfigurationWindowsConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationOutput) ToFleetAgentConfigurationWindowsConfigurationOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationOutput) ToFleetAgentConfigurationWindowsConfigurationPtrOutput() FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return o.ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationOutput) ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAgentConfigurationWindowsConfiguration) *FleetAgentConfigurationWindowsConfiguration {
+		return &v
+	}).(FleetAgentConfigurationWindowsConfigurationPtrOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationWindowsConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationWindowsConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationWindowsConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAgentConfigurationWindowsConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type FleetAgentConfigurationWindowsConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAgentConfigurationWindowsConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationPtrOutput) ToFleetAgentConfigurationWindowsConfigurationPtrOutput() FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationPtrOutput) ToFleetAgentConfigurationWindowsConfigurationPtrOutputWithContext(ctx context.Context) FleetAgentConfigurationWindowsConfigurationPtrOutput {
+	return o
+}
+
+func (o FleetAgentConfigurationWindowsConfigurationPtrOutput) Elem() FleetAgentConfigurationWindowsConfigurationOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationWindowsConfiguration) FleetAgentConfigurationWindowsConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAgentConfigurationWindowsConfiguration
+		return ret
+	}).(FleetAgentConfigurationWindowsConfigurationOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationWindowsConfigurationPtrOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationWindowsConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of file system paths (environment variables supported).
+func (o FleetAgentConfigurationWindowsConfigurationPtrOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAgentConfigurationWindowsConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IncludePaths
+	}).(pulumi.StringArrayOutput)
+}
+
 type FleetInventoryLog struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -8074,6 +8542,324 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)[vs[1].(int)]
 	}).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
+}
+
+type GetFleetAgentConfigurationLinuxConfiguration struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// GetFleetAgentConfigurationLinuxConfigurationInput is an input type that accepts GetFleetAgentConfigurationLinuxConfigurationArgs and GetFleetAgentConfigurationLinuxConfigurationOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationLinuxConfigurationInput` via:
+//
+//	GetFleetAgentConfigurationLinuxConfigurationArgs{...}
+type GetFleetAgentConfigurationLinuxConfigurationInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationLinuxConfigurationOutput() GetFleetAgentConfigurationLinuxConfigurationOutput
+	ToGetFleetAgentConfigurationLinuxConfigurationOutputWithContext(context.Context) GetFleetAgentConfigurationLinuxConfigurationOutput
+}
+
+type GetFleetAgentConfigurationLinuxConfigurationArgs struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (GetFleetAgentConfigurationLinuxConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationLinuxConfigurationArgs) ToGetFleetAgentConfigurationLinuxConfigurationOutput() GetFleetAgentConfigurationLinuxConfigurationOutput {
+	return i.ToGetFleetAgentConfigurationLinuxConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationLinuxConfigurationArgs) ToGetFleetAgentConfigurationLinuxConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationLinuxConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationLinuxConfigurationOutput)
+}
+
+// GetFleetAgentConfigurationLinuxConfigurationArrayInput is an input type that accepts GetFleetAgentConfigurationLinuxConfigurationArray and GetFleetAgentConfigurationLinuxConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationLinuxConfigurationArrayInput` via:
+//
+//	GetFleetAgentConfigurationLinuxConfigurationArray{ GetFleetAgentConfigurationLinuxConfigurationArgs{...} }
+type GetFleetAgentConfigurationLinuxConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationLinuxConfigurationArrayOutput() GetFleetAgentConfigurationLinuxConfigurationArrayOutput
+	ToGetFleetAgentConfigurationLinuxConfigurationArrayOutputWithContext(context.Context) GetFleetAgentConfigurationLinuxConfigurationArrayOutput
+}
+
+type GetFleetAgentConfigurationLinuxConfigurationArray []GetFleetAgentConfigurationLinuxConfigurationInput
+
+func (GetFleetAgentConfigurationLinuxConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationLinuxConfigurationArray) ToGetFleetAgentConfigurationLinuxConfigurationArrayOutput() GetFleetAgentConfigurationLinuxConfigurationArrayOutput {
+	return i.ToGetFleetAgentConfigurationLinuxConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationLinuxConfigurationArray) ToGetFleetAgentConfigurationLinuxConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationLinuxConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationLinuxConfigurationArrayOutput)
+}
+
+type GetFleetAgentConfigurationLinuxConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationLinuxConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationLinuxConfigurationOutput) ToGetFleetAgentConfigurationLinuxConfigurationOutput() GetFleetAgentConfigurationLinuxConfigurationOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationLinuxConfigurationOutput) ToGetFleetAgentConfigurationLinuxConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationLinuxConfigurationOutput {
+	return o
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationLinuxConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationLinuxConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationLinuxConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationLinuxConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetAgentConfigurationLinuxConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationLinuxConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationLinuxConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationLinuxConfigurationArrayOutput) ToGetFleetAgentConfigurationLinuxConfigurationArrayOutput() GetFleetAgentConfigurationLinuxConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationLinuxConfigurationArrayOutput) ToGetFleetAgentConfigurationLinuxConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationLinuxConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationLinuxConfigurationArrayOutput) Index(i pulumi.IntInput) GetFleetAgentConfigurationLinuxConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAgentConfigurationLinuxConfiguration {
+		return vs[0].([]GetFleetAgentConfigurationLinuxConfiguration)[vs[1].(int)]
+	}).(GetFleetAgentConfigurationLinuxConfigurationOutput)
+}
+
+type GetFleetAgentConfigurationMacOsConfiguration struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// GetFleetAgentConfigurationMacOsConfigurationInput is an input type that accepts GetFleetAgentConfigurationMacOsConfigurationArgs and GetFleetAgentConfigurationMacOsConfigurationOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationMacOsConfigurationInput` via:
+//
+//	GetFleetAgentConfigurationMacOsConfigurationArgs{...}
+type GetFleetAgentConfigurationMacOsConfigurationInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationMacOsConfigurationOutput() GetFleetAgentConfigurationMacOsConfigurationOutput
+	ToGetFleetAgentConfigurationMacOsConfigurationOutputWithContext(context.Context) GetFleetAgentConfigurationMacOsConfigurationOutput
+}
+
+type GetFleetAgentConfigurationMacOsConfigurationArgs struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (GetFleetAgentConfigurationMacOsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationMacOsConfigurationArgs) ToGetFleetAgentConfigurationMacOsConfigurationOutput() GetFleetAgentConfigurationMacOsConfigurationOutput {
+	return i.ToGetFleetAgentConfigurationMacOsConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationMacOsConfigurationArgs) ToGetFleetAgentConfigurationMacOsConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationMacOsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationMacOsConfigurationOutput)
+}
+
+// GetFleetAgentConfigurationMacOsConfigurationArrayInput is an input type that accepts GetFleetAgentConfigurationMacOsConfigurationArray and GetFleetAgentConfigurationMacOsConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationMacOsConfigurationArrayInput` via:
+//
+//	GetFleetAgentConfigurationMacOsConfigurationArray{ GetFleetAgentConfigurationMacOsConfigurationArgs{...} }
+type GetFleetAgentConfigurationMacOsConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationMacOsConfigurationArrayOutput() GetFleetAgentConfigurationMacOsConfigurationArrayOutput
+	ToGetFleetAgentConfigurationMacOsConfigurationArrayOutputWithContext(context.Context) GetFleetAgentConfigurationMacOsConfigurationArrayOutput
+}
+
+type GetFleetAgentConfigurationMacOsConfigurationArray []GetFleetAgentConfigurationMacOsConfigurationInput
+
+func (GetFleetAgentConfigurationMacOsConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationMacOsConfigurationArray) ToGetFleetAgentConfigurationMacOsConfigurationArrayOutput() GetFleetAgentConfigurationMacOsConfigurationArrayOutput {
+	return i.ToGetFleetAgentConfigurationMacOsConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationMacOsConfigurationArray) ToGetFleetAgentConfigurationMacOsConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationMacOsConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationMacOsConfigurationArrayOutput)
+}
+
+type GetFleetAgentConfigurationMacOsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationMacOsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationMacOsConfigurationOutput) ToGetFleetAgentConfigurationMacOsConfigurationOutput() GetFleetAgentConfigurationMacOsConfigurationOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationMacOsConfigurationOutput) ToGetFleetAgentConfigurationMacOsConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationMacOsConfigurationOutput {
+	return o
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationMacOsConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationMacOsConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationMacOsConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationMacOsConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetAgentConfigurationMacOsConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationMacOsConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationMacOsConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationMacOsConfigurationArrayOutput) ToGetFleetAgentConfigurationMacOsConfigurationArrayOutput() GetFleetAgentConfigurationMacOsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationMacOsConfigurationArrayOutput) ToGetFleetAgentConfigurationMacOsConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationMacOsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationMacOsConfigurationArrayOutput) Index(i pulumi.IntInput) GetFleetAgentConfigurationMacOsConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAgentConfigurationMacOsConfiguration {
+		return vs[0].([]GetFleetAgentConfigurationMacOsConfiguration)[vs[1].(int)]
+	}).(GetFleetAgentConfigurationMacOsConfigurationOutput)
+}
+
+type GetFleetAgentConfigurationWindowsConfiguration struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths []string `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths []string `pulumi:"includePaths"`
+}
+
+// GetFleetAgentConfigurationWindowsConfigurationInput is an input type that accepts GetFleetAgentConfigurationWindowsConfigurationArgs and GetFleetAgentConfigurationWindowsConfigurationOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationWindowsConfigurationInput` via:
+//
+//	GetFleetAgentConfigurationWindowsConfigurationArgs{...}
+type GetFleetAgentConfigurationWindowsConfigurationInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationWindowsConfigurationOutput() GetFleetAgentConfigurationWindowsConfigurationOutput
+	ToGetFleetAgentConfigurationWindowsConfigurationOutputWithContext(context.Context) GetFleetAgentConfigurationWindowsConfigurationOutput
+}
+
+type GetFleetAgentConfigurationWindowsConfigurationArgs struct {
+	// An array of file system paths (environment variables supported).
+	ExcludePaths pulumi.StringArrayInput `pulumi:"excludePaths"`
+	// An array of file system paths (environment variables supported).
+	IncludePaths pulumi.StringArrayInput `pulumi:"includePaths"`
+}
+
+func (GetFleetAgentConfigurationWindowsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationWindowsConfigurationArgs) ToGetFleetAgentConfigurationWindowsConfigurationOutput() GetFleetAgentConfigurationWindowsConfigurationOutput {
+	return i.ToGetFleetAgentConfigurationWindowsConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationWindowsConfigurationArgs) ToGetFleetAgentConfigurationWindowsConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationWindowsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationWindowsConfigurationOutput)
+}
+
+// GetFleetAgentConfigurationWindowsConfigurationArrayInput is an input type that accepts GetFleetAgentConfigurationWindowsConfigurationArray and GetFleetAgentConfigurationWindowsConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetFleetAgentConfigurationWindowsConfigurationArrayInput` via:
+//
+//	GetFleetAgentConfigurationWindowsConfigurationArray{ GetFleetAgentConfigurationWindowsConfigurationArgs{...} }
+type GetFleetAgentConfigurationWindowsConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAgentConfigurationWindowsConfigurationArrayOutput() GetFleetAgentConfigurationWindowsConfigurationArrayOutput
+	ToGetFleetAgentConfigurationWindowsConfigurationArrayOutputWithContext(context.Context) GetFleetAgentConfigurationWindowsConfigurationArrayOutput
+}
+
+type GetFleetAgentConfigurationWindowsConfigurationArray []GetFleetAgentConfigurationWindowsConfigurationInput
+
+func (GetFleetAgentConfigurationWindowsConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (i GetFleetAgentConfigurationWindowsConfigurationArray) ToGetFleetAgentConfigurationWindowsConfigurationArrayOutput() GetFleetAgentConfigurationWindowsConfigurationArrayOutput {
+	return i.ToGetFleetAgentConfigurationWindowsConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAgentConfigurationWindowsConfigurationArray) ToGetFleetAgentConfigurationWindowsConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationWindowsConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAgentConfigurationWindowsConfigurationArrayOutput)
+}
+
+type GetFleetAgentConfigurationWindowsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationWindowsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationWindowsConfigurationOutput) ToGetFleetAgentConfigurationWindowsConfigurationOutput() GetFleetAgentConfigurationWindowsConfigurationOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationWindowsConfigurationOutput) ToGetFleetAgentConfigurationWindowsConfigurationOutputWithContext(ctx context.Context) GetFleetAgentConfigurationWindowsConfigurationOutput {
+	return o
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationWindowsConfigurationOutput) ExcludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationWindowsConfiguration) []string { return v.ExcludePaths }).(pulumi.StringArrayOutput)
+}
+
+// An array of file system paths (environment variables supported).
+func (o GetFleetAgentConfigurationWindowsConfigurationOutput) IncludePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetAgentConfigurationWindowsConfiguration) []string { return v.IncludePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetAgentConfigurationWindowsConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAgentConfigurationWindowsConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAgentConfigurationWindowsConfiguration)(nil)).Elem()
+}
+
+func (o GetFleetAgentConfigurationWindowsConfigurationArrayOutput) ToGetFleetAgentConfigurationWindowsConfigurationArrayOutput() GetFleetAgentConfigurationWindowsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationWindowsConfigurationArrayOutput) ToGetFleetAgentConfigurationWindowsConfigurationArrayOutputWithContext(ctx context.Context) GetFleetAgentConfigurationWindowsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFleetAgentConfigurationWindowsConfigurationArrayOutput) Index(i pulumi.IntInput) GetFleetAgentConfigurationWindowsConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAgentConfigurationWindowsConfiguration {
+		return vs[0].([]GetFleetAgentConfigurationWindowsConfiguration)[vs[1].(int)]
+	}).(GetFleetAgentConfigurationWindowsConfigurationOutput)
 }
 
 type GetFleetBlocklistsFilter struct {
@@ -29873,6 +30659,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationLinuxConfigurationInput)(nil)).Elem(), FleetAgentConfigurationLinuxConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationLinuxConfigurationPtrInput)(nil)).Elem(), FleetAgentConfigurationLinuxConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationMacOsConfigurationInput)(nil)).Elem(), FleetAgentConfigurationMacOsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationMacOsConfigurationPtrInput)(nil)).Elem(), FleetAgentConfigurationMacOsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationWindowsConfigurationInput)(nil)).Elem(), FleetAgentConfigurationWindowsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAgentConfigurationWindowsConfigurationPtrInput)(nil)).Elem(), FleetAgentConfigurationWindowsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogPtrInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogInput)(nil)).Elem(), FleetOperationLogArgs{})
@@ -29959,6 +30751,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationLinuxConfigurationInput)(nil)).Elem(), GetFleetAgentConfigurationLinuxConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationLinuxConfigurationArrayInput)(nil)).Elem(), GetFleetAgentConfigurationLinuxConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationMacOsConfigurationInput)(nil)).Elem(), GetFleetAgentConfigurationMacOsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationMacOsConfigurationArrayInput)(nil)).Elem(), GetFleetAgentConfigurationMacOsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationWindowsConfigurationInput)(nil)).Elem(), GetFleetAgentConfigurationWindowsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAgentConfigurationWindowsConfigurationArrayInput)(nil)).Elem(), GetFleetAgentConfigurationWindowsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterInput)(nil)).Elem(), GetFleetBlocklistsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterArrayInput)(nil)).Elem(), GetFleetBlocklistsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemInput)(nil)).Elem(), GetFleetBlocklistsItemArgs{})
@@ -30315,6 +31113,12 @@ func init() {
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationLinuxConfigurationOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationLinuxConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationMacOsConfigurationOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationMacOsConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationWindowsConfigurationOutput{})
+	pulumi.RegisterOutputType(FleetAgentConfigurationWindowsConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(FleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(FleetInventoryLogPtrOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogOutput{})
@@ -30401,6 +31205,12 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationLinuxConfigurationOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationLinuxConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationMacOsConfigurationOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationMacOsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationWindowsConfigurationOutput{})
+	pulumi.RegisterOutputType(GetFleetAgentConfigurationWindowsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemOutput{})

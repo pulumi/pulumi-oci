@@ -7,95 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a new PipelineRun.
- *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testPipelineRun = new oci.datascience.PipelineRun("test_pipeline_run", {
- *     compartmentId: compartmentId,
- *     pipelineId: testPipeline.id,
- *     configurationOverrideDetails: {
- *         type: pipelineRunConfigurationOverrideDetailsType,
- *         commandLineArguments: pipelineRunConfigurationOverrideDetailsCommandLineArguments,
- *         environmentVariables: pipelineRunConfigurationOverrideDetailsEnvironmentVariables,
- *         maximumRuntimeInMinutes: pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes,
- *     },
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: pipelineRunDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     infrastructureConfigurationOverrideDetails: {
- *         blockStorageSizeInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
- *         shapeName: testShape.name,
- *         shapeConfigDetails: {
- *             memoryInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs,
- *             ocpus: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus,
- *         },
- *         subnetId: testSubnet.id,
- *     },
- *     logConfigurationOverrideDetails: {
- *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
- *         logGroupId: testLogGroup.id,
- *         logId: testLog.id,
- *     },
- *     opcParentRptUrl: pipelineRunOpcParentRptUrl,
- *     projectId: testProject.id,
- *     stepOverrideDetails: [{
- *         stepConfigurationDetails: {
- *             commandLineArguments: pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments,
- *             environmentVariables: pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables,
- *             maximumRuntimeInMinutes: pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
- *         },
- *         stepName: pipelineRunStepOverrideDetailsStepName,
- *         stepContainerConfigurationDetails: {
- *             containerType: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType,
- *             image: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage,
- *             cmds: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd,
- *             entrypoints: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint,
- *             imageDigest: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
- *             imageSignatureId: testImageSignature.id,
- *         },
- *         stepDataflowConfigurationDetails: {
- *             configuration: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
- *             driverShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
- *             driverShapeConfigDetails: {
- *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
- *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
- *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
- *             },
- *             executorShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
- *             executorShapeConfigDetails: {
- *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
- *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
- *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
- *             },
- *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
- *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
- *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
- *         },
- *         stepInfrastructureConfigurationDetails: {
- *             blockStorageSizeInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
- *             shapeName: testShape.name,
- *             shapeConfigDetails: {
- *                 memoryInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
- *                 ocpus: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
- *             },
- *             subnetId: testSubnet.id,
- *         },
- *     }],
- *     systemTags: pipelineRunSystemTags,
- * });
- * ```
  *
  * ## Import
  *
@@ -183,6 +95,10 @@ export class PipelineRun extends pulumi.CustomResource {
      */
     declare public readonly opcParentRptUrl: pulumi.Output<string | undefined>;
     /**
+     * Parameters override used in the pipeline run.
+     */
+    declare public readonly parametersOverride: pulumi.Output<{[key: string]: string}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     declare public readonly pipelineId: pulumi.Output<string>;
@@ -202,6 +118,10 @@ export class PipelineRun extends pulumi.CustomResource {
      * Array of StepRun object for each step.
      */
     declare public /*out*/ readonly stepRuns: pulumi.Output<outputs.DataScience.PipelineRunStepRun[]>;
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     */
+    declare public readonly storageMountConfigurationOverrideDetailsLists: pulumi.Output<outputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -253,11 +173,13 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["logConfigurationOverrideDetails"] = state?.logConfigurationOverrideDetails;
             resourceInputs["logDetails"] = state?.logDetails;
             resourceInputs["opcParentRptUrl"] = state?.opcParentRptUrl;
+            resourceInputs["parametersOverride"] = state?.parametersOverride;
             resourceInputs["pipelineId"] = state?.pipelineId;
             resourceInputs["projectId"] = state?.projectId;
             resourceInputs["state"] = state?.state;
             resourceInputs["stepOverrideDetails"] = state?.stepOverrideDetails;
             resourceInputs["stepRuns"] = state?.stepRuns;
+            resourceInputs["storageMountConfigurationOverrideDetailsLists"] = state?.storageMountConfigurationOverrideDetailsLists;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeAccepted"] = state?.timeAccepted;
             resourceInputs["timeFinished"] = state?.timeFinished;
@@ -283,9 +205,11 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["infrastructureConfigurationOverrideDetails"] = args?.infrastructureConfigurationOverrideDetails;
             resourceInputs["logConfigurationOverrideDetails"] = args?.logConfigurationOverrideDetails;
             resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
+            resourceInputs["parametersOverride"] = args?.parametersOverride;
             resourceInputs["pipelineId"] = args?.pipelineId;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["stepOverrideDetails"] = args?.stepOverrideDetails;
+            resourceInputs["storageMountConfigurationOverrideDetailsLists"] = args?.storageMountConfigurationOverrideDetailsLists;
             resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["configurationDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -357,6 +281,10 @@ export interface PipelineRunState {
      */
     opcParentRptUrl?: pulumi.Input<string>;
     /**
+     * Parameters override used in the pipeline run.
+     */
+    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     pipelineId?: pulumi.Input<string>;
@@ -376,6 +304,10 @@ export interface PipelineRunState {
      * Array of StepRun object for each step.
      */
     stepRuns?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepRun>[]>;
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     */
+    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -440,6 +372,10 @@ export interface PipelineRunArgs {
      */
     opcParentRptUrl?: pulumi.Input<string>;
     /**
+     * Parameters override used in the pipeline run.
+     */
+    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     pipelineId: pulumi.Input<string>;
@@ -451,6 +387,10 @@ export interface PipelineRunArgs {
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
     stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[]>;
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     */
+    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *

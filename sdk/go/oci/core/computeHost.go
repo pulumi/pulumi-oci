@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
-//
-// # Customer can update the some fields for ComputeHost record
+// ## Example Usage
 //
 // ## Import
 //

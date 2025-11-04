@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
- *
- * Creates a new WebAppFirewallPolicy.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,9 +12,38 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+// ## Example Usage
 //
-// Detaches (removes) a managed instance from a lifecycle stage.
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/osmanagementhub"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := osmanagementhub.NewLifecycleStageDetachManagedInstancesManagement(ctx, "test_lifecycle_stage_detach_managed_instances_management", &osmanagementhub.LifecycleStageDetachManagedInstancesManagementArgs{
+//				LifecycleStageId: pulumi.Any(testLifecycleStage.Id),
+//				ManagedInstanceDetails: &osmanagementhub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs{
+//					ManagedInstances: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances),
+//					WorkRequestDetails: &osmanagementhub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs{
+//						Description: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription),
+//						DisplayName: pulumi.Any(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //

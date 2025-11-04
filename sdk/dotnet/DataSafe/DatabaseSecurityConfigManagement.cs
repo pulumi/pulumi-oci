@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Updates the database security configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

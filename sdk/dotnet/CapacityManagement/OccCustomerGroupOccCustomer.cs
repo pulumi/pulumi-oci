@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
-    /// This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
-    /// 
-    /// Create customer.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

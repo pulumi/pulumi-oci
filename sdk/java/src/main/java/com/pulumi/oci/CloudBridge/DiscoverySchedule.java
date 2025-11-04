@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
- * 
- * Creates the discovery schedule.
- * 
  * ## Example Usage
  * 
  * <pre>

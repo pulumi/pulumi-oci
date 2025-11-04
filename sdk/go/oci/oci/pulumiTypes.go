@@ -969,6 +969,896 @@ func (o DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayOutput) Index(i pulu
 	}).(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeOutput)
 }
 
+type IotDigitalTwinAdapterInboundEnvelope struct {
+	// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMapping *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMapping"`
+	// (Updatable) The device endpoint.
+	ReferenceEndpoint string `pulumi:"referenceEndpoint"`
+	// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayload *IotDigitalTwinAdapterInboundEnvelopeReferencePayload `pulumi:"referencePayload"`
+}
+
+// IotDigitalTwinAdapterInboundEnvelopeInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeArgs and IotDigitalTwinAdapterInboundEnvelopeOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopeInput` via:
+//
+//	IotDigitalTwinAdapterInboundEnvelopeArgs{...}
+type IotDigitalTwinAdapterInboundEnvelopeInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopeOutput() IotDigitalTwinAdapterInboundEnvelopeOutput
+	ToIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopeOutput
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeArgs struct {
+	// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMapping IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput `pulumi:"envelopeMapping"`
+	// (Updatable) The device endpoint.
+	ReferenceEndpoint pulumi.StringInput `pulumi:"referenceEndpoint"`
+	// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayload IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput `pulumi:"referencePayload"`
+}
+
+func (IotDigitalTwinAdapterInboundEnvelopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeArgs) ToIotDigitalTwinAdapterInboundEnvelopeOutput() IotDigitalTwinAdapterInboundEnvelopeOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeArgs) ToIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeOutput)
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeArgs) ToIotDigitalTwinAdapterInboundEnvelopePtrOutput() IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeArgs) ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeOutput).ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(ctx)
+}
+
+// IotDigitalTwinAdapterInboundEnvelopePtrInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeArgs, IotDigitalTwinAdapterInboundEnvelopePtr and IotDigitalTwinAdapterInboundEnvelopePtrOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopePtrInput` via:
+//
+//	        IotDigitalTwinAdapterInboundEnvelopeArgs{...}
+//
+//	or:
+//
+//	        nil
+type IotDigitalTwinAdapterInboundEnvelopePtrInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopePtrOutput() IotDigitalTwinAdapterInboundEnvelopePtrOutput
+	ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopePtrOutput
+}
+
+type iotDigitalTwinAdapterInboundEnvelopePtrType IotDigitalTwinAdapterInboundEnvelopeArgs
+
+func IotDigitalTwinAdapterInboundEnvelopePtr(v *IotDigitalTwinAdapterInboundEnvelopeArgs) IotDigitalTwinAdapterInboundEnvelopePtrInput {
+	return (*iotDigitalTwinAdapterInboundEnvelopePtrType)(v)
+}
+
+func (*iotDigitalTwinAdapterInboundEnvelopePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopePtrType) ToIotDigitalTwinAdapterInboundEnvelopePtrOutput() IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(context.Background())
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopePtrType) ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopePtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ToIotDigitalTwinAdapterInboundEnvelopeOutput() IotDigitalTwinAdapterInboundEnvelopeOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ToIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ToIotDigitalTwinAdapterInboundEnvelopePtrOutput() IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return o.ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(context.Background())
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IotDigitalTwinAdapterInboundEnvelope) *IotDigitalTwinAdapterInboundEnvelope {
+		return &v
+	}).(IotDigitalTwinAdapterInboundEnvelopePtrOutput)
+}
+
+// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) EnvelopeMapping() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelope) *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		return v.EnvelopeMapping
+	}).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput)
+}
+
+// (Updatable) The device endpoint.
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ReferenceEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelope) string { return v.ReferenceEndpoint }).(pulumi.StringOutput)
+}
+
+// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o IotDigitalTwinAdapterInboundEnvelopeOutput) ReferencePayload() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelope) *IotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		return v.ReferencePayload
+	}).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopePtrOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) ToIotDigitalTwinAdapterInboundEnvelopePtrOutput() IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) ToIotDigitalTwinAdapterInboundEnvelopePtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopePtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) Elem() IotDigitalTwinAdapterInboundEnvelopeOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelope) IotDigitalTwinAdapterInboundEnvelope {
+		if v != nil {
+			return *v
+		}
+		var ret IotDigitalTwinAdapterInboundEnvelope
+		return ret
+	}).(IotDigitalTwinAdapterInboundEnvelopeOutput)
+}
+
+// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) EnvelopeMapping() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelope) *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		if v == nil {
+			return nil
+		}
+		return v.EnvelopeMapping
+	}).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput)
+}
+
+// (Updatable) The device endpoint.
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) ReferenceEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelope) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ReferenceEndpoint
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o IotDigitalTwinAdapterInboundEnvelopePtrOutput) ReferencePayload() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelope) *IotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		if v == nil {
+			return nil
+		}
+		return v.ReferencePayload
+	}).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping struct {
+	// (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved *string `pulumi:"timeObserved"`
+}
+
+// IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs and IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput` via:
+//
+//	IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{...}
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput
+	ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs struct {
+	// (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved pulumi.StringPtrInput `pulumi:"timeObserved"`
+}
+
+func (IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput)
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput).ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(ctx)
+}
+
+// IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs, IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtr and IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput` via:
+//
+//	        IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{...}
+//
+//	or:
+//
+//	        nil
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput
+	ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput
+}
+
+type iotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrType IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs
+
+func IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtr(v *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput {
+	return (*iotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrType)(v)
+}
+
+func (*iotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrType) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(context.Background())
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrType) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o.ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(context.Background())
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping) *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		return &v
+	}).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput)
+}
+
+// (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) TimeObserved() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping) *string { return v.TimeObserved }).(pulumi.StringPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput) ToIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput) Elem() IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping) IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		if v != nil {
+			return *v
+		}
+		var ret IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping
+		return ret
+	}).(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput)
+}
+
+// (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+func (o IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput) TimeObserved() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeObserved
+	}).(pulumi.StringPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayload struct {
+	// (Updatable) JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// (Updatable) Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// IotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs and IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput` via:
+//
+//	IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{...}
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput
+	ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs struct {
+	// (Updatable) JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// (Updatable) Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput)
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput).ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(ctx)
+}
+
+// IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput is an input type that accepts IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs, IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtr and IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput` via:
+//
+//	        IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{...}
+//
+//	or:
+//
+//	        nil
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput
+	ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput
+}
+
+type iotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrType IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs
+
+func IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtr(v *IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput {
+	return (*iotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrType)(v)
+}
+
+func (*iotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrType) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (i *iotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrType) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o.ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IotDigitalTwinAdapterInboundEnvelopeReferencePayload) *IotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		return &v
+	}).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput)
+}
+
+// (Updatable) JSON raw data.
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelopeReferencePayload) map[string]string { return v.Data }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Data format of the payload.
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundEnvelopeReferencePayload) string { return v.DataFormat }).(pulumi.StringOutput)
+}
+
+type IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) ToIotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) Elem() IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelopeReferencePayload) IotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		if v != nil {
+			return *v
+		}
+		var ret IotDigitalTwinAdapterInboundEnvelopeReferencePayload
+		return ret
+	}).(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput)
+}
+
+// (Updatable) JSON raw data.
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelopeReferencePayload) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Data
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Data format of the payload.
+func (o IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput) DataFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundEnvelopeReferencePayload) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DataFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundRoute struct {
+	// (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition string `pulumi:"condition"`
+	// (Updatable) Meaningful write up about the inbound route.
+	Description *string `pulumi:"description"`
+	// (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	//
+	// The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+	//
+	// Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+	PayloadMapping map[string]string `pulumi:"payloadMapping"`
+	// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayload *IotDigitalTwinAdapterInboundRouteReferencePayload `pulumi:"referencePayload"`
+}
+
+// IotDigitalTwinAdapterInboundRouteInput is an input type that accepts IotDigitalTwinAdapterInboundRouteArgs and IotDigitalTwinAdapterInboundRouteOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundRouteInput` via:
+//
+//	IotDigitalTwinAdapterInboundRouteArgs{...}
+type IotDigitalTwinAdapterInboundRouteInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundRouteOutput() IotDigitalTwinAdapterInboundRouteOutput
+	ToIotDigitalTwinAdapterInboundRouteOutputWithContext(context.Context) IotDigitalTwinAdapterInboundRouteOutput
+}
+
+type IotDigitalTwinAdapterInboundRouteArgs struct {
+	// (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// (Updatable) Meaningful write up about the inbound route.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	//
+	// The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+	//
+	// Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+	PayloadMapping pulumi.StringMapInput `pulumi:"payloadMapping"`
+	// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayload IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput `pulumi:"referencePayload"`
+}
+
+func (IotDigitalTwinAdapterInboundRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundRouteArgs) ToIotDigitalTwinAdapterInboundRouteOutput() IotDigitalTwinAdapterInboundRouteOutput {
+	return i.ToIotDigitalTwinAdapterInboundRouteOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundRouteArgs) ToIotDigitalTwinAdapterInboundRouteOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundRouteOutput)
+}
+
+// IotDigitalTwinAdapterInboundRouteArrayInput is an input type that accepts IotDigitalTwinAdapterInboundRouteArray and IotDigitalTwinAdapterInboundRouteArrayOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundRouteArrayInput` via:
+//
+//	IotDigitalTwinAdapterInboundRouteArray{ IotDigitalTwinAdapterInboundRouteArgs{...} }
+type IotDigitalTwinAdapterInboundRouteArrayInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundRouteArrayOutput() IotDigitalTwinAdapterInboundRouteArrayOutput
+	ToIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(context.Context) IotDigitalTwinAdapterInboundRouteArrayOutput
+}
+
+type IotDigitalTwinAdapterInboundRouteArray []IotDigitalTwinAdapterInboundRouteInput
+
+func (IotDigitalTwinAdapterInboundRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundRouteArray) ToIotDigitalTwinAdapterInboundRouteArrayOutput() IotDigitalTwinAdapterInboundRouteArrayOutput {
+	return i.ToIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundRouteArray) ToIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundRouteArrayOutput)
+}
+
+type IotDigitalTwinAdapterInboundRouteOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundRouteOutput) ToIotDigitalTwinAdapterInboundRouteOutput() IotDigitalTwinAdapterInboundRouteOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteOutput) ToIotDigitalTwinAdapterInboundRouteOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteOutput {
+	return o
+}
+
+// (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+func (o IotDigitalTwinAdapterInboundRouteOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRoute) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// (Updatable) Meaningful write up about the inbound route.
+func (o IotDigitalTwinAdapterInboundRouteOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRoute) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+//
+// The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+//
+// Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+func (o IotDigitalTwinAdapterInboundRouteOutput) PayloadMapping() pulumi.StringMapOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRoute) map[string]string { return v.PayloadMapping }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o IotDigitalTwinAdapterInboundRouteOutput) ReferencePayload() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRoute) *IotDigitalTwinAdapterInboundRouteReferencePayload {
+		return v.ReferencePayload
+	}).(IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundRouteArrayOutput) ToIotDigitalTwinAdapterInboundRouteArrayOutput() IotDigitalTwinAdapterInboundRouteArrayOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteArrayOutput) ToIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteArrayOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteArrayOutput) Index(i pulumi.IntInput) IotDigitalTwinAdapterInboundRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IotDigitalTwinAdapterInboundRoute {
+		return vs[0].([]IotDigitalTwinAdapterInboundRoute)[vs[1].(int)]
+	}).(IotDigitalTwinAdapterInboundRouteOutput)
+}
+
+type IotDigitalTwinAdapterInboundRouteReferencePayload struct {
+	// (Updatable) JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// (Updatable) Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// IotDigitalTwinAdapterInboundRouteReferencePayloadInput is an input type that accepts IotDigitalTwinAdapterInboundRouteReferencePayloadArgs and IotDigitalTwinAdapterInboundRouteReferencePayloadOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundRouteReferencePayloadInput` via:
+//
+//	IotDigitalTwinAdapterInboundRouteReferencePayloadArgs{...}
+type IotDigitalTwinAdapterInboundRouteReferencePayloadInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadOutput
+	ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadOutput
+}
+
+type IotDigitalTwinAdapterInboundRouteReferencePayloadArgs struct {
+	// (Updatable) JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// (Updatable) Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return i.ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundRouteReferencePayloadOutput)
+}
+
+func (i IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (i IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundRouteReferencePayloadOutput).ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(ctx)
+}
+
+// IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput is an input type that accepts IotDigitalTwinAdapterInboundRouteReferencePayloadArgs, IotDigitalTwinAdapterInboundRouteReferencePayloadPtr and IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput values.
+// You can construct a concrete instance of `IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput` via:
+//
+//	        IotDigitalTwinAdapterInboundRouteReferencePayloadArgs{...}
+//
+//	or:
+//
+//	        nil
+type IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput interface {
+	pulumi.Input
+
+	ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput
+	ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput
+}
+
+type iotDigitalTwinAdapterInboundRouteReferencePayloadPtrType IotDigitalTwinAdapterInboundRouteReferencePayloadArgs
+
+func IotDigitalTwinAdapterInboundRouteReferencePayloadPtr(v *IotDigitalTwinAdapterInboundRouteReferencePayloadArgs) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput {
+	return (*iotDigitalTwinAdapterInboundRouteReferencePayloadPtrType)(v)
+}
+
+func (*iotDigitalTwinAdapterInboundRouteReferencePayloadPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i *iotDigitalTwinAdapterInboundRouteReferencePayloadPtrType) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return i.ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (i *iotDigitalTwinAdapterInboundRouteReferencePayloadPtrType) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput)
+}
+
+type IotDigitalTwinAdapterInboundRouteReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return o.ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(context.Background())
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IotDigitalTwinAdapterInboundRouteReferencePayload) *IotDigitalTwinAdapterInboundRouteReferencePayload {
+		return &v
+	}).(IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput)
+}
+
+// (Updatable) JSON raw data.
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRouteReferencePayload) map[string]string { return v.Data }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Data format of the payload.
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v IotDigitalTwinAdapterInboundRouteReferencePayload) string { return v.DataFormat }).(pulumi.StringOutput)
+}
+
+type IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput struct{ *pulumi.OutputState }
+
+func (IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput() IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) ToIotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutputWithContext(ctx context.Context) IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput {
+	return o
+}
+
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) Elem() IotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundRouteReferencePayload) IotDigitalTwinAdapterInboundRouteReferencePayload {
+		if v != nil {
+			return *v
+		}
+		var ret IotDigitalTwinAdapterInboundRouteReferencePayload
+		return ret
+	}).(IotDigitalTwinAdapterInboundRouteReferencePayloadOutput)
+}
+
+// (Updatable) JSON raw data.
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundRouteReferencePayload) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Data
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Data format of the payload.
+func (o IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput) DataFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IotDigitalTwinAdapterInboundRouteReferencePayload) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DataFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+type IotIotDomainDataRetentionPeriodsInDay struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData *int `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData *int `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData *int `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData *int `pulumi:"rejectedData"`
+}
+
+// IotIotDomainDataRetentionPeriodsInDayInput is an input type that accepts IotIotDomainDataRetentionPeriodsInDayArgs and IotIotDomainDataRetentionPeriodsInDayOutput values.
+// You can construct a concrete instance of `IotIotDomainDataRetentionPeriodsInDayInput` via:
+//
+//	IotIotDomainDataRetentionPeriodsInDayArgs{...}
+type IotIotDomainDataRetentionPeriodsInDayInput interface {
+	pulumi.Input
+
+	ToIotIotDomainDataRetentionPeriodsInDayOutput() IotIotDomainDataRetentionPeriodsInDayOutput
+	ToIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Context) IotIotDomainDataRetentionPeriodsInDayOutput
+}
+
+type IotIotDomainDataRetentionPeriodsInDayArgs struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData pulumi.IntPtrInput `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData pulumi.IntPtrInput `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData pulumi.IntPtrInput `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData pulumi.IntPtrInput `pulumi:"rejectedData"`
+}
+
+func (IotIotDomainDataRetentionPeriodsInDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i IotIotDomainDataRetentionPeriodsInDayArgs) ToIotIotDomainDataRetentionPeriodsInDayOutput() IotIotDomainDataRetentionPeriodsInDayOutput {
+	return i.ToIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Background())
+}
+
+func (i IotIotDomainDataRetentionPeriodsInDayArgs) ToIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) IotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
+// IotIotDomainDataRetentionPeriodsInDayArrayInput is an input type that accepts IotIotDomainDataRetentionPeriodsInDayArray and IotIotDomainDataRetentionPeriodsInDayArrayOutput values.
+// You can construct a concrete instance of `IotIotDomainDataRetentionPeriodsInDayArrayInput` via:
+//
+//	IotIotDomainDataRetentionPeriodsInDayArray{ IotIotDomainDataRetentionPeriodsInDayArgs{...} }
+type IotIotDomainDataRetentionPeriodsInDayArrayInput interface {
+	pulumi.Input
+
+	ToIotIotDomainDataRetentionPeriodsInDayArrayOutput() IotIotDomainDataRetentionPeriodsInDayArrayOutput
+	ToIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Context) IotIotDomainDataRetentionPeriodsInDayArrayOutput
+}
+
+type IotIotDomainDataRetentionPeriodsInDayArray []IotIotDomainDataRetentionPeriodsInDayInput
+
+func (IotIotDomainDataRetentionPeriodsInDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i IotIotDomainDataRetentionPeriodsInDayArray) ToIotIotDomainDataRetentionPeriodsInDayArrayOutput() IotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return i.ToIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Background())
+}
+
+func (i IotIotDomainDataRetentionPeriodsInDayArray) ToIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) IotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IotIotDomainDataRetentionPeriodsInDayArrayOutput)
+}
+
+type IotIotDomainDataRetentionPeriodsInDayOutput struct{ *pulumi.OutputState }
+
+func (IotIotDomainDataRetentionPeriodsInDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) ToIotIotDomainDataRetentionPeriodsInDayOutput() IotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) ToIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) IotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+// Number of days for which any normalized data sent to IoT devices would be retained for.
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) HistorizedData() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IotIotDomainDataRetentionPeriodsInDay) *int { return v.HistorizedData }).(pulumi.IntPtrOutput)
+}
+
+// Number of days for which any raw command data sent to IoT devices would be retained for.
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) RawCommandData() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IotIotDomainDataRetentionPeriodsInDay) *int { return v.RawCommandData }).(pulumi.IntPtrOutput)
+}
+
+// Number of days for which any raw data sent to IoT devices would be retained for.
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) RawData() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IotIotDomainDataRetentionPeriodsInDay) *int { return v.RawData }).(pulumi.IntPtrOutput)
+}
+
+// Number of days for which any data sent to IoT devices would be retained for.
+func (o IotIotDomainDataRetentionPeriodsInDayOutput) RejectedData() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v IotIotDomainDataRetentionPeriodsInDay) *int { return v.RejectedData }).(pulumi.IntPtrOutput)
+}
+
+type IotIotDomainDataRetentionPeriodsInDayArrayOutput struct{ *pulumi.OutputState }
+
+func (IotIotDomainDataRetentionPeriodsInDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o IotIotDomainDataRetentionPeriodsInDayArrayOutput) ToIotIotDomainDataRetentionPeriodsInDayArrayOutput() IotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o IotIotDomainDataRetentionPeriodsInDayArrayOutput) ToIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) IotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o IotIotDomainDataRetentionPeriodsInDayArrayOutput) Index(i pulumi.IntInput) IotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IotIotDomainDataRetentionPeriodsInDay {
+		return vs[0].([]IotIotDomainDataRetentionPeriodsInDay)[vs[1].(int)]
+	}).(IotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
 type ManagedKafkaKafkaClusterAccessSubnet struct {
 	// (Updatable) Subnets OCIDs
 	Subnets []string `pulumi:"subnets"`
@@ -1551,6 +2441,970 @@ func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedKafkaKafkaClusterKafkaBootstrapUrl {
 		return vs[0].([]ManagedKafkaKafkaClusterKafkaBootstrapUrl)[vs[1].(int)]
 	}).(ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword struct {
+	// Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+	Password *string `pulumi:"password"`
+	// Password type
+	PasswordType string `pulumi:"passwordType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+	SecretId *string `pulumi:"secretId"`
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs and ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput` via:
+//
+//	ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...}
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs struct {
+	// Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// Password type
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
+}
+
+func (ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput).ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(ctx)
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs, ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtr and ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrInput` via:
+//
+//	        ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...}
+//
+//	or:
+//
+//	        nil
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput
+}
+
+type resourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrType ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs
+
+func ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtr(v *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrInput {
+	return (*resourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrType)(v)
+}
+
+func (*resourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrType) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrType) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return o.ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(context.Background())
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {
+		return &v
+	}).(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput)
+}
+
+// Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// Password type
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.PasswordType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *string { return v.SecretId }).(pulumi.StringPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) Elem() ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {
+		if v != nil {
+			return *v
+		}
+		var ret ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword
+		return ret
+	}).(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
+}
+
+// Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Password type
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) PasswordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PasswordType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+func (o ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails struct {
+	IdcsDomainId   *string                                                                                 `pulumi:"idcsDomainId"`
+	LicenseModel   *string                                                                                 `pulumi:"licenseModel"`
+	NetworkDetails *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails `pulumi:"networkDetails"`
+	NsgIds         []string                                                                                `pulumi:"nsgIds"`
+	SubnetId       *string                                                                                 `pulumi:"subnetId"`
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs and ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsInput` via:
+//
+//	ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs{...}
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs struct {
+	IdcsDomainId   pulumi.StringPtrInput                                                                          `pulumi:"idcsDomainId"`
+	LicenseModel   pulumi.StringPtrInput                                                                          `pulumi:"licenseModel"`
+	NetworkDetails ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput `pulumi:"networkDetails"`
+	NsgIds         pulumi.StringArrayInput                                                                        `pulumi:"nsgIds"`
+	SubnetId       pulumi.StringPtrInput                                                                          `pulumi:"subnetId"`
+}
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails)(nil)).Elem()
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput)
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput).ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(ctx)
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs, ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtr and ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput` via:
+//
+//	        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput
+}
+
+type resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrType ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs
+
+func ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtr(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput {
+	return (*resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrType)(v)
+}
+
+func (*resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails)(nil)).Elem()
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrType) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrType) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return o.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails {
+		return &v
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) IdcsDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		return v.IdcsDomainId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		return v.LicenseModel
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) NetworkDetails() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+		return v.NetworkDetails
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) Elem() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails
+		return ret
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) IdcsDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdcsDomainId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LicenseModel
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) NetworkDetails() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkDetails
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails struct {
+	NsgIds   []string `pulumi:"nsgIds"`
+	SubnetId *string  `pulumi:"subnetId"`
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs and ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsInput` via:
+//
+//	ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs{...}
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs struct {
+	NsgIds   pulumi.StringArrayInput `pulumi:"nsgIds"`
+	SubnetId pulumi.StringPtrInput   `pulumi:"subnetId"`
+}
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails)(nil)).Elem()
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput)
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput).ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(ctx)
+}
+
+// ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput is an input type that accepts ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs, ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtr and ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput values.
+// You can construct a concrete instance of `ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput` via:
+//
+//	        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput interface {
+	pulumi.Input
+
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput
+	ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput
+}
+
+type resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrType ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs
+
+func ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtr(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput {
+	return (*resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrType)(v)
+}
+
+func (*resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails)(nil)).Elem()
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrType) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return i.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *resourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrType) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o.ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+		return &v
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails)(nil)).Elem()
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) ToResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutputWithContext(ctx context.Context) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput {
+	return o
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) Elem() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails
+		return ret
+	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection struct {
+	Items []GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem `pulumi:"items"`
+}
+
+// GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionInput is an input type that accepts GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs and GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs{...}
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs struct {
+	Items GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput)
+}
+
+// GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayInput is an input type that accepts GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray and GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray{ GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs{...} }
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray []GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionInput
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput) Items() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection) []GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem {
+		return v.Items
+	}).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput) Index(i pulumi.IntInput) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection {
+		return vs[0].([]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollection)[vs[1].(int)]
+	}).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem struct {
+	// The AiDataPlatform type.
+	AiDataPlatformType string `pulumi:"aiDataPlatformType"`
+	// The alias Id of the AiDataPlatform which is the short form of OCID.
+	AliasKey string `pulumi:"aliasKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
+	CreatedBy            string `pulumi:"createdBy"`
+	DefaultWorkspaceName string `pulumi:"defaultWorkspaceName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The WebSocket URL of the AiDataPlatform.
+	WebSocketEndpoint string `pulumi:"webSocketEndpoint"`
+}
+
+// GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemInput is an input type that accepts GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs and GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs{...}
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs struct {
+	// The AiDataPlatform type.
+	AiDataPlatformType pulumi.StringInput `pulumi:"aiDataPlatformType"`
+	// The alias Id of the AiDataPlatform which is the short form of OCID.
+	AliasKey pulumi.StringInput `pulumi:"aliasKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
+	CreatedBy            pulumi.StringInput `pulumi:"createdBy"`
+	DefaultWorkspaceName pulumi.StringInput `pulumi:"defaultWorkspaceName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The WebSocket URL of the AiDataPlatform.
+	WebSocketEndpoint pulumi.StringInput `pulumi:"webSocketEndpoint"`
+}
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput)
+}
+
+// GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayInput is an input type that accepts GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray and GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray{ GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs{...} }
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput
+	ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray []GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemInput
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput {
+	return o
+}
+
+// The AiDataPlatform type.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) AiDataPlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string {
+		return v.AiDataPlatformType
+	}).(pulumi.StringOutput)
+}
+
+// The alias Id of the AiDataPlatform which is the short form of OCID.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) AliasKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.AliasKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) DefaultWorkspaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string {
+		return v.DefaultWorkspaceName
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The WebSocket URL of the AiDataPlatform.
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput) WebSocketEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem) string {
+		return v.WebSocketEndpoint
+	}).(pulumi.StringOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput() GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput) ToGetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem {
+		return vs[0].([]GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItem)[vs[1].(int)]
+	}).(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAiDataPlatformAiDataPlatformsFilterInput is an input type that accepts GetAiDataPlatformAiDataPlatformsFilterArgs and GetAiDataPlatformAiDataPlatformsFilterOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsFilterInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsFilterArgs{...}
+type GetAiDataPlatformAiDataPlatformsFilterInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsFilterOutput() GetAiDataPlatformAiDataPlatformsFilterOutput
+	ToGetAiDataPlatformAiDataPlatformsFilterOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsFilterOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAiDataPlatformAiDataPlatformsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsFilter)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsFilterArgs) ToGetAiDataPlatformAiDataPlatformsFilterOutput() GetAiDataPlatformAiDataPlatformsFilterOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsFilterArgs) ToGetAiDataPlatformAiDataPlatformsFilterOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsFilterOutput)
+}
+
+// GetAiDataPlatformAiDataPlatformsFilterArrayInput is an input type that accepts GetAiDataPlatformAiDataPlatformsFilterArray and GetAiDataPlatformAiDataPlatformsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAiDataPlatformAiDataPlatformsFilterArrayInput` via:
+//
+//	GetAiDataPlatformAiDataPlatformsFilterArray{ GetAiDataPlatformAiDataPlatformsFilterArgs{...} }
+type GetAiDataPlatformAiDataPlatformsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAiDataPlatformAiDataPlatformsFilterArrayOutput() GetAiDataPlatformAiDataPlatformsFilterArrayOutput
+	ToGetAiDataPlatformAiDataPlatformsFilterArrayOutputWithContext(context.Context) GetAiDataPlatformAiDataPlatformsFilterArrayOutput
+}
+
+type GetAiDataPlatformAiDataPlatformsFilterArray []GetAiDataPlatformAiDataPlatformsFilterInput
+
+func (GetAiDataPlatformAiDataPlatformsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsFilter)(nil)).Elem()
+}
+
+func (i GetAiDataPlatformAiDataPlatformsFilterArray) ToGetAiDataPlatformAiDataPlatformsFilterArrayOutput() GetAiDataPlatformAiDataPlatformsFilterArrayOutput {
+	return i.ToGetAiDataPlatformAiDataPlatformsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiDataPlatformAiDataPlatformsFilterArray) ToGetAiDataPlatformAiDataPlatformsFilterArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiDataPlatformAiDataPlatformsFilterArrayOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsFilter)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterOutput) ToGetAiDataPlatformAiDataPlatformsFilterOutput() GetAiDataPlatformAiDataPlatformsFilterOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterOutput) ToGetAiDataPlatformAiDataPlatformsFilterOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsFilterOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAiDataPlatformAiDataPlatformsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAiDataPlatformAiDataPlatformsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiDataPlatformAiDataPlatformsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiDataPlatformAiDataPlatformsFilter)(nil)).Elem()
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterArrayOutput) ToGetAiDataPlatformAiDataPlatformsFilterArrayOutput() GetAiDataPlatformAiDataPlatformsFilterArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterArrayOutput) ToGetAiDataPlatformAiDataPlatformsFilterArrayOutputWithContext(ctx context.Context) GetAiDataPlatformAiDataPlatformsFilterArrayOutput {
+	return o
+}
+
+func (o GetAiDataPlatformAiDataPlatformsFilterArrayOutput) Index(i pulumi.IntInput) GetAiDataPlatformAiDataPlatformsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiDataPlatformAiDataPlatformsFilter {
+		return vs[0].([]GetAiDataPlatformAiDataPlatformsFilter)[vs[1].(int)]
+	}).(GetAiDataPlatformAiDataPlatformsFilterOutput)
 }
 
 type GetApiPlatformApiPlatformInstanceIdcsApp struct {
@@ -10668,6 +12522,3919 @@ func (o GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOu
 	}).(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput)
 }
 
+type GetIotDigitalTwinAdapterInboundEnvelope struct {
+	// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMappings []GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMappings"`
+	// The device endpoint.
+	ReferenceEndpoint string `pulumi:"referenceEndpoint"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads []GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload `pulumi:"referencePayloads"`
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeArgs and GetIotDigitalTwinAdapterInboundEnvelopeOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeArgs{...}
+type GetIotDigitalTwinAdapterInboundEnvelopeInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeOutput() GetIotDigitalTwinAdapterInboundEnvelopeOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeArgs struct {
+	// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMappings GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayInput `pulumi:"envelopeMappings"`
+	// The device endpoint.
+	ReferenceEndpoint pulumi.StringInput `pulumi:"referenceEndpoint"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayInput `pulumi:"referencePayloads"`
+}
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeOutput() GetIotDigitalTwinAdapterInboundEnvelopeOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeOutput)
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeArrayInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeArray and GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeArrayInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeArray{ GetIotDigitalTwinAdapterInboundEnvelopeArgs{...} }
+type GetIotDigitalTwinAdapterInboundEnvelopeArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeArray []GetIotDigitalTwinAdapterInboundEnvelopeInput
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeArray) ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeArray) ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeOutput() GetIotDigitalTwinAdapterInboundEnvelopeOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeOutput {
+	return o
+}
+
+// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeOutput) EnvelopeMappings() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelope) []GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		return v.EnvelopeMappings
+	}).(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput)
+}
+
+// The device endpoint.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeOutput) ReferenceEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelope) string { return v.ReferenceEndpoint }).(pulumi.StringOutput)
+}
+
+// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeOutput) ReferencePayloads() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelope) []GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		return v.ReferencePayloads
+	}).(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelope)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdapterInboundEnvelopeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdapterInboundEnvelope {
+		return vs[0].([]GetIotDigitalTwinAdapterInboundEnvelope)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdapterInboundEnvelopeOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping struct {
+	// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved string `pulumi:"timeObserved"`
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs and GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{...}
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs struct {
+	// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved pulumi.StringInput `pulumi:"timeObserved"`
+}
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput)
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray and GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray{ GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{...} }
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray []GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput) TimeObserved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping) string { return v.TimeObserved }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+		return vs[0].([]GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload struct {
+	// JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs and GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{...}
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs struct {
+	// JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput)
+}
+
+// GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayInput is an input type that accepts GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray and GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray{ GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{...} }
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput
+	ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray []GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+// JSON raw data.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload) map[string]string { return v.Data }).(pulumi.StringMapOutput)
+}
+
+// Data format of the payload.
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload) string { return v.DataFormat }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput) ToGetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+		return vs[0].([]GetIotDigitalTwinAdapterInboundEnvelopeReferencePayload)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRoute struct {
+	// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition string `pulumi:"condition"`
+	// Meaningful write up about the inbound route.
+	Description string `pulumi:"description"`
+	// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	PayloadMapping map[string]string `pulumi:"payloadMapping"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads []GetIotDigitalTwinAdapterInboundRouteReferencePayload `pulumi:"referencePayloads"`
+}
+
+// GetIotDigitalTwinAdapterInboundRouteInput is an input type that accepts GetIotDigitalTwinAdapterInboundRouteArgs and GetIotDigitalTwinAdapterInboundRouteOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundRouteInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundRouteArgs{...}
+type GetIotDigitalTwinAdapterInboundRouteInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundRouteOutput() GetIotDigitalTwinAdapterInboundRouteOutput
+	ToGetIotDigitalTwinAdapterInboundRouteOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundRouteOutput
+}
+
+type GetIotDigitalTwinAdapterInboundRouteArgs struct {
+	// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Meaningful write up about the inbound route.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	PayloadMapping pulumi.StringMapInput `pulumi:"payloadMapping"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayInput `pulumi:"referencePayloads"`
+}
+
+func (GetIotDigitalTwinAdapterInboundRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteArgs) ToGetIotDigitalTwinAdapterInboundRouteOutput() GetIotDigitalTwinAdapterInboundRouteOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundRouteOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteArgs) ToGetIotDigitalTwinAdapterInboundRouteOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundRouteOutput)
+}
+
+// GetIotDigitalTwinAdapterInboundRouteArrayInput is an input type that accepts GetIotDigitalTwinAdapterInboundRouteArray and GetIotDigitalTwinAdapterInboundRouteArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundRouteArrayInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundRouteArray{ GetIotDigitalTwinAdapterInboundRouteArgs{...} }
+type GetIotDigitalTwinAdapterInboundRouteArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundRouteArrayOutput() GetIotDigitalTwinAdapterInboundRouteArrayOutput
+	ToGetIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundRouteArrayOutput
+}
+
+type GetIotDigitalTwinAdapterInboundRouteArray []GetIotDigitalTwinAdapterInboundRouteInput
+
+func (GetIotDigitalTwinAdapterInboundRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteArray) ToGetIotDigitalTwinAdapterInboundRouteArrayOutput() GetIotDigitalTwinAdapterInboundRouteArrayOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteArray) ToGetIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundRouteArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRouteOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) ToGetIotDigitalTwinAdapterInboundRouteOutput() GetIotDigitalTwinAdapterInboundRouteOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) ToGetIotDigitalTwinAdapterInboundRouteOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteOutput {
+	return o
+}
+
+// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRoute) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// Meaningful write up about the inbound route.
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRoute) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) PayloadMapping() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRoute) map[string]string { return v.PayloadMapping }).(pulumi.StringMapOutput)
+}
+
+// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o GetIotDigitalTwinAdapterInboundRouteOutput) ReferencePayloads() GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRoute) []GetIotDigitalTwinAdapterInboundRouteReferencePayload {
+		return v.ReferencePayloads
+	}).(GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundRoute)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteArrayOutput) ToGetIotDigitalTwinAdapterInboundRouteArrayOutput() GetIotDigitalTwinAdapterInboundRouteArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteArrayOutput) ToGetIotDigitalTwinAdapterInboundRouteArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdapterInboundRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdapterInboundRoute {
+		return vs[0].([]GetIotDigitalTwinAdapterInboundRoute)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdapterInboundRouteOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRouteReferencePayload struct {
+	// JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// GetIotDigitalTwinAdapterInboundRouteReferencePayloadInput is an input type that accepts GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs and GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundRouteReferencePayloadInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs{...}
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput
+	ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput
+}
+
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs struct {
+	// JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput)
+}
+
+// GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayInput is an input type that accepts GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray and GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayInput` via:
+//
+//	GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray{ GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs{...} }
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput
+	ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutputWithContext(context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput
+}
+
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray []GetIotDigitalTwinAdapterInboundRouteReferencePayloadInput
+
+func (GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput {
+	return i.ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return o
+}
+
+// JSON raw data.
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRouteReferencePayload) map[string]string { return v.Data }).(pulumi.StringMapOutput)
+}
+
+// Data format of the payload.
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdapterInboundRouteReferencePayload) string { return v.DataFormat }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdapterInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput) ToGetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdapterInboundRouteReferencePayload {
+		return vs[0].([]GetIotDigitalTwinAdapterInboundRouteReferencePayload)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection struct {
+	Items []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs struct {
+	Items GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput) Items() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Meaningful write up about the inbound route.
+	Description string `pulumi:"description"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	DigitalTwinModelId string `pulumi:"digitalTwinModelId"`
+	// Filter resources that match the specified URI (DTMI) of the digital twin model.
+	DigitalTwinModelSpecUri string `pulumi:"digitalTwinModelSpecUri"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+	InboundEnvelopes []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope `pulumi:"inboundEnvelopes"`
+	// list of routes
+	InboundRoutes []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute `pulumi:"inboundRoutes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Meaningful write up about the inbound route.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	DigitalTwinModelId pulumi.StringInput `pulumi:"digitalTwinModelId"`
+	// Filter resources that match the specified URI (DTMI) of the digital twin model.
+	DigitalTwinModelSpecUri pulumi.StringInput `pulumi:"digitalTwinModelSpecUri"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+	InboundEnvelopes GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayInput `pulumi:"inboundEnvelopes"`
+	// list of routes
+	InboundRoutes GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayInput `pulumi:"inboundRoutes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Meaningful write up about the inbound route.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) DigitalTwinModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.DigitalTwinModelId }).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified URI (DTMI) of the digital twin model.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) DigitalTwinModelSpecUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string {
+		return v.DigitalTwinModelSpecUri
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) InboundEnvelopes() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope {
+		return v.InboundEnvelopes
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput)
+}
+
+// list of routes
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) InboundRoutes() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute {
+		return v.InboundRoutes
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.IotDomainId }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope struct {
+	// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMappings []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMappings"`
+	// The device endpoint.
+	ReferenceEndpoint string `pulumi:"referenceEndpoint"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload `pulumi:"referencePayloads"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs struct {
+	// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+	EnvelopeMappings GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayInput `pulumi:"envelopeMappings"`
+	// The device endpoint.
+	ReferenceEndpoint pulumi.StringInput `pulumi:"referenceEndpoint"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayInput `pulumi:"referencePayloads"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput {
+	return o
+}
+
+// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) EnvelopeMappings() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping {
+		return v.EnvelopeMappings
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput)
+}
+
+// The device endpoint.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) ReferenceEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope) string {
+		return v.ReferenceEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput) ReferencePayloads() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload {
+		return v.ReferencePayloads
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelope)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping struct {
+	// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved string `pulumi:"timeObserved"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs struct {
+	// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+	TimeObserved pulumi.StringInput `pulumi:"timeObserved"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput {
+	return o
+}
+
+// JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput) TimeObserved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping) string {
+		return v.TimeObserved
+	}).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMapping)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload struct {
+	// JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs struct {
+	// JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput {
+	return o
+}
+
+// JSON raw data.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload) map[string]string {
+		return v.Data
+	}).(pulumi.StringMapOutput)
+}
+
+// Data format of the payload.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload) string {
+		return v.DataFormat
+	}).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayload)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute struct {
+	// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition string `pulumi:"condition"`
+	// Meaningful write up about the inbound route.
+	Description string `pulumi:"description"`
+	// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	PayloadMapping map[string]string `pulumi:"payloadMapping"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload `pulumi:"referencePayloads"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs struct {
+	// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Meaningful write up about the inbound route.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+	PayloadMapping pulumi.StringMapInput `pulumi:"payloadMapping"`
+	// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+	ReferencePayloads GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayInput `pulumi:"referencePayloads"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput {
+	return o
+}
+
+// A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute) string {
+		return v.Condition
+	}).(pulumi.StringOutput)
+}
+
+// Meaningful write up about the inbound route.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) PayloadMapping() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute) map[string]string {
+		return v.PayloadMapping
+	}).(pulumi.StringMapOutput)
+}
+
+// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput) ReferencePayloads() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute) []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload {
+		return v.ReferencePayloads
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload struct {
+	// JSON raw data.
+	Data map[string]string `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat string `pulumi:"dataFormat"`
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs{...}
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs struct {
+	// JSON raw data.
+	Data pulumi.StringMapInput `pulumi:"data"`
+	// Data format of the payload.
+	DataFormat pulumi.StringInput `pulumi:"dataFormat"`
+}
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput)
+}
+
+// GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayInput is an input type that accepts GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray and GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray{ GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs{...} }
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput
+	ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray []GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadInput
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput {
+	return o
+}
+
+// JSON raw data.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput) Data() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload) map[string]string {
+		return v.Data
+	}).(pulumi.StringMapOutput)
+}
+
+// Data format of the payload.
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput) DataFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload) string {
+		return v.DataFormat
+	}).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput() GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput) ToGetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload {
+		return vs[0].([]GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput)
+}
+
+type GetIotDigitalTwinAdaptersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinAdaptersFilterInput is an input type that accepts GetIotDigitalTwinAdaptersFilterArgs and GetIotDigitalTwinAdaptersFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersFilterInput` via:
+//
+//	GetIotDigitalTwinAdaptersFilterArgs{...}
+type GetIotDigitalTwinAdaptersFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersFilterOutput() GetIotDigitalTwinAdaptersFilterOutput
+	ToGetIotDigitalTwinAdaptersFilterOutputWithContext(context.Context) GetIotDigitalTwinAdaptersFilterOutput
+}
+
+type GetIotDigitalTwinAdaptersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinAdaptersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersFilterArgs) ToGetIotDigitalTwinAdaptersFilterOutput() GetIotDigitalTwinAdaptersFilterOutput {
+	return i.ToGetIotDigitalTwinAdaptersFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersFilterArgs) ToGetIotDigitalTwinAdaptersFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersFilterOutput)
+}
+
+// GetIotDigitalTwinAdaptersFilterArrayInput is an input type that accepts GetIotDigitalTwinAdaptersFilterArray and GetIotDigitalTwinAdaptersFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinAdaptersFilterArrayInput` via:
+//
+//	GetIotDigitalTwinAdaptersFilterArray{ GetIotDigitalTwinAdaptersFilterArgs{...} }
+type GetIotDigitalTwinAdaptersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinAdaptersFilterArrayOutput() GetIotDigitalTwinAdaptersFilterArrayOutput
+	ToGetIotDigitalTwinAdaptersFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinAdaptersFilterArrayOutput
+}
+
+type GetIotDigitalTwinAdaptersFilterArray []GetIotDigitalTwinAdaptersFilterInput
+
+func (GetIotDigitalTwinAdaptersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinAdaptersFilterArray) ToGetIotDigitalTwinAdaptersFilterArrayOutput() GetIotDigitalTwinAdaptersFilterArrayOutput {
+	return i.ToGetIotDigitalTwinAdaptersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinAdaptersFilterArray) ToGetIotDigitalTwinAdaptersFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinAdaptersFilterArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinAdaptersFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersFilterOutput) ToGetIotDigitalTwinAdaptersFilterOutput() GetIotDigitalTwinAdaptersFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersFilterOutput) ToGetIotDigitalTwinAdaptersFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinAdaptersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinAdaptersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinAdaptersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinAdaptersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinAdaptersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinAdaptersFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinAdaptersFilterArrayOutput) ToGetIotDigitalTwinAdaptersFilterArrayOutput() GetIotDigitalTwinAdaptersFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersFilterArrayOutput) ToGetIotDigitalTwinAdaptersFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinAdaptersFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinAdaptersFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinAdaptersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinAdaptersFilter {
+		return vs[0].([]GetIotDigitalTwinAdaptersFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinAdaptersFilterOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollection struct {
+	Items []GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionInput is an input type that accepts GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs and GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionInput` via:
+//
+//	GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs{...}
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutputWithContext(context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs struct {
+	Items GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput {
+	return i.ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput)
+}
+
+// GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayInput is an input type that accepts GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray and GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray{ GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs{...} }
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray []GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionInput
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesDigitalTwinInstanceCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput) Items() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollection) []GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesDigitalTwinInstanceCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinInstancesDigitalTwinInstanceCollection {
+		return vs[0].([]GetIotDigitalTwinInstancesDigitalTwinInstanceCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+	AuthId string `pulumi:"authId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
+	DigitalTwinAdapterId string `pulumi:"digitalTwinAdapterId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	DigitalTwinModelId string `pulumi:"digitalTwinModelId"`
+	// Filter resources that match the specified URI (DTMI) of the digital twin model.
+	DigitalTwinModelSpecUri string `pulumi:"digitalTwinModelSpecUri"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
+	ExternalKey string `pulumi:"externalKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput is an input type that accepts GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs and GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput` via:
+//
+//	GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs{...}
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+	AuthId pulumi.StringInput `pulumi:"authId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
+	DigitalTwinAdapterId pulumi.StringInput `pulumi:"digitalTwinAdapterId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	DigitalTwinModelId pulumi.StringInput `pulumi:"digitalTwinModelId"`
+	// Filter resources that match the specified URI (DTMI) of the digital twin model.
+	DigitalTwinModelSpecUri pulumi.StringInput `pulumi:"digitalTwinModelSpecUri"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
+	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput {
+	return i.ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput)
+}
+
+// GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray and GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray{ GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs{...} }
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput
+	ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray []GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) AuthId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.AuthId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) DigitalTwinAdapterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string {
+		return v.DigitalTwinAdapterId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) DigitalTwinModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string {
+		return v.DigitalTwinModelId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified URI (DTMI) of the digital twin model.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) DigitalTwinModelSpecUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string {
+		return v.DigitalTwinModelSpecUri
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) ExternalKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.ExternalKey }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.IotDomainId }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput() GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput) ToGetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
+		return vs[0].([]GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput)
+}
+
+type GetIotDigitalTwinInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinInstancesFilterInput is an input type that accepts GetIotDigitalTwinInstancesFilterArgs and GetIotDigitalTwinInstancesFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterInput` via:
+//
+//	GetIotDigitalTwinInstancesFilterArgs{...}
+type GetIotDigitalTwinInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput
+	ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterOutput
+}
+
+type GetIotDigitalTwinInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
+	return i.ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterOutput)
+}
+
+// GetIotDigitalTwinInstancesFilterArrayInput is an input type that accepts GetIotDigitalTwinInstancesFilterArray and GetIotDigitalTwinInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterArrayInput` via:
+//
+//	GetIotDigitalTwinInstancesFilterArray{ GetIotDigitalTwinInstancesFilterArgs{...} }
+type GetIotDigitalTwinInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput
+	ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterArrayOutput
+}
+
+type GetIotDigitalTwinInstancesFilterArray []GetIotDigitalTwinInstancesFilterInput
+
+func (GetIotDigitalTwinInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
+	return i.ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinInstancesFilter {
+		return vs[0].([]GetIotDigitalTwinInstancesFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinInstancesFilterOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollection struct {
+	Items []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...}
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs struct {
+	Items GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...} }
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionInput
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) Items() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollection) []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollection {
+		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource. If left blank, the description will be derived from the spec.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	Spec        string `pulumi:"spec"`
+	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+	SpecUri string `pulumi:"specUri"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...}
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource. If left blank, the description will be derived from the spec.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	Spec        pulumi.StringInput `pulumi:"spec"`
+	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+	SpecUri pulumi.StringInput `pulumi:"specUri"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...} }
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource. If left blank, the description will be derived from the spec.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.IotDomainId }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Spec() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Spec }).(pulumi.StringOutput)
+}
+
+// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SpecUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.SpecUri }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
+		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
+}
+
+type GetIotDigitalTwinModelsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinModelsFilterInput is an input type that accepts GetIotDigitalTwinModelsFilterArgs and GetIotDigitalTwinModelsFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterInput` via:
+//
+//	GetIotDigitalTwinModelsFilterArgs{...}
+type GetIotDigitalTwinModelsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput
+	ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterOutput
+}
+
+type GetIotDigitalTwinModelsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinModelsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
+	return i.ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterOutput)
+}
+
+// GetIotDigitalTwinModelsFilterArrayInput is an input type that accepts GetIotDigitalTwinModelsFilterArray and GetIotDigitalTwinModelsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterArrayInput` via:
+//
+//	GetIotDigitalTwinModelsFilterArray{ GetIotDigitalTwinModelsFilterArgs{...} }
+type GetIotDigitalTwinModelsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput
+	ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterArrayOutput
+}
+
+type GetIotDigitalTwinModelsFilterArray []GetIotDigitalTwinModelsFilterInput
+
+func (GetIotDigitalTwinModelsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
+	return i.ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterArrayOutput)
+}
+
+type GetIotDigitalTwinModelsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinModelsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsFilter {
+		return vs[0].([]GetIotDigitalTwinModelsFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsFilterOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection struct {
+	Items []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...}
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs struct {
+	Items GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...} }
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) Items() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection) []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection {
+		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem struct {
+	// The value(s) of the relationship properties defined in the source digital twin model.
+	Content string `pulumi:"content"`
+	// Filters resources that match the content path of the digital twin relationship.
+	ContentPath string `pulumi:"contentPath"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+	SourceDigitalTwinInstanceId string `pulumi:"sourceDigitalTwinInstanceId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+	TargetDigitalTwinInstanceId string `pulumi:"targetDigitalTwinInstanceId"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...}
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs struct {
+	// The value(s) of the relationship properties defined in the source digital twin model.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Filters resources that match the content path of the digital twin relationship.
+	ContentPath pulumi.StringInput `pulumi:"contentPath"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+	SourceDigitalTwinInstanceId pulumi.StringInput `pulumi:"sourceDigitalTwinInstanceId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+	TargetDigitalTwinInstanceId pulumi.StringInput `pulumi:"targetDigitalTwinInstanceId"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...} }
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return o
+}
+
+// The value(s) of the relationship properties defined in the source digital twin model.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Filters resources that match the content path of the digital twin relationship.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ContentPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.ContentPath
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.IotDomainId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SourceDigitalTwinInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.SourceDigitalTwinInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TargetDigitalTwinInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TargetDigitalTwinInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
+		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
+}
+
+type GetIotDigitalTwinRelationshipsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinRelationshipsFilterInput is an input type that accepts GetIotDigitalTwinRelationshipsFilterArgs and GetIotDigitalTwinRelationshipsFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsFilterInput` via:
+//
+//	GetIotDigitalTwinRelationshipsFilterArgs{...}
+type GetIotDigitalTwinRelationshipsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput
+	ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsFilterOutput
+}
+
+type GetIotDigitalTwinRelationshipsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinRelationshipsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArgs) ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput {
+	return i.ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArgs) ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsFilterOutput)
+}
+
+// GetIotDigitalTwinRelationshipsFilterArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsFilterArray and GetIotDigitalTwinRelationshipsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsFilterArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsFilterArray{ GetIotDigitalTwinRelationshipsFilterArgs{...} }
+type GetIotDigitalTwinRelationshipsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput
+	ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsFilterArray []GetIotDigitalTwinRelationshipsFilterInput
+
+func (GetIotDigitalTwinRelationshipsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArray) ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArray) ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsFilterArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsFilter {
+		return vs[0].([]GetIotDigitalTwinRelationshipsFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsFilterOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDay struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData int `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData int `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData int `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData int `pulumi:"rejectedData"`
+}
+
+// GetIotIotDomainDataRetentionPeriodsInDayInput is an input type that accepts GetIotIotDomainDataRetentionPeriodsInDayArgs and GetIotIotDomainDataRetentionPeriodsInDayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainDataRetentionPeriodsInDayInput` via:
+//
+//	GetIotIotDomainDataRetentionPeriodsInDayArgs{...}
+type GetIotIotDomainDataRetentionPeriodsInDayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput
+	ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArgs struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData pulumi.IntInput `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData pulumi.IntInput `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData pulumi.IntInput `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData pulumi.IntInput `pulumi:"rejectedData"`
+}
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArgs) ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return i.ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArgs) ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
+// GetIotIotDomainDataRetentionPeriodsInDayArrayInput is an input type that accepts GetIotIotDomainDataRetentionPeriodsInDayArray and GetIotIotDomainDataRetentionPeriodsInDayArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainDataRetentionPeriodsInDayArrayInput` via:
+//
+//	GetIotIotDomainDataRetentionPeriodsInDayArray{ GetIotIotDomainDataRetentionPeriodsInDayArgs{...} }
+type GetIotIotDomainDataRetentionPeriodsInDayArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput
+	ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArray []GetIotIotDomainDataRetentionPeriodsInDayInput
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArray) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return i.ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArray) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainDataRetentionPeriodsInDayArrayOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainDataRetentionPeriodsInDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+// Number of days for which any normalized data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) HistorizedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.HistorizedData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw command data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RawCommandData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RawCommandData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RawData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RawData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RejectedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RejectedData }).(pulumi.IntOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainDataRetentionPeriodsInDay {
+		return vs[0].([]GetIotIotDomainDataRetentionPeriodsInDay)[vs[1].(int)]
+	}).(GetIotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
+type GetIotIotDomainGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotIotDomainGroupsFilterInput is an input type that accepts GetIotIotDomainGroupsFilterArgs and GetIotIotDomainGroupsFilterOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsFilterInput` via:
+//
+//	GetIotIotDomainGroupsFilterArgs{...}
+type GetIotIotDomainGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput
+	ToGetIotIotDomainGroupsFilterOutputWithContext(context.Context) GetIotIotDomainGroupsFilterOutput
+}
+
+type GetIotIotDomainGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotIotDomainGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsFilterArgs) ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput {
+	return i.ToGetIotIotDomainGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsFilterArgs) ToGetIotIotDomainGroupsFilterOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsFilterOutput)
+}
+
+// GetIotIotDomainGroupsFilterArrayInput is an input type that accepts GetIotIotDomainGroupsFilterArray and GetIotIotDomainGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsFilterArrayInput` via:
+//
+//	GetIotIotDomainGroupsFilterArray{ GetIotIotDomainGroupsFilterArgs{...} }
+type GetIotIotDomainGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput
+	ToGetIotIotDomainGroupsFilterArrayOutputWithContext(context.Context) GetIotIotDomainGroupsFilterArrayOutput
+}
+
+type GetIotIotDomainGroupsFilterArray []GetIotIotDomainGroupsFilterInput
+
+func (GetIotIotDomainGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsFilterArray) ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput {
+	return i.ToGetIotIotDomainGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsFilterArray) ToGetIotIotDomainGroupsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsFilterArrayOutput)
+}
+
+type GetIotIotDomainGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) ToGetIotIotDomainGroupsFilterOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotIotDomainGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) ToGetIotIotDomainGroupsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsFilter {
+		return vs[0].([]GetIotIotDomainGroupsFilter)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsFilterOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollection struct {
+	Items []GetIotIotDomainGroupsIotDomainGroupCollectionItem `pulumi:"items"`
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionArgs and GetIotIotDomainGroupsIotDomainGroupCollectionOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionArgs{...}
+type GetIotIotDomainGroupsIotDomainGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArgs struct {
+	Items GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionOutput)
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionArray and GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionArray{ GetIotIotDomainGroupsIotDomainGroupCollectionArgs{...} }
+type GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArray []GetIotIotDomainGroupsIotDomainGroupCollectionInput
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) Items() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollection) []GetIotIotDomainGroupsIotDomainGroupCollectionItem {
+		return v.Items
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsIotDomainGroupCollection {
+		return vs[0].([]GetIotIotDomainGroupsIotDomainGroupCollection)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The host name of the database corresponding to the IoT Domain group.
+	DataHost string `pulumi:"dataHost"`
+	// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+	DbAllowListedVcnIds []string `pulumi:"dbAllowListedVcnIds"`
+	// The connection string used to connect to the data host associated with the IoT domain group.
+	DbConnectionString string `pulumi:"dbConnectionString"`
+	// The token scope used to connect to the data host associated with the IoT domain group.
+	DbTokenScope string `pulumi:"dbTokenScope"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionItemInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs and GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionItemInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{...}
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The host name of the database corresponding to the IoT Domain group.
+	DataHost pulumi.StringInput `pulumi:"dataHost"`
+	// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+	DbAllowListedVcnIds pulumi.StringArrayInput `pulumi:"dbAllowListedVcnIds"`
+	// The connection string used to connect to the data host associated with the IoT domain group.
+	DbConnectionString pulumi.StringInput `pulumi:"dbConnectionString"`
+	// The token scope used to connect to the data host associated with the IoT domain group.
+	DbTokenScope pulumi.StringInput `pulumi:"dbTokenScope"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput)
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionItemArray and GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionItemArray{ GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{...} }
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArray []GetIotIotDomainGroupsIotDomainGroupCollectionItemInput
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The host name of the database corresponding to the IoT Domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DataHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DataHost }).(pulumi.StringOutput)
+}
+
+// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbAllowListedVcnIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) []string { return v.DbAllowListedVcnIds }).(pulumi.StringArrayOutput)
+}
+
+// The connection string used to connect to the data host associated with the IoT domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DbConnectionString }).(pulumi.StringOutput)
+}
+
+// The token scope used to connect to the data host associated with the IoT domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbTokenScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DbTokenScope }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsIotDomainGroupCollectionItem {
+		return vs[0].([]GetIotIotDomainGroupsIotDomainGroupCollectionItem)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput)
+}
+
+type GetIotIotDomainsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotIotDomainsFilterInput is an input type that accepts GetIotIotDomainsFilterArgs and GetIotIotDomainsFilterOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsFilterInput` via:
+//
+//	GetIotIotDomainsFilterArgs{...}
+type GetIotIotDomainsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput
+	ToGetIotIotDomainsFilterOutputWithContext(context.Context) GetIotIotDomainsFilterOutput
+}
+
+type GetIotIotDomainsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotIotDomainsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsFilterArgs) ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput {
+	return i.ToGetIotIotDomainsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsFilterArgs) ToGetIotIotDomainsFilterOutputWithContext(ctx context.Context) GetIotIotDomainsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsFilterOutput)
+}
+
+// GetIotIotDomainsFilterArrayInput is an input type that accepts GetIotIotDomainsFilterArray and GetIotIotDomainsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsFilterArrayInput` via:
+//
+//	GetIotIotDomainsFilterArray{ GetIotIotDomainsFilterArgs{...} }
+type GetIotIotDomainsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput
+	ToGetIotIotDomainsFilterArrayOutputWithContext(context.Context) GetIotIotDomainsFilterArrayOutput
+}
+
+type GetIotIotDomainsFilterArray []GetIotIotDomainsFilterInput
+
+func (GetIotIotDomainsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsFilterArray) ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput {
+	return i.ToGetIotIotDomainsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsFilterArray) ToGetIotIotDomainsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsFilterArrayOutput)
+}
+
+type GetIotIotDomainsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsFilterOutput) ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterOutput) ToGetIotIotDomainsFilterOutputWithContext(ctx context.Context) GetIotIotDomainsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotIotDomainsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotIotDomainsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotIotDomainsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) ToGetIotIotDomainsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsFilter {
+		return vs[0].([]GetIotIotDomainsFilter)[vs[1].(int)]
+	}).(GetIotIotDomainsFilterOutput)
+}
+
+type GetIotIotDomainsIotDomainCollection struct {
+	Items []GetIotIotDomainsIotDomainCollectionItem `pulumi:"items"`
+}
+
+// GetIotIotDomainsIotDomainCollectionInput is an input type that accepts GetIotIotDomainsIotDomainCollectionArgs and GetIotIotDomainsIotDomainCollectionOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionArgs{...}
+type GetIotIotDomainsIotDomainCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput
+	ToGetIotIotDomainsIotDomainCollectionOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionArgs struct {
+	Items GetIotIotDomainsIotDomainCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArgs) ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArgs) ToGetIotIotDomainsIotDomainCollectionOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionArray and GetIotIotDomainsIotDomainCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionArray{ GetIotIotDomainsIotDomainCollectionArgs{...} }
+type GetIotIotDomainsIotDomainCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionArray []GetIotIotDomainsIotDomainCollectionInput
+
+func (GetIotIotDomainsIotDomainCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArray) ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArray) ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) ToGetIotIotDomainsIotDomainCollectionOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) Items() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollection) []GetIotIotDomainsIotDomainCollectionItem { return v.Items }).(GetIotIotDomainsIotDomainCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollection {
+		return vs[0].([]GetIotIotDomainsIotDomainCollection)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Data Retention periods
+	DataRetentionPeriodsInDays []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay `pulumi:"dataRetentionPeriodsInDays"`
+	// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+	DbAllowListedIdentityGroupNames []string `pulumi:"dbAllowListedIdentityGroupNames"`
+	// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+	DbAllowedIdentityDomainHost string `pulumi:"dbAllowedIdentityDomainHost"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Host name of an IoT domain, where IoT devices can connect to.
+	DeviceHost string `pulumi:"deviceHost"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+	IotDomainGroupId string `pulumi:"iotDomainGroupId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotIotDomainsIotDomainCollectionItemInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemArgs and GetIotIotDomainsIotDomainCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemArgs{...}
+type GetIotIotDomainsIotDomainCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput
+	ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Data Retention periods
+	DataRetentionPeriodsInDays GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput `pulumi:"dataRetentionPeriodsInDays"`
+	// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+	DbAllowListedIdentityGroupNames pulumi.StringArrayInput `pulumi:"dbAllowListedIdentityGroupNames"`
+	// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+	DbAllowedIdentityDomainHost pulumi.StringInput `pulumi:"dbAllowedIdentityDomainHost"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Host name of an IoT domain, where IoT devices can connect to.
+	DeviceHost pulumi.StringInput `pulumi:"deviceHost"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+	IotDomainGroupId pulumi.StringInput `pulumi:"iotDomainGroupId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArgs) ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArgs) ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionItemArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemArray and GetIotIotDomainsIotDomainCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemArray{ GetIotIotDomainsIotDomainCollectionItemArgs{...} }
+type GetIotIotDomainsIotDomainCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArray []GetIotIotDomainsIotDomainCollectionItemInput
+
+func (GetIotIotDomainsIotDomainCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArray) ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArray) ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Data Retention periods
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DataRetentionPeriodsInDays() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay {
+		return v.DataRetentionPeriodsInDays
+	}).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput)
+}
+
+// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DbAllowListedIdentityGroupNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) []string { return v.DbAllowListedIdentityGroupNames }).(pulumi.StringArrayOutput)
+}
+
+// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DbAllowedIdentityDomainHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DbAllowedIdentityDomainHost }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Host name of an IoT domain, where IoT devices can connect to.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DeviceHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DeviceHost }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) IotDomainGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.IotDomainGroupId }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollectionItem {
+		return vs[0].([]GetIotIotDomainsIotDomainCollectionItem)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionItemOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData int `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData int `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData int `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData int `pulumi:"rejectedData"`
+}
+
+// GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs and GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{...}
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData pulumi.IntInput `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData pulumi.IntInput `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData pulumi.IntInput `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData pulumi.IntInput `pulumi:"rejectedData"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray and GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray{ GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{...} }
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+// Number of days for which any normalized data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) HistorizedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.HistorizedData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw command data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RawCommandData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RawCommandData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RawData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RawData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RejectedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RejectedData }).(pulumi.IntOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay {
+		return vs[0].([]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput)
+}
+
 type GetManagedKafkaKafkaClusterAccessSubnet struct {
 	// Subnets OCIDs
 	Subnets []string `pulumi:"subnets"`
@@ -12773,6 +18540,4845 @@ func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlA
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
 		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)[vs[1].(int)]
 	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection struct {
+	// List of ExternalLocationMappingMetadatumSummary
+	Items []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs struct {
+	// List of ExternalLocationMappingMetadatumSummary
+	Items GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationMappingMetadatumSummary
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) Items() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection) []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ
+	ExternalLocations []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd string `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd string `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ
+	ExternalLocations GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd pulumi.StringInput `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd pulumi.StringInput `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// External location for CSP Region, CSP-Physical-AZ
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure logical ad name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciLogicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciLogicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure physical ad name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciPhysicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciPhysicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation struct {
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz string `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName string `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+	// The serviceName that externalLocation map object belongs to
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs struct {
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz pulumi.StringInput `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName pulumi.StringInput `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+	// The serviceName that externalLocation map object belongs to
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspPhysicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspPhysicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspPhysicalAZ
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspPhysicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspPhysicalAzDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The serviceName that externalLocation map object belongs to
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataFilterArgs and GetMulticloudExternalLocationMappingMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataFilterArgs{...}
+type GetMulticloudExternalLocationMappingMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput
+	ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArgs) ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArgs) ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataFilterArray and GetMulticloudExternalLocationMappingMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataFilterArray{ GetMulticloudExternalLocationMappingMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArray []GetMulticloudExternalLocationMappingMetadataFilterInput
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArray) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArray) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataFilterOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection struct {
+	// List of ExternalLocationSummariesMetadatumSummary
+	Items []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs struct {
+	// List of ExternalLocationSummariesMetadatumSummary
+	Items GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationSummariesMetadatumSummary
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) Items() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection) []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// External location for CSP Region
+	ExternalLocations []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// External location for CSP Region
+	ExternalLocations GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// External location for CSP Region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation struct {
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs struct {
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataFilterArgs and GetMulticloudExternalLocationSummariesMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataFilterArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput
+	ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArgs) ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArgs) ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataFilterArray and GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataFilterArray{ GetMulticloudExternalLocationSummariesMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArray []GetMulticloudExternalLocationSummariesMetadataFilterInput
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArray) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArray) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataFilterOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection struct {
+	// List of ExternalLocationsMetadatumSummary
+	Items []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs struct {
+	// List of ExternalLocationsMetadatumSummary
+	Items GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationsMetadatumSummary
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) Items() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem struct {
+	// Cluster Placement Group OCID
+	CpgId string `pulumi:"cpgId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+	ExternalLocations []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd string `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd string `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs struct {
+	// Cluster Placement Group OCID
+	CpgId pulumi.StringInput `pulumi:"cpgId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+	ExternalLocations GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd pulumi.StringInput `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd pulumi.StringInput `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return o
+}
+
+// Cluster Placement Group OCID
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) CpgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.CpgId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure logical ad name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciLogicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciLogicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure physical ad name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciPhysicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciPhysicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation struct {
+	// A mapping of CSP physical availability zone to CSP logical availability zone.
+	CspLogicalAz string `pulumi:"cspLogicalAz"`
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz string `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName string `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+	// This is CSP zone key reference
+	CspZoneKeyReferenceIds []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId `pulumi:"cspZoneKeyReferenceIds"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs struct {
+	// A mapping of CSP physical availability zone to CSP logical availability zone.
+	CspLogicalAz pulumi.StringInput `pulumi:"cspLogicalAz"`
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz pulumi.StringInput `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName pulumi.StringInput `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+	// This is CSP zone key reference
+	CspZoneKeyReferenceIds GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput `pulumi:"cspZoneKeyReferenceIds"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return o
+}
+
+// A mapping of CSP physical availability zone to CSP logical availability zone.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspLogicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspLogicalAz
+	}).(pulumi.StringOutput)
+}
+
+// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspPhysicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspPhysicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspPhysicalAZ
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspPhysicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspPhysicalAzDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// This is CSP zone key reference
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspZoneKeyReferenceIds() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId {
+		return v.CspZoneKeyReferenceIds
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput)
+}
+
+// The serviceName that externalLocation map object belongs to.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId struct {
+	// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+	KeyName string `pulumi:"keyName"`
+	// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+	KeyValue string `pulumi:"keyValue"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs struct {
+	// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+	KeyValue pulumi.StringInput `pulumi:"keyValue"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return o
+}
+
+// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) KeyValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId) string {
+		return v.KeyValue
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationsMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationsMetadataFilterArgs and GetMulticloudExternalLocationsMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataFilterArgs{...}
+type GetMulticloudExternalLocationsMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput
+	ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationsMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArgs) ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArgs) ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataFilterArray and GetMulticloudExternalLocationsMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataFilterArray{ GetMulticloudExternalLocationsMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationsMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArray []GetMulticloudExternalLocationsMetadataFilterInput
+
+func (GetMulticloudExternalLocationsMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArray) ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArray) ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataFilterOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs []interface{} `pulumi:"dnsForwardingConfigs"`
+	// CSP network anchor Uri
+	NetworkAnchorUri string `pulumi:"networkAnchorUri"`
+	// CSP oracle database network anchor unique ID/name
+	OdbNetworkId string `pulumi:"odbNetworkId"`
+	// Azure/GCP/AWS region
+	Region string `pulumi:"region"`
+}
+
+// GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput is an input type that accepts GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs and GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput` via:
+//
+//	GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{...}
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs pulumi.ArrayInput `pulumi:"dnsForwardingConfigs"`
+	// CSP network anchor Uri
+	NetworkAnchorUri pulumi.StringInput `pulumi:"networkAnchorUri"`
+	// CSP oracle database network anchor unique ID/name
+	OdbNetworkId pulumi.StringInput `pulumi:"odbNetworkId"`
+	// Azure/GCP/AWS region
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return i.ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+// GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray and GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray{ GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{...} }
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray []GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+// An Azure/GCP/AWS cidrBlocks
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// DNS domain ip mapping forwarding configuration
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) DnsForwardingConfigs() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) []interface{} {
+		return v.DnsForwardingConfigs
+	}).(pulumi.ArrayOutput)
+}
+
+// CSP network anchor Uri
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) NetworkAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.NetworkAnchorUri }).(pulumi.StringOutput)
+}
+
+// CSP oracle database network anchor unique ID/name
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) OdbNetworkId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.OdbNetworkId }).(pulumi.StringOutput)
+}
+
+// Azure/GCP/AWS region
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
+		return vs[0].([]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItem struct {
+	// Oracle Cloud Infrastructure network anchor related meta data items
+	Dns []GetMulticloudNetworkAnchorOciMetadataItemDn `pulumi:"dns"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs []interface{} `pulumi:"dnsForwardingConfigs"`
+	// The DNS Listener Forwarding Address.
+	DnsForwardingEndpointIpAddress string `pulumi:"dnsForwardingEndpointIpAddress"`
+	// The DNS Listener Endpoint Address.
+	DnsListeningEndpointIpAddress string `pulumi:"dnsListeningEndpointIpAddress"`
+	// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+	NetworkAnchorConnectionStatus string `pulumi:"networkAnchorConnectionStatus"`
+	// Network subnets
+	Subnets []GetMulticloudNetworkAnchorOciMetadataItemSubnet `pulumi:"subnets"`
+	// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+	Vcns []GetMulticloudNetworkAnchorOciMetadataItemVcn `pulumi:"vcns"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemArgs and GetMulticloudNetworkAnchorOciMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArgs struct {
+	// Oracle Cloud Infrastructure network anchor related meta data items
+	Dns GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput `pulumi:"dns"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs pulumi.ArrayInput `pulumi:"dnsForwardingConfigs"`
+	// The DNS Listener Forwarding Address.
+	DnsForwardingEndpointIpAddress pulumi.StringInput `pulumi:"dnsForwardingEndpointIpAddress"`
+	// The DNS Listener Endpoint Address.
+	DnsListeningEndpointIpAddress pulumi.StringInput `pulumi:"dnsListeningEndpointIpAddress"`
+	// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+	NetworkAnchorConnectionStatus pulumi.StringInput `pulumi:"networkAnchorConnectionStatus"`
+	// Network subnets
+	Subnets GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput `pulumi:"subnets"`
+	// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+	Vcns GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput `pulumi:"vcns"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArgs) ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArgs) ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemArray and GetMulticloudNetworkAnchorOciMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemArray{ GetMulticloudNetworkAnchorOciMetadataItemArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArray []GetMulticloudNetworkAnchorOciMetadataItemInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArray) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArray) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure network anchor related meta data items
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Dns() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemDn {
+		return v.Dns
+	}).(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput)
+}
+
+// DNS domain ip mapping forwarding configuration
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsForwardingConfigs() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []interface{} { return v.DnsForwardingConfigs }).(pulumi.ArrayOutput)
+}
+
+// The DNS Listener Forwarding Address.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsForwardingEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.DnsForwardingEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The DNS Listener Endpoint Address.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsListeningEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.DnsListeningEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) NetworkAnchorConnectionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.NetworkAnchorConnectionStatus }).(pulumi.StringOutput)
+}
+
+// Network subnets
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Subnets() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemSubnet {
+		return v.Subnets
+	}).(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput)
+}
+
+// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Vcns() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemVcn {
+		return v.Vcns
+	}).(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItem {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDn struct {
+	// Full custom domain name. If this field is passed dnsLabel will be ignored
+	CustomDomainName string `pulumi:"customDomainName"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemDnInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemDnArgs and GetMulticloudNetworkAnchorOciMetadataItemDnOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemDnInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemDnArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemDnInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArgs struct {
+	// Full custom domain name. If this field is passed dnsLabel will be ignored
+	CustomDomainName pulumi.StringInput `pulumi:"customDomainName"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemDnOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemDnArray and GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemDnArray{ GetMulticloudNetworkAnchorOciMetadataItemDnArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArray []GetMulticloudNetworkAnchorOciMetadataItemDnInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArray) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArray) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return o
+}
+
+// Full custom domain name. If this field is passed dnsLabel will be ignored
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) CustomDomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemDn) string { return v.CustomDomainName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemDn {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemDn)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemDnOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnet struct {
+	// Subnet label. CSP can set this property
+	Label string `pulumi:"label"`
+	// OCID for existing the subnet. CSP can not set this property.
+	SubnetId string `pulumi:"subnetId"`
+	// Defines if the subnet is the primary or backup for the network
+	Type string `pulumi:"type"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemSubnetInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs and GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemSubnetInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs struct {
+	// Subnet label. CSP can set this property
+	Label pulumi.StringInput `pulumi:"label"`
+	// OCID for existing the subnet. CSP can not set this property.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Defines if the subnet is the primary or backup for the network
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemSubnetArray and GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemSubnetArray{ GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArray []GetMulticloudNetworkAnchorOciMetadataItemSubnetInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return o
+}
+
+// Subnet label. CSP can set this property
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// OCID for existing the subnet. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Defines if the subnet is the primary or backup for the network
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemSubnet {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemSubnet)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcn struct {
+	// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+	BackupCidrBlocks []string `pulumi:"backupCidrBlocks"`
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+	DnsLabel string `pulumi:"dnsLabel"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemVcnInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemVcnArgs and GetMulticloudNetworkAnchorOciMetadataItemVcnOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemVcnInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemVcnInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArgs struct {
+	// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+	BackupCidrBlocks pulumi.StringArrayInput `pulumi:"backupCidrBlocks"`
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+	DnsLabel pulumi.StringInput `pulumi:"dnsLabel"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemVcnArray and GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemVcnArray{ GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArray []GetMulticloudNetworkAnchorOciMetadataItemVcnInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) BackupCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) []string { return v.BackupCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// An Azure/GCP/AWS cidrBlocks
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) DnsLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.DnsLabel }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemVcn {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemVcn)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollection struct {
+	// List of NetworkAnchorSummary
+	Items []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs and GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{...}
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs struct {
+	// List of NetworkAnchorSummary
+	Items GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput)
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray and GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray{ GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{...} }
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray []GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return o
+}
+
+// List of NetworkAnchorSummary
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) Items() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollection) []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
+		return v.Items
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorsNetworkAnchorCollection {
+		return vs[0].([]GetMulticloudNetworkAnchorsNetworkAnchorCollection)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
+	// The CPG ID in which Network Anchor will be created.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	NetworkAnchorLifecycleState string `pulumi:"networkAnchorLifecycleState"`
+	// Oracle Cloud Infrastructure resource anchor Id (OCID).
+	ResourceAnchorId string `pulumi:"resourceAnchorId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs and GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{...}
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
+	// The CPG ID in which Network Anchor will be created.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	NetworkAnchorLifecycleState pulumi.StringInput `pulumi:"networkAnchorLifecycleState"`
+	// Oracle Cloud Infrastructure resource anchor Id (OCID).
+	ResourceAnchorId pulumi.StringInput `pulumi:"resourceAnchorId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput)
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray and GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray{ GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{...} }
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return o
+}
+
+// The CPG ID in which Network Anchor will be created.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+//
+// Note: one of the arguments `compartmentId` or `id` must be specified.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.NetworkAnchorLifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure resource anchor Id (OCID).
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.ResourceAnchorId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
+		return vs[0].([]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection struct {
+	// List of MultiCloudMetadataSummary
+	Items []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{...}
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs struct {
+	// List of MultiCloudMetadataSummary
+	Items GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput)
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray{ GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{...} }
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return o
+}
+
+// List of MultiCloudMetadataSummary
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) Items() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection) []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem {
+		return v.Items
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection {
+		return vs[0].([]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)[vs[1].(int)]
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure subscriptionId.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{...}
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure subscriptionId.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput)
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray{ GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{...} }
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure subscriptionId.
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem {
+		return vs[0].([]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItem struct {
+	// AWS accountId that was used for creating this resource anchor resource.
+	AccountId string `pulumi:"accountId"`
+	// GCP project number that was used for creating this resource anchor resource.
+	ProjectNumber string `pulumi:"projectNumber"`
+	// Oracle Cloud Infrastructure Region that resource is created.
+	Region string `pulumi:"region"`
+	// CSP resource anchor ID or name.
+	ResourceAnchorName string `pulumi:"resourceAnchorName"`
+	// CSP resource anchor Uri.
+	ResourceAnchorUri string `pulumi:"resourceAnchorUri"`
+	// Azure resource group that was used for creating this resource.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Azure subscription that was used for creating this resource.
+	Subscription string `pulumi:"subscription"`
+	// subscription type
+	SubscriptionType string `pulumi:"subscriptionType"`
+}
+
+// GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput is an input type that accepts GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs and GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput` via:
+//
+//	GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{...}
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs struct {
+	// AWS accountId that was used for creating this resource anchor resource.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// GCP project number that was used for creating this resource anchor resource.
+	ProjectNumber pulumi.StringInput `pulumi:"projectNumber"`
+	// Oracle Cloud Infrastructure Region that resource is created.
+	Region pulumi.StringInput `pulumi:"region"`
+	// CSP resource anchor ID or name.
+	ResourceAnchorName pulumi.StringInput `pulumi:"resourceAnchorName"`
+	// CSP resource anchor Uri.
+	ResourceAnchorUri pulumi.StringInput `pulumi:"resourceAnchorUri"`
+	// Azure resource group that was used for creating this resource.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Azure subscription that was used for creating this resource.
+	Subscription pulumi.StringInput `pulumi:"subscription"`
+	// subscription type
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
+}
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return i.ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+// GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput is an input type that accepts GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray and GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput` via:
+//
+//	GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray{ GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{...} }
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray []GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return i.ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+// AWS accountId that was used for creating this resource anchor resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// GCP project number that was used for creating this resource anchor resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ProjectNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ProjectNumber }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Region that resource is created.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// CSP resource anchor ID or name.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.ResourceAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// CSP resource anchor Uri.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ResourceAnchorUri }).(pulumi.StringOutput)
+}
+
+// Azure resource group that was used for creating this resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Azure subscription that was used for creating this resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Subscription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.Subscription }).(pulumi.StringOutput)
+}
+
+// subscription type
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.SubscriptionType }).(pulumi.StringOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
+		return vs[0].([]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+type GetMulticloudResourceAnchorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudResourceAnchorsFilterInput is an input type that accepts GetMulticloudResourceAnchorsFilterArgs and GetMulticloudResourceAnchorsFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsFilterInput` via:
+//
+//	GetMulticloudResourceAnchorsFilterArgs{...}
+type GetMulticloudResourceAnchorsFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput
+	ToGetMulticloudResourceAnchorsFilterOutputWithContext(context.Context) GetMulticloudResourceAnchorsFilterOutput
+}
+
+type GetMulticloudResourceAnchorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudResourceAnchorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsFilterArgs) ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput {
+	return i.ToGetMulticloudResourceAnchorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsFilterArgs) ToGetMulticloudResourceAnchorsFilterOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsFilterOutput)
+}
+
+// GetMulticloudResourceAnchorsFilterArrayInput is an input type that accepts GetMulticloudResourceAnchorsFilterArray and GetMulticloudResourceAnchorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsFilterArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsFilterArray{ GetMulticloudResourceAnchorsFilterArgs{...} }
+type GetMulticloudResourceAnchorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput
+	ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsFilterArrayOutput
+}
+
+type GetMulticloudResourceAnchorsFilterArray []GetMulticloudResourceAnchorsFilterInput
+
+func (GetMulticloudResourceAnchorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsFilterArray) ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsFilterArray) ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsFilterArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) ToGetMulticloudResourceAnchorsFilterOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsFilter {
+		return vs[0].([]GetMulticloudResourceAnchorsFilter)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsFilterOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollection struct {
+	// List of ResourceAnchorSummary
+	Items []GetMulticloudResourceAnchorsResourceAnchorCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionArgs and GetMulticloudResourceAnchorsResourceAnchorCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{...}
+type GetMulticloudResourceAnchorsResourceAnchorCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArgs struct {
+	// List of ResourceAnchorSummary
+	Items GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput)
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionArray and GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionArray{ GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{...} }
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArray []GetMulticloudResourceAnchorsResourceAnchorCollectionInput
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return o
+}
+
+// List of ResourceAnchorSummary
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) Items() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollection) []GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
+		return v.Items
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsResourceAnchorCollection {
+		return vs[0].([]GetMulticloudResourceAnchorsResourceAnchorCollection)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs and GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{...}
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput)
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray and GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray{ GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{...} }
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray []GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
+		return vs[0].([]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceAnalyticsMonitoredRegionsFilterInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsFilterArgs and GetResourceAnalyticsMonitoredRegionsFilterOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsFilterInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsFilterArgs{...}
+type GetResourceAnalyticsMonitoredRegionsFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsFilterOutput() GetResourceAnalyticsMonitoredRegionsFilterOutput
+	ToGetResourceAnalyticsMonitoredRegionsFilterOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsFilterOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceAnalyticsMonitoredRegionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsFilterArgs) ToGetResourceAnalyticsMonitoredRegionsFilterOutput() GetResourceAnalyticsMonitoredRegionsFilterOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsFilterArgs) ToGetResourceAnalyticsMonitoredRegionsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsFilterOutput)
+}
+
+// GetResourceAnalyticsMonitoredRegionsFilterArrayInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsFilterArray and GetResourceAnalyticsMonitoredRegionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsFilterArrayInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsFilterArray{ GetResourceAnalyticsMonitoredRegionsFilterArgs{...} }
+type GetResourceAnalyticsMonitoredRegionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutput() GetResourceAnalyticsMonitoredRegionsFilterArrayOutput
+	ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsFilterArrayOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsFilterArray []GetResourceAnalyticsMonitoredRegionsFilterInput
+
+func (GetResourceAnalyticsMonitoredRegionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsFilterArray) ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutput() GetResourceAnalyticsMonitoredRegionsFilterArrayOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsFilterArray) ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsFilterArrayOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterOutput) ToGetResourceAnalyticsMonitoredRegionsFilterOutput() GetResourceAnalyticsMonitoredRegionsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterOutput) ToGetResourceAnalyticsMonitoredRegionsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterArrayOutput) ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutput() GetResourceAnalyticsMonitoredRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterArrayOutput) ToGetResourceAnalyticsMonitoredRegionsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsMonitoredRegionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsFilter {
+		return vs[0].([]GetResourceAnalyticsMonitoredRegionsFilter)[vs[1].(int)]
+	}).(GetResourceAnalyticsMonitoredRegionsFilterOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection struct {
+	Items []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem `pulumi:"items"`
+}
+
+// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{...}
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs struct {
+	Items GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput)
+}
+
+// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray{ GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{...} }
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) Items() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection) []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem {
+		return v.Items
+	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection {
+		return vs[0].([]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)[vs[1].(int)]
+	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
+	RegionId string `pulumi:"regionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{...}
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput)
+}
+
+// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput` via:
+//
+//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray{ GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{...} }
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput
+	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
+	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.RegionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string {
+		return v.ResourceAnalyticsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem {
+		return vs[0].([]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)[vs[1].(int)]
+	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword struct {
+	Password     string `pulumi:"password"`
+	PasswordType string `pulumi:"passwordType"`
+	SecretId     string `pulumi:"secretId"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs and GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs struct {
+	Password     pulumi.StringInput `pulumi:"password"`
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	SecretId     pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray and GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray{ GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray []GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.Password }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.PasswordType }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesFilterInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs and GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArray and GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{ GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArray []GetResourceAnalyticsResourceAnalyticsInstancesFilterInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesFilter {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesFilter)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection struct {
+	Items []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs struct {
+	Items GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) Items() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
+		return v.Items
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem struct {
+	AdwAdminPasswords []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword `pulumi:"adwAdminPasswords"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+	AdwId string `pulumi:"adwId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the ResourceAnalyticsInstance instance.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	Id                  string `pulumi:"id"`
+	IsMutualTlsRequired bool   `pulumi:"isMutualTlsRequired"`
+	LicenseModel        string `pulumi:"licenseModel"`
+	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	NsgIds           []string `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+	OacId string `pulumi:"oacId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State    string `pulumi:"state"`
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs struct {
+	AdwAdminPasswords GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput `pulumi:"adwAdminPasswords"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+	AdwId pulumi.StringInput `pulumi:"adwId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the ResourceAnalyticsInstance instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	Id                  pulumi.StringInput `pulumi:"id"`
+	IsMutualTlsRequired pulumi.BoolInput   `pulumi:"isMutualTlsRequired"`
+	LicenseModel        pulumi.StringInput `pulumi:"licenseModel"`
+	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NsgIds           pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+	OacId pulumi.StringInput `pulumi:"oacId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State    pulumi.StringInput `pulumi:"state"`
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwAdminPasswords() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
+		return v.AdwAdminPasswords
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.AdwId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A description of the ResourceAnalyticsInstance instance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) IsMutualTlsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) bool {
+		return v.IsMutualTlsRequired
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) OacId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.OacId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword struct {
+	Password     string `pulumi:"password"`
+	PasswordType string `pulumi:"passwordType"`
+	SecretId     string `pulumi:"secretId"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs struct {
+	Password     pulumi.StringInput `pulumi:"password"`
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	SecretId     pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.PasswordType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.SecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsFilterInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArgs and GetResourceAnalyticsTenancyAttachmentsFilterOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsFilterArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput
+	ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsFilterArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArray and GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsFilterArray{ GetResourceAnalyticsTenancyAttachmentsFilterArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArray []GetResourceAnalyticsTenancyAttachmentsFilterInput
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsFilter {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsFilter)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection struct {
+	Items []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem `pulumi:"items"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs struct {
+	Items GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) Items() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
+		return v.Items
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struct {
+	// A description of the tenancy.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+	Id string `pulumi:"id"`
+	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+	IsReportingTenancy bool `pulumi:"isReportingTenancy"`
+	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+	TenancyId string `pulumi:"tenancyId"`
+	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs struct {
+	// A description of the tenancy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+	IsReportingTenancy pulumi.BoolInput `pulumi:"isReportingTenancy"`
+	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return o
+}
+
+// A description of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) IsReportingTenancy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) bool {
+		return v.IsReportingTenancy
+	}).(pulumi.BoolOutput)
+}
+
+// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.ResourceAnalyticsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TenancyId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
 }
 
 type GetWlmsManagedInstanceConfiguration struct {
@@ -17738,6 +28344,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbGcpIdentityConnectorGcpNodeInput)(nil)).Elem(), DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopePtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteInput)(nil)).Elem(), IotDigitalTwinAdapterInboundRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteArrayInput)(nil)).Elem(), IotDigitalTwinAdapterInboundRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteReferencePayloadInput)(nil)).Elem(), IotDigitalTwinAdapterInboundRouteReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundRouteReferencePayloadPtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundRouteReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotIotDomainDataRetentionPeriodsInDayInput)(nil)).Elem(), IotIotDomainDataRetentionPeriodsInDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IotIotDomainDataRetentionPeriodsInDayArrayInput)(nil)).Elem(), IotIotDomainDataRetentionPeriodsInDayArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnetInput)(nil)).Elem(), ManagedKafkaKafkaClusterAccessSubnetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnetArrayInput)(nil)).Elem(), ManagedKafkaKafkaClusterAccessSubnetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterBrokerShapeInput)(nil)).Elem(), ManagedKafkaKafkaClusterBrokerShapeArgs{})
@@ -17746,6 +28364,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterConfigLatestConfigPtrInput)(nil)).Elem(), ManagedKafkaKafkaClusterConfigLatestConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrlInput)(nil)).Elem(), ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput)(nil)).Elem(), ManagedKafkaKafkaClusterKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrInput)(nil)).Elem(), ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsFilterInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiDataPlatformAiDataPlatformsFilterArrayInput)(nil)).Elem(), GetAiDataPlatformAiDataPlatformsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUriInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceUriArgs{})
@@ -17870,6 +28500,66 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteReferencePayloadInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundRouteReferencePayloadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersFilterInput)(nil)).Elem(), GetIotDigitalTwinAdaptersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdaptersFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinAdaptersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDayInput)(nil)).Elem(), GetIotIotDomainDataRetentionPeriodsInDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDayArrayInput)(nil)).Elem(), GetIotIotDomainDataRetentionPeriodsInDayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsFilterInput)(nil)).Elem(), GetIotIotDomainGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsFilterArrayInput)(nil)).Elem(), GetIotIotDomainGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItemInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsFilterInput)(nil)).Elem(), GetIotIotDomainsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsFilterArrayInput)(nil)).Elem(), GetIotIotDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShapeInput)(nil)).Elem(), GetManagedKafkaKafkaClusterBrokerShapeArgs{})
@@ -17904,6 +28594,80 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDnInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemDnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemDnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcnInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsFilterInput)(nil)).Elem(), GetMulticloudResourceAnchorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsFilterArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationArrayInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceScanResultsFilterInput)(nil)).Elem(), GetWlmsManagedInstanceScanResultsFilterArgs{})
@@ -17998,6 +28762,18 @@ func init() {
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopePtrOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingPtrOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadPtrOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundRouteOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundRouteArrayOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundRouteReferencePayloadOutput{})
+	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundRouteReferencePayloadPtrOutput{})
+	pulumi.RegisterOutputType(IotIotDomainDataRetentionPeriodsInDayOutput{})
+	pulumi.RegisterOutputType(IotIotDomainDataRetentionPeriodsInDayArrayOutput{})
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterAccessSubnetOutput{})
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterAccessSubnetArrayOutput{})
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterBrokerShapeOutput{})
@@ -18006,6 +28782,18 @@ func init() {
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput{})
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput{})
 	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordPtrOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsOutput{})
+	pulumi.RegisterOutputType(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsFilterOutput{})
+	pulumi.RegisterOutputType(GetAiDataPlatformAiDataPlatformsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceUriOutput{})
@@ -18130,6 +28918,66 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundRouteOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundRouteArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundRouteReferencePayloadOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundRouteReferencePayloadArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinAdaptersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainDataRetentionPeriodsInDayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainDataRetentionPeriodsInDayArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterBrokerShapeOutput{})
@@ -18164,6 +29012,80 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemDnOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceScanResultsFilterOutput{})

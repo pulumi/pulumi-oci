@@ -184,10 +184,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
                  resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Performs test of Metric Extension on a specific resource Id
-
         ## Example Usage
 
         ```python
@@ -219,10 +215,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
                  args: MetricExtensionsTestManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Performs test of Metric Extension on a specific resource Id
-
         ## Example Usage
 
         ```python

@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Updates the specified database node.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

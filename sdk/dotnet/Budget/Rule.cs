@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
-    /// This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-    /// 
-    /// Creates a new Alert Rule.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -22,10 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
- * 
- * Creates a new certificate according to the details of the request.
- * 
  * ## Example Usage
  * 
  * ## Import

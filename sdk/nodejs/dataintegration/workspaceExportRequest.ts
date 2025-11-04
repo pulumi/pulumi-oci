@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
- *
- * Export Metadata Object
- *
  * ## Example Usage
  *
  * ```typescript

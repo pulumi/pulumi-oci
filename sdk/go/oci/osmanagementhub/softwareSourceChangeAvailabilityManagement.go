@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Updates the availability for a list of specified software sources.
-//
 // ## Example Usage
 //
 // ```go

@@ -60,18 +60,20 @@ type LookupFsuCollectionArgs struct {
 type LookupFsuCollectionResult struct {
 	// Active Exadata Fleet Update Cycle resource for this Collection. Object would be null if there is no active Cycle.
 	ActiveFsuCycles []GetFsuCollectionActiveFsuCycle `pulumi:"activeFsuCycles"`
-	// Compartment Identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Details of components in an Exadata software stack.
+	Components []GetFsuCollectionComponent `pulumi:"components"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Exadata Fleet Update Collection resource display name.
+	// The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName string `pulumi:"displayName"`
-	// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscoveries []GetFsuCollectionFleetDiscovery `pulumi:"fleetDiscoveries"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags    map[string]string `pulumi:"freeformTags"`
 	FsuCollectionId string            `pulumi:"fsuCollectionId"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
 	LastCompletedFsuCycleId string `pulumi:"lastCompletedFsuCycleId"`
@@ -79,7 +81,7 @@ type LookupFsuCollectionResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
 	ServiceType string `pulumi:"serviceType"`
-	// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
 	SourceMajorVersion string `pulumi:"sourceMajorVersion"`
 	// The current state of the Exadata Fleet Update Collection.
 	State string `pulumi:"state"`
@@ -134,9 +136,14 @@ func (o LookupFsuCollectionResultOutput) ActiveFsuCycles() GetFsuCollectionActiv
 	return o.ApplyT(func(v LookupFsuCollectionResult) []GetFsuCollectionActiveFsuCycle { return v.ActiveFsuCycles }).(GetFsuCollectionActiveFsuCycleArrayOutput)
 }
 
-// Compartment Identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 func (o LookupFsuCollectionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Details of components in an Exadata software stack.
+func (o LookupFsuCollectionResultOutput) Components() GetFsuCollectionComponentArrayOutput {
+	return o.ApplyT(func(v LookupFsuCollectionResult) []GetFsuCollectionComponent { return v.Components }).(GetFsuCollectionComponentArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -144,12 +151,12 @@ func (o LookupFsuCollectionResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Exadata Fleet Update Collection resource display name.
+// The user-friendly name for the Exadata Fleet Update Collection.
 func (o LookupFsuCollectionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 func (o LookupFsuCollectionResultOutput) FleetDiscoveries() GetFsuCollectionFleetDiscoveryArrayOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) []GetFsuCollectionFleetDiscovery { return v.FleetDiscoveries }).(GetFsuCollectionFleetDiscoveryArrayOutput)
 }
@@ -163,7 +170,7 @@ func (o LookupFsuCollectionResultOutput) FsuCollectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.FsuCollectionId }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Collection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 func (o LookupFsuCollectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -183,7 +190,7 @@ func (o LookupFsuCollectionResultOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
 func (o LookupFsuCollectionResultOutput) SourceMajorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.SourceMajorVersion }).(pulumi.StringOutput)
 }

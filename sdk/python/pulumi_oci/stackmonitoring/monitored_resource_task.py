@@ -317,10 +317,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Create a new stack monitoring resource task.
-
         ## Example Usage
 
         ```python
@@ -420,10 +416,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  args: MonitoredResourceTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Create a new stack monitoring resource task.
-
         ## Example Usage
 
         ```python

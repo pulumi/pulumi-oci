@@ -32,9 +32,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Replace Authentication Factor Settings
+ * ## Example Usage
  * 
  * ## Import
  * 

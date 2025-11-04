@@ -365,9 +365,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-        Create unified agent configuration registration.
+        ## Example Usage
 
         ## Import
 
@@ -395,9 +393,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  args: UnifiedAgentConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-        Create unified agent configuration registration.
+        ## Example Usage
 
         ## Import
 

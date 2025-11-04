@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the cloud ASM specified by `cloudAsmId`.
+ * ## Example Usage
  *
  * ## Import
  *

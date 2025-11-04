@@ -18,14 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
- * with the sensitive data model.
- * After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
- * to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
- * and apply them to the sensitive data model.
- * 
  * ## Example Usage
  * 
  * <pre>

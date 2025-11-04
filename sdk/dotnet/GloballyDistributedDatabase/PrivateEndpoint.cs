@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GloballyDistributedDatabase
 {
     /// <summary>
-    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-    /// 
-    /// Creates a PrivateEndpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -88,10 +88,6 @@ class MaintenanceWindowsStop(pulumi.CustomResource):
                  maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Stop a maintenance window before the end time is reached.
-
         ## Example Usage
 
         ```python
@@ -124,10 +120,6 @@ class MaintenanceWindowsStop(pulumi.CustomResource):
                  args: MaintenanceWindowsStopArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Stop a maintenance window before the end time is reached.
-
         ## Example Usage
 
         ```python

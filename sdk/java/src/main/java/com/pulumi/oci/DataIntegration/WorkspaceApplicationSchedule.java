@@ -21,10 +21,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
- * 
- * Endpoint to create a new schedule
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
-    /// This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-    /// 
-    /// Returns the created query.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

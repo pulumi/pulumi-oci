@@ -149,6 +149,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
+        /// Whether to enable AI enterprise on the instance.
+        /// </summary>
+        [Input("isAiEnterpriseEnabled")]
+        public Input<bool>? IsAiEnterpriseEnabled { get; set; }
+
+        /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]

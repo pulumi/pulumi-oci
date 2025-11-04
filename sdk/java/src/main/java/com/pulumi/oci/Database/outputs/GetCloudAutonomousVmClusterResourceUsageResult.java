@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudAutonomousVmClusterResourceUsageResult {
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size allocated for Autonomous AI Databases, in TBs.
      * 
      */
     private Double autonomousDataStorageSizeInTbs;
@@ -25,7 +25,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      */
     private List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages;
     /**
-     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * @return The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     private Double availableAutonomousDataStorageSizeInTbs;
@@ -56,7 +56,12 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      */
     private String id;
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -86,7 +91,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      */
     private Double provisionedCpus;
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
     private Double reclaimableCpus;
@@ -106,7 +111,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      */
     private Double totalCpus;
     /**
-     * @return The data disk group size used for Autonomous Databases, in TBs.
+     * @return The data disk group size used for Autonomous AI Databases, in TBs.
      * 
      */
     private Double usedAutonomousDataStorageSizeInTbs;
@@ -118,7 +123,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
 
     private GetCloudAutonomousVmClusterResourceUsageResult() {}
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size allocated for Autonomous AI Databases, in TBs.
      * 
      */
     public Double autonomousDataStorageSizeInTbs() {
@@ -132,7 +137,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         return this.autonomousVmResourceUsages;
     }
     /**
-     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * @return The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     public Double availableAutonomousDataStorageSizeInTbs() {
@@ -177,7 +182,14 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         return this.id;
     }
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -219,7 +231,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         return this.provisionedCpus;
     }
     /**
-     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
     public Double reclaimableCpus() {
@@ -247,7 +259,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         return this.totalCpus;
     }
     /**
-     * @return The data disk group size used for Autonomous Databases, in TBs.
+     * @return The data disk group size used for Autonomous AI Databases, in TBs.
      * 
      */
     public Double usedAutonomousDataStorageSizeInTbs() {
@@ -279,6 +291,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         private String displayName;
         private Double exadataStorageInTbs;
         private String id;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private Integer nonProvisionableAutonomousContainerDatabases;
@@ -303,6 +316,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
     	      this.displayName = defaults.displayName;
     	      this.exadataStorageInTbs = defaults.exadataStorageInTbs;
     	      this.id = defaults.id;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
@@ -390,6 +404,14 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResourceUsageResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResourceUsageResult", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
@@ -499,6 +521,7 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
             _resultValue.displayName = displayName;
             _resultValue.exadataStorageInTbs = exadataStorageInTbs;
             _resultValue.id = id;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;

@@ -235,12 +235,6 @@ class ConnectHarness(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
-
-        Starts the provisioning of a new connect harness.
-        To track the progress of the provisioning, you can periodically call [GetConnectHarness].
-        In the response, the `lifecycleState` parameter of the [ConnectHarness](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/) object tells you its current state.
-
         ## Example Usage
 
         ```python
@@ -282,12 +276,6 @@ class ConnectHarness(pulumi.CustomResource):
                  args: ConnectHarnessArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
-
-        Starts the provisioning of a new connect harness.
-        To track the progress of the provisioning, you can periodically call [GetConnectHarness].
-        In the response, the `lifecycleState` parameter of the [ConnectHarness](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/) object tells you its current state.
-
         ## Example Usage
 
         ```python

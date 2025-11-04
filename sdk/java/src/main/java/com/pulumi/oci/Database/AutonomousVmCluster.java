@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates an Autonomous VM cluster for Exadata Cloud{@literal @}Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -473,6 +469,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> maxAcdsLowestScaledValue() {
         return this.maxAcdsLowestScaledValue;
+    }
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    @Export(name="memoryPerComputeUnitInGbs", refs={Double.class}, tree="[0]")
+    private Output<Double> memoryPerComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Output<Double> memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
     }
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.

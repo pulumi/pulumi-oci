@@ -380,10 +380,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new target-alert policy association to track a alert policy applied on target.
-
         ## Example Usage
 
         ## Import
@@ -412,10 +408,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  args: TargetAlertPolicyAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new target-alert policy association to track a alert policy applied on target.
-
         ## Example Usage
 
         ## Import

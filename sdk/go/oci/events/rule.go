@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-//
-// Creates a new rule.
-//
 // ## Example Usage
 //
 // ```go

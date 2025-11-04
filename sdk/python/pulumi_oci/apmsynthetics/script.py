@@ -382,10 +382,6 @@ class Script(pulumi.CustomResource):
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-
-        Creates a new script.
-
         ## Example Usage
 
         ```python
@@ -437,10 +433,6 @@ class Script(pulumi.CustomResource):
                  args: ScriptArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-
-        Creates a new script.
-
         ## Example Usage
 
         ```python

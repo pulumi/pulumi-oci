@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
-//
-// Creates a OccDemandSignal.
-//
-//	Updates the data of an OccDemandSignal.
-//
 // ## Example Usage
 //
 // ## Import

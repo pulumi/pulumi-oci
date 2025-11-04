@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -54,12 +55,28 @@ public final class GetAddonOptionsPlainArgs extends com.pulumi.resources.InvokeA
         return this.kubernetesVersion;
     }
 
+    /**
+     * Whether to show all add-on versions
+     * 
+     */
+    @Import(name="shouldShowAllVersions")
+    private @Nullable Boolean shouldShowAllVersions;
+
+    /**
+     * @return Whether to show all add-on versions
+     * 
+     */
+    public Optional<Boolean> shouldShowAllVersions() {
+        return Optional.ofNullable(this.shouldShowAllVersions);
+    }
+
     private GetAddonOptionsPlainArgs() {}
 
     private GetAddonOptionsPlainArgs(GetAddonOptionsPlainArgs $) {
         this.addonName = $.addonName;
         this.filters = $.filters;
         this.kubernetesVersion = $.kubernetesVersion;
+        this.shouldShowAllVersions = $.shouldShowAllVersions;
     }
 
     public static Builder builder() {
@@ -108,6 +125,17 @@ public final class GetAddonOptionsPlainArgs extends com.pulumi.resources.InvokeA
          */
         public Builder kubernetesVersion(String kubernetesVersion) {
             $.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
+         * @param shouldShowAllVersions Whether to show all add-on versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldShowAllVersions(@Nullable Boolean shouldShowAllVersions) {
+            $.shouldShowAllVersions = shouldShowAllVersions;
             return this;
         }
 

@@ -427,9 +427,7 @@ class ExternalClusterInstance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster instance specified by `externalClusterInstanceId`.
+        ## Example Usage
 
         ## Import
 
@@ -457,9 +455,7 @@ class ExternalClusterInstance(pulumi.CustomResource):
                  args: ExternalClusterInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster instance specified by `externalClusterInstanceId`.
+        ## Example Usage
 
         ## Import
 

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates an attribute set.
-//
 // ## Example Usage
 //
 // ```go

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
-    /// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-    /// 
-    /// Creates a knowledge base.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

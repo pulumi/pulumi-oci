@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Schedule a task as specified and return task info.
- *
  * ## Example Usage
  *
  * ## Import

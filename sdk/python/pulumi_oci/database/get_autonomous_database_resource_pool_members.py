@@ -87,7 +87,7 @@ def get_autonomous_database_resource_pool_members(autonomous_database_id: Option
     """
     This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
 
-    Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+    Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_autonomous_database_resource_pool_members_output(autonomous_database_id:
     """
     This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
 
-    Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+    Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
 
     ## Example Usage
 

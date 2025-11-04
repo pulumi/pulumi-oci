@@ -67,6 +67,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly bool IsBreakGlassEnabled;
         /// <summary>
+        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// </summary>
+        public readonly bool IsIpv6dualStackEnabled;
+        /// <summary>
         /// BYOK key id
         /// </summary>
         public readonly string KmsKeyId;
@@ -157,6 +161,8 @@ namespace Pulumi.Oci.Functions.Outputs
 
             bool isBreakGlassEnabled,
 
+            bool isIpv6dualStackEnabled,
+
             string kmsKeyId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult> kmsKeyInfos,
@@ -201,6 +207,7 @@ namespace Pulumi.Oci.Functions.Outputs
             Id = id;
             IdcsDomainUrl = idcsDomainUrl;
             IsBreakGlassEnabled = isBreakGlassEnabled;
+            IsIpv6dualStackEnabled = isIpv6dualStackEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyInfos = kmsKeyInfos;
             LifecycleDetails = lifecycleDetails;

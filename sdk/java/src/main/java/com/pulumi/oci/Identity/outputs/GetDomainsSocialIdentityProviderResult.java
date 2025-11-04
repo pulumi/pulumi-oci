@@ -36,6 +36,16 @@ public final class GetDomainsSocialIdentityProviderResult {
      * 
      */
     private List<String> adminScopes;
+    /**
+     * @return Apple Developer ID
+     * 
+     */
+    private String appleDevId;
+    /**
+     * @return Apple Private Key ID
+     * 
+     */
+    private String appleKeyId;
     private @Nullable String authorization;
     /**
      * @return Social IDP Authorization URL
@@ -247,6 +257,20 @@ public final class GetDomainsSocialIdentityProviderResult {
      */
     public List<String> adminScopes() {
         return this.adminScopes;
+    }
+    /**
+     * @return Apple Developer ID
+     * 
+     */
+    public String appleDevId() {
+        return this.appleDevId;
+    }
+    /**
+     * @return Apple Private Key ID
+     * 
+     */
+    public String appleKeyId() {
+        return this.appleKeyId;
     }
     public Optional<String> authorization() {
         return Optional.ofNullable(this.authorization);
@@ -532,6 +556,8 @@ public final class GetDomainsSocialIdentityProviderResult {
         private String accessTokenUrl;
         private Boolean accountLinkingEnabled;
         private List<String> adminScopes;
+        private String appleDevId;
+        private String appleKeyId;
         private @Nullable String authorization;
         private String authzUrl;
         private Boolean autoRedirectEnabled;
@@ -579,6 +605,8 @@ public final class GetDomainsSocialIdentityProviderResult {
     	      this.accessTokenUrl = defaults.accessTokenUrl;
     	      this.accountLinkingEnabled = defaults.accountLinkingEnabled;
     	      this.adminScopes = defaults.adminScopes;
+    	      this.appleDevId = defaults.appleDevId;
+    	      this.appleKeyId = defaults.appleKeyId;
     	      this.authorization = defaults.authorization;
     	      this.authzUrl = defaults.authzUrl;
     	      this.autoRedirectEnabled = defaults.autoRedirectEnabled;
@@ -648,6 +676,22 @@ public final class GetDomainsSocialIdentityProviderResult {
         }
         public Builder adminScopes(String... adminScopes) {
             return adminScopes(List.of(adminScopes));
+        }
+        @CustomType.Setter
+        public Builder appleDevId(String appleDevId) {
+            if (appleDevId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSocialIdentityProviderResult", "appleDevId");
+            }
+            this.appleDevId = appleDevId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder appleKeyId(String appleKeyId) {
+            if (appleKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSocialIdentityProviderResult", "appleKeyId");
+            }
+            this.appleKeyId = appleKeyId;
+            return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
@@ -1005,6 +1049,8 @@ public final class GetDomainsSocialIdentityProviderResult {
             _resultValue.accessTokenUrl = accessTokenUrl;
             _resultValue.accountLinkingEnabled = accountLinkingEnabled;
             _resultValue.adminScopes = adminScopes;
+            _resultValue.appleDevId = appleDevId;
+            _resultValue.appleKeyId = appleKeyId;
             _resultValue.authorization = authorization;
             _resultValue.authzUrl = authzUrl;
             _resultValue.autoRedirectEnabled = autoRedirectEnabled;

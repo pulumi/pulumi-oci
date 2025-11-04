@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-//
-// Create the specified workloadMapping for a cluster.
-//
 // ## Example Usage
 //
 // ```go

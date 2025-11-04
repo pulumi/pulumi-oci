@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf
 {
     /// <summary>
-    /// This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
-    /// 
-    /// Creates a new WebAppFirewall.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

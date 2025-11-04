@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Replace a security question setting.
+// ## Example Usage
 //
 // ## Import
 //

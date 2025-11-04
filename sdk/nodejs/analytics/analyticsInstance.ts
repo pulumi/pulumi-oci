@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
- *
- * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
- * and creates a new WorkRequest.
- *
  * ## Example Usage
  *
  * ```typescript

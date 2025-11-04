@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Set Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

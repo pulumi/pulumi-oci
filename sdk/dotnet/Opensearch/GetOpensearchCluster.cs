@@ -173,6 +173,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly ImmutableArray<string> AvailabilityDomains;
         /// <summary>
+        /// Custom certificate config for customer provided certs.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterCertificateConfigResult> CertificateConfigs;
+        /// <summary>
         /// The OCID of the compartment where the cluster is located.
         /// </summary>
         public readonly string CompartmentId;
@@ -262,6 +266,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly string MasterNodeHostType;
         /// <summary>
+        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// </summary>
+        public readonly string NsgId;
+        /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         /// </summary>
         public readonly string OpendashboardFqdn;
@@ -331,6 +339,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly int SearchNodeStorageGb;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The name of the master user that are used to manage security config
         /// </summary>
         public readonly string SecurityMasterUserName;
@@ -393,6 +405,8 @@ namespace Pulumi.Oci.Opensearch
         private GetOpensearchClusterResult(
             ImmutableArray<string> availabilityDomains,
 
+            ImmutableArray<Outputs.GetOpensearchClusterCertificateConfigResult> certificateConfigs,
+
             string compartmentId,
 
             int configureOutboundClusterTrigger,
@@ -439,6 +453,8 @@ namespace Pulumi.Oci.Opensearch
 
             string masterNodeHostType,
 
+            string nsgId,
+
             string opendashboardFqdn,
 
             int opendashboardNodeCount,
@@ -475,6 +491,8 @@ namespace Pulumi.Oci.Opensearch
 
             int searchNodeStorageGb,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string securityMasterUserName,
 
             string securityMasterUserPasswordHash,
@@ -508,6 +526,7 @@ namespace Pulumi.Oci.Opensearch
             string vcnId)
         {
             AvailabilityDomains = availabilityDomains;
+            CertificateConfigs = certificateConfigs;
             CompartmentId = compartmentId;
             ConfigureOutboundClusterTrigger = configureOutboundClusterTrigger;
             DataNodeCount = dataNodeCount;
@@ -531,6 +550,7 @@ namespace Pulumi.Oci.Opensearch
             MasterNodeHostOcpuCount = masterNodeHostOcpuCount;
             MasterNodeHostShape = masterNodeHostShape;
             MasterNodeHostType = masterNodeHostType;
+            NsgId = nsgId;
             OpendashboardFqdn = opendashboardFqdn;
             OpendashboardNodeCount = opendashboardNodeCount;
             OpendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
@@ -549,6 +569,7 @@ namespace Pulumi.Oci.Opensearch
             SearchNodeHostShape = searchNodeHostShape;
             SearchNodeHostType = searchNodeHostType;
             SearchNodeStorageGb = searchNodeStorageGb;
+            SecurityAttributes = securityAttributes;
             SecurityMasterUserName = securityMasterUserName;
             SecurityMasterUserPasswordHash = securityMasterUserPasswordHash;
             SecurityMode = securityMode;

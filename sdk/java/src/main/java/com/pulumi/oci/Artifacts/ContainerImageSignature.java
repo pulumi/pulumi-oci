@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
- * 
- * Upload a signature to an image.
- * 
  * ## Example Usage
  * 
  * <pre>

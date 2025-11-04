@@ -16,10 +16,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetEndpointsResult {
     private String compartmentId;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     private @Nullable String displayName;
     /**
      * @return The list of endpoint_collection.
@@ -27,6 +23,7 @@ public final class GetEndpointsResult {
      */
     private List<GetEndpointsEndpointCollection> endpointCollections;
     private @Nullable List<GetEndpointsFilter> filters;
+    private @Nullable String generativeAiPrivateEndpointId;
     private @Nullable String id;
     /**
      * @return The current state of the endpoint.
@@ -38,10 +35,6 @@ public final class GetEndpointsResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -54,6 +47,9 @@ public final class GetEndpointsResult {
     }
     public List<GetEndpointsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public Optional<String> generativeAiPrivateEndpointId() {
+        return Optional.ofNullable(this.generativeAiPrivateEndpointId);
     }
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
@@ -79,6 +75,7 @@ public final class GetEndpointsResult {
         private @Nullable String displayName;
         private List<GetEndpointsEndpointCollection> endpointCollections;
         private @Nullable List<GetEndpointsFilter> filters;
+        private @Nullable String generativeAiPrivateEndpointId;
         private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
@@ -88,6 +85,7 @@ public final class GetEndpointsResult {
     	      this.displayName = defaults.displayName;
     	      this.endpointCollections = defaults.endpointCollections;
     	      this.filters = defaults.filters;
+    	      this.generativeAiPrivateEndpointId = defaults.generativeAiPrivateEndpointId;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
         }
@@ -127,6 +125,12 @@ public final class GetEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
+        public Builder generativeAiPrivateEndpointId(@Nullable String generativeAiPrivateEndpointId) {
+
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
 
             this.id = id;
@@ -144,6 +148,7 @@ public final class GetEndpointsResult {
             _resultValue.displayName = displayName;
             _resultValue.endpointCollections = endpointCollections;
             _resultValue.filters = filters;
+            _resultValue.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
             _resultValue.id = id;
             _resultValue.state = state;
             return _resultValue;

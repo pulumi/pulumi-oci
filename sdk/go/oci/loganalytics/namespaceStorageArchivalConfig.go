@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// # This API updates the archiving configuration
-//
 // ## Example Usage
 //
 // ```go

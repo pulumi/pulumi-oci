@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model Group resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Create a new Model Group resource.
- * 
  * ## Example Usage
  * 
  * <pre>

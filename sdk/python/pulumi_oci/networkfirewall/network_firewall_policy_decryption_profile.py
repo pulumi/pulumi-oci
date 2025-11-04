@@ -466,10 +466,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Profile for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -525,10 +521,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  args: NetworkFirewallPolicyDecryptionProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Profile for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

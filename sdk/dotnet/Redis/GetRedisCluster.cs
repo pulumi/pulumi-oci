@@ -197,6 +197,10 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         public readonly string ReplicasFqdn;
         /// <summary>
+        /// Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
         /// </summary>
         public readonly int ShardCount;
@@ -265,6 +269,8 @@ namespace Pulumi.Oci.Redis
 
             string replicasFqdn,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             int shardCount,
 
             string softwareVersion,
@@ -298,6 +304,7 @@ namespace Pulumi.Oci.Redis
             RedisClusterId = redisClusterId;
             ReplicasEndpointIpAddress = replicasEndpointIpAddress;
             ReplicasFqdn = replicasFqdn;
+            SecurityAttributes = securityAttributes;
             ShardCount = shardCount;
             SoftwareVersion = softwareVersion;
             State = state;

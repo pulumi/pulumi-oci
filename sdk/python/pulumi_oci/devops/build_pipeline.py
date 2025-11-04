@@ -351,10 +351,6 @@ class BuildPipeline(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new build pipeline.
-
         ## Example Usage
 
         ```python
@@ -408,10 +404,6 @@ class BuildPipeline(pulumi.CustomResource):
                  args: BuildPipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new build pipeline.
-
         ## Example Usage
 
         ```python

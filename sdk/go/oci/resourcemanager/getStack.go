@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
 //
-// Gets a stack using the stack ID.
+// Gets the specified stack.
+// For more information, see
+// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
 //
 // ## Example Usage
 //
@@ -65,16 +67,19 @@ type GetStackResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// General description of the stack.
 	Description string `pulumi:"description"`
-	// Human-readable display name for the stack.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id      string `pulumi:"id"`
 	StackId string `pulumi:"stackId"`
-	// The current lifecycle state of the stack.
+	// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State string `pulumi:"state"`
-	// The date and time at which the stack was created.
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags       map[string]string `pulumi:"systemTags"`
+	TerraformVersion string            `pulumi:"terraformVersion"`
+	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated string            `pulumi:"timeCreated"`
 	Variables   map[string]string `pulumi:"variables"`
 }
@@ -132,12 +137,12 @@ func (o GetStackResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Human-readable display name for the stack.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetStackResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetStackResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStackResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -151,12 +156,21 @@ func (o GetStackResultOutput) StackId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.StackId }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the stack.
+// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 func (o GetStackResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time at which the stack was created.
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetStackResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStackResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetStackResultOutput) TerraformVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStackResult) string { return v.TerraformVersion }).(pulumi.StringOutput)
+}
+
+// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
 func (o GetStackResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

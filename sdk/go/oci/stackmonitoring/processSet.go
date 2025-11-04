@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// API to create Process Set.
-//
 // ## Example Usage
 //
 // ```go

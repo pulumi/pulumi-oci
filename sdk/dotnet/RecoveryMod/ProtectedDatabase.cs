@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.RecoveryMod
 {
     /// <summary>
-    /// This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
-    /// 
-    /// Creates a new Protected Database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

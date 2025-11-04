@@ -7,17 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Path Analysi resource in Oracle Cloud Infrastructure Vn Monitoring service.
- *
- * Use this method to initiate a [Network Path Analyzer](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) analysis. This method returns
- * an opc-work-request-id, and you can poll the status of the work request until it either fails or succeeds.
- *
- * If the work request status is successful, use [ListWorkRequestResults](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestResult/ListWorkRequestResults)
- * with the work request ID to ask for the successful analysis results. If the work request status is failed, use
- * [ListWorkRequestErrors](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestError/ListWorkRequestErrors)
- * with the work request ID to ask for the analysis failure information. The information
- * returned from either of these methods can be used to build a final report.
- *
  * ## Example Usage
  *
  * ```typescript

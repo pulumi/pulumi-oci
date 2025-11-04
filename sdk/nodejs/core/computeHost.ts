@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
- *
- * Customer can update the some fields for ComputeHost record
+ * ## Example Usage
  *
  * ## Import
  *

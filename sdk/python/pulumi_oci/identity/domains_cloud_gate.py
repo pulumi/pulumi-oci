@@ -1370,10 +1370,6 @@ class DomainsCloudGate(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate
-
         ## Example Usage
 
         ```python
@@ -1518,10 +1514,6 @@ class DomainsCloudGate(pulumi.CustomResource):
                  args: DomainsCloudGateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Cloud Gate
-
         ## Example Usage
 
         ```python

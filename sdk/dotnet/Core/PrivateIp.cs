@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a secondary private IP for the specified VNIC.
-    /// For more information about secondary private IPs, see
-    /// [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -28,6 +22,7 @@ namespace Pulumi.Oci.Core
     /// {
     ///     var testPrivateIp = new Oci.Core.PrivateIp("test_private_ip", new()
     ///     {
+    ///         CidrPrefixLength = privateIpCidrPrefixLength,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -39,6 +34,7 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         HostnameLabel = privateIpHostnameLabel,
     ///         IpAddress = privateIpIpAddress,
+    ///         Ipv4subnetCidrAtCreation = privateIpIpv4subnetCidrAtCreation,
     ///         Lifetime = privateIpLifetime,
     ///         RouteTableId = testRouteTable.Id,
     ///         SubnetId = testSubnet.Id,
@@ -65,6 +61,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        /// </summary>
+        [Output("cidrPrefixLength")]
+        public Output<int> CidrPrefixLength { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
@@ -113,6 +115,12 @@ namespace Pulumi.Oci.Core
         public Output<string> IpState { get; private set; } = null!;
 
         /// <summary>
+        /// Any one of the IPv4 CIDRs allocated to the subnet.
+        /// </summary>
+        [Output("ipv4subnetCidrAtCreation")]
+        public Output<string> Ipv4subnetCidrAtCreation { get; private set; } = null!;
+
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
         [Output("isPrimary")]
@@ -122,7 +130,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsReserved { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// (Updatable) Lifetime of the IP address. There are two types of IPs:
         /// * Ephemeral
         /// * Reserved
         /// </summary>
@@ -211,6 +219,12 @@ namespace Pulumi.Oci.Core
 
     public sealed class PrivateIpArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        /// </summary>
+        [Input("cidrPrefixLength")]
+        public Input<int>? CidrPrefixLength { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -258,7 +272,13 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// Any one of the IPv4 CIDRs allocated to the subnet.
+        /// </summary>
+        [Input("ipv4subnetCidrAtCreation")]
+        public Input<string>? Ipv4subnetCidrAtCreation { get; set; }
+
+        /// <summary>
+        /// (Updatable) Lifetime of the IP address. There are two types of IPs:
         /// * Ephemeral
         /// * Reserved
         /// </summary>
@@ -308,6 +328,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
+        /// </summary>
+        [Input("cidrPrefixLength")]
+        public Input<int>? CidrPrefixLength { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
@@ -368,6 +394,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpState { get; set; }
 
         /// <summary>
+        /// Any one of the IPv4 CIDRs allocated to the subnet.
+        /// </summary>
+        [Input("ipv4subnetCidrAtCreation")]
+        public Input<string>? Ipv4subnetCidrAtCreation { get; set; }
+
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
         [Input("isPrimary")]
@@ -377,7 +409,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsReserved { get; set; }
 
         /// <summary>
-        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// (Updatable) Lifetime of the IP address. There are two types of IPs:
         /// * Ephemeral
         /// * Reserved
         /// </summary>

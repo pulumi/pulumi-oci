@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
-//
-// Upload a signature to an image.
-//
 // ## Example Usage
 //
 // ```go

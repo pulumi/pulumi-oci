@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs Empty = new AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs();
+
+    /**
+     * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    @Import(name="backupRetentionPolicyOnTerminate")
+    private @Nullable Output<String> backupRetentionPolicyOnTerminate;
+
+    /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    public Optional<Output<String>> backupRetentionPolicyOnTerminate() {
+        return Optional.ofNullable(this.backupRetentionPolicyOnTerminate);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -31,14 +47,14 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
     }
 
     /**
-     * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public Optional<Output<String>> id() {
@@ -58,6 +74,21 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
      */
     public Optional<Output<String>> internetProxy() {
         return Optional.ofNullable(this.internetProxy);
+    }
+
+    /**
+     * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    @Import(name="isRetentionLockEnabled")
+    private @Nullable Output<Boolean> isRetentionLockEnabled;
+
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
+    public Optional<Output<Boolean>> isRetentionLockEnabled() {
+        return Optional.ofNullable(this.isRetentionLockEnabled);
     }
 
     /**
@@ -108,9 +139,11 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
     private AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs() {}
 
     private AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs(AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs $) {
+        this.backupRetentionPolicyOnTerminate = $.backupRetentionPolicyOnTerminate;
         this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
         this.internetProxy = $.internetProxy;
+        this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.type = $.type;
         this.vpcPassword = $.vpcPassword;
         this.vpcUser = $.vpcUser;
@@ -135,6 +168,27 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
         }
 
         /**
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPolicyOnTerminate(@Nullable Output<String> backupRetentionPolicyOnTerminate) {
+            $.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
+
+        /**
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            return backupRetentionPolicyOnTerminate(Output.of(backupRetentionPolicyOnTerminate));
+        }
+
+        /**
          * @param dbrsPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          * 
          * @return builder
@@ -156,7 +210,7 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
         }
 
         /**
-         * @param id The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * @param id The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          * 
          * @return builder
          * 
@@ -167,7 +221,7 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
         }
 
         /**
-         * @param id The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * @param id The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          * 
          * @return builder
          * 
@@ -195,6 +249,27 @@ public final class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestin
          */
         public Builder internetProxy(String internetProxy) {
             return internetProxy(Output.of(internetProxy));
+        }
+
+        /**
+         * @param isRetentionLockEnabled Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(@Nullable Output<Boolean> isRetentionLockEnabled) {
+            $.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRetentionLockEnabled Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            return isRetentionLockEnabled(Output.of(isRetentionLockEnabled));
         }
 
         /**

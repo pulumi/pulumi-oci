@@ -73,7 +73,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      */
     private String peerLifecycleState;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String peerRole;
@@ -83,7 +83,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      */
     private String protectionMode;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -210,7 +210,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         return this.peerLifecycleState;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String peerRole() {
@@ -224,7 +224,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         return this.protectionMode;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {

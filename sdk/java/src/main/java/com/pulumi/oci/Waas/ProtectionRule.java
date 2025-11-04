@@ -16,12 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
- * 
- * Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
- * This operation can update or disable protection rules depending on the structure of the request body.
- * Protection rules can be updated by changing the properties of the protection rule object with the rule&#39;s key specified in the key field.
- * 
  * ## Example Usage
  * 
  * ## Import

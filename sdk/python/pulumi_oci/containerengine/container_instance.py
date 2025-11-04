@@ -684,10 +684,6 @@ class ContainerInstance(pulumi.CustomResource):
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-        Creates a container instance and deploys the containers on it.
-
         ## Example Usage
 
         ```python
@@ -836,10 +832,6 @@ class ContainerInstance(pulumi.CustomResource):
                  args: ContainerInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-        Creates a container instance and deploys the containers on it.
-
         ## Example Usage
 
         ```python

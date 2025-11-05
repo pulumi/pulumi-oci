@@ -154,6 +154,10 @@ __all__ = [
     'InstancePlacementConstraintDetails',
     'InstancePlatformConfig',
     'InstancePoolInstanceLoadBalancerBackend',
+    'InstancePoolLifecycleManagement',
+    'InstancePoolLifecycleManagementLifecycleActions',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTermination',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout',
     'InstancePoolLoadBalancer',
     'InstancePoolPlacementConfiguration',
     'InstancePoolPlacementConfigurationPrimaryVnicSubnets',
@@ -569,6 +573,10 @@ __all__ = [
     'GetInstancePoolInstancesFilterResult',
     'GetInstancePoolInstancesInstanceResult',
     'GetInstancePoolInstancesInstanceLoadBalancerBackendResult',
+    'GetInstancePoolLifecycleManagementResult',
+    'GetInstancePoolLifecycleManagementLifecycleActionResult',
+    'GetInstancePoolLifecycleManagementLifecycleActionPreTerminationResult',
+    'GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult',
     'GetInstancePoolLoadBalancerResult',
     'GetInstancePoolPlacementConfigurationResult',
     'GetInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
@@ -577,6 +585,10 @@ __all__ = [
     'GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
     'GetInstancePoolsFilterResult',
     'GetInstancePoolsInstancePoolResult',
+    'GetInstancePoolsInstancePoolLifecycleManagementResult',
+    'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionResult',
+    'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult',
+    'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult',
     'GetInstancePoolsInstancePoolLoadBalancerResult',
     'GetInstancePoolsInstancePoolPlacementConfigurationResult',
     'GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
@@ -12383,6 +12395,184 @@ class InstancePoolInstanceLoadBalancerBackend(dict):
         The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class InstancePoolLifecycleManagement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lifecycleActions":
+            suggest = "lifecycle_actions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolLifecycleManagement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolLifecycleManagement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolLifecycleManagement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 lifecycle_actions: 'outputs.InstancePoolLifecycleManagementLifecycleActions'):
+        """
+        :param 'InstancePoolLifecycleManagementLifecycleActionsArgs' lifecycle_actions: (Updatable) The lifecycle actions for the instance pool.
+        """
+        pulumi.set(__self__, "lifecycle_actions", lifecycle_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleActions")
+    def lifecycle_actions(self) -> 'outputs.InstancePoolLifecycleManagementLifecycleActions':
+        """
+        (Updatable) The lifecycle actions for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_actions")
+
+
+@pulumi.output_type
+class InstancePoolLifecycleManagementLifecycleActions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "preTermination":
+            suggest = "pre_termination"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolLifecycleManagementLifecycleActions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolLifecycleManagementLifecycleActions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolLifecycleManagementLifecycleActions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 pre_termination: Optional['outputs.InstancePoolLifecycleManagementLifecycleActionsPreTermination'] = None):
+        """
+        :param 'InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs' pre_termination: (Updatable) The data for pre-termination action for an instance pool
+        """
+        if pre_termination is not None:
+            pulumi.set(__self__, "pre_termination", pre_termination)
+
+    @_builtins.property
+    @pulumi.getter(name="preTermination")
+    def pre_termination(self) -> Optional['outputs.InstancePoolLifecycleManagementLifecycleActionsPreTermination']:
+        """
+        (Updatable) The data for pre-termination action for an instance pool
+        """
+        return pulumi.get(self, "pre_termination")
+
+
+@pulumi.output_type
+class InstancePoolLifecycleManagementLifecycleActionsPreTermination(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnabled":
+            suggest = "is_enabled"
+        elif key == "onTimeout":
+            suggest = "on_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolLifecycleManagementLifecycleActionsPreTermination. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolLifecycleManagementLifecycleActionsPreTermination.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolLifecycleManagementLifecycleActionsPreTermination.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 on_timeout: 'outputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout',
+                 timeout: _builtins.int):
+        """
+        :param _builtins.bool is_enabled: (Updatable) Whether pre-termination action is enabled or not.
+        :param 'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs' on_timeout: (Updatable) Options to handle timeout for pre-termination action.
+        :param _builtins.int timeout: (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "on_timeout", on_timeout)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        (Updatable) Whether pre-termination action is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="onTimeout")
+    def on_timeout(self) -> 'outputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout':
+        """
+        (Updatable) Options to handle timeout for pre-termination action.
+        """
+        return pulumi.get(self, "on_timeout")
+
+    @_builtins.property
+    @pulumi.getter
+    def timeout(self) -> _builtins.int:
+        """
+        (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "preserveBlockVolumeMode":
+            suggest = "preserve_block_volume_mode"
+        elif key == "preserveBootVolumeMode":
+            suggest = "preserve_boot_volume_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 preserve_block_volume_mode: _builtins.str,
+                 preserve_boot_volume_mode: _builtins.str):
+        """
+        :param _builtins.str preserve_block_volume_mode: (Updatable) Whether the block volume should be preserved after termination.
+        :param _builtins.str preserve_boot_volume_mode: (Updatable) Whether the boot volume should be preserved after termination.
+        """
+        pulumi.set(__self__, "preserve_block_volume_mode", preserve_block_volume_mode)
+        pulumi.set(__self__, "preserve_boot_volume_mode", preserve_boot_volume_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBlockVolumeMode")
+    def preserve_block_volume_mode(self) -> _builtins.str:
+        """
+        (Updatable) Whether the block volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_block_volume_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBootVolumeMode")
+    def preserve_boot_volume_mode(self) -> _builtins.str:
+        """
+        (Updatable) Whether the boot volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_boot_volume_mode")
 
 
 @pulumi.output_type
@@ -38721,6 +38911,111 @@ class GetInstancePoolInstancesInstanceLoadBalancerBackendResult(dict):
 
 
 @pulumi.output_type
+class GetInstancePoolLifecycleManagementResult(dict):
+    def __init__(__self__, *,
+                 lifecycle_actions: Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionResult']):
+        """
+        :param Sequence['GetInstancePoolLifecycleManagementLifecycleActionArgs'] lifecycle_actions: The lifecycle actions for the instance pool.
+        """
+        pulumi.set(__self__, "lifecycle_actions", lifecycle_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleActions")
+    def lifecycle_actions(self) -> Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionResult']:
+        """
+        The lifecycle actions for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_actions")
+
+
+@pulumi.output_type
+class GetInstancePoolLifecycleManagementLifecycleActionResult(dict):
+    def __init__(__self__, *,
+                 pre_terminations: Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionPreTerminationResult']):
+        """
+        :param Sequence['GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs'] pre_terminations: The data for pre-termination action for an instance pool
+        """
+        pulumi.set(__self__, "pre_terminations", pre_terminations)
+
+    @_builtins.property
+    @pulumi.getter(name="preTerminations")
+    def pre_terminations(self) -> Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionPreTerminationResult']:
+        """
+        The data for pre-termination action for an instance pool
+        """
+        return pulumi.get(self, "pre_terminations")
+
+
+@pulumi.output_type
+class GetInstancePoolLifecycleManagementLifecycleActionPreTerminationResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 on_timeouts: Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult'],
+                 timeout: _builtins.int):
+        """
+        :param _builtins.bool is_enabled: Whether pre-termination action is enabled or not.
+        :param Sequence['GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs'] on_timeouts: Options to handle timeout for pre-termination action.
+        :param _builtins.int timeout: The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "on_timeouts", on_timeouts)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Whether pre-termination action is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="onTimeouts")
+    def on_timeouts(self) -> Sequence['outputs.GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult']:
+        """
+        Options to handle timeout for pre-termination action.
+        """
+        return pulumi.get(self, "on_timeouts")
+
+    @_builtins.property
+    @pulumi.getter
+    def timeout(self) -> _builtins.int:
+        """
+        The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult(dict):
+    def __init__(__self__, *,
+                 preserve_block_volume_mode: _builtins.str,
+                 preserve_boot_volume_mode: _builtins.str):
+        """
+        :param _builtins.str preserve_block_volume_mode: Whether the block volume should be preserved after termination.
+        :param _builtins.str preserve_boot_volume_mode: Whether the boot volume should be preserved after termination.
+        """
+        pulumi.set(__self__, "preserve_block_volume_mode", preserve_block_volume_mode)
+        pulumi.set(__self__, "preserve_boot_volume_mode", preserve_boot_volume_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBlockVolumeMode")
+    def preserve_block_volume_mode(self) -> _builtins.str:
+        """
+        Whether the block volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_block_volume_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBootVolumeMode")
+    def preserve_boot_volume_mode(self) -> _builtins.str:
+        """
+        Whether the boot volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_boot_volume_mode")
+
+
+@pulumi.output_type
 class GetInstancePoolLoadBalancerResult(dict):
     def __init__(__self__, *,
                  backend_set_name: _builtins.str,
@@ -39032,6 +39327,7 @@ class GetInstancePoolsInstancePoolResult(dict):
                  instance_configuration_id: _builtins.str,
                  instance_display_name_formatter: _builtins.str,
                  instance_hostname_formatter: _builtins.str,
+                 lifecycle_managements: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementResult'],
                  load_balancers: Sequence['outputs.GetInstancePoolsInstancePoolLoadBalancerResult'],
                  placement_configurations: Sequence['outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult'],
                  size: _builtins.int,
@@ -39046,6 +39342,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         :param _builtins.str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param _builtins.str instance_display_name_formatter: A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param _builtins.str instance_hostname_formatter: A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementArgs'] lifecycle_managements: The lifecycle management options for the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param _builtins.int size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -39061,6 +39358,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+        pulumi.set(__self__, "lifecycle_managements", lifecycle_managements)
         pulumi.set(__self__, "load_balancers", load_balancers)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "size", size)
@@ -39137,6 +39435,14 @@ class GetInstancePoolsInstancePoolResult(dict):
         return pulumi.get(self, "instance_hostname_formatter")
 
     @_builtins.property
+    @pulumi.getter(name="lifecycleManagements")
+    def lifecycle_managements(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementResult']:
+        """
+        The lifecycle management options for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_managements")
+
+    @_builtins.property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLoadBalancerResult']:
         """
@@ -39175,6 +39481,111 @@ class GetInstancePoolsInstancePoolResult(dict):
         The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolLifecycleManagementResult(dict):
+    def __init__(__self__, *,
+                 lifecycle_actions: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionResult']):
+        """
+        :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs'] lifecycle_actions: The lifecycle actions for the instance pool.
+        """
+        pulumi.set(__self__, "lifecycle_actions", lifecycle_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleActions")
+    def lifecycle_actions(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionResult']:
+        """
+        The lifecycle actions for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_actions")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionResult(dict):
+    def __init__(__self__, *,
+                 pre_terminations: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult']):
+        """
+        :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs'] pre_terminations: The data for pre-termination action for an instance pool
+        """
+        pulumi.set(__self__, "pre_terminations", pre_terminations)
+
+    @_builtins.property
+    @pulumi.getter(name="preTerminations")
+    def pre_terminations(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult']:
+        """
+        The data for pre-termination action for an instance pool
+        """
+        return pulumi.get(self, "pre_terminations")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 on_timeouts: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult'],
+                 timeout: _builtins.int):
+        """
+        :param _builtins.bool is_enabled: Whether pre-termination action is enabled or not.
+        :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs'] on_timeouts: Options to handle timeout for pre-termination action.
+        :param _builtins.int timeout: The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "on_timeouts", on_timeouts)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Whether pre-termination action is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="onTimeouts")
+    def on_timeouts(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult']:
+        """
+        Options to handle timeout for pre-termination action.
+        """
+        return pulumi.get(self, "on_timeouts")
+
+    @_builtins.property
+    @pulumi.getter
+    def timeout(self) -> _builtins.int:
+        """
+        The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult(dict):
+    def __init__(__self__, *,
+                 preserve_block_volume_mode: _builtins.str,
+                 preserve_boot_volume_mode: _builtins.str):
+        """
+        :param _builtins.str preserve_block_volume_mode: Whether the block volume should be preserved after termination.
+        :param _builtins.str preserve_boot_volume_mode: Whether the boot volume should be preserved after termination.
+        """
+        pulumi.set(__self__, "preserve_block_volume_mode", preserve_block_volume_mode)
+        pulumi.set(__self__, "preserve_boot_volume_mode", preserve_boot_volume_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBlockVolumeMode")
+    def preserve_block_volume_mode(self) -> _builtins.str:
+        """
+        Whether the block volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_block_volume_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBootVolumeMode")
+    def preserve_boot_volume_mode(self) -> _builtins.str:
+        """
+        Whether the boot volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_boot_volume_mode")
 
 
 @pulumi.output_type

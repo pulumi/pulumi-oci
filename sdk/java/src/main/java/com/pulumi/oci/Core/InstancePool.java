@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.InstancePoolArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolState;
+import com.pulumi.oci.Core.outputs.InstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.InstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfiguration;
 import com.pulumi.oci.Utilities;
@@ -32,6 +33,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.InstancePoolArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -75,6 +80,18 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .instanceDisplayNameFormatter(instancePoolInstanceDisplayNameFormatter)
  *             .instanceHostnameFormatter(instancePoolInstanceHostnameFormatter)
+ *             .lifecycleManagement(InstancePoolLifecycleManagementArgs.builder()
+ *                 .lifecycleActions(InstancePoolLifecycleManagementLifecycleActionsArgs.builder()
+ *                     .preTermination(InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs.builder()
+ *                         .isEnabled(instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled)
+ *                         .onTimeout(InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs.builder()
+ *                             .preserveBlockVolumeMode(instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBlockVolumeMode)
+ *                             .preserveBootVolumeMode(instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBootVolumeMode)
+ *                             .build())
+ *                         .timeout(instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout)
+ *                         .build())
+ *                     .build())
+ *                 .build())
  *             .loadBalancers(InstancePoolLoadBalancerArgs.builder()
  *                 .backendSetName(testBackendSet.name())
  *                 .loadBalancerId(testLoadBalancer.id())
@@ -210,6 +227,20 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> instanceHostnameFormatter() {
         return this.instanceHostnameFormatter;
+    }
+    /**
+     * (Updatable) The lifecycle management options for the instance pool.
+     * 
+     */
+    @Export(name="lifecycleManagement", refs={InstancePoolLifecycleManagement.class}, tree="[0]")
+    private Output<InstancePoolLifecycleManagement> lifecycleManagement;
+
+    /**
+     * @return (Updatable) The lifecycle management options for the instance pool.
+     * 
+     */
+    public Output<InstancePoolLifecycleManagement> lifecycleManagement() {
+        return this.lifecycleManagement;
     }
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
 import java.lang.Integer;
@@ -141,6 +142,21 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The lifecycle management options for the instance pool.
+     * 
+     */
+    @Import(name="lifecycleManagement")
+    private @Nullable Output<InstancePoolLifecycleManagementArgs> lifecycleManagement;
+
+    /**
+     * @return (Updatable) The lifecycle management options for the instance pool.
+     * 
+     */
+    public Optional<Output<InstancePoolLifecycleManagementArgs>> lifecycleManagement() {
+        return Optional.ofNullable(this.lifecycleManagement);
+    }
+
+    /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
@@ -236,6 +252,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceDisplayNameFormatter = $.instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = $.instanceHostnameFormatter;
+        this.lifecycleManagement = $.lifecycleManagement;
         this.loadBalancers = $.loadBalancers;
         this.placementConfigurations = $.placementConfigurations;
         this.size = $.size;
@@ -427,6 +444,27 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
             return instanceHostnameFormatter(Output.of(instanceHostnameFormatter));
+        }
+
+        /**
+         * @param lifecycleManagement (Updatable) The lifecycle management options for the instance pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleManagement(@Nullable Output<InstancePoolLifecycleManagementArgs> lifecycleManagement) {
+            $.lifecycleManagement = lifecycleManagement;
+            return this;
+        }
+
+        /**
+         * @param lifecycleManagement (Updatable) The lifecycle management options for the instance pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleManagement(InstancePoolLifecycleManagementArgs lifecycleManagement) {
+            return lifecycleManagement(Output.of(lifecycleManagement));
         }
 
         /**

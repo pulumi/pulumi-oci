@@ -969,6 +969,2938 @@ func (o DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayOutput) Index(i pulu
 	}).(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeOutput)
 }
 
+type DifStackAdb struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           string  `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath *string `pulumi:"artifactObjectStoragePath"`
+	// (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs int `pulumi:"dataStorageSizeInTbs"`
+	// DB credential details.
+	DbCredentials []DifStackAdbDbCredential `pulumi:"dbCredentials"`
+	// (Updatable) A valid Oracle Database version for Autonomous Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload string `pulumi:"dbWorkload"`
+	// (Updatable) The compute amount (ECPUs) available to the database.
+	Ecpu int `pulumi:"ecpu"`
+	// Id for the adw instance.
+	InstanceId string `pulumi:"instanceId"`
+	// (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired *bool `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic *bool `pulumi:"isPublic"`
+	// The OCID of the subnet the Autonomous Database is associated with.
+	SubnetId *string `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess *string `pulumi:"toolsPublicAccess"`
+}
+
+// DifStackAdbInput is an input type that accepts DifStackAdbArgs and DifStackAdbOutput values.
+// You can construct a concrete instance of `DifStackAdbInput` via:
+//
+//	DifStackAdbArgs{...}
+type DifStackAdbInput interface {
+	pulumi.Input
+
+	ToDifStackAdbOutput() DifStackAdbOutput
+	ToDifStackAdbOutputWithContext(context.Context) DifStackAdbOutput
+}
+
+type DifStackAdbArgs struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           pulumi.StringInput    `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath pulumi.StringPtrInput `pulumi:"artifactObjectStoragePath"`
+	// (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs pulumi.IntInput `pulumi:"dataStorageSizeInTbs"`
+	// DB credential details.
+	DbCredentials DifStackAdbDbCredentialArrayInput `pulumi:"dbCredentials"`
+	// (Updatable) A valid Oracle Database version for Autonomous Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload pulumi.StringInput `pulumi:"dbWorkload"`
+	// (Updatable) The compute amount (ECPUs) available to the database.
+	Ecpu pulumi.IntInput `pulumi:"ecpu"`
+	// Id for the adw instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired pulumi.BoolPtrInput `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
+	// The OCID of the subnet the Autonomous Database is associated with.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess pulumi.StringPtrInput `pulumi:"toolsPublicAccess"`
+}
+
+func (DifStackAdbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAdb)(nil)).Elem()
+}
+
+func (i DifStackAdbArgs) ToDifStackAdbOutput() DifStackAdbOutput {
+	return i.ToDifStackAdbOutputWithContext(context.Background())
+}
+
+func (i DifStackAdbArgs) ToDifStackAdbOutputWithContext(ctx context.Context) DifStackAdbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAdbOutput)
+}
+
+// DifStackAdbArrayInput is an input type that accepts DifStackAdbArray and DifStackAdbArrayOutput values.
+// You can construct a concrete instance of `DifStackAdbArrayInput` via:
+//
+//	DifStackAdbArray{ DifStackAdbArgs{...} }
+type DifStackAdbArrayInput interface {
+	pulumi.Input
+
+	ToDifStackAdbArrayOutput() DifStackAdbArrayOutput
+	ToDifStackAdbArrayOutputWithContext(context.Context) DifStackAdbArrayOutput
+}
+
+type DifStackAdbArray []DifStackAdbInput
+
+func (DifStackAdbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAdb)(nil)).Elem()
+}
+
+func (i DifStackAdbArray) ToDifStackAdbArrayOutput() DifStackAdbArrayOutput {
+	return i.ToDifStackAdbArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackAdbArray) ToDifStackAdbArrayOutputWithContext(ctx context.Context) DifStackAdbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAdbArrayOutput)
+}
+
+type DifStackAdbOutput struct{ *pulumi.OutputState }
+
+func (DifStackAdbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAdb)(nil)).Elem()
+}
+
+func (o DifStackAdbOutput) ToDifStackAdbOutput() DifStackAdbOutput {
+	return o
+}
+
+func (o DifStackAdbOutput) ToDifStackAdbOutputWithContext(ctx context.Context) DifStackAdbOutput {
+	return o
+}
+
+// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+func (o DifStackAdbOutput) AdminPasswordId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdb) string { return v.AdminPasswordId }).(pulumi.StringOutput)
+}
+
+func (o DifStackAdbOutput) ArtifactObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackAdb) *string { return v.ArtifactObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+func (o DifStackAdbOutput) DataStorageSizeInTbs() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackAdb) int { return v.DataStorageSizeInTbs }).(pulumi.IntOutput)
+}
+
+// DB credential details.
+func (o DifStackAdbOutput) DbCredentials() DifStackAdbDbCredentialArrayOutput {
+	return o.ApplyT(func(v DifStackAdb) []DifStackAdbDbCredential { return v.DbCredentials }).(DifStackAdbDbCredentialArrayOutput)
+}
+
+// (Updatable) A valid Oracle Database version for Autonomous Database.
+func (o DifStackAdbOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdb) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+func (o DifStackAdbOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdb) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// (Updatable) The compute amount (ECPUs) available to the database.
+func (o DifStackAdbOutput) Ecpu() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackAdb) int { return v.Ecpu }).(pulumi.IntOutput)
+}
+
+// Id for the adw instance.
+func (o DifStackAdbOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdb) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+func (o DifStackAdbOutput) IsMtlsConnectionRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DifStackAdb) *bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolPtrOutput)
+}
+
+// If true then subnetId should not be provided.
+func (o DifStackAdbOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DifStackAdb) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
+}
+
+// The OCID of the subnet the Autonomous Database is associated with.
+func (o DifStackAdbOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackAdb) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+func (o DifStackAdbOutput) ToolsPublicAccess() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackAdb) *string { return v.ToolsPublicAccess }).(pulumi.StringPtrOutput)
+}
+
+type DifStackAdbArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackAdbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAdb)(nil)).Elem()
+}
+
+func (o DifStackAdbArrayOutput) ToDifStackAdbArrayOutput() DifStackAdbArrayOutput {
+	return o
+}
+
+func (o DifStackAdbArrayOutput) ToDifStackAdbArrayOutputWithContext(ctx context.Context) DifStackAdbArrayOutput {
+	return o
+}
+
+func (o DifStackAdbArrayOutput) Index(i pulumi.IntInput) DifStackAdbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackAdb {
+		return vs[0].([]DifStackAdb)[vs[1].(int)]
+	}).(DifStackAdbOutput)
+}
+
+type DifStackAdbDbCredential struct {
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// DifStackAdbDbCredentialInput is an input type that accepts DifStackAdbDbCredentialArgs and DifStackAdbDbCredentialOutput values.
+// You can construct a concrete instance of `DifStackAdbDbCredentialInput` via:
+//
+//	DifStackAdbDbCredentialArgs{...}
+type DifStackAdbDbCredentialInput interface {
+	pulumi.Input
+
+	ToDifStackAdbDbCredentialOutput() DifStackAdbDbCredentialOutput
+	ToDifStackAdbDbCredentialOutputWithContext(context.Context) DifStackAdbDbCredentialOutput
+}
+
+type DifStackAdbDbCredentialArgs struct {
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (DifStackAdbDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (i DifStackAdbDbCredentialArgs) ToDifStackAdbDbCredentialOutput() DifStackAdbDbCredentialOutput {
+	return i.ToDifStackAdbDbCredentialOutputWithContext(context.Background())
+}
+
+func (i DifStackAdbDbCredentialArgs) ToDifStackAdbDbCredentialOutputWithContext(ctx context.Context) DifStackAdbDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAdbDbCredentialOutput)
+}
+
+// DifStackAdbDbCredentialArrayInput is an input type that accepts DifStackAdbDbCredentialArray and DifStackAdbDbCredentialArrayOutput values.
+// You can construct a concrete instance of `DifStackAdbDbCredentialArrayInput` via:
+//
+//	DifStackAdbDbCredentialArray{ DifStackAdbDbCredentialArgs{...} }
+type DifStackAdbDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToDifStackAdbDbCredentialArrayOutput() DifStackAdbDbCredentialArrayOutput
+	ToDifStackAdbDbCredentialArrayOutputWithContext(context.Context) DifStackAdbDbCredentialArrayOutput
+}
+
+type DifStackAdbDbCredentialArray []DifStackAdbDbCredentialInput
+
+func (DifStackAdbDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (i DifStackAdbDbCredentialArray) ToDifStackAdbDbCredentialArrayOutput() DifStackAdbDbCredentialArrayOutput {
+	return i.ToDifStackAdbDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackAdbDbCredentialArray) ToDifStackAdbDbCredentialArrayOutputWithContext(ctx context.Context) DifStackAdbDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAdbDbCredentialArrayOutput)
+}
+
+type DifStackAdbDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (DifStackAdbDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (o DifStackAdbDbCredentialOutput) ToDifStackAdbDbCredentialOutput() DifStackAdbDbCredentialOutput {
+	return o
+}
+
+func (o DifStackAdbDbCredentialOutput) ToDifStackAdbDbCredentialOutputWithContext(ctx context.Context) DifStackAdbDbCredentialOutput {
+	return o
+}
+
+func (o DifStackAdbDbCredentialOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o DifStackAdbDbCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o DifStackAdbDbCredentialOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type DifStackAdbDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackAdbDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (o DifStackAdbDbCredentialArrayOutput) ToDifStackAdbDbCredentialArrayOutput() DifStackAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o DifStackAdbDbCredentialArrayOutput) ToDifStackAdbDbCredentialArrayOutputWithContext(ctx context.Context) DifStackAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o DifStackAdbDbCredentialArrayOutput) Index(i pulumi.IntInput) DifStackAdbDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackAdbDbCredential {
+		return vs[0].([]DifStackAdbDbCredential)[vs[1].(int)]
+	}).(DifStackAdbDbCredentialOutput)
+}
+
+type DifStackDataflow struct {
+	// Contains the archive from object storage bucket which can be added as dependency to data flow application.
+	ArchiveUri *string `pulumi:"archiveUri"`
+	// (Updatable) Details for connections to other services from Dataflow.
+	Connections *DifStackDataflowConnections `pulumi:"connections"`
+	// (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape string `pulumi:"driverShape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfig *DifStackDataflowDriverShapeConfig `pulumi:"driverShapeConfig"`
+	// Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+	Execute *string `pulumi:"execute"`
+	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape string `pulumi:"executorShape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfig *DifStackDataflowExecutorShapeConfig `pulumi:"executorShapeConfig"`
+	// Id for dataflow instance
+	InstanceId string `pulumi:"instanceId"`
+	// (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId string `pulumi:"logBucketInstanceId"`
+	// (Updatable) The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// (Updatable) OCID of the already provisioned dataflow private endpoint.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+	// (Updatable) The Spark version utilized to run the application.
+	SparkVersion string `pulumi:"sparkVersion"`
+	// (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId *string `pulumi:"warehouseBucketInstanceId"`
+}
+
+// DifStackDataflowInput is an input type that accepts DifStackDataflowArgs and DifStackDataflowOutput values.
+// You can construct a concrete instance of `DifStackDataflowInput` via:
+//
+//	DifStackDataflowArgs{...}
+type DifStackDataflowInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowOutput() DifStackDataflowOutput
+	ToDifStackDataflowOutputWithContext(context.Context) DifStackDataflowOutput
+}
+
+type DifStackDataflowArgs struct {
+	// Contains the archive from object storage bucket which can be added as dependency to data flow application.
+	ArchiveUri pulumi.StringPtrInput `pulumi:"archiveUri"`
+	// (Updatable) Details for connections to other services from Dataflow.
+	Connections DifStackDataflowConnectionsPtrInput `pulumi:"connections"`
+	// (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfig DifStackDataflowDriverShapeConfigPtrInput `pulumi:"driverShapeConfig"`
+	// Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+	Execute pulumi.StringPtrInput `pulumi:"execute"`
+	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfig DifStackDataflowExecutorShapeConfigPtrInput `pulumi:"executorShapeConfig"`
+	// Id for dataflow instance
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId pulumi.StringInput `pulumi:"logBucketInstanceId"`
+	// (Updatable) The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// (Updatable) OCID of the already provisioned dataflow private endpoint.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
+	// (Updatable) The Spark version utilized to run the application.
+	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
+	// (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId pulumi.StringPtrInput `pulumi:"warehouseBucketInstanceId"`
+}
+
+func (DifStackDataflowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflow)(nil)).Elem()
+}
+
+func (i DifStackDataflowArgs) ToDifStackDataflowOutput() DifStackDataflowOutput {
+	return i.ToDifStackDataflowOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowArgs) ToDifStackDataflowOutputWithContext(ctx context.Context) DifStackDataflowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowOutput)
+}
+
+// DifStackDataflowArrayInput is an input type that accepts DifStackDataflowArray and DifStackDataflowArrayOutput values.
+// You can construct a concrete instance of `DifStackDataflowArrayInput` via:
+//
+//	DifStackDataflowArray{ DifStackDataflowArgs{...} }
+type DifStackDataflowArrayInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowArrayOutput() DifStackDataflowArrayOutput
+	ToDifStackDataflowArrayOutputWithContext(context.Context) DifStackDataflowArrayOutput
+}
+
+type DifStackDataflowArray []DifStackDataflowInput
+
+func (DifStackDataflowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackDataflow)(nil)).Elem()
+}
+
+func (i DifStackDataflowArray) ToDifStackDataflowArrayOutput() DifStackDataflowArrayOutput {
+	return i.ToDifStackDataflowArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowArray) ToDifStackDataflowArrayOutputWithContext(ctx context.Context) DifStackDataflowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowArrayOutput)
+}
+
+type DifStackDataflowOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflow)(nil)).Elem()
+}
+
+func (o DifStackDataflowOutput) ToDifStackDataflowOutput() DifStackDataflowOutput {
+	return o
+}
+
+func (o DifStackDataflowOutput) ToDifStackDataflowOutputWithContext(ctx context.Context) DifStackDataflowOutput {
+	return o
+}
+
+// Contains the archive from object storage bucket which can be added as dependency to data flow application.
+func (o DifStackDataflowOutput) ArchiveUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *string { return v.ArchiveUri }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for connections to other services from Dataflow.
+func (o DifStackDataflowOutput) Connections() DifStackDataflowConnectionsPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *DifStackDataflowConnections { return v.Connections }).(DifStackDataflowConnectionsPtrOutput)
+}
+
+// (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+func (o DifStackDataflowOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflow) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o DifStackDataflowOutput) DriverShapeConfig() DifStackDataflowDriverShapeConfigPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *DifStackDataflowDriverShapeConfig { return v.DriverShapeConfig }).(DifStackDataflowDriverShapeConfigPtrOutput)
+}
+
+// Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+func (o DifStackDataflowOutput) Execute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *string { return v.Execute }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+func (o DifStackDataflowOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflow) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o DifStackDataflowOutput) ExecutorShapeConfig() DifStackDataflowExecutorShapeConfigPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *DifStackDataflowExecutorShapeConfig { return v.ExecutorShapeConfig }).(DifStackDataflowExecutorShapeConfigPtrOutput)
+}
+
+// Id for dataflow instance
+func (o DifStackDataflowOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflow) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+func (o DifStackDataflowOutput) LogBucketInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflow) string { return v.LogBucketInstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The number of executor VMs requested.
+func (o DifStackDataflowOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackDataflow) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// (Updatable) OCID of the already provisioned dataflow private endpoint.
+func (o DifStackDataflowOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Spark version utilized to run the application.
+func (o DifStackDataflowOutput) SparkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflow) string { return v.SparkVersion }).(pulumi.StringOutput)
+}
+
+// (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+func (o DifStackDataflowOutput) WarehouseBucketInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackDataflow) *string { return v.WarehouseBucketInstanceId }).(pulumi.StringPtrOutput)
+}
+
+type DifStackDataflowArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackDataflow)(nil)).Elem()
+}
+
+func (o DifStackDataflowArrayOutput) ToDifStackDataflowArrayOutput() DifStackDataflowArrayOutput {
+	return o
+}
+
+func (o DifStackDataflowArrayOutput) ToDifStackDataflowArrayOutputWithContext(ctx context.Context) DifStackDataflowArrayOutput {
+	return o
+}
+
+func (o DifStackDataflowArrayOutput) Index(i pulumi.IntInput) DifStackDataflowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackDataflow {
+		return vs[0].([]DifStackDataflow)[vs[1].(int)]
+	}).(DifStackDataflowOutput)
+}
+
+type DifStackDataflowConnections struct {
+	// (Updatable) Details of services to create private endpoint.
+	ConnectionDetails DifStackDataflowConnectionsConnectionDetails `pulumi:"connectionDetails"`
+	// OCID of the private subnet
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// DifStackDataflowConnectionsInput is an input type that accepts DifStackDataflowConnectionsArgs and DifStackDataflowConnectionsOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsInput` via:
+//
+//	DifStackDataflowConnectionsArgs{...}
+type DifStackDataflowConnectionsInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsOutput() DifStackDataflowConnectionsOutput
+	ToDifStackDataflowConnectionsOutputWithContext(context.Context) DifStackDataflowConnectionsOutput
+}
+
+type DifStackDataflowConnectionsArgs struct {
+	// (Updatable) Details of services to create private endpoint.
+	ConnectionDetails DifStackDataflowConnectionsConnectionDetailsInput `pulumi:"connectionDetails"`
+	// OCID of the private subnet
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (DifStackDataflowConnectionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnections)(nil)).Elem()
+}
+
+func (i DifStackDataflowConnectionsArgs) ToDifStackDataflowConnectionsOutput() DifStackDataflowConnectionsOutput {
+	return i.ToDifStackDataflowConnectionsOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsArgs) ToDifStackDataflowConnectionsOutputWithContext(ctx context.Context) DifStackDataflowConnectionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsOutput)
+}
+
+func (i DifStackDataflowConnectionsArgs) ToDifStackDataflowConnectionsPtrOutput() DifStackDataflowConnectionsPtrOutput {
+	return i.ToDifStackDataflowConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsArgs) ToDifStackDataflowConnectionsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsOutput).ToDifStackDataflowConnectionsPtrOutputWithContext(ctx)
+}
+
+// DifStackDataflowConnectionsPtrInput is an input type that accepts DifStackDataflowConnectionsArgs, DifStackDataflowConnectionsPtr and DifStackDataflowConnectionsPtrOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsPtrInput` via:
+//
+//	        DifStackDataflowConnectionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DifStackDataflowConnectionsPtrInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsPtrOutput() DifStackDataflowConnectionsPtrOutput
+	ToDifStackDataflowConnectionsPtrOutputWithContext(context.Context) DifStackDataflowConnectionsPtrOutput
+}
+
+type difStackDataflowConnectionsPtrType DifStackDataflowConnectionsArgs
+
+func DifStackDataflowConnectionsPtr(v *DifStackDataflowConnectionsArgs) DifStackDataflowConnectionsPtrInput {
+	return (*difStackDataflowConnectionsPtrType)(v)
+}
+
+func (*difStackDataflowConnectionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowConnections)(nil)).Elem()
+}
+
+func (i *difStackDataflowConnectionsPtrType) ToDifStackDataflowConnectionsPtrOutput() DifStackDataflowConnectionsPtrOutput {
+	return i.ToDifStackDataflowConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (i *difStackDataflowConnectionsPtrType) ToDifStackDataflowConnectionsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsPtrOutput)
+}
+
+type DifStackDataflowConnectionsOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnections)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsOutput) ToDifStackDataflowConnectionsOutput() DifStackDataflowConnectionsOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsOutput) ToDifStackDataflowConnectionsOutputWithContext(ctx context.Context) DifStackDataflowConnectionsOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsOutput) ToDifStackDataflowConnectionsPtrOutput() DifStackDataflowConnectionsPtrOutput {
+	return o.ToDifStackDataflowConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (o DifStackDataflowConnectionsOutput) ToDifStackDataflowConnectionsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DifStackDataflowConnections) *DifStackDataflowConnections {
+		return &v
+	}).(DifStackDataflowConnectionsPtrOutput)
+}
+
+// (Updatable) Details of services to create private endpoint.
+func (o DifStackDataflowConnectionsOutput) ConnectionDetails() DifStackDataflowConnectionsConnectionDetailsOutput {
+	return o.ApplyT(func(v DifStackDataflowConnections) DifStackDataflowConnectionsConnectionDetails {
+		return v.ConnectionDetails
+	}).(DifStackDataflowConnectionsConnectionDetailsOutput)
+}
+
+// OCID of the private subnet
+func (o DifStackDataflowConnectionsOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflowConnections) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type DifStackDataflowConnectionsPtrOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowConnections)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsPtrOutput) ToDifStackDataflowConnectionsPtrOutput() DifStackDataflowConnectionsPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsPtrOutput) ToDifStackDataflowConnectionsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsPtrOutput) Elem() DifStackDataflowConnectionsOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnections) DifStackDataflowConnections {
+		if v != nil {
+			return *v
+		}
+		var ret DifStackDataflowConnections
+		return ret
+	}).(DifStackDataflowConnectionsOutput)
+}
+
+// (Updatable) Details of services to create private endpoint.
+func (o DifStackDataflowConnectionsPtrOutput) ConnectionDetails() DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnections) *DifStackDataflowConnectionsConnectionDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionDetails
+	}).(DifStackDataflowConnectionsConnectionDetailsPtrOutput)
+}
+
+// OCID of the private subnet
+func (o DifStackDataflowConnectionsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnections) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetails struct {
+	// (Updatable) List of DIF Service Dependency Details to create private endpoint.
+	DifDependencies []DifStackDataflowConnectionsConnectionDetailsDifDependency `pulumi:"difDependencies"`
+	// (Updatable) An array of DNS zone names.
+	DomainNames []string `pulumi:"domainNames"`
+}
+
+// DifStackDataflowConnectionsConnectionDetailsInput is an input type that accepts DifStackDataflowConnectionsConnectionDetailsArgs and DifStackDataflowConnectionsConnectionDetailsOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsConnectionDetailsInput` via:
+//
+//	DifStackDataflowConnectionsConnectionDetailsArgs{...}
+type DifStackDataflowConnectionsConnectionDetailsInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsConnectionDetailsOutput() DifStackDataflowConnectionsConnectionDetailsOutput
+	ToDifStackDataflowConnectionsConnectionDetailsOutputWithContext(context.Context) DifStackDataflowConnectionsConnectionDetailsOutput
+}
+
+type DifStackDataflowConnectionsConnectionDetailsArgs struct {
+	// (Updatable) List of DIF Service Dependency Details to create private endpoint.
+	DifDependencies DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayInput `pulumi:"difDependencies"`
+	// (Updatable) An array of DNS zone names.
+	DomainNames pulumi.StringArrayInput `pulumi:"domainNames"`
+}
+
+func (DifStackDataflowConnectionsConnectionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetails)(nil)).Elem()
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsArgs) ToDifStackDataflowConnectionsConnectionDetailsOutput() DifStackDataflowConnectionsConnectionDetailsOutput {
+	return i.ToDifStackDataflowConnectionsConnectionDetailsOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsArgs) ToDifStackDataflowConnectionsConnectionDetailsOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsConnectionDetailsOutput)
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsArgs) ToDifStackDataflowConnectionsConnectionDetailsPtrOutput() DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return i.ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsArgs) ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsConnectionDetailsOutput).ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(ctx)
+}
+
+// DifStackDataflowConnectionsConnectionDetailsPtrInput is an input type that accepts DifStackDataflowConnectionsConnectionDetailsArgs, DifStackDataflowConnectionsConnectionDetailsPtr and DifStackDataflowConnectionsConnectionDetailsPtrOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsConnectionDetailsPtrInput` via:
+//
+//	        DifStackDataflowConnectionsConnectionDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DifStackDataflowConnectionsConnectionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsConnectionDetailsPtrOutput() DifStackDataflowConnectionsConnectionDetailsPtrOutput
+	ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(context.Context) DifStackDataflowConnectionsConnectionDetailsPtrOutput
+}
+
+type difStackDataflowConnectionsConnectionDetailsPtrType DifStackDataflowConnectionsConnectionDetailsArgs
+
+func DifStackDataflowConnectionsConnectionDetailsPtr(v *DifStackDataflowConnectionsConnectionDetailsArgs) DifStackDataflowConnectionsConnectionDetailsPtrInput {
+	return (*difStackDataflowConnectionsConnectionDetailsPtrType)(v)
+}
+
+func (*difStackDataflowConnectionsConnectionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowConnectionsConnectionDetails)(nil)).Elem()
+}
+
+func (i *difStackDataflowConnectionsConnectionDetailsPtrType) ToDifStackDataflowConnectionsConnectionDetailsPtrOutput() DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return i.ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *difStackDataflowConnectionsConnectionDetailsPtrType) ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsConnectionDetailsPtrOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetailsOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsConnectionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetails)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) ToDifStackDataflowConnectionsConnectionDetailsOutput() DifStackDataflowConnectionsConnectionDetailsOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) ToDifStackDataflowConnectionsConnectionDetailsOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) ToDifStackDataflowConnectionsConnectionDetailsPtrOutput() DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return o.ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DifStackDataflowConnectionsConnectionDetails) *DifStackDataflowConnectionsConnectionDetails {
+		return &v
+	}).(DifStackDataflowConnectionsConnectionDetailsPtrOutput)
+}
+
+// (Updatable) List of DIF Service Dependency Details to create private endpoint.
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) DifDependencies() DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return o.ApplyT(func(v DifStackDataflowConnectionsConnectionDetails) []DifStackDataflowConnectionsConnectionDetailsDifDependency {
+		return v.DifDependencies
+	}).(DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput)
+}
+
+// (Updatable) An array of DNS zone names.
+func (o DifStackDataflowConnectionsConnectionDetailsOutput) DomainNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DifStackDataflowConnectionsConnectionDetails) []string { return v.DomainNames }).(pulumi.StringArrayOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsConnectionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowConnectionsConnectionDetails)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsPtrOutput) ToDifStackDataflowConnectionsConnectionDetailsPtrOutput() DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsPtrOutput) ToDifStackDataflowConnectionsConnectionDetailsPtrOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsPtrOutput) Elem() DifStackDataflowConnectionsConnectionDetailsOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnectionsConnectionDetails) DifStackDataflowConnectionsConnectionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DifStackDataflowConnectionsConnectionDetails
+		return ret
+	}).(DifStackDataflowConnectionsConnectionDetailsOutput)
+}
+
+// (Updatable) List of DIF Service Dependency Details to create private endpoint.
+func (o DifStackDataflowConnectionsConnectionDetailsPtrOutput) DifDependencies() DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnectionsConnectionDetails) []DifStackDataflowConnectionsConnectionDetailsDifDependency {
+		if v == nil {
+			return nil
+		}
+		return v.DifDependencies
+	}).(DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput)
+}
+
+// (Updatable) An array of DNS zone names.
+func (o DifStackDataflowConnectionsConnectionDetailsPtrOutput) DomainNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DifStackDataflowConnectionsConnectionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainNames
+	}).(pulumi.StringArrayOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetailsDifDependency struct {
+	// (Updatable) InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// (Updatable) Supported service name.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// DifStackDataflowConnectionsConnectionDetailsDifDependencyInput is an input type that accepts DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs and DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsConnectionDetailsDifDependencyInput` via:
+//
+//	DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs{...}
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput
+	ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutputWithContext(context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput
+}
+
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs struct {
+	// (Updatable) InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// (Updatable) Supported service name.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsDifDependency)(nil)).Elem()
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput {
+	return i.ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput)
+}
+
+// DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayInput is an input type that accepts DifStackDataflowConnectionsConnectionDetailsDifDependencyArray and DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput values.
+// You can construct a concrete instance of `DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayInput` via:
+//
+//	DifStackDataflowConnectionsConnectionDetailsDifDependencyArray{ DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs{...} }
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput
+	ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutputWithContext(context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput
+}
+
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyArray []DifStackDataflowConnectionsConnectionDetailsDifDependencyInput
+
+func (DifStackDataflowConnectionsConnectionDetailsDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackDataflowConnectionsConnectionDetailsDifDependency)(nil)).Elem()
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsDifDependencyArray) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return i.ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowConnectionsConnectionDetailsDifDependencyArray) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsDifDependency)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput {
+	return o
+}
+
+// (Updatable) InstanceId of service which is part of the Stack.
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflowConnectionsConnectionDetailsDifDependency) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Supported service name.
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackDataflowConnectionsConnectionDetailsDifDependency) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackDataflowConnectionsConnectionDetailsDifDependency)(nil)).Elem()
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput() DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput) ToDifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutputWithContext(ctx context.Context) DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput {
+	return o
+}
+
+func (o DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput) Index(i pulumi.IntInput) DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackDataflowConnectionsConnectionDetailsDifDependency {
+		return vs[0].([]DifStackDataflowConnectionsConnectionDetailsDifDependency)[vs[1].(int)]
+	}).(DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput)
+}
+
+type DifStackDataflowDriverShapeConfig struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// DifStackDataflowDriverShapeConfigInput is an input type that accepts DifStackDataflowDriverShapeConfigArgs and DifStackDataflowDriverShapeConfigOutput values.
+// You can construct a concrete instance of `DifStackDataflowDriverShapeConfigInput` via:
+//
+//	DifStackDataflowDriverShapeConfigArgs{...}
+type DifStackDataflowDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowDriverShapeConfigOutput() DifStackDataflowDriverShapeConfigOutput
+	ToDifStackDataflowDriverShapeConfigOutputWithContext(context.Context) DifStackDataflowDriverShapeConfigOutput
+}
+
+type DifStackDataflowDriverShapeConfigArgs struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (DifStackDataflowDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i DifStackDataflowDriverShapeConfigArgs) ToDifStackDataflowDriverShapeConfigOutput() DifStackDataflowDriverShapeConfigOutput {
+	return i.ToDifStackDataflowDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowDriverShapeConfigArgs) ToDifStackDataflowDriverShapeConfigOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowDriverShapeConfigOutput)
+}
+
+func (i DifStackDataflowDriverShapeConfigArgs) ToDifStackDataflowDriverShapeConfigPtrOutput() DifStackDataflowDriverShapeConfigPtrOutput {
+	return i.ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowDriverShapeConfigArgs) ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowDriverShapeConfigOutput).ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(ctx)
+}
+
+// DifStackDataflowDriverShapeConfigPtrInput is an input type that accepts DifStackDataflowDriverShapeConfigArgs, DifStackDataflowDriverShapeConfigPtr and DifStackDataflowDriverShapeConfigPtrOutput values.
+// You can construct a concrete instance of `DifStackDataflowDriverShapeConfigPtrInput` via:
+//
+//	        DifStackDataflowDriverShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DifStackDataflowDriverShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowDriverShapeConfigPtrOutput() DifStackDataflowDriverShapeConfigPtrOutput
+	ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(context.Context) DifStackDataflowDriverShapeConfigPtrOutput
+}
+
+type difStackDataflowDriverShapeConfigPtrType DifStackDataflowDriverShapeConfigArgs
+
+func DifStackDataflowDriverShapeConfigPtr(v *DifStackDataflowDriverShapeConfigArgs) DifStackDataflowDriverShapeConfigPtrInput {
+	return (*difStackDataflowDriverShapeConfigPtrType)(v)
+}
+
+func (*difStackDataflowDriverShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i *difStackDataflowDriverShapeConfigPtrType) ToDifStackDataflowDriverShapeConfigPtrOutput() DifStackDataflowDriverShapeConfigPtrOutput {
+	return i.ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *difStackDataflowDriverShapeConfigPtrType) ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowDriverShapeConfigPtrOutput)
+}
+
+type DifStackDataflowDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o DifStackDataflowDriverShapeConfigOutput) ToDifStackDataflowDriverShapeConfigOutput() DifStackDataflowDriverShapeConfigOutput {
+	return o
+}
+
+func (o DifStackDataflowDriverShapeConfigOutput) ToDifStackDataflowDriverShapeConfigOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigOutput {
+	return o
+}
+
+func (o DifStackDataflowDriverShapeConfigOutput) ToDifStackDataflowDriverShapeConfigPtrOutput() DifStackDataflowDriverShapeConfigPtrOutput {
+	return o.ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DifStackDataflowDriverShapeConfigOutput) ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DifStackDataflowDriverShapeConfig) *DifStackDataflowDriverShapeConfig {
+		return &v
+	}).(DifStackDataflowDriverShapeConfigPtrOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o DifStackDataflowDriverShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackDataflowDriverShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+func (o DifStackDataflowDriverShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackDataflowDriverShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type DifStackDataflowDriverShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowDriverShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o DifStackDataflowDriverShapeConfigPtrOutput) ToDifStackDataflowDriverShapeConfigPtrOutput() DifStackDataflowDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowDriverShapeConfigPtrOutput) ToDifStackDataflowDriverShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowDriverShapeConfigPtrOutput) Elem() DifStackDataflowDriverShapeConfigOutput {
+	return o.ApplyT(func(v *DifStackDataflowDriverShapeConfig) DifStackDataflowDriverShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DifStackDataflowDriverShapeConfig
+		return ret
+	}).(DifStackDataflowDriverShapeConfigOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o DifStackDataflowDriverShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowDriverShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+func (o DifStackDataflowDriverShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowDriverShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type DifStackDataflowExecutorShapeConfig struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// DifStackDataflowExecutorShapeConfigInput is an input type that accepts DifStackDataflowExecutorShapeConfigArgs and DifStackDataflowExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `DifStackDataflowExecutorShapeConfigInput` via:
+//
+//	DifStackDataflowExecutorShapeConfigArgs{...}
+type DifStackDataflowExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowExecutorShapeConfigOutput() DifStackDataflowExecutorShapeConfigOutput
+	ToDifStackDataflowExecutorShapeConfigOutputWithContext(context.Context) DifStackDataflowExecutorShapeConfigOutput
+}
+
+type DifStackDataflowExecutorShapeConfigArgs struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (DifStackDataflowExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i DifStackDataflowExecutorShapeConfigArgs) ToDifStackDataflowExecutorShapeConfigOutput() DifStackDataflowExecutorShapeConfigOutput {
+	return i.ToDifStackDataflowExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowExecutorShapeConfigArgs) ToDifStackDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowExecutorShapeConfigOutput)
+}
+
+func (i DifStackDataflowExecutorShapeConfigArgs) ToDifStackDataflowExecutorShapeConfigPtrOutput() DifStackDataflowExecutorShapeConfigPtrOutput {
+	return i.ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DifStackDataflowExecutorShapeConfigArgs) ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowExecutorShapeConfigOutput).ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(ctx)
+}
+
+// DifStackDataflowExecutorShapeConfigPtrInput is an input type that accepts DifStackDataflowExecutorShapeConfigArgs, DifStackDataflowExecutorShapeConfigPtr and DifStackDataflowExecutorShapeConfigPtrOutput values.
+// You can construct a concrete instance of `DifStackDataflowExecutorShapeConfigPtrInput` via:
+//
+//	        DifStackDataflowExecutorShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DifStackDataflowExecutorShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToDifStackDataflowExecutorShapeConfigPtrOutput() DifStackDataflowExecutorShapeConfigPtrOutput
+	ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(context.Context) DifStackDataflowExecutorShapeConfigPtrOutput
+}
+
+type difStackDataflowExecutorShapeConfigPtrType DifStackDataflowExecutorShapeConfigArgs
+
+func DifStackDataflowExecutorShapeConfigPtr(v *DifStackDataflowExecutorShapeConfigArgs) DifStackDataflowExecutorShapeConfigPtrInput {
+	return (*difStackDataflowExecutorShapeConfigPtrType)(v)
+}
+
+func (*difStackDataflowExecutorShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i *difStackDataflowExecutorShapeConfigPtrType) ToDifStackDataflowExecutorShapeConfigPtrOutput() DifStackDataflowExecutorShapeConfigPtrOutput {
+	return i.ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *difStackDataflowExecutorShapeConfigPtrType) ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackDataflowExecutorShapeConfigPtrOutput)
+}
+
+type DifStackDataflowExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o DifStackDataflowExecutorShapeConfigOutput) ToDifStackDataflowExecutorShapeConfigOutput() DifStackDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+func (o DifStackDataflowExecutorShapeConfigOutput) ToDifStackDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+func (o DifStackDataflowExecutorShapeConfigOutput) ToDifStackDataflowExecutorShapeConfigPtrOutput() DifStackDataflowExecutorShapeConfigPtrOutput {
+	return o.ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DifStackDataflowExecutorShapeConfigOutput) ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DifStackDataflowExecutorShapeConfig) *DifStackDataflowExecutorShapeConfig {
+		return &v
+	}).(DifStackDataflowExecutorShapeConfigPtrOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o DifStackDataflowExecutorShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackDataflowExecutorShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+func (o DifStackDataflowExecutorShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackDataflowExecutorShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type DifStackDataflowExecutorShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DifStackDataflowExecutorShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o DifStackDataflowExecutorShapeConfigPtrOutput) ToDifStackDataflowExecutorShapeConfigPtrOutput() DifStackDataflowExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowExecutorShapeConfigPtrOutput) ToDifStackDataflowExecutorShapeConfigPtrOutputWithContext(ctx context.Context) DifStackDataflowExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o DifStackDataflowExecutorShapeConfigPtrOutput) Elem() DifStackDataflowExecutorShapeConfigOutput {
+	return o.ApplyT(func(v *DifStackDataflowExecutorShapeConfig) DifStackDataflowExecutorShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DifStackDataflowExecutorShapeConfig
+		return ret
+	}).(DifStackDataflowExecutorShapeConfigOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o DifStackDataflowExecutorShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowExecutorShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+func (o DifStackDataflowExecutorShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DifStackDataflowExecutorShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type DifStackGenai struct {
+	// Name of the base model.
+	BaseModel string `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType string `pulumi:"clusterType"`
+	// (Updatable) List of endpoints to provision for the GENAI cluster.
+	Endpoints []DifStackGenaiEndpoint `pulumi:"endpoints"`
+	// (Updatable) Id for the GGCS instance to be provisioned.
+	InstanceId string `pulumi:"instanceId"`
+	// Region on which the cluster end endpoint will be provisioned.
+	OciRegion string `pulumi:"ociRegion"`
+	// (Updatable) No of replicas of base model to be used for hosting.
+	UnitCount int `pulumi:"unitCount"`
+}
+
+// DifStackGenaiInput is an input type that accepts DifStackGenaiArgs and DifStackGenaiOutput values.
+// You can construct a concrete instance of `DifStackGenaiInput` via:
+//
+//	DifStackGenaiArgs{...}
+type DifStackGenaiInput interface {
+	pulumi.Input
+
+	ToDifStackGenaiOutput() DifStackGenaiOutput
+	ToDifStackGenaiOutputWithContext(context.Context) DifStackGenaiOutput
+}
+
+type DifStackGenaiArgs struct {
+	// Name of the base model.
+	BaseModel pulumi.StringInput `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType pulumi.StringInput `pulumi:"clusterType"`
+	// (Updatable) List of endpoints to provision for the GENAI cluster.
+	Endpoints DifStackGenaiEndpointArrayInput `pulumi:"endpoints"`
+	// (Updatable) Id for the GGCS instance to be provisioned.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Region on which the cluster end endpoint will be provisioned.
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// (Updatable) No of replicas of base model to be used for hosting.
+	UnitCount pulumi.IntInput `pulumi:"unitCount"`
+}
+
+func (DifStackGenaiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGenai)(nil)).Elem()
+}
+
+func (i DifStackGenaiArgs) ToDifStackGenaiOutput() DifStackGenaiOutput {
+	return i.ToDifStackGenaiOutputWithContext(context.Background())
+}
+
+func (i DifStackGenaiArgs) ToDifStackGenaiOutputWithContext(ctx context.Context) DifStackGenaiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGenaiOutput)
+}
+
+// DifStackGenaiArrayInput is an input type that accepts DifStackGenaiArray and DifStackGenaiArrayOutput values.
+// You can construct a concrete instance of `DifStackGenaiArrayInput` via:
+//
+//	DifStackGenaiArray{ DifStackGenaiArgs{...} }
+type DifStackGenaiArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGenaiArrayOutput() DifStackGenaiArrayOutput
+	ToDifStackGenaiArrayOutputWithContext(context.Context) DifStackGenaiArrayOutput
+}
+
+type DifStackGenaiArray []DifStackGenaiInput
+
+func (DifStackGenaiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGenai)(nil)).Elem()
+}
+
+func (i DifStackGenaiArray) ToDifStackGenaiArrayOutput() DifStackGenaiArrayOutput {
+	return i.ToDifStackGenaiArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGenaiArray) ToDifStackGenaiArrayOutputWithContext(ctx context.Context) DifStackGenaiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGenaiArrayOutput)
+}
+
+type DifStackGenaiOutput struct{ *pulumi.OutputState }
+
+func (DifStackGenaiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGenai)(nil)).Elem()
+}
+
+func (o DifStackGenaiOutput) ToDifStackGenaiOutput() DifStackGenaiOutput {
+	return o
+}
+
+func (o DifStackGenaiOutput) ToDifStackGenaiOutputWithContext(ctx context.Context) DifStackGenaiOutput {
+	return o
+}
+
+// Name of the base model.
+func (o DifStackGenaiOutput) BaseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGenai) string { return v.BaseModel }).(pulumi.StringOutput)
+}
+
+// The dedicated AI cluster type.
+func (o DifStackGenaiOutput) ClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGenai) string { return v.ClusterType }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of endpoints to provision for the GENAI cluster.
+func (o DifStackGenaiOutput) Endpoints() DifStackGenaiEndpointArrayOutput {
+	return o.ApplyT(func(v DifStackGenai) []DifStackGenaiEndpoint { return v.Endpoints }).(DifStackGenaiEndpointArrayOutput)
+}
+
+// (Updatable) Id for the GGCS instance to be provisioned.
+func (o DifStackGenaiOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGenai) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Region on which the cluster end endpoint will be provisioned.
+func (o DifStackGenaiOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGenai) string { return v.OciRegion }).(pulumi.StringOutput)
+}
+
+// (Updatable) No of replicas of base model to be used for hosting.
+func (o DifStackGenaiOutput) UnitCount() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackGenai) int { return v.UnitCount }).(pulumi.IntOutput)
+}
+
+type DifStackGenaiArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGenaiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGenai)(nil)).Elem()
+}
+
+func (o DifStackGenaiArrayOutput) ToDifStackGenaiArrayOutput() DifStackGenaiArrayOutput {
+	return o
+}
+
+func (o DifStackGenaiArrayOutput) ToDifStackGenaiArrayOutputWithContext(ctx context.Context) DifStackGenaiArrayOutput {
+	return o
+}
+
+func (o DifStackGenaiArrayOutput) Index(i pulumi.IntInput) DifStackGenaiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGenai {
+		return vs[0].([]DifStackGenai)[vs[1].(int)]
+	}).(DifStackGenaiOutput)
+}
+
+type DifStackGenaiEndpoint struct {
+	// (Updatable) Identifier for each endpoint.
+	EndpointName string `pulumi:"endpointName"`
+	// (Updatable) Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled bool `pulumi:"isContentModerationEnabled"`
+}
+
+// DifStackGenaiEndpointInput is an input type that accepts DifStackGenaiEndpointArgs and DifStackGenaiEndpointOutput values.
+// You can construct a concrete instance of `DifStackGenaiEndpointInput` via:
+//
+//	DifStackGenaiEndpointArgs{...}
+type DifStackGenaiEndpointInput interface {
+	pulumi.Input
+
+	ToDifStackGenaiEndpointOutput() DifStackGenaiEndpointOutput
+	ToDifStackGenaiEndpointOutputWithContext(context.Context) DifStackGenaiEndpointOutput
+}
+
+type DifStackGenaiEndpointArgs struct {
+	// (Updatable) Identifier for each endpoint.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	// (Updatable) Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled pulumi.BoolInput `pulumi:"isContentModerationEnabled"`
+}
+
+func (DifStackGenaiEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (i DifStackGenaiEndpointArgs) ToDifStackGenaiEndpointOutput() DifStackGenaiEndpointOutput {
+	return i.ToDifStackGenaiEndpointOutputWithContext(context.Background())
+}
+
+func (i DifStackGenaiEndpointArgs) ToDifStackGenaiEndpointOutputWithContext(ctx context.Context) DifStackGenaiEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGenaiEndpointOutput)
+}
+
+// DifStackGenaiEndpointArrayInput is an input type that accepts DifStackGenaiEndpointArray and DifStackGenaiEndpointArrayOutput values.
+// You can construct a concrete instance of `DifStackGenaiEndpointArrayInput` via:
+//
+//	DifStackGenaiEndpointArray{ DifStackGenaiEndpointArgs{...} }
+type DifStackGenaiEndpointArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGenaiEndpointArrayOutput() DifStackGenaiEndpointArrayOutput
+	ToDifStackGenaiEndpointArrayOutputWithContext(context.Context) DifStackGenaiEndpointArrayOutput
+}
+
+type DifStackGenaiEndpointArray []DifStackGenaiEndpointInput
+
+func (DifStackGenaiEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (i DifStackGenaiEndpointArray) ToDifStackGenaiEndpointArrayOutput() DifStackGenaiEndpointArrayOutput {
+	return i.ToDifStackGenaiEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGenaiEndpointArray) ToDifStackGenaiEndpointArrayOutputWithContext(ctx context.Context) DifStackGenaiEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGenaiEndpointArrayOutput)
+}
+
+type DifStackGenaiEndpointOutput struct{ *pulumi.OutputState }
+
+func (DifStackGenaiEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (o DifStackGenaiEndpointOutput) ToDifStackGenaiEndpointOutput() DifStackGenaiEndpointOutput {
+	return o
+}
+
+func (o DifStackGenaiEndpointOutput) ToDifStackGenaiEndpointOutputWithContext(ctx context.Context) DifStackGenaiEndpointOutput {
+	return o
+}
+
+// (Updatable) Identifier for each endpoint.
+func (o DifStackGenaiEndpointOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGenaiEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Helps remove toxic and biased content from responses.
+func (o DifStackGenaiEndpointOutput) IsContentModerationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v DifStackGenaiEndpoint) bool { return v.IsContentModerationEnabled }).(pulumi.BoolOutput)
+}
+
+type DifStackGenaiEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGenaiEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (o DifStackGenaiEndpointArrayOutput) ToDifStackGenaiEndpointArrayOutput() DifStackGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o DifStackGenaiEndpointArrayOutput) ToDifStackGenaiEndpointArrayOutputWithContext(ctx context.Context) DifStackGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o DifStackGenaiEndpointArrayOutput) Index(i pulumi.IntInput) DifStackGenaiEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGenaiEndpoint {
+		return vs[0].([]DifStackGenaiEndpoint)[vs[1].(int)]
+	}).(DifStackGenaiEndpointOutput)
+}
+
+type DifStackGgc struct {
+	ArtifactObjectStoragePath *string `pulumi:"artifactObjectStoragePath"`
+	// (Updatable) Connection details to be associated with the Goldengate deployment.
+	Connections []DifStackGgcConnection `pulumi:"connections"`
+	// Id for the GGCS instance to provision.
+	InstanceId string `pulumi:"instanceId"`
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu int `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion *string `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId *string `pulumi:"publicSubnetId"`
+	// Source Detail to configure existing or new datasource.
+	Sources []DifStackGgcSource `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+	// Target Detail to configure existing or new datasource.
+	Targets []DifStackGgcTarget `pulumi:"targets"`
+	// Ggcs user details to be created or updated.
+	Users []DifStackGgcUser `pulumi:"users"`
+}
+
+// DifStackGgcInput is an input type that accepts DifStackGgcArgs and DifStackGgcOutput values.
+// You can construct a concrete instance of `DifStackGgcInput` via:
+//
+//	DifStackGgcArgs{...}
+type DifStackGgcInput interface {
+	pulumi.Input
+
+	ToDifStackGgcOutput() DifStackGgcOutput
+	ToDifStackGgcOutputWithContext(context.Context) DifStackGgcOutput
+}
+
+type DifStackGgcArgs struct {
+	ArtifactObjectStoragePath pulumi.StringPtrInput `pulumi:"artifactObjectStoragePath"`
+	// (Updatable) Connection details to be associated with the Goldengate deployment.
+	Connections DifStackGgcConnectionArrayInput `pulumi:"connections"`
+	// Id for the GGCS instance to provision.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu pulumi.IntInput `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId pulumi.StringPtrInput `pulumi:"publicSubnetId"`
+	// Source Detail to configure existing or new datasource.
+	Sources DifStackGgcSourceArrayInput `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Target Detail to configure existing or new datasource.
+	Targets DifStackGgcTargetArrayInput `pulumi:"targets"`
+	// Ggcs user details to be created or updated.
+	Users DifStackGgcUserArrayInput `pulumi:"users"`
+}
+
+func (DifStackGgcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgc)(nil)).Elem()
+}
+
+func (i DifStackGgcArgs) ToDifStackGgcOutput() DifStackGgcOutput {
+	return i.ToDifStackGgcOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcArgs) ToDifStackGgcOutputWithContext(ctx context.Context) DifStackGgcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcOutput)
+}
+
+// DifStackGgcArrayInput is an input type that accepts DifStackGgcArray and DifStackGgcArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcArrayInput` via:
+//
+//	DifStackGgcArray{ DifStackGgcArgs{...} }
+type DifStackGgcArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcArrayOutput() DifStackGgcArrayOutput
+	ToDifStackGgcArrayOutputWithContext(context.Context) DifStackGgcArrayOutput
+}
+
+type DifStackGgcArray []DifStackGgcInput
+
+func (DifStackGgcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgc)(nil)).Elem()
+}
+
+func (i DifStackGgcArray) ToDifStackGgcArrayOutput() DifStackGgcArrayOutput {
+	return i.ToDifStackGgcArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcArray) ToDifStackGgcArrayOutputWithContext(ctx context.Context) DifStackGgcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcArrayOutput)
+}
+
+type DifStackGgcOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgc)(nil)).Elem()
+}
+
+func (o DifStackGgcOutput) ToDifStackGgcOutput() DifStackGgcOutput {
+	return o
+}
+
+func (o DifStackGgcOutput) ToDifStackGgcOutputWithContext(ctx context.Context) DifStackGgcOutput {
+	return o
+}
+
+func (o DifStackGgcOutput) ArtifactObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgc) *string { return v.ArtifactObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Connection details to be associated with the Goldengate deployment.
+func (o DifStackGgcOutput) Connections() DifStackGgcConnectionArrayOutput {
+	return o.ApplyT(func(v DifStackGgc) []DifStackGgcConnection { return v.Connections }).(DifStackGgcConnectionArrayOutput)
+}
+
+// Id for the GGCS instance to provision.
+func (o DifStackGgcOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgc) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+func (o DifStackGgcOutput) Ocpu() pulumi.IntOutput {
+	return o.ApplyT(func(v DifStackGgc) int { return v.Ocpu }).(pulumi.IntOutput)
+}
+
+// Version of OGG.
+func (o DifStackGgcOutput) OggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgc) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the Secret where the deployment password is stored.
+func (o DifStackGgcOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgc) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+func (o DifStackGgcOutput) PublicSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgc) *string { return v.PublicSubnetId }).(pulumi.StringPtrOutput)
+}
+
+// Source Detail to configure existing or new datasource.
+func (o DifStackGgcOutput) Sources() DifStackGgcSourceArrayOutput {
+	return o.ApplyT(func(v DifStackGgc) []DifStackGgcSource { return v.Sources }).(DifStackGgcSourceArrayOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o DifStackGgcOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgc) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Target Detail to configure existing or new datasource.
+func (o DifStackGgcOutput) Targets() DifStackGgcTargetArrayOutput {
+	return o.ApplyT(func(v DifStackGgc) []DifStackGgcTarget { return v.Targets }).(DifStackGgcTargetArrayOutput)
+}
+
+// Ggcs user details to be created or updated.
+func (o DifStackGgcOutput) Users() DifStackGgcUserArrayOutput {
+	return o.ApplyT(func(v DifStackGgc) []DifStackGgcUser { return v.Users }).(DifStackGgcUserArrayOutput)
+}
+
+type DifStackGgcArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgc)(nil)).Elem()
+}
+
+func (o DifStackGgcArrayOutput) ToDifStackGgcArrayOutput() DifStackGgcArrayOutput {
+	return o
+}
+
+func (o DifStackGgcArrayOutput) ToDifStackGgcArrayOutputWithContext(ctx context.Context) DifStackGgcArrayOutput {
+	return o
+}
+
+func (o DifStackGgcArrayOutput) Index(i pulumi.IntInput) DifStackGgcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgc {
+		return vs[0].([]DifStackGgc)[vs[1].(int)]
+	}).(DifStackGgcOutput)
+}
+
+type DifStackGgcConnection struct {
+	// (Updatable) OCID of pre-created Oracle GoldenGate connection.
+	ConnectionId *string `pulumi:"connectionId"`
+	// (Updatable) Name of the connection to be created.
+	ConnectionName string `pulumi:"connectionName"`
+	// (Updatable) List of Service Dependency Details for connection creation.
+	DifDependencies []DifStackGgcConnectionDifDependency `pulumi:"difDependencies"`
+	// (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId *string `pulumi:"ggAdminSecretId"`
+}
+
+// DifStackGgcConnectionInput is an input type that accepts DifStackGgcConnectionArgs and DifStackGgcConnectionOutput values.
+// You can construct a concrete instance of `DifStackGgcConnectionInput` via:
+//
+//	DifStackGgcConnectionArgs{...}
+type DifStackGgcConnectionInput interface {
+	pulumi.Input
+
+	ToDifStackGgcConnectionOutput() DifStackGgcConnectionOutput
+	ToDifStackGgcConnectionOutputWithContext(context.Context) DifStackGgcConnectionOutput
+}
+
+type DifStackGgcConnectionArgs struct {
+	// (Updatable) OCID of pre-created Oracle GoldenGate connection.
+	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
+	// (Updatable) Name of the connection to be created.
+	ConnectionName pulumi.StringInput `pulumi:"connectionName"`
+	// (Updatable) List of Service Dependency Details for connection creation.
+	DifDependencies DifStackGgcConnectionDifDependencyArrayInput `pulumi:"difDependencies"`
+	// (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId pulumi.StringPtrInput `pulumi:"ggAdminSecretId"`
+}
+
+func (DifStackGgcConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcConnection)(nil)).Elem()
+}
+
+func (i DifStackGgcConnectionArgs) ToDifStackGgcConnectionOutput() DifStackGgcConnectionOutput {
+	return i.ToDifStackGgcConnectionOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcConnectionArgs) ToDifStackGgcConnectionOutputWithContext(ctx context.Context) DifStackGgcConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcConnectionOutput)
+}
+
+// DifStackGgcConnectionArrayInput is an input type that accepts DifStackGgcConnectionArray and DifStackGgcConnectionArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcConnectionArrayInput` via:
+//
+//	DifStackGgcConnectionArray{ DifStackGgcConnectionArgs{...} }
+type DifStackGgcConnectionArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcConnectionArrayOutput() DifStackGgcConnectionArrayOutput
+	ToDifStackGgcConnectionArrayOutputWithContext(context.Context) DifStackGgcConnectionArrayOutput
+}
+
+type DifStackGgcConnectionArray []DifStackGgcConnectionInput
+
+func (DifStackGgcConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcConnection)(nil)).Elem()
+}
+
+func (i DifStackGgcConnectionArray) ToDifStackGgcConnectionArrayOutput() DifStackGgcConnectionArrayOutput {
+	return i.ToDifStackGgcConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcConnectionArray) ToDifStackGgcConnectionArrayOutputWithContext(ctx context.Context) DifStackGgcConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcConnectionArrayOutput)
+}
+
+type DifStackGgcConnectionOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcConnection)(nil)).Elem()
+}
+
+func (o DifStackGgcConnectionOutput) ToDifStackGgcConnectionOutput() DifStackGgcConnectionOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionOutput) ToDifStackGgcConnectionOutputWithContext(ctx context.Context) DifStackGgcConnectionOutput {
+	return o
+}
+
+// (Updatable) OCID of pre-created Oracle GoldenGate connection.
+func (o DifStackGgcConnectionOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcConnection) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the connection to be created.
+func (o DifStackGgcConnectionOutput) ConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcConnection) string { return v.ConnectionName }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of Service Dependency Details for connection creation.
+func (o DifStackGgcConnectionOutput) DifDependencies() DifStackGgcConnectionDifDependencyArrayOutput {
+	return o.ApplyT(func(v DifStackGgcConnection) []DifStackGgcConnectionDifDependency { return v.DifDependencies }).(DifStackGgcConnectionDifDependencyArrayOutput)
+}
+
+// (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+func (o DifStackGgcConnectionOutput) GgAdminSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcConnection) *string { return v.GgAdminSecretId }).(pulumi.StringPtrOutput)
+}
+
+type DifStackGgcConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcConnection)(nil)).Elem()
+}
+
+func (o DifStackGgcConnectionArrayOutput) ToDifStackGgcConnectionArrayOutput() DifStackGgcConnectionArrayOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionArrayOutput) ToDifStackGgcConnectionArrayOutputWithContext(ctx context.Context) DifStackGgcConnectionArrayOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionArrayOutput) Index(i pulumi.IntInput) DifStackGgcConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgcConnection {
+		return vs[0].([]DifStackGgcConnection)[vs[1].(int)]
+	}).(DifStackGgcConnectionOutput)
+}
+
+type DifStackGgcConnectionDifDependency struct {
+	// (Updatable) InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// (Updatable) Supported service name.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// DifStackGgcConnectionDifDependencyInput is an input type that accepts DifStackGgcConnectionDifDependencyArgs and DifStackGgcConnectionDifDependencyOutput values.
+// You can construct a concrete instance of `DifStackGgcConnectionDifDependencyInput` via:
+//
+//	DifStackGgcConnectionDifDependencyArgs{...}
+type DifStackGgcConnectionDifDependencyInput interface {
+	pulumi.Input
+
+	ToDifStackGgcConnectionDifDependencyOutput() DifStackGgcConnectionDifDependencyOutput
+	ToDifStackGgcConnectionDifDependencyOutputWithContext(context.Context) DifStackGgcConnectionDifDependencyOutput
+}
+
+type DifStackGgcConnectionDifDependencyArgs struct {
+	// (Updatable) InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// (Updatable) Supported service name.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (DifStackGgcConnectionDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i DifStackGgcConnectionDifDependencyArgs) ToDifStackGgcConnectionDifDependencyOutput() DifStackGgcConnectionDifDependencyOutput {
+	return i.ToDifStackGgcConnectionDifDependencyOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcConnectionDifDependencyArgs) ToDifStackGgcConnectionDifDependencyOutputWithContext(ctx context.Context) DifStackGgcConnectionDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcConnectionDifDependencyOutput)
+}
+
+// DifStackGgcConnectionDifDependencyArrayInput is an input type that accepts DifStackGgcConnectionDifDependencyArray and DifStackGgcConnectionDifDependencyArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcConnectionDifDependencyArrayInput` via:
+//
+//	DifStackGgcConnectionDifDependencyArray{ DifStackGgcConnectionDifDependencyArgs{...} }
+type DifStackGgcConnectionDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcConnectionDifDependencyArrayOutput() DifStackGgcConnectionDifDependencyArrayOutput
+	ToDifStackGgcConnectionDifDependencyArrayOutputWithContext(context.Context) DifStackGgcConnectionDifDependencyArrayOutput
+}
+
+type DifStackGgcConnectionDifDependencyArray []DifStackGgcConnectionDifDependencyInput
+
+func (DifStackGgcConnectionDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i DifStackGgcConnectionDifDependencyArray) ToDifStackGgcConnectionDifDependencyArrayOutput() DifStackGgcConnectionDifDependencyArrayOutput {
+	return i.ToDifStackGgcConnectionDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcConnectionDifDependencyArray) ToDifStackGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) DifStackGgcConnectionDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcConnectionDifDependencyArrayOutput)
+}
+
+type DifStackGgcConnectionDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcConnectionDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o DifStackGgcConnectionDifDependencyOutput) ToDifStackGgcConnectionDifDependencyOutput() DifStackGgcConnectionDifDependencyOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionDifDependencyOutput) ToDifStackGgcConnectionDifDependencyOutputWithContext(ctx context.Context) DifStackGgcConnectionDifDependencyOutput {
+	return o
+}
+
+// (Updatable) InstanceId of service which is part of the Stack.
+func (o DifStackGgcConnectionDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcConnectionDifDependency) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Supported service name.
+func (o DifStackGgcConnectionDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcConnectionDifDependency) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type DifStackGgcConnectionDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcConnectionDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o DifStackGgcConnectionDifDependencyArrayOutput) ToDifStackGgcConnectionDifDependencyArrayOutput() DifStackGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionDifDependencyArrayOutput) ToDifStackGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) DifStackGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o DifStackGgcConnectionDifDependencyArrayOutput) Index(i pulumi.IntInput) DifStackGgcConnectionDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgcConnectionDifDependency {
+		return vs[0].([]DifStackGgcConnectionDifDependency)[vs[1].(int)]
+	}).(DifStackGgcConnectionDifDependencyOutput)
+}
+
+type DifStackGgcSource struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action string `pulumi:"action"`
+	// Boolean value that determines source operations should start or not.
+	ShouldStartSourceOperations bool `pulumi:"shouldStartSourceOperations"`
+	// Ggcs source artifact id.
+	SourceId string `pulumi:"sourceId"`
+	// Name of assigned connection for the source.
+	TargetConnectionName *string `pulumi:"targetConnectionName"`
+	// Target uri for the GoldenGate deployment where distribution path needs to be configured.
+	TargetUri *string `pulumi:"targetUri"`
+}
+
+// DifStackGgcSourceInput is an input type that accepts DifStackGgcSourceArgs and DifStackGgcSourceOutput values.
+// You can construct a concrete instance of `DifStackGgcSourceInput` via:
+//
+//	DifStackGgcSourceArgs{...}
+type DifStackGgcSourceInput interface {
+	pulumi.Input
+
+	ToDifStackGgcSourceOutput() DifStackGgcSourceOutput
+	ToDifStackGgcSourceOutputWithContext(context.Context) DifStackGgcSourceOutput
+}
+
+type DifStackGgcSourceArgs struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action pulumi.StringInput `pulumi:"action"`
+	// Boolean value that determines source operations should start or not.
+	ShouldStartSourceOperations pulumi.BoolInput `pulumi:"shouldStartSourceOperations"`
+	// Ggcs source artifact id.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// Name of assigned connection for the source.
+	TargetConnectionName pulumi.StringPtrInput `pulumi:"targetConnectionName"`
+	// Target uri for the GoldenGate deployment where distribution path needs to be configured.
+	TargetUri pulumi.StringPtrInput `pulumi:"targetUri"`
+}
+
+func (DifStackGgcSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcSource)(nil)).Elem()
+}
+
+func (i DifStackGgcSourceArgs) ToDifStackGgcSourceOutput() DifStackGgcSourceOutput {
+	return i.ToDifStackGgcSourceOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcSourceArgs) ToDifStackGgcSourceOutputWithContext(ctx context.Context) DifStackGgcSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcSourceOutput)
+}
+
+// DifStackGgcSourceArrayInput is an input type that accepts DifStackGgcSourceArray and DifStackGgcSourceArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcSourceArrayInput` via:
+//
+//	DifStackGgcSourceArray{ DifStackGgcSourceArgs{...} }
+type DifStackGgcSourceArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcSourceArrayOutput() DifStackGgcSourceArrayOutput
+	ToDifStackGgcSourceArrayOutputWithContext(context.Context) DifStackGgcSourceArrayOutput
+}
+
+type DifStackGgcSourceArray []DifStackGgcSourceInput
+
+func (DifStackGgcSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcSource)(nil)).Elem()
+}
+
+func (i DifStackGgcSourceArray) ToDifStackGgcSourceArrayOutput() DifStackGgcSourceArrayOutput {
+	return i.ToDifStackGgcSourceArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcSourceArray) ToDifStackGgcSourceArrayOutputWithContext(ctx context.Context) DifStackGgcSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcSourceArrayOutput)
+}
+
+type DifStackGgcSourceOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcSource)(nil)).Elem()
+}
+
+func (o DifStackGgcSourceOutput) ToDifStackGgcSourceOutput() DifStackGgcSourceOutput {
+	return o
+}
+
+func (o DifStackGgcSourceOutput) ToDifStackGgcSourceOutputWithContext(ctx context.Context) DifStackGgcSourceOutput {
+	return o
+}
+
+// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+func (o DifStackGgcSourceOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcSource) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Boolean value that determines source operations should start or not.
+func (o DifStackGgcSourceOutput) ShouldStartSourceOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v DifStackGgcSource) bool { return v.ShouldStartSourceOperations }).(pulumi.BoolOutput)
+}
+
+// Ggcs source artifact id.
+func (o DifStackGgcSourceOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcSource) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// Name of assigned connection for the source.
+func (o DifStackGgcSourceOutput) TargetConnectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcSource) *string { return v.TargetConnectionName }).(pulumi.StringPtrOutput)
+}
+
+// Target uri for the GoldenGate deployment where distribution path needs to be configured.
+func (o DifStackGgcSourceOutput) TargetUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcSource) *string { return v.TargetUri }).(pulumi.StringPtrOutput)
+}
+
+type DifStackGgcSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcSource)(nil)).Elem()
+}
+
+func (o DifStackGgcSourceArrayOutput) ToDifStackGgcSourceArrayOutput() DifStackGgcSourceArrayOutput {
+	return o
+}
+
+func (o DifStackGgcSourceArrayOutput) ToDifStackGgcSourceArrayOutputWithContext(ctx context.Context) DifStackGgcSourceArrayOutput {
+	return o
+}
+
+func (o DifStackGgcSourceArrayOutput) Index(i pulumi.IntInput) DifStackGgcSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgcSource {
+		return vs[0].([]DifStackGgcSource)[vs[1].(int)]
+	}).(DifStackGgcSourceOutput)
+}
+
+type DifStackGgcTarget struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action string `pulumi:"action"`
+	// Boolean value that determines target operations should start or not.
+	ShouldStartTargetOperations bool `pulumi:"shouldStartTargetOperations"`
+	// Name of assigned connection for the target.
+	SourceConnectionName *string `pulumi:"sourceConnectionName"`
+	// Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+	SourceUri *string `pulumi:"sourceUri"`
+	// GGCS target artifact id.
+	TargetId string `pulumi:"targetId"`
+}
+
+// DifStackGgcTargetInput is an input type that accepts DifStackGgcTargetArgs and DifStackGgcTargetOutput values.
+// You can construct a concrete instance of `DifStackGgcTargetInput` via:
+//
+//	DifStackGgcTargetArgs{...}
+type DifStackGgcTargetInput interface {
+	pulumi.Input
+
+	ToDifStackGgcTargetOutput() DifStackGgcTargetOutput
+	ToDifStackGgcTargetOutputWithContext(context.Context) DifStackGgcTargetOutput
+}
+
+type DifStackGgcTargetArgs struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action pulumi.StringInput `pulumi:"action"`
+	// Boolean value that determines target operations should start or not.
+	ShouldStartTargetOperations pulumi.BoolInput `pulumi:"shouldStartTargetOperations"`
+	// Name of assigned connection for the target.
+	SourceConnectionName pulumi.StringPtrInput `pulumi:"sourceConnectionName"`
+	// Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+	SourceUri pulumi.StringPtrInput `pulumi:"sourceUri"`
+	// GGCS target artifact id.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (DifStackGgcTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcTarget)(nil)).Elem()
+}
+
+func (i DifStackGgcTargetArgs) ToDifStackGgcTargetOutput() DifStackGgcTargetOutput {
+	return i.ToDifStackGgcTargetOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcTargetArgs) ToDifStackGgcTargetOutputWithContext(ctx context.Context) DifStackGgcTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcTargetOutput)
+}
+
+// DifStackGgcTargetArrayInput is an input type that accepts DifStackGgcTargetArray and DifStackGgcTargetArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcTargetArrayInput` via:
+//
+//	DifStackGgcTargetArray{ DifStackGgcTargetArgs{...} }
+type DifStackGgcTargetArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcTargetArrayOutput() DifStackGgcTargetArrayOutput
+	ToDifStackGgcTargetArrayOutputWithContext(context.Context) DifStackGgcTargetArrayOutput
+}
+
+type DifStackGgcTargetArray []DifStackGgcTargetInput
+
+func (DifStackGgcTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcTarget)(nil)).Elem()
+}
+
+func (i DifStackGgcTargetArray) ToDifStackGgcTargetArrayOutput() DifStackGgcTargetArrayOutput {
+	return i.ToDifStackGgcTargetArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcTargetArray) ToDifStackGgcTargetArrayOutputWithContext(ctx context.Context) DifStackGgcTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcTargetArrayOutput)
+}
+
+type DifStackGgcTargetOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcTarget)(nil)).Elem()
+}
+
+func (o DifStackGgcTargetOutput) ToDifStackGgcTargetOutput() DifStackGgcTargetOutput {
+	return o
+}
+
+func (o DifStackGgcTargetOutput) ToDifStackGgcTargetOutputWithContext(ctx context.Context) DifStackGgcTargetOutput {
+	return o
+}
+
+// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+func (o DifStackGgcTargetOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcTarget) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Boolean value that determines target operations should start or not.
+func (o DifStackGgcTargetOutput) ShouldStartTargetOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v DifStackGgcTarget) bool { return v.ShouldStartTargetOperations }).(pulumi.BoolOutput)
+}
+
+// Name of assigned connection for the target.
+func (o DifStackGgcTargetOutput) SourceConnectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcTarget) *string { return v.SourceConnectionName }).(pulumi.StringPtrOutput)
+}
+
+// Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+func (o DifStackGgcTargetOutput) SourceUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackGgcTarget) *string { return v.SourceUri }).(pulumi.StringPtrOutput)
+}
+
+// GGCS target artifact id.
+func (o DifStackGgcTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcTarget) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type DifStackGgcTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcTarget)(nil)).Elem()
+}
+
+func (o DifStackGgcTargetArrayOutput) ToDifStackGgcTargetArrayOutput() DifStackGgcTargetArrayOutput {
+	return o
+}
+
+func (o DifStackGgcTargetArrayOutput) ToDifStackGgcTargetArrayOutputWithContext(ctx context.Context) DifStackGgcTargetArrayOutput {
+	return o
+}
+
+func (o DifStackGgcTargetArrayOutput) Index(i pulumi.IntInput) DifStackGgcTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgcTarget {
+		return vs[0].([]DifStackGgcTarget)[vs[1].(int)]
+	}).(DifStackGgcTargetOutput)
+}
+
+type DifStackGgcUser struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action   string `pulumi:"action"`
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// DifStackGgcUserInput is an input type that accepts DifStackGgcUserArgs and DifStackGgcUserOutput values.
+// You can construct a concrete instance of `DifStackGgcUserInput` via:
+//
+//	DifStackGgcUserArgs{...}
+type DifStackGgcUserInput interface {
+	pulumi.Input
+
+	ToDifStackGgcUserOutput() DifStackGgcUserOutput
+	ToDifStackGgcUserOutputWithContext(context.Context) DifStackGgcUserOutput
+}
+
+type DifStackGgcUserArgs struct {
+	// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+	Action   pulumi.StringInput `pulumi:"action"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (DifStackGgcUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcUser)(nil)).Elem()
+}
+
+func (i DifStackGgcUserArgs) ToDifStackGgcUserOutput() DifStackGgcUserOutput {
+	return i.ToDifStackGgcUserOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcUserArgs) ToDifStackGgcUserOutputWithContext(ctx context.Context) DifStackGgcUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcUserOutput)
+}
+
+// DifStackGgcUserArrayInput is an input type that accepts DifStackGgcUserArray and DifStackGgcUserArrayOutput values.
+// You can construct a concrete instance of `DifStackGgcUserArrayInput` via:
+//
+//	DifStackGgcUserArray{ DifStackGgcUserArgs{...} }
+type DifStackGgcUserArrayInput interface {
+	pulumi.Input
+
+	ToDifStackGgcUserArrayOutput() DifStackGgcUserArrayOutput
+	ToDifStackGgcUserArrayOutputWithContext(context.Context) DifStackGgcUserArrayOutput
+}
+
+type DifStackGgcUserArray []DifStackGgcUserInput
+
+func (DifStackGgcUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcUser)(nil)).Elem()
+}
+
+func (i DifStackGgcUserArray) ToDifStackGgcUserArrayOutput() DifStackGgcUserArrayOutput {
+	return i.ToDifStackGgcUserArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackGgcUserArray) ToDifStackGgcUserArrayOutputWithContext(ctx context.Context) DifStackGgcUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackGgcUserArrayOutput)
+}
+
+type DifStackGgcUserOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackGgcUser)(nil)).Elem()
+}
+
+func (o DifStackGgcUserOutput) ToDifStackGgcUserOutput() DifStackGgcUserOutput {
+	return o
+}
+
+func (o DifStackGgcUserOutput) ToDifStackGgcUserOutputWithContext(ctx context.Context) DifStackGgcUserOutput {
+	return o
+}
+
+// Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+func (o DifStackGgcUserOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcUser) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o DifStackGgcUserOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcUser) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o DifStackGgcUserOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcUser) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o DifStackGgcUserOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackGgcUser) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type DifStackGgcUserArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackGgcUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackGgcUser)(nil)).Elem()
+}
+
+func (o DifStackGgcUserArrayOutput) ToDifStackGgcUserArrayOutput() DifStackGgcUserArrayOutput {
+	return o
+}
+
+func (o DifStackGgcUserArrayOutput) ToDifStackGgcUserArrayOutputWithContext(ctx context.Context) DifStackGgcUserArrayOutput {
+	return o
+}
+
+func (o DifStackGgcUserArrayOutput) Index(i pulumi.IntInput) DifStackGgcUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackGgcUser {
+		return vs[0].([]DifStackGgcUser)[vs[1].(int)]
+	}).(DifStackGgcUserOutput)
+}
+
+type DifStackObjectstorage struct {
+	// (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering *string `pulumi:"autoTiering"`
+	// (Updatable) Id for Object Storage instance to be provisioned.
+	InstanceId string `pulumi:"instanceId"`
+	// (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning string `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier string `pulumi:"storageTier"`
+}
+
+// DifStackObjectstorageInput is an input type that accepts DifStackObjectstorageArgs and DifStackObjectstorageOutput values.
+// You can construct a concrete instance of `DifStackObjectstorageInput` via:
+//
+//	DifStackObjectstorageArgs{...}
+type DifStackObjectstorageInput interface {
+	pulumi.Input
+
+	ToDifStackObjectstorageOutput() DifStackObjectstorageOutput
+	ToDifStackObjectstorageOutputWithContext(context.Context) DifStackObjectstorageOutput
+}
+
+type DifStackObjectstorageArgs struct {
+	// (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering pulumi.StringPtrInput `pulumi:"autoTiering"`
+	// (Updatable) Id for Object Storage instance to be provisioned.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning pulumi.StringInput `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+}
+
+func (DifStackObjectstorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackObjectstorage)(nil)).Elem()
+}
+
+func (i DifStackObjectstorageArgs) ToDifStackObjectstorageOutput() DifStackObjectstorageOutput {
+	return i.ToDifStackObjectstorageOutputWithContext(context.Background())
+}
+
+func (i DifStackObjectstorageArgs) ToDifStackObjectstorageOutputWithContext(ctx context.Context) DifStackObjectstorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackObjectstorageOutput)
+}
+
+// DifStackObjectstorageArrayInput is an input type that accepts DifStackObjectstorageArray and DifStackObjectstorageArrayOutput values.
+// You can construct a concrete instance of `DifStackObjectstorageArrayInput` via:
+//
+//	DifStackObjectstorageArray{ DifStackObjectstorageArgs{...} }
+type DifStackObjectstorageArrayInput interface {
+	pulumi.Input
+
+	ToDifStackObjectstorageArrayOutput() DifStackObjectstorageArrayOutput
+	ToDifStackObjectstorageArrayOutputWithContext(context.Context) DifStackObjectstorageArrayOutput
+}
+
+type DifStackObjectstorageArray []DifStackObjectstorageInput
+
+func (DifStackObjectstorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackObjectstorage)(nil)).Elem()
+}
+
+func (i DifStackObjectstorageArray) ToDifStackObjectstorageArrayOutput() DifStackObjectstorageArrayOutput {
+	return i.ToDifStackObjectstorageArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackObjectstorageArray) ToDifStackObjectstorageArrayOutputWithContext(ctx context.Context) DifStackObjectstorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackObjectstorageArrayOutput)
+}
+
+type DifStackObjectstorageOutput struct{ *pulumi.OutputState }
+
+func (DifStackObjectstorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackObjectstorage)(nil)).Elem()
+}
+
+func (o DifStackObjectstorageOutput) ToDifStackObjectstorageOutput() DifStackObjectstorageOutput {
+	return o
+}
+
+func (o DifStackObjectstorageOutput) ToDifStackObjectstorageOutputWithContext(ctx context.Context) DifStackObjectstorageOutput {
+	return o
+}
+
+// (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+func (o DifStackObjectstorageOutput) AutoTiering() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackObjectstorage) *string { return v.AutoTiering }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Id for Object Storage instance to be provisioned.
+func (o DifStackObjectstorageOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackObjectstorage) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+func (o DifStackObjectstorageOutput) ObjectVersioning() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackObjectstorage) string { return v.ObjectVersioning }).(pulumi.StringOutput)
+}
+
+// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+func (o DifStackObjectstorageOutput) StorageTier() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackObjectstorage) string { return v.StorageTier }).(pulumi.StringOutput)
+}
+
+type DifStackObjectstorageArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackObjectstorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackObjectstorage)(nil)).Elem()
+}
+
+func (o DifStackObjectstorageArrayOutput) ToDifStackObjectstorageArrayOutput() DifStackObjectstorageArrayOutput {
+	return o
+}
+
+func (o DifStackObjectstorageArrayOutput) ToDifStackObjectstorageArrayOutputWithContext(ctx context.Context) DifStackObjectstorageArrayOutput {
+	return o
+}
+
+func (o DifStackObjectstorageArrayOutput) Index(i pulumi.IntInput) DifStackObjectstorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackObjectstorage {
+		return vs[0].([]DifStackObjectstorage)[vs[1].(int)]
+	}).(DifStackObjectstorageOutput)
+}
+
+type DifStackServiceDetail struct {
+	// Additional details about the provisioned services
+	AdditionalDetails []DifStackServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath *string `pulumi:"currentArtifactPath"`
+	// A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId *string `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId *string `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType *string `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl *string `pulumi:"serviceUrl"`
+	// state of the service
+	Status *string `pulumi:"status"`
+}
+
+// DifStackServiceDetailInput is an input type that accepts DifStackServiceDetailArgs and DifStackServiceDetailOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailInput` via:
+//
+//	DifStackServiceDetailArgs{...}
+type DifStackServiceDetailInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailOutput() DifStackServiceDetailOutput
+	ToDifStackServiceDetailOutputWithContext(context.Context) DifStackServiceDetailOutput
+}
+
+type DifStackServiceDetailArgs struct {
+	// Additional details about the provisioned services
+	AdditionalDetails DifStackServiceDetailAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath pulumi.StringPtrInput `pulumi:"currentArtifactPath"`
+	// A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId pulumi.StringPtrInput `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringPtrInput `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl pulumi.StringPtrInput `pulumi:"serviceUrl"`
+	// state of the service
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (DifStackServiceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailArgs) ToDifStackServiceDetailOutput() DifStackServiceDetailOutput {
+	return i.ToDifStackServiceDetailOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailArgs) ToDifStackServiceDetailOutputWithContext(ctx context.Context) DifStackServiceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailOutput)
+}
+
+// DifStackServiceDetailArrayInput is an input type that accepts DifStackServiceDetailArray and DifStackServiceDetailArrayOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailArrayInput` via:
+//
+//	DifStackServiceDetailArray{ DifStackServiceDetailArgs{...} }
+type DifStackServiceDetailArrayInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailArrayOutput() DifStackServiceDetailArrayOutput
+	ToDifStackServiceDetailArrayOutputWithContext(context.Context) DifStackServiceDetailArrayOutput
+}
+
+type DifStackServiceDetailArray []DifStackServiceDetailInput
+
+func (DifStackServiceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailArray) ToDifStackServiceDetailArrayOutput() DifStackServiceDetailArrayOutput {
+	return i.ToDifStackServiceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailArray) ToDifStackServiceDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailArrayOutput)
+}
+
+type DifStackServiceDetailOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailOutput) ToDifStackServiceDetailOutput() DifStackServiceDetailOutput {
+	return o
+}
+
+func (o DifStackServiceDetailOutput) ToDifStackServiceDetailOutputWithContext(ctx context.Context) DifStackServiceDetailOutput {
+	return o
+}
+
+// Additional details about the provisioned services
+func (o DifStackServiceDetailOutput) AdditionalDetails() DifStackServiceDetailAdditionalDetailArrayOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) []DifStackServiceDetailAdditionalDetail { return v.AdditionalDetails }).(DifStackServiceDetailAdditionalDetailArrayOutput)
+}
+
+// name of the service
+func (o DifStackServiceDetailOutput) CurrentArtifactPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.CurrentArtifactPath }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+func (o DifStackServiceDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// ID for the service instance.
+func (o DifStackServiceDetailOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// ID for the service
+func (o DifStackServiceDetailOutput) ServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.ServiceId }).(pulumi.StringPtrOutput)
+}
+
+// name of the cloud service
+func (o DifStackServiceDetailOutput) ServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.ServiceType }).(pulumi.StringPtrOutput)
+}
+
+// url for the service
+func (o DifStackServiceDetailOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.ServiceUrl }).(pulumi.StringPtrOutput)
+}
+
+// state of the service
+func (o DifStackServiceDetailOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetail) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type DifStackServiceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailArrayOutput) ToDifStackServiceDetailArrayOutput() DifStackServiceDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailArrayOutput) ToDifStackServiceDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailArrayOutput) Index(i pulumi.IntInput) DifStackServiceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackServiceDetail {
+		return vs[0].([]DifStackServiceDetail)[vs[1].(int)]
+	}).(DifStackServiceDetailOutput)
+}
+
+type DifStackServiceDetailAdditionalDetail struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections []DifStackServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails []DifStackServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId *string `pulumi:"modelId"`
+	// version of model
+	ModelVersion *string `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion *string `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+}
+
+// DifStackServiceDetailAdditionalDetailInput is an input type that accepts DifStackServiceDetailAdditionalDetailArgs and DifStackServiceDetailAdditionalDetailOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailArgs{...}
+type DifStackServiceDetailAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailOutput() DifStackServiceDetailAdditionalDetailOutput
+	ToDifStackServiceDetailAdditionalDetailOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailOutput
+}
+
+type DifStackServiceDetailAdditionalDetailArgs struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// version of model
+	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion pulumi.StringPtrInput `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
+}
+
+func (DifStackServiceDetailAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailArgs) ToDifStackServiceDetailAdditionalDetailOutput() DifStackServiceDetailAdditionalDetailOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailArgs) ToDifStackServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailOutput)
+}
+
+// DifStackServiceDetailAdditionalDetailArrayInput is an input type that accepts DifStackServiceDetailAdditionalDetailArray and DifStackServiceDetailAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailArrayInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailArray{ DifStackServiceDetailAdditionalDetailArgs{...} }
+type DifStackServiceDetailAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailArrayOutput() DifStackServiceDetailAdditionalDetailArrayOutput
+	ToDifStackServiceDetailAdditionalDetailArrayOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailArrayOutput
+}
+
+type DifStackServiceDetailAdditionalDetailArray []DifStackServiceDetailAdditionalDetailInput
+
+func (DifStackServiceDetailAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailArray) ToDifStackServiceDetailAdditionalDetailArrayOutput() DifStackServiceDetailAdditionalDetailArrayOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailArray) ToDifStackServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailArrayOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailOutput) ToDifStackServiceDetailAdditionalDetailOutput() DifStackServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailOutput) ToDifStackServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+// connections assigned to Golden Gate deployment
+func (o DifStackServiceDetailAdditionalDetailOutput) AssignedConnections() DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) []DifStackServiceDetailAdditionalDetailAssignedConnection {
+		return v.AssignedConnections
+	}).(DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+// details of all endpoints assigned to cluster
+func (o DifStackServiceDetailAdditionalDetailOutput) EndpointDetails() DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) []DifStackServiceDetailAdditionalDetailEndpointDetail {
+		return v.EndpointDetails
+	}).(DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+// OCID of model
+func (o DifStackServiceDetailAdditionalDetailOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// version of model
+func (o DifStackServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
+}
+
+// region of cluster
+func (o DifStackServiceDetailAdditionalDetailOutput) OciRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.OciRegion }).(pulumi.StringPtrOutput)
+}
+
+// OCID of model
+func (o DifStackServiceDetailAdditionalDetailOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailArrayOutput) ToDifStackServiceDetailAdditionalDetailArrayOutput() DifStackServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailArrayOutput) ToDifStackServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailArrayOutput) Index(i pulumi.IntInput) DifStackServiceDetailAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackServiceDetailAdditionalDetail {
+		return vs[0].([]DifStackServiceDetailAdditionalDetail)[vs[1].(int)]
+	}).(DifStackServiceDetailAdditionalDetailOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailAssignedConnection struct {
+	// OCID of the connection.
+	ConnectionId *string `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName *string `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy *string `pulumi:"requestedBy"`
+}
+
+// DifStackServiceDetailAdditionalDetailAssignedConnectionInput is an input type that accepts DifStackServiceDetailAdditionalDetailAssignedConnectionArgs and DifStackServiceDetailAdditionalDetailAssignedConnectionOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailAssignedConnectionInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailAssignedConnectionArgs{...}
+type DifStackServiceDetailAdditionalDetailAssignedConnectionInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionOutput
+	ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionOutput
+}
+
+type DifStackServiceDetailAdditionalDetailAssignedConnectionArgs struct {
+	// OCID of the connection.
+	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName pulumi.StringPtrInput `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy pulumi.StringPtrInput `pulumi:"requestedBy"`
+}
+
+func (DifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+// DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput is an input type that accepts DifStackServiceDetailAdditionalDetailAssignedConnectionArray and DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailAssignedConnectionArray{ DifStackServiceDetailAdditionalDetailAssignedConnectionArgs{...} }
+type DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+	ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+}
+
+type DifStackServiceDetailAdditionalDetailAssignedConnectionArray []DifStackServiceDetailAdditionalDetailAssignedConnectionInput
+
+func (DifStackServiceDetailAdditionalDetailAssignedConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailAssignedConnectionArray) ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailAssignedConnectionArray) ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailAssignedConnectionOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ToDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+// OCID of the connection.
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetailAssignedConnection) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the connection.
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetailAssignedConnection) *string { return v.ConnectionName }).(pulumi.StringPtrOutput)
+}
+
+// Specifies who has made this connection.
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionOutput) RequestedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetailAssignedConnection) *string { return v.RequestedBy }).(pulumi.StringPtrOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) Index(i pulumi.IntInput) DifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackServiceDetailAdditionalDetailAssignedConnection {
+		return vs[0].([]DifStackServiceDetailAdditionalDetailAssignedConnection)[vs[1].(int)]
+	}).(DifStackServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailEndpointDetail struct {
+	// OCID of the endpoint.
+	EndpointId *string `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName *string `pulumi:"endpointName"`
+}
+
+// DifStackServiceDetailAdditionalDetailEndpointDetailInput is an input type that accepts DifStackServiceDetailAdditionalDetailEndpointDetailArgs and DifStackServiceDetailAdditionalDetailEndpointDetailOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailEndpointDetailInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailEndpointDetailArgs{...}
+type DifStackServiceDetailAdditionalDetailEndpointDetailInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailEndpointDetailOutput() DifStackServiceDetailAdditionalDetailEndpointDetailOutput
+	ToDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailOutput
+}
+
+type DifStackServiceDetailAdditionalDetailEndpointDetailArgs struct {
+	// OCID of the endpoint.
+	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
+}
+
+func (DifStackServiceDetailAdditionalDetailEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailEndpointDetailArgs) ToDifStackServiceDetailAdditionalDetailEndpointDetailOutput() DifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailEndpointDetailArgs) ToDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailEndpointDetailOutput)
+}
+
+// DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput is an input type that accepts DifStackServiceDetailAdditionalDetailEndpointDetailArray and DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput` via:
+//
+//	DifStackServiceDetailAdditionalDetailEndpointDetailArray{ DifStackServiceDetailAdditionalDetailEndpointDetailArgs{...} }
+type DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput
+	ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput
+}
+
+type DifStackServiceDetailAdditionalDetailEndpointDetailArray []DifStackServiceDetailAdditionalDetailEndpointDetailInput
+
+func (DifStackServiceDetailAdditionalDetailEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i DifStackServiceDetailAdditionalDetailEndpointDetailArray) ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return i.ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackServiceDetailAdditionalDetailEndpointDetailArray) ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailOutput) ToDifStackServiceDetailAdditionalDetailEndpointDetailOutput() DifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailOutput) ToDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+// OCID of the endpoint.
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetailEndpointDetail) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
+}
+
+// Identifier for each endpoint.
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailOutput) EndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetailEndpointDetail) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
+}
+
+type DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) Index(i pulumi.IntInput) DifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackServiceDetailAdditionalDetailEndpointDetail {
+		return vs[0].([]DifStackServiceDetailAdditionalDetailEndpointDetail)[vs[1].(int)]
+	}).(DifStackServiceDetailAdditionalDetailEndpointDetailOutput)
+}
+
 type IotDigitalTwinAdapterInboundEnvelope struct {
 	// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
 	EnvelopeMapping *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMapping"`
@@ -12520,6 +15452,5892 @@ func (o GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItem {
 		return vs[0].([]GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItem)[vs[1].(int)]
 	}).(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput)
+}
+
+type GetDifStackAdb struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           string `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath string `pulumi:"artifactObjectStoragePath"`
+	// The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs int                          `pulumi:"dataStorageSizeInTbs"`
+	DbCredentials        []GetDifStackAdbDbCredential `pulumi:"dbCredentials"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload string `pulumi:"dbWorkload"`
+	// The compute amount (ECPUs) available to the database.
+	Ecpu int `pulumi:"ecpu"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic bool `pulumi:"isPublic"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess string `pulumi:"toolsPublicAccess"`
+}
+
+// GetDifStackAdbInput is an input type that accepts GetDifStackAdbArgs and GetDifStackAdbOutput values.
+// You can construct a concrete instance of `GetDifStackAdbInput` via:
+//
+//	GetDifStackAdbArgs{...}
+type GetDifStackAdbInput interface {
+	pulumi.Input
+
+	ToGetDifStackAdbOutput() GetDifStackAdbOutput
+	ToGetDifStackAdbOutputWithContext(context.Context) GetDifStackAdbOutput
+}
+
+type GetDifStackAdbArgs struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           pulumi.StringInput `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath pulumi.StringInput `pulumi:"artifactObjectStoragePath"`
+	// The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs pulumi.IntInput                      `pulumi:"dataStorageSizeInTbs"`
+	DbCredentials        GetDifStackAdbDbCredentialArrayInput `pulumi:"dbCredentials"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload pulumi.StringInput `pulumi:"dbWorkload"`
+	// The compute amount (ECPUs) available to the database.
+	Ecpu pulumi.IntInput `pulumi:"ecpu"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired pulumi.BoolInput `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess pulumi.StringInput `pulumi:"toolsPublicAccess"`
+}
+
+func (GetDifStackAdbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAdb)(nil)).Elem()
+}
+
+func (i GetDifStackAdbArgs) ToGetDifStackAdbOutput() GetDifStackAdbOutput {
+	return i.ToGetDifStackAdbOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAdbArgs) ToGetDifStackAdbOutputWithContext(ctx context.Context) GetDifStackAdbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAdbOutput)
+}
+
+// GetDifStackAdbArrayInput is an input type that accepts GetDifStackAdbArray and GetDifStackAdbArrayOutput values.
+// You can construct a concrete instance of `GetDifStackAdbArrayInput` via:
+//
+//	GetDifStackAdbArray{ GetDifStackAdbArgs{...} }
+type GetDifStackAdbArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackAdbArrayOutput() GetDifStackAdbArrayOutput
+	ToGetDifStackAdbArrayOutputWithContext(context.Context) GetDifStackAdbArrayOutput
+}
+
+type GetDifStackAdbArray []GetDifStackAdbInput
+
+func (GetDifStackAdbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAdb)(nil)).Elem()
+}
+
+func (i GetDifStackAdbArray) ToGetDifStackAdbArrayOutput() GetDifStackAdbArrayOutput {
+	return i.ToGetDifStackAdbArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAdbArray) ToGetDifStackAdbArrayOutputWithContext(ctx context.Context) GetDifStackAdbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAdbArrayOutput)
+}
+
+type GetDifStackAdbOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAdbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAdb)(nil)).Elem()
+}
+
+func (o GetDifStackAdbOutput) ToGetDifStackAdbOutput() GetDifStackAdbOutput {
+	return o
+}
+
+func (o GetDifStackAdbOutput) ToGetDifStackAdbOutputWithContext(ctx context.Context) GetDifStackAdbOutput {
+	return o
+}
+
+// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+func (o GetDifStackAdbOutput) AdminPasswordId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.AdminPasswordId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackAdbOutput) ArtifactObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.ArtifactObjectStoragePath }).(pulumi.StringOutput)
+}
+
+// The size, in terabytes, of the data volume that will be created and attached to the database.
+func (o GetDifStackAdbOutput) DataStorageSizeInTbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackAdb) int { return v.DataStorageSizeInTbs }).(pulumi.IntOutput)
+}
+
+func (o GetDifStackAdbOutput) DbCredentials() GetDifStackAdbDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetDifStackAdb) []GetDifStackAdbDbCredential { return v.DbCredentials }).(GetDifStackAdbDbCredentialArrayOutput)
+}
+
+// A valid Oracle Database version for Autonomous Database.
+func (o GetDifStackAdbOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+func (o GetDifStackAdbOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// The compute amount (ECPUs) available to the database.
+func (o GetDifStackAdbOutput) Ecpu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackAdb) int { return v.Ecpu }).(pulumi.IntOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackAdbOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Specifies if the Autonomous Database requires mTLS connections.
+func (o GetDifStackAdbOutput) IsMtlsConnectionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStackAdb) bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolOutput)
+}
+
+// If true then subnetId should not be provided.
+func (o GetDifStackAdbOutput) IsPublic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStackAdb) bool { return v.IsPublic }).(pulumi.BoolOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStackAdbOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+func (o GetDifStackAdbOutput) ToolsPublicAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdb) string { return v.ToolsPublicAccess }).(pulumi.StringOutput)
+}
+
+type GetDifStackAdbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAdbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAdb)(nil)).Elem()
+}
+
+func (o GetDifStackAdbArrayOutput) ToGetDifStackAdbArrayOutput() GetDifStackAdbArrayOutput {
+	return o
+}
+
+func (o GetDifStackAdbArrayOutput) ToGetDifStackAdbArrayOutputWithContext(ctx context.Context) GetDifStackAdbArrayOutput {
+	return o
+}
+
+func (o GetDifStackAdbArrayOutput) Index(i pulumi.IntInput) GetDifStackAdbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackAdb {
+		return vs[0].([]GetDifStackAdb)[vs[1].(int)]
+	}).(GetDifStackAdbOutput)
+}
+
+type GetDifStackAdbDbCredential struct {
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// GetDifStackAdbDbCredentialInput is an input type that accepts GetDifStackAdbDbCredentialArgs and GetDifStackAdbDbCredentialOutput values.
+// You can construct a concrete instance of `GetDifStackAdbDbCredentialInput` via:
+//
+//	GetDifStackAdbDbCredentialArgs{...}
+type GetDifStackAdbDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetDifStackAdbDbCredentialOutput() GetDifStackAdbDbCredentialOutput
+	ToGetDifStackAdbDbCredentialOutputWithContext(context.Context) GetDifStackAdbDbCredentialOutput
+}
+
+type GetDifStackAdbDbCredentialArgs struct {
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (GetDifStackAdbDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (i GetDifStackAdbDbCredentialArgs) ToGetDifStackAdbDbCredentialOutput() GetDifStackAdbDbCredentialOutput {
+	return i.ToGetDifStackAdbDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAdbDbCredentialArgs) ToGetDifStackAdbDbCredentialOutputWithContext(ctx context.Context) GetDifStackAdbDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAdbDbCredentialOutput)
+}
+
+// GetDifStackAdbDbCredentialArrayInput is an input type that accepts GetDifStackAdbDbCredentialArray and GetDifStackAdbDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDifStackAdbDbCredentialArrayInput` via:
+//
+//	GetDifStackAdbDbCredentialArray{ GetDifStackAdbDbCredentialArgs{...} }
+type GetDifStackAdbDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackAdbDbCredentialArrayOutput() GetDifStackAdbDbCredentialArrayOutput
+	ToGetDifStackAdbDbCredentialArrayOutputWithContext(context.Context) GetDifStackAdbDbCredentialArrayOutput
+}
+
+type GetDifStackAdbDbCredentialArray []GetDifStackAdbDbCredentialInput
+
+func (GetDifStackAdbDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (i GetDifStackAdbDbCredentialArray) ToGetDifStackAdbDbCredentialArrayOutput() GetDifStackAdbDbCredentialArrayOutput {
+	return i.ToGetDifStackAdbDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAdbDbCredentialArray) ToGetDifStackAdbDbCredentialArrayOutputWithContext(ctx context.Context) GetDifStackAdbDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAdbDbCredentialArrayOutput)
+}
+
+type GetDifStackAdbDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAdbDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (o GetDifStackAdbDbCredentialOutput) ToGetDifStackAdbDbCredentialOutput() GetDifStackAdbDbCredentialOutput {
+	return o
+}
+
+func (o GetDifStackAdbDbCredentialOutput) ToGetDifStackAdbDbCredentialOutputWithContext(ctx context.Context) GetDifStackAdbDbCredentialOutput {
+	return o
+}
+
+func (o GetDifStackAdbDbCredentialOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdbDbCredential) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackAdbDbCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdbDbCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackAdbDbCredentialOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAdbDbCredential) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type GetDifStackAdbDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAdbDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAdbDbCredential)(nil)).Elem()
+}
+
+func (o GetDifStackAdbDbCredentialArrayOutput) ToGetDifStackAdbDbCredentialArrayOutput() GetDifStackAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetDifStackAdbDbCredentialArrayOutput) ToGetDifStackAdbDbCredentialArrayOutputWithContext(ctx context.Context) GetDifStackAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetDifStackAdbDbCredentialArrayOutput) Index(i pulumi.IntInput) GetDifStackAdbDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackAdbDbCredential {
+		return vs[0].([]GetDifStackAdbDbCredential)[vs[1].(int)]
+	}).(GetDifStackAdbDbCredentialOutput)
+}
+
+type GetDifStackDataflow struct {
+	ArchiveUri string `pulumi:"archiveUri"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections []GetDifStackDataflowConnection `pulumi:"connections"`
+	// The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetDifStackDataflowDriverShapeConfig `pulumi:"driverShapeConfigs"`
+	Execute            string                                 `pulumi:"execute"`
+	// The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetDifStackDataflowExecutorShapeConfig `pulumi:"executorShapeConfigs"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId string `pulumi:"logBucketInstanceId"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// OCID of model
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The Spark version utilized to run the application.
+	SparkVersion string `pulumi:"sparkVersion"`
+	// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId string `pulumi:"warehouseBucketInstanceId"`
+}
+
+// GetDifStackDataflowInput is an input type that accepts GetDifStackDataflowArgs and GetDifStackDataflowOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowInput` via:
+//
+//	GetDifStackDataflowArgs{...}
+type GetDifStackDataflowInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowOutput() GetDifStackDataflowOutput
+	ToGetDifStackDataflowOutputWithContext(context.Context) GetDifStackDataflowOutput
+}
+
+type GetDifStackDataflowArgs struct {
+	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections GetDifStackDataflowConnectionArrayInput `pulumi:"connections"`
+	// The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs GetDifStackDataflowDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
+	Execute            pulumi.StringInput                             `pulumi:"execute"`
+	// The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs GetDifStackDataflowExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId pulumi.StringInput `pulumi:"logBucketInstanceId"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// OCID of model
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The Spark version utilized to run the application.
+	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
+	// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId pulumi.StringInput `pulumi:"warehouseBucketInstanceId"`
+}
+
+func (GetDifStackDataflowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflow)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowArgs) ToGetDifStackDataflowOutput() GetDifStackDataflowOutput {
+	return i.ToGetDifStackDataflowOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowArgs) ToGetDifStackDataflowOutputWithContext(ctx context.Context) GetDifStackDataflowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowOutput)
+}
+
+// GetDifStackDataflowArrayInput is an input type that accepts GetDifStackDataflowArray and GetDifStackDataflowArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowArrayInput` via:
+//
+//	GetDifStackDataflowArray{ GetDifStackDataflowArgs{...} }
+type GetDifStackDataflowArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowArrayOutput() GetDifStackDataflowArrayOutput
+	ToGetDifStackDataflowArrayOutputWithContext(context.Context) GetDifStackDataflowArrayOutput
+}
+
+type GetDifStackDataflowArray []GetDifStackDataflowInput
+
+func (GetDifStackDataflowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflow)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowArray) ToGetDifStackDataflowArrayOutput() GetDifStackDataflowArrayOutput {
+	return i.ToGetDifStackDataflowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowArray) ToGetDifStackDataflowArrayOutputWithContext(ctx context.Context) GetDifStackDataflowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowArrayOutput)
+}
+
+type GetDifStackDataflowOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflow)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowOutput) ToGetDifStackDataflowOutput() GetDifStackDataflowOutput {
+	return o
+}
+
+func (o GetDifStackDataflowOutput) ToGetDifStackDataflowOutputWithContext(ctx context.Context) GetDifStackDataflowOutput {
+	return o
+}
+
+func (o GetDifStackDataflowOutput) ArchiveUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.ArchiveUri }).(pulumi.StringOutput)
+}
+
+// Connection details to be associated with the Goldengate deployment.
+func (o GetDifStackDataflowOutput) Connections() GetDifStackDataflowConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) []GetDifStackDataflowConnection { return v.Connections }).(GetDifStackDataflowConnectionArrayOutput)
+}
+
+// The VM shape for the driver. Sets the driver cores and memory.
+func (o GetDifStackDataflowOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetDifStackDataflowOutput) DriverShapeConfigs() GetDifStackDataflowDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) []GetDifStackDataflowDriverShapeConfig { return v.DriverShapeConfigs }).(GetDifStackDataflowDriverShapeConfigArrayOutput)
+}
+
+func (o GetDifStackDataflowOutput) Execute() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.Execute }).(pulumi.StringOutput)
+}
+
+// The VM shape for the executors. Sets the executor cores and memory.
+func (o GetDifStackDataflowOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetDifStackDataflowOutput) ExecutorShapeConfigs() GetDifStackDataflowExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) []GetDifStackDataflowExecutorShapeConfig { return v.ExecutorShapeConfigs }).(GetDifStackDataflowExecutorShapeConfigArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackDataflowOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+func (o GetDifStackDataflowOutput) LogBucketInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.LogBucketInstanceId }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetDifStackDataflowOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// OCID of model
+func (o GetDifStackDataflowOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The Spark version utilized to run the application.
+func (o GetDifStackDataflowOutput) SparkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.SparkVersion }).(pulumi.StringOutput)
+}
+
+// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+func (o GetDifStackDataflowOutput) WarehouseBucketInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflow) string { return v.WarehouseBucketInstanceId }).(pulumi.StringOutput)
+}
+
+type GetDifStackDataflowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflow)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowArrayOutput) ToGetDifStackDataflowArrayOutput() GetDifStackDataflowArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowArrayOutput) ToGetDifStackDataflowArrayOutputWithContext(ctx context.Context) GetDifStackDataflowArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflow {
+		return vs[0].([]GetDifStackDataflow)[vs[1].(int)]
+	}).(GetDifStackDataflowOutput)
+}
+
+type GetDifStackDataflowConnection struct {
+	// Details of services to create private endpoint.
+	ConnectionDetails []GetDifStackDataflowConnectionConnectionDetail `pulumi:"connectionDetails"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDifStackDataflowConnectionInput is an input type that accepts GetDifStackDataflowConnectionArgs and GetDifStackDataflowConnectionOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionInput` via:
+//
+//	GetDifStackDataflowConnectionArgs{...}
+type GetDifStackDataflowConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionOutput() GetDifStackDataflowConnectionOutput
+	ToGetDifStackDataflowConnectionOutputWithContext(context.Context) GetDifStackDataflowConnectionOutput
+}
+
+type GetDifStackDataflowConnectionArgs struct {
+	// Details of services to create private endpoint.
+	ConnectionDetails GetDifStackDataflowConnectionConnectionDetailArrayInput `pulumi:"connectionDetails"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDifStackDataflowConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnection)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionArgs) ToGetDifStackDataflowConnectionOutput() GetDifStackDataflowConnectionOutput {
+	return i.ToGetDifStackDataflowConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionArgs) ToGetDifStackDataflowConnectionOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionOutput)
+}
+
+// GetDifStackDataflowConnectionArrayInput is an input type that accepts GetDifStackDataflowConnectionArray and GetDifStackDataflowConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionArrayInput` via:
+//
+//	GetDifStackDataflowConnectionArray{ GetDifStackDataflowConnectionArgs{...} }
+type GetDifStackDataflowConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionArrayOutput() GetDifStackDataflowConnectionArrayOutput
+	ToGetDifStackDataflowConnectionArrayOutputWithContext(context.Context) GetDifStackDataflowConnectionArrayOutput
+}
+
+type GetDifStackDataflowConnectionArray []GetDifStackDataflowConnectionInput
+
+func (GetDifStackDataflowConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnection)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionArray) ToGetDifStackDataflowConnectionArrayOutput() GetDifStackDataflowConnectionArrayOutput {
+	return i.ToGetDifStackDataflowConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionArray) ToGetDifStackDataflowConnectionArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionArrayOutput)
+}
+
+type GetDifStackDataflowConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnection)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionOutput) ToGetDifStackDataflowConnectionOutput() GetDifStackDataflowConnectionOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionOutput) ToGetDifStackDataflowConnectionOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionOutput {
+	return o
+}
+
+// Details of services to create private endpoint.
+func (o GetDifStackDataflowConnectionOutput) ConnectionDetails() GetDifStackDataflowConnectionConnectionDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnection) []GetDifStackDataflowConnectionConnectionDetail {
+		return v.ConnectionDetails
+	}).(GetDifStackDataflowConnectionConnectionDetailArrayOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStackDataflowConnectionOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnection) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetDifStackDataflowConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnection)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionArrayOutput) ToGetDifStackDataflowConnectionArrayOutput() GetDifStackDataflowConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionArrayOutput) ToGetDifStackDataflowConnectionArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflowConnection {
+		return vs[0].([]GetDifStackDataflowConnection)[vs[1].(int)]
+	}).(GetDifStackDataflowConnectionOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetail struct {
+	// List of Service Dependency Details for connection creation.
+	DifDependencies []GetDifStackDataflowConnectionConnectionDetailDifDependency `pulumi:"difDependencies"`
+	// An array of DNS zone names.
+	DomainNames []string `pulumi:"domainNames"`
+}
+
+// GetDifStackDataflowConnectionConnectionDetailInput is an input type that accepts GetDifStackDataflowConnectionConnectionDetailArgs and GetDifStackDataflowConnectionConnectionDetailOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionConnectionDetailInput` via:
+//
+//	GetDifStackDataflowConnectionConnectionDetailArgs{...}
+type GetDifStackDataflowConnectionConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionConnectionDetailOutput() GetDifStackDataflowConnectionConnectionDetailOutput
+	ToGetDifStackDataflowConnectionConnectionDetailOutputWithContext(context.Context) GetDifStackDataflowConnectionConnectionDetailOutput
+}
+
+type GetDifStackDataflowConnectionConnectionDetailArgs struct {
+	// List of Service Dependency Details for connection creation.
+	DifDependencies GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayInput `pulumi:"difDependencies"`
+	// An array of DNS zone names.
+	DomainNames pulumi.StringArrayInput `pulumi:"domainNames"`
+}
+
+func (GetDifStackDataflowConnectionConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailArgs) ToGetDifStackDataflowConnectionConnectionDetailOutput() GetDifStackDataflowConnectionConnectionDetailOutput {
+	return i.ToGetDifStackDataflowConnectionConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailArgs) ToGetDifStackDataflowConnectionConnectionDetailOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionConnectionDetailOutput)
+}
+
+// GetDifStackDataflowConnectionConnectionDetailArrayInput is an input type that accepts GetDifStackDataflowConnectionConnectionDetailArray and GetDifStackDataflowConnectionConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionConnectionDetailArrayInput` via:
+//
+//	GetDifStackDataflowConnectionConnectionDetailArray{ GetDifStackDataflowConnectionConnectionDetailArgs{...} }
+type GetDifStackDataflowConnectionConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionConnectionDetailArrayOutput() GetDifStackDataflowConnectionConnectionDetailArrayOutput
+	ToGetDifStackDataflowConnectionConnectionDetailArrayOutputWithContext(context.Context) GetDifStackDataflowConnectionConnectionDetailArrayOutput
+}
+
+type GetDifStackDataflowConnectionConnectionDetailArray []GetDifStackDataflowConnectionConnectionDetailInput
+
+func (GetDifStackDataflowConnectionConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailArray) ToGetDifStackDataflowConnectionConnectionDetailArrayOutput() GetDifStackDataflowConnectionConnectionDetailArrayOutput {
+	return i.ToGetDifStackDataflowConnectionConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailArray) ToGetDifStackDataflowConnectionConnectionDetailArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionConnectionDetailArrayOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailOutput) ToGetDifStackDataflowConnectionConnectionDetailOutput() GetDifStackDataflowConnectionConnectionDetailOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailOutput) ToGetDifStackDataflowConnectionConnectionDetailOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailOutput {
+	return o
+}
+
+// List of Service Dependency Details for connection creation.
+func (o GetDifStackDataflowConnectionConnectionDetailOutput) DifDependencies() GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnectionConnectionDetail) []GetDifStackDataflowConnectionConnectionDetailDifDependency {
+		return v.DifDependencies
+	}).(GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput)
+}
+
+// An array of DNS zone names.
+func (o GetDifStackDataflowConnectionConnectionDetailOutput) DomainNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnectionConnectionDetail) []string { return v.DomainNames }).(pulumi.StringArrayOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailArrayOutput) ToGetDifStackDataflowConnectionConnectionDetailArrayOutput() GetDifStackDataflowConnectionConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailArrayOutput) ToGetDifStackDataflowConnectionConnectionDetailArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowConnectionConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflowConnectionConnectionDetail {
+		return vs[0].([]GetDifStackDataflowConnectionConnectionDetail)[vs[1].(int)]
+	}).(GetDifStackDataflowConnectionConnectionDetailOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetailDifDependency struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDifStackDataflowConnectionConnectionDetailDifDependencyInput is an input type that accepts GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs and GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionConnectionDetailDifDependencyInput` via:
+//
+//	GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs{...}
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput
+	ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutputWithContext(context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput
+}
+
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput {
+	return i.ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput)
+}
+
+// GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayInput is an input type that accepts GetDifStackDataflowConnectionConnectionDetailDifDependencyArray and GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayInput` via:
+//
+//	GetDifStackDataflowConnectionConnectionDetailDifDependencyArray{ GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs{...} }
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput
+	ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput
+}
+
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyArray []GetDifStackDataflowConnectionConnectionDetailDifDependencyInput
+
+func (GetDifStackDataflowConnectionConnectionDetailDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailDifDependencyArray) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return i.ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowConnectionConnectionDetailDifDependencyArray) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput {
+	return o
+}
+
+// InstanceId of service which is part of the Stack.
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnectionConnectionDetailDifDependency) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackDataflowConnectionConnectionDetailDifDependency) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput) ToGetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflowConnectionConnectionDetailDifDependency {
+		return vs[0].([]GetDifStackDataflowConnectionConnectionDetailDifDependency)[vs[1].(int)]
+	}).(GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput)
+}
+
+type GetDifStackDataflowDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetDifStackDataflowDriverShapeConfigInput is an input type that accepts GetDifStackDataflowDriverShapeConfigArgs and GetDifStackDataflowDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowDriverShapeConfigInput` via:
+//
+//	GetDifStackDataflowDriverShapeConfigArgs{...}
+type GetDifStackDataflowDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowDriverShapeConfigOutput() GetDifStackDataflowDriverShapeConfigOutput
+	ToGetDifStackDataflowDriverShapeConfigOutputWithContext(context.Context) GetDifStackDataflowDriverShapeConfigOutput
+}
+
+type GetDifStackDataflowDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetDifStackDataflowDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowDriverShapeConfigArgs) ToGetDifStackDataflowDriverShapeConfigOutput() GetDifStackDataflowDriverShapeConfigOutput {
+	return i.ToGetDifStackDataflowDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowDriverShapeConfigArgs) ToGetDifStackDataflowDriverShapeConfigOutputWithContext(ctx context.Context) GetDifStackDataflowDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowDriverShapeConfigOutput)
+}
+
+// GetDifStackDataflowDriverShapeConfigArrayInput is an input type that accepts GetDifStackDataflowDriverShapeConfigArray and GetDifStackDataflowDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowDriverShapeConfigArrayInput` via:
+//
+//	GetDifStackDataflowDriverShapeConfigArray{ GetDifStackDataflowDriverShapeConfigArgs{...} }
+type GetDifStackDataflowDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowDriverShapeConfigArrayOutput() GetDifStackDataflowDriverShapeConfigArrayOutput
+	ToGetDifStackDataflowDriverShapeConfigArrayOutputWithContext(context.Context) GetDifStackDataflowDriverShapeConfigArrayOutput
+}
+
+type GetDifStackDataflowDriverShapeConfigArray []GetDifStackDataflowDriverShapeConfigInput
+
+func (GetDifStackDataflowDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowDriverShapeConfigArray) ToGetDifStackDataflowDriverShapeConfigArrayOutput() GetDifStackDataflowDriverShapeConfigArrayOutput {
+	return i.ToGetDifStackDataflowDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowDriverShapeConfigArray) ToGetDifStackDataflowDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStackDataflowDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowDriverShapeConfigArrayOutput)
+}
+
+type GetDifStackDataflowDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowDriverShapeConfigOutput) ToGetDifStackDataflowDriverShapeConfigOutput() GetDifStackDataflowDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetDifStackDataflowDriverShapeConfigOutput) ToGetDifStackDataflowDriverShapeConfigOutputWithContext(ctx context.Context) GetDifStackDataflowDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetDifStackDataflowDriverShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackDataflowDriverShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See here for details.
+func (o GetDifStackDataflowDriverShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackDataflowDriverShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetDifStackDataflowDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowDriverShapeConfigArrayOutput) ToGetDifStackDataflowDriverShapeConfigArrayOutput() GetDifStackDataflowDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowDriverShapeConfigArrayOutput) ToGetDifStackDataflowDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStackDataflowDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflowDriverShapeConfig {
+		return vs[0].([]GetDifStackDataflowDriverShapeConfig)[vs[1].(int)]
+	}).(GetDifStackDataflowDriverShapeConfigOutput)
+}
+
+type GetDifStackDataflowExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetDifStackDataflowExecutorShapeConfigInput is an input type that accepts GetDifStackDataflowExecutorShapeConfigArgs and GetDifStackDataflowExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowExecutorShapeConfigInput` via:
+//
+//	GetDifStackDataflowExecutorShapeConfigArgs{...}
+type GetDifStackDataflowExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowExecutorShapeConfigOutput() GetDifStackDataflowExecutorShapeConfigOutput
+	ToGetDifStackDataflowExecutorShapeConfigOutputWithContext(context.Context) GetDifStackDataflowExecutorShapeConfigOutput
+}
+
+type GetDifStackDataflowExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetDifStackDataflowExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowExecutorShapeConfigArgs) ToGetDifStackDataflowExecutorShapeConfigOutput() GetDifStackDataflowExecutorShapeConfigOutput {
+	return i.ToGetDifStackDataflowExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowExecutorShapeConfigArgs) ToGetDifStackDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) GetDifStackDataflowExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowExecutorShapeConfigOutput)
+}
+
+// GetDifStackDataflowExecutorShapeConfigArrayInput is an input type that accepts GetDifStackDataflowExecutorShapeConfigArray and GetDifStackDataflowExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDifStackDataflowExecutorShapeConfigArrayInput` via:
+//
+//	GetDifStackDataflowExecutorShapeConfigArray{ GetDifStackDataflowExecutorShapeConfigArgs{...} }
+type GetDifStackDataflowExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackDataflowExecutorShapeConfigArrayOutput() GetDifStackDataflowExecutorShapeConfigArrayOutput
+	ToGetDifStackDataflowExecutorShapeConfigArrayOutputWithContext(context.Context) GetDifStackDataflowExecutorShapeConfigArrayOutput
+}
+
+type GetDifStackDataflowExecutorShapeConfigArray []GetDifStackDataflowExecutorShapeConfigInput
+
+func (GetDifStackDataflowExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStackDataflowExecutorShapeConfigArray) ToGetDifStackDataflowExecutorShapeConfigArrayOutput() GetDifStackDataflowExecutorShapeConfigArrayOutput {
+	return i.ToGetDifStackDataflowExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackDataflowExecutorShapeConfigArray) ToGetDifStackDataflowExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStackDataflowExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackDataflowExecutorShapeConfigArrayOutput)
+}
+
+type GetDifStackDataflowExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowExecutorShapeConfigOutput) ToGetDifStackDataflowExecutorShapeConfigOutput() GetDifStackDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetDifStackDataflowExecutorShapeConfigOutput) ToGetDifStackDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) GetDifStackDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetDifStackDataflowExecutorShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackDataflowExecutorShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See here for details.
+func (o GetDifStackDataflowExecutorShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackDataflowExecutorShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetDifStackDataflowExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackDataflowExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStackDataflowExecutorShapeConfigArrayOutput) ToGetDifStackDataflowExecutorShapeConfigArrayOutput() GetDifStackDataflowExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowExecutorShapeConfigArrayOutput) ToGetDifStackDataflowExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStackDataflowExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStackDataflowExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDifStackDataflowExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackDataflowExecutorShapeConfig {
+		return vs[0].([]GetDifStackDataflowExecutorShapeConfig)[vs[1].(int)]
+	}).(GetDifStackDataflowExecutorShapeConfigOutput)
+}
+
+type GetDifStackGenai struct {
+	// Name of the base model.
+	BaseModel string `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType string `pulumi:"clusterType"`
+	// List of endpoints to provision for the GENAI cluster.
+	Endpoints []GetDifStackGenaiEndpoint `pulumi:"endpoints"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// region of cluster
+	OciRegion string `pulumi:"ociRegion"`
+	// No of replicas of base model to be used for hosting.
+	UnitCount int `pulumi:"unitCount"`
+}
+
+// GetDifStackGenaiInput is an input type that accepts GetDifStackGenaiArgs and GetDifStackGenaiOutput values.
+// You can construct a concrete instance of `GetDifStackGenaiInput` via:
+//
+//	GetDifStackGenaiArgs{...}
+type GetDifStackGenaiInput interface {
+	pulumi.Input
+
+	ToGetDifStackGenaiOutput() GetDifStackGenaiOutput
+	ToGetDifStackGenaiOutputWithContext(context.Context) GetDifStackGenaiOutput
+}
+
+type GetDifStackGenaiArgs struct {
+	// Name of the base model.
+	BaseModel pulumi.StringInput `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType pulumi.StringInput `pulumi:"clusterType"`
+	// List of endpoints to provision for the GENAI cluster.
+	Endpoints GetDifStackGenaiEndpointArrayInput `pulumi:"endpoints"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// region of cluster
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// No of replicas of base model to be used for hosting.
+	UnitCount pulumi.IntInput `pulumi:"unitCount"`
+}
+
+func (GetDifStackGenaiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGenai)(nil)).Elem()
+}
+
+func (i GetDifStackGenaiArgs) ToGetDifStackGenaiOutput() GetDifStackGenaiOutput {
+	return i.ToGetDifStackGenaiOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGenaiArgs) ToGetDifStackGenaiOutputWithContext(ctx context.Context) GetDifStackGenaiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGenaiOutput)
+}
+
+// GetDifStackGenaiArrayInput is an input type that accepts GetDifStackGenaiArray and GetDifStackGenaiArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGenaiArrayInput` via:
+//
+//	GetDifStackGenaiArray{ GetDifStackGenaiArgs{...} }
+type GetDifStackGenaiArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGenaiArrayOutput() GetDifStackGenaiArrayOutput
+	ToGetDifStackGenaiArrayOutputWithContext(context.Context) GetDifStackGenaiArrayOutput
+}
+
+type GetDifStackGenaiArray []GetDifStackGenaiInput
+
+func (GetDifStackGenaiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGenai)(nil)).Elem()
+}
+
+func (i GetDifStackGenaiArray) ToGetDifStackGenaiArrayOutput() GetDifStackGenaiArrayOutput {
+	return i.ToGetDifStackGenaiArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGenaiArray) ToGetDifStackGenaiArrayOutputWithContext(ctx context.Context) GetDifStackGenaiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGenaiArrayOutput)
+}
+
+type GetDifStackGenaiOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGenaiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGenai)(nil)).Elem()
+}
+
+func (o GetDifStackGenaiOutput) ToGetDifStackGenaiOutput() GetDifStackGenaiOutput {
+	return o
+}
+
+func (o GetDifStackGenaiOutput) ToGetDifStackGenaiOutputWithContext(ctx context.Context) GetDifStackGenaiOutput {
+	return o
+}
+
+// Name of the base model.
+func (o GetDifStackGenaiOutput) BaseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGenai) string { return v.BaseModel }).(pulumi.StringOutput)
+}
+
+// The dedicated AI cluster type.
+func (o GetDifStackGenaiOutput) ClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGenai) string { return v.ClusterType }).(pulumi.StringOutput)
+}
+
+// List of endpoints to provision for the GENAI cluster.
+func (o GetDifStackGenaiOutput) Endpoints() GetDifStackGenaiEndpointArrayOutput {
+	return o.ApplyT(func(v GetDifStackGenai) []GetDifStackGenaiEndpoint { return v.Endpoints }).(GetDifStackGenaiEndpointArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackGenaiOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGenai) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// region of cluster
+func (o GetDifStackGenaiOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGenai) string { return v.OciRegion }).(pulumi.StringOutput)
+}
+
+// No of replicas of base model to be used for hosting.
+func (o GetDifStackGenaiOutput) UnitCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackGenai) int { return v.UnitCount }).(pulumi.IntOutput)
+}
+
+type GetDifStackGenaiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGenaiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGenai)(nil)).Elem()
+}
+
+func (o GetDifStackGenaiArrayOutput) ToGetDifStackGenaiArrayOutput() GetDifStackGenaiArrayOutput {
+	return o
+}
+
+func (o GetDifStackGenaiArrayOutput) ToGetDifStackGenaiArrayOutputWithContext(ctx context.Context) GetDifStackGenaiArrayOutput {
+	return o
+}
+
+func (o GetDifStackGenaiArrayOutput) Index(i pulumi.IntInput) GetDifStackGenaiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGenai {
+		return vs[0].([]GetDifStackGenai)[vs[1].(int)]
+	}).(GetDifStackGenaiOutput)
+}
+
+type GetDifStackGenaiEndpoint struct {
+	// Identifier for each endpoint.
+	EndpointName string `pulumi:"endpointName"`
+	// Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled bool `pulumi:"isContentModerationEnabled"`
+}
+
+// GetDifStackGenaiEndpointInput is an input type that accepts GetDifStackGenaiEndpointArgs and GetDifStackGenaiEndpointOutput values.
+// You can construct a concrete instance of `GetDifStackGenaiEndpointInput` via:
+//
+//	GetDifStackGenaiEndpointArgs{...}
+type GetDifStackGenaiEndpointInput interface {
+	pulumi.Input
+
+	ToGetDifStackGenaiEndpointOutput() GetDifStackGenaiEndpointOutput
+	ToGetDifStackGenaiEndpointOutputWithContext(context.Context) GetDifStackGenaiEndpointOutput
+}
+
+type GetDifStackGenaiEndpointArgs struct {
+	// Identifier for each endpoint.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	// Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled pulumi.BoolInput `pulumi:"isContentModerationEnabled"`
+}
+
+func (GetDifStackGenaiEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (i GetDifStackGenaiEndpointArgs) ToGetDifStackGenaiEndpointOutput() GetDifStackGenaiEndpointOutput {
+	return i.ToGetDifStackGenaiEndpointOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGenaiEndpointArgs) ToGetDifStackGenaiEndpointOutputWithContext(ctx context.Context) GetDifStackGenaiEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGenaiEndpointOutput)
+}
+
+// GetDifStackGenaiEndpointArrayInput is an input type that accepts GetDifStackGenaiEndpointArray and GetDifStackGenaiEndpointArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGenaiEndpointArrayInput` via:
+//
+//	GetDifStackGenaiEndpointArray{ GetDifStackGenaiEndpointArgs{...} }
+type GetDifStackGenaiEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGenaiEndpointArrayOutput() GetDifStackGenaiEndpointArrayOutput
+	ToGetDifStackGenaiEndpointArrayOutputWithContext(context.Context) GetDifStackGenaiEndpointArrayOutput
+}
+
+type GetDifStackGenaiEndpointArray []GetDifStackGenaiEndpointInput
+
+func (GetDifStackGenaiEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (i GetDifStackGenaiEndpointArray) ToGetDifStackGenaiEndpointArrayOutput() GetDifStackGenaiEndpointArrayOutput {
+	return i.ToGetDifStackGenaiEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGenaiEndpointArray) ToGetDifStackGenaiEndpointArrayOutputWithContext(ctx context.Context) GetDifStackGenaiEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGenaiEndpointArrayOutput)
+}
+
+type GetDifStackGenaiEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGenaiEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (o GetDifStackGenaiEndpointOutput) ToGetDifStackGenaiEndpointOutput() GetDifStackGenaiEndpointOutput {
+	return o
+}
+
+func (o GetDifStackGenaiEndpointOutput) ToGetDifStackGenaiEndpointOutputWithContext(ctx context.Context) GetDifStackGenaiEndpointOutput {
+	return o
+}
+
+// Identifier for each endpoint.
+func (o GetDifStackGenaiEndpointOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGenaiEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+// Helps remove toxic and biased content from responses.
+func (o GetDifStackGenaiEndpointOutput) IsContentModerationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStackGenaiEndpoint) bool { return v.IsContentModerationEnabled }).(pulumi.BoolOutput)
+}
+
+type GetDifStackGenaiEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGenaiEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGenaiEndpoint)(nil)).Elem()
+}
+
+func (o GetDifStackGenaiEndpointArrayOutput) ToGetDifStackGenaiEndpointArrayOutput() GetDifStackGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o GetDifStackGenaiEndpointArrayOutput) ToGetDifStackGenaiEndpointArrayOutputWithContext(ctx context.Context) GetDifStackGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o GetDifStackGenaiEndpointArrayOutput) Index(i pulumi.IntInput) GetDifStackGenaiEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGenaiEndpoint {
+		return vs[0].([]GetDifStackGenaiEndpoint)[vs[1].(int)]
+	}).(GetDifStackGenaiEndpointOutput)
+}
+
+type GetDifStackGgc struct {
+	ArtifactObjectStoragePath string `pulumi:"artifactObjectStoragePath"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections []GetDifStackGgcConnection `pulumi:"connections"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu int `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion string `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId string                 `pulumi:"publicSubnetId"`
+	Sources        []GetDifStackGgcSource `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string                 `pulumi:"subnetId"`
+	Targets  []GetDifStackGgcTarget `pulumi:"targets"`
+	Users    []GetDifStackGgcUser   `pulumi:"users"`
+}
+
+// GetDifStackGgcInput is an input type that accepts GetDifStackGgcArgs and GetDifStackGgcOutput values.
+// You can construct a concrete instance of `GetDifStackGgcInput` via:
+//
+//	GetDifStackGgcArgs{...}
+type GetDifStackGgcInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcOutput() GetDifStackGgcOutput
+	ToGetDifStackGgcOutputWithContext(context.Context) GetDifStackGgcOutput
+}
+
+type GetDifStackGgcArgs struct {
+	ArtifactObjectStoragePath pulumi.StringInput `pulumi:"artifactObjectStoragePath"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections GetDifStackGgcConnectionArrayInput `pulumi:"connections"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu pulumi.IntInput `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId pulumi.StringInput             `pulumi:"publicSubnetId"`
+	Sources        GetDifStackGgcSourceArrayInput `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput             `pulumi:"subnetId"`
+	Targets  GetDifStackGgcTargetArrayInput `pulumi:"targets"`
+	Users    GetDifStackGgcUserArrayInput   `pulumi:"users"`
+}
+
+func (GetDifStackGgcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgc)(nil)).Elem()
+}
+
+func (i GetDifStackGgcArgs) ToGetDifStackGgcOutput() GetDifStackGgcOutput {
+	return i.ToGetDifStackGgcOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcArgs) ToGetDifStackGgcOutputWithContext(ctx context.Context) GetDifStackGgcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcOutput)
+}
+
+// GetDifStackGgcArrayInput is an input type that accepts GetDifStackGgcArray and GetDifStackGgcArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcArrayInput` via:
+//
+//	GetDifStackGgcArray{ GetDifStackGgcArgs{...} }
+type GetDifStackGgcArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcArrayOutput() GetDifStackGgcArrayOutput
+	ToGetDifStackGgcArrayOutputWithContext(context.Context) GetDifStackGgcArrayOutput
+}
+
+type GetDifStackGgcArray []GetDifStackGgcInput
+
+func (GetDifStackGgcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgc)(nil)).Elem()
+}
+
+func (i GetDifStackGgcArray) ToGetDifStackGgcArrayOutput() GetDifStackGgcArrayOutput {
+	return i.ToGetDifStackGgcArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcArray) ToGetDifStackGgcArrayOutputWithContext(ctx context.Context) GetDifStackGgcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcArrayOutput)
+}
+
+type GetDifStackGgcOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgc)(nil)).Elem()
+}
+
+func (o GetDifStackGgcOutput) ToGetDifStackGgcOutput() GetDifStackGgcOutput {
+	return o
+}
+
+func (o GetDifStackGgcOutput) ToGetDifStackGgcOutputWithContext(ctx context.Context) GetDifStackGgcOutput {
+	return o
+}
+
+func (o GetDifStackGgcOutput) ArtifactObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.ArtifactObjectStoragePath }).(pulumi.StringOutput)
+}
+
+// Connection details to be associated with the Goldengate deployment.
+func (o GetDifStackGgcOutput) Connections() GetDifStackGgcConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStackGgc) []GetDifStackGgcConnection { return v.Connections }).(GetDifStackGgcConnectionArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackGgcOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The Minimum number of OCPUs to be made available for this Deployment.
+func (o GetDifStackGgcOutput) Ocpu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStackGgc) int { return v.Ocpu }).(pulumi.IntOutput)
+}
+
+// Version of OGG.
+func (o GetDifStackGgcOutput) OggVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// The OCID of the Secret where the deployment password is stored.
+func (o GetDifStackGgcOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+func (o GetDifStackGgcOutput) PublicSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.PublicSubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcOutput) Sources() GetDifStackGgcSourceArrayOutput {
+	return o.ApplyT(func(v GetDifStackGgc) []GetDifStackGgcSource { return v.Sources }).(GetDifStackGgcSourceArrayOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStackGgcOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgc) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcOutput) Targets() GetDifStackGgcTargetArrayOutput {
+	return o.ApplyT(func(v GetDifStackGgc) []GetDifStackGgcTarget { return v.Targets }).(GetDifStackGgcTargetArrayOutput)
+}
+
+func (o GetDifStackGgcOutput) Users() GetDifStackGgcUserArrayOutput {
+	return o.ApplyT(func(v GetDifStackGgc) []GetDifStackGgcUser { return v.Users }).(GetDifStackGgcUserArrayOutput)
+}
+
+type GetDifStackGgcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgc)(nil)).Elem()
+}
+
+func (o GetDifStackGgcArrayOutput) ToGetDifStackGgcArrayOutput() GetDifStackGgcArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcArrayOutput) ToGetDifStackGgcArrayOutputWithContext(ctx context.Context) GetDifStackGgcArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgc {
+		return vs[0].([]GetDifStackGgc)[vs[1].(int)]
+	}).(GetDifStackGgcOutput)
+}
+
+type GetDifStackGgcConnection struct {
+	// OCID of the connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName string `pulumi:"connectionName"`
+	// List of Service Dependency Details for connection creation.
+	DifDependencies []GetDifStackGgcConnectionDifDependency `pulumi:"difDependencies"`
+	// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId string `pulumi:"ggAdminSecretId"`
+}
+
+// GetDifStackGgcConnectionInput is an input type that accepts GetDifStackGgcConnectionArgs and GetDifStackGgcConnectionOutput values.
+// You can construct a concrete instance of `GetDifStackGgcConnectionInput` via:
+//
+//	GetDifStackGgcConnectionArgs{...}
+type GetDifStackGgcConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcConnectionOutput() GetDifStackGgcConnectionOutput
+	ToGetDifStackGgcConnectionOutputWithContext(context.Context) GetDifStackGgcConnectionOutput
+}
+
+type GetDifStackGgcConnectionArgs struct {
+	// OCID of the connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName pulumi.StringInput `pulumi:"connectionName"`
+	// List of Service Dependency Details for connection creation.
+	DifDependencies GetDifStackGgcConnectionDifDependencyArrayInput `pulumi:"difDependencies"`
+	// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId pulumi.StringInput `pulumi:"ggAdminSecretId"`
+}
+
+func (GetDifStackGgcConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcConnection)(nil)).Elem()
+}
+
+func (i GetDifStackGgcConnectionArgs) ToGetDifStackGgcConnectionOutput() GetDifStackGgcConnectionOutput {
+	return i.ToGetDifStackGgcConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcConnectionArgs) ToGetDifStackGgcConnectionOutputWithContext(ctx context.Context) GetDifStackGgcConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcConnectionOutput)
+}
+
+// GetDifStackGgcConnectionArrayInput is an input type that accepts GetDifStackGgcConnectionArray and GetDifStackGgcConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcConnectionArrayInput` via:
+//
+//	GetDifStackGgcConnectionArray{ GetDifStackGgcConnectionArgs{...} }
+type GetDifStackGgcConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcConnectionArrayOutput() GetDifStackGgcConnectionArrayOutput
+	ToGetDifStackGgcConnectionArrayOutputWithContext(context.Context) GetDifStackGgcConnectionArrayOutput
+}
+
+type GetDifStackGgcConnectionArray []GetDifStackGgcConnectionInput
+
+func (GetDifStackGgcConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcConnection)(nil)).Elem()
+}
+
+func (i GetDifStackGgcConnectionArray) ToGetDifStackGgcConnectionArrayOutput() GetDifStackGgcConnectionArrayOutput {
+	return i.ToGetDifStackGgcConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcConnectionArray) ToGetDifStackGgcConnectionArrayOutputWithContext(ctx context.Context) GetDifStackGgcConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcConnectionArrayOutput)
+}
+
+type GetDifStackGgcConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcConnection)(nil)).Elem()
+}
+
+func (o GetDifStackGgcConnectionOutput) ToGetDifStackGgcConnectionOutput() GetDifStackGgcConnectionOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionOutput) ToGetDifStackGgcConnectionOutputWithContext(ctx context.Context) GetDifStackGgcConnectionOutput {
+	return o
+}
+
+// OCID of the connection.
+func (o GetDifStackGgcConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// Name of the connection.
+func (o GetDifStackGgcConnectionOutput) ConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnection) string { return v.ConnectionName }).(pulumi.StringOutput)
+}
+
+// List of Service Dependency Details for connection creation.
+func (o GetDifStackGgcConnectionOutput) DifDependencies() GetDifStackGgcConnectionDifDependencyArrayOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnection) []GetDifStackGgcConnectionDifDependency { return v.DifDependencies }).(GetDifStackGgcConnectionDifDependencyArrayOutput)
+}
+
+// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+func (o GetDifStackGgcConnectionOutput) GgAdminSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnection) string { return v.GgAdminSecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStackGgcConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcConnection)(nil)).Elem()
+}
+
+func (o GetDifStackGgcConnectionArrayOutput) ToGetDifStackGgcConnectionArrayOutput() GetDifStackGgcConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionArrayOutput) ToGetDifStackGgcConnectionArrayOutputWithContext(ctx context.Context) GetDifStackGgcConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgcConnection {
+		return vs[0].([]GetDifStackGgcConnection)[vs[1].(int)]
+	}).(GetDifStackGgcConnectionOutput)
+}
+
+type GetDifStackGgcConnectionDifDependency struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDifStackGgcConnectionDifDependencyInput is an input type that accepts GetDifStackGgcConnectionDifDependencyArgs and GetDifStackGgcConnectionDifDependencyOutput values.
+// You can construct a concrete instance of `GetDifStackGgcConnectionDifDependencyInput` via:
+//
+//	GetDifStackGgcConnectionDifDependencyArgs{...}
+type GetDifStackGgcConnectionDifDependencyInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcConnectionDifDependencyOutput() GetDifStackGgcConnectionDifDependencyOutput
+	ToGetDifStackGgcConnectionDifDependencyOutputWithContext(context.Context) GetDifStackGgcConnectionDifDependencyOutput
+}
+
+type GetDifStackGgcConnectionDifDependencyArgs struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDifStackGgcConnectionDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStackGgcConnectionDifDependencyArgs) ToGetDifStackGgcConnectionDifDependencyOutput() GetDifStackGgcConnectionDifDependencyOutput {
+	return i.ToGetDifStackGgcConnectionDifDependencyOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcConnectionDifDependencyArgs) ToGetDifStackGgcConnectionDifDependencyOutputWithContext(ctx context.Context) GetDifStackGgcConnectionDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcConnectionDifDependencyOutput)
+}
+
+// GetDifStackGgcConnectionDifDependencyArrayInput is an input type that accepts GetDifStackGgcConnectionDifDependencyArray and GetDifStackGgcConnectionDifDependencyArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcConnectionDifDependencyArrayInput` via:
+//
+//	GetDifStackGgcConnectionDifDependencyArray{ GetDifStackGgcConnectionDifDependencyArgs{...} }
+type GetDifStackGgcConnectionDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcConnectionDifDependencyArrayOutput() GetDifStackGgcConnectionDifDependencyArrayOutput
+	ToGetDifStackGgcConnectionDifDependencyArrayOutputWithContext(context.Context) GetDifStackGgcConnectionDifDependencyArrayOutput
+}
+
+type GetDifStackGgcConnectionDifDependencyArray []GetDifStackGgcConnectionDifDependencyInput
+
+func (GetDifStackGgcConnectionDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStackGgcConnectionDifDependencyArray) ToGetDifStackGgcConnectionDifDependencyArrayOutput() GetDifStackGgcConnectionDifDependencyArrayOutput {
+	return i.ToGetDifStackGgcConnectionDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcConnectionDifDependencyArray) ToGetDifStackGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStackGgcConnectionDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcConnectionDifDependencyArrayOutput)
+}
+
+type GetDifStackGgcConnectionDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcConnectionDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStackGgcConnectionDifDependencyOutput) ToGetDifStackGgcConnectionDifDependencyOutput() GetDifStackGgcConnectionDifDependencyOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionDifDependencyOutput) ToGetDifStackGgcConnectionDifDependencyOutputWithContext(ctx context.Context) GetDifStackGgcConnectionDifDependencyOutput {
+	return o
+}
+
+// InstanceId of service which is part of the Stack.
+func (o GetDifStackGgcConnectionDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnectionDifDependency) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStackGgcConnectionDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcConnectionDifDependency) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type GetDifStackGgcConnectionDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcConnectionDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStackGgcConnectionDifDependencyArrayOutput) ToGetDifStackGgcConnectionDifDependencyArrayOutput() GetDifStackGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionDifDependencyArrayOutput) ToGetDifStackGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStackGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcConnectionDifDependencyArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcConnectionDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgcConnectionDifDependency {
+		return vs[0].([]GetDifStackGgcConnectionDifDependency)[vs[1].(int)]
+	}).(GetDifStackGgcConnectionDifDependencyOutput)
+}
+
+type GetDifStackGgcSource struct {
+	Action                      string `pulumi:"action"`
+	ShouldStartSourceOperations bool   `pulumi:"shouldStartSourceOperations"`
+	SourceId                    string `pulumi:"sourceId"`
+	TargetConnectionName        string `pulumi:"targetConnectionName"`
+	TargetUri                   string `pulumi:"targetUri"`
+}
+
+// GetDifStackGgcSourceInput is an input type that accepts GetDifStackGgcSourceArgs and GetDifStackGgcSourceOutput values.
+// You can construct a concrete instance of `GetDifStackGgcSourceInput` via:
+//
+//	GetDifStackGgcSourceArgs{...}
+type GetDifStackGgcSourceInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcSourceOutput() GetDifStackGgcSourceOutput
+	ToGetDifStackGgcSourceOutputWithContext(context.Context) GetDifStackGgcSourceOutput
+}
+
+type GetDifStackGgcSourceArgs struct {
+	Action                      pulumi.StringInput `pulumi:"action"`
+	ShouldStartSourceOperations pulumi.BoolInput   `pulumi:"shouldStartSourceOperations"`
+	SourceId                    pulumi.StringInput `pulumi:"sourceId"`
+	TargetConnectionName        pulumi.StringInput `pulumi:"targetConnectionName"`
+	TargetUri                   pulumi.StringInput `pulumi:"targetUri"`
+}
+
+func (GetDifStackGgcSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcSource)(nil)).Elem()
+}
+
+func (i GetDifStackGgcSourceArgs) ToGetDifStackGgcSourceOutput() GetDifStackGgcSourceOutput {
+	return i.ToGetDifStackGgcSourceOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcSourceArgs) ToGetDifStackGgcSourceOutputWithContext(ctx context.Context) GetDifStackGgcSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcSourceOutput)
+}
+
+// GetDifStackGgcSourceArrayInput is an input type that accepts GetDifStackGgcSourceArray and GetDifStackGgcSourceArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcSourceArrayInput` via:
+//
+//	GetDifStackGgcSourceArray{ GetDifStackGgcSourceArgs{...} }
+type GetDifStackGgcSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcSourceArrayOutput() GetDifStackGgcSourceArrayOutput
+	ToGetDifStackGgcSourceArrayOutputWithContext(context.Context) GetDifStackGgcSourceArrayOutput
+}
+
+type GetDifStackGgcSourceArray []GetDifStackGgcSourceInput
+
+func (GetDifStackGgcSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcSource)(nil)).Elem()
+}
+
+func (i GetDifStackGgcSourceArray) ToGetDifStackGgcSourceArrayOutput() GetDifStackGgcSourceArrayOutput {
+	return i.ToGetDifStackGgcSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcSourceArray) ToGetDifStackGgcSourceArrayOutputWithContext(ctx context.Context) GetDifStackGgcSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcSourceArrayOutput)
+}
+
+type GetDifStackGgcSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcSource)(nil)).Elem()
+}
+
+func (o GetDifStackGgcSourceOutput) ToGetDifStackGgcSourceOutput() GetDifStackGgcSourceOutput {
+	return o
+}
+
+func (o GetDifStackGgcSourceOutput) ToGetDifStackGgcSourceOutputWithContext(ctx context.Context) GetDifStackGgcSourceOutput {
+	return o
+}
+
+func (o GetDifStackGgcSourceOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcSource) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcSourceOutput) ShouldStartSourceOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStackGgcSource) bool { return v.ShouldStartSourceOperations }).(pulumi.BoolOutput)
+}
+
+func (o GetDifStackGgcSourceOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcSource) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcSourceOutput) TargetConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcSource) string { return v.TargetConnectionName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcSourceOutput) TargetUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcSource) string { return v.TargetUri }).(pulumi.StringOutput)
+}
+
+type GetDifStackGgcSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcSource)(nil)).Elem()
+}
+
+func (o GetDifStackGgcSourceArrayOutput) ToGetDifStackGgcSourceArrayOutput() GetDifStackGgcSourceArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcSourceArrayOutput) ToGetDifStackGgcSourceArrayOutputWithContext(ctx context.Context) GetDifStackGgcSourceArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcSourceArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgcSource {
+		return vs[0].([]GetDifStackGgcSource)[vs[1].(int)]
+	}).(GetDifStackGgcSourceOutput)
+}
+
+type GetDifStackGgcTarget struct {
+	Action                      string `pulumi:"action"`
+	ShouldStartTargetOperations bool   `pulumi:"shouldStartTargetOperations"`
+	SourceConnectionName        string `pulumi:"sourceConnectionName"`
+	SourceUri                   string `pulumi:"sourceUri"`
+	TargetId                    string `pulumi:"targetId"`
+}
+
+// GetDifStackGgcTargetInput is an input type that accepts GetDifStackGgcTargetArgs and GetDifStackGgcTargetOutput values.
+// You can construct a concrete instance of `GetDifStackGgcTargetInput` via:
+//
+//	GetDifStackGgcTargetArgs{...}
+type GetDifStackGgcTargetInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcTargetOutput() GetDifStackGgcTargetOutput
+	ToGetDifStackGgcTargetOutputWithContext(context.Context) GetDifStackGgcTargetOutput
+}
+
+type GetDifStackGgcTargetArgs struct {
+	Action                      pulumi.StringInput `pulumi:"action"`
+	ShouldStartTargetOperations pulumi.BoolInput   `pulumi:"shouldStartTargetOperations"`
+	SourceConnectionName        pulumi.StringInput `pulumi:"sourceConnectionName"`
+	SourceUri                   pulumi.StringInput `pulumi:"sourceUri"`
+	TargetId                    pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetDifStackGgcTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcTarget)(nil)).Elem()
+}
+
+func (i GetDifStackGgcTargetArgs) ToGetDifStackGgcTargetOutput() GetDifStackGgcTargetOutput {
+	return i.ToGetDifStackGgcTargetOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcTargetArgs) ToGetDifStackGgcTargetOutputWithContext(ctx context.Context) GetDifStackGgcTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcTargetOutput)
+}
+
+// GetDifStackGgcTargetArrayInput is an input type that accepts GetDifStackGgcTargetArray and GetDifStackGgcTargetArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcTargetArrayInput` via:
+//
+//	GetDifStackGgcTargetArray{ GetDifStackGgcTargetArgs{...} }
+type GetDifStackGgcTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcTargetArrayOutput() GetDifStackGgcTargetArrayOutput
+	ToGetDifStackGgcTargetArrayOutputWithContext(context.Context) GetDifStackGgcTargetArrayOutput
+}
+
+type GetDifStackGgcTargetArray []GetDifStackGgcTargetInput
+
+func (GetDifStackGgcTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcTarget)(nil)).Elem()
+}
+
+func (i GetDifStackGgcTargetArray) ToGetDifStackGgcTargetArrayOutput() GetDifStackGgcTargetArrayOutput {
+	return i.ToGetDifStackGgcTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcTargetArray) ToGetDifStackGgcTargetArrayOutputWithContext(ctx context.Context) GetDifStackGgcTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcTargetArrayOutput)
+}
+
+type GetDifStackGgcTargetOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcTarget)(nil)).Elem()
+}
+
+func (o GetDifStackGgcTargetOutput) ToGetDifStackGgcTargetOutput() GetDifStackGgcTargetOutput {
+	return o
+}
+
+func (o GetDifStackGgcTargetOutput) ToGetDifStackGgcTargetOutputWithContext(ctx context.Context) GetDifStackGgcTargetOutput {
+	return o
+}
+
+func (o GetDifStackGgcTargetOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcTarget) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcTargetOutput) ShouldStartTargetOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStackGgcTarget) bool { return v.ShouldStartTargetOperations }).(pulumi.BoolOutput)
+}
+
+func (o GetDifStackGgcTargetOutput) SourceConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcTarget) string { return v.SourceConnectionName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcTargetOutput) SourceUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcTarget) string { return v.SourceUri }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcTarget) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetDifStackGgcTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcTarget)(nil)).Elem()
+}
+
+func (o GetDifStackGgcTargetArrayOutput) ToGetDifStackGgcTargetArrayOutput() GetDifStackGgcTargetArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcTargetArrayOutput) ToGetDifStackGgcTargetArrayOutputWithContext(ctx context.Context) GetDifStackGgcTargetArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcTargetArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgcTarget {
+		return vs[0].([]GetDifStackGgcTarget)[vs[1].(int)]
+	}).(GetDifStackGgcTargetOutput)
+}
+
+type GetDifStackGgcUser struct {
+	Action   string `pulumi:"action"`
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// GetDifStackGgcUserInput is an input type that accepts GetDifStackGgcUserArgs and GetDifStackGgcUserOutput values.
+// You can construct a concrete instance of `GetDifStackGgcUserInput` via:
+//
+//	GetDifStackGgcUserArgs{...}
+type GetDifStackGgcUserInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcUserOutput() GetDifStackGgcUserOutput
+	ToGetDifStackGgcUserOutputWithContext(context.Context) GetDifStackGgcUserOutput
+}
+
+type GetDifStackGgcUserArgs struct {
+	Action   pulumi.StringInput `pulumi:"action"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (GetDifStackGgcUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcUser)(nil)).Elem()
+}
+
+func (i GetDifStackGgcUserArgs) ToGetDifStackGgcUserOutput() GetDifStackGgcUserOutput {
+	return i.ToGetDifStackGgcUserOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcUserArgs) ToGetDifStackGgcUserOutputWithContext(ctx context.Context) GetDifStackGgcUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcUserOutput)
+}
+
+// GetDifStackGgcUserArrayInput is an input type that accepts GetDifStackGgcUserArray and GetDifStackGgcUserArrayOutput values.
+// You can construct a concrete instance of `GetDifStackGgcUserArrayInput` via:
+//
+//	GetDifStackGgcUserArray{ GetDifStackGgcUserArgs{...} }
+type GetDifStackGgcUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackGgcUserArrayOutput() GetDifStackGgcUserArrayOutput
+	ToGetDifStackGgcUserArrayOutputWithContext(context.Context) GetDifStackGgcUserArrayOutput
+}
+
+type GetDifStackGgcUserArray []GetDifStackGgcUserInput
+
+func (GetDifStackGgcUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcUser)(nil)).Elem()
+}
+
+func (i GetDifStackGgcUserArray) ToGetDifStackGgcUserArrayOutput() GetDifStackGgcUserArrayOutput {
+	return i.ToGetDifStackGgcUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackGgcUserArray) ToGetDifStackGgcUserArrayOutputWithContext(ctx context.Context) GetDifStackGgcUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackGgcUserArrayOutput)
+}
+
+type GetDifStackGgcUserOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackGgcUser)(nil)).Elem()
+}
+
+func (o GetDifStackGgcUserOutput) ToGetDifStackGgcUserOutput() GetDifStackGgcUserOutput {
+	return o
+}
+
+func (o GetDifStackGgcUserOutput) ToGetDifStackGgcUserOutputWithContext(ctx context.Context) GetDifStackGgcUserOutput {
+	return o
+}
+
+func (o GetDifStackGgcUserOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcUser) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcUserOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcUser) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcUserOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcUser) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackGgcUserOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackGgcUser) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type GetDifStackGgcUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackGgcUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackGgcUser)(nil)).Elem()
+}
+
+func (o GetDifStackGgcUserArrayOutput) ToGetDifStackGgcUserArrayOutput() GetDifStackGgcUserArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcUserArrayOutput) ToGetDifStackGgcUserArrayOutputWithContext(ctx context.Context) GetDifStackGgcUserArrayOutput {
+	return o
+}
+
+func (o GetDifStackGgcUserArrayOutput) Index(i pulumi.IntInput) GetDifStackGgcUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackGgcUser {
+		return vs[0].([]GetDifStackGgcUser)[vs[1].(int)]
+	}).(GetDifStackGgcUserOutput)
+}
+
+type GetDifStackObjectstorage struct {
+	// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering string `pulumi:"autoTiering"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning string `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier string `pulumi:"storageTier"`
+}
+
+// GetDifStackObjectstorageInput is an input type that accepts GetDifStackObjectstorageArgs and GetDifStackObjectstorageOutput values.
+// You can construct a concrete instance of `GetDifStackObjectstorageInput` via:
+//
+//	GetDifStackObjectstorageArgs{...}
+type GetDifStackObjectstorageInput interface {
+	pulumi.Input
+
+	ToGetDifStackObjectstorageOutput() GetDifStackObjectstorageOutput
+	ToGetDifStackObjectstorageOutputWithContext(context.Context) GetDifStackObjectstorageOutput
+}
+
+type GetDifStackObjectstorageArgs struct {
+	// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering pulumi.StringInput `pulumi:"autoTiering"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning pulumi.StringInput `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+}
+
+func (GetDifStackObjectstorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackObjectstorage)(nil)).Elem()
+}
+
+func (i GetDifStackObjectstorageArgs) ToGetDifStackObjectstorageOutput() GetDifStackObjectstorageOutput {
+	return i.ToGetDifStackObjectstorageOutputWithContext(context.Background())
+}
+
+func (i GetDifStackObjectstorageArgs) ToGetDifStackObjectstorageOutputWithContext(ctx context.Context) GetDifStackObjectstorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackObjectstorageOutput)
+}
+
+// GetDifStackObjectstorageArrayInput is an input type that accepts GetDifStackObjectstorageArray and GetDifStackObjectstorageArrayOutput values.
+// You can construct a concrete instance of `GetDifStackObjectstorageArrayInput` via:
+//
+//	GetDifStackObjectstorageArray{ GetDifStackObjectstorageArgs{...} }
+type GetDifStackObjectstorageArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackObjectstorageArrayOutput() GetDifStackObjectstorageArrayOutput
+	ToGetDifStackObjectstorageArrayOutputWithContext(context.Context) GetDifStackObjectstorageArrayOutput
+}
+
+type GetDifStackObjectstorageArray []GetDifStackObjectstorageInput
+
+func (GetDifStackObjectstorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackObjectstorage)(nil)).Elem()
+}
+
+func (i GetDifStackObjectstorageArray) ToGetDifStackObjectstorageArrayOutput() GetDifStackObjectstorageArrayOutput {
+	return i.ToGetDifStackObjectstorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackObjectstorageArray) ToGetDifStackObjectstorageArrayOutputWithContext(ctx context.Context) GetDifStackObjectstorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackObjectstorageArrayOutput)
+}
+
+type GetDifStackObjectstorageOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackObjectstorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackObjectstorage)(nil)).Elem()
+}
+
+func (o GetDifStackObjectstorageOutput) ToGetDifStackObjectstorageOutput() GetDifStackObjectstorageOutput {
+	return o
+}
+
+func (o GetDifStackObjectstorageOutput) ToGetDifStackObjectstorageOutputWithContext(ctx context.Context) GetDifStackObjectstorageOutput {
+	return o
+}
+
+// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+func (o GetDifStackObjectstorageOutput) AutoTiering() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackObjectstorage) string { return v.AutoTiering }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackObjectstorageOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackObjectstorage) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+func (o GetDifStackObjectstorageOutput) ObjectVersioning() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackObjectstorage) string { return v.ObjectVersioning }).(pulumi.StringOutput)
+}
+
+// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+func (o GetDifStackObjectstorageOutput) StorageTier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackObjectstorage) string { return v.StorageTier }).(pulumi.StringOutput)
+}
+
+type GetDifStackObjectstorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackObjectstorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackObjectstorage)(nil)).Elem()
+}
+
+func (o GetDifStackObjectstorageArrayOutput) ToGetDifStackObjectstorageArrayOutput() GetDifStackObjectstorageArrayOutput {
+	return o
+}
+
+func (o GetDifStackObjectstorageArrayOutput) ToGetDifStackObjectstorageArrayOutputWithContext(ctx context.Context) GetDifStackObjectstorageArrayOutput {
+	return o
+}
+
+func (o GetDifStackObjectstorageArrayOutput) Index(i pulumi.IntInput) GetDifStackObjectstorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackObjectstorage {
+		return vs[0].([]GetDifStackObjectstorage)[vs[1].(int)]
+	}).(GetDifStackObjectstorageOutput)
+}
+
+type GetDifStackServiceDetail struct {
+	// Additional details about the provisioned services
+	AdditionalDetails []GetDifStackServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath string `pulumi:"currentArtifactPath"`
+	// name of the service
+	DisplayName string `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId string `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl string `pulumi:"serviceUrl"`
+	// state of the service
+	Status string `pulumi:"status"`
+}
+
+// GetDifStackServiceDetailInput is an input type that accepts GetDifStackServiceDetailArgs and GetDifStackServiceDetailOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailInput` via:
+//
+//	GetDifStackServiceDetailArgs{...}
+type GetDifStackServiceDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailOutput() GetDifStackServiceDetailOutput
+	ToGetDifStackServiceDetailOutputWithContext(context.Context) GetDifStackServiceDetailOutput
+}
+
+type GetDifStackServiceDetailArgs struct {
+	// Additional details about the provisioned services
+	AdditionalDetails GetDifStackServiceDetailAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath pulumi.StringInput `pulumi:"currentArtifactPath"`
+	// name of the service
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId pulumi.StringInput `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
+	// state of the service
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDifStackServiceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailArgs) ToGetDifStackServiceDetailOutput() GetDifStackServiceDetailOutput {
+	return i.ToGetDifStackServiceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailArgs) ToGetDifStackServiceDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailOutput)
+}
+
+// GetDifStackServiceDetailArrayInput is an input type that accepts GetDifStackServiceDetailArray and GetDifStackServiceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailArrayInput` via:
+//
+//	GetDifStackServiceDetailArray{ GetDifStackServiceDetailArgs{...} }
+type GetDifStackServiceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailArrayOutput() GetDifStackServiceDetailArrayOutput
+	ToGetDifStackServiceDetailArrayOutputWithContext(context.Context) GetDifStackServiceDetailArrayOutput
+}
+
+type GetDifStackServiceDetailArray []GetDifStackServiceDetailInput
+
+func (GetDifStackServiceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailArray) ToGetDifStackServiceDetailArrayOutput() GetDifStackServiceDetailArrayOutput {
+	return i.ToGetDifStackServiceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailArray) ToGetDifStackServiceDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailArrayOutput)
+}
+
+type GetDifStackServiceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailOutput) ToGetDifStackServiceDetailOutput() GetDifStackServiceDetailOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailOutput) ToGetDifStackServiceDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailOutput {
+	return o
+}
+
+// Additional details about the provisioned services
+func (o GetDifStackServiceDetailOutput) AdditionalDetails() GetDifStackServiceDetailAdditionalDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) []GetDifStackServiceDetailAdditionalDetail {
+		return v.AdditionalDetails
+	}).(GetDifStackServiceDetailAdditionalDetailArrayOutput)
+}
+
+// name of the service
+func (o GetDifStackServiceDetailOutput) CurrentArtifactPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.CurrentArtifactPath }).(pulumi.StringOutput)
+}
+
+// name of the service
+func (o GetDifStackServiceDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackServiceDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// ID for the service
+func (o GetDifStackServiceDetailOutput) ServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.ServiceId }).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStackServiceDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+// url for the service
+func (o GetDifStackServiceDetailOutput) ServiceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.ServiceUrl }).(pulumi.StringOutput)
+}
+
+// state of the service
+func (o GetDifStackServiceDetailOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetail) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDifStackServiceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailArrayOutput) ToGetDifStackServiceDetailArrayOutput() GetDifStackServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailArrayOutput) ToGetDifStackServiceDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailArrayOutput) Index(i pulumi.IntInput) GetDifStackServiceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackServiceDetail {
+		return vs[0].([]GetDifStackServiceDetail)[vs[1].(int)]
+	}).(GetDifStackServiceDetailOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetail struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections []GetDifStackServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails []GetDifStackServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId string `pulumi:"modelId"`
+	// version of model
+	ModelVersion string `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion string `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetDifStackServiceDetailAdditionalDetailInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailArgs and GetDifStackServiceDetailAdditionalDetailOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailArgs{...}
+type GetDifStackServiceDetailAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailOutput() GetDifStackServiceDetailAdditionalDetailOutput
+	ToGetDifStackServiceDetailAdditionalDetailOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailArgs struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// version of model
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetDifStackServiceDetailAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailArgs) ToGetDifStackServiceDetailAdditionalDetailOutput() GetDifStackServiceDetailAdditionalDetailOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailArgs) ToGetDifStackServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailOutput)
+}
+
+// GetDifStackServiceDetailAdditionalDetailArrayInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailArray and GetDifStackServiceDetailAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailArrayInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailArray{ GetDifStackServiceDetailAdditionalDetailArgs{...} }
+type GetDifStackServiceDetailAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailArrayOutput
+	ToGetDifStackServiceDetailAdditionalDetailArrayOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailArrayOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailArray []GetDifStackServiceDetailAdditionalDetailInput
+
+func (GetDifStackServiceDetailAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailArray) ToGetDifStackServiceDetailAdditionalDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailArrayOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailArray) ToGetDifStackServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailArrayOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailOutput) ToGetDifStackServiceDetailAdditionalDetailOutput() GetDifStackServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailOutput) ToGetDifStackServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+// connections assigned to Golden Gate deployment
+func (o GetDifStackServiceDetailAdditionalDetailOutput) AssignedConnections() GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) []GetDifStackServiceDetailAdditionalDetailAssignedConnection {
+		return v.AssignedConnections
+	}).(GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+// details of all endpoints assigned to cluster
+func (o GetDifStackServiceDetailAdditionalDetailOutput) EndpointDetails() GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) []GetDifStackServiceDetailAdditionalDetailEndpointDetail {
+		return v.EndpointDetails
+	}).(GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+// OCID of model
+func (o GetDifStackServiceDetailAdditionalDetailOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// version of model
+func (o GetDifStackServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// region of cluster
+func (o GetDifStackServiceDetailAdditionalDetailOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.OciRegion }).(pulumi.StringOutput)
+}
+
+// OCID of model
+func (o GetDifStackServiceDetailAdditionalDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailArrayOutput) ToGetDifStackServiceDetailAdditionalDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailArrayOutput) ToGetDifStackServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailArrayOutput) Index(i pulumi.IntInput) GetDifStackServiceDetailAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackServiceDetailAdditionalDetail {
+		return vs[0].([]GetDifStackServiceDetailAdditionalDetail)[vs[1].(int)]
+	}).(GetDifStackServiceDetailAdditionalDetailOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailAssignedConnection struct {
+	// OCID of the connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName string `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy string `pulumi:"requestedBy"`
+}
+
+// GetDifStackServiceDetailAdditionalDetailAssignedConnectionInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs and GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailAssignedConnectionInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs{...}
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput
+	ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs struct {
+	// OCID of the connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName pulumi.StringInput `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy pulumi.StringInput `pulumi:"requestedBy"`
+}
+
+func (GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+// GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray and GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray{ GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs{...} }
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+	ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray []GetDifStackServiceDetailAdditionalDetailAssignedConnectionInput
+
+func (GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+// OCID of the connection.
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetailAssignedConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// Name of the connection.
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetailAssignedConnection) string { return v.ConnectionName }).(pulumi.StringOutput)
+}
+
+// Specifies who has made this connection.
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput) RequestedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetailAssignedConnection) string { return v.RequestedBy }).(pulumi.StringOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToGetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackServiceDetailAdditionalDetailAssignedConnection {
+		return vs[0].([]GetDifStackServiceDetailAdditionalDetailAssignedConnection)[vs[1].(int)]
+	}).(GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailEndpointDetail struct {
+	// OCID of the endpoint.
+	EndpointId string `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName string `pulumi:"endpointName"`
+}
+
+// GetDifStackServiceDetailAdditionalDetailEndpointDetailInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs and GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailEndpointDetailInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs{...}
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput
+	ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs struct {
+	// OCID of the endpoint.
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+}
+
+func (GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput)
+}
+
+// GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput is an input type that accepts GetDifStackServiceDetailAdditionalDetailEndpointDetailArray and GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput` via:
+//
+//	GetDifStackServiceDetailAdditionalDetailEndpointDetailArray{ GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs{...} }
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput
+	ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput
+}
+
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailArray []GetDifStackServiceDetailAdditionalDetailEndpointDetailInput
+
+func (GetDifStackServiceDetailAdditionalDetailEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailEndpointDetailArray) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return i.ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackServiceDetailAdditionalDetailEndpointDetailArray) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+// OCID of the endpoint.
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetailEndpointDetail) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Identifier for each endpoint.
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetailEndpointDetail) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+type GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToGetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackServiceDetailAdditionalDetailEndpointDetail {
+		return vs[0].([]GetDifStackServiceDetailAdditionalDetailEndpointDetail)[vs[1].(int)]
+	}).(GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput)
+}
+
+type GetDifStacksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDifStacksFilterInput is an input type that accepts GetDifStacksFilterArgs and GetDifStacksFilterOutput values.
+// You can construct a concrete instance of `GetDifStacksFilterInput` via:
+//
+//	GetDifStacksFilterArgs{...}
+type GetDifStacksFilterInput interface {
+	pulumi.Input
+
+	ToGetDifStacksFilterOutput() GetDifStacksFilterOutput
+	ToGetDifStacksFilterOutputWithContext(context.Context) GetDifStacksFilterOutput
+}
+
+type GetDifStacksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDifStacksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksFilter)(nil)).Elem()
+}
+
+func (i GetDifStacksFilterArgs) ToGetDifStacksFilterOutput() GetDifStacksFilterOutput {
+	return i.ToGetDifStacksFilterOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksFilterArgs) ToGetDifStacksFilterOutputWithContext(ctx context.Context) GetDifStacksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksFilterOutput)
+}
+
+// GetDifStacksFilterArrayInput is an input type that accepts GetDifStacksFilterArray and GetDifStacksFilterArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksFilterArrayInput` via:
+//
+//	GetDifStacksFilterArray{ GetDifStacksFilterArgs{...} }
+type GetDifStacksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksFilterArrayOutput() GetDifStacksFilterArrayOutput
+	ToGetDifStacksFilterArrayOutputWithContext(context.Context) GetDifStacksFilterArrayOutput
+}
+
+type GetDifStacksFilterArray []GetDifStacksFilterInput
+
+func (GetDifStacksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksFilter)(nil)).Elem()
+}
+
+func (i GetDifStacksFilterArray) ToGetDifStacksFilterArrayOutput() GetDifStacksFilterArrayOutput {
+	return i.ToGetDifStacksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksFilterArray) ToGetDifStacksFilterArrayOutputWithContext(ctx context.Context) GetDifStacksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksFilterArrayOutput)
+}
+
+type GetDifStacksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksFilter)(nil)).Elem()
+}
+
+func (o GetDifStacksFilterOutput) ToGetDifStacksFilterOutput() GetDifStacksFilterOutput {
+	return o
+}
+
+func (o GetDifStacksFilterOutput) ToGetDifStacksFilterOutputWithContext(ctx context.Context) GetDifStacksFilterOutput {
+	return o
+}
+
+func (o GetDifStacksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDifStacksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDifStacksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDifStacksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDifStacksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksFilter)(nil)).Elem()
+}
+
+func (o GetDifStacksFilterArrayOutput) ToGetDifStacksFilterArrayOutput() GetDifStacksFilterArrayOutput {
+	return o
+}
+
+func (o GetDifStacksFilterArrayOutput) ToGetDifStacksFilterArrayOutputWithContext(ctx context.Context) GetDifStacksFilterArrayOutput {
+	return o
+}
+
+func (o GetDifStacksFilterArrayOutput) Index(i pulumi.IntInput) GetDifStacksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksFilter {
+		return vs[0].([]GetDifStacksFilter)[vs[1].(int)]
+	}).(GetDifStacksFilterOutput)
+}
+
+type GetDifStacksStackCollection struct {
+	Items []GetDifStacksStackCollectionItem `pulumi:"items"`
+}
+
+// GetDifStacksStackCollectionInput is an input type that accepts GetDifStacksStackCollectionArgs and GetDifStacksStackCollectionOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionInput` via:
+//
+//	GetDifStacksStackCollectionArgs{...}
+type GetDifStacksStackCollectionInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionOutput() GetDifStacksStackCollectionOutput
+	ToGetDifStacksStackCollectionOutputWithContext(context.Context) GetDifStacksStackCollectionOutput
+}
+
+type GetDifStacksStackCollectionArgs struct {
+	Items GetDifStacksStackCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDifStacksStackCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionArgs) ToGetDifStacksStackCollectionOutput() GetDifStacksStackCollectionOutput {
+	return i.ToGetDifStacksStackCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionArgs) ToGetDifStacksStackCollectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionOutput)
+}
+
+// GetDifStacksStackCollectionArrayInput is an input type that accepts GetDifStacksStackCollectionArray and GetDifStacksStackCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionArrayInput` via:
+//
+//	GetDifStacksStackCollectionArray{ GetDifStacksStackCollectionArgs{...} }
+type GetDifStacksStackCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionArrayOutput() GetDifStacksStackCollectionArrayOutput
+	ToGetDifStacksStackCollectionArrayOutputWithContext(context.Context) GetDifStacksStackCollectionArrayOutput
+}
+
+type GetDifStacksStackCollectionArray []GetDifStacksStackCollectionInput
+
+func (GetDifStacksStackCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionArray) ToGetDifStacksStackCollectionArrayOutput() GetDifStacksStackCollectionArrayOutput {
+	return i.ToGetDifStacksStackCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionArray) ToGetDifStacksStackCollectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionArrayOutput)
+}
+
+type GetDifStacksStackCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionOutput) ToGetDifStacksStackCollectionOutput() GetDifStacksStackCollectionOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionOutput) ToGetDifStacksStackCollectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionOutput) Items() GetDifStacksStackCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollection) []GetDifStacksStackCollectionItem { return v.Items }).(GetDifStacksStackCollectionItemArrayOutput)
+}
+
+type GetDifStacksStackCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionArrayOutput) ToGetDifStacksStackCollectionArrayOutput() GetDifStacksStackCollectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionArrayOutput) ToGetDifStacksStackCollectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollection {
+		return vs[0].([]GetDifStacksStackCollection)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionOutput)
+}
+
+type GetDifStacksStackCollectionItem struct {
+	// ADB details if adb is included in the services.
+	Adbs              []GetDifStacksStackCollectionItemAdb `pulumi:"adbs"`
+	AddServiceTrigger int                                  `pulumi:"addServiceTrigger"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// DATAFLOW details if dataflow is included in the services.
+	Dataflows []GetDifStacksStackCollectionItemDataflow `pulumi:"dataflows"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags            map[string]string `pulumi:"definedTags"`
+	DeployArtifactsTrigger int               `pulumi:"deployArtifactsTrigger"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// GenAI Details if genai is included in services.
+	Genais []GetDifStacksStackCollectionItemGenai `pulumi:"genais"`
+	// GGCS details if ggcs is included in the services.
+	Ggcs []GetDifStacksStackCollectionItemGgc `pulumi:"ggcs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Stack.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// email id to which the stack notifications would be sent.
+	NotificationEmail string `pulumi:"notificationEmail"`
+	// Object Storage Details if object storage is included in services.
+	Objectstorages []GetDifStacksStackCollectionItemObjectstorage `pulumi:"objectstorages"`
+	// Details of the service onboarded for the data intelligence stack.
+	ServiceDetails []GetDifStacksStackCollectionItemServiceDetail `pulumi:"serviceDetails"`
+	// List of services to be onboarded for the stack.
+	Services []string `pulumi:"services"`
+	// List of templates to be onboarded for the stack.
+	StackTemplates []string `pulumi:"stackTemplates"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDifStacksStackCollectionItemInput is an input type that accepts GetDifStacksStackCollectionItemArgs and GetDifStacksStackCollectionItemOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemInput` via:
+//
+//	GetDifStacksStackCollectionItemArgs{...}
+type GetDifStacksStackCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOutput() GetDifStacksStackCollectionItemOutput
+	ToGetDifStacksStackCollectionItemOutputWithContext(context.Context) GetDifStacksStackCollectionItemOutput
+}
+
+type GetDifStacksStackCollectionItemArgs struct {
+	// ADB details if adb is included in the services.
+	Adbs              GetDifStacksStackCollectionItemAdbArrayInput `pulumi:"adbs"`
+	AddServiceTrigger pulumi.IntInput                              `pulumi:"addServiceTrigger"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// DATAFLOW details if dataflow is included in the services.
+	Dataflows GetDifStacksStackCollectionItemDataflowArrayInput `pulumi:"dataflows"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags            pulumi.StringMapInput `pulumi:"definedTags"`
+	DeployArtifactsTrigger pulumi.IntInput       `pulumi:"deployArtifactsTrigger"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// GenAI Details if genai is included in services.
+	Genais GetDifStacksStackCollectionItemGenaiArrayInput `pulumi:"genais"`
+	// GGCS details if ggcs is included in the services.
+	Ggcs GetDifStacksStackCollectionItemGgcArrayInput `pulumi:"ggcs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Stack.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// email id to which the stack notifications would be sent.
+	NotificationEmail pulumi.StringInput `pulumi:"notificationEmail"`
+	// Object Storage Details if object storage is included in services.
+	Objectstorages GetDifStacksStackCollectionItemObjectstorageArrayInput `pulumi:"objectstorages"`
+	// Details of the service onboarded for the data intelligence stack.
+	ServiceDetails GetDifStacksStackCollectionItemServiceDetailArrayInput `pulumi:"serviceDetails"`
+	// List of services to be onboarded for the stack.
+	Services pulumi.StringArrayInput `pulumi:"services"`
+	// List of templates to be onboarded for the stack.
+	StackTemplates pulumi.StringArrayInput `pulumi:"stackTemplates"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDifStacksStackCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItem)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemArgs) ToGetDifStacksStackCollectionItemOutput() GetDifStacksStackCollectionItemOutput {
+	return i.ToGetDifStacksStackCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemArgs) ToGetDifStacksStackCollectionItemOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOutput)
+}
+
+// GetDifStacksStackCollectionItemArrayInput is an input type that accepts GetDifStacksStackCollectionItemArray and GetDifStacksStackCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemArray{ GetDifStacksStackCollectionItemArgs{...} }
+type GetDifStacksStackCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemArrayOutput() GetDifStacksStackCollectionItemArrayOutput
+	ToGetDifStacksStackCollectionItemArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemArrayOutput
+}
+
+type GetDifStacksStackCollectionItemArray []GetDifStacksStackCollectionItemInput
+
+func (GetDifStacksStackCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItem)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemArray) ToGetDifStacksStackCollectionItemArrayOutput() GetDifStacksStackCollectionItemArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemArray) ToGetDifStacksStackCollectionItemArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItem)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOutput) ToGetDifStacksStackCollectionItemOutput() GetDifStacksStackCollectionItemOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOutput) ToGetDifStacksStackCollectionItemOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOutput {
+	return o
+}
+
+// ADB details if adb is included in the services.
+func (o GetDifStacksStackCollectionItemOutput) Adbs() GetDifStacksStackCollectionItemAdbArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemAdb { return v.Adbs }).(GetDifStacksStackCollectionItemAdbArrayOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOutput) AddServiceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) int { return v.AddServiceTrigger }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDifStacksStackCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// DATAFLOW details if dataflow is included in the services.
+func (o GetDifStacksStackCollectionItemOutput) Dataflows() GetDifStacksStackCollectionItemDataflowArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemDataflow { return v.Dataflows }).(GetDifStacksStackCollectionItemDataflowArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDifStacksStackCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOutput) DeployArtifactsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) int { return v.DeployArtifactsTrigger }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDifStacksStackCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDifStacksStackCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// GenAI Details if genai is included in services.
+func (o GetDifStacksStackCollectionItemOutput) Genais() GetDifStacksStackCollectionItemGenaiArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemGenai { return v.Genais }).(GetDifStacksStackCollectionItemGenaiArrayOutput)
+}
+
+// GGCS details if ggcs is included in the services.
+func (o GetDifStacksStackCollectionItemOutput) Ggcs() GetDifStacksStackCollectionItemGgcArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemGgc { return v.Ggcs }).(GetDifStacksStackCollectionItemGgcArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Stack.
+func (o GetDifStacksStackCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetDifStacksStackCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// email id to which the stack notifications would be sent.
+func (o GetDifStacksStackCollectionItemOutput) NotificationEmail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.NotificationEmail }).(pulumi.StringOutput)
+}
+
+// Object Storage Details if object storage is included in services.
+func (o GetDifStacksStackCollectionItemOutput) Objectstorages() GetDifStacksStackCollectionItemObjectstorageArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemObjectstorage {
+		return v.Objectstorages
+	}).(GetDifStacksStackCollectionItemObjectstorageArrayOutput)
+}
+
+// Details of the service onboarded for the data intelligence stack.
+func (o GetDifStacksStackCollectionItemOutput) ServiceDetails() GetDifStacksStackCollectionItemServiceDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemServiceDetail {
+		return v.ServiceDetails
+	}).(GetDifStacksStackCollectionItemServiceDetailArrayOutput)
+}
+
+// List of services to be onboarded for the stack.
+func (o GetDifStacksStackCollectionItemOutput) Services() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []string { return v.Services }).(pulumi.StringArrayOutput)
+}
+
+// List of templates to be onboarded for the stack.
+func (o GetDifStacksStackCollectionItemOutput) StackTemplates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []string { return v.StackTemplates }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDifStacksStackCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStacksStackCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDifStacksStackCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDifStacksStackCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDifStacksStackCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItem)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemArrayOutput) ToGetDifStacksStackCollectionItemArrayOutput() GetDifStacksStackCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemArrayOutput) ToGetDifStacksStackCollectionItemArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItem {
+		return vs[0].([]GetDifStacksStackCollectionItem)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOutput)
+}
+
+type GetDifStacksStackCollectionItemAdb struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           string `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath string `pulumi:"artifactObjectStoragePath"`
+	// The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs int                                              `pulumi:"dataStorageSizeInTbs"`
+	DbCredentials        []GetDifStacksStackCollectionItemAdbDbCredential `pulumi:"dbCredentials"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload string `pulumi:"dbWorkload"`
+	// The compute amount (ECPUs) available to the database.
+	Ecpu int `pulumi:"ecpu"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic bool `pulumi:"isPublic"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess string `pulumi:"toolsPublicAccess"`
+}
+
+// GetDifStacksStackCollectionItemAdbInput is an input type that accepts GetDifStacksStackCollectionItemAdbArgs and GetDifStacksStackCollectionItemAdbOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAdbInput` via:
+//
+//	GetDifStacksStackCollectionItemAdbArgs{...}
+type GetDifStacksStackCollectionItemAdbInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAdbOutput() GetDifStacksStackCollectionItemAdbOutput
+	ToGetDifStacksStackCollectionItemAdbOutputWithContext(context.Context) GetDifStacksStackCollectionItemAdbOutput
+}
+
+type GetDifStacksStackCollectionItemAdbArgs struct {
+	// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+	AdminPasswordId           pulumi.StringInput `pulumi:"adminPasswordId"`
+	ArtifactObjectStoragePath pulumi.StringInput `pulumi:"artifactObjectStoragePath"`
+	// The size, in terabytes, of the data volume that will be created and attached to the database.
+	DataStorageSizeInTbs pulumi.IntInput                                          `pulumi:"dataStorageSizeInTbs"`
+	DbCredentials        GetDifStacksStackCollectionItemAdbDbCredentialArrayInput `pulumi:"dbCredentials"`
+	// A valid Oracle Database version for Autonomous Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+	DbWorkload pulumi.StringInput `pulumi:"dbWorkload"`
+	// The compute amount (ECPUs) available to the database.
+	Ecpu pulumi.IntInput `pulumi:"ecpu"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Specifies if the Autonomous Database requires mTLS connections.
+	IsMtlsConnectionRequired pulumi.BoolInput `pulumi:"isMtlsConnectionRequired"`
+	// If true then subnetId should not be provided.
+	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+	ToolsPublicAccess pulumi.StringInput `pulumi:"toolsPublicAccess"`
+}
+
+func (GetDifStacksStackCollectionItemAdbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAdb)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAdbArgs) ToGetDifStacksStackCollectionItemAdbOutput() GetDifStacksStackCollectionItemAdbOutput {
+	return i.ToGetDifStacksStackCollectionItemAdbOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAdbArgs) ToGetDifStacksStackCollectionItemAdbOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAdbOutput)
+}
+
+// GetDifStacksStackCollectionItemAdbArrayInput is an input type that accepts GetDifStacksStackCollectionItemAdbArray and GetDifStacksStackCollectionItemAdbArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAdbArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemAdbArray{ GetDifStacksStackCollectionItemAdbArgs{...} }
+type GetDifStacksStackCollectionItemAdbArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAdbArrayOutput() GetDifStacksStackCollectionItemAdbArrayOutput
+	ToGetDifStacksStackCollectionItemAdbArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemAdbArrayOutput
+}
+
+type GetDifStacksStackCollectionItemAdbArray []GetDifStacksStackCollectionItemAdbInput
+
+func (GetDifStacksStackCollectionItemAdbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAdb)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAdbArray) ToGetDifStacksStackCollectionItemAdbArrayOutput() GetDifStacksStackCollectionItemAdbArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemAdbArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAdbArray) ToGetDifStacksStackCollectionItemAdbArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAdbArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemAdbOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAdbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAdb)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAdbOutput) ToGetDifStacksStackCollectionItemAdbOutput() GetDifStacksStackCollectionItemAdbOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbOutput) ToGetDifStacksStackCollectionItemAdbOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbOutput {
+	return o
+}
+
+// The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+func (o GetDifStacksStackCollectionItemAdbOutput) AdminPasswordId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.AdminPasswordId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemAdbOutput) ArtifactObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.ArtifactObjectStoragePath }).(pulumi.StringOutput)
+}
+
+// The size, in terabytes, of the data volume that will be created and attached to the database.
+func (o GetDifStacksStackCollectionItemAdbOutput) DataStorageSizeInTbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) int { return v.DataStorageSizeInTbs }).(pulumi.IntOutput)
+}
+
+func (o GetDifStacksStackCollectionItemAdbOutput) DbCredentials() GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) []GetDifStacksStackCollectionItemAdbDbCredential {
+		return v.DbCredentials
+	}).(GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput)
+}
+
+// A valid Oracle Database version for Autonomous Database.
+func (o GetDifStacksStackCollectionItemAdbOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// DB Workload to be used with ADB. Accepted values are OLTP, DW.
+func (o GetDifStacksStackCollectionItemAdbOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// The compute amount (ECPUs) available to the database.
+func (o GetDifStacksStackCollectionItemAdbOutput) Ecpu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) int { return v.Ecpu }).(pulumi.IntOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemAdbOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Specifies if the Autonomous Database requires mTLS connections.
+func (o GetDifStacksStackCollectionItemAdbOutput) IsMtlsConnectionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolOutput)
+}
+
+// If true then subnetId should not be provided.
+func (o GetDifStacksStackCollectionItemAdbOutput) IsPublic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) bool { return v.IsPublic }).(pulumi.BoolOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStacksStackCollectionItemAdbOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+func (o GetDifStacksStackCollectionItemAdbOutput) ToolsPublicAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdb) string { return v.ToolsPublicAccess }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemAdbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAdbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAdb)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAdbArrayOutput) ToGetDifStacksStackCollectionItemAdbArrayOutput() GetDifStacksStackCollectionItemAdbArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbArrayOutput) ToGetDifStacksStackCollectionItemAdbArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemAdbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemAdb {
+		return vs[0].([]GetDifStacksStackCollectionItemAdb)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemAdbOutput)
+}
+
+type GetDifStacksStackCollectionItemAdbDbCredential struct {
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// GetDifStacksStackCollectionItemAdbDbCredentialInput is an input type that accepts GetDifStacksStackCollectionItemAdbDbCredentialArgs and GetDifStacksStackCollectionItemAdbDbCredentialOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAdbDbCredentialInput` via:
+//
+//	GetDifStacksStackCollectionItemAdbDbCredentialArgs{...}
+type GetDifStacksStackCollectionItemAdbDbCredentialInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAdbDbCredentialOutput() GetDifStacksStackCollectionItemAdbDbCredentialOutput
+	ToGetDifStacksStackCollectionItemAdbDbCredentialOutputWithContext(context.Context) GetDifStacksStackCollectionItemAdbDbCredentialOutput
+}
+
+type GetDifStacksStackCollectionItemAdbDbCredentialArgs struct {
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (GetDifStacksStackCollectionItemAdbDbCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredential)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAdbDbCredentialArgs) ToGetDifStacksStackCollectionItemAdbDbCredentialOutput() GetDifStacksStackCollectionItemAdbDbCredentialOutput {
+	return i.ToGetDifStacksStackCollectionItemAdbDbCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAdbDbCredentialArgs) ToGetDifStacksStackCollectionItemAdbDbCredentialOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbDbCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAdbDbCredentialOutput)
+}
+
+// GetDifStacksStackCollectionItemAdbDbCredentialArrayInput is an input type that accepts GetDifStacksStackCollectionItemAdbDbCredentialArray and GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAdbDbCredentialArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemAdbDbCredentialArray{ GetDifStacksStackCollectionItemAdbDbCredentialArgs{...} }
+type GetDifStacksStackCollectionItemAdbDbCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutput() GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput
+	ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput
+}
+
+type GetDifStacksStackCollectionItemAdbDbCredentialArray []GetDifStacksStackCollectionItemAdbDbCredentialInput
+
+func (GetDifStacksStackCollectionItemAdbDbCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAdbDbCredential)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAdbDbCredentialArray) ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutput() GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAdbDbCredentialArray) ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemAdbDbCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAdbDbCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredential)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialOutput) ToGetDifStacksStackCollectionItemAdbDbCredentialOutput() GetDifStacksStackCollectionItemAdbDbCredentialOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialOutput) ToGetDifStacksStackCollectionItemAdbDbCredentialOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbDbCredentialOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdbDbCredential) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdbDbCredential) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAdbDbCredential) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAdbDbCredential)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput) ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutput() GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput) ToGetDifStacksStackCollectionItemAdbDbCredentialArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemAdbDbCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemAdbDbCredential {
+		return vs[0].([]GetDifStacksStackCollectionItemAdbDbCredential)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemAdbDbCredentialOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflow struct {
+	ArchiveUri string `pulumi:"archiveUri"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections []GetDifStacksStackCollectionItemDataflowConnection `pulumi:"connections"`
+	// The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetDifStacksStackCollectionItemDataflowDriverShapeConfig `pulumi:"driverShapeConfigs"`
+	Execute            string                                                     `pulumi:"execute"`
+	// The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetDifStacksStackCollectionItemDataflowExecutorShapeConfig `pulumi:"executorShapeConfigs"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId string `pulumi:"logBucketInstanceId"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// OCID of model
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The Spark version utilized to run the application.
+	SparkVersion string `pulumi:"sparkVersion"`
+	// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId string `pulumi:"warehouseBucketInstanceId"`
+}
+
+// GetDifStacksStackCollectionItemDataflowInput is an input type that accepts GetDifStacksStackCollectionItemDataflowArgs and GetDifStacksStackCollectionItemDataflowOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowArgs{...}
+type GetDifStacksStackCollectionItemDataflowInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowOutput() GetDifStacksStackCollectionItemDataflowOutput
+	ToGetDifStacksStackCollectionItemDataflowOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowArgs struct {
+	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections GetDifStacksStackCollectionItemDataflowConnectionArrayInput `pulumi:"connections"`
+	// The VM shape for the driver. Sets the driver cores and memory.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
+	Execute            pulumi.StringInput                                                 `pulumi:"execute"`
+	// The VM shape for the executors. Sets the executor cores and memory.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+	LogBucketInstanceId pulumi.StringInput `pulumi:"logBucketInstanceId"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// OCID of model
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The Spark version utilized to run the application.
+	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
+	// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+	WarehouseBucketInstanceId pulumi.StringInput `pulumi:"warehouseBucketInstanceId"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflow)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowArgs) ToGetDifStacksStackCollectionItemDataflowOutput() GetDifStacksStackCollectionItemDataflowOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowArgs) ToGetDifStacksStackCollectionItemDataflowOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowArray and GetDifStacksStackCollectionItemDataflowArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowArray{ GetDifStacksStackCollectionItemDataflowArgs{...} }
+type GetDifStacksStackCollectionItemDataflowArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowArrayOutput() GetDifStacksStackCollectionItemDataflowArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowArray []GetDifStacksStackCollectionItemDataflowInput
+
+func (GetDifStacksStackCollectionItemDataflowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflow)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowArray) ToGetDifStacksStackCollectionItemDataflowArrayOutput() GetDifStacksStackCollectionItemDataflowArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowArray) ToGetDifStacksStackCollectionItemDataflowArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflow)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowOutput) ToGetDifStacksStackCollectionItemDataflowOutput() GetDifStacksStackCollectionItemDataflowOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowOutput) ToGetDifStacksStackCollectionItemDataflowOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowOutput) ArchiveUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.ArchiveUri }).(pulumi.StringOutput)
+}
+
+// Connection details to be associated with the Goldengate deployment.
+func (o GetDifStacksStackCollectionItemDataflowOutput) Connections() GetDifStacksStackCollectionItemDataflowConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) []GetDifStacksStackCollectionItemDataflowConnection {
+		return v.Connections
+	}).(GetDifStacksStackCollectionItemDataflowConnectionArrayOutput)
+}
+
+// The VM shape for the driver. Sets the driver cores and memory.
+func (o GetDifStacksStackCollectionItemDataflowOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetDifStacksStackCollectionItemDataflowOutput) DriverShapeConfigs() GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) []GetDifStacksStackCollectionItemDataflowDriverShapeConfig {
+		return v.DriverShapeConfigs
+	}).(GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput)
+}
+
+func (o GetDifStacksStackCollectionItemDataflowOutput) Execute() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.Execute }).(pulumi.StringOutput)
+}
+
+// The VM shape for the executors. Sets the executor cores and memory.
+func (o GetDifStacksStackCollectionItemDataflowOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetDifStacksStackCollectionItemDataflowOutput) ExecutorShapeConfigs() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) []GetDifStacksStackCollectionItemDataflowExecutorShapeConfig {
+		return v.ExecutorShapeConfigs
+	}).(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemDataflowOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+func (o GetDifStacksStackCollectionItemDataflowOutput) LogBucketInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.LogBucketInstanceId }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetDifStacksStackCollectionItemDataflowOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// OCID of model
+func (o GetDifStacksStackCollectionItemDataflowOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The Spark version utilized to run the application.
+func (o GetDifStacksStackCollectionItemDataflowOutput) SparkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.SparkVersion }).(pulumi.StringOutput)
+}
+
+// InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+func (o GetDifStacksStackCollectionItemDataflowOutput) WarehouseBucketInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflow) string { return v.WarehouseBucketInstanceId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflow)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowArrayOutput) ToGetDifStacksStackCollectionItemDataflowArrayOutput() GetDifStacksStackCollectionItemDataflowArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowArrayOutput) ToGetDifStacksStackCollectionItemDataflowArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflow {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflow)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnection struct {
+	// Details of services to create private endpoint.
+	ConnectionDetails []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail `pulumi:"connectionDetails"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionArgs and GetDifStacksStackCollectionItemDataflowConnectionOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionArgs{...}
+type GetDifStacksStackCollectionItemDataflowConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionOutput() GetDifStacksStackCollectionItemDataflowConnectionOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionArgs struct {
+	// Details of services to create private endpoint.
+	ConnectionDetails GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayInput `pulumi:"connectionDetails"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionArgs) ToGetDifStacksStackCollectionItemDataflowConnectionOutput() GetDifStacksStackCollectionItemDataflowConnectionOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionArgs) ToGetDifStacksStackCollectionItemDataflowConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionArray and GetDifStacksStackCollectionItemDataflowConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionArray{ GetDifStacksStackCollectionItemDataflowConnectionArgs{...} }
+type GetDifStacksStackCollectionItemDataflowConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionArray []GetDifStacksStackCollectionItemDataflowConnectionInput
+
+func (GetDifStacksStackCollectionItemDataflowConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionArray) ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionArray) ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionOutput) ToGetDifStacksStackCollectionItemDataflowConnectionOutput() GetDifStacksStackCollectionItemDataflowConnectionOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionOutput) ToGetDifStacksStackCollectionItemDataflowConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionOutput {
+	return o
+}
+
+// Details of services to create private endpoint.
+func (o GetDifStacksStackCollectionItemDataflowConnectionOutput) ConnectionDetails() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnection) []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail {
+		return v.ConnectionDetails
+	}).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStacksStackCollectionItemDataflowConnectionOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnection) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflowConnection {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflowConnection)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowConnectionOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail struct {
+	// List of Service Dependency Details for connection creation.
+	DifDependencies []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency `pulumi:"difDependencies"`
+	// An array of DNS zone names.
+	DomainNames []string `pulumi:"domainNames"`
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs and GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs{...}
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs struct {
+	// List of Service Dependency Details for connection creation.
+	DifDependencies GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayInput `pulumi:"difDependencies"`
+	// An array of DNS zone names.
+	DomainNames pulumi.StringArrayInput `pulumi:"domainNames"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray and GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray{ GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs{...} }
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailInput
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput {
+	return o
+}
+
+// List of Service Dependency Details for connection creation.
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput) DifDependencies() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail) []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency {
+		return v.DifDependencies
+	}).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput)
+}
+
+// An array of DNS zone names.
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput) DomainNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail) []string {
+		return v.DomainNames
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetail)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs and GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs{...}
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray and GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray{ GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs{...} }
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray []GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyInput
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput {
+	return o
+}
+
+// InstanceId of service which is part of the Stack.
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency) string {
+		return v.ServiceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency) string {
+		return v.ServiceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput() GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput) ToGetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependency)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetDifStacksStackCollectionItemDataflowDriverShapeConfigInput is an input type that accepts GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs and GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowDriverShapeConfigInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs{...}
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput
+	ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray and GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray{ GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs{...} }
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray []GetDifStacksStackCollectionItemDataflowDriverShapeConfigInput
+
+func (GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowDriverShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See here for details.
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowDriverShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput) ToGetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflowDriverShapeConfig {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflowDriverShapeConfig)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetDifStacksStackCollectionItemDataflowExecutorShapeConfigInput is an input type that accepts GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs and GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowExecutorShapeConfigInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs{...}
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput
+	ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See here for details.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput)
+}
+
+// GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayInput is an input type that accepts GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray and GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray{ GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs{...} }
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput
+	ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput
+}
+
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray []GetDifStacksStackCollectionItemDataflowExecutorShapeConfigInput
+
+func (GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowExecutorShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See here for details.
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemDataflowExecutorShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemDataflowExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput() GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput) ToGetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemDataflowExecutorShapeConfig {
+		return vs[0].([]GetDifStacksStackCollectionItemDataflowExecutorShapeConfig)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput)
+}
+
+type GetDifStacksStackCollectionItemGenai struct {
+	// Name of the base model.
+	BaseModel string `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType string `pulumi:"clusterType"`
+	// List of endpoints to provision for the GENAI cluster.
+	Endpoints []GetDifStacksStackCollectionItemGenaiEndpoint `pulumi:"endpoints"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// region of cluster
+	OciRegion string `pulumi:"ociRegion"`
+	// No of replicas of base model to be used for hosting.
+	UnitCount int `pulumi:"unitCount"`
+}
+
+// GetDifStacksStackCollectionItemGenaiInput is an input type that accepts GetDifStacksStackCollectionItemGenaiArgs and GetDifStacksStackCollectionItemGenaiOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGenaiInput` via:
+//
+//	GetDifStacksStackCollectionItemGenaiArgs{...}
+type GetDifStacksStackCollectionItemGenaiInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGenaiOutput() GetDifStacksStackCollectionItemGenaiOutput
+	ToGetDifStacksStackCollectionItemGenaiOutputWithContext(context.Context) GetDifStacksStackCollectionItemGenaiOutput
+}
+
+type GetDifStacksStackCollectionItemGenaiArgs struct {
+	// Name of the base model.
+	BaseModel pulumi.StringInput `pulumi:"baseModel"`
+	// The dedicated AI cluster type.
+	ClusterType pulumi.StringInput `pulumi:"clusterType"`
+	// List of endpoints to provision for the GENAI cluster.
+	Endpoints GetDifStacksStackCollectionItemGenaiEndpointArrayInput `pulumi:"endpoints"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// region of cluster
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// No of replicas of base model to be used for hosting.
+	UnitCount pulumi.IntInput `pulumi:"unitCount"`
+}
+
+func (GetDifStacksStackCollectionItemGenaiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGenai)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGenaiArgs) ToGetDifStacksStackCollectionItemGenaiOutput() GetDifStacksStackCollectionItemGenaiOutput {
+	return i.ToGetDifStacksStackCollectionItemGenaiOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGenaiArgs) ToGetDifStacksStackCollectionItemGenaiOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGenaiOutput)
+}
+
+// GetDifStacksStackCollectionItemGenaiArrayInput is an input type that accepts GetDifStacksStackCollectionItemGenaiArray and GetDifStacksStackCollectionItemGenaiArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGenaiArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGenaiArray{ GetDifStacksStackCollectionItemGenaiArgs{...} }
+type GetDifStacksStackCollectionItemGenaiArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGenaiArrayOutput() GetDifStacksStackCollectionItemGenaiArrayOutput
+	ToGetDifStacksStackCollectionItemGenaiArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGenaiArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGenaiArray []GetDifStacksStackCollectionItemGenaiInput
+
+func (GetDifStacksStackCollectionItemGenaiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGenai)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGenaiArray) ToGetDifStacksStackCollectionItemGenaiArrayOutput() GetDifStacksStackCollectionItemGenaiArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGenaiArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGenaiArray) ToGetDifStacksStackCollectionItemGenaiArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGenaiArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGenaiOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGenaiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGenai)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGenaiOutput) ToGetDifStacksStackCollectionItemGenaiOutput() GetDifStacksStackCollectionItemGenaiOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiOutput) ToGetDifStacksStackCollectionItemGenaiOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiOutput {
+	return o
+}
+
+// Name of the base model.
+func (o GetDifStacksStackCollectionItemGenaiOutput) BaseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) string { return v.BaseModel }).(pulumi.StringOutput)
+}
+
+// The dedicated AI cluster type.
+func (o GetDifStacksStackCollectionItemGenaiOutput) ClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) string { return v.ClusterType }).(pulumi.StringOutput)
+}
+
+// List of endpoints to provision for the GENAI cluster.
+func (o GetDifStacksStackCollectionItemGenaiOutput) Endpoints() GetDifStacksStackCollectionItemGenaiEndpointArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) []GetDifStacksStackCollectionItemGenaiEndpoint {
+		return v.Endpoints
+	}).(GetDifStacksStackCollectionItemGenaiEndpointArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemGenaiOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// region of cluster
+func (o GetDifStacksStackCollectionItemGenaiOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) string { return v.OciRegion }).(pulumi.StringOutput)
+}
+
+// No of replicas of base model to be used for hosting.
+func (o GetDifStacksStackCollectionItemGenaiOutput) UnitCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenai) int { return v.UnitCount }).(pulumi.IntOutput)
+}
+
+type GetDifStacksStackCollectionItemGenaiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGenaiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGenai)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGenaiArrayOutput) ToGetDifStacksStackCollectionItemGenaiArrayOutput() GetDifStacksStackCollectionItemGenaiArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiArrayOutput) ToGetDifStacksStackCollectionItemGenaiArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGenaiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGenai {
+		return vs[0].([]GetDifStacksStackCollectionItemGenai)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGenaiOutput)
+}
+
+type GetDifStacksStackCollectionItemGenaiEndpoint struct {
+	// Identifier for each endpoint.
+	EndpointName string `pulumi:"endpointName"`
+	// Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled bool `pulumi:"isContentModerationEnabled"`
+}
+
+// GetDifStacksStackCollectionItemGenaiEndpointInput is an input type that accepts GetDifStacksStackCollectionItemGenaiEndpointArgs and GetDifStacksStackCollectionItemGenaiEndpointOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGenaiEndpointInput` via:
+//
+//	GetDifStacksStackCollectionItemGenaiEndpointArgs{...}
+type GetDifStacksStackCollectionItemGenaiEndpointInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGenaiEndpointOutput() GetDifStacksStackCollectionItemGenaiEndpointOutput
+	ToGetDifStacksStackCollectionItemGenaiEndpointOutputWithContext(context.Context) GetDifStacksStackCollectionItemGenaiEndpointOutput
+}
+
+type GetDifStacksStackCollectionItemGenaiEndpointArgs struct {
+	// Identifier for each endpoint.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	// Helps remove toxic and biased content from responses.
+	IsContentModerationEnabled pulumi.BoolInput `pulumi:"isContentModerationEnabled"`
+}
+
+func (GetDifStacksStackCollectionItemGenaiEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiEndpoint)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGenaiEndpointArgs) ToGetDifStacksStackCollectionItemGenaiEndpointOutput() GetDifStacksStackCollectionItemGenaiEndpointOutput {
+	return i.ToGetDifStacksStackCollectionItemGenaiEndpointOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGenaiEndpointArgs) ToGetDifStacksStackCollectionItemGenaiEndpointOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGenaiEndpointOutput)
+}
+
+// GetDifStacksStackCollectionItemGenaiEndpointArrayInput is an input type that accepts GetDifStacksStackCollectionItemGenaiEndpointArray and GetDifStacksStackCollectionItemGenaiEndpointArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGenaiEndpointArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGenaiEndpointArray{ GetDifStacksStackCollectionItemGenaiEndpointArgs{...} }
+type GetDifStacksStackCollectionItemGenaiEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutput() GetDifStacksStackCollectionItemGenaiEndpointArrayOutput
+	ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGenaiEndpointArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGenaiEndpointArray []GetDifStacksStackCollectionItemGenaiEndpointInput
+
+func (GetDifStacksStackCollectionItemGenaiEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGenaiEndpoint)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGenaiEndpointArray) ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutput() GetDifStacksStackCollectionItemGenaiEndpointArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGenaiEndpointArray) ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGenaiEndpointArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGenaiEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGenaiEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiEndpoint)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGenaiEndpointOutput) ToGetDifStacksStackCollectionItemGenaiEndpointOutput() GetDifStacksStackCollectionItemGenaiEndpointOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiEndpointOutput) ToGetDifStacksStackCollectionItemGenaiEndpointOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiEndpointOutput {
+	return o
+}
+
+// Identifier for each endpoint.
+func (o GetDifStacksStackCollectionItemGenaiEndpointOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenaiEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+// Helps remove toxic and biased content from responses.
+func (o GetDifStacksStackCollectionItemGenaiEndpointOutput) IsContentModerationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGenaiEndpoint) bool { return v.IsContentModerationEnabled }).(pulumi.BoolOutput)
+}
+
+type GetDifStacksStackCollectionItemGenaiEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGenaiEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGenaiEndpoint)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGenaiEndpointArrayOutput) ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutput() GetDifStacksStackCollectionItemGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiEndpointArrayOutput) ToGetDifStacksStackCollectionItemGenaiEndpointArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGenaiEndpointArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGenaiEndpointArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGenaiEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGenaiEndpoint {
+		return vs[0].([]GetDifStacksStackCollectionItemGenaiEndpoint)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGenaiEndpointOutput)
+}
+
+type GetDifStacksStackCollectionItemGgc struct {
+	ArtifactObjectStoragePath string `pulumi:"artifactObjectStoragePath"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections []GetDifStacksStackCollectionItemGgcConnection `pulumi:"connections"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu int `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion string `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId string                                     `pulumi:"publicSubnetId"`
+	Sources        []GetDifStacksStackCollectionItemGgcSource `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId string                                     `pulumi:"subnetId"`
+	Targets  []GetDifStacksStackCollectionItemGgcTarget `pulumi:"targets"`
+	Users    []GetDifStacksStackCollectionItemGgcUser   `pulumi:"users"`
+}
+
+// GetDifStacksStackCollectionItemGgcInput is an input type that accepts GetDifStacksStackCollectionItemGgcArgs and GetDifStacksStackCollectionItemGgcOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcArgs{...}
+type GetDifStacksStackCollectionItemGgcInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcOutput() GetDifStacksStackCollectionItemGgcOutput
+	ToGetDifStacksStackCollectionItemGgcOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcOutput
+}
+
+type GetDifStacksStackCollectionItemGgcArgs struct {
+	ArtifactObjectStoragePath pulumi.StringInput `pulumi:"artifactObjectStoragePath"`
+	// Connection details to be associated with the Goldengate deployment.
+	Connections GetDifStacksStackCollectionItemGgcConnectionArrayInput `pulumi:"connections"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	Ocpu pulumi.IntInput `pulumi:"ocpu"`
+	// Version of OGG.
+	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
+	// The OCID of the Secret where the deployment password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+	PublicSubnetId pulumi.StringInput                                 `pulumi:"publicSubnetId"`
+	Sources        GetDifStacksStackCollectionItemGgcSourceArrayInput `pulumi:"sources"`
+	// The OCID of the subnet of the GGCS deployment's private endpoint.
+	SubnetId pulumi.StringInput                                 `pulumi:"subnetId"`
+	Targets  GetDifStacksStackCollectionItemGgcTargetArrayInput `pulumi:"targets"`
+	Users    GetDifStacksStackCollectionItemGgcUserArrayInput   `pulumi:"users"`
+}
+
+func (GetDifStacksStackCollectionItemGgcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgc)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcArgs) ToGetDifStacksStackCollectionItemGgcOutput() GetDifStacksStackCollectionItemGgcOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcArgs) ToGetDifStacksStackCollectionItemGgcOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcArray and GetDifStacksStackCollectionItemGgcArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcArray{ GetDifStacksStackCollectionItemGgcArgs{...} }
+type GetDifStacksStackCollectionItemGgcArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcArrayOutput() GetDifStacksStackCollectionItemGgcArrayOutput
+	ToGetDifStacksStackCollectionItemGgcArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcArray []GetDifStacksStackCollectionItemGgcInput
+
+func (GetDifStacksStackCollectionItemGgcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgc)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcArray) ToGetDifStacksStackCollectionItemGgcArrayOutput() GetDifStacksStackCollectionItemGgcArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcArray) ToGetDifStacksStackCollectionItemGgcArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgc)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) ToGetDifStacksStackCollectionItemGgcOutput() GetDifStacksStackCollectionItemGgcOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) ToGetDifStacksStackCollectionItemGgcOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) ArtifactObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.ArtifactObjectStoragePath }).(pulumi.StringOutput)
+}
+
+// Connection details to be associated with the Goldengate deployment.
+func (o GetDifStacksStackCollectionItemGgcOutput) Connections() GetDifStacksStackCollectionItemGgcConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) []GetDifStacksStackCollectionItemGgcConnection {
+		return v.Connections
+	}).(GetDifStacksStackCollectionItemGgcConnectionArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemGgcOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The Minimum number of OCPUs to be made available for this Deployment.
+func (o GetDifStacksStackCollectionItemGgcOutput) Ocpu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) int { return v.Ocpu }).(pulumi.IntOutput)
+}
+
+// Version of OGG.
+func (o GetDifStacksStackCollectionItemGgcOutput) OggVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.OggVersion }).(pulumi.StringOutput)
+}
+
+// The OCID of the Secret where the deployment password is stored.
+func (o GetDifStacksStackCollectionItemGgcOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+func (o GetDifStacksStackCollectionItemGgcOutput) PublicSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.PublicSubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) Sources() GetDifStacksStackCollectionItemGgcSourceArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) []GetDifStacksStackCollectionItemGgcSource {
+		return v.Sources
+	}).(GetDifStacksStackCollectionItemGgcSourceArrayOutput)
+}
+
+// The OCID of the subnet of the GGCS deployment's private endpoint.
+func (o GetDifStacksStackCollectionItemGgcOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) Targets() GetDifStacksStackCollectionItemGgcTargetArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) []GetDifStacksStackCollectionItemGgcTarget {
+		return v.Targets
+	}).(GetDifStacksStackCollectionItemGgcTargetArrayOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcOutput) Users() GetDifStacksStackCollectionItemGgcUserArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgc) []GetDifStacksStackCollectionItemGgcUser { return v.Users }).(GetDifStacksStackCollectionItemGgcUserArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgc)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcArrayOutput) ToGetDifStacksStackCollectionItemGgcArrayOutput() GetDifStacksStackCollectionItemGgcArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcArrayOutput) ToGetDifStacksStackCollectionItemGgcArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgc {
+		return vs[0].([]GetDifStacksStackCollectionItemGgc)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnection struct {
+	// OCID of the connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName string `pulumi:"connectionName"`
+	// List of Service Dependency Details for connection creation.
+	DifDependencies []GetDifStacksStackCollectionItemGgcConnectionDifDependency `pulumi:"difDependencies"`
+	// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId string `pulumi:"ggAdminSecretId"`
+}
+
+// GetDifStacksStackCollectionItemGgcConnectionInput is an input type that accepts GetDifStacksStackCollectionItemGgcConnectionArgs and GetDifStacksStackCollectionItemGgcConnectionOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcConnectionInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcConnectionArgs{...}
+type GetDifStacksStackCollectionItemGgcConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcConnectionOutput() GetDifStacksStackCollectionItemGgcConnectionOutput
+	ToGetDifStacksStackCollectionItemGgcConnectionOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcConnectionOutput
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionArgs struct {
+	// OCID of the connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName pulumi.StringInput `pulumi:"connectionName"`
+	// List of Service Dependency Details for connection creation.
+	DifDependencies GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayInput `pulumi:"difDependencies"`
+	// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+	GgAdminSecretId pulumi.StringInput `pulumi:"ggAdminSecretId"`
+}
+
+func (GetDifStacksStackCollectionItemGgcConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionArgs) ToGetDifStacksStackCollectionItemGgcConnectionOutput() GetDifStacksStackCollectionItemGgcConnectionOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionArgs) ToGetDifStacksStackCollectionItemGgcConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcConnectionOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcConnectionArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcConnectionArray and GetDifStacksStackCollectionItemGgcConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcConnectionArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcConnectionArray{ GetDifStacksStackCollectionItemGgcConnectionArgs{...} }
+type GetDifStacksStackCollectionItemGgcConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcConnectionArrayOutput() GetDifStacksStackCollectionItemGgcConnectionArrayOutput
+	ToGetDifStacksStackCollectionItemGgcConnectionArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcConnectionArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionArray []GetDifStacksStackCollectionItemGgcConnectionInput
+
+func (GetDifStacksStackCollectionItemGgcConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionArray) ToGetDifStacksStackCollectionItemGgcConnectionArrayOutput() GetDifStacksStackCollectionItemGgcConnectionArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionArray) ToGetDifStacksStackCollectionItemGgcConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcConnectionArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) ToGetDifStacksStackCollectionItemGgcConnectionOutput() GetDifStacksStackCollectionItemGgcConnectionOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) ToGetDifStacksStackCollectionItemGgcConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionOutput {
+	return o
+}
+
+// OCID of the connection.
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// Name of the connection.
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) ConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnection) string { return v.ConnectionName }).(pulumi.StringOutput)
+}
+
+// List of Service Dependency Details for connection creation.
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) DifDependencies() GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnection) []GetDifStacksStackCollectionItemGgcConnectionDifDependency {
+		return v.DifDependencies
+	}).(GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput)
+}
+
+// Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+func (o GetDifStacksStackCollectionItemGgcConnectionOutput) GgAdminSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnection) string { return v.GgAdminSecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionArrayOutput) ToGetDifStacksStackCollectionItemGgcConnectionArrayOutput() GetDifStacksStackCollectionItemGgcConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionArrayOutput) ToGetDifStacksStackCollectionItemGgcConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgcConnection {
+		return vs[0].([]GetDifStacksStackCollectionItemGgcConnection)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcConnectionOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionDifDependency struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDifStacksStackCollectionItemGgcConnectionDifDependencyInput is an input type that accepts GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs and GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcConnectionDifDependencyInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs{...}
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput
+	ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs struct {
+	// InstanceId of service which is part of the Stack.
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray and GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray{ GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs{...} }
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput
+	ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray []GetDifStacksStackCollectionItemGgcConnectionDifDependencyInput
+
+func (GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput {
+	return o
+}
+
+// InstanceId of service which is part of the Stack.
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnectionDifDependency) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcConnectionDifDependency) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcConnectionDifDependency)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput() GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput) ToGetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgcConnectionDifDependency {
+		return vs[0].([]GetDifStacksStackCollectionItemGgcConnectionDifDependency)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcSource struct {
+	Action                      string `pulumi:"action"`
+	ShouldStartSourceOperations bool   `pulumi:"shouldStartSourceOperations"`
+	SourceId                    string `pulumi:"sourceId"`
+	TargetConnectionName        string `pulumi:"targetConnectionName"`
+	TargetUri                   string `pulumi:"targetUri"`
+}
+
+// GetDifStacksStackCollectionItemGgcSourceInput is an input type that accepts GetDifStacksStackCollectionItemGgcSourceArgs and GetDifStacksStackCollectionItemGgcSourceOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcSourceInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcSourceArgs{...}
+type GetDifStacksStackCollectionItemGgcSourceInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcSourceOutput() GetDifStacksStackCollectionItemGgcSourceOutput
+	ToGetDifStacksStackCollectionItemGgcSourceOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcSourceOutput
+}
+
+type GetDifStacksStackCollectionItemGgcSourceArgs struct {
+	Action                      pulumi.StringInput `pulumi:"action"`
+	ShouldStartSourceOperations pulumi.BoolInput   `pulumi:"shouldStartSourceOperations"`
+	SourceId                    pulumi.StringInput `pulumi:"sourceId"`
+	TargetConnectionName        pulumi.StringInput `pulumi:"targetConnectionName"`
+	TargetUri                   pulumi.StringInput `pulumi:"targetUri"`
+}
+
+func (GetDifStacksStackCollectionItemGgcSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcSource)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcSourceArgs) ToGetDifStacksStackCollectionItemGgcSourceOutput() GetDifStacksStackCollectionItemGgcSourceOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcSourceOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcSourceArgs) ToGetDifStacksStackCollectionItemGgcSourceOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcSourceOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcSourceArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcSourceArray and GetDifStacksStackCollectionItemGgcSourceArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcSourceArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcSourceArray{ GetDifStacksStackCollectionItemGgcSourceArgs{...} }
+type GetDifStacksStackCollectionItemGgcSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcSourceArrayOutput() GetDifStacksStackCollectionItemGgcSourceArrayOutput
+	ToGetDifStacksStackCollectionItemGgcSourceArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcSourceArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcSourceArray []GetDifStacksStackCollectionItemGgcSourceInput
+
+func (GetDifStacksStackCollectionItemGgcSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcSource)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcSourceArray) ToGetDifStacksStackCollectionItemGgcSourceArrayOutput() GetDifStacksStackCollectionItemGgcSourceArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcSourceArray) ToGetDifStacksStackCollectionItemGgcSourceArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcSourceArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcSource)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) ToGetDifStacksStackCollectionItemGgcSourceOutput() GetDifStacksStackCollectionItemGgcSourceOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) ToGetDifStacksStackCollectionItemGgcSourceOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcSourceOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcSource) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) ShouldStartSourceOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcSource) bool { return v.ShouldStartSourceOperations }).(pulumi.BoolOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcSource) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) TargetConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcSource) string { return v.TargetConnectionName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceOutput) TargetUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcSource) string { return v.TargetUri }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcSource)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceArrayOutput) ToGetDifStacksStackCollectionItemGgcSourceArrayOutput() GetDifStacksStackCollectionItemGgcSourceArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceArrayOutput) ToGetDifStacksStackCollectionItemGgcSourceArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcSourceArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcSourceArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgcSource {
+		return vs[0].([]GetDifStacksStackCollectionItemGgcSource)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcSourceOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcTarget struct {
+	Action                      string `pulumi:"action"`
+	ShouldStartTargetOperations bool   `pulumi:"shouldStartTargetOperations"`
+	SourceConnectionName        string `pulumi:"sourceConnectionName"`
+	SourceUri                   string `pulumi:"sourceUri"`
+	TargetId                    string `pulumi:"targetId"`
+}
+
+// GetDifStacksStackCollectionItemGgcTargetInput is an input type that accepts GetDifStacksStackCollectionItemGgcTargetArgs and GetDifStacksStackCollectionItemGgcTargetOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcTargetInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcTargetArgs{...}
+type GetDifStacksStackCollectionItemGgcTargetInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcTargetOutput() GetDifStacksStackCollectionItemGgcTargetOutput
+	ToGetDifStacksStackCollectionItemGgcTargetOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcTargetOutput
+}
+
+type GetDifStacksStackCollectionItemGgcTargetArgs struct {
+	Action                      pulumi.StringInput `pulumi:"action"`
+	ShouldStartTargetOperations pulumi.BoolInput   `pulumi:"shouldStartTargetOperations"`
+	SourceConnectionName        pulumi.StringInput `pulumi:"sourceConnectionName"`
+	SourceUri                   pulumi.StringInput `pulumi:"sourceUri"`
+	TargetId                    pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetDifStacksStackCollectionItemGgcTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcTarget)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcTargetArgs) ToGetDifStacksStackCollectionItemGgcTargetOutput() GetDifStacksStackCollectionItemGgcTargetOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcTargetOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcTargetArgs) ToGetDifStacksStackCollectionItemGgcTargetOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcTargetOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcTargetArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcTargetArray and GetDifStacksStackCollectionItemGgcTargetArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcTargetArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcTargetArray{ GetDifStacksStackCollectionItemGgcTargetArgs{...} }
+type GetDifStacksStackCollectionItemGgcTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcTargetArrayOutput() GetDifStacksStackCollectionItemGgcTargetArrayOutput
+	ToGetDifStacksStackCollectionItemGgcTargetArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcTargetArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcTargetArray []GetDifStacksStackCollectionItemGgcTargetInput
+
+func (GetDifStacksStackCollectionItemGgcTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcTarget)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcTargetArray) ToGetDifStacksStackCollectionItemGgcTargetArrayOutput() GetDifStacksStackCollectionItemGgcTargetArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcTargetArray) ToGetDifStacksStackCollectionItemGgcTargetArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcTargetArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcTargetOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcTarget)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) ToGetDifStacksStackCollectionItemGgcTargetOutput() GetDifStacksStackCollectionItemGgcTargetOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) ToGetDifStacksStackCollectionItemGgcTargetOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcTargetOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcTarget) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) ShouldStartTargetOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcTarget) bool { return v.ShouldStartTargetOperations }).(pulumi.BoolOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) SourceConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcTarget) string { return v.SourceConnectionName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) SourceUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcTarget) string { return v.SourceUri }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcTarget) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcTarget)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetArrayOutput) ToGetDifStacksStackCollectionItemGgcTargetArrayOutput() GetDifStacksStackCollectionItemGgcTargetArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetArrayOutput) ToGetDifStacksStackCollectionItemGgcTargetArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcTargetArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcTargetArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgcTarget {
+		return vs[0].([]GetDifStacksStackCollectionItemGgcTarget)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcTargetOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcUser struct {
+	Action   string `pulumi:"action"`
+	SecretId string `pulumi:"secretId"`
+	UserName string `pulumi:"userName"`
+	UserType string `pulumi:"userType"`
+}
+
+// GetDifStacksStackCollectionItemGgcUserInput is an input type that accepts GetDifStacksStackCollectionItemGgcUserArgs and GetDifStacksStackCollectionItemGgcUserOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcUserInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcUserArgs{...}
+type GetDifStacksStackCollectionItemGgcUserInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcUserOutput() GetDifStacksStackCollectionItemGgcUserOutput
+	ToGetDifStacksStackCollectionItemGgcUserOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcUserOutput
+}
+
+type GetDifStacksStackCollectionItemGgcUserArgs struct {
+	Action   pulumi.StringInput `pulumi:"action"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	UserName pulumi.StringInput `pulumi:"userName"`
+	UserType pulumi.StringInput `pulumi:"userType"`
+}
+
+func (GetDifStacksStackCollectionItemGgcUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcUser)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcUserArgs) ToGetDifStacksStackCollectionItemGgcUserOutput() GetDifStacksStackCollectionItemGgcUserOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcUserOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcUserArgs) ToGetDifStacksStackCollectionItemGgcUserOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcUserOutput)
+}
+
+// GetDifStacksStackCollectionItemGgcUserArrayInput is an input type that accepts GetDifStacksStackCollectionItemGgcUserArray and GetDifStacksStackCollectionItemGgcUserArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemGgcUserArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemGgcUserArray{ GetDifStacksStackCollectionItemGgcUserArgs{...} }
+type GetDifStacksStackCollectionItemGgcUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemGgcUserArrayOutput() GetDifStacksStackCollectionItemGgcUserArrayOutput
+	ToGetDifStacksStackCollectionItemGgcUserArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemGgcUserArrayOutput
+}
+
+type GetDifStacksStackCollectionItemGgcUserArray []GetDifStacksStackCollectionItemGgcUserInput
+
+func (GetDifStacksStackCollectionItemGgcUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcUser)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemGgcUserArray) ToGetDifStacksStackCollectionItemGgcUserArrayOutput() GetDifStacksStackCollectionItemGgcUserArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemGgcUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemGgcUserArray) ToGetDifStacksStackCollectionItemGgcUserArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemGgcUserArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcUserOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemGgcUser)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) ToGetDifStacksStackCollectionItemGgcUserOutput() GetDifStacksStackCollectionItemGgcUserOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) ToGetDifStacksStackCollectionItemGgcUserOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcUserOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcUser) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcUser) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcUser) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemGgcUser) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemGgcUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemGgcUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemGgcUser)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserArrayOutput) ToGetDifStacksStackCollectionItemGgcUserArrayOutput() GetDifStacksStackCollectionItemGgcUserArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserArrayOutput) ToGetDifStacksStackCollectionItemGgcUserArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemGgcUserArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemGgcUserArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemGgcUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemGgcUser {
+		return vs[0].([]GetDifStacksStackCollectionItemGgcUser)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemGgcUserOutput)
+}
+
+type GetDifStacksStackCollectionItemObjectstorage struct {
+	// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering string `pulumi:"autoTiering"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning string `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier string `pulumi:"storageTier"`
+}
+
+// GetDifStacksStackCollectionItemObjectstorageInput is an input type that accepts GetDifStacksStackCollectionItemObjectstorageArgs and GetDifStacksStackCollectionItemObjectstorageOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemObjectstorageInput` via:
+//
+//	GetDifStacksStackCollectionItemObjectstorageArgs{...}
+type GetDifStacksStackCollectionItemObjectstorageInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemObjectstorageOutput() GetDifStacksStackCollectionItemObjectstorageOutput
+	ToGetDifStacksStackCollectionItemObjectstorageOutputWithContext(context.Context) GetDifStacksStackCollectionItemObjectstorageOutput
+}
+
+type GetDifStacksStackCollectionItemObjectstorageArgs struct {
+	// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+	AutoTiering pulumi.StringInput `pulumi:"autoTiering"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+	ObjectVersioning pulumi.StringInput `pulumi:"objectVersioning"`
+	// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+}
+
+func (GetDifStacksStackCollectionItemObjectstorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorage)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemObjectstorageArgs) ToGetDifStacksStackCollectionItemObjectstorageOutput() GetDifStacksStackCollectionItemObjectstorageOutput {
+	return i.ToGetDifStacksStackCollectionItemObjectstorageOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemObjectstorageArgs) ToGetDifStacksStackCollectionItemObjectstorageOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemObjectstorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemObjectstorageOutput)
+}
+
+// GetDifStacksStackCollectionItemObjectstorageArrayInput is an input type that accepts GetDifStacksStackCollectionItemObjectstorageArray and GetDifStacksStackCollectionItemObjectstorageArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemObjectstorageArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemObjectstorageArray{ GetDifStacksStackCollectionItemObjectstorageArgs{...} }
+type GetDifStacksStackCollectionItemObjectstorageArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemObjectstorageArrayOutput() GetDifStacksStackCollectionItemObjectstorageArrayOutput
+	ToGetDifStacksStackCollectionItemObjectstorageArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemObjectstorageArrayOutput
+}
+
+type GetDifStacksStackCollectionItemObjectstorageArray []GetDifStacksStackCollectionItemObjectstorageInput
+
+func (GetDifStacksStackCollectionItemObjectstorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemObjectstorage)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemObjectstorageArray) ToGetDifStacksStackCollectionItemObjectstorageArrayOutput() GetDifStacksStackCollectionItemObjectstorageArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemObjectstorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemObjectstorageArray) ToGetDifStacksStackCollectionItemObjectstorageArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemObjectstorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemObjectstorageArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemObjectstorageOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemObjectstorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorage)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) ToGetDifStacksStackCollectionItemObjectstorageOutput() GetDifStacksStackCollectionItemObjectstorageOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) ToGetDifStacksStackCollectionItemObjectstorageOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemObjectstorageOutput {
+	return o
+}
+
+// It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) AutoTiering() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemObjectstorage) string { return v.AutoTiering }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemObjectstorage) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) ObjectVersioning() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemObjectstorage) string { return v.ObjectVersioning }).(pulumi.StringOutput)
+}
+
+// Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+func (o GetDifStacksStackCollectionItemObjectstorageOutput) StorageTier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemObjectstorage) string { return v.StorageTier }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemObjectstorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemObjectstorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemObjectstorage)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemObjectstorageArrayOutput) ToGetDifStacksStackCollectionItemObjectstorageArrayOutput() GetDifStacksStackCollectionItemObjectstorageArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemObjectstorageArrayOutput) ToGetDifStacksStackCollectionItemObjectstorageArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemObjectstorageArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemObjectstorageArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemObjectstorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemObjectstorage {
+		return vs[0].([]GetDifStacksStackCollectionItemObjectstorage)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemObjectstorageOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetail struct {
+	// Additional details about the provisioned services
+	AdditionalDetails []GetDifStacksStackCollectionItemServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath string `pulumi:"currentArtifactPath"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId string `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType string `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl string `pulumi:"serviceUrl"`
+	// state of the service
+	Status string `pulumi:"status"`
+}
+
+// GetDifStacksStackCollectionItemServiceDetailInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailArgs and GetDifStacksStackCollectionItemServiceDetailOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailArgs{...}
+type GetDifStacksStackCollectionItemServiceDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailOutput() GetDifStacksStackCollectionItemServiceDetailOutput
+	ToGetDifStacksStackCollectionItemServiceDetailOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailArgs struct {
+	// Additional details about the provisioned services
+	AdditionalDetails GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayInput `pulumi:"additionalDetails"`
+	// name of the service
+	CurrentArtifactPath pulumi.StringInput `pulumi:"currentArtifactPath"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// ID for the service
+	ServiceId pulumi.StringInput `pulumi:"serviceId"`
+	// name of the cloud service
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+	// url for the service
+	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
+	// state of the service
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDifStacksStackCollectionItemServiceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailOutput() GetDifStacksStackCollectionItemServiceDetailOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailOutput)
+}
+
+// GetDifStacksStackCollectionItemServiceDetailArrayInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailArray and GetDifStacksStackCollectionItemServiceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailArray{ GetDifStacksStackCollectionItemServiceDetailArgs{...} }
+type GetDifStacksStackCollectionItemServiceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailArrayOutput
+	ToGetDifStacksStackCollectionItemServiceDetailArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailArrayOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailArray []GetDifStacksStackCollectionItemServiceDetailInput
+
+func (GetDifStacksStackCollectionItemServiceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailArray) ToGetDifStacksStackCollectionItemServiceDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailArray) ToGetDifStacksStackCollectionItemServiceDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailOutput() GetDifStacksStackCollectionItemServiceDetailOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailOutput {
+	return o
+}
+
+// Additional details about the provisioned services
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) AdditionalDetails() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) []GetDifStacksStackCollectionItemServiceDetailAdditionalDetail {
+		return v.AdditionalDetails
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput)
+}
+
+// name of the service
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) CurrentArtifactPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.CurrentArtifactPath }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// ID for the service
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) ServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.ServiceId }).(pulumi.StringOutput)
+}
+
+// name of the cloud service
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+// url for the service
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) ServiceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.ServiceUrl }).(pulumi.StringOutput)
+}
+
+// state of the service
+func (o GetDifStacksStackCollectionItemServiceDetailOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetail) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemServiceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemServiceDetail {
+		return vs[0].([]GetDifStacksStackCollectionItemServiceDetail)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemServiceDetailOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetail struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId string `pulumi:"modelId"`
+	// version of model
+	ModelVersion string `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion string `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs{...}
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs struct {
+	// connections assigned to Golden Gate deployment
+	AssignedConnections GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// details of all endpoints assigned to cluster
+	EndpointDetails GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
+	// OCID of model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// version of model
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// region of cluster
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// OCID of model
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput)
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray{ GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs{...} }
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput {
+	return o
+}
+
+// connections assigned to Golden Gate deployment
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) AssignedConnections() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection {
+		return v.AssignedConnections
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+// details of all endpoints assigned to cluster
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) EndpointDetails() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail {
+		return v.EndpointDetails
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+// OCID of model
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// version of model
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// region of cluster
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.OciRegion }).(pulumi.StringOutput)
+}
+
+// OCID of model
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemServiceDetailAdditionalDetail {
+		return vs[0].([]GetDifStacksStackCollectionItemServiceDetailAdditionalDetail)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection struct {
+	// OCID of the connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName string `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy string `pulumi:"requestedBy"`
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs{...}
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs struct {
+	// OCID of the connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// Name of the connection.
+	ConnectionName pulumi.StringInput `pulumi:"connectionName"`
+	// Specifies who has made this connection.
+	RequestedBy pulumi.StringInput `pulumi:"requestedBy"`
+}
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray{ GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs{...} }
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionInput
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return o
+}
+
+// OCID of the connection.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection) string {
+		return v.ConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// Name of the connection.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) ConnectionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection) string {
+		return v.ConnectionName
+	}).(pulumi.StringOutput)
+}
+
+// Specifies who has made this connection.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput) RequestedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection) string {
+		return v.RequestedBy
+	}).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection {
+		return vs[0].([]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail struct {
+	// OCID of the endpoint.
+	EndpointId string `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName string `pulumi:"endpointName"`
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs{...}
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs struct {
+	// OCID of the endpoint.
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Identifier for each endpoint.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+}
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput)
+}
+
+// GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput is an input type that accepts GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray and GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray{ GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs{...} }
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput
+	ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput {
+	return o
+}
+
+// OCID of the endpoint.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail) string {
+		return v.EndpointId
+	}).(pulumi.StringOutput)
+}
+
+// Identifier for each endpoint.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail) string {
+		return v.EndpointName
+	}).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput) ToGetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail {
+		return vs[0].([]GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput)
 }
 
 type GetIotDigitalTwinAdapterInboundEnvelope struct {
@@ -28344,6 +37162,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbGcpIdentityConnectorGcpNodeInput)(nil)).Elem(), DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbInput)(nil)).Elem(), DifStackAdbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbArrayInput)(nil)).Elem(), DifStackAdbArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbDbCredentialInput)(nil)).Elem(), DifStackAdbDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbDbCredentialArrayInput)(nil)).Elem(), DifStackAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowInput)(nil)).Elem(), DifStackDataflowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowArrayInput)(nil)).Elem(), DifStackDataflowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsInput)(nil)).Elem(), DifStackDataflowConnectionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsPtrInput)(nil)).Elem(), DifStackDataflowConnectionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsInput)(nil)).Elem(), DifStackDataflowConnectionsConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsPtrInput)(nil)).Elem(), DifStackDataflowConnectionsConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsDifDependencyInput)(nil)).Elem(), DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayInput)(nil)).Elem(), DifStackDataflowConnectionsConnectionDetailsDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowDriverShapeConfigInput)(nil)).Elem(), DifStackDataflowDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowDriverShapeConfigPtrInput)(nil)).Elem(), DifStackDataflowDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowExecutorShapeConfigInput)(nil)).Elem(), DifStackDataflowExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowExecutorShapeConfigPtrInput)(nil)).Elem(), DifStackDataflowExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGenaiInput)(nil)).Elem(), DifStackGenaiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGenaiArrayInput)(nil)).Elem(), DifStackGenaiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGenaiEndpointInput)(nil)).Elem(), DifStackGenaiEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGenaiEndpointArrayInput)(nil)).Elem(), DifStackGenaiEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcInput)(nil)).Elem(), DifStackGgcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcArrayInput)(nil)).Elem(), DifStackGgcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcConnectionInput)(nil)).Elem(), DifStackGgcConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcConnectionArrayInput)(nil)).Elem(), DifStackGgcConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcConnectionDifDependencyInput)(nil)).Elem(), DifStackGgcConnectionDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcConnectionDifDependencyArrayInput)(nil)).Elem(), DifStackGgcConnectionDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcSourceInput)(nil)).Elem(), DifStackGgcSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcSourceArrayInput)(nil)).Elem(), DifStackGgcSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcTargetInput)(nil)).Elem(), DifStackGgcTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcTargetArrayInput)(nil)).Elem(), DifStackGgcTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcUserInput)(nil)).Elem(), DifStackGgcUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcUserArrayInput)(nil)).Elem(), DifStackGgcUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackObjectstorageInput)(nil)).Elem(), DifStackObjectstorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackObjectstorageArrayInput)(nil)).Elem(), DifStackObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailInput)(nil)).Elem(), DifStackServiceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailArrayInput)(nil)).Elem(), DifStackServiceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailArrayInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailAssignedConnectionInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailAssignedConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailAssignedConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetailInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopePtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
@@ -28500,6 +37360,96 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbInput)(nil)).Elem(), GetDifStackAdbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbArrayInput)(nil)).Elem(), GetDifStackAdbArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbDbCredentialInput)(nil)).Elem(), GetDifStackAdbDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbDbCredentialArrayInput)(nil)).Elem(), GetDifStackAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowInput)(nil)).Elem(), GetDifStackDataflowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowArrayInput)(nil)).Elem(), GetDifStackDataflowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionInput)(nil)).Elem(), GetDifStackDataflowConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionArrayInput)(nil)).Elem(), GetDifStackDataflowConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailInput)(nil)).Elem(), GetDifStackDataflowConnectionConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailArrayInput)(nil)).Elem(), GetDifStackDataflowConnectionConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailDifDependencyInput)(nil)).Elem(), GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayInput)(nil)).Elem(), GetDifStackDataflowConnectionConnectionDetailDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowDriverShapeConfigInput)(nil)).Elem(), GetDifStackDataflowDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowDriverShapeConfigArrayInput)(nil)).Elem(), GetDifStackDataflowDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowExecutorShapeConfigInput)(nil)).Elem(), GetDifStackDataflowExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowExecutorShapeConfigArrayInput)(nil)).Elem(), GetDifStackDataflowExecutorShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGenaiInput)(nil)).Elem(), GetDifStackGenaiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGenaiArrayInput)(nil)).Elem(), GetDifStackGenaiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGenaiEndpointInput)(nil)).Elem(), GetDifStackGenaiEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGenaiEndpointArrayInput)(nil)).Elem(), GetDifStackGenaiEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcInput)(nil)).Elem(), GetDifStackGgcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcArrayInput)(nil)).Elem(), GetDifStackGgcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcConnectionInput)(nil)).Elem(), GetDifStackGgcConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcConnectionArrayInput)(nil)).Elem(), GetDifStackGgcConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcConnectionDifDependencyInput)(nil)).Elem(), GetDifStackGgcConnectionDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcConnectionDifDependencyArrayInput)(nil)).Elem(), GetDifStackGgcConnectionDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcSourceInput)(nil)).Elem(), GetDifStackGgcSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcSourceArrayInput)(nil)).Elem(), GetDifStackGgcSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcTargetInput)(nil)).Elem(), GetDifStackGgcTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcTargetArrayInput)(nil)).Elem(), GetDifStackGgcTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcUserInput)(nil)).Elem(), GetDifStackGgcUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcUserArrayInput)(nil)).Elem(), GetDifStackGgcUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackObjectstorageInput)(nil)).Elem(), GetDifStackObjectstorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackObjectstorageArrayInput)(nil)).Elem(), GetDifStackObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailInput)(nil)).Elem(), GetDifStackServiceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailArrayInput)(nil)).Elem(), GetDifStackServiceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailArrayInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailAssignedConnectionInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailAssignedConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailEndpointDetailInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksFilterInput)(nil)).Elem(), GetDifStacksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksFilterArrayInput)(nil)).Elem(), GetDifStacksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionInput)(nil)).Elem(), GetDifStacksStackCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionArrayInput)(nil)).Elem(), GetDifStacksStackCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemInput)(nil)).Elem(), GetDifStacksStackCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredentialInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbDbCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredentialArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowDriverShapeConfigInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowExecutorShapeConfigInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiInput)(nil)).Elem(), GetDifStacksStackCollectionItemGenaiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGenaiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiEndpointInput)(nil)).Elem(), GetDifStacksStackCollectionItemGenaiEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGenaiEndpointArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGenaiEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionDifDependencyInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcConnectionDifDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcSourceInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcSourceArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcTargetInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcTargetArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcUserInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcUserArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorageInput)(nil)).Elem(), GetDifStacksStackCollectionItemObjectstorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorageArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
@@ -28762,6 +37712,48 @@ func init() {
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArrayOutput{})
+	pulumi.RegisterOutputType(DifStackAdbOutput{})
+	pulumi.RegisterOutputType(DifStackAdbArrayOutput{})
+	pulumi.RegisterOutputType(DifStackAdbDbCredentialOutput{})
+	pulumi.RegisterOutputType(DifStackAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowArrayOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsPtrOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsConnectionDetailsOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsConnectionDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsConnectionDetailsDifDependencyOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowConnectionsConnectionDetailsDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowDriverShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(DifStackDataflowExecutorShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(DifStackGenaiOutput{})
+	pulumi.RegisterOutputType(DifStackGenaiArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGenaiEndpointOutput{})
+	pulumi.RegisterOutputType(DifStackGenaiEndpointArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcOutput{})
+	pulumi.RegisterOutputType(DifStackGgcArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcConnectionOutput{})
+	pulumi.RegisterOutputType(DifStackGgcConnectionArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcConnectionDifDependencyOutput{})
+	pulumi.RegisterOutputType(DifStackGgcConnectionDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcSourceOutput{})
+	pulumi.RegisterOutputType(DifStackGgcSourceArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcTargetOutput{})
+	pulumi.RegisterOutputType(DifStackGgcTargetArrayOutput{})
+	pulumi.RegisterOutputType(DifStackGgcUserOutput{})
+	pulumi.RegisterOutputType(DifStackGgcUserArrayOutput{})
+	pulumi.RegisterOutputType(DifStackObjectstorageOutput{})
+	pulumi.RegisterOutputType(DifStackObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailArrayOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailArrayOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailAssignedConnectionOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailEndpointDetailOutput{})
+	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopePtrOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})
@@ -28918,6 +37910,96 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackAdbOutput{})
+	pulumi.RegisterOutputType(GetDifStackAdbArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackAdbDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetDifStackAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionConnectionDetailDifDependencyOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowConnectionConnectionDetailDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDifStackDataflowExecutorShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGenaiOutput{})
+	pulumi.RegisterOutputType(GetDifStackGenaiArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGenaiEndpointOutput{})
+	pulumi.RegisterOutputType(GetDifStackGenaiEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcConnectionDifDependencyOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcConnectionDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcSourceOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcTargetOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcUserOutput{})
+	pulumi.RegisterOutputType(GetDifStackGgcUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackObjectstorageOutput{})
+	pulumi.RegisterOutputType(GetDifStackObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailAssignedConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksFilterOutput{})
+	pulumi.RegisterOutputType(GetDifStacksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbDbCredentialOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGenaiOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGenaiArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGenaiEndpointOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGenaiEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcConnectionDifDependencyOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcConnectionDifDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcSourceOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcTargetOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcUserOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemObjectstorageOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})

@@ -77,6 +77,8 @@ type LookupInstancePoolResult struct {
 	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 	InstancePoolId string `pulumi:"instancePoolId"`
+	// The lifecycle management options for the instance pool.
+	LifecycleManagements []GetInstancePoolLifecycleManagement `pulumi:"lifecycleManagements"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []GetInstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// The placement configurations for the instance pool.
@@ -170,6 +172,11 @@ func (o LookupInstancePoolResultOutput) InstanceHostnameFormatter() pulumi.Strin
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 func (o LookupInstancePoolResultOutput) InstancePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstancePoolId }).(pulumi.StringOutput)
+}
+
+// The lifecycle management options for the instance pool.
+func (o LookupInstancePoolResultOutput) LifecycleManagements() GetInstancePoolLifecycleManagementArrayOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) []GetInstancePoolLifecycleManagement { return v.LifecycleManagements }).(GetInstancePoolLifecycleManagementArrayOutput)
 }
 
 // The load balancers attached to the instance pool.

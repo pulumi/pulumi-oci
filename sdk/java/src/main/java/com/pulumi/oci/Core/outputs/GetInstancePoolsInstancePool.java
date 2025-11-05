@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolPlacementConfiguration;
 import java.lang.Integer;
@@ -56,6 +57,11 @@ public final class GetInstancePoolsInstancePool {
      * 
      */
     private String instanceHostnameFormatter;
+    /**
+     * @return The lifecycle management options for the instance pool.
+     * 
+     */
+    private List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements;
     /**
      * @return The load balancers attached to the instance pool.
      * 
@@ -143,6 +149,13 @@ public final class GetInstancePoolsInstancePool {
         return this.instanceHostnameFormatter;
     }
     /**
+     * @return The lifecycle management options for the instance pool.
+     * 
+     */
+    public List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements() {
+        return this.lifecycleManagements;
+    }
+    /**
      * @return The load balancers attached to the instance pool.
      * 
      */
@@ -196,6 +209,7 @@ public final class GetInstancePoolsInstancePool {
         private String instanceConfigurationId;
         private String instanceDisplayNameFormatter;
         private String instanceHostnameFormatter;
+        private List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements;
         private List<GetInstancePoolsInstancePoolLoadBalancer> loadBalancers;
         private List<GetInstancePoolsInstancePoolPlacementConfiguration> placementConfigurations;
         private Integer size;
@@ -213,6 +227,7 @@ public final class GetInstancePoolsInstancePool {
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
+    	      this.lifecycleManagements = defaults.lifecycleManagements;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.size = defaults.size;
@@ -293,6 +308,17 @@ public final class GetInstancePoolsInstancePool {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleManagements(List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements) {
+            if (lifecycleManagements == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePool", "lifecycleManagements");
+            }
+            this.lifecycleManagements = lifecycleManagements;
+            return this;
+        }
+        public Builder lifecycleManagements(GetInstancePoolsInstancePoolLifecycleManagement... lifecycleManagements) {
+            return lifecycleManagements(List.of(lifecycleManagements));
+        }
+        @CustomType.Setter
         public Builder loadBalancers(List<GetInstancePoolsInstancePoolLoadBalancer> loadBalancers) {
             if (loadBalancers == null) {
               throw new MissingRequiredPropertyException("GetInstancePoolsInstancePool", "loadBalancers");
@@ -349,6 +375,7 @@ public final class GetInstancePoolsInstancePool {
             _resultValue.instanceConfigurationId = instanceConfigurationId;
             _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
+            _resultValue.lifecycleManagements = lifecycleManagements;
             _resultValue.loadBalancers = loadBalancers;
             _resultValue.placementConfigurations = placementConfigurations;
             _resultValue.size = size;

@@ -3066,6 +3066,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/dbNodeSnapshot",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dbNodeSnapshot:DbNodeSnapshot": "DbNodeSnapshot"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/dbNodeSnapshotManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dbNodeSnapshotManagement:DbNodeSnapshotManagement": "DbNodeSnapshotManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/dbSystem",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -7430,6 +7446,14 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing": "DbmulticloudOracleDbGcpKeyRing"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/difStack",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/difStack:DifStack": "DifStack"
   }
  },
  {

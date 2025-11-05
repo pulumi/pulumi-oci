@@ -38,6 +38,11 @@ public final class PathAnalyzerTestDestinationEndpoint {
      */
     private @Nullable String networkLoadBalancerId;
     /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    private @Nullable String psaId;
+    /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
@@ -100,6 +105,13 @@ public final class PathAnalyzerTestDestinationEndpoint {
         return Optional.ofNullable(this.networkLoadBalancerId);
     }
     /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    public Optional<String> psaId() {
+        return Optional.ofNullable(this.psaId);
+    }
+    /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
@@ -149,6 +161,7 @@ public final class PathAnalyzerTestDestinationEndpoint {
         private @Nullable String listenerId;
         private @Nullable String loadBalancerId;
         private @Nullable String networkLoadBalancerId;
+        private @Nullable String psaId;
         private @Nullable String state;
         private @Nullable String subnetId;
         private String type;
@@ -162,6 +175,7 @@ public final class PathAnalyzerTestDestinationEndpoint {
     	      this.listenerId = defaults.listenerId;
     	      this.loadBalancerId = defaults.loadBalancerId;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
+    	      this.psaId = defaults.psaId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.type = defaults.type;
@@ -197,6 +211,12 @@ public final class PathAnalyzerTestDestinationEndpoint {
         public Builder networkLoadBalancerId(@Nullable String networkLoadBalancerId) {
 
             this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder psaId(@Nullable String psaId) {
+
+            this.psaId = psaId;
             return this;
         }
         @CustomType.Setter
@@ -238,6 +258,7 @@ public final class PathAnalyzerTestDestinationEndpoint {
             _resultValue.listenerId = listenerId;
             _resultValue.loadBalancerId = loadBalancerId;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.psaId = psaId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.type = type;

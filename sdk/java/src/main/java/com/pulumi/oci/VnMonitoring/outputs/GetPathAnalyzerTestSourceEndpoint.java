@@ -36,6 +36,11 @@ public final class GetPathAnalyzerTestSourceEndpoint {
      */
     private String networkLoadBalancerId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    private String psaId;
+    /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
@@ -98,6 +103,13 @@ public final class GetPathAnalyzerTestSourceEndpoint {
         return this.networkLoadBalancerId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    public String psaId() {
+        return this.psaId;
+    }
+    /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
@@ -147,6 +159,7 @@ public final class GetPathAnalyzerTestSourceEndpoint {
         private String listenerId;
         private String loadBalancerId;
         private String networkLoadBalancerId;
+        private String psaId;
         private String state;
         private String subnetId;
         private String type;
@@ -160,6 +173,7 @@ public final class GetPathAnalyzerTestSourceEndpoint {
     	      this.listenerId = defaults.listenerId;
     	      this.loadBalancerId = defaults.loadBalancerId;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
+    	      this.psaId = defaults.psaId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.type = defaults.type;
@@ -205,6 +219,14 @@ public final class GetPathAnalyzerTestSourceEndpoint {
               throw new MissingRequiredPropertyException("GetPathAnalyzerTestSourceEndpoint", "networkLoadBalancerId");
             }
             this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder psaId(String psaId) {
+            if (psaId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestSourceEndpoint", "psaId");
+            }
+            this.psaId = psaId;
             return this;
         }
         @CustomType.Setter
@@ -254,6 +276,7 @@ public final class GetPathAnalyzerTestSourceEndpoint {
             _resultValue.listenerId = listenerId;
             _resultValue.loadBalancerId = loadBalancerId;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.psaId = psaId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.type = type;

@@ -71,6 +71,10 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+import com.pulumi.oci.oci.inputs.GetDifStackPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+import com.pulumi.oci.oci.inputs.GetDifStacksPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
@@ -206,6 +210,8 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
+import com.pulumi.oci.oci.outputs.GetDifStackResult;
+import com.pulumi.oci.oci.outputs.GetDifStacksResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdapterResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdaptersResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstanceContentResult;
@@ -7660,6 +7666,531 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeysPlain(GetDbmulticloudOracleDbGcpKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets information about a Stack.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
+     *             .stackId(testStackOciDifStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStackResult> getDifStack(GetDifStackArgs args) {
+        return getDifStack(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets information about a Stack.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
+     *             .stackId(testStackOciDifStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDifStackResult> getDifStackPlain(GetDifStackPlainArgs args) {
+        return getDifStackPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets information about a Stack.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
+     *             .stackId(testStackOciDifStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStackResult> getDifStack(GetDifStackArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDifStack:getDifStack", TypeShape.of(GetDifStackResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets information about a Stack.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
+     *             .stackId(testStackOciDifStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStackResult> getDifStack(GetDifStackArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDifStack:getDifStack", TypeShape.of(GetDifStackResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets information about a Stack.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
+     *             .stackId(testStackOciDifStack.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDifStackResult> getDifStackPlain(GetDifStackPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDifStack:getDifStack", TypeShape.of(GetDifStackResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStacksResult> getDifStacks() {
+        return getDifStacks(GetDifStacksArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDifStacksResult> getDifStacksPlain() {
+        return getDifStacksPlain(GetDifStacksPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStacksResult> getDifStacks(GetDifStacksArgs args) {
+        return getDifStacks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDifStacksResult> getDifStacksPlain(GetDifStacksPlainArgs args) {
+        return getDifStacksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStacksResult> getDifStacks(GetDifStacksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDifStacks:getDifStacks", TypeShape.of(GetDifStacksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDifStacksResult> getDifStacks(GetDifStacksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDifStacks:getDifStacks", TypeShape.of(GetDifStacksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
+     * 
+     * Gets a list of Stacks.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = OciFunctions.getDifStacks(GetDifStacksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDifStacksResult> getDifStacksPlain(GetDifStacksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDifStacks:getDifStacks", TypeShape.of(GetDifStacksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.

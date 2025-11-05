@@ -43,6 +43,12 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public Input<string>? NetworkLoadBalancerId { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        /// </summary>
+        [Input("psaId")]
+        public Input<string>? PsaId { get; set; }
+
+        /// <summary>
         /// The current state of the `PathAnalyzerTest` resource.
         /// </summary>
         [Input("state")]

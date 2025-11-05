@@ -47,6 +47,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string InstanceHostnameFormatter;
         /// <summary>
+        /// The lifecycle management options for the instance pool.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolLifecycleManagementResult> LifecycleManagements;
+        /// <summary>
         /// The load balancers attached to the instance pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> LoadBalancers;
@@ -87,6 +91,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceHostnameFormatter,
 
+            ImmutableArray<Outputs.GetInstancePoolsInstancePoolLifecycleManagementResult> lifecycleManagements,
+
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> loadBalancers,
 
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> placementConfigurations,
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceConfigurationId = instanceConfigurationId;
             InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
             InstanceHostnameFormatter = instanceHostnameFormatter;
+            LifecycleManagements = lifecycleManagements;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;
             Size = size;

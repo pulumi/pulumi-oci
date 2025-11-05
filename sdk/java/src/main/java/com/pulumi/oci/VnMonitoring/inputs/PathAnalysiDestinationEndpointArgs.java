@@ -91,6 +91,21 @@ public final class PathAnalysiDestinationEndpointArgs extends com.pulumi.resourc
         return Optional.ofNullable(this.networkLoadBalancerId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    @Import(name="psaId")
+    private @Nullable Output<String> psaId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    public Optional<Output<String>> psaId() {
+        return Optional.ofNullable(this.psaId);
+    }
+
     @Import(name="state")
     private @Nullable Output<String> state;
 
@@ -166,6 +181,7 @@ public final class PathAnalysiDestinationEndpointArgs extends com.pulumi.resourc
         this.listenerId = $.listenerId;
         this.loadBalancerId = $.loadBalancerId;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
+        this.psaId = $.psaId;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.type = $.type;
@@ -294,6 +310,27 @@ public final class PathAnalysiDestinationEndpointArgs extends com.pulumi.resourc
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             return networkLoadBalancerId(Output.of(networkLoadBalancerId));
+        }
+
+        /**
+         * @param psaId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder psaId(@Nullable Output<String> psaId) {
+            $.psaId = psaId;
+            return this;
+        }
+
+        /**
+         * @param psaId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder psaId(String psaId) {
+            return psaId(Output.of(psaId));
         }
 
         public Builder state(@Nullable Output<String> state) {

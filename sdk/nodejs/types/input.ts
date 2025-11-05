@@ -17121,6 +17121,46 @@ export namespace Core {
         state?: pulumi.Input<string>;
     }
 
+    export interface InstancePoolLifecycleManagement {
+        /**
+         * (Updatable) The lifecycle actions for the instance pool.
+         */
+        lifecycleActions: pulumi.Input<inputs.Core.InstancePoolLifecycleManagementLifecycleActions>;
+    }
+
+    export interface InstancePoolLifecycleManagementLifecycleActions {
+        /**
+         * (Updatable) The data for pre-termination action for an instance pool
+         */
+        preTermination?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagementLifecycleActionsPreTermination>;
+    }
+
+    export interface InstancePoolLifecycleManagementLifecycleActionsPreTermination {
+        /**
+         * (Updatable) Whether pre-termination action is enabled or not.
+         */
+        isEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Options to handle timeout for pre-termination action.
+         */
+        onTimeout: pulumi.Input<inputs.Core.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout>;
+        /**
+         * (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+         */
+        timeout: pulumi.Input<number>;
+    }
+
+    export interface InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout {
+        /**
+         * (Updatable) Whether the block volume should be preserved after termination.
+         */
+        preserveBlockVolumeMode: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether the boot volume should be preserved after termination.
+         */
+        preserveBootVolumeMode: pulumi.Input<string>;
+    }
+
     export interface InstancePoolLoadBalancer {
         /**
          * The name of the backend set on the load balancer to add instances to.
@@ -31154,6 +31194,105 @@ export namespace Database {
         redoLogStorageSizeInGbs?: pulumi.Input<number>;
     }
 
+    export interface DbNodeSnapshotManagementSnapshot {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         */
+        clusterId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * Details of the mount points
+         */
+        mountPoints?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotManagementSnapshotMountPoint>[]>;
+        /**
+         * The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
+         */
+        sourceDbnodeId?: pulumi.Input<string>;
+        /**
+         * The current state of the Exadata Database Node Snapshot.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The date and time that the Exadata Database Node Snapshot was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Details of the volumes
+         */
+        volumes?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotManagementSnapshotVolume>[]>;
+    }
+
+    export interface DbNodeSnapshotManagementSnapshotMountPoint {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+         */
+        dbNodeId?: pulumi.Input<string>;
+        /**
+         * The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface DbNodeSnapshotManagementSnapshotVolume {
+        /**
+         * The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Volume Size
+         */
+        size?: pulumi.Input<number>;
+    }
+
+    export interface DbNodeSnapshotMountPoint {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+         */
+        dbNodeId?: pulumi.Input<string>;
+        /**
+         * Volume Name
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface DbNodeSnapshotVolume {
+        /**
+         * Volume Name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Volume Size
+         */
+        size?: pulumi.Input<number>;
+    }
+
     export interface DbSystemDataCollectionOptions {
         /**
          * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -32833,6 +32972,24 @@ export namespace Database {
     }
 
     export interface GetDbNodeConsoleHistoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbNodeSnapshotsFilter {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbNodeSnapshotsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -93608,6 +93765,10 @@ export namespace VnMonitoring {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
          */
         networkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         */
+        psaId?: pulumi.Input<string>;
         state?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -93678,6 +93839,10 @@ export namespace VnMonitoring {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
          */
         networkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         */
+        psaId?: pulumi.Input<string>;
         state?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -93718,6 +93883,10 @@ export namespace VnMonitoring {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
          */
         networkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         */
+        psaId?: pulumi.Input<string>;
         /**
          * The current state of the `PathAnalyzerTest` resource.
          */
@@ -93791,6 +93960,10 @@ export namespace VnMonitoring {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
          */
         networkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         */
+        psaId?: pulumi.Input<string>;
         /**
          * The current state of the `PathAnalyzerTest` resource.
          */
@@ -95909,6 +96082,445 @@ export namespace oci {
         timeLastChecked?: pulumi.Input<string>;
     }
 
+    export interface DifStackAdb {
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+         */
+        adminPasswordId: pulumi.Input<string>;
+        artifactObjectStoragePath?: pulumi.Input<string>;
+        /**
+         * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+         */
+        dataStorageSizeInTbs: pulumi.Input<number>;
+        /**
+         * DB credential details.
+         */
+        dbCredentials?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAdbDbCredential>[]>;
+        /**
+         * (Updatable) A valid Oracle Database version for Autonomous Database.
+         */
+        dbVersion: pulumi.Input<string>;
+        /**
+         * DB Workload to be used with ADB. Accepted values are OLTP, DW.
+         */
+        dbWorkload: pulumi.Input<string>;
+        /**
+         * (Updatable) The compute amount (ECPUs) available to the database.
+         */
+        ecpu: pulumi.Input<number>;
+        /**
+         * Id for the adw instance.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+         */
+        isMtlsConnectionRequired?: pulumi.Input<boolean>;
+        /**
+         * If true then subnetId should not be provided.
+         */
+        isPublic?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the subnet the Autonomous Database is associated with.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+         */
+        toolsPublicAccess?: pulumi.Input<string>;
+    }
+
+    export interface DifStackAdbDbCredential {
+        secretId: pulumi.Input<string>;
+        userName: pulumi.Input<string>;
+        userType: pulumi.Input<string>;
+    }
+
+    export interface DifStackDataflow {
+        /**
+         * Contains the archive from object storage bucket which can be added as dependency to data flow application.
+         */
+        archiveUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details for connections to other services from Dataflow.
+         */
+        connections?: pulumi.Input<inputs.oci.DifStackDataflowConnections>;
+        /**
+         * (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+         */
+        driverShape: pulumi.Input<string>;
+        /**
+         * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        driverShapeConfig?: pulumi.Input<inputs.oci.DifStackDataflowDriverShapeConfig>;
+        /**
+         * Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+         */
+        execute?: pulumi.Input<string>;
+        /**
+         * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+         */
+        executorShape: pulumi.Input<string>;
+        /**
+         * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        executorShapeConfig?: pulumi.Input<inputs.oci.DifStackDataflowExecutorShapeConfig>;
+        /**
+         * Id for dataflow instance
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+         */
+        logBucketInstanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of executor VMs requested.
+         */
+        numExecutors: pulumi.Input<number>;
+        /**
+         * (Updatable) OCID of the already provisioned dataflow private endpoint.
+         */
+        privateEndpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Spark version utilized to run the application.
+         */
+        sparkVersion: pulumi.Input<string>;
+        /**
+         * (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+         */
+        warehouseBucketInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface DifStackDataflowConnections {
+        /**
+         * (Updatable) Details of services to create private endpoint.
+         */
+        connectionDetails: pulumi.Input<inputs.oci.DifStackDataflowConnectionsConnectionDetails>;
+        /**
+         * OCID of the private subnet
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface DifStackDataflowConnectionsConnectionDetails {
+        /**
+         * (Updatable) List of DIF Service Dependency Details to create private endpoint.
+         */
+        difDependencies?: pulumi.Input<pulumi.Input<inputs.oci.DifStackDataflowConnectionsConnectionDetailsDifDependency>[]>;
+        /**
+         * (Updatable) An array of DNS zone names.
+         */
+        domainNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface DifStackDataflowConnectionsConnectionDetailsDifDependency {
+        /**
+         * (Updatable) InstanceId of service which is part of the Stack.
+         */
+        serviceInstanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) Supported service name.
+         */
+        serviceType: pulumi.Input<string>;
+    }
+
+    export interface DifStackDataflowDriverShapeConfig {
+        /**
+         * (Updatable) The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+         */
+        ocpus: pulumi.Input<number>;
+    }
+
+    export interface DifStackDataflowExecutorShapeConfig {
+        /**
+         * (Updatable) The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+         */
+        ocpus: pulumi.Input<number>;
+    }
+
+    export interface DifStackGenai {
+        /**
+         * Name of the base model.
+         */
+        baseModel: pulumi.Input<string>;
+        /**
+         * The dedicated AI cluster type.
+         */
+        clusterType: pulumi.Input<string>;
+        /**
+         * (Updatable) List of endpoints to provision for the GENAI cluster.
+         */
+        endpoints?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenaiEndpoint>[]>;
+        /**
+         * (Updatable) Id for the GGCS instance to be provisioned.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * Region on which the cluster end endpoint will be provisioned.
+         */
+        ociRegion: pulumi.Input<string>;
+        /**
+         * (Updatable) No of replicas of base model to be used for hosting.
+         */
+        unitCount: pulumi.Input<number>;
+    }
+
+    export interface DifStackGenaiEndpoint {
+        /**
+         * (Updatable) Identifier for each endpoint.
+         */
+        endpointName: pulumi.Input<string>;
+        /**
+         * (Updatable) Helps remove toxic and biased content from responses.
+         */
+        isContentModerationEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface DifStackGgc {
+        artifactObjectStoragePath?: pulumi.Input<string>;
+        /**
+         * (Updatable) Connection details to be associated with the Goldengate deployment.
+         */
+        connections?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgcConnection>[]>;
+        /**
+         * Id for the GGCS instance to provision.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+         */
+        ocpu: pulumi.Input<number>;
+        /**
+         * Version of OGG.
+         */
+        oggVersion?: pulumi.Input<string>;
+        /**
+         * The OCID of the Secret where the deployment password is stored.
+         */
+        passwordSecretId: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+         */
+        publicSubnetId?: pulumi.Input<string>;
+        /**
+         * Source Detail to configure existing or new datasource.
+         */
+        sources?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgcSource>[]>;
+        /**
+         * The OCID of the subnet of the GGCS deployment's private endpoint.
+         */
+        subnetId: pulumi.Input<string>;
+        /**
+         * Target Detail to configure existing or new datasource.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgcTarget>[]>;
+        /**
+         * Ggcs user details to be created or updated.
+         */
+        users?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgcUser>[]>;
+    }
+
+    export interface DifStackGgcConnection {
+        /**
+         * (Updatable) OCID of pre-created Oracle GoldenGate connection.
+         */
+        connectionId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the connection to be created.
+         */
+        connectionName: pulumi.Input<string>;
+        /**
+         * (Updatable) List of Service Dependency Details for connection creation.
+         */
+        difDependencies?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgcConnectionDifDependency>[]>;
+        /**
+         * (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+         */
+        ggAdminSecretId?: pulumi.Input<string>;
+    }
+
+    export interface DifStackGgcConnectionDifDependency {
+        /**
+         * (Updatable) InstanceId of service which is part of the Stack.
+         */
+        serviceInstanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) Supported service name.
+         */
+        serviceType: pulumi.Input<string>;
+    }
+
+    export interface DifStackGgcSource {
+        /**
+         * Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+         */
+        action: pulumi.Input<string>;
+        /**
+         * Boolean value that determines source operations should start or not.
+         */
+        shouldStartSourceOperations: pulumi.Input<boolean>;
+        /**
+         * Ggcs source artifact id.
+         */
+        sourceId: pulumi.Input<string>;
+        /**
+         * Name of assigned connection for the source.
+         */
+        targetConnectionName?: pulumi.Input<string>;
+        /**
+         * Target uri for the GoldenGate deployment where distribution path needs to be configured.
+         */
+        targetUri?: pulumi.Input<string>;
+    }
+
+    export interface DifStackGgcTarget {
+        /**
+         * Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+         */
+        action: pulumi.Input<string>;
+        /**
+         * Boolean value that determines target operations should start or not.
+         */
+        shouldStartTargetOperations: pulumi.Input<boolean>;
+        /**
+         * Name of assigned connection for the target.
+         */
+        sourceConnectionName?: pulumi.Input<string>;
+        /**
+         * Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+         */
+        sourceUri?: pulumi.Input<string>;
+        /**
+         * GGCS target artifact id.
+         */
+        targetId: pulumi.Input<string>;
+    }
+
+    export interface DifStackGgcUser {
+        /**
+         * Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+         */
+        action: pulumi.Input<string>;
+        secretId: pulumi.Input<string>;
+        userName: pulumi.Input<string>;
+        userType: pulumi.Input<string>;
+    }
+
+    export interface DifStackObjectstorage {
+        /**
+         * (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+         */
+        autoTiering?: pulumi.Input<string>;
+        /**
+         * (Updatable) Id for Object Storage instance to be provisioned.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+         */
+        objectVersioning: pulumi.Input<string>;
+        /**
+         * Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+         */
+        storageTier: pulumi.Input<string>;
+    }
+
+    export interface DifStackServiceDetail {
+        /**
+         * Additional details about the provisioned services
+         */
+        additionalDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetailAdditionalDetail>[]>;
+        /**
+         * name of the service
+         */
+        currentArtifactPath?: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * ID for the service instance.
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * ID for the service
+         */
+        serviceId?: pulumi.Input<string>;
+        /**
+         * name of the cloud service
+         */
+        serviceType?: pulumi.Input<string>;
+        /**
+         * url for the service
+         */
+        serviceUrl?: pulumi.Input<string>;
+        /**
+         * state of the service
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface DifStackServiceDetailAdditionalDetail {
+        /**
+         * connections assigned to Golden Gate deployment
+         */
+        assignedConnections?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetailAdditionalDetailAssignedConnection>[]>;
+        /**
+         * details of all endpoints assigned to cluster
+         */
+        endpointDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetailAdditionalDetailEndpointDetail>[]>;
+        /**
+         * OCID of model
+         */
+        modelId?: pulumi.Input<string>;
+        /**
+         * version of model
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * region of cluster
+         */
+        ociRegion?: pulumi.Input<string>;
+        /**
+         * OCID of model
+         */
+        privateEndpointId?: pulumi.Input<string>;
+    }
+
+    export interface DifStackServiceDetailAdditionalDetailAssignedConnection {
+        /**
+         * OCID of the connection.
+         */
+        connectionId?: pulumi.Input<string>;
+        /**
+         * Name of the connection.
+         */
+        connectionName?: pulumi.Input<string>;
+        /**
+         * Specifies who has made this connection.
+         */
+        requestedBy?: pulumi.Input<string>;
+    }
+
+    export interface DifStackServiceDetailAdditionalDetailEndpointDetail {
+        /**
+         * OCID of the endpoint.
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * Identifier for each endpoint.
+         */
+        endpointName?: pulumi.Input<string>;
+    }
+
     export interface GetAiDataPlatformAiDataPlatformsFilter {
         name: string;
         regex?: boolean;
@@ -96108,6 +96720,18 @@ export namespace oci {
     }
 
     export interface GetDbmulticloudOracleDbGcpKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDifStacksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDifStacksFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

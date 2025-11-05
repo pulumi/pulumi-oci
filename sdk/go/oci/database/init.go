@@ -93,6 +93,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbNodeConsoleConnection{}
 	case "oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory":
 		r = &DbNodeConsoleHistory{}
+	case "oci:Database/dbNodeSnapshot:DbNodeSnapshot":
+		r = &DbNodeSnapshot{}
+	case "oci:Database/dbNodeSnapshotManagement:DbNodeSnapshotManagement":
+		r = &DbNodeSnapshotManagement{}
 	case "oci:Database/dbSystem:DbSystem":
 		r = &DbSystem{}
 	case "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade":
@@ -362,6 +366,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/dbNodeConsoleHistory",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/dbNodeSnapshot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/dbNodeSnapshotManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

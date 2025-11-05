@@ -24,6 +24,27 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNode',
+    'DifStackAdb',
+    'DifStackAdbDbCredential',
+    'DifStackDataflow',
+    'DifStackDataflowConnections',
+    'DifStackDataflowConnectionsConnectionDetails',
+    'DifStackDataflowConnectionsConnectionDetailsDifDependency',
+    'DifStackDataflowDriverShapeConfig',
+    'DifStackDataflowExecutorShapeConfig',
+    'DifStackGenai',
+    'DifStackGenaiEndpoint',
+    'DifStackGgc',
+    'DifStackGgcConnection',
+    'DifStackGgcConnectionDifDependency',
+    'DifStackGgcSource',
+    'DifStackGgcTarget',
+    'DifStackGgcUser',
+    'DifStackObjectstorage',
+    'DifStackServiceDetail',
+    'DifStackServiceDetailAdditionalDetail',
+    'DifStackServiceDetailAdditionalDetailAssignedConnection',
+    'DifStackServiceDetailAdditionalDetailEndpointDetail',
     'IotDigitalTwinAdapterInboundEnvelope',
     'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping',
     'IotDigitalTwinAdapterInboundEnvelopeReferencePayload',
@@ -102,6 +123,51 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeysFilterResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult',
+    'GetDifStackAdbResult',
+    'GetDifStackAdbDbCredentialResult',
+    'GetDifStackDataflowResult',
+    'GetDifStackDataflowConnectionResult',
+    'GetDifStackDataflowConnectionConnectionDetailResult',
+    'GetDifStackDataflowConnectionConnectionDetailDifDependencyResult',
+    'GetDifStackDataflowDriverShapeConfigResult',
+    'GetDifStackDataflowExecutorShapeConfigResult',
+    'GetDifStackGenaiResult',
+    'GetDifStackGenaiEndpointResult',
+    'GetDifStackGgcResult',
+    'GetDifStackGgcConnectionResult',
+    'GetDifStackGgcConnectionDifDependencyResult',
+    'GetDifStackGgcSourceResult',
+    'GetDifStackGgcTargetResult',
+    'GetDifStackGgcUserResult',
+    'GetDifStackObjectstorageResult',
+    'GetDifStackServiceDetailResult',
+    'GetDifStackServiceDetailAdditionalDetailResult',
+    'GetDifStackServiceDetailAdditionalDetailAssignedConnectionResult',
+    'GetDifStackServiceDetailAdditionalDetailEndpointDetailResult',
+    'GetDifStacksFilterResult',
+    'GetDifStacksStackCollectionResult',
+    'GetDifStacksStackCollectionItemResult',
+    'GetDifStacksStackCollectionItemAdbResult',
+    'GetDifStacksStackCollectionItemAdbDbCredentialResult',
+    'GetDifStacksStackCollectionItemDataflowResult',
+    'GetDifStacksStackCollectionItemDataflowConnectionResult',
+    'GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailResult',
+    'GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyResult',
+    'GetDifStacksStackCollectionItemDataflowDriverShapeConfigResult',
+    'GetDifStacksStackCollectionItemDataflowExecutorShapeConfigResult',
+    'GetDifStacksStackCollectionItemGenaiResult',
+    'GetDifStacksStackCollectionItemGenaiEndpointResult',
+    'GetDifStacksStackCollectionItemGgcResult',
+    'GetDifStacksStackCollectionItemGgcConnectionResult',
+    'GetDifStacksStackCollectionItemGgcConnectionDifDependencyResult',
+    'GetDifStacksStackCollectionItemGgcSourceResult',
+    'GetDifStacksStackCollectionItemGgcTargetResult',
+    'GetDifStacksStackCollectionItemGgcUserResult',
+    'GetDifStacksStackCollectionItemObjectstorageResult',
+    'GetDifStacksStackCollectionItemServiceDetailResult',
+    'GetDifStacksStackCollectionItemServiceDetailAdditionalDetailResult',
+    'GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult',
+    'GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult',
@@ -760,6 +826,1754 @@ class DbmulticloudOracleDbGcpIdentityConnectorGcpNode(dict):
         time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class DifStackAdb(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adminPasswordId":
+            suggest = "admin_password_id"
+        elif key == "dataStorageSizeInTbs":
+            suggest = "data_storage_size_in_tbs"
+        elif key == "dbVersion":
+            suggest = "db_version"
+        elif key == "dbWorkload":
+            suggest = "db_workload"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "artifactObjectStoragePath":
+            suggest = "artifact_object_storage_path"
+        elif key == "dbCredentials":
+            suggest = "db_credentials"
+        elif key == "isMtlsConnectionRequired":
+            suggest = "is_mtls_connection_required"
+        elif key == "isPublic":
+            suggest = "is_public"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "toolsPublicAccess":
+            suggest = "tools_public_access"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackAdb. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackAdb.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackAdb.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 admin_password_id: _builtins.str,
+                 data_storage_size_in_tbs: _builtins.int,
+                 db_version: _builtins.str,
+                 db_workload: _builtins.str,
+                 ecpu: _builtins.int,
+                 instance_id: _builtins.str,
+                 artifact_object_storage_path: Optional[_builtins.str] = None,
+                 db_credentials: Optional[Sequence['outputs.DifStackAdbDbCredential']] = None,
+                 is_mtls_connection_required: Optional[_builtins.bool] = None,
+                 is_public: Optional[_builtins.bool] = None,
+                 subnet_id: Optional[_builtins.str] = None,
+                 tools_public_access: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str admin_password_id: The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        :param _builtins.int data_storage_size_in_tbs: (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+        :param _builtins.str db_version: (Updatable) A valid Oracle Database version for Autonomous Database.
+        :param _builtins.str db_workload: DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        :param _builtins.int ecpu: (Updatable) The compute amount (ECPUs) available to the database.
+        :param _builtins.str instance_id: Id for the adw instance.
+        :param Sequence['DifStackAdbDbCredentialArgs'] db_credentials: DB credential details.
+        :param _builtins.bool is_mtls_connection_required: (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+        :param _builtins.bool is_public: If true then subnetId should not be provided.
+        :param _builtins.str subnet_id: The OCID of the subnet the Autonomous Database is associated with.
+        :param _builtins.str tools_public_access: This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        pulumi.set(__self__, "admin_password_id", admin_password_id)
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "db_workload", db_workload)
+        pulumi.set(__self__, "ecpu", ecpu)
+        pulumi.set(__self__, "instance_id", instance_id)
+        if artifact_object_storage_path is not None:
+            pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        if db_credentials is not None:
+            pulumi.set(__self__, "db_credentials", db_credentials)
+        if is_mtls_connection_required is not None:
+            pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
+        if is_public is not None:
+            pulumi.set(__self__, "is_public", is_public)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if tools_public_access is not None:
+            pulumi.set(__self__, "tools_public_access", tools_public_access)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPasswordId")
+    def admin_password_id(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        """
+        return pulumi.get(self, "admin_password_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        (Updatable) A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> _builtins.str:
+        """
+        DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        """
+        return pulumi.get(self, "db_workload")
+
+    @_builtins.property
+    @pulumi.getter
+    def ecpu(self) -> _builtins.int:
+        """
+        (Updatable) The compute amount (ECPUs) available to the database.
+        """
+        return pulumi.get(self, "ecpu")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        Id for the adw instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentials")
+    def db_credentials(self) -> Optional[Sequence['outputs.DifStackAdbDbCredential']]:
+        """
+        DB credential details.
+        """
+        return pulumi.get(self, "db_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConnectionRequired")
+    def is_mtls_connection_required(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+        """
+        return pulumi.get(self, "is_mtls_connection_required")
+
+    @_builtins.property
+    @pulumi.getter(name="isPublic")
+    def is_public(self) -> Optional[_builtins.bool]:
+        """
+        If true then subnetId should not be provided.
+        """
+        return pulumi.get(self, "is_public")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the subnet the Autonomous Database is associated with.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="toolsPublicAccess")
+    def tools_public_access(self) -> Optional[_builtins.str]:
+        """
+        This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        return pulumi.get(self, "tools_public_access")
+
+
+@pulumi.output_type
+class DifStackAdbDbCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretId":
+            suggest = "secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+        elif key == "userType":
+            suggest = "user_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackAdbDbCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackAdbDbCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackAdbDbCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class DifStackDataflow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "driverShape":
+            suggest = "driver_shape"
+        elif key == "executorShape":
+            suggest = "executor_shape"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "logBucketInstanceId":
+            suggest = "log_bucket_instance_id"
+        elif key == "numExecutors":
+            suggest = "num_executors"
+        elif key == "sparkVersion":
+            suggest = "spark_version"
+        elif key == "archiveUri":
+            suggest = "archive_uri"
+        elif key == "driverShapeConfig":
+            suggest = "driver_shape_config"
+        elif key == "executorShapeConfig":
+            suggest = "executor_shape_config"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+        elif key == "warehouseBucketInstanceId":
+            suggest = "warehouse_bucket_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 driver_shape: _builtins.str,
+                 executor_shape: _builtins.str,
+                 instance_id: _builtins.str,
+                 log_bucket_instance_id: _builtins.str,
+                 num_executors: _builtins.int,
+                 spark_version: _builtins.str,
+                 archive_uri: Optional[_builtins.str] = None,
+                 connections: Optional['outputs.DifStackDataflowConnections'] = None,
+                 driver_shape_config: Optional['outputs.DifStackDataflowDriverShapeConfig'] = None,
+                 execute: Optional[_builtins.str] = None,
+                 executor_shape_config: Optional['outputs.DifStackDataflowExecutorShapeConfig'] = None,
+                 private_endpoint_id: Optional[_builtins.str] = None,
+                 warehouse_bucket_instance_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+        :param _builtins.str executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+        :param _builtins.str instance_id: Id for dataflow instance
+        :param _builtins.str log_bucket_instance_id: (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        :param _builtins.int num_executors: (Updatable) The number of executor VMs requested.
+        :param _builtins.str spark_version: (Updatable) The Spark version utilized to run the application.
+        :param _builtins.str archive_uri: Contains the archive from object storage bucket which can be added as dependency to data flow application.
+        :param 'DifStackDataflowConnectionsArgs' connections: (Updatable) Details for connections to other services from Dataflow.
+        :param 'DifStackDataflowDriverShapeConfigArgs' driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str execute: Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+        :param 'DifStackDataflowExecutorShapeConfigArgs' executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str private_endpoint_id: (Updatable) OCID of the already provisioned dataflow private endpoint.
+        :param _builtins.str warehouse_bucket_instance_id: (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "log_bucket_instance_id", log_bucket_instance_id)
+        pulumi.set(__self__, "num_executors", num_executors)
+        pulumi.set(__self__, "spark_version", spark_version)
+        if archive_uri is not None:
+            pulumi.set(__self__, "archive_uri", archive_uri)
+        if connections is not None:
+            pulumi.set(__self__, "connections", connections)
+        if driver_shape_config is not None:
+            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
+        if execute is not None:
+            pulumi.set(__self__, "execute", execute)
+        if executor_shape_config is not None:
+            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if warehouse_bucket_instance_id is not None:
+            pulumi.set(__self__, "warehouse_bucket_instance_id", warehouse_bucket_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> _builtins.str:
+        """
+        (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> _builtins.str:
+        """
+        (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        Id for dataflow instance
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logBucketInstanceId")
+    def log_bucket_instance_id(self) -> _builtins.str:
+        """
+        (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        """
+        return pulumi.get(self, "log_bucket_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="numExecutors")
+    def num_executors(self) -> _builtins.int:
+        """
+        (Updatable) The number of executor VMs requested.
+        """
+        return pulumi.get(self, "num_executors")
+
+    @_builtins.property
+    @pulumi.getter(name="sparkVersion")
+    def spark_version(self) -> _builtins.str:
+        """
+        (Updatable) The Spark version utilized to run the application.
+        """
+        return pulumi.get(self, "spark_version")
+
+    @_builtins.property
+    @pulumi.getter(name="archiveUri")
+    def archive_uri(self) -> Optional[_builtins.str]:
+        """
+        Contains the archive from object storage bucket which can be added as dependency to data flow application.
+        """
+        return pulumi.get(self, "archive_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Optional['outputs.DifStackDataflowConnections']:
+        """
+        (Updatable) Details for connections to other services from Dataflow.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="driverShapeConfig")
+    def driver_shape_config(self) -> Optional['outputs.DifStackDataflowDriverShapeConfig']:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_config")
+
+    @_builtins.property
+    @pulumi.getter
+    def execute(self) -> Optional[_builtins.str]:
+        """
+        Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+        """
+        return pulumi.get(self, "execute")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShapeConfig")
+    def executor_shape_config(self) -> Optional['outputs.DifStackDataflowExecutorShapeConfig']:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_config")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the already provisioned dataflow private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseBucketInstanceId")
+    def warehouse_bucket_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        return pulumi.get(self, "warehouse_bucket_instance_id")
+
+
+@pulumi.output_type
+class DifStackDataflowConnections(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionDetails":
+            suggest = "connection_details"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflowConnections. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflowConnections.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflowConnections.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_details: 'outputs.DifStackDataflowConnectionsConnectionDetails',
+                 subnet_id: _builtins.str):
+        """
+        :param 'DifStackDataflowConnectionsConnectionDetailsArgs' connection_details: (Updatable) Details of services to create private endpoint.
+        :param _builtins.str subnet_id: OCID of the private subnet
+        """
+        pulumi.set(__self__, "connection_details", connection_details)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionDetails")
+    def connection_details(self) -> 'outputs.DifStackDataflowConnectionsConnectionDetails':
+        """
+        (Updatable) Details of services to create private endpoint.
+        """
+        return pulumi.get(self, "connection_details")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        OCID of the private subnet
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class DifStackDataflowConnectionsConnectionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "difDependencies":
+            suggest = "dif_dependencies"
+        elif key == "domainNames":
+            suggest = "domain_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflowConnectionsConnectionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflowConnectionsConnectionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflowConnectionsConnectionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dif_dependencies: Optional[Sequence['outputs.DifStackDataflowConnectionsConnectionDetailsDifDependency']] = None,
+                 domain_names: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence['DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs'] dif_dependencies: (Updatable) List of DIF Service Dependency Details to create private endpoint.
+        :param Sequence[_builtins.str] domain_names: (Updatable) An array of DNS zone names.
+        """
+        if dif_dependencies is not None:
+            pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        if domain_names is not None:
+            pulumi.set(__self__, "domain_names", domain_names)
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Optional[Sequence['outputs.DifStackDataflowConnectionsConnectionDetailsDifDependency']]:
+        """
+        (Updatable) List of DIF Service Dependency Details to create private endpoint.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="domainNames")
+    def domain_names(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) An array of DNS zone names.
+        """
+        return pulumi.get(self, "domain_names")
+
+
+@pulumi.output_type
+class DifStackDataflowConnectionsConnectionDetailsDifDependency(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serviceInstanceId":
+            suggest = "service_instance_id"
+        elif key == "serviceType":
+            suggest = "service_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflowConnectionsConnectionDetailsDifDependency. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflowConnectionsConnectionDetailsDifDependency.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflowConnectionsConnectionDetailsDifDependency.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: (Updatable) InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: (Updatable) Supported service name.
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        (Updatable) InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        (Updatable) Supported service name.
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class DifStackDataflowDriverShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflowDriverShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflowDriverShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflowDriverShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class DifStackDataflowExecutorShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackDataflowExecutorShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackDataflowExecutorShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackDataflowExecutorShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class DifStackGenai(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baseModel":
+            suggest = "base_model"
+        elif key == "clusterType":
+            suggest = "cluster_type"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "ociRegion":
+            suggest = "oci_region"
+        elif key == "unitCount":
+            suggest = "unit_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGenai. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGenai.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGenai.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 base_model: _builtins.str,
+                 cluster_type: _builtins.str,
+                 instance_id: _builtins.str,
+                 oci_region: _builtins.str,
+                 unit_count: _builtins.int,
+                 endpoints: Optional[Sequence['outputs.DifStackGenaiEndpoint']] = None):
+        """
+        :param _builtins.str base_model: Name of the base model.
+        :param _builtins.str cluster_type: The dedicated AI cluster type.
+        :param _builtins.str instance_id: (Updatable) Id for the GGCS instance to be provisioned.
+        :param _builtins.str oci_region: Region on which the cluster end endpoint will be provisioned.
+        :param _builtins.int unit_count: (Updatable) No of replicas of base model to be used for hosting.
+        :param Sequence['DifStackGenaiEndpointArgs'] endpoints: (Updatable) List of endpoints to provision for the GENAI cluster.
+        """
+        pulumi.set(__self__, "base_model", base_model)
+        pulumi.set(__self__, "cluster_type", cluster_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "unit_count", unit_count)
+        if endpoints is not None:
+            pulumi.set(__self__, "endpoints", endpoints)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModel")
+    def base_model(self) -> _builtins.str:
+        """
+        Name of the base model.
+        """
+        return pulumi.get(self, "base_model")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterType")
+    def cluster_type(self) -> _builtins.str:
+        """
+        The dedicated AI cluster type.
+        """
+        return pulumi.get(self, "cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        (Updatable) Id for the GGCS instance to be provisioned.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        Region on which the cluster end endpoint will be provisioned.
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="unitCount")
+    def unit_count(self) -> _builtins.int:
+        """
+        (Updatable) No of replicas of base model to be used for hosting.
+        """
+        return pulumi.get(self, "unit_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Optional[Sequence['outputs.DifStackGenaiEndpoint']]:
+        """
+        (Updatable) List of endpoints to provision for the GENAI cluster.
+        """
+        return pulumi.get(self, "endpoints")
+
+
+@pulumi.output_type
+class DifStackGenaiEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endpointName":
+            suggest = "endpoint_name"
+        elif key == "isContentModerationEnabled":
+            suggest = "is_content_moderation_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGenaiEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGenaiEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGenaiEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 endpoint_name: _builtins.str,
+                 is_content_moderation_enabled: _builtins.bool):
+        """
+        :param _builtins.str endpoint_name: (Updatable) Identifier for each endpoint.
+        :param _builtins.bool is_content_moderation_enabled: (Updatable) Helps remove toxic and biased content from responses.
+        """
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+        pulumi.set(__self__, "is_content_moderation_enabled", is_content_moderation_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> _builtins.str:
+        """
+        (Updatable) Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isContentModerationEnabled")
+    def is_content_moderation_enabled(self) -> _builtins.bool:
+        """
+        (Updatable) Helps remove toxic and biased content from responses.
+        """
+        return pulumi.get(self, "is_content_moderation_enabled")
+
+
+@pulumi.output_type
+class DifStackGgc(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "artifactObjectStoragePath":
+            suggest = "artifact_object_storage_path"
+        elif key == "oggVersion":
+            suggest = "ogg_version"
+        elif key == "publicSubnetId":
+            suggest = "public_subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgc. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgc.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgc.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: _builtins.str,
+                 ocpu: _builtins.int,
+                 password_secret_id: _builtins.str,
+                 subnet_id: _builtins.str,
+                 artifact_object_storage_path: Optional[_builtins.str] = None,
+                 connections: Optional[Sequence['outputs.DifStackGgcConnection']] = None,
+                 ogg_version: Optional[_builtins.str] = None,
+                 public_subnet_id: Optional[_builtins.str] = None,
+                 sources: Optional[Sequence['outputs.DifStackGgcSource']] = None,
+                 targets: Optional[Sequence['outputs.DifStackGgcTarget']] = None,
+                 users: Optional[Sequence['outputs.DifStackGgcUser']] = None):
+        """
+        :param _builtins.str instance_id: Id for the GGCS instance to provision.
+        :param _builtins.int ocpu: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+        :param _builtins.str password_secret_id: The OCID of the Secret where the deployment password is stored.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        :param Sequence['DifStackGgcConnectionArgs'] connections: (Updatable) Connection details to be associated with the Goldengate deployment.
+        :param _builtins.str ogg_version: Version of OGG.
+        :param _builtins.str public_subnet_id: (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        :param Sequence['DifStackGgcSourceArgs'] sources: Source Detail to configure existing or new datasource.
+        :param Sequence['DifStackGgcTargetArgs'] targets: Target Detail to configure existing or new datasource.
+        :param Sequence['DifStackGgcUserArgs'] users: Ggcs user details to be created or updated.
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ocpu", ocpu)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if artifact_object_storage_path is not None:
+            pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        if connections is not None:
+            pulumi.set(__self__, "connections", connections)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if public_subnet_id is not None:
+            pulumi.set(__self__, "public_subnet_id", public_subnet_id)
+        if sources is not None:
+            pulumi.set(__self__, "sources", sources)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if users is not None:
+            pulumi.set(__self__, "users", users)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        Id for the GGCS instance to provision.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpu(self) -> _builtins.int:
+        """
+        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "ocpu")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Optional[Sequence['outputs.DifStackGgcConnection']]:
+        """
+        (Updatable) Connection details to be associated with the Goldengate deployment.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="oggVersion")
+    def ogg_version(self) -> Optional[_builtins.str]:
+        """
+        Version of OGG.
+        """
+        return pulumi.get(self, "ogg_version")
+
+    @_builtins.property
+    @pulumi.getter(name="publicSubnetId")
+    def public_subnet_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        """
+        return pulumi.get(self, "public_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def sources(self) -> Optional[Sequence['outputs.DifStackGgcSource']]:
+        """
+        Source Detail to configure existing or new datasource.
+        """
+        return pulumi.get(self, "sources")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.DifStackGgcTarget']]:
+        """
+        Target Detail to configure existing or new datasource.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def users(self) -> Optional[Sequence['outputs.DifStackGgcUser']]:
+        """
+        Ggcs user details to be created or updated.
+        """
+        return pulumi.get(self, "users")
+
+
+@pulumi.output_type
+class DifStackGgcConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionName":
+            suggest = "connection_name"
+        elif key == "connectionId":
+            suggest = "connection_id"
+        elif key == "difDependencies":
+            suggest = "dif_dependencies"
+        elif key == "ggAdminSecretId":
+            suggest = "gg_admin_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgcConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgcConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgcConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_name: _builtins.str,
+                 connection_id: Optional[_builtins.str] = None,
+                 dif_dependencies: Optional[Sequence['outputs.DifStackGgcConnectionDifDependency']] = None,
+                 gg_admin_secret_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str connection_name: (Updatable) Name of the connection to be created.
+        :param _builtins.str connection_id: (Updatable) OCID of pre-created Oracle GoldenGate connection.
+        :param Sequence['DifStackGgcConnectionDifDependencyArgs'] dif_dependencies: (Updatable) List of Service Dependency Details for connection creation.
+        :param _builtins.str gg_admin_secret_id: (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        pulumi.set(__self__, "connection_name", connection_name)
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
+        if dif_dependencies is not None:
+            pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        if gg_admin_secret_id is not None:
+            pulumi.set(__self__, "gg_admin_secret_id", gg_admin_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> _builtins.str:
+        """
+        (Updatable) Name of the connection to be created.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of pre-created Oracle GoldenGate connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Optional[Sequence['outputs.DifStackGgcConnectionDifDependency']]:
+        """
+        (Updatable) List of Service Dependency Details for connection creation.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="ggAdminSecretId")
+    def gg_admin_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        return pulumi.get(self, "gg_admin_secret_id")
+
+
+@pulumi.output_type
+class DifStackGgcConnectionDifDependency(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serviceInstanceId":
+            suggest = "service_instance_id"
+        elif key == "serviceType":
+            suggest = "service_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgcConnectionDifDependency. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgcConnectionDifDependency.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgcConnectionDifDependency.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: (Updatable) InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: (Updatable) Supported service name.
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        (Updatable) InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        (Updatable) Supported service name.
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class DifStackGgcSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldStartSourceOperations":
+            suggest = "should_start_source_operations"
+        elif key == "sourceId":
+            suggest = "source_id"
+        elif key == "targetConnectionName":
+            suggest = "target_connection_name"
+        elif key == "targetUri":
+            suggest = "target_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgcSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgcSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgcSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_source_operations: _builtins.bool,
+                 source_id: _builtins.str,
+                 target_connection_name: Optional[_builtins.str] = None,
+                 target_uri: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str action: Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        :param _builtins.bool should_start_source_operations: Boolean value that determines source operations should start or not.
+        :param _builtins.str source_id: Ggcs source artifact id.
+        :param _builtins.str target_connection_name: Name of assigned connection for the source.
+        :param _builtins.str target_uri: Target uri for the GoldenGate deployment where distribution path needs to be configured.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_source_operations", should_start_source_operations)
+        pulumi.set(__self__, "source_id", source_id)
+        if target_connection_name is not None:
+            pulumi.set(__self__, "target_connection_name", target_connection_name)
+        if target_uri is not None:
+            pulumi.set(__self__, "target_uri", target_uri)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartSourceOperations")
+    def should_start_source_operations(self) -> _builtins.bool:
+        """
+        Boolean value that determines source operations should start or not.
+        """
+        return pulumi.get(self, "should_start_source_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        """
+        Ggcs source artifact id.
+        """
+        return pulumi.get(self, "source_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConnectionName")
+    def target_connection_name(self) -> Optional[_builtins.str]:
+        """
+        Name of assigned connection for the source.
+        """
+        return pulumi.get(self, "target_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUri")
+    def target_uri(self) -> Optional[_builtins.str]:
+        """
+        Target uri for the GoldenGate deployment where distribution path needs to be configured.
+        """
+        return pulumi.get(self, "target_uri")
+
+
+@pulumi.output_type
+class DifStackGgcTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldStartTargetOperations":
+            suggest = "should_start_target_operations"
+        elif key == "targetId":
+            suggest = "target_id"
+        elif key == "sourceConnectionName":
+            suggest = "source_connection_name"
+        elif key == "sourceUri":
+            suggest = "source_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgcTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgcTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgcTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_target_operations: _builtins.bool,
+                 target_id: _builtins.str,
+                 source_connection_name: Optional[_builtins.str] = None,
+                 source_uri: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str action: Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        :param _builtins.bool should_start_target_operations: Boolean value that determines target operations should start or not.
+        :param _builtins.str target_id: GGCS target artifact id.
+        :param _builtins.str source_connection_name: Name of assigned connection for the target.
+        :param _builtins.str source_uri: Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_target_operations", should_start_target_operations)
+        pulumi.set(__self__, "target_id", target_id)
+        if source_connection_name is not None:
+            pulumi.set(__self__, "source_connection_name", source_connection_name)
+        if source_uri is not None:
+            pulumi.set(__self__, "source_uri", source_uri)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartTargetOperations")
+    def should_start_target_operations(self) -> _builtins.bool:
+        """
+        Boolean value that determines target operations should start or not.
+        """
+        return pulumi.get(self, "should_start_target_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        GGCS target artifact id.
+        """
+        return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceConnectionName")
+    def source_connection_name(self) -> Optional[_builtins.str]:
+        """
+        Name of assigned connection for the target.
+        """
+        return pulumi.get(self, "source_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUri")
+    def source_uri(self) -> Optional[_builtins.str]:
+        """
+        Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+        """
+        return pulumi.get(self, "source_uri")
+
+
+@pulumi.output_type
+class DifStackGgcUser(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretId":
+            suggest = "secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+        elif key == "userType":
+            suggest = "user_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackGgcUser. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackGgcUser.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackGgcUser.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        """
+        :param _builtins.str action: Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class DifStackObjectstorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "objectVersioning":
+            suggest = "object_versioning"
+        elif key == "storageTier":
+            suggest = "storage_tier"
+        elif key == "autoTiering":
+            suggest = "auto_tiering"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackObjectstorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackObjectstorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackObjectstorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: _builtins.str,
+                 object_versioning: _builtins.str,
+                 storage_tier: _builtins.str,
+                 auto_tiering: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str instance_id: (Updatable) Id for Object Storage instance to be provisioned.
+        :param _builtins.str object_versioning: (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        :param _builtins.str storage_tier: Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        :param _builtins.str auto_tiering: (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "object_versioning", object_versioning)
+        pulumi.set(__self__, "storage_tier", storage_tier)
+        if auto_tiering is not None:
+            pulumi.set(__self__, "auto_tiering", auto_tiering)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        (Updatable) Id for Object Storage instance to be provisioned.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectVersioning")
+    def object_versioning(self) -> _builtins.str:
+        """
+        (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        """
+        return pulumi.get(self, "object_versioning")
+
+    @_builtins.property
+    @pulumi.getter(name="storageTier")
+    def storage_tier(self) -> _builtins.str:
+        """
+        Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        """
+        return pulumi.get(self, "storage_tier")
+
+    @_builtins.property
+    @pulumi.getter(name="autoTiering")
+    def auto_tiering(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        """
+        return pulumi.get(self, "auto_tiering")
+
+
+@pulumi.output_type
+class DifStackServiceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+        elif key == "currentArtifactPath":
+            suggest = "current_artifact_path"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "serviceId":
+            suggest = "service_id"
+        elif key == "serviceType":
+            suggest = "service_type"
+        elif key == "serviceUrl":
+            suggest = "service_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackServiceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackServiceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackServiceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_details: Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetail']] = None,
+                 current_artifact_path: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 instance_id: Optional[_builtins.str] = None,
+                 service_id: Optional[_builtins.str] = None,
+                 service_type: Optional[_builtins.str] = None,
+                 service_url: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param Sequence['DifStackServiceDetailAdditionalDetailArgs'] additional_details: Additional details about the provisioned services
+        :param _builtins.str current_artifact_path: name of the service
+        :param _builtins.str display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str service_id: ID for the service
+        :param _builtins.str service_type: name of the cloud service
+        :param _builtins.str service_url: url for the service
+        :param _builtins.str status: state of the service
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if current_artifact_path is not None:
+            pulumi.set(__self__, "current_artifact_path", current_artifact_path)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if service_id is not None:
+            pulumi.set(__self__, "service_id", service_id)
+        if service_type is not None:
+            pulumi.set(__self__, "service_type", service_type)
+        if service_url is not None:
+            pulumi.set(__self__, "service_url", service_url)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetail']]:
+        """
+        Additional details about the provisioned services
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="currentArtifactPath")
+    def current_artifact_path(self) -> Optional[_builtins.str]:
+        """
+        name of the service
+        """
+        return pulumi.get(self, "current_artifact_path")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[_builtins.str]:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceId")
+    def service_id(self) -> Optional[_builtins.str]:
+        """
+        ID for the service
+        """
+        return pulumi.get(self, "service_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> Optional[_builtins.str]:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceUrl")
+    def service_url(self) -> Optional[_builtins.str]:
+        """
+        url for the service
+        """
+        return pulumi.get(self, "service_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        state of the service
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class DifStackServiceDetailAdditionalDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "assignedConnections":
+            suggest = "assigned_connections"
+        elif key == "endpointDetails":
+            suggest = "endpoint_details"
+        elif key == "modelId":
+            suggest = "model_id"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "ociRegion":
+            suggest = "oci_region"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackServiceDetailAdditionalDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackServiceDetailAdditionalDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackServiceDetailAdditionalDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 assigned_connections: Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetailAssignedConnection']] = None,
+                 endpoint_details: Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetailEndpointDetail']] = None,
+                 model_id: Optional[_builtins.str] = None,
+                 model_version: Optional[_builtins.str] = None,
+                 oci_region: Optional[_builtins.str] = None,
+                 private_endpoint_id: Optional[_builtins.str] = None):
+        """
+        :param Sequence['DifStackServiceDetailAdditionalDetailAssignedConnectionArgs'] assigned_connections: connections assigned to Golden Gate deployment
+        :param Sequence['DifStackServiceDetailAdditionalDetailEndpointDetailArgs'] endpoint_details: details of all endpoints assigned to cluster
+        :param _builtins.str model_id: OCID of model
+        :param _builtins.str model_version: version of model
+        :param _builtins.str oci_region: region of cluster
+        :param _builtins.str private_endpoint_id: OCID of model
+        """
+        if assigned_connections is not None:
+            pulumi.set(__self__, "assigned_connections", assigned_connections)
+        if endpoint_details is not None:
+            pulumi.set(__self__, "endpoint_details", endpoint_details)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if oci_region is not None:
+            pulumi.set(__self__, "oci_region", oci_region)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="assignedConnections")
+    def assigned_connections(self) -> Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetailAssignedConnection']]:
+        """
+        connections assigned to Golden Gate deployment
+        """
+        return pulumi.get(self, "assigned_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointDetails")
+    def endpoint_details(self) -> Optional[Sequence['outputs.DifStackServiceDetailAdditionalDetailEndpointDetail']]:
+        """
+        details of all endpoints assigned to cluster
+        """
+        return pulumi.get(self, "endpoint_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[_builtins.str]:
+        """
+        version of model
+        """
+        return pulumi.get(self, "model_version")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> Optional[_builtins.str]:
+        """
+        region of cluster
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class DifStackServiceDetailAdditionalDetailAssignedConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionId":
+            suggest = "connection_id"
+        elif key == "connectionName":
+            suggest = "connection_name"
+        elif key == "requestedBy":
+            suggest = "requested_by"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackServiceDetailAdditionalDetailAssignedConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackServiceDetailAdditionalDetailAssignedConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackServiceDetailAdditionalDetailAssignedConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_id: Optional[_builtins.str] = None,
+                 connection_name: Optional[_builtins.str] = None,
+                 requested_by: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str connection_id: OCID of the connection.
+        :param _builtins.str connection_name: Name of the connection.
+        :param _builtins.str requested_by: Specifies who has made this connection.
+        """
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
+        if connection_name is not None:
+            pulumi.set(__self__, "connection_name", connection_name)
+        if requested_by is not None:
+            pulumi.set(__self__, "requested_by", requested_by)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> Optional[_builtins.str]:
+        """
+        Name of the connection.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="requestedBy")
+    def requested_by(self) -> Optional[_builtins.str]:
+        """
+        Specifies who has made this connection.
+        """
+        return pulumi.get(self, "requested_by")
+
+
+@pulumi.output_type
+class DifStackServiceDetailAdditionalDetailEndpointDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endpointId":
+            suggest = "endpoint_id"
+        elif key == "endpointName":
+            suggest = "endpoint_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DifStackServiceDetailAdditionalDetailEndpointDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DifStackServiceDetailAdditionalDetailEndpointDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DifStackServiceDetailAdditionalDetailEndpointDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 endpoint_id: Optional[_builtins.str] = None,
+                 endpoint_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str endpoint_id: OCID of the endpoint.
+        :param _builtins.str endpoint_name: Identifier for each endpoint.
+        """
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name is not None:
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the endpoint.
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> Optional[_builtins.str]:
+        """
+        Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
 
 
 @pulumi.output_type
@@ -5875,6 +7689,2564 @@ class GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult(di
         Time when the Oracle DB Google Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDifStackAdbResult(dict):
+    def __init__(__self__, *,
+                 admin_password_id: _builtins.str,
+                 artifact_object_storage_path: _builtins.str,
+                 data_storage_size_in_tbs: _builtins.int,
+                 db_credentials: Sequence['outputs.GetDifStackAdbDbCredentialResult'],
+                 db_version: _builtins.str,
+                 db_workload: _builtins.str,
+                 ecpu: _builtins.int,
+                 instance_id: _builtins.str,
+                 is_mtls_connection_required: _builtins.bool,
+                 is_public: _builtins.bool,
+                 subnet_id: _builtins.str,
+                 tools_public_access: _builtins.str):
+        """
+        :param _builtins.str admin_password_id: The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        :param _builtins.int data_storage_size_in_tbs: The size, in terabytes, of the data volume that will be created and attached to the database.
+        :param _builtins.str db_version: A valid Oracle Database version for Autonomous Database.
+        :param _builtins.str db_workload: DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        :param _builtins.int ecpu: The compute amount (ECPUs) available to the database.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
+        :param _builtins.bool is_public: If true then subnetId should not be provided.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        :param _builtins.str tools_public_access: This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        pulumi.set(__self__, "admin_password_id", admin_password_id)
+        pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_credentials", db_credentials)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "db_workload", db_workload)
+        pulumi.set(__self__, "ecpu", ecpu)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
+        pulumi.set(__self__, "is_public", is_public)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "tools_public_access", tools_public_access)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPasswordId")
+    def admin_password_id(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        """
+        return pulumi.get(self, "admin_password_id")
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> _builtins.str:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        The size, in terabytes, of the data volume that will be created and attached to the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentials")
+    def db_credentials(self) -> Sequence['outputs.GetDifStackAdbDbCredentialResult']:
+        return pulumi.get(self, "db_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> _builtins.str:
+        """
+        DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        """
+        return pulumi.get(self, "db_workload")
+
+    @_builtins.property
+    @pulumi.getter
+    def ecpu(self) -> _builtins.int:
+        """
+        The compute amount (ECPUs) available to the database.
+        """
+        return pulumi.get(self, "ecpu")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConnectionRequired")
+    def is_mtls_connection_required(self) -> _builtins.bool:
+        """
+        Specifies if the Autonomous Database requires mTLS connections.
+        """
+        return pulumi.get(self, "is_mtls_connection_required")
+
+    @_builtins.property
+    @pulumi.getter(name="isPublic")
+    def is_public(self) -> _builtins.bool:
+        """
+        If true then subnetId should not be provided.
+        """
+        return pulumi.get(self, "is_public")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="toolsPublicAccess")
+    def tools_public_access(self) -> _builtins.str:
+        """
+        This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        return pulumi.get(self, "tools_public_access")
+
+
+@pulumi.output_type
+class GetDifStackAdbDbCredentialResult(dict):
+    def __init__(__self__, *,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class GetDifStackDataflowResult(dict):
+    def __init__(__self__, *,
+                 archive_uri: _builtins.str,
+                 connections: Sequence['outputs.GetDifStackDataflowConnectionResult'],
+                 driver_shape: _builtins.str,
+                 driver_shape_configs: Sequence['outputs.GetDifStackDataflowDriverShapeConfigResult'],
+                 execute: _builtins.str,
+                 executor_shape: _builtins.str,
+                 executor_shape_configs: Sequence['outputs.GetDifStackDataflowExecutorShapeConfigResult'],
+                 instance_id: _builtins.str,
+                 log_bucket_instance_id: _builtins.str,
+                 num_executors: _builtins.int,
+                 private_endpoint_id: _builtins.str,
+                 spark_version: _builtins.str,
+                 warehouse_bucket_instance_id: _builtins.str):
+        """
+        :param Sequence['GetDifStackDataflowConnectionArgs'] connections: Connection details to be associated with the Goldengate deployment.
+        :param _builtins.str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
+        :param Sequence['GetDifStackDataflowDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
+        :param Sequence['GetDifStackDataflowExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str log_bucket_instance_id: InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        :param _builtins.int num_executors: The number of executor VMs requested.
+        :param _builtins.str private_endpoint_id: OCID of model
+        :param _builtins.str spark_version: The Spark version utilized to run the application.
+        :param _builtins.str warehouse_bucket_instance_id: InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        pulumi.set(__self__, "archive_uri", archive_uri)
+        pulumi.set(__self__, "connections", connections)
+        pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        pulumi.set(__self__, "execute", execute)
+        pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "log_bucket_instance_id", log_bucket_instance_id)
+        pulumi.set(__self__, "num_executors", num_executors)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "spark_version", spark_version)
+        pulumi.set(__self__, "warehouse_bucket_instance_id", warehouse_bucket_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveUri")
+    def archive_uri(self) -> _builtins.str:
+        return pulumi.get(self, "archive_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Sequence['outputs.GetDifStackDataflowConnectionResult']:
+        """
+        Connection details to be associated with the Goldengate deployment.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> _builtins.str:
+        """
+        The VM shape for the driver. Sets the driver cores and memory.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetDifStackDataflowDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def execute(self) -> _builtins.str:
+        return pulumi.get(self, "execute")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> _builtins.str:
+        """
+        The VM shape for the executors. Sets the executor cores and memory.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetDifStackDataflowExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logBucketInstanceId")
+    def log_bucket_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        """
+        return pulumi.get(self, "log_bucket_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="numExecutors")
+    def num_executors(self) -> _builtins.int:
+        """
+        The number of executor VMs requested.
+        """
+        return pulumi.get(self, "num_executors")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sparkVersion")
+    def spark_version(self) -> _builtins.str:
+        """
+        The Spark version utilized to run the application.
+        """
+        return pulumi.get(self, "spark_version")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseBucketInstanceId")
+    def warehouse_bucket_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        return pulumi.get(self, "warehouse_bucket_instance_id")
+
+
+@pulumi.output_type
+class GetDifStackDataflowConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_details: Sequence['outputs.GetDifStackDataflowConnectionConnectionDetailResult'],
+                 subnet_id: _builtins.str):
+        """
+        :param Sequence['GetDifStackDataflowConnectionConnectionDetailArgs'] connection_details: Details of services to create private endpoint.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        pulumi.set(__self__, "connection_details", connection_details)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionDetails")
+    def connection_details(self) -> Sequence['outputs.GetDifStackDataflowConnectionConnectionDetailResult']:
+        """
+        Details of services to create private endpoint.
+        """
+        return pulumi.get(self, "connection_details")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDifStackDataflowConnectionConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 dif_dependencies: Sequence['outputs.GetDifStackDataflowConnectionConnectionDetailDifDependencyResult'],
+                 domain_names: Sequence[_builtins.str]):
+        """
+        :param Sequence['GetDifStackDataflowConnectionConnectionDetailDifDependencyArgs'] dif_dependencies: List of Service Dependency Details for connection creation.
+        :param Sequence[_builtins.str] domain_names: An array of DNS zone names.
+        """
+        pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        pulumi.set(__self__, "domain_names", domain_names)
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Sequence['outputs.GetDifStackDataflowConnectionConnectionDetailDifDependencyResult']:
+        """
+        List of Service Dependency Details for connection creation.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="domainNames")
+    def domain_names(self) -> Sequence[_builtins.str]:
+        """
+        An array of DNS zone names.
+        """
+        return pulumi.get(self, "domain_names")
+
+
+@pulumi.output_type
+class GetDifStackDataflowConnectionConnectionDetailDifDependencyResult(dict):
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: name of the cloud service
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDifStackDataflowDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetDifStackDataflowExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetDifStackGenaiResult(dict):
+    def __init__(__self__, *,
+                 base_model: _builtins.str,
+                 cluster_type: _builtins.str,
+                 endpoints: Sequence['outputs.GetDifStackGenaiEndpointResult'],
+                 instance_id: _builtins.str,
+                 oci_region: _builtins.str,
+                 unit_count: _builtins.int):
+        """
+        :param _builtins.str base_model: Name of the base model.
+        :param _builtins.str cluster_type: The dedicated AI cluster type.
+        :param Sequence['GetDifStackGenaiEndpointArgs'] endpoints: List of endpoints to provision for the GENAI cluster.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str oci_region: region of cluster
+        :param _builtins.int unit_count: No of replicas of base model to be used for hosting.
+        """
+        pulumi.set(__self__, "base_model", base_model)
+        pulumi.set(__self__, "cluster_type", cluster_type)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "unit_count", unit_count)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModel")
+    def base_model(self) -> _builtins.str:
+        """
+        Name of the base model.
+        """
+        return pulumi.get(self, "base_model")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterType")
+    def cluster_type(self) -> _builtins.str:
+        """
+        The dedicated AI cluster type.
+        """
+        return pulumi.get(self, "cluster_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetDifStackGenaiEndpointResult']:
+        """
+        List of endpoints to provision for the GENAI cluster.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        region of cluster
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="unitCount")
+    def unit_count(self) -> _builtins.int:
+        """
+        No of replicas of base model to be used for hosting.
+        """
+        return pulumi.get(self, "unit_count")
+
+
+@pulumi.output_type
+class GetDifStackGenaiEndpointResult(dict):
+    def __init__(__self__, *,
+                 endpoint_name: _builtins.str,
+                 is_content_moderation_enabled: _builtins.bool):
+        """
+        :param _builtins.str endpoint_name: Identifier for each endpoint.
+        :param _builtins.bool is_content_moderation_enabled: Helps remove toxic and biased content from responses.
+        """
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+        pulumi.set(__self__, "is_content_moderation_enabled", is_content_moderation_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> _builtins.str:
+        """
+        Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isContentModerationEnabled")
+    def is_content_moderation_enabled(self) -> _builtins.bool:
+        """
+        Helps remove toxic and biased content from responses.
+        """
+        return pulumi.get(self, "is_content_moderation_enabled")
+
+
+@pulumi.output_type
+class GetDifStackGgcResult(dict):
+    def __init__(__self__, *,
+                 artifact_object_storage_path: _builtins.str,
+                 connections: Sequence['outputs.GetDifStackGgcConnectionResult'],
+                 instance_id: _builtins.str,
+                 ocpu: _builtins.int,
+                 ogg_version: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 public_subnet_id: _builtins.str,
+                 sources: Sequence['outputs.GetDifStackGgcSourceResult'],
+                 subnet_id: _builtins.str,
+                 targets: Sequence['outputs.GetDifStackGgcTargetResult'],
+                 users: Sequence['outputs.GetDifStackGgcUserResult']):
+        """
+        :param Sequence['GetDifStackGgcConnectionArgs'] connections: Connection details to be associated with the Goldengate deployment.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.int ocpu: The Minimum number of OCPUs to be made available for this Deployment.
+        :param _builtins.str ogg_version: Version of OGG.
+        :param _builtins.str password_secret_id: The OCID of the Secret where the deployment password is stored.
+        :param _builtins.str public_subnet_id: The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        pulumi.set(__self__, "connections", connections)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ocpu", ocpu)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "public_subnet_id", public_subnet_id)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "users", users)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> _builtins.str:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Sequence['outputs.GetDifStackGgcConnectionResult']:
+        """
+        Connection details to be associated with the Goldengate deployment.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpu(self) -> _builtins.int:
+        """
+        The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "ocpu")
+
+    @_builtins.property
+    @pulumi.getter(name="oggVersion")
+    def ogg_version(self) -> _builtins.str:
+        """
+        Version of OGG.
+        """
+        return pulumi.get(self, "ogg_version")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicSubnetId")
+    def public_subnet_id(self) -> _builtins.str:
+        """
+        The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        """
+        return pulumi.get(self, "public_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def sources(self) -> Sequence['outputs.GetDifStackGgcSourceResult']:
+        return pulumi.get(self, "sources")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetDifStackGgcTargetResult']:
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def users(self) -> Sequence['outputs.GetDifStackGgcUserResult']:
+        return pulumi.get(self, "users")
+
+
+@pulumi.output_type
+class GetDifStackGgcConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: _builtins.str,
+                 connection_name: _builtins.str,
+                 dif_dependencies: Sequence['outputs.GetDifStackGgcConnectionDifDependencyResult'],
+                 gg_admin_secret_id: _builtins.str):
+        """
+        :param _builtins.str connection_id: OCID of the connection.
+        :param _builtins.str connection_name: Name of the connection.
+        :param Sequence['GetDifStackGgcConnectionDifDependencyArgs'] dif_dependencies: List of Service Dependency Details for connection creation.
+        :param _builtins.str gg_admin_secret_id: Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_name", connection_name)
+        pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        pulumi.set(__self__, "gg_admin_secret_id", gg_admin_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        OCID of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> _builtins.str:
+        """
+        Name of the connection.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Sequence['outputs.GetDifStackGgcConnectionDifDependencyResult']:
+        """
+        List of Service Dependency Details for connection creation.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="ggAdminSecretId")
+    def gg_admin_secret_id(self) -> _builtins.str:
+        """
+        Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        return pulumi.get(self, "gg_admin_secret_id")
+
+
+@pulumi.output_type
+class GetDifStackGgcConnectionDifDependencyResult(dict):
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: name of the cloud service
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDifStackGgcSourceResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_source_operations: _builtins.bool,
+                 source_id: _builtins.str,
+                 target_connection_name: _builtins.str,
+                 target_uri: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_source_operations", should_start_source_operations)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "target_connection_name", target_connection_name)
+        pulumi.set(__self__, "target_uri", target_uri)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartSourceOperations")
+    def should_start_source_operations(self) -> _builtins.bool:
+        return pulumi.get(self, "should_start_source_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConnectionName")
+    def target_connection_name(self) -> _builtins.str:
+        return pulumi.get(self, "target_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUri")
+    def target_uri(self) -> _builtins.str:
+        return pulumi.get(self, "target_uri")
+
+
+@pulumi.output_type
+class GetDifStackGgcTargetResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_target_operations: _builtins.bool,
+                 source_connection_name: _builtins.str,
+                 source_uri: _builtins.str,
+                 target_id: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_target_operations", should_start_target_operations)
+        pulumi.set(__self__, "source_connection_name", source_connection_name)
+        pulumi.set(__self__, "source_uri", source_uri)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartTargetOperations")
+    def should_start_target_operations(self) -> _builtins.bool:
+        return pulumi.get(self, "should_start_target_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceConnectionName")
+    def source_connection_name(self) -> _builtins.str:
+        return pulumi.get(self, "source_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUri")
+    def source_uri(self) -> _builtins.str:
+        return pulumi.get(self, "source_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetDifStackGgcUserResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class GetDifStackObjectstorageResult(dict):
+    def __init__(__self__, *,
+                 auto_tiering: _builtins.str,
+                 instance_id: _builtins.str,
+                 object_versioning: _builtins.str,
+                 storage_tier: _builtins.str):
+        """
+        :param _builtins.str auto_tiering: It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str object_versioning: Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        :param _builtins.str storage_tier: Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        """
+        pulumi.set(__self__, "auto_tiering", auto_tiering)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "object_versioning", object_versioning)
+        pulumi.set(__self__, "storage_tier", storage_tier)
+
+    @_builtins.property
+    @pulumi.getter(name="autoTiering")
+    def auto_tiering(self) -> _builtins.str:
+        """
+        It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        """
+        return pulumi.get(self, "auto_tiering")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectVersioning")
+    def object_versioning(self) -> _builtins.str:
+        """
+        Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        """
+        return pulumi.get(self, "object_versioning")
+
+    @_builtins.property
+    @pulumi.getter(name="storageTier")
+    def storage_tier(self) -> _builtins.str:
+        """
+        Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        """
+        return pulumi.get(self, "storage_tier")
+
+
+@pulumi.output_type
+class GetDifStackServiceDetailResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Sequence['outputs.GetDifStackServiceDetailAdditionalDetailResult'],
+                 current_artifact_path: _builtins.str,
+                 display_name: _builtins.str,
+                 instance_id: _builtins.str,
+                 service_id: _builtins.str,
+                 service_type: _builtins.str,
+                 service_url: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param Sequence['GetDifStackServiceDetailAdditionalDetailArgs'] additional_details: Additional details about the provisioned services
+        :param _builtins.str current_artifact_path: name of the service
+        :param _builtins.str display_name: name of the service
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str service_id: ID for the service
+        :param _builtins.str service_type: name of the cloud service
+        :param _builtins.str service_url: url for the service
+        :param _builtins.str status: state of the service
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "current_artifact_path", current_artifact_path)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "service_id", service_id)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "service_url", service_url)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Sequence['outputs.GetDifStackServiceDetailAdditionalDetailResult']:
+        """
+        Additional details about the provisioned services
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="currentArtifactPath")
+    def current_artifact_path(self) -> _builtins.str:
+        """
+        name of the service
+        """
+        return pulumi.get(self, "current_artifact_path")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        name of the service
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceId")
+    def service_id(self) -> _builtins.str:
+        """
+        ID for the service
+        """
+        return pulumi.get(self, "service_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceUrl")
+    def service_url(self) -> _builtins.str:
+        """
+        url for the service
+        """
+        return pulumi.get(self, "service_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        state of the service
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDifStackServiceDetailAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 assigned_connections: Sequence['outputs.GetDifStackServiceDetailAdditionalDetailAssignedConnectionResult'],
+                 endpoint_details: Sequence['outputs.GetDifStackServiceDetailAdditionalDetailEndpointDetailResult'],
+                 model_id: _builtins.str,
+                 model_version: _builtins.str,
+                 oci_region: _builtins.str,
+                 private_endpoint_id: _builtins.str):
+        """
+        :param Sequence['GetDifStackServiceDetailAdditionalDetailAssignedConnectionArgs'] assigned_connections: connections assigned to Golden Gate deployment
+        :param Sequence['GetDifStackServiceDetailAdditionalDetailEndpointDetailArgs'] endpoint_details: details of all endpoints assigned to cluster
+        :param _builtins.str model_id: OCID of model
+        :param _builtins.str model_version: version of model
+        :param _builtins.str oci_region: region of cluster
+        :param _builtins.str private_endpoint_id: OCID of model
+        """
+        pulumi.set(__self__, "assigned_connections", assigned_connections)
+        pulumi.set(__self__, "endpoint_details", endpoint_details)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="assignedConnections")
+    def assigned_connections(self) -> Sequence['outputs.GetDifStackServiceDetailAdditionalDetailAssignedConnectionResult']:
+        """
+        connections assigned to Golden Gate deployment
+        """
+        return pulumi.get(self, "assigned_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointDetails")
+    def endpoint_details(self) -> Sequence['outputs.GetDifStackServiceDetailAdditionalDetailEndpointDetailResult']:
+        """
+        details of all endpoints assigned to cluster
+        """
+        return pulumi.get(self, "endpoint_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> _builtins.str:
+        """
+        version of model
+        """
+        return pulumi.get(self, "model_version")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        region of cluster
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class GetDifStackServiceDetailAdditionalDetailAssignedConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: _builtins.str,
+                 connection_name: _builtins.str,
+                 requested_by: _builtins.str):
+        """
+        :param _builtins.str connection_id: OCID of the connection.
+        :param _builtins.str connection_name: Name of the connection.
+        :param _builtins.str requested_by: Specifies who has made this connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_name", connection_name)
+        pulumi.set(__self__, "requested_by", requested_by)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        OCID of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> _builtins.str:
+        """
+        Name of the connection.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="requestedBy")
+    def requested_by(self) -> _builtins.str:
+        """
+        Specifies who has made this connection.
+        """
+        return pulumi.get(self, "requested_by")
+
+
+@pulumi.output_type
+class GetDifStackServiceDetailAdditionalDetailEndpointDetailResult(dict):
+    def __init__(__self__, *,
+                 endpoint_id: _builtins.str,
+                 endpoint_name: _builtins.str):
+        """
+        :param _builtins.str endpoint_id: OCID of the endpoint.
+        :param _builtins.str endpoint_name: Identifier for each endpoint.
+        """
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> _builtins.str:
+        """
+        OCID of the endpoint.
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> _builtins.str:
+        """
+        Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
+
+
+@pulumi.output_type
+class GetDifStacksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDifStacksStackCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDifStacksStackCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 adbs: Sequence['outputs.GetDifStacksStackCollectionItemAdbResult'],
+                 add_service_trigger: _builtins.int,
+                 compartment_id: _builtins.str,
+                 dataflows: Sequence['outputs.GetDifStacksStackCollectionItemDataflowResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 deploy_artifacts_trigger: _builtins.int,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 genais: Sequence['outputs.GetDifStacksStackCollectionItemGenaiResult'],
+                 ggcs: Sequence['outputs.GetDifStacksStackCollectionItemGgcResult'],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 notification_email: _builtins.str,
+                 objectstorages: Sequence['outputs.GetDifStacksStackCollectionItemObjectstorageResult'],
+                 service_details: Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailResult'],
+                 services: Sequence[_builtins.str],
+                 stack_templates: Sequence[_builtins.str],
+                 state: _builtins.str,
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemAdbArgs'] adbs: ADB details if adb is included in the services.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetDifStacksStackCollectionItemDataflowArgs'] dataflows: DATAFLOW details if dataflow is included in the services.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence['GetDifStacksStackCollectionItemGenaiArgs'] genais: GenAI Details if genai is included in services.
+        :param Sequence['GetDifStacksStackCollectionItemGgcArgs'] ggcs: GGCS details if ggcs is included in the services.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Stack.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str notification_email: email id to which the stack notifications would be sent.
+        :param Sequence['GetDifStacksStackCollectionItemObjectstorageArgs'] objectstorages: Object Storage Details if object storage is included in services.
+        :param Sequence['GetDifStacksStackCollectionItemServiceDetailArgs'] service_details: Details of the service onboarded for the data intelligence stack.
+        :param Sequence[_builtins.str] services: List of services to be onboarded for the stack.
+        :param Sequence[_builtins.str] stack_templates: List of templates to be onboarded for the stack.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "adbs", adbs)
+        pulumi.set(__self__, "add_service_trigger", add_service_trigger)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dataflows", dataflows)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deploy_artifacts_trigger", deploy_artifacts_trigger)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "genais", genais)
+        pulumi.set(__self__, "ggcs", ggcs)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "notification_email", notification_email)
+        pulumi.set(__self__, "objectstorages", objectstorages)
+        pulumi.set(__self__, "service_details", service_details)
+        pulumi.set(__self__, "services", services)
+        pulumi.set(__self__, "stack_templates", stack_templates)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def adbs(self) -> Sequence['outputs.GetDifStacksStackCollectionItemAdbResult']:
+        """
+        ADB details if adb is included in the services.
+        """
+        return pulumi.get(self, "adbs")
+
+    @_builtins.property
+    @pulumi.getter(name="addServiceTrigger")
+    def add_service_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "add_service_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def dataflows(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowResult']:
+        """
+        DATAFLOW details if dataflow is included in the services.
+        """
+        return pulumi.get(self, "dataflows")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="deployArtifactsTrigger")
+    def deploy_artifacts_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "deploy_artifacts_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def genais(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGenaiResult']:
+        """
+        GenAI Details if genai is included in services.
+        """
+        return pulumi.get(self, "genais")
+
+    @_builtins.property
+    @pulumi.getter
+    def ggcs(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcResult']:
+        """
+        GGCS details if ggcs is included in the services.
+        """
+        return pulumi.get(self, "ggcs")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Stack.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationEmail")
+    def notification_email(self) -> _builtins.str:
+        """
+        email id to which the stack notifications would be sent.
+        """
+        return pulumi.get(self, "notification_email")
+
+    @_builtins.property
+    @pulumi.getter
+    def objectstorages(self) -> Sequence['outputs.GetDifStacksStackCollectionItemObjectstorageResult']:
+        """
+        Object Storage Details if object storage is included in services.
+        """
+        return pulumi.get(self, "objectstorages")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceDetails")
+    def service_details(self) -> Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailResult']:
+        """
+        Details of the service onboarded for the data intelligence stack.
+        """
+        return pulumi.get(self, "service_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence[_builtins.str]:
+        """
+        List of services to be onboarded for the stack.
+        """
+        return pulumi.get(self, "services")
+
+    @_builtins.property
+    @pulumi.getter(name="stackTemplates")
+    def stack_templates(self) -> Sequence[_builtins.str]:
+        """
+        List of templates to be onboarded for the stack.
+        """
+        return pulumi.get(self, "stack_templates")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemAdbResult(dict):
+    def __init__(__self__, *,
+                 admin_password_id: _builtins.str,
+                 artifact_object_storage_path: _builtins.str,
+                 data_storage_size_in_tbs: _builtins.int,
+                 db_credentials: Sequence['outputs.GetDifStacksStackCollectionItemAdbDbCredentialResult'],
+                 db_version: _builtins.str,
+                 db_workload: _builtins.str,
+                 ecpu: _builtins.int,
+                 instance_id: _builtins.str,
+                 is_mtls_connection_required: _builtins.bool,
+                 is_public: _builtins.bool,
+                 subnet_id: _builtins.str,
+                 tools_public_access: _builtins.str):
+        """
+        :param _builtins.str admin_password_id: The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        :param _builtins.int data_storage_size_in_tbs: The size, in terabytes, of the data volume that will be created and attached to the database.
+        :param _builtins.str db_version: A valid Oracle Database version for Autonomous Database.
+        :param _builtins.str db_workload: DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        :param _builtins.int ecpu: The compute amount (ECPUs) available to the database.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
+        :param _builtins.bool is_public: If true then subnetId should not be provided.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        :param _builtins.str tools_public_access: This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        pulumi.set(__self__, "admin_password_id", admin_password_id)
+        pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_credentials", db_credentials)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "db_workload", db_workload)
+        pulumi.set(__self__, "ecpu", ecpu)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
+        pulumi.set(__self__, "is_public", is_public)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "tools_public_access", tools_public_access)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPasswordId")
+    def admin_password_id(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+        """
+        return pulumi.get(self, "admin_password_id")
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> _builtins.str:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        The size, in terabytes, of the data volume that will be created and attached to the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbCredentials")
+    def db_credentials(self) -> Sequence['outputs.GetDifStacksStackCollectionItemAdbDbCredentialResult']:
+        return pulumi.get(self, "db_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        A valid Oracle Database version for Autonomous Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> _builtins.str:
+        """
+        DB Workload to be used with ADB. Accepted values are OLTP, DW.
+        """
+        return pulumi.get(self, "db_workload")
+
+    @_builtins.property
+    @pulumi.getter
+    def ecpu(self) -> _builtins.int:
+        """
+        The compute amount (ECPUs) available to the database.
+        """
+        return pulumi.get(self, "ecpu")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMtlsConnectionRequired")
+    def is_mtls_connection_required(self) -> _builtins.bool:
+        """
+        Specifies if the Autonomous Database requires mTLS connections.
+        """
+        return pulumi.get(self, "is_mtls_connection_required")
+
+    @_builtins.property
+    @pulumi.getter(name="isPublic")
+    def is_public(self) -> _builtins.bool:
+        """
+        If true then subnetId should not be provided.
+        """
+        return pulumi.get(self, "is_public")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="toolsPublicAccess")
+    def tools_public_access(self) -> _builtins.str:
+        """
+        This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+        """
+        return pulumi.get(self, "tools_public_access")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemAdbDbCredentialResult(dict):
+    def __init__(__self__, *,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowResult(dict):
+    def __init__(__self__, *,
+                 archive_uri: _builtins.str,
+                 connections: Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionResult'],
+                 driver_shape: _builtins.str,
+                 driver_shape_configs: Sequence['outputs.GetDifStacksStackCollectionItemDataflowDriverShapeConfigResult'],
+                 execute: _builtins.str,
+                 executor_shape: _builtins.str,
+                 executor_shape_configs: Sequence['outputs.GetDifStacksStackCollectionItemDataflowExecutorShapeConfigResult'],
+                 instance_id: _builtins.str,
+                 log_bucket_instance_id: _builtins.str,
+                 num_executors: _builtins.int,
+                 private_endpoint_id: _builtins.str,
+                 spark_version: _builtins.str,
+                 warehouse_bucket_instance_id: _builtins.str):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemDataflowConnectionArgs'] connections: Connection details to be associated with the Goldengate deployment.
+        :param _builtins.str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
+        :param Sequence['GetDifStacksStackCollectionItemDataflowDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
+        :param Sequence['GetDifStacksStackCollectionItemDataflowExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str log_bucket_instance_id: InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        :param _builtins.int num_executors: The number of executor VMs requested.
+        :param _builtins.str private_endpoint_id: OCID of model
+        :param _builtins.str spark_version: The Spark version utilized to run the application.
+        :param _builtins.str warehouse_bucket_instance_id: InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        pulumi.set(__self__, "archive_uri", archive_uri)
+        pulumi.set(__self__, "connections", connections)
+        pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        pulumi.set(__self__, "execute", execute)
+        pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "log_bucket_instance_id", log_bucket_instance_id)
+        pulumi.set(__self__, "num_executors", num_executors)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "spark_version", spark_version)
+        pulumi.set(__self__, "warehouse_bucket_instance_id", warehouse_bucket_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveUri")
+    def archive_uri(self) -> _builtins.str:
+        return pulumi.get(self, "archive_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionResult']:
+        """
+        Connection details to be associated with the Goldengate deployment.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> _builtins.str:
+        """
+        The VM shape for the driver. Sets the driver cores and memory.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def execute(self) -> _builtins.str:
+        return pulumi.get(self, "execute")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> _builtins.str:
+        """
+        The VM shape for the executors. Sets the executor cores and memory.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logBucketInstanceId")
+    def log_bucket_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+        """
+        return pulumi.get(self, "log_bucket_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="numExecutors")
+    def num_executors(self) -> _builtins.int:
+        """
+        The number of executor VMs requested.
+        """
+        return pulumi.get(self, "num_executors")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sparkVersion")
+    def spark_version(self) -> _builtins.str:
+        """
+        The Spark version utilized to run the application.
+        """
+        return pulumi.get(self, "spark_version")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseBucketInstanceId")
+    def warehouse_bucket_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+        """
+        return pulumi.get(self, "warehouse_bucket_instance_id")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_details: Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailResult'],
+                 subnet_id: _builtins.str):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailArgs'] connection_details: Details of services to create private endpoint.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        pulumi.set(__self__, "connection_details", connection_details)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionDetails")
+    def connection_details(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailResult']:
+        """
+        Details of services to create private endpoint.
+        """
+        return pulumi.get(self, "connection_details")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 dif_dependencies: Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyResult'],
+                 domain_names: Sequence[_builtins.str]):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyArgs'] dif_dependencies: List of Service Dependency Details for connection creation.
+        :param Sequence[_builtins.str] domain_names: An array of DNS zone names.
+        """
+        pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        pulumi.set(__self__, "domain_names", domain_names)
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Sequence['outputs.GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyResult']:
+        """
+        List of Service Dependency Details for connection creation.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="domainNames")
+    def domain_names(self) -> Sequence[_builtins.str]:
+        """
+        An array of DNS zone names.
+        """
+        return pulumi.get(self, "domain_names")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowConnectionConnectionDetailDifDependencyResult(dict):
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: name of the cloud service
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemDataflowExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int):
+        """
+        :param _builtins.int memory_in_gbs: The amount of memory used for the driver or executors.
+        :param _builtins.int ocpus: The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        The total number of OCPUs used for the driver or executors. See here for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGenaiResult(dict):
+    def __init__(__self__, *,
+                 base_model: _builtins.str,
+                 cluster_type: _builtins.str,
+                 endpoints: Sequence['outputs.GetDifStacksStackCollectionItemGenaiEndpointResult'],
+                 instance_id: _builtins.str,
+                 oci_region: _builtins.str,
+                 unit_count: _builtins.int):
+        """
+        :param _builtins.str base_model: Name of the base model.
+        :param _builtins.str cluster_type: The dedicated AI cluster type.
+        :param Sequence['GetDifStacksStackCollectionItemGenaiEndpointArgs'] endpoints: List of endpoints to provision for the GENAI cluster.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str oci_region: region of cluster
+        :param _builtins.int unit_count: No of replicas of base model to be used for hosting.
+        """
+        pulumi.set(__self__, "base_model", base_model)
+        pulumi.set(__self__, "cluster_type", cluster_type)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "unit_count", unit_count)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModel")
+    def base_model(self) -> _builtins.str:
+        """
+        Name of the base model.
+        """
+        return pulumi.get(self, "base_model")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterType")
+    def cluster_type(self) -> _builtins.str:
+        """
+        The dedicated AI cluster type.
+        """
+        return pulumi.get(self, "cluster_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGenaiEndpointResult']:
+        """
+        List of endpoints to provision for the GENAI cluster.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        region of cluster
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="unitCount")
+    def unit_count(self) -> _builtins.int:
+        """
+        No of replicas of base model to be used for hosting.
+        """
+        return pulumi.get(self, "unit_count")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGenaiEndpointResult(dict):
+    def __init__(__self__, *,
+                 endpoint_name: _builtins.str,
+                 is_content_moderation_enabled: _builtins.bool):
+        """
+        :param _builtins.str endpoint_name: Identifier for each endpoint.
+        :param _builtins.bool is_content_moderation_enabled: Helps remove toxic and biased content from responses.
+        """
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+        pulumi.set(__self__, "is_content_moderation_enabled", is_content_moderation_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> _builtins.str:
+        """
+        Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isContentModerationEnabled")
+    def is_content_moderation_enabled(self) -> _builtins.bool:
+        """
+        Helps remove toxic and biased content from responses.
+        """
+        return pulumi.get(self, "is_content_moderation_enabled")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcResult(dict):
+    def __init__(__self__, *,
+                 artifact_object_storage_path: _builtins.str,
+                 connections: Sequence['outputs.GetDifStacksStackCollectionItemGgcConnectionResult'],
+                 instance_id: _builtins.str,
+                 ocpu: _builtins.int,
+                 ogg_version: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 public_subnet_id: _builtins.str,
+                 sources: Sequence['outputs.GetDifStacksStackCollectionItemGgcSourceResult'],
+                 subnet_id: _builtins.str,
+                 targets: Sequence['outputs.GetDifStacksStackCollectionItemGgcTargetResult'],
+                 users: Sequence['outputs.GetDifStacksStackCollectionItemGgcUserResult']):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemGgcConnectionArgs'] connections: Connection details to be associated with the Goldengate deployment.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.int ocpu: The Minimum number of OCPUs to be made available for this Deployment.
+        :param _builtins.str ogg_version: Version of OGG.
+        :param _builtins.str password_secret_id: The OCID of the Secret where the deployment password is stored.
+        :param _builtins.str public_subnet_id: The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        :param _builtins.str subnet_id: The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        pulumi.set(__self__, "connections", connections)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ocpu", ocpu)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "public_subnet_id", public_subnet_id)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "users", users)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> _builtins.str:
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcConnectionResult']:
+        """
+        Connection details to be associated with the Goldengate deployment.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpu(self) -> _builtins.int:
+        """
+        The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "ocpu")
+
+    @_builtins.property
+    @pulumi.getter(name="oggVersion")
+    def ogg_version(self) -> _builtins.str:
+        """
+        Version of OGG.
+        """
+        return pulumi.get(self, "ogg_version")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the Secret where the deployment password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicSubnetId")
+    def public_subnet_id(self) -> _builtins.str:
+        """
+        The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+        """
+        return pulumi.get(self, "public_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def sources(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcSourceResult']:
+        return pulumi.get(self, "sources")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet of the GGCS deployment's private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcTargetResult']:
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def users(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcUserResult']:
+        return pulumi.get(self, "users")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: _builtins.str,
+                 connection_name: _builtins.str,
+                 dif_dependencies: Sequence['outputs.GetDifStacksStackCollectionItemGgcConnectionDifDependencyResult'],
+                 gg_admin_secret_id: _builtins.str):
+        """
+        :param _builtins.str connection_id: OCID of the connection.
+        :param _builtins.str connection_name: Name of the connection.
+        :param Sequence['GetDifStacksStackCollectionItemGgcConnectionDifDependencyArgs'] dif_dependencies: List of Service Dependency Details for connection creation.
+        :param _builtins.str gg_admin_secret_id: Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_name", connection_name)
+        pulumi.set(__self__, "dif_dependencies", dif_dependencies)
+        pulumi.set(__self__, "gg_admin_secret_id", gg_admin_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        OCID of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> _builtins.str:
+        """
+        Name of the connection.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="difDependencies")
+    def dif_dependencies(self) -> Sequence['outputs.GetDifStacksStackCollectionItemGgcConnectionDifDependencyResult']:
+        """
+        List of Service Dependency Details for connection creation.
+        """
+        return pulumi.get(self, "dif_dependencies")
+
+    @_builtins.property
+    @pulumi.getter(name="ggAdminSecretId")
+    def gg_admin_secret_id(self) -> _builtins.str:
+        """
+        Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+        """
+        return pulumi.get(self, "gg_admin_secret_id")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcConnectionDifDependencyResult(dict):
+    def __init__(__self__, *,
+                 service_instance_id: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str service_instance_id: InstanceId of service which is part of the Stack.
+        :param _builtins.str service_type: name of the cloud service
+        """
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> _builtins.str:
+        """
+        InstanceId of service which is part of the Stack.
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcSourceResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_source_operations: _builtins.bool,
+                 source_id: _builtins.str,
+                 target_connection_name: _builtins.str,
+                 target_uri: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_source_operations", should_start_source_operations)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "target_connection_name", target_connection_name)
+        pulumi.set(__self__, "target_uri", target_uri)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartSourceOperations")
+    def should_start_source_operations(self) -> _builtins.bool:
+        return pulumi.get(self, "should_start_source_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConnectionName")
+    def target_connection_name(self) -> _builtins.str:
+        return pulumi.get(self, "target_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUri")
+    def target_uri(self) -> _builtins.str:
+        return pulumi.get(self, "target_uri")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcTargetResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 should_start_target_operations: _builtins.bool,
+                 source_connection_name: _builtins.str,
+                 source_uri: _builtins.str,
+                 target_id: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "should_start_target_operations", should_start_target_operations)
+        pulumi.set(__self__, "source_connection_name", source_connection_name)
+        pulumi.set(__self__, "source_uri", source_uri)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldStartTargetOperations")
+    def should_start_target_operations(self) -> _builtins.bool:
+        return pulumi.get(self, "should_start_target_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceConnectionName")
+    def source_connection_name(self) -> _builtins.str:
+        return pulumi.get(self, "source_connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUri")
+    def source_uri(self) -> _builtins.str:
+        return pulumi.get(self, "source_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemGgcUserResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 secret_id: _builtins.str,
+                 user_name: _builtins.str,
+                 user_type: _builtins.str):
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_type", user_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="userType")
+    def user_type(self) -> _builtins.str:
+        return pulumi.get(self, "user_type")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemObjectstorageResult(dict):
+    def __init__(__self__, *,
+                 auto_tiering: _builtins.str,
+                 instance_id: _builtins.str,
+                 object_versioning: _builtins.str,
+                 storage_tier: _builtins.str):
+        """
+        :param _builtins.str auto_tiering: It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str object_versioning: Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        :param _builtins.str storage_tier: Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        """
+        pulumi.set(__self__, "auto_tiering", auto_tiering)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "object_versioning", object_versioning)
+        pulumi.set(__self__, "storage_tier", storage_tier)
+
+    @_builtins.property
+    @pulumi.getter(name="autoTiering")
+    def auto_tiering(self) -> _builtins.str:
+        """
+        It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+        """
+        return pulumi.get(self, "auto_tiering")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectVersioning")
+    def object_versioning(self) -> _builtins.str:
+        """
+        Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+        """
+        return pulumi.get(self, "object_versioning")
+
+    @_builtins.property
+    @pulumi.getter(name="storageTier")
+    def storage_tier(self) -> _builtins.str:
+        """
+        Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+        """
+        return pulumi.get(self, "storage_tier")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemServiceDetailResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailResult'],
+                 current_artifact_path: _builtins.str,
+                 display_name: _builtins.str,
+                 instance_id: _builtins.str,
+                 service_id: _builtins.str,
+                 service_type: _builtins.str,
+                 service_url: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs'] additional_details: Additional details about the provisioned services
+        :param _builtins.str current_artifact_path: name of the service
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str instance_id: ID for the service instance.
+        :param _builtins.str service_id: ID for the service
+        :param _builtins.str service_type: name of the cloud service
+        :param _builtins.str service_url: url for the service
+        :param _builtins.str status: state of the service
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "current_artifact_path", current_artifact_path)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "service_id", service_id)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "service_url", service_url)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailResult']:
+        """
+        Additional details about the provisioned services
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="currentArtifactPath")
+    def current_artifact_path(self) -> _builtins.str:
+        """
+        name of the service
+        """
+        return pulumi.get(self, "current_artifact_path")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> _builtins.str:
+        """
+        ID for the service instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceId")
+    def service_id(self) -> _builtins.str:
+        """
+        ID for the service
+        """
+        return pulumi.get(self, "service_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        name of the cloud service
+        """
+        return pulumi.get(self, "service_type")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceUrl")
+    def service_url(self) -> _builtins.str:
+        """
+        url for the service
+        """
+        return pulumi.get(self, "service_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        state of the service
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemServiceDetailAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 assigned_connections: Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult'],
+                 endpoint_details: Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult'],
+                 model_id: _builtins.str,
+                 model_version: _builtins.str,
+                 oci_region: _builtins.str,
+                 private_endpoint_id: _builtins.str):
+        """
+        :param Sequence['GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArgs'] assigned_connections: connections assigned to Golden Gate deployment
+        :param Sequence['GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs'] endpoint_details: details of all endpoints assigned to cluster
+        :param _builtins.str model_id: OCID of model
+        :param _builtins.str model_version: version of model
+        :param _builtins.str oci_region: region of cluster
+        :param _builtins.str private_endpoint_id: OCID of model
+        """
+        pulumi.set(__self__, "assigned_connections", assigned_connections)
+        pulumi.set(__self__, "endpoint_details", endpoint_details)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="assignedConnections")
+    def assigned_connections(self) -> Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult']:
+        """
+        connections assigned to Golden Gate deployment
+        """
+        return pulumi.get(self, "assigned_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointDetails")
+    def endpoint_details(self) -> Sequence['outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult']:
+        """
+        details of all endpoints assigned to cluster
+        """
+        return pulumi.get(self, "endpoint_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> _builtins.str:
+        """
+        version of model
+        """
+        return pulumi.get(self, "model_version")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        region of cluster
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        OCID of model
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: _builtins.str,
+                 connection_name: _builtins.str,
+                 requested_by: _builtins.str):
+        """
+        :param _builtins.str connection_id: OCID of the connection.
+        :param _builtins.str connection_name: Name of the connection.
+        :param _builtins.str requested_by: Specifies who has made this connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_name", connection_name)
+        pulumi.set(__self__, "requested_by", requested_by)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        OCID of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionName")
+    def connection_name(self) -> _builtins.str:
+        """
+        Name of the connection.
+        """
+        return pulumi.get(self, "connection_name")
+
+    @_builtins.property
+    @pulumi.getter(name="requestedBy")
+    def requested_by(self) -> _builtins.str:
+        """
+        Specifies who has made this connection.
+        """
+        return pulumi.get(self, "requested_by")
+
+
+@pulumi.output_type
+class GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult(dict):
+    def __init__(__self__, *,
+                 endpoint_id: _builtins.str,
+                 endpoint_name: _builtins.str):
+        """
+        :param _builtins.str endpoint_id: OCID of the endpoint.
+        :param _builtins.str endpoint_name: Identifier for each endpoint.
+        """
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> _builtins.str:
+        """
+        OCID of the endpoint.
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> _builtins.str:
+        """
+        Identifier for each endpoint.
+        """
+        return pulumi.get(self, "endpoint_name")
 
 
 @pulumi.output_type

@@ -42,6 +42,12 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         [Input("networkLoadBalancerId")]
         public Input<string>? NetworkLoadBalancerId { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        /// </summary>
+        [Input("psaId")]
+        public Input<string>? PsaId { get; set; }
+
         [Input("state")]
         public Input<string>? State { get; set; }
 

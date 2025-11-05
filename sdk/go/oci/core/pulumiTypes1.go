@@ -13,6 +13,545 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail struct {
+	// The OCID of the compute host group. This is only available for dedicated capacity customers.
+	ComputeHostGroupId string `pulumi:"computeHostGroupId"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs struct {
+	// The OCID of the compute host group. This is only available for dedicated capacity customers.
+	ComputeHostGroupId pulumi.StringInput `pulumi:"computeHostGroupId"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
+	return o
+}
+
+// The OCID of the compute host group. This is only available for dedicated capacity customers.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ComputeHostGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail) string {
+		return v.ComputeHostGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig struct {
+	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+	AreVirtualInstructionsEnabled bool `pulumi:"areVirtualInstructionsEnabled"`
+	// Instance Platform Configuration Configuration Map for flexible setting input.
+	ConfigMap map[string]string `pulumi:"configMap"`
+	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+	IsAccessControlServiceEnabled bool `pulumi:"isAccessControlServiceEnabled"`
+	// Whether the input-output memory management unit is enabled.
+	IsInputOutputMemoryManagementUnitEnabled bool `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
+	// Whether the Measured Boot feature is enabled on the instance.
+	IsMeasuredBootEnabled bool `pulumi:"isMeasuredBootEnabled"`
+	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+	IsMemoryEncryptionEnabled bool `pulumi:"isMemoryEncryptionEnabled"`
+	// Whether Secure Boot is enabled on the instance.
+	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
+	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+	IsSymmetricMultiThreadingEnabled bool `pulumi:"isSymmetricMultiThreadingEnabled"`
+	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+	IsTrustedPlatformModuleEnabled bool `pulumi:"isTrustedPlatformModuleEnabled"`
+	// The number of NUMA nodes per socket (NPS).
+	NumaNodesPerSocket string `pulumi:"numaNodesPerSocket"`
+	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+	PercentageOfCoresEnabled int `pulumi:"percentageOfCoresEnabled"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs struct {
+	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+	AreVirtualInstructionsEnabled pulumi.BoolInput `pulumi:"areVirtualInstructionsEnabled"`
+	// Instance Platform Configuration Configuration Map for flexible setting input.
+	ConfigMap pulumi.StringMapInput `pulumi:"configMap"`
+	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+	IsAccessControlServiceEnabled pulumi.BoolInput `pulumi:"isAccessControlServiceEnabled"`
+	// Whether the input-output memory management unit is enabled.
+	IsInputOutputMemoryManagementUnitEnabled pulumi.BoolInput `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
+	// Whether the Measured Boot feature is enabled on the instance.
+	IsMeasuredBootEnabled pulumi.BoolInput `pulumi:"isMeasuredBootEnabled"`
+	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+	IsMemoryEncryptionEnabled pulumi.BoolInput `pulumi:"isMemoryEncryptionEnabled"`
+	// Whether Secure Boot is enabled on the instance.
+	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
+	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+	IsSymmetricMultiThreadingEnabled pulumi.BoolInput `pulumi:"isSymmetricMultiThreadingEnabled"`
+	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+	IsTrustedPlatformModuleEnabled pulumi.BoolInput `pulumi:"isTrustedPlatformModuleEnabled"`
+	// The number of NUMA nodes per socket (NPS).
+	NumaNodesPerSocket pulumi.StringInput `pulumi:"numaNodesPerSocket"`
+	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+	PercentageOfCoresEnabled pulumi.IntInput `pulumi:"percentageOfCoresEnabled"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
+	return o
+}
+
+// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) AreVirtualInstructionsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.AreVirtualInstructionsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Instance Platform Configuration Configuration Map for flexible setting input.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ConfigMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) map[string]string {
+		return v.ConfigMap
+	}).(pulumi.StringMapOutput)
+}
+
+// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsAccessControlServiceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsAccessControlServiceEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the input-output memory management unit is enabled.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsInputOutputMemoryManagementUnitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsInputOutputMemoryManagementUnitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the Measured Boot feature is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsMeasuredBootEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsMeasuredBootEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsMemoryEncryptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsMemoryEncryptionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether Secure Boot is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsSecureBootEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsSecureBootEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsSymmetricMultiThreadingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsSymmetricMultiThreadingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsTrustedPlatformModuleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
+		return v.IsTrustedPlatformModuleEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The number of NUMA nodes per socket (NPS).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) NumaNodesPerSocket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) string {
+		return v.NumaNodesPerSocket
+	}).(pulumi.StringOutput)
+}
+
+// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) PercentageOfCoresEnabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) int {
+		return v.PercentageOfCoresEnabled
+	}).(pulumi.IntOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig struct {
+	// The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs struct {
+	// The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
+	return o
+}
+
+// The action to run when the preemptible instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) PreemptionActions() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction {
+		return v.PreemptionActions
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction) bool {
+		return v.PreserveBootVolume
+	}).(pulumi.BoolOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
+}
+
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig struct {
 	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
@@ -7979,6 +8518,431 @@ func (o GetInstancePoolInstancesInstanceLoadBalancerBackendArrayOutput) Index(i 
 	}).(GetInstancePoolInstancesInstanceLoadBalancerBackendOutput)
 }
 
+type GetInstancePoolLifecycleManagement struct {
+	// The lifecycle actions for the instance pool.
+	LifecycleActions []GetInstancePoolLifecycleManagementLifecycleAction `pulumi:"lifecycleActions"`
+}
+
+// GetInstancePoolLifecycleManagementInput is an input type that accepts GetInstancePoolLifecycleManagementArgs and GetInstancePoolLifecycleManagementOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementInput` via:
+//
+//	GetInstancePoolLifecycleManagementArgs{...}
+type GetInstancePoolLifecycleManagementInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementOutput() GetInstancePoolLifecycleManagementOutput
+	ToGetInstancePoolLifecycleManagementOutputWithContext(context.Context) GetInstancePoolLifecycleManagementOutput
+}
+
+type GetInstancePoolLifecycleManagementArgs struct {
+	// The lifecycle actions for the instance pool.
+	LifecycleActions GetInstancePoolLifecycleManagementLifecycleActionArrayInput `pulumi:"lifecycleActions"`
+}
+
+func (GetInstancePoolLifecycleManagementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementArgs) ToGetInstancePoolLifecycleManagementOutput() GetInstancePoolLifecycleManagementOutput {
+	return i.ToGetInstancePoolLifecycleManagementOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementArgs) ToGetInstancePoolLifecycleManagementOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementOutput)
+}
+
+// GetInstancePoolLifecycleManagementArrayInput is an input type that accepts GetInstancePoolLifecycleManagementArray and GetInstancePoolLifecycleManagementArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementArrayInput` via:
+//
+//	GetInstancePoolLifecycleManagementArray{ GetInstancePoolLifecycleManagementArgs{...} }
+type GetInstancePoolLifecycleManagementArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementArrayOutput() GetInstancePoolLifecycleManagementArrayOutput
+	ToGetInstancePoolLifecycleManagementArrayOutputWithContext(context.Context) GetInstancePoolLifecycleManagementArrayOutput
+}
+
+type GetInstancePoolLifecycleManagementArray []GetInstancePoolLifecycleManagementInput
+
+func (GetInstancePoolLifecycleManagementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementArray) ToGetInstancePoolLifecycleManagementArrayOutput() GetInstancePoolLifecycleManagementArrayOutput {
+	return i.ToGetInstancePoolLifecycleManagementArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementArray) ToGetInstancePoolLifecycleManagementArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementOutput) ToGetInstancePoolLifecycleManagementOutput() GetInstancePoolLifecycleManagementOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementOutput) ToGetInstancePoolLifecycleManagementOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementOutput {
+	return o
+}
+
+// The lifecycle actions for the instance pool.
+func (o GetInstancePoolLifecycleManagementOutput) LifecycleActions() GetInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagement) []GetInstancePoolLifecycleManagementLifecycleAction {
+		return v.LifecycleActions
+	}).(GetInstancePoolLifecycleManagementLifecycleActionArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementArrayOutput) ToGetInstancePoolLifecycleManagementArrayOutput() GetInstancePoolLifecycleManagementArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementArrayOutput) ToGetInstancePoolLifecycleManagementArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementArrayOutput) Index(i pulumi.IntInput) GetInstancePoolLifecycleManagementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolLifecycleManagement {
+		return vs[0].([]GetInstancePoolLifecycleManagement)[vs[1].(int)]
+	}).(GetInstancePoolLifecycleManagementOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleAction struct {
+	// The data for pre-termination action for an instance pool
+	PreTerminations []GetInstancePoolLifecycleManagementLifecycleActionPreTermination `pulumi:"preTerminations"`
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionArgs and GetInstancePoolLifecycleManagementLifecycleActionOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionArgs{...}
+type GetInstancePoolLifecycleManagementLifecycleActionInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolLifecycleManagementLifecycleActionOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionArgs struct {
+	// The data for pre-termination action for an instance pool
+	PreTerminations GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput `pulumi:"preTerminations"`
+}
+
+func (GetInstancePoolLifecycleManagementLifecycleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionArgs) ToGetInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolLifecycleManagementLifecycleActionOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionArgs) ToGetInstancePoolLifecycleManagementLifecycleActionOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionOutput)
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionArrayInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionArray and GetInstancePoolLifecycleManagementLifecycleActionArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionArrayInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionArray{ GetInstancePoolLifecycleManagementLifecycleActionArgs{...} }
+type GetInstancePoolLifecycleManagementLifecycleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionArrayOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionArrayOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionArray []GetInstancePoolLifecycleManagementLifecycleActionInput
+
+func (GetInstancePoolLifecycleManagementLifecycleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionArray) ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionArray) ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionOutput) ToGetInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolLifecycleManagementLifecycleActionOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionOutput) ToGetInstancePoolLifecycleManagementLifecycleActionOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionOutput {
+	return o
+}
+
+// The data for pre-termination action for an instance pool
+func (o GetInstancePoolLifecycleManagementLifecycleActionOutput) PreTerminations() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleAction) []GetInstancePoolLifecycleManagementLifecycleActionPreTermination {
+		return v.PreTerminations
+	}).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionArrayOutput) Index(i pulumi.IntInput) GetInstancePoolLifecycleManagementLifecycleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolLifecycleManagementLifecycleAction {
+		return vs[0].([]GetInstancePoolLifecycleManagementLifecycleAction)[vs[1].(int)]
+	}).(GetInstancePoolLifecycleManagementLifecycleActionOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTermination struct {
+	// Whether pre-termination action is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Options to handle timeout for pre-termination action.
+	OnTimeouts []GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout `pulumi:"onTimeouts"`
+	// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+	Timeout int `pulumi:"timeout"`
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionPreTerminationInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs and GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionPreTerminationInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{...}
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs struct {
+	// Whether pre-termination action is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Options to handle timeout for pre-termination action.
+	OnTimeouts GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput `pulumi:"onTimeouts"`
+	// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+}
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput)
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray and GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray{ GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{...} }
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray []GetInstancePoolLifecycleManagementLifecycleActionPreTerminationInput
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return o
+}
+
+// Whether pre-termination action is enabled or not.
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleActionPreTermination) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Options to handle timeout for pre-termination action.
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) OnTimeouts() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleActionPreTermination) []GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout {
+		return v.OnTimeouts
+	}).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput)
+}
+
+// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleActionPreTermination) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) Index(i pulumi.IntInput) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolLifecycleManagementLifecycleActionPreTermination {
+		return vs[0].([]GetInstancePoolLifecycleManagementLifecycleActionPreTermination)[vs[1].(int)]
+	}).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout struct {
+	// Whether the block volume should be preserved after termination.
+	PreserveBlockVolumeMode string `pulumi:"preserveBlockVolumeMode"`
+	// Whether the boot volume should be preserved after termination.
+	PreserveBootVolumeMode string `pulumi:"preserveBootVolumeMode"`
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs and GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{...}
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs struct {
+	// Whether the block volume should be preserved after termination.
+	PreserveBlockVolumeMode pulumi.StringInput `pulumi:"preserveBlockVolumeMode"`
+	// Whether the boot volume should be preserved after termination.
+	PreserveBootVolumeMode pulumi.StringInput `pulumi:"preserveBootVolumeMode"`
+}
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput)
+}
+
+// GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput is an input type that accepts GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray and GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput` via:
+//
+//	GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray{ GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{...} }
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput
+	ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray []GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return i.ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return o
+}
+
+// Whether the block volume should be preserved after termination.
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) PreserveBlockVolumeMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout) string {
+		return v.PreserveBlockVolumeMode
+	}).(pulumi.StringOutput)
+}
+
+// Whether the boot volume should be preserved after termination.
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) PreserveBootVolumeMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout) string {
+		return v.PreserveBootVolumeMode
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ToGetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(ctx context.Context) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) Index(i pulumi.IntInput) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout {
+		return vs[0].([]GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)[vs[1].(int)]
+	}).(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput)
+}
+
 type GetInstancePoolLoadBalancer struct {
 	// The name of the backend set on the load balancer.
 	BackendSetName string `pulumi:"backendSetName"`
@@ -8832,6 +9796,8 @@ type GetInstancePoolsInstancePool struct {
 	InstanceDisplayNameFormatter string `pulumi:"instanceDisplayNameFormatter"`
 	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
+	// The lifecycle management options for the instance pool.
+	LifecycleManagements []GetInstancePoolsInstancePoolLifecycleManagement `pulumi:"lifecycleManagements"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []GetInstancePoolsInstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// The placement configurations for the instance pool.
@@ -8873,6 +9839,8 @@ type GetInstancePoolsInstancePoolArgs struct {
 	InstanceDisplayNameFormatter pulumi.StringInput `pulumi:"instanceDisplayNameFormatter"`
 	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter pulumi.StringInput `pulumi:"instanceHostnameFormatter"`
+	// The lifecycle management options for the instance pool.
+	LifecycleManagements GetInstancePoolsInstancePoolLifecycleManagementArrayInput `pulumi:"lifecycleManagements"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers GetInstancePoolsInstancePoolLoadBalancerArrayInput `pulumi:"loadBalancers"`
 	// The placement configurations for the instance pool.
@@ -8980,6 +9948,13 @@ func (o GetInstancePoolsInstancePoolOutput) InstanceHostnameFormatter() pulumi.S
 	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
 }
 
+// The lifecycle management options for the instance pool.
+func (o GetInstancePoolsInstancePoolOutput) LifecycleManagements() GetInstancePoolsInstancePoolLifecycleManagementArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) []GetInstancePoolsInstancePoolLifecycleManagement {
+		return v.LifecycleManagements
+	}).(GetInstancePoolsInstancePoolLifecycleManagementArrayOutput)
+}
+
 // The load balancers attached to the instance pool.
 func (o GetInstancePoolsInstancePoolOutput) LoadBalancers() GetInstancePoolsInstancePoolLoadBalancerArrayOutput {
 	return o.ApplyT(func(v GetInstancePoolsInstancePool) []GetInstancePoolsInstancePoolLoadBalancer {
@@ -9027,6 +10002,435 @@ func (o GetInstancePoolsInstancePoolArrayOutput) Index(i pulumi.IntInput) GetIns
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePool {
 		return vs[0].([]GetInstancePoolsInstancePool)[vs[1].(int)]
 	}).(GetInstancePoolsInstancePoolOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagement struct {
+	// The lifecycle actions for the instance pool.
+	LifecycleActions []GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction `pulumi:"lifecycleActions"`
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementArgs and GetInstancePoolsInstancePoolLifecycleManagementOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementArgs{...}
+type GetInstancePoolsInstancePoolLifecycleManagementInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementOutput() GetInstancePoolsInstancePoolLifecycleManagementOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementArgs struct {
+	// The lifecycle actions for the instance pool.
+	LifecycleActions GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayInput `pulumi:"lifecycleActions"`
+}
+
+func (GetInstancePoolsInstancePoolLifecycleManagementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementArgs) ToGetInstancePoolsInstancePoolLifecycleManagementOutput() GetInstancePoolsInstancePoolLifecycleManagementOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementArgs) ToGetInstancePoolsInstancePoolLifecycleManagementOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementOutput)
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementArrayInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementArray and GetInstancePoolsInstancePoolLifecycleManagementArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementArray{ GetInstancePoolsInstancePoolLifecycleManagementArgs{...} }
+type GetInstancePoolsInstancePoolLifecycleManagementArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementArrayOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementArrayOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementArray []GetInstancePoolsInstancePoolLifecycleManagementInput
+
+func (GetInstancePoolsInstancePoolLifecycleManagementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementArray) ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementArray) ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementOutput) ToGetInstancePoolsInstancePoolLifecycleManagementOutput() GetInstancePoolsInstancePoolLifecycleManagementOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementOutput) ToGetInstancePoolsInstancePoolLifecycleManagementOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementOutput {
+	return o
+}
+
+// The lifecycle actions for the instance pool.
+func (o GetInstancePoolsInstancePoolLifecycleManagementOutput) LifecycleActions() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagement) []GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction {
+		return v.LifecycleActions
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagement)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolLifecycleManagementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolLifecycleManagement {
+		return vs[0].([]GetInstancePoolsInstancePoolLifecycleManagement)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolLifecycleManagementOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction struct {
+	// The data for pre-termination action for an instance pool
+	PreTerminations []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination `pulumi:"preTerminations"`
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs{...}
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs struct {
+	// The data for pre-termination action for an instance pool
+	PreTerminations GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput `pulumi:"preTerminations"`
+}
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput)
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray{ GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs{...} }
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionInput
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput {
+	return o
+}
+
+// The data for pre-termination action for an instance pool
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput) PreTerminations() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction) []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination {
+		return v.PreTerminations
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction {
+		return vs[0].([]GetInstancePoolsInstancePoolLifecycleManagementLifecycleAction)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination struct {
+	// Whether pre-termination action is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Options to handle timeout for pre-termination action.
+	OnTimeouts []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout `pulumi:"onTimeouts"`
+	// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+	Timeout int `pulumi:"timeout"`
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{...}
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs struct {
+	// Whether pre-termination action is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Options to handle timeout for pre-termination action.
+	OnTimeouts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput `pulumi:"onTimeouts"`
+	// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+}
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput)
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray{ GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{...} }
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationInput
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return o
+}
+
+// Whether pre-termination action is enabled or not.
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Options to handle timeout for pre-termination action.
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) OnTimeouts() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination) []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout {
+		return v.OnTimeouts
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput)
+}
+
+// The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination) int {
+		return v.Timeout
+	}).(pulumi.IntOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination {
+		return vs[0].([]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTermination)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout struct {
+	// Whether the block volume should be preserved after termination.
+	PreserveBlockVolumeMode string `pulumi:"preserveBlockVolumeMode"`
+	// Whether the boot volume should be preserved after termination.
+	PreserveBootVolumeMode string `pulumi:"preserveBootVolumeMode"`
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{...}
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs struct {
+	// Whether the block volume should be preserved after termination.
+	PreserveBlockVolumeMode pulumi.StringInput `pulumi:"preserveBlockVolumeMode"`
+	// Whether the boot volume should be preserved after termination.
+	PreserveBootVolumeMode pulumi.StringInput `pulumi:"preserveBootVolumeMode"`
+}
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput)
+}
+
+// GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput is an input type that accepts GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray and GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray{ GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{...} }
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput
+	ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray []GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return o
+}
+
+// Whether the block volume should be preserved after termination.
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) PreserveBlockVolumeMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout) string {
+		return v.PreserveBlockVolumeMode
+	}).(pulumi.StringOutput)
+}
+
+// Whether the boot volume should be preserved after termination.
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput) PreserveBootVolumeMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout) string {
+		return v.PreserveBootVolumeMode
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput() GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) ToGetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout {
+		return vs[0].([]GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeout)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput)
 }
 
 type GetInstancePoolsInstancePoolLoadBalancer struct {
@@ -38767,6 +40171,14 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs{})
@@ -38873,6 +40285,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolInstancesInstanceArrayInput)(nil)).Elem(), GetInstancePoolInstancesInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolInstancesInstanceLoadBalancerBackendInput)(nil)).Elem(), GetInstancePoolInstancesInstanceLoadBalancerBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolInstancesInstanceLoadBalancerBackendArrayInput)(nil)).Elem(), GetInstancePoolInstancesInstanceLoadBalancerBackendArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementInput)(nil)).Elem(), GetInstancePoolLifecycleManagementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementArrayInput)(nil)).Elem(), GetInstancePoolLifecycleManagementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionArrayInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput)(nil)).Elem(), GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLoadBalancerInput)(nil)).Elem(), GetInstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolLoadBalancerArrayInput)(nil)).Elem(), GetInstancePoolLoadBalancerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationArgs{})
@@ -38889,6 +40309,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsFilterArrayInput)(nil)).Elem(), GetInstancePoolsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolInput)(nil)).Elem(), GetInstancePoolsInstancePoolArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancerInput)(nil)).Elem(), GetInstancePoolsInstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolLoadBalancerArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolLoadBalancerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationArgs{})
@@ -39317,6 +40745,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput{})
@@ -39423,6 +40859,14 @@ func init() {
 	pulumi.RegisterOutputType(GetInstancePoolInstancesInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolInstancesInstanceLoadBalancerBackendOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolInstancesInstanceLoadBalancerBackendArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolLoadBalancerArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationOutput{})
@@ -39439,6 +40883,14 @@ func init() {
 	pulumi.RegisterOutputType(GetInstancePoolsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolLoadBalancerArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationOutput{})

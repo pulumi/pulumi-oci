@@ -13,6 +13,893 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDatabaseConnectionString struct {
+	// All connection strings to use to connect to the Database.
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
+	// Host name based CDB Connection String.
+	CdbDefault string `pulumi:"cdbDefault"`
+	// IP based CDB Connection String.
+	CdbIpDefault string `pulumi:"cdbIpDefault"`
+}
+
+// GetDatabaseConnectionStringInput is an input type that accepts GetDatabaseConnectionStringArgs and GetDatabaseConnectionStringOutput values.
+// You can construct a concrete instance of `GetDatabaseConnectionStringInput` via:
+//
+//	GetDatabaseConnectionStringArgs{...}
+type GetDatabaseConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetDatabaseConnectionStringOutput() GetDatabaseConnectionStringOutput
+	ToGetDatabaseConnectionStringOutputWithContext(context.Context) GetDatabaseConnectionStringOutput
+}
+
+type GetDatabaseConnectionStringArgs struct {
+	// All connection strings to use to connect to the Database.
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
+	// Host name based CDB Connection String.
+	CdbDefault pulumi.StringInput `pulumi:"cdbDefault"`
+	// IP based CDB Connection String.
+	CdbIpDefault pulumi.StringInput `pulumi:"cdbIpDefault"`
+}
+
+func (GetDatabaseConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDatabaseConnectionStringArgs) ToGetDatabaseConnectionStringOutput() GetDatabaseConnectionStringOutput {
+	return i.ToGetDatabaseConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseConnectionStringArgs) ToGetDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDatabaseConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseConnectionStringOutput)
+}
+
+// GetDatabaseConnectionStringArrayInput is an input type that accepts GetDatabaseConnectionStringArray and GetDatabaseConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseConnectionStringArrayInput` via:
+//
+//	GetDatabaseConnectionStringArray{ GetDatabaseConnectionStringArgs{...} }
+type GetDatabaseConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseConnectionStringArrayOutput() GetDatabaseConnectionStringArrayOutput
+	ToGetDatabaseConnectionStringArrayOutputWithContext(context.Context) GetDatabaseConnectionStringArrayOutput
+}
+
+type GetDatabaseConnectionStringArray []GetDatabaseConnectionStringInput
+
+func (GetDatabaseConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDatabaseConnectionStringArray) ToGetDatabaseConnectionStringArrayOutput() GetDatabaseConnectionStringArrayOutput {
+	return i.ToGetDatabaseConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseConnectionStringArray) ToGetDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDatabaseConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseConnectionStringArrayOutput)
+}
+
+type GetDatabaseConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDatabaseConnectionStringOutput) ToGetDatabaseConnectionStringOutput() GetDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetDatabaseConnectionStringOutput) ToGetDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDatabaseConnectionStringOutput {
+	return o
+}
+
+// All connection strings to use to connect to the Database.
+func (o GetDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseConnectionString) map[string]string { return v.AllConnectionStrings }).(pulumi.StringMapOutput)
+}
+
+// Host name based CDB Connection String.
+func (o GetDatabaseConnectionStringOutput) CdbDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseConnectionString) string { return v.CdbDefault }).(pulumi.StringOutput)
+}
+
+// IP based CDB Connection String.
+func (o GetDatabaseConnectionStringOutput) CdbIpDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseConnectionString) string { return v.CdbIpDefault }).(pulumi.StringOutput)
+}
+
+type GetDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDatabaseConnectionStringArrayOutput) ToGetDatabaseConnectionStringArrayOutput() GetDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDatabaseConnectionStringArrayOutput) ToGetDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetDatabaseConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseConnectionString {
+		return vs[0].([]GetDatabaseConnectionString)[vs[1].(int)]
+	}).(GetDatabaseConnectionStringOutput)
+}
+
+type GetDatabaseDataGuardGroup struct {
+	// List of Data Guard members, representing each database that is part of Data Guard.
+	Members []GetDatabaseDataGuardGroupMember `pulumi:"members"`
+	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode string `pulumi:"protectionMode"`
+}
+
+// GetDatabaseDataGuardGroupInput is an input type that accepts GetDatabaseDataGuardGroupArgs and GetDatabaseDataGuardGroupOutput values.
+// You can construct a concrete instance of `GetDatabaseDataGuardGroupInput` via:
+//
+//	GetDatabaseDataGuardGroupArgs{...}
+type GetDatabaseDataGuardGroupInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDataGuardGroupOutput() GetDatabaseDataGuardGroupOutput
+	ToGetDatabaseDataGuardGroupOutputWithContext(context.Context) GetDatabaseDataGuardGroupOutput
+}
+
+type GetDatabaseDataGuardGroupArgs struct {
+	// List of Data Guard members, representing each database that is part of Data Guard.
+	Members GetDatabaseDataGuardGroupMemberArrayInput `pulumi:"members"`
+	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode pulumi.StringInput `pulumi:"protectionMode"`
+}
+
+func (GetDatabaseDataGuardGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDataGuardGroup)(nil)).Elem()
+}
+
+func (i GetDatabaseDataGuardGroupArgs) ToGetDatabaseDataGuardGroupOutput() GetDatabaseDataGuardGroupOutput {
+	return i.ToGetDatabaseDataGuardGroupOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDataGuardGroupArgs) ToGetDatabaseDataGuardGroupOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDataGuardGroupOutput)
+}
+
+// GetDatabaseDataGuardGroupArrayInput is an input type that accepts GetDatabaseDataGuardGroupArray and GetDatabaseDataGuardGroupArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDataGuardGroupArrayInput` via:
+//
+//	GetDatabaseDataGuardGroupArray{ GetDatabaseDataGuardGroupArgs{...} }
+type GetDatabaseDataGuardGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDataGuardGroupArrayOutput() GetDatabaseDataGuardGroupArrayOutput
+	ToGetDatabaseDataGuardGroupArrayOutputWithContext(context.Context) GetDatabaseDataGuardGroupArrayOutput
+}
+
+type GetDatabaseDataGuardGroupArray []GetDatabaseDataGuardGroupInput
+
+func (GetDatabaseDataGuardGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDataGuardGroup)(nil)).Elem()
+}
+
+func (i GetDatabaseDataGuardGroupArray) ToGetDatabaseDataGuardGroupArrayOutput() GetDatabaseDataGuardGroupArrayOutput {
+	return i.ToGetDatabaseDataGuardGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDataGuardGroupArray) ToGetDatabaseDataGuardGroupArrayOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDataGuardGroupArrayOutput)
+}
+
+type GetDatabaseDataGuardGroupOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDataGuardGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDataGuardGroup)(nil)).Elem()
+}
+
+func (o GetDatabaseDataGuardGroupOutput) ToGetDatabaseDataGuardGroupOutput() GetDatabaseDataGuardGroupOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupOutput) ToGetDatabaseDataGuardGroupOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupOutput {
+	return o
+}
+
+// List of Data Guard members, representing each database that is part of Data Guard.
+func (o GetDatabaseDataGuardGroupOutput) Members() GetDatabaseDataGuardGroupMemberArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroup) []GetDatabaseDataGuardGroupMember { return v.Members }).(GetDatabaseDataGuardGroupMemberArrayOutput)
+}
+
+// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+func (o GetDatabaseDataGuardGroupOutput) ProtectionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroup) string { return v.ProtectionMode }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDataGuardGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDataGuardGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDataGuardGroup)(nil)).Elem()
+}
+
+func (o GetDatabaseDataGuardGroupArrayOutput) ToGetDatabaseDataGuardGroupArrayOutput() GetDatabaseDataGuardGroupArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupArrayOutput) ToGetDatabaseDataGuardGroupArrayOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupArrayOutput) Index(i pulumi.IntInput) GetDatabaseDataGuardGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDataGuardGroup {
+		return vs[0].([]GetDatabaseDataGuardGroup)[vs[1].(int)]
+	}).(GetDatabaseDataGuardGroupOutput)
+}
+
+type GetDatabaseDataGuardGroupMember struct {
+	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+	ApplyLag string `pulumi:"applyLag"`
+	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+	ApplyRate string `pulumi:"applyRate"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId string `pulumi:"databaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	// The role of the reporting database in this Data Guard association.
+	Role string `pulumi:"role"`
+	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+	TransportLag string `pulumi:"transportLag"`
+	// The date and time when last redo transport has been done.
+	TransportLagRefresh string `pulumi:"transportLagRefresh"`
+	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+	// * MAXIMUM_PERFORMANCE - ASYNC
+	// * MAXIMUM_PROTECTION - SYNC
+	TransportType string `pulumi:"transportType"`
+}
+
+// GetDatabaseDataGuardGroupMemberInput is an input type that accepts GetDatabaseDataGuardGroupMemberArgs and GetDatabaseDataGuardGroupMemberOutput values.
+// You can construct a concrete instance of `GetDatabaseDataGuardGroupMemberInput` via:
+//
+//	GetDatabaseDataGuardGroupMemberArgs{...}
+type GetDatabaseDataGuardGroupMemberInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDataGuardGroupMemberOutput() GetDatabaseDataGuardGroupMemberOutput
+	ToGetDatabaseDataGuardGroupMemberOutputWithContext(context.Context) GetDatabaseDataGuardGroupMemberOutput
+}
+
+type GetDatabaseDataGuardGroupMemberArgs struct {
+	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+	ApplyLag pulumi.StringInput `pulumi:"applyLag"`
+	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+	ApplyRate pulumi.StringInput `pulumi:"applyRate"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	// The role of the reporting database in this Data Guard association.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+	TransportLag pulumi.StringInput `pulumi:"transportLag"`
+	// The date and time when last redo transport has been done.
+	TransportLagRefresh pulumi.StringInput `pulumi:"transportLagRefresh"`
+	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+	// * MAXIMUM_PERFORMANCE - ASYNC
+	// * MAXIMUM_PROTECTION - SYNC
+	TransportType pulumi.StringInput `pulumi:"transportType"`
+}
+
+func (GetDatabaseDataGuardGroupMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDataGuardGroupMember)(nil)).Elem()
+}
+
+func (i GetDatabaseDataGuardGroupMemberArgs) ToGetDatabaseDataGuardGroupMemberOutput() GetDatabaseDataGuardGroupMemberOutput {
+	return i.ToGetDatabaseDataGuardGroupMemberOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDataGuardGroupMemberArgs) ToGetDatabaseDataGuardGroupMemberOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDataGuardGroupMemberOutput)
+}
+
+// GetDatabaseDataGuardGroupMemberArrayInput is an input type that accepts GetDatabaseDataGuardGroupMemberArray and GetDatabaseDataGuardGroupMemberArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDataGuardGroupMemberArrayInput` via:
+//
+//	GetDatabaseDataGuardGroupMemberArray{ GetDatabaseDataGuardGroupMemberArgs{...} }
+type GetDatabaseDataGuardGroupMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDataGuardGroupMemberArrayOutput() GetDatabaseDataGuardGroupMemberArrayOutput
+	ToGetDatabaseDataGuardGroupMemberArrayOutputWithContext(context.Context) GetDatabaseDataGuardGroupMemberArrayOutput
+}
+
+type GetDatabaseDataGuardGroupMemberArray []GetDatabaseDataGuardGroupMemberInput
+
+func (GetDatabaseDataGuardGroupMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDataGuardGroupMember)(nil)).Elem()
+}
+
+func (i GetDatabaseDataGuardGroupMemberArray) ToGetDatabaseDataGuardGroupMemberArrayOutput() GetDatabaseDataGuardGroupMemberArrayOutput {
+	return i.ToGetDatabaseDataGuardGroupMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDataGuardGroupMemberArray) ToGetDatabaseDataGuardGroupMemberArrayOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDataGuardGroupMemberArrayOutput)
+}
+
+type GetDatabaseDataGuardGroupMemberOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDataGuardGroupMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDataGuardGroupMember)(nil)).Elem()
+}
+
+func (o GetDatabaseDataGuardGroupMemberOutput) ToGetDatabaseDataGuardGroupMemberOutput() GetDatabaseDataGuardGroupMemberOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupMemberOutput) ToGetDatabaseDataGuardGroupMemberOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupMemberOutput {
+	return o
+}
+
+// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+func (o GetDatabaseDataGuardGroupMemberOutput) ApplyLag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.ApplyLag }).(pulumi.StringOutput)
+}
+
+// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+func (o GetDatabaseDataGuardGroupMemberOutput) ApplyRate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.ApplyRate }).(pulumi.StringOutput)
+}
+
+// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseDataGuardGroupMemberOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDatabaseDataGuardGroupMemberOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// True if active Data Guard is enabled.
+func (o GetDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+// The role of the reporting database in this Data Guard association.
+func (o GetDatabaseDataGuardGroupMemberOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+func (o GetDatabaseDataGuardGroupMemberOutput) TransportLag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.TransportLag }).(pulumi.StringOutput)
+}
+
+// The date and time when last redo transport has been done.
+func (o GetDatabaseDataGuardGroupMemberOutput) TransportLagRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.TransportLagRefresh }).(pulumi.StringOutput)
+}
+
+// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+// * MAXIMUM_PERFORMANCE - ASYNC
+// * MAXIMUM_PROTECTION - SYNC
+func (o GetDatabaseDataGuardGroupMemberOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.TransportType }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDataGuardGroupMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDataGuardGroupMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDataGuardGroupMember)(nil)).Elem()
+}
+
+func (o GetDatabaseDataGuardGroupMemberArrayOutput) ToGetDatabaseDataGuardGroupMemberArrayOutput() GetDatabaseDataGuardGroupMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupMemberArrayOutput) ToGetDatabaseDataGuardGroupMemberArrayOutputWithContext(ctx context.Context) GetDatabaseDataGuardGroupMemberArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDataGuardGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDatabaseDataGuardGroupMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDataGuardGroupMember {
+		return vs[0].([]GetDatabaseDataGuardGroupMember)[vs[1].(int)]
+	}).(GetDatabaseDataGuardGroupMemberOutput)
+}
+
+type GetDatabaseDatabase struct {
+	AdminPassword     string `pulumi:"adminPassword"`
+	BackupId          string `pulumi:"backupId"`
+	BackupTdePassword string `pulumi:"backupTdePassword"`
+	// The character set for the database.
+	CharacterSet          string `pulumi:"characterSet"`
+	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
+	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+	DbBackupConfigs []GetDatabaseDatabaseDbBackupConfig `pulumi:"dbBackupConfigs"`
+	// The database name.
+	DbName string `pulumi:"dbName"`
+	// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+	DbUniqueName string `pulumi:"dbUniqueName"`
+	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+	DbWorkload string `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails []GetDatabaseDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The national character set for the database.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+	PdbName            string   `pulumi:"pdbName"`
+	PluggableDatabases []string `pulumi:"pluggableDatabases"`
+	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode string `pulumi:"protectionMode"`
+	// Specifies a prefix for the `Oracle SID` of the database to be created.
+	SidPrefix                          string                                                 `pulumi:"sidPrefix"`
+	SourceDatabaseId                   string                                                 `pulumi:"sourceDatabaseId"`
+	SourceEncryptionKeyLocationDetails []GetDatabaseDatabaseSourceEncryptionKeyLocationDetail `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceTdeWalletPassword            string                                                 `pulumi:"sourceTdeWalletPassword"`
+	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+	StorageSizeDetails []GetDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
+	TdeWalletPassword  string                                 `pulumi:"tdeWalletPassword"`
+	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+	// * MAXIMUM_PERFORMANCE - ASYNC
+	// * MAXIMUM_PROTECTION - SYNC
+	TransportType string `pulumi:"transportType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDatabaseDatabaseInput is an input type that accepts GetDatabaseDatabaseArgs and GetDatabaseDatabaseOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseInput` via:
+//
+//	GetDatabaseDatabaseArgs{...}
+type GetDatabaseDatabaseInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseOutput() GetDatabaseDatabaseOutput
+	ToGetDatabaseDatabaseOutputWithContext(context.Context) GetDatabaseDatabaseOutput
+}
+
+type GetDatabaseDatabaseArgs struct {
+	AdminPassword     pulumi.StringInput `pulumi:"adminPassword"`
+	BackupId          pulumi.StringInput `pulumi:"backupId"`
+	BackupTdePassword pulumi.StringInput `pulumi:"backupTdePassword"`
+	// The character set for the database.
+	CharacterSet          pulumi.StringInput `pulumi:"characterSet"`
+	DatabaseAdminPassword pulumi.StringInput `pulumi:"databaseAdminPassword"`
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
+	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+	DbBackupConfigs GetDatabaseDatabaseDbBackupConfigArrayInput `pulumi:"dbBackupConfigs"`
+	// The database name.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+	DbWorkload pulumi.StringInput `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput `pulumi:"encryptionKeyLocationDetails"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The national character set for the database.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+	PdbName            pulumi.StringInput      `pulumi:"pdbName"`
+	PluggableDatabases pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
+	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode pulumi.StringInput `pulumi:"protectionMode"`
+	// Specifies a prefix for the `Oracle SID` of the database to be created.
+	SidPrefix                          pulumi.StringInput                                             `pulumi:"sidPrefix"`
+	SourceDatabaseId                   pulumi.StringInput                                             `pulumi:"sourceDatabaseId"`
+	SourceEncryptionKeyLocationDetails GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceTdeWalletPassword            pulumi.StringInput                                             `pulumi:"sourceTdeWalletPassword"`
+	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+	StorageSizeDetails GetDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
+	TdeWalletPassword  pulumi.StringInput                             `pulumi:"tdeWalletPassword"`
+	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+	// * MAXIMUM_PERFORMANCE - ASYNC
+	// * MAXIMUM_PROTECTION - SYNC
+	TransportType pulumi.StringInput `pulumi:"transportType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDatabaseDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabase)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseArgs) ToGetDatabaseDatabaseOutput() GetDatabaseDatabaseOutput {
+	return i.ToGetDatabaseDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseArgs) ToGetDatabaseDatabaseOutputWithContext(ctx context.Context) GetDatabaseDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseOutput)
+}
+
+// GetDatabaseDatabaseArrayInput is an input type that accepts GetDatabaseDatabaseArray and GetDatabaseDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseArrayInput` via:
+//
+//	GetDatabaseDatabaseArray{ GetDatabaseDatabaseArgs{...} }
+type GetDatabaseDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseArrayOutput() GetDatabaseDatabaseArrayOutput
+	ToGetDatabaseDatabaseArrayOutputWithContext(context.Context) GetDatabaseDatabaseArrayOutput
+}
+
+type GetDatabaseDatabaseArray []GetDatabaseDatabaseInput
+
+func (GetDatabaseDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabase)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseArray) ToGetDatabaseDatabaseArrayOutput() GetDatabaseDatabaseArrayOutput {
+	return i.ToGetDatabaseDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseArray) ToGetDatabaseDatabaseArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseArrayOutput)
+}
+
+type GetDatabaseDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabase)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseOutput) ToGetDatabaseDatabaseOutput() GetDatabaseDatabaseOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseOutput) ToGetDatabaseDatabaseOutputWithContext(ctx context.Context) GetDatabaseDatabaseOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseOutput) AdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.AdminPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) BackupTdePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.BackupTdePassword }).(pulumi.StringOutput)
+}
+
+// The character set for the database.
+func (o GetDatabaseDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) DatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
+// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetDatabaseDatabaseOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+func (o GetDatabaseDatabaseOutput) DbBackupConfigs() GetDatabaseDatabaseDbBackupConfigArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseDbBackupConfig { return v.DbBackupConfigs }).(GetDatabaseDatabaseDbBackupConfigArrayOutput)
+}
+
+// The database name.
+func (o GetDatabaseDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+func (o GetDatabaseDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+func (o GetDatabaseDatabaseOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o GetDatabaseDatabaseOutput) EncryptionKeyLocationDetails() GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseEncryptionKeyLocationDetail {
+		return v.EncryptionKeyLocationDetails
+	}).(GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// True if active Data Guard is enabled.
+func (o GetDatabaseDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+func (o GetDatabaseDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The national character set for the database.
+func (o GetDatabaseDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+func (o GetDatabaseDatabaseOutput) PdbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.PdbName }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) PluggableDatabases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []string { return v.PluggableDatabases }).(pulumi.StringArrayOutput)
+}
+
+// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+func (o GetDatabaseDatabaseOutput) ProtectionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.ProtectionMode }).(pulumi.StringOutput)
+}
+
+// Specifies a prefix for the `Oracle SID` of the database to be created.
+func (o GetDatabaseDatabaseOutput) SidPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) SourceDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) SourceEncryptionKeyLocationDetails() GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
+		return v.SourceEncryptionKeyLocationDetails
+	}).(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) SourceTdeWalletPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceTdeWalletPassword }).(pulumi.StringOutput)
+}
+
+// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+func (o GetDatabaseDatabaseOutput) StorageSizeDetails() GetDatabaseDatabaseStorageSizeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseStorageSizeDetail { return v.StorageSizeDetails }).(GetDatabaseDatabaseStorageSizeDetailArrayOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) TdeWalletPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
+}
+
+// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+// * MAXIMUM_PERFORMANCE - ASYNC
+// * MAXIMUM_PROTECTION - SYNC
+func (o GetDatabaseDatabaseOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.TransportType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+func (o GetDatabaseDatabaseOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabase)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseArrayOutput) ToGetDatabaseDatabaseArrayOutput() GetDatabaseDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseArrayOutput) ToGetDatabaseDatabaseArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabase {
+		return vs[0].([]GetDatabaseDatabase)[vs[1].(int)]
+	}).(GetDatabaseDatabaseOutput)
+}
+
+type GetDatabaseDatabaseDbBackupConfig struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled bool `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow string `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay string `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow string `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy string `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails []GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays int `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup bool `pulumi:"runImmediateFullBackup"`
+}
+
+// GetDatabaseDatabaseDbBackupConfigInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigArgs and GetDatabaseDatabaseDbBackupConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigInput` via:
+//
+//	GetDatabaseDatabaseDbBackupConfigArgs{...}
+type GetDatabaseDatabaseDbBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseDbBackupConfigOutput() GetDatabaseDatabaseDbBackupConfigOutput
+	ToGetDatabaseDatabaseDbBackupConfigOutputWithContext(context.Context) GetDatabaseDatabaseDbBackupConfigOutput
+}
+
+type GetDatabaseDatabaseDbBackupConfigArgs struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled pulumi.BoolInput `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow pulumi.StringInput `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay pulumi.StringInput `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow pulumi.StringInput `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy pulumi.StringInput `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays pulumi.IntInput `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup pulumi.BoolInput `pulumi:"runImmediateFullBackup"`
+}
+
+func (GetDatabaseDatabaseDbBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigArgs) ToGetDatabaseDatabaseDbBackupConfigOutput() GetDatabaseDatabaseDbBackupConfigOutput {
+	return i.ToGetDatabaseDatabaseDbBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigArgs) ToGetDatabaseDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseDbBackupConfigOutput)
+}
+
+// GetDatabaseDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigArray and GetDatabaseDatabaseDbBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigArrayInput` via:
+//
+//	GetDatabaseDatabaseDbBackupConfigArray{ GetDatabaseDatabaseDbBackupConfigArgs{...} }
+type GetDatabaseDatabaseDbBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseDbBackupConfigArrayOutput() GetDatabaseDatabaseDbBackupConfigArrayOutput
+	ToGetDatabaseDatabaseDbBackupConfigArrayOutputWithContext(context.Context) GetDatabaseDatabaseDbBackupConfigArrayOutput
+}
+
+type GetDatabaseDatabaseDbBackupConfigArray []GetDatabaseDatabaseDbBackupConfigInput
+
+func (GetDatabaseDatabaseDbBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigArray) ToGetDatabaseDatabaseDbBackupConfigArrayOutput() GetDatabaseDatabaseDbBackupConfigArrayOutput {
+	return i.ToGetDatabaseDatabaseDbBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseDbBackupConfigArray) ToGetDatabaseDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseDbBackupConfigArrayOutput)
+}
+
+type GetDatabaseDatabaseDbBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseDbBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigOutput) ToGetDatabaseDatabaseDbBackupConfigOutput() GetDatabaseDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigOutput) ToGetDatabaseDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigOutput {
+	return o
+}
+
+// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) AutoBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) bool { return v.AutoBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabaseDatabaseDbBackupConfigOutput) AutoBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) string { return v.AutoBackupWindow }).(pulumi.StringOutput)
+}
+
+// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) AutoFullBackupDay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) string { return v.AutoFullBackupDay }).(pulumi.StringOutput)
+}
+
+// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabaseDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
+}
+
+// This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
+}
+
+// Backup destination details.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) BackupDestinationDetails() GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) []GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) RecoveryWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) int { return v.RecoveryWindowInDays }).(pulumi.IntOutput)
+}
+
+// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+func (o GetDatabaseDatabaseDbBackupConfigOutput) RunImmediateFullBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseDbBackupConfig) bool { return v.RunImmediateFullBackup }).(pulumi.BoolOutput)
+}
+
+type GetDatabaseDatabaseDbBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseDbBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigArrayOutput) ToGetDatabaseDatabaseDbBackupConfigArrayOutput() GetDatabaseDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigArrayOutput) ToGetDatabaseDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseDbBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseDbBackupConfig {
+		return vs[0].([]GetDatabaseDatabaseDbBackupConfig)[vs[1].(int)]
+	}).(GetDatabaseDatabaseDbBackupConfigOutput)
+}
+
 type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
 	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 	BackupRetentionPolicyOnTerminate string `pulumi:"backupRetentionPolicyOnTerminate"`
@@ -11548,6 +12435,764 @@ func (o GetDbNodeConsoleHistoriesFilterArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeConsoleHistoriesFilter {
 		return vs[0].([]GetDbNodeConsoleHistoriesFilter)[vs[1].(int)]
 	}).(GetDbNodeConsoleHistoriesFilterOutput)
+}
+
+type GetDbNodeSnapshotMountPoint struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+	DbNodeId string `pulumi:"dbNodeId"`
+	// Volume Name
+	Name string `pulumi:"name"`
+}
+
+// GetDbNodeSnapshotMountPointInput is an input type that accepts GetDbNodeSnapshotMountPointArgs and GetDbNodeSnapshotMountPointOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotMountPointInput` via:
+//
+//	GetDbNodeSnapshotMountPointArgs{...}
+type GetDbNodeSnapshotMountPointInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotMountPointOutput() GetDbNodeSnapshotMountPointOutput
+	ToGetDbNodeSnapshotMountPointOutputWithContext(context.Context) GetDbNodeSnapshotMountPointOutput
+}
+
+type GetDbNodeSnapshotMountPointArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// Volume Name
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbNodeSnapshotMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotMountPointArgs) ToGetDbNodeSnapshotMountPointOutput() GetDbNodeSnapshotMountPointOutput {
+	return i.ToGetDbNodeSnapshotMountPointOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotMountPointArgs) ToGetDbNodeSnapshotMountPointOutputWithContext(ctx context.Context) GetDbNodeSnapshotMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotMountPointOutput)
+}
+
+// GetDbNodeSnapshotMountPointArrayInput is an input type that accepts GetDbNodeSnapshotMountPointArray and GetDbNodeSnapshotMountPointArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotMountPointArrayInput` via:
+//
+//	GetDbNodeSnapshotMountPointArray{ GetDbNodeSnapshotMountPointArgs{...} }
+type GetDbNodeSnapshotMountPointArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotMountPointArrayOutput
+	ToGetDbNodeSnapshotMountPointArrayOutputWithContext(context.Context) GetDbNodeSnapshotMountPointArrayOutput
+}
+
+type GetDbNodeSnapshotMountPointArray []GetDbNodeSnapshotMountPointInput
+
+func (GetDbNodeSnapshotMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotMountPointArray) ToGetDbNodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotMountPointArrayOutput {
+	return i.ToGetDbNodeSnapshotMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotMountPointArray) ToGetDbNodeSnapshotMountPointArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotMountPointArrayOutput)
+}
+
+type GetDbNodeSnapshotMountPointOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotMountPointOutput) ToGetDbNodeSnapshotMountPointOutput() GetDbNodeSnapshotMountPointOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotMountPointOutput) ToGetDbNodeSnapshotMountPointOutputWithContext(ctx context.Context) GetDbNodeSnapshotMountPointOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+func (o GetDbNodeSnapshotMountPointOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotMountPoint) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// Volume Name
+func (o GetDbNodeSnapshotMountPointOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotMountPoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbNodeSnapshotMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotMountPointArrayOutput) ToGetDbNodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotMountPointArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotMountPointArrayOutput) ToGetDbNodeSnapshotMountPointArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotMountPointArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotMountPointArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotMountPoint {
+		return vs[0].([]GetDbNodeSnapshotMountPoint)[vs[1].(int)]
+	}).(GetDbNodeSnapshotMountPointOutput)
+}
+
+type GetDbNodeSnapshotVolume struct {
+	// Volume Name
+	Name string `pulumi:"name"`
+	// Volume Size
+	Size int `pulumi:"size"`
+}
+
+// GetDbNodeSnapshotVolumeInput is an input type that accepts GetDbNodeSnapshotVolumeArgs and GetDbNodeSnapshotVolumeOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotVolumeInput` via:
+//
+//	GetDbNodeSnapshotVolumeArgs{...}
+type GetDbNodeSnapshotVolumeInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotVolumeOutput() GetDbNodeSnapshotVolumeOutput
+	ToGetDbNodeSnapshotVolumeOutputWithContext(context.Context) GetDbNodeSnapshotVolumeOutput
+}
+
+type GetDbNodeSnapshotVolumeArgs struct {
+	// Volume Name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Volume Size
+	Size pulumi.IntInput `pulumi:"size"`
+}
+
+func (GetDbNodeSnapshotVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotVolume)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotVolumeArgs) ToGetDbNodeSnapshotVolumeOutput() GetDbNodeSnapshotVolumeOutput {
+	return i.ToGetDbNodeSnapshotVolumeOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotVolumeArgs) ToGetDbNodeSnapshotVolumeOutputWithContext(ctx context.Context) GetDbNodeSnapshotVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotVolumeOutput)
+}
+
+// GetDbNodeSnapshotVolumeArrayInput is an input type that accepts GetDbNodeSnapshotVolumeArray and GetDbNodeSnapshotVolumeArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotVolumeArrayInput` via:
+//
+//	GetDbNodeSnapshotVolumeArray{ GetDbNodeSnapshotVolumeArgs{...} }
+type GetDbNodeSnapshotVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotVolumeArrayOutput
+	ToGetDbNodeSnapshotVolumeArrayOutputWithContext(context.Context) GetDbNodeSnapshotVolumeArrayOutput
+}
+
+type GetDbNodeSnapshotVolumeArray []GetDbNodeSnapshotVolumeInput
+
+func (GetDbNodeSnapshotVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotVolume)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotVolumeArray) ToGetDbNodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotVolumeArrayOutput {
+	return i.ToGetDbNodeSnapshotVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotVolumeArray) ToGetDbNodeSnapshotVolumeArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotVolumeArrayOutput)
+}
+
+type GetDbNodeSnapshotVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotVolume)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotVolumeOutput) ToGetDbNodeSnapshotVolumeOutput() GetDbNodeSnapshotVolumeOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotVolumeOutput) ToGetDbNodeSnapshotVolumeOutputWithContext(ctx context.Context) GetDbNodeSnapshotVolumeOutput {
+	return o
+}
+
+// Volume Name
+func (o GetDbNodeSnapshotVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Volume Size
+func (o GetDbNodeSnapshotVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+type GetDbNodeSnapshotVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotVolume)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotVolumeArrayOutput) ToGetDbNodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotVolumeArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotVolumeArrayOutput) ToGetDbNodeSnapshotVolumeArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotVolumeArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotVolumeArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotVolume {
+		return vs[0].([]GetDbNodeSnapshotVolume)[vs[1].(int)]
+	}).(GetDbNodeSnapshotVolumeOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshot struct {
+	// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+	DbnodeSnapshotId string `pulumi:"dbnodeSnapshotId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot is mounted. If the snapshot is not mounted to any node, then the value of `mountDbnodeId` will be `"null"`.
+	MountDbnodeId string `pulumi:"mountDbnodeId"`
+	// Details of the mount points
+	MountPoints []GetDbNodeSnapshotsDbnodeSnapshotMountPoint `pulumi:"mountPoints"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+	// A filter to return only Exadata Database Snapshots that match the given database node.
+	SourceDbnodeId string `pulumi:"sourceDbnodeId"`
+	// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Node Snapshot was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Details of the volumes
+	Volumes []GetDbNodeSnapshotsDbnodeSnapshotVolume `pulumi:"volumes"`
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotArgs and GetDbNodeSnapshotsDbnodeSnapshotOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotArgs{...}
+type GetDbNodeSnapshotsDbnodeSnapshotInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotOutput() GetDbNodeSnapshotsDbnodeSnapshotOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotArgs struct {
+	// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+	DbnodeSnapshotId pulumi.StringInput `pulumi:"dbnodeSnapshotId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot is mounted. If the snapshot is not mounted to any node, then the value of `mountDbnodeId` will be `"null"`.
+	MountDbnodeId pulumi.StringInput `pulumi:"mountDbnodeId"`
+	// Details of the mount points
+	MountPoints GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayInput `pulumi:"mountPoints"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only Exadata Database Snapshots that match the given database node.
+	SourceDbnodeId pulumi.StringInput `pulumi:"sourceDbnodeId"`
+	// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Node Snapshot was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Details of the volumes
+	Volumes GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayInput `pulumi:"volumes"`
+}
+
+func (GetDbNodeSnapshotsDbnodeSnapshotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshot)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotArgs) ToGetDbNodeSnapshotsDbnodeSnapshotOutput() GetDbNodeSnapshotsDbnodeSnapshotOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotArgs) ToGetDbNodeSnapshotsDbnodeSnapshotOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotOutput)
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotArrayInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotArray and GetDbNodeSnapshotsDbnodeSnapshotArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotArrayInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotArray{ GetDbNodeSnapshotsDbnodeSnapshotArgs{...} }
+type GetDbNodeSnapshotsDbnodeSnapshotArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotArrayOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotArrayOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotArray []GetDbNodeSnapshotsDbnodeSnapshotInput
+
+func (GetDbNodeSnapshotsDbnodeSnapshotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshot)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotArray) ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotArrayOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotArray) ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotArrayOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshot)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) ToGetDbNodeSnapshotsDbnodeSnapshotOutput() GetDbNodeSnapshotsDbnodeSnapshotOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) ToGetDbNodeSnapshotsDbnodeSnapshotOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotOutput {
+	return o
+}
+
+// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) DbnodeSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.DbnodeSnapshotId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot is mounted. If the snapshot is not mounted to any node, then the value of `mountDbnodeId` will be `"null"`.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) MountDbnodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.MountDbnodeId }).(pulumi.StringOutput)
+}
+
+// Details of the mount points
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) MountPoints() GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) []GetDbNodeSnapshotsDbnodeSnapshotMountPoint {
+		return v.MountPoints
+	}).(GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput)
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Database Snapshots that match the given database node.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) SourceDbnodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.SourceDbnodeId }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the Exadata Database Node Snapshot was created.
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Details of the volumes
+func (o GetDbNodeSnapshotsDbnodeSnapshotOutput) Volumes() GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshot) []GetDbNodeSnapshotsDbnodeSnapshotVolume { return v.Volumes }).(GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshot)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotsDbnodeSnapshotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotsDbnodeSnapshot {
+		return vs[0].([]GetDbNodeSnapshotsDbnodeSnapshot)[vs[1].(int)]
+	}).(GetDbNodeSnapshotsDbnodeSnapshotOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotMountPoint struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+	DbNodeId string `pulumi:"dbNodeId"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotMountPointInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs and GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotMountPointInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs{...}
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput)
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotMountPointArray and GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotMountPointArray{ GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs{...} }
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointArray []GetDbNodeSnapshotsDbnodeSnapshotMountPointInput
+
+func (GetDbNodeSnapshotsDbnodeSnapshotMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotMountPointArray) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotMountPointArray) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshotMountPoint) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshotMountPoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshotMountPoint)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotsDbnodeSnapshotMountPoint {
+		return vs[0].([]GetDbNodeSnapshotsDbnodeSnapshotMountPoint)[vs[1].(int)]
+	}).(GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotVolume struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+	// Volume Size
+	Size int `pulumi:"size"`
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotVolumeInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs and GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotVolumeInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs{...}
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Volume Size
+	Size pulumi.IntInput `pulumi:"size"`
+}
+
+func (GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotVolume)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput)
+}
+
+// GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayInput is an input type that accepts GetDbNodeSnapshotsDbnodeSnapshotVolumeArray and GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayInput` via:
+//
+//	GetDbNodeSnapshotsDbnodeSnapshotVolumeArray{ GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs{...} }
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput
+	ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutputWithContext(context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeArray []GetDbNodeSnapshotsDbnodeSnapshotVolumeInput
+
+func (GetDbNodeSnapshotsDbnodeSnapshotVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshotVolume)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotVolumeArray) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput {
+	return i.ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsDbnodeSnapshotVolumeArray) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotVolume)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshotVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Volume Size
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsDbnodeSnapshotVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+type GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsDbnodeSnapshotVolume)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput() GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput) ToGetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotsDbnodeSnapshotVolume {
+		return vs[0].([]GetDbNodeSnapshotsDbnodeSnapshotVolume)[vs[1].(int)]
+	}).(GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput)
+}
+
+type GetDbNodeSnapshotsFilter struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbNodeSnapshotsFilterInput is an input type that accepts GetDbNodeSnapshotsFilterArgs and GetDbNodeSnapshotsFilterOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsFilterInput` via:
+//
+//	GetDbNodeSnapshotsFilterArgs{...}
+type GetDbNodeSnapshotsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsFilterOutput() GetDbNodeSnapshotsFilterOutput
+	ToGetDbNodeSnapshotsFilterOutputWithContext(context.Context) GetDbNodeSnapshotsFilterOutput
+}
+
+type GetDbNodeSnapshotsFilterArgs struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbNodeSnapshotsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsFilterArgs) ToGetDbNodeSnapshotsFilterOutput() GetDbNodeSnapshotsFilterOutput {
+	return i.ToGetDbNodeSnapshotsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsFilterArgs) ToGetDbNodeSnapshotsFilterOutputWithContext(ctx context.Context) GetDbNodeSnapshotsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsFilterOutput)
+}
+
+// GetDbNodeSnapshotsFilterArrayInput is an input type that accepts GetDbNodeSnapshotsFilterArray and GetDbNodeSnapshotsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbNodeSnapshotsFilterArrayInput` via:
+//
+//	GetDbNodeSnapshotsFilterArray{ GetDbNodeSnapshotsFilterArgs{...} }
+type GetDbNodeSnapshotsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbNodeSnapshotsFilterArrayOutput() GetDbNodeSnapshotsFilterArrayOutput
+	ToGetDbNodeSnapshotsFilterArrayOutputWithContext(context.Context) GetDbNodeSnapshotsFilterArrayOutput
+}
+
+type GetDbNodeSnapshotsFilterArray []GetDbNodeSnapshotsFilterInput
+
+func (GetDbNodeSnapshotsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetDbNodeSnapshotsFilterArray) ToGetDbNodeSnapshotsFilterArrayOutput() GetDbNodeSnapshotsFilterArrayOutput {
+	return i.ToGetDbNodeSnapshotsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbNodeSnapshotsFilterArray) ToGetDbNodeSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbNodeSnapshotsFilterArrayOutput)
+}
+
+type GetDbNodeSnapshotsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbNodeSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsFilterOutput) ToGetDbNodeSnapshotsFilterOutput() GetDbNodeSnapshotsFilterOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsFilterOutput) ToGetDbNodeSnapshotsFilterOutputWithContext(ctx context.Context) GetDbNodeSnapshotsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDbNodeSnapshotsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbNodeSnapshotsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbNodeSnapshotsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbNodeSnapshotsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbNodeSnapshotsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbNodeSnapshotsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbNodeSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetDbNodeSnapshotsFilterArrayOutput) ToGetDbNodeSnapshotsFilterArrayOutput() GetDbNodeSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsFilterArrayOutput) ToGetDbNodeSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetDbNodeSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbNodeSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetDbNodeSnapshotsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbNodeSnapshotsFilter {
+		return vs[0].([]GetDbNodeSnapshotsFilter)[vs[1].(int)]
+	}).(GetDbNodeSnapshotsFilterOutput)
 }
 
 type GetDbNodesDbNode struct {
@@ -43085,6 +44730,16 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseConnectionStringInput)(nil)).Elem(), GetDatabaseConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseConnectionStringArrayInput)(nil)).Elem(), GetDatabaseConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupInput)(nil)).Elem(), GetDatabaseDataGuardGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupArrayInput)(nil)).Elem(), GetDatabaseDataGuardGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupMemberInput)(nil)).Elem(), GetDatabaseDataGuardGroupMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupMemberArrayInput)(nil)).Elem(), GetDatabaseDataGuardGroupMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseInput)(nil)).Elem(), GetDatabaseDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseArrayInput)(nil)).Elem(), GetDatabaseDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabaseDatabaseEncryptionKeyLocationDetailArgs{})
@@ -43225,6 +44880,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayInput)(nil)).Elem(), GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesFilterInput)(nil)).Elem(), GetDbNodeConsoleHistoriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeConsoleHistoriesFilterArrayInput)(nil)).Elem(), GetDbNodeConsoleHistoriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotMountPointInput)(nil)).Elem(), GetDbNodeSnapshotMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotMountPointArrayInput)(nil)).Elem(), GetDbNodeSnapshotMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotVolumeInput)(nil)).Elem(), GetDbNodeSnapshotVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotVolumeArrayInput)(nil)).Elem(), GetDbNodeSnapshotVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotArrayInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotMountPointInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotVolumeInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayInput)(nil)).Elem(), GetDbNodeSnapshotsDbnodeSnapshotVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsFilterInput)(nil)).Elem(), GetDbNodeSnapshotsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodeSnapshotsFilterArrayInput)(nil)).Elem(), GetDbNodeSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesDbNodeInput)(nil)).Elem(), GetDbNodesDbNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesDbNodeArrayInput)(nil)).Elem(), GetDbNodesDbNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbNodesFilterInput)(nil)).Elem(), GetDbNodesFilterArgs{})
@@ -43673,6 +45340,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDatabaseConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetDatabaseConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupMemberOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput{})
@@ -43813,6 +45490,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDbNodeConsoleHistoriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotMountPointOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotMountPointArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotVolumeOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotMountPointOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotMountPointArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotVolumeOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsDbnodeSnapshotVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbNodeSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbNodesDbNodeOutput{})
 	pulumi.RegisterOutputType(GetDbNodesDbNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbNodesFilterOutput{})

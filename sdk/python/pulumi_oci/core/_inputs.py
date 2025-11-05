@@ -291,6 +291,14 @@ __all__ = [
     'InstancePlatformConfigArgsDict',
     'InstancePoolInstanceLoadBalancerBackendArgs',
     'InstancePoolInstanceLoadBalancerBackendArgsDict',
+    'InstancePoolLifecycleManagementArgs',
+    'InstancePoolLifecycleManagementArgsDict',
+    'InstancePoolLifecycleManagementLifecycleActionsArgs',
+    'InstancePoolLifecycleManagementLifecycleActionsArgsDict',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgsDict',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs',
+    'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgsDict',
     'InstancePoolLoadBalancerArgs',
     'InstancePoolLoadBalancerArgsDict',
     'InstancePoolPlacementConfigurationArgs',
@@ -15257,6 +15265,188 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+
+if not MYPY:
+    class InstancePoolLifecycleManagementArgsDict(TypedDict):
+        lifecycle_actions: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsArgsDict']
+        """
+        (Updatable) The lifecycle actions for the instance pool.
+        """
+elif False:
+    InstancePoolLifecycleManagementArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstancePoolLifecycleManagementArgs:
+    def __init__(__self__, *,
+                 lifecycle_actions: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsArgs']):
+        """
+        :param pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsArgs'] lifecycle_actions: (Updatable) The lifecycle actions for the instance pool.
+        """
+        pulumi.set(__self__, "lifecycle_actions", lifecycle_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleActions")
+    def lifecycle_actions(self) -> pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsArgs']:
+        """
+        (Updatable) The lifecycle actions for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_actions")
+
+    @lifecycle_actions.setter
+    def lifecycle_actions(self, value: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsArgs']):
+        pulumi.set(self, "lifecycle_actions", value)
+
+
+if not MYPY:
+    class InstancePoolLifecycleManagementLifecycleActionsArgsDict(TypedDict):
+        pre_termination: NotRequired[pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgsDict']]
+        """
+        (Updatable) The data for pre-termination action for an instance pool
+        """
+elif False:
+    InstancePoolLifecycleManagementLifecycleActionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstancePoolLifecycleManagementLifecycleActionsArgs:
+    def __init__(__self__, *,
+                 pre_termination: Optional[pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs']] = None):
+        """
+        :param pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs'] pre_termination: (Updatable) The data for pre-termination action for an instance pool
+        """
+        if pre_termination is not None:
+            pulumi.set(__self__, "pre_termination", pre_termination)
+
+    @_builtins.property
+    @pulumi.getter(name="preTermination")
+    def pre_termination(self) -> Optional[pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs']]:
+        """
+        (Updatable) The data for pre-termination action for an instance pool
+        """
+        return pulumi.get(self, "pre_termination")
+
+    @pre_termination.setter
+    def pre_termination(self, value: Optional[pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs']]):
+        pulumi.set(self, "pre_termination", value)
+
+
+if not MYPY:
+    class InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgsDict(TypedDict):
+        is_enabled: pulumi.Input[_builtins.bool]
+        """
+        (Updatable) Whether pre-termination action is enabled or not.
+        """
+        on_timeout: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgsDict']
+        """
+        (Updatable) Options to handle timeout for pre-termination action.
+        """
+        timeout: pulumi.Input[_builtins.int]
+        """
+        (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+elif False:
+    InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[_builtins.bool],
+                 on_timeout: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs'],
+                 timeout: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether pre-termination action is enabled or not.
+        :param pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs'] on_timeout: (Updatable) Options to handle timeout for pre-termination action.
+        :param pulumi.Input[_builtins.int] timeout: (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "on_timeout", on_timeout)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Whether pre-termination action is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="onTimeout")
+    def on_timeout(self) -> pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs']:
+        """
+        (Updatable) Options to handle timeout for pre-termination action.
+        """
+        return pulumi.get(self, "on_timeout")
+
+    @on_timeout.setter
+    def on_timeout(self, value: pulumi.Input['InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs']):
+        pulumi.set(self, "on_timeout", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timeout(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The timeout in seconds for pre-termination action for an instance pool(min = 0 sec, max = 7200 secs).
+        """
+        return pulumi.get(self, "timeout")
+
+    @timeout.setter
+    def timeout(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "timeout", value)
+
+
+if not MYPY:
+    class InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgsDict(TypedDict):
+        preserve_block_volume_mode: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Whether the block volume should be preserved after termination.
+        """
+        preserve_boot_volume_mode: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Whether the boot volume should be preserved after termination.
+        """
+elif False:
+    InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs:
+    def __init__(__self__, *,
+                 preserve_block_volume_mode: pulumi.Input[_builtins.str],
+                 preserve_boot_volume_mode: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] preserve_block_volume_mode: (Updatable) Whether the block volume should be preserved after termination.
+        :param pulumi.Input[_builtins.str] preserve_boot_volume_mode: (Updatable) Whether the boot volume should be preserved after termination.
+        """
+        pulumi.set(__self__, "preserve_block_volume_mode", preserve_block_volume_mode)
+        pulumi.set(__self__, "preserve_boot_volume_mode", preserve_boot_volume_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBlockVolumeMode")
+    def preserve_block_volume_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Whether the block volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_block_volume_mode")
+
+    @preserve_block_volume_mode.setter
+    def preserve_block_volume_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "preserve_block_volume_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="preserveBootVolumeMode")
+    def preserve_boot_volume_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Whether the boot volume should be preserved after termination.
+        """
+        return pulumi.get(self, "preserve_boot_volume_mode")
+
+    @preserve_boot_volume_mode.setter
+    def preserve_boot_volume_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "preserve_boot_volume_mode", value)
 
 
 if not MYPY:

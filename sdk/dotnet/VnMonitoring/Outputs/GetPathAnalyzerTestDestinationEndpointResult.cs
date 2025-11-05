@@ -34,6 +34,10 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// </summary>
         public readonly string NetworkLoadBalancerId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        /// </summary>
+        public readonly string PsaId;
+        /// <summary>
         /// The current state of the `PathAnalyzerTest` resource.
         /// </summary>
         public readonly string State;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
 
             string networkLoadBalancerId,
 
+            string psaId,
+
             string state,
 
             string subnetId,
@@ -81,6 +87,7 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
             ListenerId = listenerId;
             LoadBalancerId = loadBalancerId;
             NetworkLoadBalancerId = networkLoadBalancerId;
+            PsaId = psaId;
             State = state;
             SubnetId = subnetId;
             Type = type;

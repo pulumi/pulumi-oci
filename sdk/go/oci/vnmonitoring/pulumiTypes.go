@@ -24,6 +24,8 @@ type GetPathAnalyzerTestDestinationEndpoint struct {
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId string `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -58,6 +60,8 @@ type GetPathAnalyzerTestDestinationEndpointArgs struct {
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringInput `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -144,6 +148,11 @@ func (o GetPathAnalyzerTestDestinationEndpointOutput) LoadBalancerId() pulumi.St
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 func (o GetPathAnalyzerTestDestinationEndpointOutput) NetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPathAnalyzerTestDestinationEndpoint) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o GetPathAnalyzerTestDestinationEndpointOutput) PsaId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPathAnalyzerTestDestinationEndpoint) string { return v.PsaId }).(pulumi.StringOutput)
 }
 
 // The current state of the `PathAnalyzerTest` resource.
@@ -432,6 +441,8 @@ type GetPathAnalyzerTestSourceEndpoint struct {
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId string `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -466,6 +477,8 @@ type GetPathAnalyzerTestSourceEndpointArgs struct {
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringInput `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -552,6 +565,11 @@ func (o GetPathAnalyzerTestSourceEndpointOutput) LoadBalancerId() pulumi.StringO
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 func (o GetPathAnalyzerTestSourceEndpointOutput) NetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPathAnalyzerTestSourceEndpoint) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o GetPathAnalyzerTestSourceEndpointOutput) PsaId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPathAnalyzerTestSourceEndpoint) string { return v.PsaId }).(pulumi.StringOutput)
 }
 
 // The current state of the `PathAnalyzerTest` resource.
@@ -1034,6 +1052,8 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint struc
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId string `pulumi:"psaId"`
 	// A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -1068,6 +1088,8 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs s
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringInput `pulumi:"psaId"`
 	// A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -1162,6 +1184,11 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOut
 	return o.ApplyT(func(v GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint) string {
 		return v.NetworkLoadBalancerId
 	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput) PsaId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint) string { return v.PsaId }).(pulumi.StringOutput)
 }
 
 // A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
@@ -1456,6 +1483,8 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint struct {
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId string `pulumi:"psaId"`
 	// A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -1490,6 +1519,8 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs struct
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringInput `pulumi:"psaId"`
 	// A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -1582,6 +1613,11 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) 
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) PsaId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint) string { return v.PsaId }).(pulumi.StringOutput)
+}
+
 // A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint) string { return v.State }).(pulumi.StringOutput)
@@ -1638,7 +1674,9 @@ type PathAnalysiDestinationEndpoint struct {
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
-	State                 *string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId *string `pulumi:"psaId"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId *string `pulumi:"subnetId"`
 	// The type of the `Endpoint`.
@@ -1671,7 +1709,9 @@ type PathAnalysiDestinationEndpointArgs struct {
 	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
-	State                 pulumi.StringPtrInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringPtrInput `pulumi:"psaId"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The type of the `Endpoint`.
@@ -1784,6 +1824,11 @@ func (o PathAnalysiDestinationEndpointOutput) NetworkLoadBalancerId() pulumi.Str
 	return o.ApplyT(func(v PathAnalysiDestinationEndpoint) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalysiDestinationEndpointOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PathAnalysiDestinationEndpoint) *string { return v.PsaId }).(pulumi.StringPtrOutput)
+}
+
 func (o PathAnalysiDestinationEndpointOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalysiDestinationEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -1879,6 +1924,16 @@ func (o PathAnalysiDestinationEndpointPtrOutput) NetworkLoadBalancerId() pulumi.
 			return nil
 		}
 		return v.NetworkLoadBalancerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalysiDestinationEndpointPtrOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalysiDestinationEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PsaId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2292,7 +2347,9 @@ type PathAnalysiSourceEndpoint struct {
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
-	State                 *string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId *string `pulumi:"psaId"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId *string `pulumi:"subnetId"`
 	// The type of the `Endpoint`.
@@ -2325,7 +2382,9 @@ type PathAnalysiSourceEndpointArgs struct {
 	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
-	State                 pulumi.StringPtrInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringPtrInput `pulumi:"psaId"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The type of the `Endpoint`.
@@ -2438,6 +2497,11 @@ func (o PathAnalysiSourceEndpointOutput) NetworkLoadBalancerId() pulumi.StringPt
 	return o.ApplyT(func(v PathAnalysiSourceEndpoint) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalysiSourceEndpointOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PathAnalysiSourceEndpoint) *string { return v.PsaId }).(pulumi.StringPtrOutput)
+}
+
 func (o PathAnalysiSourceEndpointOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalysiSourceEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -2536,6 +2600,16 @@ func (o PathAnalysiSourceEndpointPtrOutput) NetworkLoadBalancerId() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalysiSourceEndpointPtrOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalysiSourceEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PsaId
+	}).(pulumi.StringPtrOutput)
+}
+
 func (o PathAnalysiSourceEndpointPtrOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalysiSourceEndpoint) *string {
 		if v == nil {
@@ -2596,6 +2670,8 @@ type PathAnalyzerTestDestinationEndpoint struct {
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId *string `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -2630,6 +2706,8 @@ type PathAnalyzerTestDestinationEndpointArgs struct {
 	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringPtrInput `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -2744,6 +2822,11 @@ func (o PathAnalyzerTestDestinationEndpointOutput) NetworkLoadBalancerId() pulum
 	return o.ApplyT(func(v PathAnalyzerTestDestinationEndpoint) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalyzerTestDestinationEndpointOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PathAnalyzerTestDestinationEndpoint) *string { return v.PsaId }).(pulumi.StringPtrOutput)
+}
+
 // The current state of the `PathAnalyzerTest` resource.
 func (o PathAnalyzerTestDestinationEndpointOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalyzerTestDestinationEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
@@ -2840,6 +2923,16 @@ func (o PathAnalyzerTestDestinationEndpointPtrOutput) NetworkLoadBalancerId() pu
 			return nil
 		}
 		return v.NetworkLoadBalancerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalyzerTestDestinationEndpointPtrOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalyzerTestDestinationEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PsaId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3254,6 +3347,8 @@ type PathAnalyzerTestSourceEndpoint struct {
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId *string `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -3291,6 +3386,8 @@ type PathAnalyzerTestSourceEndpointArgs struct {
 	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
 	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+	PsaId pulumi.StringPtrInput `pulumi:"psaId"`
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -3408,6 +3505,11 @@ func (o PathAnalyzerTestSourceEndpointOutput) NetworkLoadBalancerId() pulumi.Str
 	return o.ApplyT(func(v PathAnalyzerTestSourceEndpoint) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalyzerTestSourceEndpointOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PathAnalyzerTestSourceEndpoint) *string { return v.PsaId }).(pulumi.StringPtrOutput)
+}
+
 // The current state of the `PathAnalyzerTest` resource.
 func (o PathAnalyzerTestSourceEndpointOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalyzerTestSourceEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
@@ -3507,6 +3609,16 @@ func (o PathAnalyzerTestSourceEndpointPtrOutput) NetworkLoadBalancerId() pulumi.
 			return nil
 		}
 		return v.NetworkLoadBalancerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+func (o PathAnalyzerTestSourceEndpointPtrOutput) PsaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalyzerTestSourceEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PsaId
 	}).(pulumi.StringPtrOutput)
 }
 

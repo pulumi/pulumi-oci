@@ -110,6 +110,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
         """
+        psa_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
         state: NotRequired[pulumi.Input[_builtins.str]]
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -135,6 +139,7 @@ class PathAnalysiDestinationEndpointArgs:
                  listener_id: Optional[pulumi.Input[_builtins.str]] = None,
                  load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 psa_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -146,6 +151,7 @@ class PathAnalysiDestinationEndpointArgs:
         :param pulumi.Input[_builtins.str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        :param pulumi.Input[_builtins.str] psa_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
@@ -161,6 +167,8 @@ class PathAnalysiDestinationEndpointArgs:
             pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
             pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+        if psa_id is not None:
+            pulumi.set(__self__, "psa_id", psa_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -241,6 +249,18 @@ class PathAnalysiDestinationEndpointArgs:
     @network_load_balancer_id.setter
     def network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "network_load_balancer_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="psaId")
+    def psa_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
+        return pulumi.get(self, "psa_id")
+
+    @psa_id.setter
+    def psa_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "psa_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -457,6 +477,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
         """
+        psa_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
         state: NotRequired[pulumi.Input[_builtins.str]]
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -482,6 +506,7 @@ class PathAnalysiSourceEndpointArgs:
                  listener_id: Optional[pulumi.Input[_builtins.str]] = None,
                  load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 psa_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -493,6 +518,7 @@ class PathAnalysiSourceEndpointArgs:
         :param pulumi.Input[_builtins.str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        :param pulumi.Input[_builtins.str] psa_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
@@ -508,6 +534,8 @@ class PathAnalysiSourceEndpointArgs:
             pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
             pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+        if psa_id is not None:
+            pulumi.set(__self__, "psa_id", psa_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -590,6 +618,18 @@ class PathAnalysiSourceEndpointArgs:
         pulumi.set(self, "network_load_balancer_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="psaId")
+    def psa_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
+        return pulumi.get(self, "psa_id")
+
+    @psa_id.setter
+    def psa_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "psa_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "state")
@@ -661,6 +701,10 @@ if not MYPY:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
         """
+        psa_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
         The current state of the `PathAnalyzerTest` resource.
@@ -689,6 +733,7 @@ class PathAnalyzerTestDestinationEndpointArgs:
                  listener_id: Optional[pulumi.Input[_builtins.str]] = None,
                  load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 psa_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -700,6 +745,7 @@ class PathAnalyzerTestDestinationEndpointArgs:
         :param pulumi.Input[_builtins.str] listener_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
         :param pulumi.Input[_builtins.str] load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
         :param pulumi.Input[_builtins.str] network_load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        :param pulumi.Input[_builtins.str] psa_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
         :param pulumi.Input[_builtins.str] state: The current state of the `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
@@ -716,6 +762,8 @@ class PathAnalyzerTestDestinationEndpointArgs:
             pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
             pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+        if psa_id is not None:
+            pulumi.set(__self__, "psa_id", psa_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -796,6 +844,18 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @network_load_balancer_id.setter
     def network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "network_load_balancer_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="psaId")
+    def psa_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
+        return pulumi.get(self, "psa_id")
+
+    @psa_id.setter
+    def psa_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "psa_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1015,6 +1075,10 @@ if not MYPY:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
         """
+        psa_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
         The current state of the `PathAnalyzerTest` resource.
@@ -1047,6 +1111,7 @@ class PathAnalyzerTestSourceEndpointArgs:
                  listener_id: Optional[pulumi.Input[_builtins.str]] = None,
                  load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 psa_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1058,6 +1123,7 @@ class PathAnalyzerTestSourceEndpointArgs:
         :param pulumi.Input[_builtins.str] listener_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
         :param pulumi.Input[_builtins.str] load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
         :param pulumi.Input[_builtins.str] network_load_balancer_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        :param pulumi.Input[_builtins.str] psa_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
         :param pulumi.Input[_builtins.str] state: The current state of the `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param pulumi.Input[_builtins.str] vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
@@ -1078,6 +1144,8 @@ class PathAnalyzerTestSourceEndpointArgs:
             pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
             pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+        if psa_id is not None:
+            pulumi.set(__self__, "psa_id", psa_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -1158,6 +1226,18 @@ class PathAnalyzerTestSourceEndpointArgs:
     @network_load_balancer_id.setter
     def network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "network_load_balancer_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="psaId")
+    def psa_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        """
+        return pulumi.get(self, "psa_id")
+
+    @psa_id.setter
+    def psa_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "psa_id", value)
 
     @_builtins.property
     @pulumi.getter

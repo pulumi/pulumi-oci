@@ -46,6 +46,18 @@ import * as utilities from "../utilities";
  *     },
  *     instanceDisplayNameFormatter: instancePoolInstanceDisplayNameFormatter,
  *     instanceHostnameFormatter: instancePoolInstanceHostnameFormatter,
+ *     lifecycleManagement: {
+ *         lifecycleActions: {
+ *             preTermination: {
+ *                 isEnabled: instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled,
+ *                 onTimeout: {
+ *                     preserveBlockVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBlockVolumeMode,
+ *                     preserveBootVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBootVolumeMode,
+ *                 },
+ *                 timeout: instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout,
+ *             },
+ *         },
+ *     },
  *     loadBalancers: [{
  *         backendSetName: testBackendSet.name,
  *         loadBalancerId: testLoadBalancer.id,
@@ -124,6 +136,10 @@ export class InstancePool extends pulumi.CustomResource {
      */
     declare public readonly instanceHostnameFormatter: pulumi.Output<string>;
     /**
+     * (Updatable) The lifecycle management options for the instance pool.
+     */
+    declare public readonly lifecycleManagement: pulumi.Output<outputs.Core.InstancePoolLifecycleManagement>;
+    /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     declare public readonly loadBalancers: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
@@ -171,6 +187,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
             resourceInputs["instanceDisplayNameFormatter"] = state?.instanceDisplayNameFormatter;
             resourceInputs["instanceHostnameFormatter"] = state?.instanceHostnameFormatter;
+            resourceInputs["lifecycleManagement"] = state?.lifecycleManagement;
             resourceInputs["loadBalancers"] = state?.loadBalancers;
             resourceInputs["placementConfigurations"] = state?.placementConfigurations;
             resourceInputs["size"] = state?.size;
@@ -197,6 +214,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceConfigurationId"] = args?.instanceConfigurationId;
             resourceInputs["instanceDisplayNameFormatter"] = args?.instanceDisplayNameFormatter;
             resourceInputs["instanceHostnameFormatter"] = args?.instanceHostnameFormatter;
+            resourceInputs["lifecycleManagement"] = args?.lifecycleManagement;
             resourceInputs["loadBalancers"] = args?.loadBalancers;
             resourceInputs["placementConfigurations"] = args?.placementConfigurations;
             resourceInputs["size"] = args?.size;
@@ -245,6 +263,10 @@ export interface InstancePoolState {
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
     instanceHostnameFormatter?: pulumi.Input<string>;
+    /**
+     * (Updatable) The lifecycle management options for the instance pool.
+     */
+    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement>;
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
@@ -305,6 +327,10 @@ export interface InstancePoolArgs {
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
     instanceHostnameFormatter?: pulumi.Input<string>;
+    /**
+     * (Updatable) The lifecycle management options for the instance pool.
+     */
+    lifecycleManagement?: pulumi.Input<inputs.Core.InstancePoolLifecycleManagement>;
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */

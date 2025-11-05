@@ -81,6 +81,10 @@ export interface GetInstancePoolResult {
      */
     readonly instancePoolId: string;
     /**
+     * The lifecycle management options for the instance pool.
+     */
+    readonly lifecycleManagements: outputs.Core.GetInstancePoolLifecycleManagement[];
+    /**
      * The load balancers attached to the instance pool.
      */
     readonly loadBalancers: outputs.Core.GetInstancePoolLoadBalancer[];

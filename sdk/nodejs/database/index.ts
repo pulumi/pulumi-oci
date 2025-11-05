@@ -185,6 +185,16 @@ export type DbNodeConsoleHistory = import("./dbNodeConsoleHistory").DbNodeConsol
 export const DbNodeConsoleHistory: typeof import("./dbNodeConsoleHistory").DbNodeConsoleHistory = null as any;
 utilities.lazyLoad(exports, ["DbNodeConsoleHistory"], () => require("./dbNodeConsoleHistory"));
 
+export { DbNodeSnapshotArgs, DbNodeSnapshotState } from "./dbNodeSnapshot";
+export type DbNodeSnapshot = import("./dbNodeSnapshot").DbNodeSnapshot;
+export const DbNodeSnapshot: typeof import("./dbNodeSnapshot").DbNodeSnapshot = null as any;
+utilities.lazyLoad(exports, ["DbNodeSnapshot"], () => require("./dbNodeSnapshot"));
+
+export { DbNodeSnapshotManagementArgs, DbNodeSnapshotManagementState } from "./dbNodeSnapshotManagement";
+export type DbNodeSnapshotManagement = import("./dbNodeSnapshotManagement").DbNodeSnapshotManagement;
+export const DbNodeSnapshotManagement: typeof import("./dbNodeSnapshotManagement").DbNodeSnapshotManagement = null as any;
+utilities.lazyLoad(exports, ["DbNodeSnapshotManagement"], () => require("./dbNodeSnapshotManagement"));
+
 export { DbSystemArgs, DbSystemState } from "./dbSystem";
 export type DbSystem = import("./dbSystem").DbSystem;
 export const DbSystem: typeof import("./dbSystem").DbSystem = null as any;
@@ -669,6 +679,16 @@ export { GetDbNodeConsoleHistoryContentArgs, GetDbNodeConsoleHistoryContentResul
 export const getDbNodeConsoleHistoryContent: typeof import("./getDbNodeConsoleHistoryContent").getDbNodeConsoleHistoryContent = null as any;
 export const getDbNodeConsoleHistoryContentOutput: typeof import("./getDbNodeConsoleHistoryContent").getDbNodeConsoleHistoryContentOutput = null as any;
 utilities.lazyLoad(exports, ["getDbNodeConsoleHistoryContent","getDbNodeConsoleHistoryContentOutput"], () => require("./getDbNodeConsoleHistoryContent"));
+
+export { GetDbNodeSnapshotArgs, GetDbNodeSnapshotResult, GetDbNodeSnapshotOutputArgs } from "./getDbNodeSnapshot";
+export const getDbNodeSnapshot: typeof import("./getDbNodeSnapshot").getDbNodeSnapshot = null as any;
+export const getDbNodeSnapshotOutput: typeof import("./getDbNodeSnapshot").getDbNodeSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeSnapshot","getDbNodeSnapshotOutput"], () => require("./getDbNodeSnapshot"));
+
+export { GetDbNodeSnapshotsArgs, GetDbNodeSnapshotsResult, GetDbNodeSnapshotsOutputArgs } from "./getDbNodeSnapshots";
+export const getDbNodeSnapshots: typeof import("./getDbNodeSnapshots").getDbNodeSnapshots = null as any;
+export const getDbNodeSnapshotsOutput: typeof import("./getDbNodeSnapshots").getDbNodeSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeSnapshots","getDbNodeSnapshotsOutput"], () => require("./getDbNodeSnapshots"));
 
 export { GetDbNodesArgs, GetDbNodesResult, GetDbNodesOutputArgs } from "./getDbNodes";
 export const getDbNodes: typeof import("./getDbNodes").getDbNodes = null as any;
@@ -1222,6 +1242,10 @@ const _module = {
                 return new DbNodeConsoleConnection(name, <any>undefined, { urn })
             case "oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory":
                 return new DbNodeConsoleHistory(name, <any>undefined, { urn })
+            case "oci:Database/dbNodeSnapshot:DbNodeSnapshot":
+                return new DbNodeSnapshot(name, <any>undefined, { urn })
+            case "oci:Database/dbNodeSnapshotManagement:DbNodeSnapshotManagement":
+                return new DbNodeSnapshotManagement(name, <any>undefined, { urn })
             case "oci:Database/dbSystem:DbSystem":
                 return new DbSystem(name, <any>undefined, { urn })
             case "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade":
@@ -1341,6 +1365,8 @@ pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNode", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleConnection", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleHistory", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dbNodeSnapshot", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dbNodeSnapshotManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _module)

@@ -73,6 +73,22 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         InstanceDisplayNameFormatter = instancePoolInstanceDisplayNameFormatter,
     ///         InstanceHostnameFormatter = instancePoolInstanceHostnameFormatter,
+    ///         LifecycleManagement = new Oci.Core.Inputs.InstancePoolLifecycleManagementArgs
+    ///         {
+    ///             LifecycleActions = new Oci.Core.Inputs.InstancePoolLifecycleManagementLifecycleActionsArgs
+    ///             {
+    ///                 PreTermination = new Oci.Core.Inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs
+    ///                 {
+    ///                     IsEnabled = instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled,
+    ///                     OnTimeout = new Oci.Core.Inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs
+    ///                     {
+    ///                         PreserveBlockVolumeMode = instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBlockVolumeMode,
+    ///                         PreserveBootVolumeMode = instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBootVolumeMode,
+    ///                     },
+    ///                     Timeout = instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout,
+    ///                 },
+    ///             },
+    ///         },
     ///         LoadBalancers = new[]
     ///         {
     ///             new Oci.Core.Inputs.InstancePoolLoadBalancerArgs
@@ -146,6 +162,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("instanceHostnameFormatter")]
         public Output<string> InstanceHostnameFormatter { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The lifecycle management options for the instance pool.
+        /// </summary>
+        [Output("lifecycleManagement")]
+        public Output<Outputs.InstancePoolLifecycleManagement> LifecycleManagement { get; private set; } = null!;
 
         /// <summary>
         /// The load balancers to attach to the instance pool. (Note: From 6.16.0 LoadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
@@ -283,6 +305,12 @@ namespace Pulumi.Oci.Core
         [Input("instanceHostnameFormatter")]
         public Input<string>? InstanceHostnameFormatter { get; set; }
 
+        /// <summary>
+        /// (Updatable) The lifecycle management options for the instance pool.
+        /// </summary>
+        [Input("lifecycleManagement")]
+        public Input<Inputs.InstancePoolLifecycleManagementArgs>? LifecycleManagement { get; set; }
+
         [Input("loadBalancers")]
         private InputList<Inputs.InstancePoolLoadBalancerArgs>? _loadBalancers;
 
@@ -392,6 +420,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("instanceHostnameFormatter")]
         public Input<string>? InstanceHostnameFormatter { get; set; }
+
+        /// <summary>
+        /// (Updatable) The lifecycle management options for the instance pool.
+        /// </summary>
+        [Input("lifecycleManagement")]
+        public Input<Inputs.InstancePoolLifecycleManagementGetArgs>? LifecycleManagement { get; set; }
 
         [Input("loadBalancers")]
         private InputList<Inputs.InstancePoolLoadBalancerGetArgs>? _loadBalancers;

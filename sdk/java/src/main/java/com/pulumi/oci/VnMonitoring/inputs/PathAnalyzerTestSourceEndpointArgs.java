@@ -92,6 +92,21 @@ public final class PathAnalyzerTestSourceEndpointArgs extends com.pulumi.resourc
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    @Import(name="psaId")
+    private @Nullable Output<String> psaId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    public Optional<Output<String>> psaId() {
+        return Optional.ofNullable(this.psaId);
+    }
+
+    /**
      * The current state of the `PathAnalyzerTest` resource.
      * 
      */
@@ -180,6 +195,7 @@ public final class PathAnalyzerTestSourceEndpointArgs extends com.pulumi.resourc
         this.listenerId = $.listenerId;
         this.loadBalancerId = $.loadBalancerId;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
+        this.psaId = $.psaId;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.type = $.type;
@@ -308,6 +324,27 @@ public final class PathAnalyzerTestSourceEndpointArgs extends com.pulumi.resourc
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             return networkLoadBalancerId(Output.of(networkLoadBalancerId));
+        }
+
+        /**
+         * @param psaId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder psaId(@Nullable Output<String> psaId) {
+            $.psaId = psaId;
+            return this;
+        }
+
+        /**
+         * @param psaId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder psaId(String psaId) {
+            return psaId(Output.of(psaId));
         }
 
         /**

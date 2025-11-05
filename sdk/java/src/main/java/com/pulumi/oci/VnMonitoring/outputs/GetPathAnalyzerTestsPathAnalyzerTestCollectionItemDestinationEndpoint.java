@@ -36,6 +36,11 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
      */
     private String networkLoadBalancerId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    private String psaId;
+    /**
      * @return A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
      * 
      */
@@ -98,6 +103,13 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
         return this.networkLoadBalancerId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+     * 
+     */
+    public String psaId() {
+        return this.psaId;
+    }
+    /**
      * @return A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
      * 
      */
@@ -147,6 +159,7 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
         private String listenerId;
         private String loadBalancerId;
         private String networkLoadBalancerId;
+        private String psaId;
         private String state;
         private String subnetId;
         private String type;
@@ -160,6 +173,7 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
     	      this.listenerId = defaults.listenerId;
     	      this.loadBalancerId = defaults.loadBalancerId;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
+    	      this.psaId = defaults.psaId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.type = defaults.type;
@@ -205,6 +219,14 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
               throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "networkLoadBalancerId");
             }
             this.networkLoadBalancerId = networkLoadBalancerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder psaId(String psaId) {
+            if (psaId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "psaId");
+            }
+            this.psaId = psaId;
             return this;
         }
         @CustomType.Setter
@@ -254,6 +276,7 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
             _resultValue.listenerId = listenerId;
             _resultValue.loadBalancerId = loadBalancerId;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.psaId = psaId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.type = type;

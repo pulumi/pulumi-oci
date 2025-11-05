@@ -33,6 +33,10 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
         /// </summary>
         public readonly string? NetworkLoadBalancerId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PSA.
+        /// </summary>
+        public readonly string? PsaId;
         public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
@@ -63,6 +67,8 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
 
             string? networkLoadBalancerId,
 
+            string? psaId,
+
             string? state,
 
             string? subnetId,
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
             ListenerId = listenerId;
             LoadBalancerId = loadBalancerId;
             NetworkLoadBalancerId = networkLoadBalancerId;
+            PsaId = psaId;
             State = state;
             SubnetId = subnetId;
             Type = type;

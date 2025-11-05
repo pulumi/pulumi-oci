@@ -27,7 +27,7 @@ class GetInstancePoolResult:
     """
     A collection of values returned by getInstancePool.
     """
-    def __init__(__self__, actual_size=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
+    def __init__(__self__, actual_size=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
         if actual_size and not isinstance(actual_size, int):
             raise TypeError("Expected argument 'actual_size' to be a int")
         pulumi.set(__self__, "actual_size", actual_size)
@@ -58,6 +58,9 @@ class GetInstancePoolResult:
         if instance_pool_id and not isinstance(instance_pool_id, str):
             raise TypeError("Expected argument 'instance_pool_id' to be a str")
         pulumi.set(__self__, "instance_pool_id", instance_pool_id)
+        if lifecycle_managements and not isinstance(lifecycle_managements, list):
+            raise TypeError("Expected argument 'lifecycle_managements' to be a list")
+        pulumi.set(__self__, "lifecycle_managements", lifecycle_managements)
         if load_balancers and not isinstance(load_balancers, list):
             raise TypeError("Expected argument 'load_balancers' to be a list")
         pulumi.set(__self__, "load_balancers", load_balancers)
@@ -152,6 +155,14 @@ class GetInstancePoolResult:
         return pulumi.get(self, "instance_pool_id")
 
     @_builtins.property
+    @pulumi.getter(name="lifecycleManagements")
+    def lifecycle_managements(self) -> Sequence['outputs.GetInstancePoolLifecycleManagementResult']:
+        """
+        The lifecycle management options for the instance pool.
+        """
+        return pulumi.get(self, "lifecycle_managements")
+
+    @_builtins.property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Sequence['outputs.GetInstancePoolLoadBalancerResult']:
         """
@@ -208,6 +219,7 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
             instance_display_name_formatter=self.instance_display_name_formatter,
             instance_hostname_formatter=self.instance_hostname_formatter,
             instance_pool_id=self.instance_pool_id,
+            lifecycle_managements=self.lifecycle_managements,
             load_balancers=self.load_balancers,
             placement_configurations=self.placement_configurations,
             size=self.size,
@@ -250,6 +262,7 @@ def get_instance_pool(instance_pool_id: Optional[_builtins.str] = None,
         instance_display_name_formatter=pulumi.get(__ret__, 'instance_display_name_formatter'),
         instance_hostname_formatter=pulumi.get(__ret__, 'instance_hostname_formatter'),
         instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
+        lifecycle_managements=pulumi.get(__ret__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
         placement_configurations=pulumi.get(__ret__, 'placement_configurations'),
         size=pulumi.get(__ret__, 'size'),
@@ -289,6 +302,7 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[_builtins.s
         instance_display_name_formatter=pulumi.get(__response__, 'instance_display_name_formatter'),
         instance_hostname_formatter=pulumi.get(__response__, 'instance_hostname_formatter'),
         instance_pool_id=pulumi.get(__response__, 'instance_pool_id'),
+        lifecycle_managements=pulumi.get(__response__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__response__, 'load_balancers'),
         placement_configurations=pulumi.get(__response__, 'placement_configurations'),
         size=pulumi.get(__response__, 'size'),

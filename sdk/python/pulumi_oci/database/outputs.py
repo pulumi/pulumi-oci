@@ -146,6 +146,11 @@ __all__ = [
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetail',
     'DbHomeDatabaseEncryptionKeyLocationDetails',
     'DbHomeDatabaseStorageSizeDetails',
+    'DbNodeSnapshotManagementSnapshot',
+    'DbNodeSnapshotManagementSnapshotMountPoint',
+    'DbNodeSnapshotManagementSnapshotVolume',
+    'DbNodeSnapshotMountPoint',
+    'DbNodeSnapshotVolume',
     'DbSystemDataCollectionOptions',
     'DbSystemDbHome',
     'DbSystemDbHomeDatabase',
@@ -586,6 +591,12 @@ __all__ = [
     'GetDbNodeConsoleHistoriesConsoleHistoryCollectionResult',
     'GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemResult',
     'GetDbNodeConsoleHistoriesFilterResult',
+    'GetDbNodeSnapshotMountPointResult',
+    'GetDbNodeSnapshotVolumeResult',
+    'GetDbNodeSnapshotsDbnodeSnapshotResult',
+    'GetDbNodeSnapshotsDbnodeSnapshotMountPointResult',
+    'GetDbNodeSnapshotsDbnodeSnapshotVolumeResult',
+    'GetDbNodeSnapshotsFilterResult',
     'GetDbNodesDbNodeResult',
     'GetDbNodesFilterResult',
     'GetDbServerDbServerPatchingDetailResult',
@@ -12854,6 +12865,360 @@ class DbHomeDatabaseStorageSizeDetails(dict):
     @pulumi.getter(name="redoLogStorageSizeInGbs")
     def redo_log_storage_size_in_gbs(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+
+@pulumi.output_type
+class DbNodeSnapshotManagementSnapshot(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clusterId":
+            suggest = "cluster_id"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "mountPoints":
+            suggest = "mount_points"
+        elif key == "sourceDbnodeId":
+            suggest = "source_dbnode_id"
+        elif key == "systemTags":
+            suggest = "system_tags"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbNodeSnapshotManagementSnapshot. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbNodeSnapshotManagementSnapshot.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbNodeSnapshotManagementSnapshot.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cluster_id: Optional[_builtins.str] = None,
+                 compartment_id: Optional[_builtins.str] = None,
+                 defined_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 id: Optional[_builtins.str] = None,
+                 lifecycle_details: Optional[_builtins.str] = None,
+                 mount_points: Optional[Sequence['outputs.DbNodeSnapshotManagementSnapshotMountPoint']] = None,
+                 name: Optional[_builtins.str] = None,
+                 source_dbnode_id: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None,
+                 system_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 volumes: Optional[Sequence['outputs.DbNodeSnapshotManagementSnapshotVolume']] = None):
+        """
+        :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+        :param Sequence['DbNodeSnapshotManagementSnapshotMountPointArgs'] mount_points: Details of the mount points
+        :param _builtins.str name: The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        :param _builtins.str source_dbnode_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
+        :param _builtins.str state: The current state of the Exadata Database Node Snapshot.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str time_created: The date and time that the Exadata Database Node Snapshot was created.
+        :param Sequence['DbNodeSnapshotManagementSnapshotVolumeArgs'] volumes: Details of the volumes
+        """
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if mount_points is not None:
+            pulumi.set(__self__, "mount_points", mount_points)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if source_dbnode_id is not None:
+            pulumi.set(__self__, "source_dbnode_id", source_dbnode_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if volumes is not None:
+            pulumi.set(__self__, "volumes", volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[_builtins.str]:
+        """
+        Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Optional[Sequence['outputs.DbNodeSnapshotManagementSnapshotMountPoint']]:
+        """
+        Details of the mount points
+        """
+        return pulumi.get(self, "mount_points")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDbnodeId")
+    def source_dbnode_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
+        """
+        return pulumi.get(self, "source_dbnode_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The current state of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The date and time that the Exadata Database Node Snapshot was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> Optional[Sequence['outputs.DbNodeSnapshotManagementSnapshotVolume']]:
+        """
+        Details of the volumes
+        """
+        return pulumi.get(self, "volumes")
+
+
+@pulumi.output_type
+class DbNodeSnapshotManagementSnapshotMountPoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbNodeId":
+            suggest = "db_node_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbNodeSnapshotManagementSnapshotMountPoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbNodeSnapshotManagementSnapshotMountPoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbNodeSnapshotManagementSnapshotMountPoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_node_id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        :param _builtins.str name: The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        """
+        if db_node_id is not None:
+            pulumi.set(__self__, "db_node_id", db_node_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class DbNodeSnapshotManagementSnapshotVolume(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None,
+                 size: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str name: The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        :param _builtins.int size: Volume Size
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> Optional[_builtins.int]:
+        """
+        Volume Size
+        """
+        return pulumi.get(self, "size")
+
+
+@pulumi.output_type
+class DbNodeSnapshotMountPoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbNodeId":
+            suggest = "db_node_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbNodeSnapshotMountPoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbNodeSnapshotMountPoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbNodeSnapshotMountPoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_node_id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        :param _builtins.str name: Volume Name
+        """
+        if db_node_id is not None:
+            pulumi.set(__self__, "db_node_id", db_node_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Volume Name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class DbNodeSnapshotVolume(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None,
+                 size: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str name: Volume Name
+        :param _builtins.int size: Volume Size
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Volume Name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> Optional[_builtins.int]:
+        """
+        Volume Size
+        """
+        return pulumi.get(self, "size")
 
 
 @pulumi.output_type
@@ -49676,6 +50041,327 @@ class GetDbNodeConsoleHistoriesFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotMountPointResult(dict):
+    def __init__(__self__, *,
+                 db_node_id: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        :param _builtins.str name: Volume Name
+        """
+        pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Volume Name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotVolumeResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 size: _builtins.int):
+        """
+        :param _builtins.str name: Volume Name
+        :param _builtins.int size: Volume Size
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Volume Name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> _builtins.int:
+        """
+        Volume Size
+        """
+        return pulumi.get(self, "size")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotsDbnodeSnapshotResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 dbnode_snapshot_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 mount_dbnode_id: _builtins.str,
+                 mount_points: Sequence['outputs.GetDbNodeSnapshotsDbnodeSnapshotMountPointResult'],
+                 name: _builtins.str,
+                 source_dbnode_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 volumes: Sequence['outputs.GetDbNodeSnapshotsDbnodeSnapshotVolumeResult']):
+        """
+        :param _builtins.str cluster_id: A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str dbnode_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+        :param _builtins.str mount_dbnode_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot is mounted. If the snapshot is not mounted to any node, then the value of `mount_dbnode_id` will be `"null"`.
+        :param Sequence['GetDbNodeSnapshotsDbnodeSnapshotMountPointArgs'] mount_points: Details of the mount points
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param _builtins.str source_dbnode_id: A filter to return only Exadata Database Snapshots that match the given database node.
+        :param _builtins.str state: A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str time_created: The date and time that the Exadata Database Node Snapshot was created.
+        :param Sequence['GetDbNodeSnapshotsDbnodeSnapshotVolumeArgs'] volumes: Details of the volumes
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dbnode_snapshot_id", dbnode_snapshot_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mount_dbnode_id", mount_dbnode_id)
+        pulumi.set(__self__, "mount_points", mount_points)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source_dbnode_id", source_dbnode_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "volumes", volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbnodeSnapshotId")
+    def dbnode_snapshot_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "dbnode_snapshot_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="mountDbnodeId")
+    def mount_dbnode_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot is mounted. If the snapshot is not mounted to any node, then the value of `mount_dbnode_id` will be `"null"`.
+        """
+        return pulumi.get(self, "mount_dbnode_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Sequence['outputs.GetDbNodeSnapshotsDbnodeSnapshotMountPointResult']:
+        """
+        Details of the mount points
+        """
+        return pulumi.get(self, "mount_points")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDbnodeId")
+    def source_dbnode_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Snapshots that match the given database node.
+        """
+        return pulumi.get(self, "source_dbnode_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the Exadata Database Node Snapshot was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> Sequence['outputs.GetDbNodeSnapshotsDbnodeSnapshotVolumeResult']:
+        """
+        Details of the volumes
+        """
+        return pulumi.get(self, "volumes")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotsDbnodeSnapshotMountPointResult(dict):
+    def __init__(__self__, *,
+                 db_node_id: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotsDbnodeSnapshotVolumeResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 size: _builtins.int):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param _builtins.int size: Volume Size
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> _builtins.int:
+        """
+        Volume Size
+        """
+        return pulumi.get(self, "size")
+
+
+@pulumi.output_type
+class GetDbNodeSnapshotsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property

@@ -187,6 +187,21 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_guard_configuration = oci.cloudguard.CloudGuardConfiguration("test_cloud_guard_configuration",
+            compartment_id=compartment_id,
+            reporting_region=cloud_guard_configuration_reporting_region,
+            status=cloud_guard_configuration_status,
+            self_manage_resources=cloud_guard_configuration_self_manage_resources,
+            service_configurations=[{
+                "serviceConfigurationType": cloud_guard_configuration_service_configurations_service_configuration_type,
+                "status": cloud_guard_configuration_service_configurations_status,
+            }])
+        ```
+
         ## Import
 
         Import is not supported for this resource.
@@ -210,6 +225,21 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_guard_configuration = oci.cloudguard.CloudGuardConfiguration("test_cloud_guard_configuration",
+            compartment_id=compartment_id,
+            reporting_region=cloud_guard_configuration_reporting_region,
+            status=cloud_guard_configuration_status,
+            self_manage_resources=cloud_guard_configuration_self_manage_resources,
+            service_configurations=[{
+                "serviceConfigurationType": cloud_guard_configuration_service_configurations_service_configuration_type,
+                "status": cloud_guard_configuration_service_configurations_status,
+            }])
+        ```
 
         ## Import
 

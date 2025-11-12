@@ -11,6 +11,54 @@ namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = new Oci.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management", new()
+    ///     {
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         EnableAutonomousDatabaseDbmFeature = enableAutonomousDatabaseDbmFeature,
+    ///         FeatureDetails = new Oci.DatabaseManagement.Inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs
+    ///         {
+    ///             Feature = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature,
+    ///             EnableAutonomousDatabaseDbmFeature = enableAutonomousDatabaseDbmFeature,
+    ///             DatabaseConnectionDetails = new Oci.DatabaseManagement.Inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs
+    ///             {
+    ///                 ConnectionCredentials = new Oci.DatabaseManagement.Inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs
+    ///                 {
+    ///                     CredentialName = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+    ///                     CredentialType = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+    ///                     PasswordSecretId = testSecret.Id,
+    ///                     Role = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+    ///                     SslSecretId = testSecret.Id,
+    ///                     UserName = testUser.Name,
+    ///                 },
+    ///                 ConnectionString = new Oci.DatabaseManagement.Inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs
+    ///                 {
+    ///                     ConnectionType = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+    ///                     Port = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+    ///                     Protocol = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+    ///                     Service = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+    ///                 },
+    ///             },
+    ///             ConnectorDetails = new Oci.DatabaseManagement.Inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs
+    ///             {
+    ///                 ConnectorType = autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+    ///                 DatabaseConnectorId = testDatabaseConnector.Id,
+    ///                 ManagementAgentId = testManagementAgent.Id,
+    ///                 PrivateEndPointId = testPrivateEndPoint.Id,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement")]
     public partial class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement : global::Pulumi.CustomResource

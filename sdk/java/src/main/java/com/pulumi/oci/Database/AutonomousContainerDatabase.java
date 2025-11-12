@@ -33,6 +33,127 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabase;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase("testAutonomousContainerDatabase", AutonomousContainerDatabaseArgs.builder()
+ *             .displayName(autonomousContainerDatabaseDisplayName)
+ *             .patchModel(autonomousContainerDatabasePatchModel)
+ *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackup.id())
+ *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+ *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .backupConfig(AutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs.builder()
+ *                     .type(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
+ *                     .dbrsPolicyId(testPolicy.id())
+ *                     .id(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
+ *                     .internetProxy(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
+ *                     .isRemote(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .isRetentionLockEnabled(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
+ *                     .remoteRegion(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
+ *                     .vpcPassword(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
+ *                     .vpcUser(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
+ *                     .build())
+ *                 .recoveryWindowInDays(autonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
+ *                 .build())
+ *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .compartmentId(compartmentId)
+ *             .customerContacts(AutonomousContainerDatabaseCustomerContactArgs.builder()
+ *                 .email(autonomousContainerDatabaseCustomerContactsEmail)
+ *                 .build())
+ *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
+ *             .dbName(autonomousContainerDatabaseDbName)
+ *             .dbSplitThreshold(autonomousContainerDatabaseDbSplitThreshold)
+ *             .dbUniqueName(autonomousContainerDatabaseDbUniqueName)
+ *             .dbVersion(autonomousContainerDatabaseDbVersion)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .distributionAffinity(autonomousContainerDatabaseDistributionAffinity)
+ *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isAutomaticFailoverEnabled(autonomousContainerDatabaseIsAutomaticFailoverEnabled)
+ *             .isDstFileUpdateEnabled(autonomousContainerDatabaseIsDstFileUpdateEnabled)
+ *             .keyStoreId(testKeyStore.id())
+ *             .kmsKeyId(testKey.id())
+ *             .kmsKeyVersionId(testKeyVersion.id())
+ *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
+ *                 .customActionTimeoutInMins(autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins)
+ *                 .daysOfWeeks(AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs.builder()
+ *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName)
+ *                     .build())
+ *                 .hoursOfDays(autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay)
+ *                 .isCustomActionTimeoutEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled)
+ *                 .isMonthlyPatchingEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled)
+ *                 .leadTimeInWeeks(autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks)
+ *                 .months(AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs.builder()
+ *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName)
+ *                     .build())
+ *                 .patchingMode(autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode)
+ *                 .preference(autonomousContainerDatabaseMaintenanceWindowDetailsPreference)
+ *                 .skipRus(autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu)
+ *                 .weeksOfMonths(autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth)
+ *                 .build())
+ *             .netServicesArchitecture(autonomousContainerDatabaseNetServicesArchitecture)
+ *             .okvEndPointGroupName(testGroup.name())
+ *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
+ *                     .type(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
+ *                     .dbrsPolicyId(testPolicy.id())
+ *                     .id(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
+ *                     .internetProxy(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
+ *                     .isRemote(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .isRetentionLockEnabled(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
+ *                     .remoteRegion(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
+ *                     .vpcPassword(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
+ *                     .vpcUser(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
+ *                     .build())
+ *                 .recoveryWindowInDays(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.id())
+ *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName)
+ *             .peerAutonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+ *             .peerAutonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .peerDbUniqueName(autonomousContainerDatabasePeerDbUniqueName)
+ *             .protectionMode(autonomousContainerDatabaseProtectionMode)
+ *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+ *             .source(autonomousContainerDatabaseSource)
+ *             .standbyMaintenanceBufferInDays(autonomousContainerDatabaseStandbyMaintenanceBufferInDays)
+ *             .vaultId(testVault.id())
+ *             .versionPreference(autonomousContainerDatabaseVersionPreference)
+ *             .vmFailoverReservation(autonomousContainerDatabaseVmFailoverReservation)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * AutonomousContainerDatabases can be imported using the `id`, e.g.

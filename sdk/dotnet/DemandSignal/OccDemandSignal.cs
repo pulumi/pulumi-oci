@@ -12,6 +12,63 @@ namespace Pulumi.Oci.DemandSignal
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testOccDemandSignal = new Oci.DemandSignal.OccDemandSignal("test_occ_demand_signal", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         IsActive = occDemandSignalIsActive,
+    ///         OccDemandSignalId = occDemandSignalOccDemandSignalId,
+    ///         OccDemandSignals = new[]
+    ///         {
+    ///             new Oci.DemandSignal.Inputs.OccDemandSignalOccDemandSignalArgs
+    ///             {
+    ///                 ResourceType = occDemandSignalOccDemandSignalsResourceType,
+    ///                 Units = occDemandSignalOccDemandSignalsUnits,
+    ///                 Values = new[]
+    ///                 {
+    ///                     new Oci.DemandSignal.Inputs.OccDemandSignalOccDemandSignalValueArgs
+    ///                     {
+    ///                         TimeExpected = occDemandSignalOccDemandSignalsValuesTimeExpected,
+    ///                         Value = occDemandSignalOccDemandSignalsValuesValue,
+    ///                         Comments = occDemandSignalOccDemandSignalsValuesComments,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = occDemandSignalDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.DemandSignal.Inputs.OccDemandSignalPatchOperationArgs
+    ///             {
+    ///                 Operation = occDemandSignalPatchOperationsOperation,
+    ///                 Selection = occDemandSignalPatchOperationsSelection,
+    ///                 From = occDemandSignalPatchOperationsFrom,
+    ///                 Position = occDemandSignalPatchOperationsPosition,
+    ///                 SelectedItem = occDemandSignalPatchOperationsSelectedItem,
+    ///                 Value = occDemandSignalPatchOperationsValue,
+    ///                 Values = occDemandSignalPatchOperationsValues,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// OccDemandSignals can be imported using the `id`, e.g.

@@ -12,6 +12,88 @@ namespace Pulumi.Oci.CertificatesManagement
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCertificate = new Oci.CertificatesManagement.Certificate("test_certificate", new()
+    ///     {
+    ///         CertificateConfig = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigArgs
+    ///         {
+    ///             ConfigType = certificateCertificateConfigConfigType,
+    ///             CertChainPem = certificateCertificateConfigCertChainPem,
+    ///             CertificatePem = certificateCertificateConfigCertificatePem,
+    ///             CertificateProfileType = certificateCertificateConfigCertificateProfileType,
+    ///             CsrPem = certificateCertificateConfigCsrPem,
+    ///             IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+    ///             KeyAlgorithm = certificateCertificateConfigKeyAlgorithm,
+    ///             PrivateKeyPem = certificateCertificateConfigPrivateKeyPem,
+    ///             PrivateKeyPemPassphrase = certificateCertificateConfigPrivateKeyPemPassphrase,
+    ///             SignatureAlgorithm = certificateCertificateConfigSignatureAlgorithm,
+    ///             Subject = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigSubjectArgs
+    ///             {
+    ///                 CommonName = certificateCertificateConfigSubjectCommonName,
+    ///                 Country = certificateCertificateConfigSubjectCountry,
+    ///                 DistinguishedNameQualifier = certificateCertificateConfigSubjectDistinguishedNameQualifier,
+    ///                 DomainComponent = certificateCertificateConfigSubjectDomainComponent,
+    ///                 GenerationQualifier = certificateCertificateConfigSubjectGenerationQualifier,
+    ///                 GivenName = certificateCertificateConfigSubjectGivenName,
+    ///                 Initials = certificateCertificateConfigSubjectInitials,
+    ///                 LocalityName = certificateCertificateConfigSubjectLocalityName,
+    ///                 Organization = certificateCertificateConfigSubjectOrganization,
+    ///                 OrganizationalUnit = certificateCertificateConfigSubjectOrganizationalUnit,
+    ///                 Pseudonym = certificateCertificateConfigSubjectPseudonym,
+    ///                 SerialNumber = certificateCertificateConfigSubjectSerialNumber,
+    ///                 StateOrProvinceName = certificateCertificateConfigSubjectStateOrProvinceName,
+    ///                 Street = certificateCertificateConfigSubjectStreet,
+    ///                 Surname = certificateCertificateConfigSubjectSurname,
+    ///                 Title = certificateCertificateConfigSubjectTitle,
+    ///                 UserId = testUser.Id,
+    ///             },
+    ///             SubjectAlternativeNames = new[]
+    ///             {
+    ///                 new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigSubjectAlternativeNameArgs
+    ///                 {
+    ///                     Type = certificateCertificateConfigSubjectAlternativeNamesType,
+    ///                     Value = certificateCertificateConfigSubjectAlternativeNamesValue,
+    ///                 },
+    ///             },
+    ///             Validity = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigValidityArgs
+    ///             {
+    ///                 TimeOfValidityNotAfter = certificateCertificateConfigValidityTimeOfValidityNotAfter,
+    ///                 TimeOfValidityNotBefore = certificateCertificateConfigValidityTimeOfValidityNotBefore,
+    ///             },
+    ///             VersionName = certificateCertificateConfigVersionName,
+    ///         },
+    ///         CompartmentId = compartmentId,
+    ///         Name = certificateName,
+    ///         CertificateRules = new[]
+    ///         {
+    ///             new Oci.CertificatesManagement.Inputs.CertificateCertificateRuleArgs
+    ///             {
+    ///                 AdvanceRenewalPeriod = certificateCertificateRulesAdvanceRenewalPeriod,
+    ///                 RenewalInterval = certificateCertificateRulesRenewalInterval,
+    ///                 RuleType = certificateCertificateRulesRuleType,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = certificateDescription,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Certificates can be imported using the `id`, e.g.

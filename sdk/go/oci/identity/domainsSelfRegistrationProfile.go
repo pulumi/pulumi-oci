@@ -14,6 +14,109 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsSelfRegistrationProfile(ctx, "test_self_registration_profile", &identity.DomainsSelfRegistrationProfileArgs{
+//				ActivationEmailRequired: pulumi.Any(selfRegistrationProfileActivationEmailRequired),
+//				ConsentTextPresent:      pulumi.Any(selfRegistrationProfileConsentTextPresent),
+//				DisplayNames: identity.DomainsSelfRegistrationProfileDisplayNameArray{
+//					&identity.DomainsSelfRegistrationProfileDisplayNameArgs{
+//						Locale:  pulumi.Any(selfRegistrationProfileDisplayNameLocale),
+//						Value:   pulumi.Any(selfRegistrationProfileDisplayNameValue),
+//						Default: pulumi.Any(selfRegistrationProfileDisplayNameDefault),
+//					},
+//				},
+//				EmailTemplate: &identity.DomainsSelfRegistrationProfileEmailTemplateArgs{
+//					Value: pulumi.Any(selfRegistrationProfileEmailTemplateValue),
+//				},
+//				IdcsEndpoint:                   pulumi.Any(testDomain.Url),
+//				Name:                           pulumi.Any(selfRegistrationProfileName),
+//				NumberOfDaysRedirectUrlIsValid: pulumi.Any(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid),
+//				RedirectUrl:                    pulumi.Any(selfRegistrationProfileRedirectUrl),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"),
+//				},
+//				ShowOnLoginPage: pulumi.Any(selfRegistrationProfileShowOnLoginPage),
+//				Active:          pulumi.Any(selfRegistrationProfileActive),
+//				AfterSubmitTexts: identity.DomainsSelfRegistrationProfileAfterSubmitTextArray{
+//					&identity.DomainsSelfRegistrationProfileAfterSubmitTextArgs{
+//						Locale:  pulumi.Any(selfRegistrationProfileAfterSubmitTextLocale),
+//						Value:   pulumi.Any(selfRegistrationProfileAfterSubmitTextValue),
+//						Default: pulumi.Any(selfRegistrationProfileAfterSubmitTextDefault),
+//					},
+//				},
+//				AllowedEmailDomains: pulumi.Any(selfRegistrationProfileAllowedEmailDomains),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:    pulumi.String(""),
+//				Authorization: pulumi.Any(selfRegistrationProfileAuthorization),
+//				ConsentTexts: identity.DomainsSelfRegistrationProfileConsentTextArray{
+//					&identity.DomainsSelfRegistrationProfileConsentTextArgs{
+//						Locale:  pulumi.Any(selfRegistrationProfileConsentTextLocale),
+//						Value:   pulumi.Any(selfRegistrationProfileConsentTextValue),
+//						Default: pulumi.Any(selfRegistrationProfileConsentTextDefault),
+//					},
+//				},
+//				DefaultGroups: identity.DomainsSelfRegistrationProfileDefaultGroupArray{
+//					&identity.DomainsSelfRegistrationProfileDefaultGroupArgs{
+//						Value: pulumi.Any(selfRegistrationProfileDefaultGroupsValue),
+//					},
+//				},
+//				DisallowedEmailDomains: pulumi.Any(selfRegistrationProfileDisallowedEmailDomains),
+//				ExternalId:             pulumi.String("externalId"),
+//				FooterLogo:             pulumi.Any(selfRegistrationProfileFooterLogo),
+//				FooterTexts: identity.DomainsSelfRegistrationProfileFooterTextArray{
+//					&identity.DomainsSelfRegistrationProfileFooterTextArgs{
+//						Locale:  pulumi.Any(selfRegistrationProfileFooterTextLocale),
+//						Value:   pulumi.Any(selfRegistrationProfileFooterTextValue),
+//						Default: pulumi.Any(selfRegistrationProfileFooterTextDefault),
+//					},
+//				},
+//				HeaderLogo: pulumi.Any(selfRegistrationProfileHeaderLogo),
+//				HeaderTexts: identity.DomainsSelfRegistrationProfileHeaderTextArray{
+//					&identity.DomainsSelfRegistrationProfileHeaderTextArgs{
+//						Locale:  pulumi.Any(selfRegistrationProfileHeaderTextLocale),
+//						Value:   pulumi.Any(selfRegistrationProfileHeaderTextValue),
+//						Default: pulumi.Any(selfRegistrationProfileHeaderTextDefault),
+//					},
+//				},
+//				Id:                        selfRegistrationProfileId,
+//				Ocid:                      pulumi.Any(selfRegistrationProfileOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(selfRegistrationProfileResourceTypeSchemaVersion),
+//				Tags: identity.DomainsSelfRegistrationProfileTagArray{
+//					&identity.DomainsSelfRegistrationProfileTagArgs{
+//						Key:   pulumi.Any(selfRegistrationProfileTagsKey),
+//						Value: pulumi.Any(selfRegistrationProfileTagsValue),
+//					},
+//				},
+//				UserAttributes: identity.DomainsSelfRegistrationProfileUserAttributeArray{
+//					&identity.DomainsSelfRegistrationProfileUserAttributeArgs{
+//						SeqNumber:                   pulumi.Any(selfRegistrationProfileUserAttributesSeqNumber),
+//						Value:                       pulumi.Any(selfRegistrationProfileUserAttributesValue),
+//						FullyQualifiedAttributeName: pulumi.Any(selfRegistrationProfileUserAttributesFullyQualifiedAttributeName),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // SelfRegistrationProfiles can be imported using the `id`, e.g.

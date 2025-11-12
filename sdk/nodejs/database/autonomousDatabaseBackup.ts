@@ -9,6 +9,30 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseBackup = new oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     backupDestinationDetails: {
+ *         type: autonomousDatabaseBackupBackupDestinationDetailsType,
+ *         backupRetentionPolicyOnTerminate: autonomousDatabaseBackupBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+ *         dbrsPolicyId: testPolicy.id,
+ *         id: autonomousDatabaseBackupBackupDestinationDetailsId,
+ *         internetProxy: autonomousDatabaseBackupBackupDestinationDetailsInternetProxy,
+ *         isRemote: autonomousDatabaseBackupBackupDestinationDetailsIsRemote,
+ *         isRetentionLockEnabled: autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled,
+ *         remoteRegion: autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion,
+ *         vpcPassword: autonomousDatabaseBackupBackupDestinationDetailsVpcPassword,
+ *         vpcUser: autonomousDatabaseBackupBackupDestinationDetailsVpcUser,
+ *     },
+ *     displayName: autonomousDatabaseBackupDisplayName,
+ *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup,
+ *     retentionPeriodInDays: autonomousDatabaseBackupRetentionPeriodInDays,
+ * });
+ * ```
+ *
  * ## Import
  *
  * AutonomousDatabaseBackups can be imported using the `id`, e.g.

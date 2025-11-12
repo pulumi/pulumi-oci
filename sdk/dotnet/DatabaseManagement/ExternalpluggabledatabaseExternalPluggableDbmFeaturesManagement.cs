@@ -11,6 +11,35 @@ namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = new Oci.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management", new()
+    ///     {
+    ///         ExternalPluggableDatabaseId = testExternalPluggableDatabase.Id,
+    ///         EnableExternalPluggableDbmFeature = enableExternalPluggableDbmFeature,
+    ///         FeatureDetails = new Oci.DatabaseManagement.Inputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs
+    ///         {
+    ///             Feature = externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature,
+    ///             EnableExternalPluggableDbmFeature = enableExternalPluggableDbmFeature,
+    ///             ConnectorDetails = new Oci.DatabaseManagement.Inputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs
+    ///             {
+    ///                 ConnectorType = externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+    ///                 DatabaseConnectorId = testDatabaseConnector.Id,
+    ///                 ManagementAgentId = testManagementAgent.Id,
+    ///                 PrivateEndPointId = testPrivateEndPoint.Id,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement")]
     public partial class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement : global::Pulumi.CustomResource

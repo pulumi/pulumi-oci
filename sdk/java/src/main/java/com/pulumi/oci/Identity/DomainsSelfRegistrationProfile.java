@@ -32,6 +32,105 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsSelfRegistrationProfile;
+ * import com.pulumi.oci.Identity.DomainsSelfRegistrationProfileArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileDisplayNameArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileEmailTemplateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileAfterSubmitTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileConsentTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileDefaultGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileFooterTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileHeaderTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSelfRegistrationProfileUserAttributeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSelfRegistrationProfile = new DomainsSelfRegistrationProfile("testSelfRegistrationProfile", DomainsSelfRegistrationProfileArgs.builder()
+ *             .activationEmailRequired(selfRegistrationProfileActivationEmailRequired)
+ *             .consentTextPresent(selfRegistrationProfileConsentTextPresent)
+ *             .displayNames(DomainsSelfRegistrationProfileDisplayNameArgs.builder()
+ *                 .locale(selfRegistrationProfileDisplayNameLocale)
+ *                 .value(selfRegistrationProfileDisplayNameValue)
+ *                 .default_(selfRegistrationProfileDisplayNameDefault)
+ *                 .build())
+ *             .emailTemplate(DomainsSelfRegistrationProfileEmailTemplateArgs.builder()
+ *                 .value(selfRegistrationProfileEmailTemplateValue)
+ *                 .build())
+ *             .idcsEndpoint(testDomain.url())
+ *             .name(selfRegistrationProfileName)
+ *             .numberOfDaysRedirectUrlIsValid(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid)
+ *             .redirectUrl(selfRegistrationProfileRedirectUrl)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile")
+ *             .showOnLoginPage(selfRegistrationProfileShowOnLoginPage)
+ *             .active(selfRegistrationProfileActive)
+ *             .afterSubmitTexts(DomainsSelfRegistrationProfileAfterSubmitTextArgs.builder()
+ *                 .locale(selfRegistrationProfileAfterSubmitTextLocale)
+ *                 .value(selfRegistrationProfileAfterSubmitTextValue)
+ *                 .default_(selfRegistrationProfileAfterSubmitTextDefault)
+ *                 .build())
+ *             .allowedEmailDomains(selfRegistrationProfileAllowedEmailDomains)
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(selfRegistrationProfileAuthorization)
+ *             .consentTexts(DomainsSelfRegistrationProfileConsentTextArgs.builder()
+ *                 .locale(selfRegistrationProfileConsentTextLocale)
+ *                 .value(selfRegistrationProfileConsentTextValue)
+ *                 .default_(selfRegistrationProfileConsentTextDefault)
+ *                 .build())
+ *             .defaultGroups(DomainsSelfRegistrationProfileDefaultGroupArgs.builder()
+ *                 .value(selfRegistrationProfileDefaultGroupsValue)
+ *                 .build())
+ *             .disallowedEmailDomains(selfRegistrationProfileDisallowedEmailDomains)
+ *             .externalId("externalId")
+ *             .footerLogo(selfRegistrationProfileFooterLogo)
+ *             .footerTexts(DomainsSelfRegistrationProfileFooterTextArgs.builder()
+ *                 .locale(selfRegistrationProfileFooterTextLocale)
+ *                 .value(selfRegistrationProfileFooterTextValue)
+ *                 .default_(selfRegistrationProfileFooterTextDefault)
+ *                 .build())
+ *             .headerLogo(selfRegistrationProfileHeaderLogo)
+ *             .headerTexts(DomainsSelfRegistrationProfileHeaderTextArgs.builder()
+ *                 .locale(selfRegistrationProfileHeaderTextLocale)
+ *                 .value(selfRegistrationProfileHeaderTextValue)
+ *                 .default_(selfRegistrationProfileHeaderTextDefault)
+ *                 .build())
+ *             .id(selfRegistrationProfileId)
+ *             .ocid(selfRegistrationProfileOcid)
+ *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
+ *             .tags(DomainsSelfRegistrationProfileTagArgs.builder()
+ *                 .key(selfRegistrationProfileTagsKey)
+ *                 .value(selfRegistrationProfileTagsValue)
+ *                 .build())
+ *             .userAttributes(DomainsSelfRegistrationProfileUserAttributeArgs.builder()
+ *                 .seqNumber(selfRegistrationProfileUserAttributesSeqNumber)
+ *                 .value(selfRegistrationProfileUserAttributesValue)
+ *                 .fullyQualifiedAttributeName(selfRegistrationProfileUserAttributesFullyQualifiedAttributeName)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * SelfRegistrationProfiles can be imported using the `id`, e.g.

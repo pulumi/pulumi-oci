@@ -9,6 +9,32 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMyUserDbCredential = new oci.identity.DomainsMyUserDbCredential("test_my_user_db_credential", {
+ *     dbPassword: myUserDbCredentialDbPassword,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials"],
+ *     authorization: myUserDbCredentialAuthorization,
+ *     description: myUserDbCredentialDescription,
+ *     expiresOn: myUserDbCredentialExpiresOn,
+ *     id: myUserDbCredentialId,
+ *     ocid: myUserDbCredentialOcid,
+ *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
+ *     status: myUserDbCredentialStatus,
+ *     tags: [{
+ *         key: myUserDbCredentialTagsKey,
+ *         value: myUserDbCredentialTagsValue,
+ *     }],
+ *     user: {
+ *         value: myUserDbCredentialUserValue,
+ *         ocid: myUserDbCredentialUserOcid,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MyUserDbCredentials can be imported using the `id`, e.g.

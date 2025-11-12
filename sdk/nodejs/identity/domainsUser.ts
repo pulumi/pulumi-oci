@@ -9,6 +9,272 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUser = new oci.identity.DomainsUser("test_user", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:core:2.0:User"],
+ *     userName: "userName",
+ *     active: userActive,
+ *     addresses: [{
+ *         type: userAddressesType,
+ *         country: userAddressesCountry,
+ *         formatted: userAddressesFormatted,
+ *         locality: userAddressesLocality,
+ *         postalCode: userAddressesPostalCode,
+ *         primary: userAddressesPrimary,
+ *         region: userAddressesRegion,
+ *         streetAddress: userAddressesStreetAddress,
+ *     }],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: userAuthorization,
+ *     description: userDescription,
+ *     displayName: userDisplayName,
+ *     emails: [
+ *         {
+ *             type: userEmailsType,
+ *             value: userEmailsValue,
+ *             primary: true,
+ *             secondary: userEmailsSecondary,
+ *             verified: userEmailsVerified,
+ *         },
+ *         {
+ *             type: "recovery",
+ *             value: userEmailsValue,
+ *         },
+ *     ],
+ *     entitlements: [{
+ *         type: userEntitlementsType,
+ *         value: userEntitlementsValue,
+ *         display: userEntitlementsDisplay,
+ *         primary: userEntitlementsPrimary,
+ *     }],
+ *     externalId: "externalId",
+ *     forceDelete: userForceDelete,
+ *     id: userId,
+ *     ims: [{
+ *         type: userImsType,
+ *         value: userImsValue,
+ *         display: userImsDisplay,
+ *         primary: userImsPrimary,
+ *     }],
+ *     locale: userLocale,
+ *     name: {
+ *         familyName: userNameFamilyName,
+ *         formatted: userNameFormatted,
+ *         givenName: userNameGivenName,
+ *         honorificPrefix: userNameHonorificPrefix,
+ *         honorificSuffix: userNameHonorificSuffix,
+ *         middleName: userNameMiddleName,
+ *     },
+ *     nickName: userNickName,
+ *     ocid: userOcid,
+ *     password: userPassword,
+ *     phoneNumbers: [{
+ *         type: userPhoneNumbersType,
+ *         value: userPhoneNumbersValue,
+ *         primary: userPhoneNumbersPrimary,
+ *     }],
+ *     photos: [{
+ *         type: userPhotosType,
+ *         value: userPhotosValue,
+ *         display: userPhotosDisplay,
+ *         primary: userPhotosPrimary,
+ *     }],
+ *     preferredLanguage: userPreferredLanguage,
+ *     profileUrl: userProfileUrl,
+ *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
+ *     roles: [{
+ *         type: userRolesType,
+ *         value: userRolesValue,
+ *         display: userRolesDisplay,
+ *         primary: userRolesPrimary,
+ *     }],
+ *     tags: [{
+ *         key: userTagsKey,
+ *         value: userTagsValue,
+ *     }],
+ *     timezone: userTimezone,
+ *     title: userTitle,
+ *     urnietfparamsscimschemasextensionenterprise20user: {
+ *         costCenter: userUrnietfparamsscimschemasextensionenterprise20userCostCenter,
+ *         department: userUrnietfparamsscimschemasextensionenterprise20userDepartment,
+ *         division: userUrnietfparamsscimschemasextensionenterprise20userDivision,
+ *         employeeNumber: userUrnietfparamsscimschemasextensionenterprise20userEmployeeNumber,
+ *         manager: {
+ *             value: userUrnietfparamsscimschemasextensionenterprise20userManagerValue,
+ *         },
+ *         organization: userUrnietfparamsscimschemasextensionenterprise20userOrganization,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionOciTags: {
+ *         definedTags: [{
+ *             key: userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+ *             namespace: userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+ *         }],
+ *         freeformTags: [{
+ *             key: userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionadaptiveUser: {
+ *         riskLevel: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskLevel,
+ *         riskScores: [{
+ *             lastUpdateTimestamp: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresLastUpdateTimestamp,
+ *             riskLevel: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresRiskLevel,
+ *             score: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresScore,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresValue,
+ *             source: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresSource,
+ *             status: userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresStatus,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser: {
+ *         canUseApiKeys: true,
+ *         canUseAuthTokens: true,
+ *         canUseConsolePassword: true,
+ *         canUseCustomerSecretKeys: true,
+ *         canUseDbCredentials: true,
+ *         canUseOauth2clientCredentials: true,
+ *         canUseSmtpCredentials: true,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser: {
+ *         dbUserName: "dbUserName",
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionkerberosUserUser: {
+ *         realmUsers: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersValue,
+ *             principalName: userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersPrincipalName,
+ *             realmName: userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersRealmName,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionmfaUser: {
+ *         bypassCodes: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodesValue,
+ *         }],
+ *         devices: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesValue,
+ *             authenticationMethod: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesAuthenticationMethod,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesDisplay,
+ *             factorStatus: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorStatus,
+ *             factorType: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorType,
+ *             lastSyncTime: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesLastSyncTime,
+ *             status: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesStatus,
+ *             thirdPartyVendorName: userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesThirdPartyVendorName,
+ *         }],
+ *         loginAttempts: userUrnietfparamsscimschemasoracleidcsextensionmfaUserLoginAttempts,
+ *         mfaEnabledOn: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaEnabledOn,
+ *         mfaIgnoredApps: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaIgnoredApps,
+ *         mfaStatus: userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaStatus,
+ *         preferredAuthenticationFactor: userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationFactor,
+ *         preferredAuthenticationMethod: userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationMethod,
+ *         preferredDevice: {
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceDisplay,
+ *         },
+ *         preferredThirdPartyVendor: userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredThirdPartyVendor,
+ *         trustedUserAgents: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsDisplay,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionpasswordlessUser: {
+ *         factorIdentifier: {
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierDisplay,
+ *         },
+ *         factorMethod: userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorMethod,
+ *         factorType: userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorType,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionposixUser: {
+ *         gecos: userUrnietfparamsscimschemasoracleidcsextensionposixUserGecos,
+ *         gidNumber: userUrnietfparamsscimschemasoracleidcsextensionposixUserGidNumber,
+ *         homeDirectory: userUrnietfparamsscimschemasoracleidcsextensionposixUserHomeDirectory,
+ *         loginShell: userUrnietfparamsscimschemasoracleidcsextensionposixUserLoginShell,
+ *         uidNumber: userUrnietfparamsscimschemasoracleidcsextensionposixUserUidNumber,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser: {
+ *         secQuestions: [{
+ *             answer: userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsAnswer,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsValue,
+ *             hintText: userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsHintText,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
+ *         allowSelfChange: userUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser: {
+ *         selfRegistrationProfile: {
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileDisplay,
+ *         },
+ *         consentGranted: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserConsentGranted,
+ *         userToken: userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserUserToken,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionsffUser: {
+ *         sffAuthKeys: userUrnietfparamsscimschemasoracleidcsextensionsffUserSffAuthKeys,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionsocialAccountUser: {
+ *         socialAccounts: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsDisplay,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser: {
+ *         termsOfUseConsents: [{
+ *             value: userUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentsValue,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionuserStateUser: {
+ *         locked: {
+ *             expired: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedExpired,
+ *             lockDate: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedLockDate,
+ *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOn,
+ *             reason: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedReason,
+ *         },
+ *         maxConcurrentSessions: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserMaxConcurrentSessions,
+ *         recoveryLocked: {
+ *             lockDate: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedLockDate,
+ *             on: userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOn,
+ *         },
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionuserUser: {
+ *         userProvider: userUrnietfparamsscimschemasoracleidcsextensionuserUserUserProvider,
+ *         accountRecoveryRequired: userUrnietfparamsscimschemasoracleidcsextensionuserUserAccountRecoveryRequired,
+ *         bypassNotification: userUrnietfparamsscimschemasoracleidcsextensionuserUserBypassNotification,
+ *         creationMechanism: userUrnietfparamsscimschemasoracleidcsextensionuserUserCreationMechanism,
+ *         delegatedAuthenticationTargetApp: {
+ *             type: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppType,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppDisplay,
+ *         },
+ *         doNotShowGettingStarted: userUrnietfparamsscimschemasoracleidcsextensionuserUserDoNotShowGettingStarted,
+ *         isAuthenticationDelegated: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsAuthenticationDelegated,
+ *         isFederatedUser: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser,
+ *         isGroupMembershipNormalized: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized,
+ *         isGroupMembershipSyncedToUsersGroups: userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups,
+ *         notificationEmailTemplateId: testNotificationEmailTemplate.id,
+ *         preferredUiLandingPage: userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserPreferredUiLandingPage,
+ *         serviceUser: userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser,
+ *         syncedFromApp: {
+ *             type: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppType,
+ *             value: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppValue,
+ *             display: userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppDisplay,
+ *         },
+ *         userFlowControlledByExternalClient: userUrnietfparamsscimschemasoracleidcsextensionuserUserUserFlowControlledByExternalClient,
+ *     },
+ *     userType: userUserType,
+ *     x509certificates: [{
+ *         value: userX509certificatesValue,
+ *         display: userX509certificatesDisplay,
+ *         primary: userX509certificatesPrimary,
+ *         type: userX509certificatesType,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * Users can be imported using the `id`, e.g.

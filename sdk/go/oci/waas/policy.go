@@ -14,6 +14,268 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := waas.NewPolicy(ctx, "test_waas_policy", &waas.PolicyArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				Domain:            pulumi.Any(waasPolicyDomain),
+//				AdditionalDomains: pulumi.Any(waasPolicyAdditionalDomains),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(waasPolicyDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				OriginGroups: waas.PolicyOriginGroupArray{
+//					&waas.PolicyOriginGroupArgs{
+//						Origins: waasPolicyOriginGroupsOrigins,
+//					},
+//				},
+//				Origins: waas.PolicyOriginArray{
+//					&waas.PolicyOriginArgs{
+//						Uri: pulumi.Any(waasPolicyOriginsUri),
+//						CustomHeaders: waas.PolicyOriginCustomHeaderArray{
+//							&waas.PolicyOriginCustomHeaderArgs{
+//								Name:  pulumi.Any(waasPolicyOriginsCustomHeadersName),
+//								Value: pulumi.Any(waasPolicyOriginsCustomHeadersValue),
+//							},
+//						},
+//						HttpPort:  pulumi.Any(waasPolicyOriginsHttpPort),
+//						HttpsPort: pulumi.Any(waasPolicyOriginsHttpsPort),
+//					},
+//				},
+//				PolicyConfig: &waas.PolicyPolicyConfigArgs{
+//					CertificateId:       pulumi.Any(testCertificate.Id),
+//					CipherGroup:         pulumi.Any(waasPolicyPolicyConfigCipherGroup),
+//					ClientAddressHeader: pulumi.Any(waasPolicyPolicyConfigClientAddressHeader),
+//					HealthChecks: &waas.PolicyPolicyConfigHealthChecksArgs{
+//						ExpectedResponseCodeGroups: pulumi.Any(waasPolicyPolicyConfigHealthChecksExpectedResponseCodeGroup),
+//						ExpectedResponseText:       pulumi.Any(waasPolicyPolicyConfigHealthChecksExpectedResponseText),
+//						Headers:                    pulumi.Any(waasPolicyPolicyConfigHealthChecksHeaders),
+//						HealthyThreshold:           pulumi.Any(waasPolicyPolicyConfigHealthChecksHealthyThreshold),
+//						IntervalInSeconds:          pulumi.Any(waasPolicyPolicyConfigHealthChecksIntervalInSeconds),
+//						IsEnabled:                  pulumi.Any(waasPolicyPolicyConfigHealthChecksIsEnabled),
+//						IsResponseTextCheckEnabled: pulumi.Any(waasPolicyPolicyConfigHealthChecksIsResponseTextCheckEnabled),
+//						Method:                     pulumi.Any(waasPolicyPolicyConfigHealthChecksMethod),
+//						Path:                       pulumi.Any(waasPolicyPolicyConfigHealthChecksPath),
+//						TimeoutInSeconds:           pulumi.Any(waasPolicyPolicyConfigHealthChecksTimeoutInSeconds),
+//						UnhealthyThreshold:         pulumi.Any(waasPolicyPolicyConfigHealthChecksUnhealthyThreshold),
+//					},
+//					IsBehindCdn:                pulumi.Any(waasPolicyPolicyConfigIsBehindCdn),
+//					IsCacheControlRespected:    pulumi.Any(waasPolicyPolicyConfigIsCacheControlRespected),
+//					IsHttpsEnabled:             pulumi.Any(waasPolicyPolicyConfigIsHttpsEnabled),
+//					IsHttpsForced:              pulumi.Any(waasPolicyPolicyConfigIsHttpsForced),
+//					IsOriginCompressionEnabled: pulumi.Any(waasPolicyPolicyConfigIsOriginCompressionEnabled),
+//					IsResponseBufferingEnabled: pulumi.Any(waasPolicyPolicyConfigIsResponseBufferingEnabled),
+//					IsSniEnabled:               pulumi.Any(waasPolicyPolicyConfigIsSniEnabled),
+//					LoadBalancingMethod: &waas.PolicyPolicyConfigLoadBalancingMethodArgs{
+//						Method:                  pulumi.Any(waasPolicyPolicyConfigLoadBalancingMethodMethod),
+//						Domain:                  pulumi.Any(waasPolicyPolicyConfigLoadBalancingMethodDomain),
+//						ExpirationTimeInSeconds: pulumi.Any(waasPolicyPolicyConfigLoadBalancingMethodExpirationTimeInSeconds),
+//						Name:                    pulumi.Any(waasPolicyPolicyConfigLoadBalancingMethodName),
+//					},
+//					TlsProtocols:          pulumi.Any(waasPolicyPolicyConfigTlsProtocols),
+//					WebsocketPathPrefixes: pulumi.Any(waasPolicyPolicyConfigWebsocketPathPrefixes),
+//				},
+//				WafConfig: &waas.PolicyWafConfigArgs{
+//					AccessRules: waas.PolicyWafConfigAccessRuleArray{
+//						&waas.PolicyWafConfigAccessRuleArgs{
+//							Action: pulumi.Any(waasPolicyWafConfigAccessRulesAction),
+//							Criterias: waas.PolicyWafConfigAccessRuleCriteriaArray{
+//								&waas.PolicyWafConfigAccessRuleCriteriaArgs{
+//									Condition:       pulumi.Any(waasPolicyWafConfigAccessRulesCriteriaCondition),
+//									Value:           pulumi.Any(waasPolicyWafConfigAccessRulesCriteriaValue),
+//									IsCaseSensitive: pulumi.Any(waasPolicyWafConfigAccessRulesCriteriaIsCaseSensitive),
+//								},
+//							},
+//							Name:                      pulumi.Any(waasPolicyWafConfigAccessRulesName),
+//							BlockAction:               pulumi.Any(waasPolicyWafConfigAccessRulesBlockAction),
+//							BlockErrorPageCode:        pulumi.Any(waasPolicyWafConfigAccessRulesBlockErrorPageCode),
+//							BlockErrorPageDescription: pulumi.Any(waasPolicyWafConfigAccessRulesBlockErrorPageDescription),
+//							BlockErrorPageMessage:     pulumi.Any(waasPolicyWafConfigAccessRulesBlockErrorPageMessage),
+//							BlockResponseCode:         pulumi.Any(waasPolicyWafConfigAccessRulesBlockResponseCode),
+//							BypassChallenges:          pulumi.Any(waasPolicyWafConfigAccessRulesBypassChallenges),
+//							CaptchaFooter:             pulumi.Any(waasPolicyWafConfigAccessRulesCaptchaFooter),
+//							CaptchaHeader:             pulumi.Any(waasPolicyWafConfigAccessRulesCaptchaHeader),
+//							CaptchaSubmitLabel:        pulumi.Any(waasPolicyWafConfigAccessRulesCaptchaSubmitLabel),
+//							CaptchaTitle:              pulumi.Any(waasPolicyWafConfigAccessRulesCaptchaTitle),
+//							RedirectResponseCode:      pulumi.Any(waasPolicyWafConfigAccessRulesRedirectResponseCode),
+//							RedirectUrl:               pulumi.Any(waasPolicyWafConfigAccessRulesRedirectUrl),
+//							ResponseHeaderManipulations: waas.PolicyWafConfigAccessRuleResponseHeaderManipulationArray{
+//								&waas.PolicyWafConfigAccessRuleResponseHeaderManipulationArgs{
+//									Action: pulumi.Any(waasPolicyWafConfigAccessRulesResponseHeaderManipulationAction),
+//									Header: pulumi.Any(waasPolicyWafConfigAccessRulesResponseHeaderManipulationHeader),
+//									Value:  pulumi.Any(waasPolicyWafConfigAccessRulesResponseHeaderManipulationValue),
+//								},
+//							},
+//						},
+//					},
+//					AddressRateLimiting: &waas.PolicyWafConfigAddressRateLimitingArgs{
+//						IsEnabled:                 pulumi.Any(waasPolicyWafConfigAddressRateLimitingIsEnabled),
+//						AllowedRatePerAddress:     pulumi.Any(waasPolicyWafConfigAddressRateLimitingAllowedRatePerAddress),
+//						BlockResponseCode:         pulumi.Any(waasPolicyWafConfigAddressRateLimitingBlockResponseCode),
+//						MaxDelayedCountPerAddress: pulumi.Any(waasPolicyWafConfigAddressRateLimitingMaxDelayedCountPerAddress),
+//					},
+//					CachingRules: waas.PolicyWafConfigCachingRuleArray{
+//						&waas.PolicyWafConfigCachingRuleArgs{
+//							Action: pulumi.Any(waasPolicyWafConfigCachingRulesAction),
+//							Criterias: waas.PolicyWafConfigCachingRuleCriteriaArray{
+//								&waas.PolicyWafConfigCachingRuleCriteriaArgs{
+//									Condition: pulumi.Any(waasPolicyWafConfigCachingRulesCriteriaCondition),
+//									Value:     pulumi.Any(waasPolicyWafConfigCachingRulesCriteriaValue),
+//								},
+//							},
+//							Name:                   pulumi.Any(waasPolicyWafConfigCachingRulesName),
+//							CachingDuration:        pulumi.Any(waasPolicyWafConfigCachingRulesCachingDuration),
+//							ClientCachingDuration:  pulumi.Any(waasPolicyWafConfigCachingRulesClientCachingDuration),
+//							IsClientCachingEnabled: pulumi.Any(waasPolicyWafConfigCachingRulesIsClientCachingEnabled),
+//							Key:                    pulumi.Any(waasPolicyWafConfigCachingRulesKey),
+//						},
+//					},
+//					Captchas: waas.PolicyWafConfigCaptchaArray{
+//						&waas.PolicyWafConfigCaptchaArgs{
+//							FailureMessage:             pulumi.Any(waasPolicyWafConfigCaptchasFailureMessage),
+//							SessionExpirationInSeconds: pulumi.Any(waasPolicyWafConfigCaptchasSessionExpirationInSeconds),
+//							SubmitLabel:                pulumi.Any(waasPolicyWafConfigCaptchasSubmitLabel),
+//							Title:                      pulumi.Any(waasPolicyWafConfigCaptchasTitle),
+//							Url:                        pulumi.Any(waasPolicyWafConfigCaptchasUrl),
+//							FooterText:                 pulumi.Any(waasPolicyWafConfigCaptchasFooterText),
+//							HeaderText:                 pulumi.Any(waasPolicyWafConfigCaptchasHeaderText),
+//						},
+//					},
+//					CustomProtectionRules: waas.PolicyWafConfigCustomProtectionRuleArray{
+//						&waas.PolicyWafConfigCustomProtectionRuleArgs{
+//							Action: pulumi.Any(waasPolicyWafConfigCustomProtectionRulesAction),
+//							Exclusions: waas.PolicyWafConfigCustomProtectionRuleExclusionArray{
+//								&waas.PolicyWafConfigCustomProtectionRuleExclusionArgs{
+//									Exclusions: pulumi.Any(waasPolicyWafConfigCustomProtectionRulesExclusionsExclusions),
+//									Target:     pulumi.Any(waasPolicyWafConfigCustomProtectionRulesExclusionsTarget),
+//								},
+//							},
+//							Id: pulumi.Any(waasPolicyWafConfigCustomProtectionRulesId),
+//						},
+//					},
+//					DeviceFingerprintChallenge: &waas.PolicyWafConfigDeviceFingerprintChallengeArgs{
+//						IsEnabled:                 pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeIsEnabled),
+//						Action:                    pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeAction),
+//						ActionExpirationInSeconds: pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeActionExpirationInSeconds),
+//						ChallengeSettings: &waas.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{
+//							BlockAction:               pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockAction),
+//							BlockErrorPageCode:        pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageCode),
+//							BlockErrorPageDescription: pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageDescription),
+//							BlockErrorPageMessage:     pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageMessage),
+//							BlockResponseCode:         pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockResponseCode),
+//							CaptchaFooter:             pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaFooter),
+//							CaptchaHeader:             pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaHeader),
+//							CaptchaSubmitLabel:        pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaSubmitLabel),
+//							CaptchaTitle:              pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaTitle),
+//						},
+//						FailureThreshold:                    pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeFailureThreshold),
+//						FailureThresholdExpirationInSeconds: pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeFailureThresholdExpirationInSeconds),
+//						MaxAddressCount:                     pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCount),
+//						MaxAddressCountExpirationInSeconds:  pulumi.Any(waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCountExpirationInSeconds),
+//					},
+//					HumanInteractionChallenge: &waas.PolicyWafConfigHumanInteractionChallengeArgs{
+//						IsEnabled:                 pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeIsEnabled),
+//						Action:                    pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeAction),
+//						ActionExpirationInSeconds: pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeActionExpirationInSeconds),
+//						ChallengeSettings: &waas.PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{
+//							BlockAction:               pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockAction),
+//							BlockErrorPageCode:        pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageCode),
+//							BlockErrorPageDescription: pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageDescription),
+//							BlockErrorPageMessage:     pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageMessage),
+//							BlockResponseCode:         pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockResponseCode),
+//							CaptchaFooter:             pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaFooter),
+//							CaptchaHeader:             pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaHeader),
+//							CaptchaSubmitLabel:        pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaSubmitLabel),
+//							CaptchaTitle:              pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaTitle),
+//						},
+//						FailureThreshold:                    pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeFailureThreshold),
+//						FailureThresholdExpirationInSeconds: pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeFailureThresholdExpirationInSeconds),
+//						InteractionThreshold:                pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeInteractionThreshold),
+//						IsNatEnabled:                        pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeIsNatEnabled),
+//						RecordingPeriodInSeconds:            pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeRecordingPeriodInSeconds),
+//						SetHttpHeader: &waas.PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{
+//							Name:  pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderName),
+//							Value: pulumi.Any(waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderValue),
+//						},
+//					},
+//					JsChallenge: &waas.PolicyWafConfigJsChallengeArgs{
+//						IsEnabled:                 pulumi.Any(waasPolicyWafConfigJsChallengeIsEnabled),
+//						Action:                    pulumi.Any(waasPolicyWafConfigJsChallengeAction),
+//						ActionExpirationInSeconds: pulumi.Any(waasPolicyWafConfigJsChallengeActionExpirationInSeconds),
+//						AreRedirectsChallenged:    pulumi.Any(waasPolicyWafConfigJsChallengeAreRedirectsChallenged),
+//						ChallengeSettings: &waas.PolicyWafConfigJsChallengeChallengeSettingsArgs{
+//							BlockAction:               pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsBlockAction),
+//							BlockErrorPageCode:        pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageCode),
+//							BlockErrorPageDescription: pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageDescription),
+//							BlockErrorPageMessage:     pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageMessage),
+//							BlockResponseCode:         pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsBlockResponseCode),
+//							CaptchaFooter:             pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaFooter),
+//							CaptchaHeader:             pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaHeader),
+//							CaptchaSubmitLabel:        pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaSubmitLabel),
+//							CaptchaTitle:              pulumi.Any(waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaTitle),
+//						},
+//						Criterias: waas.PolicyWafConfigJsChallengeCriteriaArray{
+//							&waas.PolicyWafConfigJsChallengeCriteriaArgs{
+//								Condition:       pulumi.Any(waasPolicyWafConfigJsChallengeCriteriaCondition),
+//								Value:           pulumi.Any(waasPolicyWafConfigJsChallengeCriteriaValue),
+//								IsCaseSensitive: pulumi.Any(waasPolicyWafConfigJsChallengeCriteriaIsCaseSensitive),
+//							},
+//						},
+//						FailureThreshold: pulumi.Any(waasPolicyWafConfigJsChallengeFailureThreshold),
+//						IsNatEnabled:     pulumi.Any(waasPolicyWafConfigJsChallengeIsNatEnabled),
+//						SetHttpHeader: &waas.PolicyWafConfigJsChallengeSetHttpHeaderArgs{
+//							Name:  pulumi.Any(waasPolicyWafConfigJsChallengeSetHttpHeaderName),
+//							Value: pulumi.Any(waasPolicyWafConfigJsChallengeSetHttpHeaderValue),
+//						},
+//					},
+//					Origin:       pulumi.Any(waasPolicyWafConfigOrigin),
+//					OriginGroups: pulumi.Any(waasPolicyWafConfigOriginGroups),
+//					ProtectionSettings: &waas.PolicyWafConfigProtectionSettingsArgs{
+//						AllowedHttpMethods:            pulumi.Any(waasPolicyWafConfigProtectionSettingsAllowedHttpMethods),
+//						BlockAction:                   pulumi.Any(waasPolicyWafConfigProtectionSettingsBlockAction),
+//						BlockErrorPageCode:            pulumi.Any(waasPolicyWafConfigProtectionSettingsBlockErrorPageCode),
+//						BlockErrorPageDescription:     pulumi.Any(waasPolicyWafConfigProtectionSettingsBlockErrorPageDescription),
+//						BlockErrorPageMessage:         pulumi.Any(waasPolicyWafConfigProtectionSettingsBlockErrorPageMessage),
+//						BlockResponseCode:             pulumi.Any(waasPolicyWafConfigProtectionSettingsBlockResponseCode),
+//						IsResponseInspected:           pulumi.Any(waasPolicyWafConfigProtectionSettingsIsResponseInspected),
+//						MaxArgumentCount:              pulumi.Any(waasPolicyWafConfigProtectionSettingsMaxArgumentCount),
+//						MaxNameLengthPerArgument:      pulumi.Any(waasPolicyWafConfigProtectionSettingsMaxNameLengthPerArgument),
+//						MaxResponseSizeInKiB:          pulumi.Any(waasPolicyWafConfigProtectionSettingsMaxResponseSizeInKiB),
+//						MaxTotalNameLengthOfArguments: pulumi.Any(waasPolicyWafConfigProtectionSettingsMaxTotalNameLengthOfArguments),
+//						MediaTypes:                    pulumi.Any(waasPolicyWafConfigProtectionSettingsMediaTypes),
+//						RecommendationsPeriodInDays:   pulumi.Any(waasPolicyWafConfigProtectionSettingsRecommendationsPeriodInDays),
+//					},
+//					Whitelists: waas.PolicyWafConfigWhitelistArray{
+//						&waas.PolicyWafConfigWhitelistArgs{
+//							Name:         pulumi.Any(waasPolicyWafConfigWhitelistsName),
+//							AddressLists: pulumi.Any(waasPolicyWafConfigWhitelistsAddressLists),
+//							Addresses:    pulumi.Any(waasPolicyWafConfigWhitelistsAddresses),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // WaasPolicies can be imported using the `id`, e.g.

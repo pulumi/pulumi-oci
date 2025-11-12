@@ -12,6 +12,52 @@ namespace Pulumi.Oci.DataScience
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMlApplicationInstance = new Oci.DataScience.MlApplicationInstance("test_ml_application_instance", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         MlApplicationId = testMlApplication.Id,
+    ///         MlApplicationImplementationId = testMlApplicationImplementation.Id,
+    ///         AuthConfiguration = new Oci.DataScience.Inputs.MlApplicationInstanceAuthConfigurationArgs
+    ///         {
+    ///             Type = mlApplicationInstanceAuthConfigurationType,
+    ///             AccessToken = mlApplicationInstanceAuthConfigurationAccessToken,
+    ///             ApplicationName = testApplication.Name,
+    ///             Audience = mlApplicationInstanceAuthConfigurationAudience,
+    ///             DomainId = testDomain.Id,
+    ///             RoleName = mlApplicationInstanceAuthConfigurationRoleName,
+    ///             Scope = mlApplicationInstanceAuthConfigurationScope,
+    ///         },
+    ///         Configurations = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.MlApplicationInstanceConfigurationArgs
+    ///             {
+    ///                 Key = mlApplicationInstanceConfigurationKey,
+    ///                 Value = mlApplicationInstanceConfigurationValue,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = mlApplicationInstanceDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsEnabled = mlApplicationInstanceIsEnabled,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MlApplicationInstances can be imported using the `id`, e.g.

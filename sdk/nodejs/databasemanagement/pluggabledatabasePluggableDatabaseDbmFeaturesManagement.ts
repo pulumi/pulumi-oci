@@ -8,6 +8,46 @@ import * as utilities from "../utilities";
 
 /**
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management", {
+ *     pluggableDatabaseId: testPluggableDatabase.id,
+ *     enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
+ *     featureDetails: {
+ *         feature: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature,
+ *         enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
+ *         connectorDetails: {
+ *             connectorType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *         databaseConnectionDetails: {
+ *             connectionCredentials: {
+ *                 credentialName: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+ *                 credentialType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+ *                 namedCredentialId: testNamedCredential.id,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+ *                 sslSecretId: testSecret.id,
+ *                 userName: testUser.name,
+ *             },
+ *             connectionString: {
+ *                 connectionType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+ *                 port: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 protocol: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+ *                 service: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+ *             },
+ *         },
+ *         canEnableAllCurrentPdbs: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         managementType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType,
+ *     },
+ * });
+ * ```
  */
 export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pulumi.CustomResource {
     /**

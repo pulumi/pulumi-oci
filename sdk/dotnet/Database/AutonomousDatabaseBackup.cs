@@ -12,6 +12,38 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("test_autonomous_database_backup", new()
+    ///     {
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         BackupDestinationDetails = new Oci.Database.Inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs
+    ///         {
+    ///             Type = autonomousDatabaseBackupBackupDestinationDetailsType,
+    ///             BackupRetentionPolicyOnTerminate = autonomousDatabaseBackupBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+    ///             DbrsPolicyId = testPolicy.Id,
+    ///             Id = autonomousDatabaseBackupBackupDestinationDetailsId,
+    ///             InternetProxy = autonomousDatabaseBackupBackupDestinationDetailsInternetProxy,
+    ///             IsRemote = autonomousDatabaseBackupBackupDestinationDetailsIsRemote,
+    ///             IsRetentionLockEnabled = autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled,
+    ///             RemoteRegion = autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion,
+    ///             VpcPassword = autonomousDatabaseBackupBackupDestinationDetailsVpcPassword,
+    ///             VpcUser = autonomousDatabaseBackupBackupDestinationDetailsVpcUser,
+    ///         },
+    ///         DisplayName = autonomousDatabaseBackupDisplayName,
+    ///         IsLongTermBackup = autonomousDatabaseBackupIsLongTermBackup,
+    ///         RetentionPeriodInDays = autonomousDatabaseBackupRetentionPeriodInDays,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AutonomousDatabaseBackups can be imported using the `id`, e.g.

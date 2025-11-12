@@ -13,6 +13,44 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJob = new oci.ailanguage.Job("test_job", {
+ *     compartmentId: compartmentId,
+ *     inputLocation: {
+ *         bucket: jobInputLocationBucket,
+ *         locationType: jobInputLocationLocationType,
+ *         namespace: jobInputLocationNamespace,
+ *         objectNames: jobInputLocationObjectNames,
+ *         prefix: jobInputLocationPrefix,
+ *     },
+ *     modelMetadataDetails: [{
+ *         configuration: [{
+ *             configurationMap: jobModelMetadataDetailsConfigurationConfigurationMap,
+ *         }],
+ *         endpointId: testEndpoint.id,
+ *         languageCode: jobModelMetadataDetailsLanguageCode,
+ *         modelId: testModel.id,
+ *         modelType: jobModelMetadataDetailsModelType,
+ *     }],
+ *     outputLocation: {
+ *         bucket: jobOutputLocationBucket,
+ *         namespace: jobOutputLocationNamespace,
+ *         prefix: jobOutputLocationPrefix,
+ *     },
+ *     description: jobDescription,
+ *     displayName: jobDisplayName,
+ *     inputConfiguration: {
+ *         configuration: [{
+ *             config: jobInputConfigurationConfigurationConfig,
+ *         }],
+ *         documentTypes: jobInputConfigurationDocumentTypes,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Jobs can be imported using the `id`, e.g.

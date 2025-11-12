@@ -207,6 +207,28 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
+            external_container_database_id=test_external_container_database["id"],
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            feature_details={
+                "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
+                "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
+                "connector_details": {
+                    "connector_type": externalcontainerdatabase_external_container_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -225,6 +247,28 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
+            external_container_database_id=test_external_container_database["id"],
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            feature_details={
+                "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
+                "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
+                "connector_details": {
+                    "connector_type": externalcontainerdatabase_external_container_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

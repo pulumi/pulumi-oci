@@ -20,6 +20,43 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ocvp.Datastore;
+ * import com.pulumi.oci.Ocvp.DatastoreArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatastore = new Datastore("testDatastore", DatastoreArgs.builder()
+ *             .availabilityDomain(datastoreAvailabilityDomain)
+ *             .blockVolumeIds(datastoreBlockVolumeIds)
+ *             .compartmentId(compartmentId)
+ *             .displayName(datastoreDisplayName)
+ *             .datastoreClusterId(testDatastoreCluster.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Datastores can be imported using the `id`, e.g.

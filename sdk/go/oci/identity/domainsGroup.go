@@ -14,6 +14,91 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsGroup(ctx, "test_group", &identity.DomainsGroupArgs{
+//				DisplayName:  pulumi.Any(groupDisplayName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:core:2.0:Group"),
+//				},
+//				AttributeSets: pulumi.StringArray{},
+//				Attributes:    pulumi.String(""),
+//				Authorization: pulumi.Any(groupAuthorization),
+//				ExternalId:    pulumi.String("externalId"),
+//				ForceDelete:   pulumi.Any(groupForceDelete),
+//				Id:            groupId,
+//				Members: identity.DomainsGroupMemberArray{
+//					&identity.DomainsGroupMemberArgs{
+//						Type:  pulumi.Any(groupMembersType),
+//						Value: pulumi.Any(groupMembersValue),
+//						Ocid:  pulumi.Any(groupMembersOcid),
+//					},
+//				},
+//				NonUniqueDisplayName:      pulumi.Any(groupNonUniqueDisplayName),
+//				Ocid:                      pulumi.Any(groupOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(groupResourceTypeSchemaVersion),
+//				Tags: identity.DomainsGroupTagArray{
+//					&identity.DomainsGroupTagArgs{
+//						Key:   pulumi.Any(groupTagsKey),
+//						Value: pulumi.Any(groupTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionOciTags: &identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs{
+//					DefinedTags: identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArray{
+//						&identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs{
+//							Key:       pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey),
+//							Namespace: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace),
+//							Value:     pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue),
+//						},
+//					},
+//					FreeformTags: identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArray{
+//						&identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs{
+//							Key:   pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey),
+//							Value: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensiondynamicGroup: &identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs{
+//					MembershipRule: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipRule),
+//					MembershipType: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipType),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensiongroupGroup: &identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs{
+//					CreationMechanism: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupCreationMechanism),
+//					Description:       pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupDescription),
+//					Owners: identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArray{
+//						&identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs{
+//							Type:  pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersType),
+//							Value: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersValue),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionposixGroup: &identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs{
+//					GidNumber: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionrequestableGroup: &identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs{
+//					Requestable: pulumi.Any(groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Groups can be imported using the `id`, e.g.

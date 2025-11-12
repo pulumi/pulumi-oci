@@ -14,6 +14,40 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ocvp.NewDatastore(ctx, "test_datastore", &ocvp.DatastoreArgs{
+//				AvailabilityDomain: pulumi.Any(datastoreAvailabilityDomain),
+//				BlockVolumeIds:     pulumi.Any(datastoreBlockVolumeIds),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DisplayName:        pulumi.Any(datastoreDisplayName),
+//				DatastoreClusterId: testDatastoreCluster.Id,
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Datastores can be imported using the `id`, e.g.

@@ -14,6 +14,36 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := kms.NewSign(ctx, "test_sign", &kms.SignArgs{
+//				CryptoEndpoint:   pulumi.Any(signMessageCryptoEndpoint),
+//				KeyId:            pulumi.Any(testKey.Id),
+//				Message:          pulumi.Any(signMessage),
+//				SigningAlgorithm: pulumi.Any(signSigningAlgorithm),
+//				KeyVersionId:     pulumi.Any(testKeyVersion.Id),
+//				LoggingContext:   signLoggingContext,
+//				MessageType:      pulumi.Any(signMessageType),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Sign can be imported using the `id`, e.g.

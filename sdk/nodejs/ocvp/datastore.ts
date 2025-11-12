@@ -9,6 +9,25 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatastore = new oci.ocvp.Datastore("test_datastore", {
+ *     availabilityDomain: datastoreAvailabilityDomain,
+ *     blockVolumeIds: datastoreBlockVolumeIds,
+ *     compartmentId: compartmentId,
+ *     displayName: datastoreDisplayName,
+ *     datastoreClusterId: testDatastoreCluster.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Datastores can be imported using the `id`, e.g.

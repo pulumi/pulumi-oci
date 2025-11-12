@@ -9,6 +9,56 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespaceScheduledTask = new oci.loganalytics.NamespaceScheduledTask("test_namespace_scheduled_task", {
+ *     compartmentId: compartmentId,
+ *     kind: namespaceScheduledTaskKind,
+ *     namespace: namespaceScheduledTaskNamespace,
+ *     action: {
+ *         type: namespaceScheduledTaskActionType,
+ *         compartmentIdInSubtree: namespaceScheduledTaskActionCompartmentIdInSubtree,
+ *         dataType: namespaceScheduledTaskActionDataType,
+ *         metricExtraction: {
+ *             compartmentId: compartmentId,
+ *             metricName: testMetric.name,
+ *             namespace: namespaceScheduledTaskActionMetricExtractionNamespace,
+ *             resourceGroup: namespaceScheduledTaskActionMetricExtractionResourceGroup,
+ *         },
+ *         purgeCompartmentId: testCompartment.id,
+ *         purgeDuration: namespaceScheduledTaskActionPurgeDuration,
+ *         queryString: namespaceScheduledTaskActionQueryString,
+ *         savedSearchId: testSavedSearch.id,
+ *         templateDetails: {
+ *             templateId: testTemplate.id,
+ *             templateParams: [{
+ *                 keyField: namespaceScheduledTaskActionTemplateDetailsTemplateParamsKeyField,
+ *                 valueField: namespaceScheduledTaskActionTemplateDetailsTemplateParamsValueField,
+ *             }],
+ *         },
+ *     },
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     displayName: namespaceScheduledTaskDisplayName,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     savedSearchId: testSavedSearch.id,
+ *     schedules: {
+ *         type: namespaceScheduledTaskSchedulesType,
+ *         expression: namespaceScheduledTaskSchedulesExpression,
+ *         misfirePolicy: namespaceScheduledTaskSchedulesMisfirePolicy,
+ *         recurringInterval: namespaceScheduledTaskSchedulesRecurringInterval,
+ *         repeatCount: namespaceScheduledTaskSchedulesRepeatCount,
+ *         timeZone: namespaceScheduledTaskSchedulesTimeZone,
+ *     },
+ *     taskType: namespaceScheduledTaskTaskType,
+ * });
+ * ```
+ *
  * ## Import
  *
  * NamespaceScheduledTasks can be imported using the `id`, e.g.

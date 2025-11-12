@@ -9,6 +9,51 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCluster = new oci.ocvp.Cluster("test_cluster", {
+ *     computeAvailabilityDomain: clusterComputeAvailabilityDomain,
+ *     esxiHostsCount: clusterEsxiHostsCount,
+ *     networkConfiguration: {
+ *         nsxEdgeVtepVlanId: testVlan.id,
+ *         nsxVtepVlanId: testVlan.id,
+ *         provisioningSubnetId: testSubnet.id,
+ *         vmotionVlanId: testVlan.id,
+ *         vsanVlanId: testVlan.id,
+ *         hcxVlanId: testVlan.id,
+ *         nsxEdgeUplink1vlanId: testNsxEdgeUplink1vlan.id,
+ *         nsxEdgeUplink2vlanId: testNsxEdgeUplink2vlan.id,
+ *         provisioningVlanId: testVlan.id,
+ *         replicationVlanId: testVlan.id,
+ *         vsphereVlanId: testVlan.id,
+ *     },
+ *     sddcId: testSddc.id,
+ *     capacityReservationId: testCapacityReservation.id,
+ *     datastoreClusterIds: clusterDatastoreClusterIds,
+ *     datastores: [{
+ *         blockVolumeIds: clusterDatastoresBlockVolumeIds,
+ *         datastoreType: clusterDatastoresDatastoreType,
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: clusterDisplayName,
+ *     esxiSoftwareVersion: clusterEsxiSoftwareVersion,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     initialCommitment: clusterInitialCommitment,
+ *     initialHostOcpuCount: clusterInitialHostOcpuCount,
+ *     initialHostShapeName: testShape.name,
+ *     instanceDisplayNamePrefix: clusterInstanceDisplayNamePrefix,
+ *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled,
+ *     vmwareSoftwareVersion: clusterVmwareSoftwareVersion,
+ *     workloadNetworkCidr: clusterWorkloadNetworkCidr,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Clusters can be imported using the `id`, e.g.

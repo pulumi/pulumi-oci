@@ -12,6 +12,1089 @@ namespace Pulumi.Oci.DataIntegration
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testWorkspaceTask = new Oci.DataIntegration.WorkspaceTask("test_workspace_task", new()
+    ///     {
+    ///         Identifier = workspaceTaskIdentifier,
+    ///         ModelType = workspaceTaskModelType,
+    ///         Name = workspaceTaskName,
+    ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceTaskRegistryMetadataArgs
+    ///         {
+    ///             AggregatorKey = workspaceTaskRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceTaskRegistryMetadataIsFavorite,
+    ///             Key = workspaceTaskRegistryMetadataKey,
+    ///             Labels = workspaceTaskRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceTaskRegistryMetadataRegistryVersion,
+    ///         },
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         ApiCallMode = workspaceTaskApiCallMode,
+    ///         AuthConfig = new Oci.DataIntegration.Inputs.WorkspaceTaskAuthConfigArgs
+    ///         {
+    ///             Key = workspaceTaskAuthConfigKey,
+    ///             ModelType = workspaceTaskAuthConfigModelType,
+    ///             ModelVersion = workspaceTaskAuthConfigModelVersion,
+    ///             ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskAuthConfigParentRefArgs
+    ///             {
+    ///                 Parent = workspaceTaskAuthConfigParentRefParent,
+    ///                 RootDocId = testRootDoc.Id,
+    ///             },
+    ///             ResourcePrincipalSource = workspaceTaskAuthConfigResourcePrincipalSource,
+    ///         },
+    ///         AuthDetails = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "key", workspaceTaskAuthDetailsKey },
+    ///                 { "modelType", workspaceTaskAuthDetailsModelType },
+    ///                 { "modelVersion", workspaceTaskAuthDetailsModelVersion },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskAuthDetailsParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         CancelEndpoint = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "configValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskCancelEndpointConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskCancelEndpointConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "exprString", workspaceTaskCancelEndpointExprString },
+    ///                 { "key", workspaceTaskCancelEndpointKey },
+    ///                 { "modelType", workspaceTaskCancelEndpointModelType },
+    ///                 { "modelVersion", workspaceTaskCancelEndpointModelVersion },
+    ///                 { "objectStatus", workspaceTaskCancelEndpointObjectStatus },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskCancelEndpointParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         CancelMethodType = workspaceTaskCancelMethodType,
+    ///         CancelRestCallConfig = new Oci.DataIntegration.Inputs.WorkspaceTaskCancelRestCallConfigArgs
+    ///         {
+    ///             ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskCancelRestCallConfigConfigValuesArgs
+    ///             {
+    ///                 ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs
+    ///                 {
+    ///                     IntValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesIntValue,
+    ///                     ObjectValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesObjectValue,
+    ///                     ParameterValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesParameterValue,
+    ///                     RefValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRefValue,
+    ///                     RootObjectValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+    ///                     StringValue = workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesStringValue,
+    ///                 },
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskCancelRestCallConfigConfigValuesParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///             },
+    ///             MethodType = workspaceTaskCancelRestCallConfigMethodType,
+    ///             RequestHeaders = workspaceTaskCancelRestCallConfigRequestHeaders,
+    ///         },
+    ///         ConditionalCompositeFieldMap = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "configValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskConditionalCompositeFieldMapConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "description", workspaceTaskConditionalCompositeFieldMapDescription },
+    ///                 { "fieldMapScope", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "modelType", workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelType },
+    ///                         { "configValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "configParamValues", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "intValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesIntValue },
+    ///                                         { "objectValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesObjectValue },
+    ///                                         { "parameterValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesParameterValue },
+    ///                                         { "refValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesRefValue },
+    ///                                         { "rootObjectValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesRootObjectValue },
+    ///                                         { "stringValue", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesStringValue },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "description", workspaceTaskConditionalCompositeFieldMapFieldMapScopeDescription },
+    ///                         { "fromName", workspaceTaskConditionalCompositeFieldMapFieldMapScopeFromName },
+    ///                         { "isCascade", workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsCascade },
+    ///                         { "isCaseSensitive", workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsCaseSensitive },
+    ///                         { "isJavaRegexSyntax", workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsJavaRegexSyntax },
+    ///                         { "isSkipRemainingRulesOnMatch", workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsSkipRemainingRulesOnMatch },
+    ///                         { "key", workspaceTaskConditionalCompositeFieldMapFieldMapScopeKey },
+    ///                         { "matchingStrategy", workspaceTaskConditionalCompositeFieldMapFieldMapScopeMatchingStrategy },
+    ///                         { "modelVersion", workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelVersion },
+    ///                         { "name", workspaceTaskConditionalCompositeFieldMapFieldMapScopeName },
+    ///                         { "names", workspaceTaskConditionalCompositeFieldMapFieldMapScopeNames },
+    ///                         { "objectStatus", workspaceTaskConditionalCompositeFieldMapFieldMapScopeObjectStatus },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskConditionalCompositeFieldMapFieldMapScopeParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "pattern", workspaceTaskConditionalCompositeFieldMapFieldMapScopePattern },
+    ///                         { "ruleType", workspaceTaskConditionalCompositeFieldMapFieldMapScopeRuleType },
+    ///                         { "scope", workspaceTaskConditionalCompositeFieldMapFieldMapScopeScope },
+    ///                         { "toName", workspaceTaskConditionalCompositeFieldMapFieldMapScopeToName },
+    ///                         { "types", workspaceTaskConditionalCompositeFieldMapFieldMapScopeTypes },
+    ///                     },
+    ///                 } },
+    ///                 { "fieldMaps", workspaceTaskConditionalCompositeFieldMapFieldMaps },
+    ///                 { "key", workspaceTaskConditionalCompositeFieldMapKey },
+    ///                 { "modelType", workspaceTaskConditionalCompositeFieldMapModelType },
+    ///                 { "modelVersion", workspaceTaskConditionalCompositeFieldMapModelVersion },
+    ///                 { "objectStatus", workspaceTaskConditionalCompositeFieldMapObjectStatus },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskConditionalCompositeFieldMapParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         ConfigProviderDelegate = new Oci.DataIntegration.Inputs.WorkspaceTaskConfigProviderDelegateArgs
+    ///         {
+    ///             Bindings = new[]
+    ///             {
+    ///                 new Oci.DataIntegration.Inputs.WorkspaceTaskConfigProviderDelegateBindingArgs
+    ///                 {
+    ///                     RootObjectValue = workspaceTaskConfigProviderDelegateBindingsRootObjectValue,
+    ///                     SimpleValue = workspaceTaskConfigProviderDelegateBindingsSimpleValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         DataFlow = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "description", workspaceTaskDataFlowDescription },
+    ///                 { "flowConfigValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskDataFlowFlowConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskDataFlowFlowConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "identifier", workspaceTaskDataFlowIdentifier },
+    ///                 { "key", workspaceTaskDataFlowKey },
+    ///                 { "keyMap", workspaceTaskDataFlowKeyMap },
+    ///                 { "metadata", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "aggregator", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskDataFlowMetadataAggregatorDescription },
+    ///                                 { "identifier", workspaceTaskDataFlowMetadataAggregatorIdentifier },
+    ///                                 { "key", workspaceTaskDataFlowMetadataAggregatorKey },
+    ///                                 { "name", workspaceTaskDataFlowMetadataAggregatorName },
+    ///                                 { "type", workspaceTaskDataFlowMetadataAggregatorType },
+    ///                             },
+    ///                         } },
+    ///                         { "aggregatorKey", workspaceTaskDataFlowMetadataAggregatorKey },
+    ///                         { "countStatistics", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "objectTypeCountList", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "objectCount", workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectCount },
+    ///                                         { "objectType", workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectType },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "createdBy", workspaceTaskDataFlowMetadataCreatedBy },
+    ///                         { "createdByName", workspaceTaskDataFlowMetadataCreatedByName },
+    ///                         { "identifierPath", workspaceTaskDataFlowMetadataIdentifierPath },
+    ///                         { "infoFields", workspaceTaskDataFlowMetadataInfoFields },
+    ///                         { "isFavorite", workspaceTaskDataFlowMetadataIsFavorite },
+    ///                         { "labels", workspaceTaskDataFlowMetadataLabels },
+    ///                         { "registryVersion", workspaceTaskDataFlowMetadataRegistryVersion },
+    ///                         { "timeCreated", workspaceTaskDataFlowMetadataTimeCreated },
+    ///                         { "timeUpdated", workspaceTaskDataFlowMetadataTimeUpdated },
+    ///                         { "updatedBy", workspaceTaskDataFlowMetadataUpdatedBy },
+    ///                         { "updatedByName", workspaceTaskDataFlowMetadataUpdatedByName },
+    ///                     },
+    ///                 } },
+    ///                 { "modelType", workspaceTaskDataFlowModelType },
+    ///                 { "modelVersion", workspaceTaskDataFlowModelVersion },
+    ///                 { "name", workspaceTaskDataFlowName },
+    ///                 { "nodes", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configProviderDelegate", workspaceTaskDataFlowNodesConfigProviderDelegate },
+    ///                         { "description", workspaceTaskDataFlowNodesDescription },
+    ///                         { "inputLinks", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskDataFlowNodesInputLinksDescription },
+    ///                                 { "fieldMap", workspaceTaskDataFlowNodesInputLinksFieldMap },
+    ///                                 { "fromLink", workspaceTaskDataFlowNodesInputLinksFromLink },
+    ///                                 { "key", workspaceTaskDataFlowNodesInputLinksKey },
+    ///                                 { "modelType", workspaceTaskDataFlowNodesInputLinksModelType },
+    ///                                 { "modelVersion", workspaceTaskDataFlowNodesInputLinksModelVersion },
+    ///                                 { "objectStatus", workspaceTaskDataFlowNodesInputLinksObjectStatus },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskDataFlowNodesInputLinksParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "port", workspaceTaskDataFlowNodesInputLinksPort },
+    ///                             },
+    ///                         } },
+    ///                         { "key", workspaceTaskDataFlowNodesKey },
+    ///                         { "modelType", workspaceTaskDataFlowNodesModelType },
+    ///                         { "modelVersion", workspaceTaskDataFlowNodesModelVersion },
+    ///                         { "name", workspaceTaskDataFlowNodesName },
+    ///                         { "objectStatus", workspaceTaskDataFlowNodesObjectStatus },
+    ///                         { "operator", workspaceTaskDataFlowNodesOperator },
+    ///                         { "outputLinks", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskDataFlowNodesOutputLinksDescription },
+    ///                                 { "key", workspaceTaskDataFlowNodesOutputLinksKey },
+    ///                                 { "modelType", workspaceTaskDataFlowNodesOutputLinksModelType },
+    ///                                 { "modelVersion", workspaceTaskDataFlowNodesOutputLinksModelVersion },
+    ///                                 { "objectStatus", workspaceTaskDataFlowNodesOutputLinksObjectStatus },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskDataFlowNodesOutputLinksParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "port", workspaceTaskDataFlowNodesOutputLinksPort },
+    ///                                 { "toLinks", workspaceTaskDataFlowNodesOutputLinksToLinks },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskDataFlowNodesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "uiProperties", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "coordinateX", workspaceTaskDataFlowNodesUiPropertiesCoordinateX },
+    ///                                 { "coordinateY", workspaceTaskDataFlowNodesUiPropertiesCoordinateY },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "objectStatus", workspaceTaskDataFlowObjectStatus },
+    ///                 { "objectVersion", workspaceTaskDataFlowObjectVersion },
+    ///                 { "parameters", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "configParamValues", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "intValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesIntValue },
+    ///                                         { "objectValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesObjectValue },
+    ///                                         { "parameterValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesParameterValue },
+    ///                                         { "refValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesRefValue },
+    ///                                         { "rootObjectValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesRootObjectValue },
+    ///                                         { "stringValue", workspaceTaskDataFlowParametersConfigValuesConfigParamValuesStringValue },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskDataFlowParametersConfigValuesParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "defaultValue", workspaceTaskDataFlowParametersDefaultValue },
+    ///                         { "description", workspaceTaskDataFlowParametersDescription },
+    ///                         { "isInput", workspaceTaskDataFlowParametersIsInput },
+    ///                         { "isOutput", workspaceTaskDataFlowParametersIsOutput },
+    ///                         { "key", workspaceTaskDataFlowParametersKey },
+    ///                         { "modelType", workspaceTaskDataFlowParametersModelType },
+    ///                         { "modelVersion", workspaceTaskDataFlowParametersModelVersion },
+    ///                         { "name", workspaceTaskDataFlowParametersName },
+    ///                         { "objectStatus", workspaceTaskDataFlowParametersObjectStatus },
+    ///                         { "outputAggregationType", workspaceTaskDataFlowParametersOutputAggregationType },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskDataFlowParametersParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "rootObjectDefaultValue", workspaceTaskDataFlowParametersRootObjectDefaultValue },
+    ///                         { "type", workspaceTaskDataFlowParametersType },
+    ///                         { "typeName", workspaceTaskDataFlowParametersTypeName },
+    ///                         { "usedFor", workspaceTaskDataFlowParametersUsedFor },
+    ///                     },
+    ///                 } },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskDataFlowParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///                 { "targetFieldMapSummary", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "fieldMap", workspaceTaskDataFlowTargetFieldMapSummaryFieldMap },
+    ///                     },
+    ///                 } },
+    ///                 { "typedObjectMap", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "typedObject", workspaceTaskDataFlowTypedObjectMapTypedObject },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         DataflowApplication = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "applicationId", testApplication.Id },
+    ///                 { "compartmentId", compartmentId },
+    ///                 { "configValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskDataflowApplicationConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskDataflowApplicationConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         Description = workspaceTaskDescription,
+    ///         Endpoint = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "configValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskEndpointConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskEndpointConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskEndpointConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskEndpointConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskEndpointConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskEndpointConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskEndpointConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "exprString", workspaceTaskEndpointExprString },
+    ///                 { "key", workspaceTaskEndpointKey },
+    ///                 { "modelType", workspaceTaskEndpointModelType },
+    ///                 { "modelVersion", workspaceTaskEndpointModelVersion },
+    ///                 { "objectStatus", workspaceTaskEndpointObjectStatus },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskEndpointParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         ExecuteRestCallConfig = new Oci.DataIntegration.Inputs.WorkspaceTaskExecuteRestCallConfigArgs
+    ///         {
+    ///             ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesArgs
+    ///             {
+    ///                 ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs
+    ///                 {
+    ///                     IntValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesIntValue,
+    ///                     ObjectValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesObjectValue,
+    ///                     ParameterValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesParameterValue,
+    ///                     RefValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRefValue,
+    ///                     RootObjectValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+    ///                     StringValue = workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesStringValue,
+    ///                 },
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskExecuteRestCallConfigConfigValuesParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///             },
+    ///             MethodType = workspaceTaskExecuteRestCallConfigMethodType,
+    ///             RequestHeaders = workspaceTaskExecuteRestCallConfigRequestHeaders,
+    ///         },
+    ///         Headers = workspaceTaskHeaders,
+    ///         InputPorts = new[]
+    ///         {
+    ///             new Oci.DataIntegration.Inputs.WorkspaceTaskInputPortArgs
+    ///             {
+    ///                 ModelType = workspaceTaskInputPortsModelType,
+    ///                 ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskInputPortConfigValuesArgs
+    ///                 {
+    ///                     ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs
+    ///                     {
+    ///                         IntValue = workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue,
+    ///                         ObjectValue = workspaceTaskInputPortsConfigValuesConfigParamValuesObjectValue,
+    ///                         ParameterValue = workspaceTaskInputPortsConfigValuesConfigParamValuesParameterValue,
+    ///                         RefValue = workspaceTaskInputPortsConfigValuesConfigParamValuesRefValue,
+    ///                         RootObjectValue = workspaceTaskInputPortsConfigValuesConfigParamValuesRootObjectValue,
+    ///                         StringValue = workspaceTaskInputPortsConfigValuesConfigParamValuesStringValue,
+    ///                     },
+    ///                     ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskInputPortConfigValuesParentRefArgs
+    ///                     {
+    ///                         Parent = workspaceTaskInputPortsConfigValuesParentRefParent,
+    ///                         RootDocId = testRootDoc.Id,
+    ///                     },
+    ///                 },
+    ///                 Description = workspaceTaskInputPortsDescription,
+    ///                 Fields = workspaceTaskInputPortsFields,
+    ///                 Key = workspaceTaskInputPortsKey,
+    ///                 ModelVersion = workspaceTaskInputPortsModelVersion,
+    ///                 Name = workspaceTaskInputPortsName,
+    ///                 ObjectStatus = workspaceTaskInputPortsObjectStatus,
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskInputPortParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskInputPortsParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///                 PortType = workspaceTaskInputPortsPortType,
+    ///             },
+    ///         },
+    ///         IsSingleLoad = workspaceTaskIsSingleLoad,
+    ///         JsonData = workspaceTaskJsonData,
+    ///         Key = workspaceTaskKey,
+    ///         MethodType = workspaceTaskMethodType,
+    ///         ModelVersion = workspaceTaskModelVersion,
+    ///         ObjectStatus = workspaceTaskObjectStatus,
+    ///         OpConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskOpConfigValuesArgs
+    ///         {
+    ///             ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskOpConfigValuesConfigParamValuesArgs
+    ///             {
+    ///                 IntValue = workspaceTaskOpConfigValuesConfigParamValuesIntValue,
+    ///                 ObjectValue = workspaceTaskOpConfigValuesConfigParamValuesObjectValue,
+    ///                 ParameterValue = workspaceTaskOpConfigValuesConfigParamValuesParameterValue,
+    ///                 RefValue = workspaceTaskOpConfigValuesConfigParamValuesRefValue,
+    ///                 RootObjectValue = workspaceTaskOpConfigValuesConfigParamValuesRootObjectValue,
+    ///                 StringValue = workspaceTaskOpConfigValuesConfigParamValuesStringValue,
+    ///             },
+    ///             ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskOpConfigValuesParentRefArgs
+    ///             {
+    ///                 Parent = workspaceTaskOpConfigValuesParentRefParent,
+    ///                 RootDocId = testRootDoc.Id,
+    ///             },
+    ///         },
+    ///         Operation = workspaceTaskOperation,
+    ///         OutputPorts = new[]
+    ///         {
+    ///             new Oci.DataIntegration.Inputs.WorkspaceTaskOutputPortArgs
+    ///             {
+    ///                 ModelType = workspaceTaskOutputPortsModelType,
+    ///                 ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskOutputPortConfigValuesArgs
+    ///                 {
+    ///                     ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs
+    ///                     {
+    ///                         IntValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue,
+    ///                         ObjectValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesObjectValue,
+    ///                         ParameterValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesParameterValue,
+    ///                         RefValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesRefValue,
+    ///                         RootObjectValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesRootObjectValue,
+    ///                         StringValue = workspaceTaskOutputPortsConfigValuesConfigParamValuesStringValue,
+    ///                     },
+    ///                     ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskOutputPortConfigValuesParentRefArgs
+    ///                     {
+    ///                         Parent = workspaceTaskOutputPortsConfigValuesParentRefParent,
+    ///                         RootDocId = testRootDoc.Id,
+    ///                     },
+    ///                 },
+    ///                 Description = workspaceTaskOutputPortsDescription,
+    ///                 Fields = workspaceTaskOutputPortsFields,
+    ///                 Key = workspaceTaskOutputPortsKey,
+    ///                 ModelVersion = workspaceTaskOutputPortsModelVersion,
+    ///                 Name = workspaceTaskOutputPortsName,
+    ///                 ObjectStatus = workspaceTaskOutputPortsObjectStatus,
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskOutputPortParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskOutputPortsParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///                 PortType = workspaceTaskOutputPortsPortType,
+    ///             },
+    ///         },
+    ///         ParallelLoadLimit = workspaceTaskParallelLoadLimit,
+    ///         Parameters = new[]
+    ///         {
+    ///             new Oci.DataIntegration.Inputs.WorkspaceTaskParameterArgs
+    ///             {
+    ///                 ModelType = workspaceTaskParametersModelType,
+    ///                 ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskParameterConfigValuesArgs
+    ///                 {
+    ///                     ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskParameterConfigValuesConfigParamValuesArgs
+    ///                     {
+    ///                         IntValue = workspaceTaskParametersConfigValuesConfigParamValuesIntValue,
+    ///                         ObjectValue = workspaceTaskParametersConfigValuesConfigParamValuesObjectValue,
+    ///                         ParameterValue = workspaceTaskParametersConfigValuesConfigParamValuesParameterValue,
+    ///                         RefValue = workspaceTaskParametersConfigValuesConfigParamValuesRefValue,
+    ///                         RootObjectValue = workspaceTaskParametersConfigValuesConfigParamValuesRootObjectValue,
+    ///                         StringValue = workspaceTaskParametersConfigValuesConfigParamValuesStringValue,
+    ///                     },
+    ///                     ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskParameterConfigValuesParentRefArgs
+    ///                     {
+    ///                         Parent = workspaceTaskParametersConfigValuesParentRefParent,
+    ///                         RootDocId = testRootDoc.Id,
+    ///                     },
+    ///                 },
+    ///                 DefaultValue = workspaceTaskParametersDefaultValue,
+    ///                 Description = workspaceTaskParametersDescription,
+    ///                 IsInput = workspaceTaskParametersIsInput,
+    ///                 IsOutput = workspaceTaskParametersIsOutput,
+    ///                 Key = workspaceTaskParametersKey,
+    ///                 ModelVersion = workspaceTaskParametersModelVersion,
+    ///                 Name = workspaceTaskParametersName,
+    ///                 ObjectStatus = workspaceTaskParametersObjectStatus,
+    ///                 OutputAggregationType = workspaceTaskParametersOutputAggregationType,
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskParameterParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskParametersParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///                 RootObjectDefaultValue = workspaceTaskParametersRootObjectDefaultValue,
+    ///                 Type = workspaceTaskParametersType,
+    ///                 TypeName = workspaceTaskParametersTypeName,
+    ///                 UsedFor = workspaceTaskParametersUsedFor,
+    ///             },
+    ///         },
+    ///         ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskParentRefArgs
+    ///         {
+    ///             Parent = workspaceTaskParentRefParent,
+    ///             RootDocId = testRootDoc.Id,
+    ///         },
+    ///         Pipeline = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "description", workspaceTaskPipelineDescription },
+    ///                 { "flowConfigValues", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configParamValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "intValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesIntValue },
+    ///                                 { "objectValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesObjectValue },
+    ///                                 { "parameterValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesParameterValue },
+    ///                                 { "refValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesRefValue },
+    ///                                 { "rootObjectValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesRootObjectValue },
+    ///                                 { "stringValue", workspaceTaskPipelineFlowConfigValuesConfigParamValuesStringValue },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskPipelineFlowConfigValuesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "identifier", workspaceTaskPipelineIdentifier },
+    ///                 { "key", workspaceTaskPipelineKey },
+    ///                 { "metadata", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "aggregator", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskPipelineMetadataAggregatorDescription },
+    ///                                 { "identifier", workspaceTaskPipelineMetadataAggregatorIdentifier },
+    ///                                 { "key", workspaceTaskPipelineMetadataAggregatorKey },
+    ///                                 { "name", workspaceTaskPipelineMetadataAggregatorName },
+    ///                                 { "type", workspaceTaskPipelineMetadataAggregatorType },
+    ///                             },
+    ///                         } },
+    ///                         { "aggregatorKey", workspaceTaskPipelineMetadataAggregatorKey },
+    ///                         { "countStatistics", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "objectTypeCountList", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "objectCount", workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectCount },
+    ///                                         { "objectType", workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectType },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "createdBy", workspaceTaskPipelineMetadataCreatedBy },
+    ///                         { "createdByName", workspaceTaskPipelineMetadataCreatedByName },
+    ///                         { "identifierPath", workspaceTaskPipelineMetadataIdentifierPath },
+    ///                         { "infoFields", workspaceTaskPipelineMetadataInfoFields },
+    ///                         { "isFavorite", workspaceTaskPipelineMetadataIsFavorite },
+    ///                         { "labels", workspaceTaskPipelineMetadataLabels },
+    ///                         { "registryVersion", workspaceTaskPipelineMetadataRegistryVersion },
+    ///                         { "timeCreated", workspaceTaskPipelineMetadataTimeCreated },
+    ///                         { "timeUpdated", workspaceTaskPipelineMetadataTimeUpdated },
+    ///                         { "updatedBy", workspaceTaskPipelineMetadataUpdatedBy },
+    ///                         { "updatedByName", workspaceTaskPipelineMetadataUpdatedByName },
+    ///                     },
+    ///                 } },
+    ///                 { "modelType", workspaceTaskPipelineModelType },
+    ///                 { "modelVersion", workspaceTaskPipelineModelVersion },
+    ///                 { "name", workspaceTaskPipelineName },
+    ///                 { "nodes", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configProviderDelegate", workspaceTaskPipelineNodesConfigProviderDelegate },
+    ///                         { "description", workspaceTaskPipelineNodesDescription },
+    ///                         { "inputLinks", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskPipelineNodesInputLinksDescription },
+    ///                                 { "fieldMap", workspaceTaskPipelineNodesInputLinksFieldMap },
+    ///                                 { "fromLink", workspaceTaskPipelineNodesInputLinksFromLink },
+    ///                                 { "key", workspaceTaskPipelineNodesInputLinksKey },
+    ///                                 { "modelType", workspaceTaskPipelineNodesInputLinksModelType },
+    ///                                 { "modelVersion", workspaceTaskPipelineNodesInputLinksModelVersion },
+    ///                                 { "objectStatus", workspaceTaskPipelineNodesInputLinksObjectStatus },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskPipelineNodesInputLinksParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "port", workspaceTaskPipelineNodesInputLinksPort },
+    ///                             },
+    ///                         } },
+    ///                         { "key", workspaceTaskPipelineNodesKey },
+    ///                         { "modelType", workspaceTaskPipelineNodesModelType },
+    ///                         { "modelVersion", workspaceTaskPipelineNodesModelVersion },
+    ///                         { "name", workspaceTaskPipelineNodesName },
+    ///                         { "objectStatus", workspaceTaskPipelineNodesObjectStatus },
+    ///                         { "operator", workspaceTaskPipelineNodesOperator },
+    ///                         { "outputLinks", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "description", workspaceTaskPipelineNodesOutputLinksDescription },
+    ///                                 { "key", workspaceTaskPipelineNodesOutputLinksKey },
+    ///                                 { "modelType", workspaceTaskPipelineNodesOutputLinksModelType },
+    ///                                 { "modelVersion", workspaceTaskPipelineNodesOutputLinksModelVersion },
+    ///                                 { "objectStatus", workspaceTaskPipelineNodesOutputLinksObjectStatus },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskPipelineNodesOutputLinksParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "port", workspaceTaskPipelineNodesOutputLinksPort },
+    ///                                 { "toLinks", workspaceTaskPipelineNodesOutputLinksToLinks },
+    ///                             },
+    ///                         } },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskPipelineNodesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "uiProperties", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "coordinateX", workspaceTaskPipelineNodesUiPropertiesCoordinateX },
+    ///                                 { "coordinateY", workspaceTaskPipelineNodesUiPropertiesCoordinateY },
+    ///                             },
+    ///                         } },
+    ///                     },
+    ///                 } },
+    ///                 { "objectStatus", workspaceTaskPipelineObjectStatus },
+    ///                 { "objectVersion", workspaceTaskPipelineObjectVersion },
+    ///                 { "parameters", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "configParamValues", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "intValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesIntValue },
+    ///                                         { "objectValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesObjectValue },
+    ///                                         { "parameterValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesParameterValue },
+    ///                                         { "refValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesRefValue },
+    ///                                         { "rootObjectValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesRootObjectValue },
+    ///                                         { "stringValue", workspaceTaskPipelineParametersConfigValuesConfigParamValuesStringValue },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskPipelineParametersConfigValuesParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "defaultValue", workspaceTaskPipelineParametersDefaultValue },
+    ///                         { "description", workspaceTaskPipelineParametersDescription },
+    ///                         { "isInput", workspaceTaskPipelineParametersIsInput },
+    ///                         { "isOutput", workspaceTaskPipelineParametersIsOutput },
+    ///                         { "key", workspaceTaskPipelineParametersKey },
+    ///                         { "modelType", workspaceTaskPipelineParametersModelType },
+    ///                         { "modelVersion", workspaceTaskPipelineParametersModelVersion },
+    ///                         { "name", workspaceTaskPipelineParametersName },
+    ///                         { "objectStatus", workspaceTaskPipelineParametersObjectStatus },
+    ///                         { "outputAggregationType", workspaceTaskPipelineParametersOutputAggregationType },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskPipelineParametersParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "rootObjectDefaultValue", workspaceTaskPipelineParametersRootObjectDefaultValue },
+    ///                         { "type", workspaceTaskPipelineParametersType },
+    ///                         { "typeName", workspaceTaskPipelineParametersTypeName },
+    ///                         { "usedFor", workspaceTaskPipelineParametersUsedFor },
+    ///                     },
+    ///                 } },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskPipelineParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///                 { "variables", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configValues", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "configParamValues", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "intValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesIntValue },
+    ///                                         { "objectValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesObjectValue },
+    ///                                         { "parameterValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesParameterValue },
+    ///                                         { "refValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesRefValue },
+    ///                                         { "rootObjectValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesRootObjectValue },
+    ///                                         { "stringValue", workspaceTaskPipelineVariablesConfigValuesConfigParamValuesStringValue },
+    ///                                     },
+    ///                                 } },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskPipelineVariablesConfigValuesParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "defaultValue", workspaceTaskPipelineVariablesDefaultValue },
+    ///                         { "description", workspaceTaskPipelineVariablesDescription },
+    ///                         { "identifier", workspaceTaskPipelineVariablesIdentifier },
+    ///                         { "key", workspaceTaskPipelineVariablesKey },
+    ///                         { "modelType", workspaceTaskPipelineVariablesModelType },
+    ///                         { "modelVersion", workspaceTaskPipelineVariablesModelVersion },
+    ///                         { "name", workspaceTaskPipelineVariablesName },
+    ///                         { "objectStatus", workspaceTaskPipelineVariablesObjectStatus },
+    ///                         { "objectVersion", workspaceTaskPipelineVariablesObjectVersion },
+    ///                         { "parentRef", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "parent", workspaceTaskPipelineVariablesParentRefParent },
+    ///                                 { "rootDocId", testRootDoc.Id },
+    ///                             },
+    ///                         } },
+    ///                         { "rootObjectDefaultValue", new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "key", workspaceTaskPipelineVariablesRootObjectDefaultValueKey },
+    ///                                 { "modelType", workspaceTaskPipelineVariablesRootObjectDefaultValueModelType },
+    ///                                 { "modelVersion", workspaceTaskPipelineVariablesRootObjectDefaultValueModelVersion },
+    ///                                 { "objectStatus", workspaceTaskPipelineVariablesRootObjectDefaultValueObjectStatus },
+    ///                                 { "parentRef", new[]
+    ///                                 {
+    ///                                     
+    ///                                     {
+    ///                                         { "parent", workspaceTaskPipelineVariablesRootObjectDefaultValueParentRefParent },
+    ///                                         { "rootDocId", testRootDoc.Id },
+    ///                                     },
+    ///                                 } },
+    ///                             },
+    ///                         } },
+    ///                         { "type", workspaceTaskPipelineVariablesType },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         PollRestCallConfig = new Oci.DataIntegration.Inputs.WorkspaceTaskPollRestCallConfigArgs
+    ///         {
+    ///             ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskPollRestCallConfigConfigValuesArgs
+    ///             {
+    ///                 ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs
+    ///                 {
+    ///                     IntValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesIntValue,
+    ///                     ObjectValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesObjectValue,
+    ///                     ParameterValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesParameterValue,
+    ///                     RefValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRefValue,
+    ///                     RootObjectValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+    ///                     StringValue = workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesStringValue,
+    ///                 },
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskPollRestCallConfigConfigValuesParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///             },
+    ///             MethodType = workspaceTaskPollRestCallConfigMethodType,
+    ///             RequestHeaders = workspaceTaskPollRestCallConfigRequestHeaders,
+    ///         },
+    ///         Script = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "key", workspaceTaskScriptKey },
+    ///                 { "modelType", workspaceTaskScriptModelType },
+    ///                 { "modelVersion", workspaceTaskScriptModelVersion },
+    ///                 { "objectStatus", workspaceTaskScriptObjectStatus },
+    ///                 { "parentRef", new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "parent", workspaceTaskScriptParentRefParent },
+    ///                         { "rootDocId", testRootDoc.Id },
+    ///                     },
+    ///                 } },
+    ///             },
+    ///         },
+    ///         SqlScriptType = workspaceTaskSqlScriptType,
+    ///         TypedExpressions = new[]
+    ///         {
+    ///             new Oci.DataIntegration.Inputs.WorkspaceTaskTypedExpressionArgs
+    ///             {
+    ///                 ConfigValues = new Oci.DataIntegration.Inputs.WorkspaceTaskTypedExpressionConfigValuesArgs
+    ///                 {
+    ///                     ConfigParamValues = new Oci.DataIntegration.Inputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs
+    ///                     {
+    ///                         IntValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesIntValue,
+    ///                         ObjectValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesObjectValue,
+    ///                         ParameterValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesParameterValue,
+    ///                         RefValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRefValue,
+    ///                         RootObjectValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRootObjectValue,
+    ///                         StringValue = workspaceTaskTypedExpressionsConfigValuesConfigParamValuesStringValue,
+    ///                     },
+    ///                     ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskTypedExpressionConfigValuesParentRefArgs
+    ///                     {
+    ///                         Parent = workspaceTaskTypedExpressionsConfigValuesParentRefParent,
+    ///                         RootDocId = testRootDoc.Id,
+    ///                     },
+    ///                 },
+    ///                 Description = workspaceTaskTypedExpressionsDescription,
+    ///                 Expression = workspaceTaskTypedExpressionsExpression,
+    ///                 Key = workspaceTaskTypedExpressionsKey,
+    ///                 ModelType = workspaceTaskTypedExpressionsModelType,
+    ///                 ModelVersion = workspaceTaskTypedExpressionsModelVersion,
+    ///                 Name = workspaceTaskTypedExpressionsName,
+    ///                 ObjectStatus = workspaceTaskTypedExpressionsObjectStatus,
+    ///                 ParentRef = new Oci.DataIntegration.Inputs.WorkspaceTaskTypedExpressionParentRefArgs
+    ///                 {
+    ///                     Parent = workspaceTaskTypedExpressionsParentRefParent,
+    ///                     RootDocId = testRootDoc.Id,
+    ///                 },
+    ///                 Type = workspaceTaskTypedExpressionsType,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// WorkspaceTasks can be imported using the `id`, e.g.

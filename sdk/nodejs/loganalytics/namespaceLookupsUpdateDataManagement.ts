@@ -7,6 +7,20 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespaceLookupsUpdateDataManagement = new oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management", {
+ *     updateLookupFileBody: namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
+ *     lookupName: namespaceLookupsUpdateDataManagementLookupName,
+ *     namespace: namespaceLookupsUpdateDataManagementNamespace,
+ *     charEncoding: namespaceLookupsUpdateDataManagementCharEncoding,
+ *     expect: namespaceLookupsUpdateDataManagementExpect,
+ *     isForce: namespaceLookupsUpdateDataManagementIsForce,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Import is not supported for NamespaceLookupsUpdateDataManagement

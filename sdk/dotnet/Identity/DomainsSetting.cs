@@ -12,6 +12,160 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSetting = new Oci.Identity.DomainsSetting("test_setting", new()
+    ///     {
+    ///         CsrAccess = settingCsrAccess,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:Settings",
+    ///         },
+    ///         SettingId = "Settings",
+    ///         AccountAlwaysTrustScope = settingAccountAlwaysTrustScope,
+    ///         AllowedDomains = new[]
+    ///         {
+    ///             "test.com",
+    ///         },
+    ///         AllowedForgotPasswordFlowReturnUrls = settingAllowedForgotPasswordFlowReturnUrls,
+    ///         AllowedNotificationRedirectUrls = settingAllowedNotificationRedirectUrls,
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         AuditEventRetentionPeriod = settingAuditEventRetentionPeriod,
+    ///         Authorization = settingAuthorization,
+    ///         CertificateValidation = new Oci.Identity.Inputs.DomainsSettingCertificateValidationArgs
+    ///         {
+    ///             CrlCheckOnOcspFailureEnabled = settingCertificateValidationCrlCheckOnOcspFailureEnabled,
+    ///             CrlEnabled = settingCertificateValidationCrlEnabled,
+    ///             CrlLocation = settingCertificateValidationCrlLocation,
+    ///             CrlRefreshInterval = settingCertificateValidationCrlRefreshInterval,
+    ///             OcspEnabled = settingCertificateValidationOcspEnabled,
+    ///             OcspResponderUrl = settingCertificateValidationOcspResponderUrl,
+    ///             OcspSettingsResponderUrlPreferred = settingCertificateValidationOcspSettingsResponderUrlPreferred,
+    ///             OcspSigningCertificateAlias = settingCertificateValidationOcspSigningCertificateAlias,
+    ///             OcspTimeoutDuration = settingCertificateValidationOcspTimeoutDuration,
+    ///             OcspUnknownResponseStatusAllowed = settingCertificateValidationOcspUnknownResponseStatusAllowed,
+    ///         },
+    ///         CloudGateCorsSettings = new Oci.Identity.Inputs.DomainsSettingCloudGateCorsSettingsArgs
+    ///         {
+    ///             CloudGateCorsAllowNullOrigin = settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin,
+    ///             CloudGateCorsAllowedOrigins = new[]
+    ///             {
+    ///                 "https://test.com",
+    ///             },
+    ///             CloudGateCorsEnabled = settingCloudGateCorsSettingsCloudGateCorsEnabled,
+    ///             CloudGateCorsExposedHeaders = settingCloudGateCorsSettingsCloudGateCorsExposedHeaders,
+    ///             CloudGateCorsMaxAge = settingCloudGateCorsSettingsCloudGateCorsMaxAge,
+    ///         },
+    ///         CloudMigrationCustomUrl = settingCloudMigrationCustomUrl,
+    ///         CloudMigrationUrlEnabled = settingCloudMigrationUrlEnabled,
+    ///         CompanyNames = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingCompanyNameArgs
+    ///             {
+    ///                 Locale = settingCompanyNamesLocale,
+    ///                 Value = settingCompanyNamesValue,
+    ///             },
+    ///         },
+    ///         ContactEmails = new[]
+    ///         {
+    ///             "contactEmails@test.com",
+    ///         },
+    ///         CustomBranding = settingCustomBranding,
+    ///         CustomCssLocation = settingCustomCssLocation,
+    ///         CustomHtmlLocation = settingCustomHtmlLocation,
+    ///         CustomTranslation = settingCustomTranslation,
+    ///         DefaultTrustScope = settingDefaultTrustScope,
+    ///         DiagnosticLevel = settingDiagnosticLevel,
+    ///         DiagnosticRecordForSearchIdentifiesReturnedResources = settingDiagnosticRecordForSearchIdentifiesReturnedResources,
+    ///         EnableTermsOfUse = settingEnableTermsOfUse,
+    ///         ExternalId = "externalId",
+    ///         IamUpstSessionExpiry = settingIamUpstSessionExpiry,
+    ///         Id = settingId,
+    ///         Images = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingImageArgs
+    ///             {
+    ///                 Type = settingImagesType,
+    ///                 Value = settingImagesValue,
+    ///                 Display = settingImagesDisplay,
+    ///             },
+    ///         },
+    ///         IsHostedPage = settingIsHostedPage,
+    ///         Issuer = settingIssuer,
+    ///         Locale = settingLocale,
+    ///         LoginTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingLoginTextArgs
+    ///             {
+    ///                 Locale = settingLoginTextsLocale,
+    ///                 Value = settingLoginTextsValue,
+    ///             },
+    ///         },
+    ///         MaxNoOfAppCmvaToReturn = settingMaxNoOfAppCmvaToReturn,
+    ///         MaxNoOfAppRoleMembersToReturn = settingMaxNoOfAppRoleMembersToReturn,
+    ///         Ocid = settingOcid,
+    ///         PreferredLanguage = settingPreferredLanguage,
+    ///         PrevIssuer = settingPrevIssuer,
+    ///         PrivacyPolicyUrl = settingPrivacyPolicyUrl,
+    ///         PurgeConfigs = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingPurgeConfigArgs
+    ///             {
+    ///                 ResourceName = "resourceName",
+    ///                 RetentionPeriod = settingPurgeConfigsRetentionPeriod,
+    ///             },
+    ///         },
+    ///         ReAuthFactors = new[]
+    ///         {
+    ///             "password",
+    ///         },
+    ///         ReAuthWhenChangingMyAuthenticationFactors = settingReAuthWhenChangingMyAuthenticationFactors,
+    ///         ResourceTypeSchemaVersion = settingResourceTypeSchemaVersion,
+    ///         ServiceAdminCannotListOtherUsers = settingServiceAdminCannotListOtherUsers,
+    ///         SigningCertPublicAccess = settingSigningCertPublicAccess,
+    ///         SubMappingAttr = settingSubMappingAttr,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingTagArgs
+    ///             {
+    ///                 Key = settingTagsKey,
+    ///                 Value = settingTagsValue,
+    ///             },
+    ///         },
+    ///         TenantCustomClaims = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSettingTenantCustomClaimArgs
+    ///             {
+    ///                 AllScopes = settingTenantCustomClaimsAllScopes,
+    ///                 Expression = settingTenantCustomClaimsExpression,
+    ///                 Mode = settingTenantCustomClaimsMode,
+    ///                 Name = settingTenantCustomClaimsName,
+    ///                 TokenType = settingTenantCustomClaimsTokenType,
+    ///                 Value = settingTenantCustomClaimsValue,
+    ///                 Scopes = new[]
+    ///                 {
+    ///                     "scopes",
+    ///                 },
+    ///             },
+    ///         },
+    ///         TermsOfUseUrl = settingTermsOfUseUrl,
+    ///         Timezone = settingTimezone,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Settings can be imported using the `id`, e.g.

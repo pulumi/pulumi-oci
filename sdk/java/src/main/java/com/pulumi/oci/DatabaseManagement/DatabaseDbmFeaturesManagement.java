@@ -19,6 +19,73 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.DatabaseDbmFeaturesManagement;
+ * import com.pulumi.oci.DatabaseManagement.DatabaseDbmFeaturesManagementArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.DatabaseDbmFeaturesManagementFeatureDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseDbmFeaturesManagement = new DatabaseDbmFeaturesManagement("testDatabaseDbmFeaturesManagement", DatabaseDbmFeaturesManagementArgs.builder()
+ *             .databaseId(testDatabase.id())
+ *             .enableDatabaseDbmFeature(enableDatabaseDbmFeature)
+ *             .featureDetails(DatabaseDbmFeaturesManagementFeatureDetailsArgs.builder()
+ *                 .feature(databaseDbmFeaturesManagementFeatureDetailsFeature)
+ *                 .enableDatabaseDbmFeature(enableDatabaseDbmFeature)
+ *                 .connectorDetails(DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
+ *                     .connectorType(databaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
+ *                     .databaseConnectorId(testDatabaseConnector.id())
+ *                     .managementAgentId(testManagementAgent.id())
+ *                     .privateEndPointId(testPrivateEndPoint.id())
+ *                     .build())
+ *                 .databaseConnectionDetails(DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs.builder()
+ *                     .connectionCredentials(DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs.builder()
+ *                         .credentialName(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName)
+ *                         .credentialType(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType)
+ *                         .namedCredentialId(testNamedCredential.id())
+ *                         .passwordSecretId(testSecret.id())
+ *                         .role(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole)
+ *                         .sslSecretId(testSecret.id())
+ *                         .userName(testUser.name())
+ *                         .build())
+ *                     .connectionString(DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs.builder()
+ *                         .connectionType(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType)
+ *                         .port(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort)
+ *                         .protocol(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol)
+ *                         .service(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService)
+ *                         .build())
+ *                     .build())
+ *                 .canEnableAllCurrentPdbs(databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs)
+ *                 .isAutoEnablePluggableDatabase(databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase)
+ *                 .managementType(databaseDbmFeaturesManagementFeatureDetailsManagementType)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")
 public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

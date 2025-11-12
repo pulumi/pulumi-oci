@@ -12,6 +12,24 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalContainerDatabaseManagement = new Oci.Database.ExternalContainerDatabaseManagement("test_external_container_database_management", new()
+    ///     {
+    ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+    ///         ExternalDatabaseConnectorId = testExternalDatabaseConnector.Id,
+    ///         LicenseMode = externalNonContainerDatabaseManagementLicenseModel,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.

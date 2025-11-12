@@ -9,6 +9,121 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPipelineRun = new oci.datascience.PipelineRun("test_pipeline_run", {
+ *     compartmentId: compartmentId,
+ *     pipelineId: testPipeline.id,
+ *     configurationOverrideDetails: {
+ *         type: pipelineRunConfigurationOverrideDetailsType,
+ *         commandLineArguments: pipelineRunConfigurationOverrideDetailsCommandLineArguments,
+ *         environmentVariables: pipelineRunConfigurationOverrideDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+ *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: pipelineRunDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     infrastructureConfigurationOverrideDetails: {
+ *         blockStorageSizeInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         shapeName: testShape.name,
+ *         blockStorageSizeInGbsParameterized: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbsParameterized,
+ *         shapeConfigDetails: {
+ *             memoryInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs,
+ *             memoryInGbsParameterized: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbsParameterized,
+ *             ocpus: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus,
+ *             ocpusParameterized: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpusParameterized,
+ *         },
+ *         subnetId: testSubnet.id,
+ *     },
+ *     logConfigurationOverrideDetails: {
+ *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
+ *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
+ *     },
+ *     opcParentRptUrl: pipelineRunOpcParentRptUrl,
+ *     parametersOverride: pipelineRunParametersOverride,
+ *     projectId: testProject.id,
+ *     stepOverrideDetails: [{
+ *         stepConfigurationDetails: {
+ *             commandLineArguments: pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments,
+ *             environmentVariables: pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables,
+ *             maximumRuntimeInMinutes: pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
+ *         },
+ *         stepName: pipelineRunStepOverrideDetailsStepName,
+ *         stepContainerConfigurationDetails: {
+ *             containerType: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType,
+ *             image: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage,
+ *             cmds: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd,
+ *             entrypoints: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint,
+ *             imageDigest: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
+ *             imageSignatureId: testImageSignature.id,
+ *         },
+ *         stepDataflowConfigurationDetails: {
+ *             configuration: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
+ *             driverShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
+ *             driverShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
+ *                 memoryInGbsParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbsParameterized,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
+ *                 ocpusParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpusParameterized,
+ *             },
+ *             executorShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
+ *             executorShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
+ *                 memoryInGbsParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbsParameterized,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
+ *                 ocpusParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpusParameterized,
+ *             },
+ *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
+ *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
+ *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
+ *         },
+ *         stepInfrastructureConfigurationDetails: {
+ *             blockStorageSizeInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *             shapeName: testShape.name,
+ *             blockStorageSizeInGbsParameterized: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbsParameterized,
+ *             shapeConfigDetails: {
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+ *                 memoryInGbsParameterized: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbsParameterized,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
+ *                 ocpusParameterized: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpusParameterized,
+ *             },
+ *             subnetId: testSubnet.id,
+ *         },
+ *         stepStorageMountConfigurationDetailsLists: [{
+ *             destinationDirectoryName: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationDirectoryName,
+ *             storageType: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListStorageType,
+ *             bucket: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListBucket,
+ *             destinationPath: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationPath,
+ *             exportId: testExport.id,
+ *             mountTargetId: testMountTarget.id,
+ *             namespace: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListNamespace,
+ *             prefix: pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListPrefix,
+ *         }],
+ *     }],
+ *     storageMountConfigurationOverrideDetailsLists: [{
+ *         destinationDirectoryName: pipelineRunStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
+ *         storageType: pipelineRunStorageMountConfigurationOverrideDetailsListStorageType,
+ *         bucket: pipelineRunStorageMountConfigurationOverrideDetailsListBucket,
+ *         destinationPath: pipelineRunStorageMountConfigurationOverrideDetailsListDestinationPath,
+ *         exportId: testExport.id,
+ *         mountTargetId: testMountTarget.id,
+ *         namespace: pipelineRunStorageMountConfigurationOverrideDetailsListNamespace,
+ *         prefix: pipelineRunStorageMountConfigurationOverrideDetailsListPrefix,
+ *     }],
+ *     systemTags: pipelineRunSystemTags,
+ * });
+ * ```
+ *
  * ## Import
  *
  * PipelineRuns can be imported using the `id`, e.g.

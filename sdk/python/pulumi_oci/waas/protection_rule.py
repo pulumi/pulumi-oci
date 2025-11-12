@@ -238,6 +238,20 @@ class ProtectionRule(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_protection_rule = oci.waas.ProtectionRule("test_protection_rule",
+            waas_policy_id=test_waas_policy["id"],
+            key=key,
+            action="DETECT",
+            exclusions={
+                "exclusions": ["example.com"],
+                "target": "REQUEST_COOKIES",
+            })
+        ```
+
         ## Import
 
         ProtectionRules can be imported using the `id`, e.g.
@@ -261,6 +275,20 @@ class ProtectionRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_protection_rule = oci.waas.ProtectionRule("test_protection_rule",
+            waas_policy_id=test_waas_policy["id"],
+            key=key,
+            action="DETECT",
+            exclusions={
+                "exclusions": ["example.com"],
+                "target": "REQUEST_COOKIES",
+            })
+        ```
 
         ## Import
 

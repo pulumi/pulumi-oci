@@ -9,6 +9,74 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSelfRegistrationProfile = new oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile", {
+ *     activationEmailRequired: selfRegistrationProfileActivationEmailRequired,
+ *     consentTextPresent: selfRegistrationProfileConsentTextPresent,
+ *     displayNames: [{
+ *         locale: selfRegistrationProfileDisplayNameLocale,
+ *         value: selfRegistrationProfileDisplayNameValue,
+ *         "default": selfRegistrationProfileDisplayNameDefault,
+ *     }],
+ *     emailTemplate: {
+ *         value: selfRegistrationProfileEmailTemplateValue,
+ *     },
+ *     idcsEndpoint: testDomain.url,
+ *     name: selfRegistrationProfileName,
+ *     numberOfDaysRedirectUrlIsValid: selfRegistrationProfileNumberOfDaysRedirectUrlIsValid,
+ *     redirectUrl: selfRegistrationProfileRedirectUrl,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
+ *     showOnLoginPage: selfRegistrationProfileShowOnLoginPage,
+ *     active: selfRegistrationProfileActive,
+ *     afterSubmitTexts: [{
+ *         locale: selfRegistrationProfileAfterSubmitTextLocale,
+ *         value: selfRegistrationProfileAfterSubmitTextValue,
+ *         "default": selfRegistrationProfileAfterSubmitTextDefault,
+ *     }],
+ *     allowedEmailDomains: selfRegistrationProfileAllowedEmailDomains,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: selfRegistrationProfileAuthorization,
+ *     consentTexts: [{
+ *         locale: selfRegistrationProfileConsentTextLocale,
+ *         value: selfRegistrationProfileConsentTextValue,
+ *         "default": selfRegistrationProfileConsentTextDefault,
+ *     }],
+ *     defaultGroups: [{
+ *         value: selfRegistrationProfileDefaultGroupsValue,
+ *     }],
+ *     disallowedEmailDomains: selfRegistrationProfileDisallowedEmailDomains,
+ *     externalId: "externalId",
+ *     footerLogo: selfRegistrationProfileFooterLogo,
+ *     footerTexts: [{
+ *         locale: selfRegistrationProfileFooterTextLocale,
+ *         value: selfRegistrationProfileFooterTextValue,
+ *         "default": selfRegistrationProfileFooterTextDefault,
+ *     }],
+ *     headerLogo: selfRegistrationProfileHeaderLogo,
+ *     headerTexts: [{
+ *         locale: selfRegistrationProfileHeaderTextLocale,
+ *         value: selfRegistrationProfileHeaderTextValue,
+ *         "default": selfRegistrationProfileHeaderTextDefault,
+ *     }],
+ *     id: selfRegistrationProfileId,
+ *     ocid: selfRegistrationProfileOcid,
+ *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: selfRegistrationProfileTagsKey,
+ *         value: selfRegistrationProfileTagsValue,
+ *     }],
+ *     userAttributes: [{
+ *         seqNumber: selfRegistrationProfileUserAttributesSeqNumber,
+ *         value: selfRegistrationProfileUserAttributesValue,
+ *         fullyQualifiedAttributeName: selfRegistrationProfileUserAttributesFullyQualifiedAttributeName,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * SelfRegistrationProfiles can be imported using the `id`, e.g.

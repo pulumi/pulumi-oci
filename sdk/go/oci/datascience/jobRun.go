@@ -14,6 +14,137 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datascience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datascience.NewJobRun(ctx, "test_job_run", &datascience.JobRunArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				JobId:         pulumi.Any(testJob.Id),
+//				ProjectId:     pulumi.Any(testProject.Id),
+//				Asynchronous:  pulumi.Any(asynchronous),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(jobRunDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				JobConfigurationOverrideDetails: &datascience.JobRunJobConfigurationOverrideDetailsArgs{
+//					JobType:                 pulumi.Any(jobRunJobConfigurationOverrideDetailsJobType),
+//					CommandLineArguments:    pulumi.Any(jobRunJobConfigurationOverrideDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(jobRunJobConfigurationOverrideDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes),
+//					StartupProbeDetails: &datascience.JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs{
+//						Commands:              pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand),
+//						JobProbeCheckType:     pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType),
+//						FailureThreshold:      pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold),
+//						InitialDelayInSeconds: pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds),
+//						PeriodInSeconds:       pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds),
+//					},
+//				},
+//				JobEnvironmentConfigurationOverrideDetails: &datascience.JobRunJobEnvironmentConfigurationOverrideDetailsArgs{
+//					Image:              pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImage),
+//					JobEnvironmentType: pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsJobEnvironmentType),
+//					Cmds:               pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsCmd),
+//					Entrypoints:        pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsEntrypoint),
+//					ImageDigest:        pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest),
+//					ImageSignatureId:   pulumi.Any(testImageSignature.Id),
+//				},
+//				JobInfrastructureConfigurationOverrideDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsArgs{
+//					JobInfrastructureType: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType),
+//					BlockStorageSizeInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+//					JobShapeConfigDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus),
+//					},
+//					ShapeName: pulumi.Any(testShape.Name),
+//					SubnetId:  pulumi.Any(testSubnet.Id),
+//				},
+//				JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
+//					EnableAutoLogCreation: pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
+//				},
+//				JobNodeConfigurationOverrideDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsArgs{
+//					JobNodeType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeType),
+//					JobNetworkConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs{
+//						JobNetworkType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType),
+//						SubnetId:       pulumi.Any(testSubnet.Id),
+//					},
+//					JobNodeGroupConfigurationDetailsLists: datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArray{
+//						&datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs{
+//							Name: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName),
+//							JobConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs{
+//								JobType:                 pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType),
+//								CommandLineArguments:    pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments),
+//								EnvironmentVariables:    pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables),
+//								MaximumRuntimeInMinutes: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes),
+//								StartupProbeDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs{
+//									Commands:              pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand),
+//									JobProbeCheckType:     pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType),
+//									FailureThreshold:      pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+//									InitialDelayInSeconds: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+//									PeriodInSeconds:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
+//								},
+//							},
+//							JobEnvironmentConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs{
+//								Image:              pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage),
+//								JobEnvironmentType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType),
+//								Cmds:               pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd),
+//								Entrypoints:        pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint),
+//								ImageDigest:        pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest),
+//								ImageSignatureId:   pulumi.Any(testImageSignature.Id),
+//							},
+//							JobInfrastructureConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{
+//								JobInfrastructureType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType),
+//								BlockStorageSizeInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//								JobShapeConfigDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
+//									MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
+//									Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//								},
+//								ShapeName: pulumi.Any(testShape.Name),
+//								SubnetId:  pulumi.Any(testSubnet.Id),
+//							},
+//							MinimumSuccessReplicas: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+//							Replicas:               pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas),
+//						},
+//					},
+//					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes),
+//					StartupOrder:            pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsStartupOrder),
+//				},
+//				JobStorageMountConfigurationOverrideDetailsList: []map[string]interface{}{
+//					map[string]interface{}{
+//						"destinationDirectoryName": jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
+//						"storageType":              jobRunJobStorageMountConfigurationOverrideDetailsListStorageType,
+//						"bucket":                   jobRunJobStorageMountConfigurationOverrideDetailsListBucket,
+//						"destinationPath":          jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath,
+//						"exportId":                 testExport.Id,
+//						"mountTargetId":            testMountTarget.Id,
+//						"namespace":                jobRunJobStorageMountConfigurationOverrideDetailsListNamespace,
+//						"prefix":                   jobRunJobStorageMountConfigurationOverrideDetailsListPrefix,
+//					},
+//				},
+//				OpcParentRptUrl: pulumi.Any(jobRunOpcParentRptUrl),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // JobRuns can be imported using the `id`, e.g.

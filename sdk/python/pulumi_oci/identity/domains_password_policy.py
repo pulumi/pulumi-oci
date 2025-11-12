@@ -3397,6 +3397,64 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_password_policy = oci.identity.DomainsPasswordPolicy("test_password_policy",
+            idcs_endpoint=test_domain["url"],
+            name=password_policy_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy"],
+            allowed_chars=password_policy_allowed_chars,
+            attribute_sets=[],
+            attributes="",
+            authorization=password_policy_authorization,
+            description=password_policy_description,
+            dictionary_delimiter=password_policy_dictionary_delimiter,
+            dictionary_location=password_policy_dictionary_location,
+            dictionary_word_disallowed=password_policy_dictionary_word_disallowed,
+            disallowed_chars=password_policy_disallowed_chars,
+            disallowed_substrings=password_policy_disallowed_substrings,
+            disallowed_user_attribute_values=password_policy_disallowed_user_attribute_values,
+            distinct_characters=password_policy_distinct_characters,
+            external_id="externalId",
+            first_name_disallowed=password_policy_first_name_disallowed,
+            force_password_reset=password_policy_force_password_reset,
+            groups=[{
+                "value": test_group["id"],
+            }],
+            id=password_policy_id,
+            last_name_disallowed=password_policy_last_name_disallowed,
+            lockout_duration=password_policy_lockout_duration,
+            max_incorrect_attempts=password_policy_max_incorrect_attempts,
+            max_length=password_policy_max_length,
+            max_repeated_chars=password_policy_max_repeated_chars,
+            max_special_chars=password_policy_max_special_chars,
+            min_alpha_numerals=password_policy_min_alpha_numerals,
+            min_alphas=password_policy_min_alphas,
+            min_length=password_policy_min_length,
+            min_lower_case=password_policy_min_lower_case,
+            min_numerals=password_policy_min_numerals,
+            min_password_age=password_policy_min_password_age,
+            min_special_chars=password_policy_min_special_chars,
+            min_unique_chars=password_policy_min_unique_chars,
+            min_upper_case=password_policy_min_upper_case,
+            num_passwords_in_history=password_policy_num_passwords_in_history,
+            ocid=password_policy_ocid,
+            password_expire_warning=password_policy_password_expire_warning,
+            password_expires_after=password_policy_password_expires_after,
+            password_strength=password_policy_password_strength,
+            priority=password_policy_priority,
+            required_chars=password_policy_required_chars,
+            resource_type_schema_version=password_policy_resource_type_schema_version,
+            starts_with_alphabet=password_policy_starts_with_alphabet,
+            tags=[{
+                "key": password_policy_tags_key,
+                "value": password_policy_tags_value,
+            }],
+            user_name_disallowed=password_policy_user_name_disallowed)
+        ```
+
         ## Import
 
         PasswordPolicies can be imported using the `id`, e.g.
@@ -3841,6 +3899,64 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_password_policy = oci.identity.DomainsPasswordPolicy("test_password_policy",
+            idcs_endpoint=test_domain["url"],
+            name=password_policy_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy"],
+            allowed_chars=password_policy_allowed_chars,
+            attribute_sets=[],
+            attributes="",
+            authorization=password_policy_authorization,
+            description=password_policy_description,
+            dictionary_delimiter=password_policy_dictionary_delimiter,
+            dictionary_location=password_policy_dictionary_location,
+            dictionary_word_disallowed=password_policy_dictionary_word_disallowed,
+            disallowed_chars=password_policy_disallowed_chars,
+            disallowed_substrings=password_policy_disallowed_substrings,
+            disallowed_user_attribute_values=password_policy_disallowed_user_attribute_values,
+            distinct_characters=password_policy_distinct_characters,
+            external_id="externalId",
+            first_name_disallowed=password_policy_first_name_disallowed,
+            force_password_reset=password_policy_force_password_reset,
+            groups=[{
+                "value": test_group["id"],
+            }],
+            id=password_policy_id,
+            last_name_disallowed=password_policy_last_name_disallowed,
+            lockout_duration=password_policy_lockout_duration,
+            max_incorrect_attempts=password_policy_max_incorrect_attempts,
+            max_length=password_policy_max_length,
+            max_repeated_chars=password_policy_max_repeated_chars,
+            max_special_chars=password_policy_max_special_chars,
+            min_alpha_numerals=password_policy_min_alpha_numerals,
+            min_alphas=password_policy_min_alphas,
+            min_length=password_policy_min_length,
+            min_lower_case=password_policy_min_lower_case,
+            min_numerals=password_policy_min_numerals,
+            min_password_age=password_policy_min_password_age,
+            min_special_chars=password_policy_min_special_chars,
+            min_unique_chars=password_policy_min_unique_chars,
+            min_upper_case=password_policy_min_upper_case,
+            num_passwords_in_history=password_policy_num_passwords_in_history,
+            ocid=password_policy_ocid,
+            password_expire_warning=password_policy_password_expire_warning,
+            password_expires_after=password_policy_password_expires_after,
+            password_strength=password_policy_password_strength,
+            priority=password_policy_priority,
+            required_chars=password_policy_required_chars,
+            resource_type_schema_version=password_policy_resource_type_schema_version,
+            starts_with_alphabet=password_policy_starts_with_alphabet,
+            tags=[{
+                "key": password_policy_tags_key,
+                "value": password_policy_tags_value,
+            }],
+            user_name_disallowed=password_policy_user_name_disallowed)
+        ```
 
         ## Import
 

@@ -13,6 +13,61 @@ import (
 )
 
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewPluggabledatabasePluggableDatabaseDbmFeaturesManagement(ctx, "test_pluggabledatabase_pluggable_database_dbm_features_management", &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs{
+//				PluggableDatabaseId:               pulumi.Any(testPluggableDatabase.Id),
+//				EnablePluggableDatabaseDbmFeature: pulumi.Any(enablePluggableDatabaseDbmFeature),
+//				FeatureDetails: &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs{
+//					Feature:                           pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature),
+//					EnablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
+//					ConnectorDetails: &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs{
+//						ConnectorType:       pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType),
+//						DatabaseConnectorId: pulumi.Any(testDatabaseConnector.Id),
+//						ManagementAgentId:   pulumi.Any(testManagementAgent.Id),
+//						PrivateEndPointId:   pulumi.Any(testPrivateEndPoint.Id),
+//					},
+//					DatabaseConnectionDetails: &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs{
+//						ConnectionCredentials: &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs{
+//							CredentialName:    pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName),
+//							CredentialType:    pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType),
+//							NamedCredentialId: pulumi.Any(testNamedCredential.Id),
+//							PasswordSecretId:  pulumi.Any(testSecret.Id),
+//							Role:              pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole),
+//							SslSecretId:       pulumi.Any(testSecret.Id),
+//							UserName:          pulumi.Any(testUser.Name),
+//						},
+//						ConnectionString: &databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs{
+//							ConnectionType: pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType),
+//							Port:           pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
+//							Protocol:       pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol),
+//							Service:        pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService),
+//						},
+//					},
+//					CanEnableAllCurrentPdbs:       pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs),
+//					IsAutoEnablePluggableDatabase: pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase),
+//					ManagementType:                pulumi.Any(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type PluggabledatabasePluggableDatabaseDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

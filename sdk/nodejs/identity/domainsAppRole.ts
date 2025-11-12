@@ -9,6 +9,37 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppRole = new oci.identity.DomainsAppRole("test_app_role", {
+ *     app: {
+ *         value: testApp.id,
+ *     },
+ *     displayName: appRoleDisplayName,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:AppRole"],
+ *     adminRole: appRoleAdminRole,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: appRoleAuthorization,
+ *     availableToClients: appRoleAvailableToClients,
+ *     availableToGroups: appRoleAvailableToGroups,
+ *     availableToUsers: appRoleAvailableToUsers,
+ *     description: appRoleDescription,
+ *     id: appRoleId,
+ *     legacyGroupName: "legacyGroupName",
+ *     ocid: appRoleOcid,
+ *     "public": appRolePublic,
+ *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: appRoleTagsKey,
+ *         value: appRoleTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * AppRoles can be imported using the `id`, e.g.

@@ -14,6 +14,60 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsApprovalWorkflow(ctx, "test_approval_workflow", &identity.DomainsApprovalWorkflowArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				MaxDuration: &identity.DomainsApprovalWorkflowMaxDurationArgs{
+//					Unit:  pulumi.Any(approvalWorkflowMaxDurationUnit),
+//					Value: pulumi.Any(approvalWorkflowMaxDurationValue),
+//				},
+//				Name: pulumi.Any(approvalWorkflowName),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow"),
+//				},
+//				ApprovalWorkflowSteps: identity.DomainsApprovalWorkflowApprovalWorkflowStepArray{
+//					&identity.DomainsApprovalWorkflowApprovalWorkflowStepArgs{
+//						Type:  pulumi.Any(approvalWorkflowApprovalWorkflowStepsType),
+//						Value: pulumi.Any(approvalWorkflowApprovalWorkflowStepsValue),
+//						Ocid:  pulumi.Any(approvalWorkflowApprovalWorkflowStepsOcid),
+//					},
+//				},
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(approvalWorkflowAuthorization),
+//				Description:               pulumi.Any(approvalWorkflowDescription),
+//				Id:                        approvalWorkflowId,
+//				Ocid:                      pulumi.Any(approvalWorkflowOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(approvalWorkflowResourceTypeSchemaVersion),
+//				Tags: identity.DomainsApprovalWorkflowTagArray{
+//					&identity.DomainsApprovalWorkflowTagArgs{
+//						Key:   pulumi.Any(approvalWorkflowTagsKey),
+//						Value: pulumi.Any(approvalWorkflowTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ApprovalWorkflows can be imported using the `id`, e.g.

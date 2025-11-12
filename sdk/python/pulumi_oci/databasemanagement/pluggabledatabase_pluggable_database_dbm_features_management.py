@@ -207,6 +207,45 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pluggabledatabase_pluggable_database_dbm_features_management = oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management",
+            pluggable_database_id=test_pluggable_database["id"],
+            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature,
+            feature_details={
+                "feature": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_feature,
+                "enable_pluggable_database_dbm_feature": enable_pluggable_database_dbm_feature,
+                "connector_details": {
+                    "connector_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "database_connection_details": {
+                    "connection_credentials": {
+                        "credential_name": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_name,
+                        "credential_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_type,
+                        "named_credential_id": test_named_credential["id"],
+                        "password_secret_id": test_secret["id"],
+                        "role": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_role,
+                        "ssl_secret_id": test_secret["id"],
+                        "user_name": test_user["name"],
+                    },
+                    "connection_string": {
+                        "connection_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
+                        "port": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "protocol": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
+                        "service": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
+                    },
+                },
+                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "management_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_management_type,
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -225,6 +264,45 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pluggabledatabase_pluggable_database_dbm_features_management = oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management",
+            pluggable_database_id=test_pluggable_database["id"],
+            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature,
+            feature_details={
+                "feature": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_feature,
+                "enable_pluggable_database_dbm_feature": enable_pluggable_database_dbm_feature,
+                "connector_details": {
+                    "connector_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "database_connection_details": {
+                    "connection_credentials": {
+                        "credential_name": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_name,
+                        "credential_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_type,
+                        "named_credential_id": test_named_credential["id"],
+                        "password_secret_id": test_secret["id"],
+                        "role": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_credentials_role,
+                        "ssl_secret_id": test_secret["id"],
+                        "user_name": test_user["name"],
+                    },
+                    "connection_string": {
+                        "connection_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
+                        "port": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "protocol": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
+                        "service": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
+                    },
+                },
+                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "management_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_management_type,
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

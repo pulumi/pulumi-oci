@@ -1129,6 +1129,101 @@ class BdsInstance(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance = oci.bigdataservice.BdsInstance("test_bds_instance",
+            cluster_admin_password=bds_instance_cluster_admin_password,
+            cluster_public_key=bds_instance_cluster_public_key,
+            cluster_version=bds_instance_cluster_version,
+            compartment_id=compartment_id,
+            display_name=bds_instance_display_name,
+            is_high_availability=bds_instance_is_high_availability,
+            is_secure=bds_instance_is_secure,
+            master_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            util_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            worker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            compute_only_worker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            edge_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            kafka_broker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            bds_cluster_version_summary={
+                "bds_version": bds_instance_bds_cluster_version_summary_bds_version,
+                "odh_version": bds_instance_bds_cluster_version_summary_odh_version,
+            },
+            bootstrap_script_url=bds_instance_bootstrap_script_url,
+            cluster_profile=bds_instance_cluster_profile,
+            defined_tags=bds_instance_defined_tags,
+            freeform_tags=bds_instance_freeform_tags,
+            kerberos_realm_name=bds_instance_kerberos_realm_name,
+            kms_key_id=bds_instance_kms_key_id,
+            ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
+            network_config={
+                "cidr_block": bds_instance_network_config_cidr_block,
+                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required,
+            })
+        ```
+
         ## Import
 
         BdsInstances can be imported using the `id`, e.g.
@@ -1174,6 +1269,101 @@ class BdsInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance = oci.bigdataservice.BdsInstance("test_bds_instance",
+            cluster_admin_password=bds_instance_cluster_admin_password,
+            cluster_public_key=bds_instance_cluster_public_key,
+            cluster_version=bds_instance_cluster_version,
+            compartment_id=compartment_id,
+            display_name=bds_instance_display_name,
+            is_high_availability=bds_instance_is_high_availability,
+            is_secure=bds_instance_is_secure,
+            master_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            util_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            worker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            compute_only_worker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            edge_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            kafka_broker_node={
+                "shape": bds_instance_nodes_shape,
+                "subnet_id": test_subnet["id"],
+                "number_of_nodes": bds_instance_number_of_nodes,
+                "block_volume_size_in_gbs": bds_instance_nodes_block_volume_size_in_gbs,
+                "shape_config": {
+                    "memory_in_gbs": bds_instance_nodes_shape_config_memory_in_gbs,
+                    "nvmes": bds_instance_nodes_shape_config_nvmes,
+                    "ocpus": bds_instance_nodes_shape_config_ocpus,
+                },
+            },
+            bds_cluster_version_summary={
+                "bds_version": bds_instance_bds_cluster_version_summary_bds_version,
+                "odh_version": bds_instance_bds_cluster_version_summary_odh_version,
+            },
+            bootstrap_script_url=bds_instance_bootstrap_script_url,
+            cluster_profile=bds_instance_cluster_profile,
+            defined_tags=bds_instance_defined_tags,
+            freeform_tags=bds_instance_freeform_tags,
+            kerberos_realm_name=bds_instance_kerberos_realm_name,
+            kms_key_id=bds_instance_kms_key_id,
+            ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
+            network_config={
+                "cidr_block": bds_instance_network_config_cidr_block,
+                "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required,
+            })
+        ```
 
         ## Import
 

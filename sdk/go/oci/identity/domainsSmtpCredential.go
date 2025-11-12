@@ -14,6 +14,55 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsSmtpCredential(ctx, "test_smtp_credential", &identity.DomainsSmtpCredentialArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(smtpCredentialAuthorization),
+//				Description:               pulumi.Any(smtpCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(smtpCredentialExpiresOn),
+//				Id:                        smtpCredentialId,
+//				Ocid:                      pulumi.Any(smtpCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(smtpCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(smtpCredentialStatus),
+//				Tags: identity.DomainsSmtpCredentialTagArray{
+//					&identity.DomainsSmtpCredentialTagArgs{
+//						Key:   pulumi.Any(smtpCredentialTagsKey),
+//						Value: pulumi.Any(smtpCredentialTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(smtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsSmtpCredentialUserArgs{
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//					Value: pulumi.Any(testUser.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // SmtpCredentials can be imported using the `id`, e.g.

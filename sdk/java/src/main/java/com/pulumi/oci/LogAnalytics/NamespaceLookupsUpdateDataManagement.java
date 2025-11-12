@@ -17,6 +17,42 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.NamespaceLookupsUpdateDataManagement;
+ * import com.pulumi.oci.LogAnalytics.NamespaceLookupsUpdateDataManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNamespaceLookupsUpdateDataManagement = new NamespaceLookupsUpdateDataManagement("testNamespaceLookupsUpdateDataManagement", NamespaceLookupsUpdateDataManagementArgs.builder()
+ *             .updateLookupFileBody(namespaceLookupsUpdateDataManagementUpdateLookupFileBody)
+ *             .lookupName(namespaceLookupsUpdateDataManagementLookupName)
+ *             .namespace(namespaceLookupsUpdateDataManagementNamespace)
+ *             .charEncoding(namespaceLookupsUpdateDataManagementCharEncoding)
+ *             .expect(namespaceLookupsUpdateDataManagementExpect)
+ *             .isForce(namespaceLookupsUpdateDataManagementIsForce)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Import is not supported for NamespaceLookupsUpdateDataManagement

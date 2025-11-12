@@ -14,6 +14,50 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMyAuthToken(ctx, "test_my_auth_token", &identity.DomainsMyAuthTokenArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:authToken"),
+//				},
+//				Authorization:             pulumi.Any(myAuthTokenAuthorization),
+//				Description:               pulumi.Any(myAuthTokenDescription),
+//				ExpiresOn:                 pulumi.Any(myAuthTokenExpiresOn),
+//				Id:                        myAuthTokenId,
+//				Ocid:                      pulumi.Any(myAuthTokenOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(myAuthTokenResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(myAuthTokenStatus),
+//				Tags: identity.DomainsMyAuthTokenTagArray{
+//					&identity.DomainsMyAuthTokenTagArgs{
+//						Key:   pulumi.Any(myAuthTokenTagsKey),
+//						Value: pulumi.Any(myAuthTokenTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMyAuthTokenUserArgs{
+//					Ocid:  pulumi.Any(myAuthTokenUserOcid),
+//					Value: pulumi.Any(myAuthTokenUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MyAuthTokens can be imported using the `id`, e.g.

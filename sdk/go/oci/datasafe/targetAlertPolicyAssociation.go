@@ -14,6 +14,42 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datasafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datasafe.NewTargetAlertPolicyAssociation(ctx, "test_target_alert_policy_association", &datasafe.TargetAlertPolicyAssociationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				IsEnabled:     pulumi.Any(targetAlertPolicyAssociationIsEnabled),
+//				PolicyId:      pulumi.Any(testPolicy.Id),
+//				TargetId:      pulumi.Any(testTarget.Id),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(targetAlertPolicyAssociationDescription),
+//				DisplayName: pulumi.Any(targetAlertPolicyAssociationDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				TargetType: targetAlertPolicyAssociationTargetType,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // TargetAlertPolicyAssociations can be imported using the `id`, e.g.

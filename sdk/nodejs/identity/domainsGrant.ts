@@ -9,6 +9,42 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGrant = new oci.identity.DomainsGrant("test_grant", {
+ *     grantMechanism: grantGrantMechanism,
+ *     grantee: {
+ *         type: grantGranteeType,
+ *         value: grantGranteeValue,
+ *     },
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Grant"],
+ *     app: {
+ *         value: grantAppValue,
+ *     },
+ *     appEntitlementCollection: {
+ *         value: grantAppEntitlementCollectionValue,
+ *     },
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: grantAuthorization,
+ *     entitlement: {
+ *         attributeName: "appRoles",
+ *         attributeValue: grantEntitlementAttributeValue,
+ *     },
+ *     grantedAttributeValuesJson: grantGrantedAttributeValuesJson,
+ *     id: grantId,
+ *     ocid: grantOcid,
+ *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: grantTagsKey,
+ *         value: grantTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * Grants can be imported using the `id`, e.g.

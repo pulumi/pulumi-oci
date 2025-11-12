@@ -401,6 +401,33 @@ class AgentDataSource(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_data_source = oci.generativeai.AgentDataSource("test_data_source",
+            compartment_id=compartment_id,
+            data_source_config={
+                "data_source_config_type": data_source_data_source_config_data_source_config_type,
+                "object_storage_prefixes": [{
+                    "bucket": data_source_data_source_config_object_storage_prefixes_bucket,
+                    "namespace": data_source_data_source_config_object_storage_prefixes_namespace,
+                    "prefix": data_source_data_source_config_object_storage_prefixes_prefix,
+                }],
+                "should_enable_multi_modality": data_source_data_source_config_should_enable_multi_modality,
+            },
+            knowledge_base_id=test_knowledge_base["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=data_source_description,
+            display_name=data_source_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            metadata=data_source_metadata)
+        ```
+
         ## Import
 
         DataSources can be imported using the `id`, e.g.
@@ -432,6 +459,33 @@ class AgentDataSource(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_data_source = oci.generativeai.AgentDataSource("test_data_source",
+            compartment_id=compartment_id,
+            data_source_config={
+                "data_source_config_type": data_source_data_source_config_data_source_config_type,
+                "object_storage_prefixes": [{
+                    "bucket": data_source_data_source_config_object_storage_prefixes_bucket,
+                    "namespace": data_source_data_source_config_object_storage_prefixes_namespace,
+                    "prefix": data_source_data_source_config_object_storage_prefixes_prefix,
+                }],
+                "should_enable_multi_modality": data_source_data_source_config_should_enable_multi_modality,
+            },
+            knowledge_base_id=test_knowledge_base["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=data_source_description,
+            display_name=data_source_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            metadata=data_source_metadata)
+        ```
 
         ## Import
 

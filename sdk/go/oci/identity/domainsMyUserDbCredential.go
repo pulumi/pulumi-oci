@@ -14,6 +14,51 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMyUserDbCredential(ctx, "test_my_user_db_credential", &identity.DomainsMyUserDbCredentialArgs{
+//				DbPassword:   pulumi.Any(myUserDbCredentialDbPassword),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials"),
+//				},
+//				Authorization:             pulumi.Any(myUserDbCredentialAuthorization),
+//				Description:               pulumi.Any(myUserDbCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(myUserDbCredentialExpiresOn),
+//				Id:                        myUserDbCredentialId,
+//				Ocid:                      pulumi.Any(myUserDbCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(myUserDbCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(myUserDbCredentialStatus),
+//				Tags: identity.DomainsMyUserDbCredentialTagArray{
+//					&identity.DomainsMyUserDbCredentialTagArgs{
+//						Key:   pulumi.Any(myUserDbCredentialTagsKey),
+//						Value: pulumi.Any(myUserDbCredentialTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMyUserDbCredentialUserArgs{
+//					Value: pulumi.Any(myUserDbCredentialUserValue),
+//					Ocid:  pulumi.Any(myUserDbCredentialUserOcid),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MyUserDbCredentials can be imported using the `id`, e.g.

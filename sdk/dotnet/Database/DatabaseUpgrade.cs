@@ -12,6 +12,31 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDatabaseUpgrade = new Oci.Database.DatabaseUpgrade("test_database_upgrade", new()
+    ///     {
+    ///         Action = databaseUpgradeAction,
+    ///         DatabaseId = testDatabase.Id,
+    ///         DatabaseUpgradeSourceDetails = new Oci.Database.Inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs
+    ///         {
+    ///             DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
+    ///             DbHomeId = testDbHome.Id,
+    ///             DbVersion = databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion,
+    ///             Options = databaseUpgradeDatabaseUpgradeSourceDetailsOptions,
+    ///             Source = databaseUpgradeDatabaseUpgradeSourceDetailsSource,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.

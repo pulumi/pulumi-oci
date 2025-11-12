@@ -12,6 +12,33 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("test_cloud_guard_configuration", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         ReportingRegion = cloudGuardConfigurationReportingRegion,
+    ///         Status = cloudGuardConfigurationStatus,
+    ///         SelfManageResources = cloudGuardConfigurationSelfManageResources,
+    ///         ServiceConfigurations = new[]
+    ///         {
+    ///             
+    ///             {
+    ///                 { "serviceConfigurationType", cloudGuardConfigurationServiceConfigurationsServiceConfigurationType },
+    ///                 { "status", cloudGuardConfigurationServiceConfigurationsStatus },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.

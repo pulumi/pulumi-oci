@@ -1188,6 +1188,36 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_oauth2client_credential = oci.identity.DomainsMyOauth2clientCredential("test_my_oauth2client_credential",
+            idcs_endpoint=test_domain["url"],
+            name=my_oauth2client_credential_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"],
+            scopes=[{
+                "audience": my_oauth2client_credential_scopes_audience,
+                "scope": my_oauth2client_credential_scopes_scope,
+            }],
+            authorization=my_oauth2client_credential_authorization,
+            description=my_oauth2client_credential_description,
+            expires_on=my_oauth2client_credential_expires_on,
+            id=my_oauth2client_credential_id,
+            is_reset_secret=my_oauth2client_credential_is_reset_secret,
+            ocid=my_oauth2client_credential_ocid,
+            resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version,
+            status=my_oauth2client_credential_status,
+            tags=[{
+                "key": my_oauth2client_credential_tags_key,
+                "value": my_oauth2client_credential_tags_value,
+            }],
+            user={
+                "ocid": my_oauth2client_credential_user_ocid,
+                "value": my_oauth2client_credential_user_value,
+            })
+        ```
+
         ## Import
 
         MyOAuth2ClientCredentials can be imported using the `id`, e.g.
@@ -1321,6 +1351,36 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_oauth2client_credential = oci.identity.DomainsMyOauth2clientCredential("test_my_oauth2client_credential",
+            idcs_endpoint=test_domain["url"],
+            name=my_oauth2client_credential_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"],
+            scopes=[{
+                "audience": my_oauth2client_credential_scopes_audience,
+                "scope": my_oauth2client_credential_scopes_scope,
+            }],
+            authorization=my_oauth2client_credential_authorization,
+            description=my_oauth2client_credential_description,
+            expires_on=my_oauth2client_credential_expires_on,
+            id=my_oauth2client_credential_id,
+            is_reset_secret=my_oauth2client_credential_is_reset_secret,
+            ocid=my_oauth2client_credential_ocid,
+            resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version,
+            status=my_oauth2client_credential_status,
+            tags=[{
+                "key": my_oauth2client_credential_tags_key,
+                "value": my_oauth2client_credential_tags_value,
+            }],
+            user={
+                "ocid": my_oauth2client_credential_user_ocid,
+                "value": my_oauth2client_credential_user_value,
+            })
+        ```
 
         ## Import
 

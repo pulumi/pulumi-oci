@@ -12,6 +12,46 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMySmtpCredential = new Oci.Identity.DomainsMySmtpCredential("test_my_smtp_credential", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential",
+    ///         },
+    ///         Authorization = mySmtpCredentialAuthorization,
+    ///         Description = mySmtpCredentialDescription,
+    ///         ExpiresOn = mySmtpCredentialExpiresOn,
+    ///         Id = mySmtpCredentialId,
+    ///         Ocid = mySmtpCredentialOcid,
+    ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
+    ///         Status = mySmtpCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMySmtpCredentialTagArgs
+    ///             {
+    ///                 Key = mySmtpCredentialTagsKey,
+    ///                 Value = mySmtpCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMySmtpCredentialUserArgs
+    ///         {
+    ///             Ocid = mySmtpCredentialUserOcid,
+    ///             Value = mySmtpCredentialUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MySmtpCredentials can be imported using the `id`, e.g.

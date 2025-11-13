@@ -1265,6 +1265,63 @@ class DomainsGroup(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_group = oci.identity.DomainsGroup("test_group",
+            display_name=group_display_name,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:core:2.0:Group"],
+            attribute_sets=[],
+            attributes="",
+            authorization=group_authorization,
+            external_id="externalId",
+            force_delete=group_force_delete,
+            id=group_id,
+            members=[{
+                "type": group_members_type,
+                "value": group_members_value,
+                "ocid": group_members_ocid,
+            }],
+            non_unique_display_name=group_non_unique_display_name,
+            ocid=group_ocid,
+            resource_type_schema_version=group_resource_type_schema_version,
+            tags=[{
+                "key": group_tags_key,
+                "value": group_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group={
+                "membership_rule": group_urnietfparamsscimschemasoracleidcsextensiondynamic_group_membership_rule,
+                "membership_type": group_urnietfparamsscimschemasoracleidcsextensiondynamic_group_membership_type,
+            },
+            urnietfparamsscimschemasoracleidcsextensiongroup_group={
+                "creation_mechanism": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_creation_mechanism,
+                "description": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_description,
+                "owners": [{
+                    "type": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_owners_type,
+                    "value": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_owners_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionposix_group={
+                "gid_number": group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number,
+            },
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group={
+                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable,
+            })
+        ```
+
         ## Import
 
         Groups can be imported using the `id`, e.g.
@@ -1378,6 +1435,63 @@ class DomainsGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_group = oci.identity.DomainsGroup("test_group",
+            display_name=group_display_name,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:core:2.0:Group"],
+            attribute_sets=[],
+            attributes="",
+            authorization=group_authorization,
+            external_id="externalId",
+            force_delete=group_force_delete,
+            id=group_id,
+            members=[{
+                "type": group_members_type,
+                "value": group_members_value,
+                "ocid": group_members_ocid,
+            }],
+            non_unique_display_name=group_non_unique_display_name,
+            ocid=group_ocid,
+            resource_type_schema_version=group_resource_type_schema_version,
+            tags=[{
+                "key": group_tags_key,
+                "value": group_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group={
+                "membership_rule": group_urnietfparamsscimschemasoracleidcsextensiondynamic_group_membership_rule,
+                "membership_type": group_urnietfparamsscimschemasoracleidcsextensiondynamic_group_membership_type,
+            },
+            urnietfparamsscimschemasoracleidcsextensiongroup_group={
+                "creation_mechanism": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_creation_mechanism,
+                "description": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_description,
+                "owners": [{
+                    "type": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_owners_type,
+                    "value": group_urnietfparamsscimschemasoracleidcsextensiongroup_group_owners_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionposix_group={
+                "gid_number": group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number,
+            },
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group={
+                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable,
+            })
+        ```
 
         ## Import
 

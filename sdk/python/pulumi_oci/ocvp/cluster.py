@@ -823,6 +823,50 @@ class Cluster(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cluster = oci.ocvp.Cluster("test_cluster",
+            compute_availability_domain=cluster_compute_availability_domain,
+            esxi_hosts_count=cluster_esxi_hosts_count,
+            network_configuration={
+                "nsx_edge_vtep_vlan_id": test_vlan["id"],
+                "nsx_vtep_vlan_id": test_vlan["id"],
+                "provisioning_subnet_id": test_subnet["id"],
+                "vmotion_vlan_id": test_vlan["id"],
+                "vsan_vlan_id": test_vlan["id"],
+                "hcx_vlan_id": test_vlan["id"],
+                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
+                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
+                "provisioning_vlan_id": test_vlan["id"],
+                "replication_vlan_id": test_vlan["id"],
+                "vsphere_vlan_id": test_vlan["id"],
+            },
+            sddc_id=test_sddc["id"],
+            capacity_reservation_id=test_capacity_reservation["id"],
+            datastore_cluster_ids=cluster_datastore_cluster_ids,
+            datastores=[{
+                "block_volume_ids": cluster_datastores_block_volume_ids,
+                "datastore_type": cluster_datastores_datastore_type,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=cluster_display_name,
+            esxi_software_version=cluster_esxi_software_version,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            initial_commitment=cluster_initial_commitment,
+            initial_host_ocpu_count=cluster_initial_host_ocpu_count,
+            initial_host_shape_name=test_shape["name"],
+            instance_display_name_prefix=cluster_instance_display_name_prefix,
+            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
+            vmware_software_version=cluster_vmware_software_version,
+            workload_network_cidr=cluster_workload_network_cidr)
+        ```
+
         ## Import
 
         Clusters can be imported using the `id`, e.g.
@@ -867,6 +911,50 @@ class Cluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cluster = oci.ocvp.Cluster("test_cluster",
+            compute_availability_domain=cluster_compute_availability_domain,
+            esxi_hosts_count=cluster_esxi_hosts_count,
+            network_configuration={
+                "nsx_edge_vtep_vlan_id": test_vlan["id"],
+                "nsx_vtep_vlan_id": test_vlan["id"],
+                "provisioning_subnet_id": test_subnet["id"],
+                "vmotion_vlan_id": test_vlan["id"],
+                "vsan_vlan_id": test_vlan["id"],
+                "hcx_vlan_id": test_vlan["id"],
+                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
+                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
+                "provisioning_vlan_id": test_vlan["id"],
+                "replication_vlan_id": test_vlan["id"],
+                "vsphere_vlan_id": test_vlan["id"],
+            },
+            sddc_id=test_sddc["id"],
+            capacity_reservation_id=test_capacity_reservation["id"],
+            datastore_cluster_ids=cluster_datastore_cluster_ids,
+            datastores=[{
+                "block_volume_ids": cluster_datastores_block_volume_ids,
+                "datastore_type": cluster_datastores_datastore_type,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=cluster_display_name,
+            esxi_software_version=cluster_esxi_software_version,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            initial_commitment=cluster_initial_commitment,
+            initial_host_ocpu_count=cluster_initial_host_ocpu_count,
+            initial_host_shape_name=test_shape["name"],
+            instance_display_name_prefix=cluster_instance_display_name_prefix,
+            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
+            vmware_software_version=cluster_vmware_software_version,
+            workload_network_cidr=cluster_workload_network_cidr)
+        ```
 
         ## Import
 

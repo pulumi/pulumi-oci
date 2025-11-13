@@ -14,6 +14,73 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := loganalytics.NewNamespaceScheduledTask(ctx, "test_namespace_scheduled_task", &loganalytics.NamespaceScheduledTaskArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Kind:          pulumi.Any(namespaceScheduledTaskKind),
+//				Namespace:     pulumi.Any(namespaceScheduledTaskNamespace),
+//				Action: &loganalytics.NamespaceScheduledTaskActionArgs{
+//					Type:                   pulumi.Any(namespaceScheduledTaskActionType),
+//					CompartmentIdInSubtree: pulumi.Any(namespaceScheduledTaskActionCompartmentIdInSubtree),
+//					DataType:               pulumi.Any(namespaceScheduledTaskActionDataType),
+//					MetricExtraction: &loganalytics.NamespaceScheduledTaskActionMetricExtractionArgs{
+//						CompartmentId: pulumi.Any(compartmentId),
+//						MetricName:    pulumi.Any(testMetric.Name),
+//						Namespace:     pulumi.Any(namespaceScheduledTaskActionMetricExtractionNamespace),
+//						ResourceGroup: pulumi.Any(namespaceScheduledTaskActionMetricExtractionResourceGroup),
+//					},
+//					PurgeCompartmentId: pulumi.Any(testCompartment.Id),
+//					PurgeDuration:      pulumi.Any(namespaceScheduledTaskActionPurgeDuration),
+//					QueryString:        pulumi.Any(namespaceScheduledTaskActionQueryString),
+//					SavedSearchId:      pulumi.Any(testSavedSearch.Id),
+//					TemplateDetails: &loganalytics.NamespaceScheduledTaskActionTemplateDetailsArgs{
+//						TemplateId: pulumi.Any(testTemplate.Id),
+//						TemplateParams: loganalytics.NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray{
+//							&loganalytics.NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs{
+//								KeyField:   pulumi.Any(namespaceScheduledTaskActionTemplateDetailsTemplateParamsKeyField),
+//								ValueField: pulumi.Any(namespaceScheduledTaskActionTemplateDetailsTemplateParamsValueField),
+//							},
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				DisplayName: pulumi.Any(namespaceScheduledTaskDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				SavedSearchId: pulumi.Any(testSavedSearch.Id),
+//				Schedules: &loganalytics.NamespaceScheduledTaskSchedulesArgs{
+//					Type:              namespaceScheduledTaskSchedulesType,
+//					Expression:        namespaceScheduledTaskSchedulesExpression,
+//					MisfirePolicy:     namespaceScheduledTaskSchedulesMisfirePolicy,
+//					RecurringInterval: namespaceScheduledTaskSchedulesRecurringInterval,
+//					RepeatCount:       namespaceScheduledTaskSchedulesRepeatCount,
+//					TimeZone:          namespaceScheduledTaskSchedulesTimeZone,
+//				},
+//				TaskType: pulumi.Any(namespaceScheduledTaskTaskType),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // NamespaceScheduledTasks can be imported using the `id`, e.g.

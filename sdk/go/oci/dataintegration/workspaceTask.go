@@ -14,6 +14,893 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/dataintegration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dataintegration.NewWorkspaceTask(ctx, "test_workspace_task", &dataintegration.WorkspaceTaskArgs{
+//				Identifier: pulumi.Any(workspaceTaskIdentifier),
+//				ModelType:  pulumi.Any(workspaceTaskModelType),
+//				Name:       pulumi.Any(workspaceTaskName),
+//				RegistryMetadata: &dataintegration.WorkspaceTaskRegistryMetadataArgs{
+//					AggregatorKey:   pulumi.Any(workspaceTaskRegistryMetadataAggregatorKey),
+//					IsFavorite:      pulumi.Any(workspaceTaskRegistryMetadataIsFavorite),
+//					Key:             pulumi.Any(workspaceTaskRegistryMetadataKey),
+//					Labels:          pulumi.Any(workspaceTaskRegistryMetadataLabels),
+//					RegistryVersion: pulumi.Any(workspaceTaskRegistryMetadataRegistryVersion),
+//				},
+//				WorkspaceId: pulumi.Any(testWorkspace.Id),
+//				ApiCallMode: pulumi.Any(workspaceTaskApiCallMode),
+//				AuthConfig: &dataintegration.WorkspaceTaskAuthConfigArgs{
+//					Key:          pulumi.Any(workspaceTaskAuthConfigKey),
+//					ModelType:    pulumi.Any(workspaceTaskAuthConfigModelType),
+//					ModelVersion: pulumi.Any(workspaceTaskAuthConfigModelVersion),
+//					ParentRef: &dataintegration.WorkspaceTaskAuthConfigParentRefArgs{
+//						Parent:    pulumi.Any(workspaceTaskAuthConfigParentRefParent),
+//						RootDocId: pulumi.Any(testRootDoc.Id),
+//					},
+//					ResourcePrincipalSource: pulumi.Any(workspaceTaskAuthConfigResourcePrincipalSource),
+//				},
+//				AuthDetails: []map[string]interface{}{
+//					map[string]interface{}{
+//						"key":          workspaceTaskAuthDetailsKey,
+//						"modelType":    workspaceTaskAuthDetailsModelType,
+//						"modelVersion": workspaceTaskAuthDetailsModelVersion,
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskAuthDetailsParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//					},
+//				},
+//				CancelEndpoint: []map[string]interface{}{
+//					map[string]interface{}{
+//						"configValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskCancelEndpointConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskCancelEndpointConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskCancelEndpointConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskCancelEndpointConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskCancelEndpointConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskCancelEndpointConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskCancelEndpointConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//						"exprString":   workspaceTaskCancelEndpointExprString,
+//						"key":          workspaceTaskCancelEndpointKey,
+//						"modelType":    workspaceTaskCancelEndpointModelType,
+//						"modelVersion": workspaceTaskCancelEndpointModelVersion,
+//						"objectStatus": workspaceTaskCancelEndpointObjectStatus,
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskCancelEndpointParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//					},
+//				},
+//				CancelMethodType: workspaceTaskCancelMethodType,
+//				CancelRestCallConfig: &dataintegration.WorkspaceTaskCancelRestCallConfigArgs{
+//					ConfigValues: &dataintegration.WorkspaceTaskCancelRestCallConfigConfigValuesArgs{
+//						ConfigParamValues: &dataintegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs{
+//							IntValue:        workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesIntValue,
+//							ObjectValue:     workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesObjectValue,
+//							ParameterValue:  workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesParameterValue,
+//							RefValue:        workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRefValue,
+//							RootObjectValue: workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+//							StringValue:     workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesStringValue,
+//						},
+//						ParentRef: &dataintegration.WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskCancelRestCallConfigConfigValuesParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//					},
+//					MethodType:     pulumi.Any(workspaceTaskCancelRestCallConfigMethodType),
+//					RequestHeaders: pulumi.Any(workspaceTaskCancelRestCallConfigRequestHeaders),
+//				},
+//				ConditionalCompositeFieldMap: []map[string]interface{}{
+//					map[string]interface{}{
+//						"configValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskConditionalCompositeFieldMapConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//						"description": workspaceTaskConditionalCompositeFieldMapDescription,
+//						"fieldMapScope": []map[string]interface{}{
+//							map[string]interface{}{
+//								"modelType": workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelType,
+//								"configValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"configParamValues": []map[string]interface{}{
+//											map[string]interface{}{
+//												"intValue":        workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesIntValue,
+//												"objectValue":     workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesObjectValue,
+//												"parameterValue":  workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesParameterValue,
+//												"refValue":        workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesRefValue,
+//												"rootObjectValue": workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesRootObjectValue,
+//												"stringValue":     workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesStringValue,
+//											},
+//										},
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//									},
+//								},
+//								"description":                 workspaceTaskConditionalCompositeFieldMapFieldMapScopeDescription,
+//								"fromName":                    workspaceTaskConditionalCompositeFieldMapFieldMapScopeFromName,
+//								"isCascade":                   workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsCascade,
+//								"isCaseSensitive":             workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsCaseSensitive,
+//								"isJavaRegexSyntax":           workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsJavaRegexSyntax,
+//								"isSkipRemainingRulesOnMatch": workspaceTaskConditionalCompositeFieldMapFieldMapScopeIsSkipRemainingRulesOnMatch,
+//								"key":                         workspaceTaskConditionalCompositeFieldMapFieldMapScopeKey,
+//								"matchingStrategy":            workspaceTaskConditionalCompositeFieldMapFieldMapScopeMatchingStrategy,
+//								"modelVersion":                workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelVersion,
+//								"name":                        workspaceTaskConditionalCompositeFieldMapFieldMapScopeName,
+//								"names":                       workspaceTaskConditionalCompositeFieldMapFieldMapScopeNames,
+//								"objectStatus":                workspaceTaskConditionalCompositeFieldMapFieldMapScopeObjectStatus,
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskConditionalCompositeFieldMapFieldMapScopeParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"pattern":  workspaceTaskConditionalCompositeFieldMapFieldMapScopePattern,
+//								"ruleType": workspaceTaskConditionalCompositeFieldMapFieldMapScopeRuleType,
+//								"scope":    workspaceTaskConditionalCompositeFieldMapFieldMapScopeScope,
+//								"toName":   workspaceTaskConditionalCompositeFieldMapFieldMapScopeToName,
+//								"types":    workspaceTaskConditionalCompositeFieldMapFieldMapScopeTypes,
+//							},
+//						},
+//						"fieldMaps":    workspaceTaskConditionalCompositeFieldMapFieldMaps,
+//						"key":          workspaceTaskConditionalCompositeFieldMapKey,
+//						"modelType":    workspaceTaskConditionalCompositeFieldMapModelType,
+//						"modelVersion": workspaceTaskConditionalCompositeFieldMapModelVersion,
+//						"objectStatus": workspaceTaskConditionalCompositeFieldMapObjectStatus,
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskConditionalCompositeFieldMapParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//					},
+//				},
+//				ConfigProviderDelegate: &dataintegration.WorkspaceTaskConfigProviderDelegateArgs{
+//					Bindings: dataintegration.WorkspaceTaskConfigProviderDelegateBindingArray{
+//						&dataintegration.WorkspaceTaskConfigProviderDelegateBindingArgs{
+//							RootObjectValue: workspaceTaskConfigProviderDelegateBindingsRootObjectValue,
+//							SimpleValue:     workspaceTaskConfigProviderDelegateBindingsSimpleValue,
+//						},
+//					},
+//				},
+//				DataFlow: []map[string]interface{}{
+//					map[string]interface{}{
+//						"description": workspaceTaskDataFlowDescription,
+//						"flowConfigValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskDataFlowFlowConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskDataFlowFlowConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskDataFlowFlowConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskDataFlowFlowConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskDataFlowFlowConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskDataFlowFlowConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskDataFlowFlowConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//						"identifier": workspaceTaskDataFlowIdentifier,
+//						"key":        workspaceTaskDataFlowKey,
+//						"keyMap":     workspaceTaskDataFlowKeyMap,
+//						"metadata": []map[string]interface{}{
+//							map[string]interface{}{
+//								"aggregator": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description": workspaceTaskDataFlowMetadataAggregatorDescription,
+//										"identifier":  workspaceTaskDataFlowMetadataAggregatorIdentifier,
+//										"key":         workspaceTaskDataFlowMetadataAggregatorKey,
+//										"name":        workspaceTaskDataFlowMetadataAggregatorName,
+//										"type":        workspaceTaskDataFlowMetadataAggregatorType,
+//									},
+//								},
+//								"aggregatorKey": workspaceTaskDataFlowMetadataAggregatorKey,
+//								"countStatistics": []map[string]interface{}{
+//									map[string]interface{}{
+//										"objectTypeCountList": []map[string]interface{}{
+//											map[string]interface{}{
+//												"objectCount": workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectCount,
+//												"objectType":  workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectType,
+//											},
+//										},
+//									},
+//								},
+//								"createdBy":       workspaceTaskDataFlowMetadataCreatedBy,
+//								"createdByName":   workspaceTaskDataFlowMetadataCreatedByName,
+//								"identifierPath":  workspaceTaskDataFlowMetadataIdentifierPath,
+//								"infoFields":      workspaceTaskDataFlowMetadataInfoFields,
+//								"isFavorite":      workspaceTaskDataFlowMetadataIsFavorite,
+//								"labels":          workspaceTaskDataFlowMetadataLabels,
+//								"registryVersion": workspaceTaskDataFlowMetadataRegistryVersion,
+//								"timeCreated":     workspaceTaskDataFlowMetadataTimeCreated,
+//								"timeUpdated":     workspaceTaskDataFlowMetadataTimeUpdated,
+//								"updatedBy":       workspaceTaskDataFlowMetadataUpdatedBy,
+//								"updatedByName":   workspaceTaskDataFlowMetadataUpdatedByName,
+//							},
+//						},
+//						"modelType":    workspaceTaskDataFlowModelType,
+//						"modelVersion": workspaceTaskDataFlowModelVersion,
+//						"name":         workspaceTaskDataFlowName,
+//						"nodes": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configProviderDelegate": workspaceTaskDataFlowNodesConfigProviderDelegate,
+//								"description":            workspaceTaskDataFlowNodesDescription,
+//								"inputLinks": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description":  workspaceTaskDataFlowNodesInputLinksDescription,
+//										"fieldMap":     workspaceTaskDataFlowNodesInputLinksFieldMap,
+//										"fromLink":     workspaceTaskDataFlowNodesInputLinksFromLink,
+//										"key":          workspaceTaskDataFlowNodesInputLinksKey,
+//										"modelType":    workspaceTaskDataFlowNodesInputLinksModelType,
+//										"modelVersion": workspaceTaskDataFlowNodesInputLinksModelVersion,
+//										"objectStatus": workspaceTaskDataFlowNodesInputLinksObjectStatus,
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskDataFlowNodesInputLinksParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//										"port": workspaceTaskDataFlowNodesInputLinksPort,
+//									},
+//								},
+//								"key":          workspaceTaskDataFlowNodesKey,
+//								"modelType":    workspaceTaskDataFlowNodesModelType,
+//								"modelVersion": workspaceTaskDataFlowNodesModelVersion,
+//								"name":         workspaceTaskDataFlowNodesName,
+//								"objectStatus": workspaceTaskDataFlowNodesObjectStatus,
+//								"operator":     workspaceTaskDataFlowNodesOperator,
+//								"outputLinks": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description":  workspaceTaskDataFlowNodesOutputLinksDescription,
+//										"key":          workspaceTaskDataFlowNodesOutputLinksKey,
+//										"modelType":    workspaceTaskDataFlowNodesOutputLinksModelType,
+//										"modelVersion": workspaceTaskDataFlowNodesOutputLinksModelVersion,
+//										"objectStatus": workspaceTaskDataFlowNodesOutputLinksObjectStatus,
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskDataFlowNodesOutputLinksParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//										"port":    workspaceTaskDataFlowNodesOutputLinksPort,
+//										"toLinks": workspaceTaskDataFlowNodesOutputLinksToLinks,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskDataFlowNodesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"uiProperties": []map[string]interface{}{
+//									map[string]interface{}{
+//										"coordinateX": workspaceTaskDataFlowNodesUiPropertiesCoordinateX,
+//										"coordinateY": workspaceTaskDataFlowNodesUiPropertiesCoordinateY,
+//									},
+//								},
+//							},
+//						},
+//						"objectStatus":  workspaceTaskDataFlowObjectStatus,
+//						"objectVersion": workspaceTaskDataFlowObjectVersion,
+//						"parameters": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"configParamValues": []map[string]interface{}{
+//											map[string]interface{}{
+//												"intValue":        workspaceTaskDataFlowParametersConfigValuesConfigParamValuesIntValue,
+//												"objectValue":     workspaceTaskDataFlowParametersConfigValuesConfigParamValuesObjectValue,
+//												"parameterValue":  workspaceTaskDataFlowParametersConfigValuesConfigParamValuesParameterValue,
+//												"refValue":        workspaceTaskDataFlowParametersConfigValuesConfigParamValuesRefValue,
+//												"rootObjectValue": workspaceTaskDataFlowParametersConfigValuesConfigParamValuesRootObjectValue,
+//												"stringValue":     workspaceTaskDataFlowParametersConfigValuesConfigParamValuesStringValue,
+//											},
+//										},
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskDataFlowParametersConfigValuesParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//									},
+//								},
+//								"defaultValue":          workspaceTaskDataFlowParametersDefaultValue,
+//								"description":           workspaceTaskDataFlowParametersDescription,
+//								"isInput":               workspaceTaskDataFlowParametersIsInput,
+//								"isOutput":              workspaceTaskDataFlowParametersIsOutput,
+//								"key":                   workspaceTaskDataFlowParametersKey,
+//								"modelType":             workspaceTaskDataFlowParametersModelType,
+//								"modelVersion":          workspaceTaskDataFlowParametersModelVersion,
+//								"name":                  workspaceTaskDataFlowParametersName,
+//								"objectStatus":          workspaceTaskDataFlowParametersObjectStatus,
+//								"outputAggregationType": workspaceTaskDataFlowParametersOutputAggregationType,
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskDataFlowParametersParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"rootObjectDefaultValue": workspaceTaskDataFlowParametersRootObjectDefaultValue,
+//								"type":                   workspaceTaskDataFlowParametersType,
+//								"typeName":               workspaceTaskDataFlowParametersTypeName,
+//								"usedFor":                workspaceTaskDataFlowParametersUsedFor,
+//							},
+//						},
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskDataFlowParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//						"targetFieldMapSummary": []map[string]interface{}{
+//							map[string]interface{}{
+//								"fieldMap": workspaceTaskDataFlowTargetFieldMapSummaryFieldMap,
+//							},
+//						},
+//						"typedObjectMap": []map[string]interface{}{
+//							map[string]interface{}{
+//								"typedObject": workspaceTaskDataFlowTypedObjectMapTypedObject,
+//							},
+//						},
+//					},
+//				},
+//				DataflowApplication: []map[string]interface{}{
+//					map[string]interface{}{
+//						"applicationId": testApplication.Id,
+//						"compartmentId": compartmentId,
+//						"configValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskDataflowApplicationConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskDataflowApplicationConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskDataflowApplicationConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskDataflowApplicationConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskDataflowApplicationConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskDataflowApplicationConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskDataflowApplicationConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Description: pulumi.Any(workspaceTaskDescription),
+//				Endpoint: []map[string]interface{}{
+//					map[string]interface{}{
+//						"configValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskEndpointConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskEndpointConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskEndpointConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskEndpointConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskEndpointConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskEndpointConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskEndpointConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//						"exprString":   workspaceTaskEndpointExprString,
+//						"key":          workspaceTaskEndpointKey,
+//						"modelType":    workspaceTaskEndpointModelType,
+//						"modelVersion": workspaceTaskEndpointModelVersion,
+//						"objectStatus": workspaceTaskEndpointObjectStatus,
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskEndpointParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//					},
+//				},
+//				ExecuteRestCallConfig: &dataintegration.WorkspaceTaskExecuteRestCallConfigArgs{
+//					ConfigValues: &dataintegration.WorkspaceTaskExecuteRestCallConfigConfigValuesArgs{
+//						ConfigParamValues: &dataintegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs{
+//							IntValue:        workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesIntValue,
+//							ObjectValue:     workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesObjectValue,
+//							ParameterValue:  workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesParameterValue,
+//							RefValue:        workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRefValue,
+//							RootObjectValue: workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+//							StringValue:     workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesStringValue,
+//						},
+//						ParentRef: &dataintegration.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskExecuteRestCallConfigConfigValuesParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//					},
+//					MethodType:     pulumi.Any(workspaceTaskExecuteRestCallConfigMethodType),
+//					RequestHeaders: pulumi.Any(workspaceTaskExecuteRestCallConfigRequestHeaders),
+//				},
+//				Headers: workspaceTaskHeaders,
+//				InputPorts: dataintegration.WorkspaceTaskInputPortArray{
+//					&dataintegration.WorkspaceTaskInputPortArgs{
+//						ModelType: pulumi.Any(workspaceTaskInputPortsModelType),
+//						ConfigValues: &dataintegration.WorkspaceTaskInputPortConfigValuesArgs{
+//							ConfigParamValues: &dataintegration.WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs{
+//								IntValue:        pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue),
+//								ObjectValue:     pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesObjectValue),
+//								ParameterValue:  pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesParameterValue),
+//								RefValue:        pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesRefValue),
+//								RootObjectValue: pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesRootObjectValue),
+//								StringValue:     pulumi.Any(workspaceTaskInputPortsConfigValuesConfigParamValuesStringValue),
+//							},
+//							ParentRef: &dataintegration.WorkspaceTaskInputPortConfigValuesParentRefArgs{
+//								Parent:    pulumi.Any(workspaceTaskInputPortsConfigValuesParentRefParent),
+//								RootDocId: pulumi.Any(testRootDoc.Id),
+//							},
+//						},
+//						Description:  pulumi.Any(workspaceTaskInputPortsDescription),
+//						Fields:       pulumi.Any(workspaceTaskInputPortsFields),
+//						Key:          pulumi.Any(workspaceTaskInputPortsKey),
+//						ModelVersion: pulumi.Any(workspaceTaskInputPortsModelVersion),
+//						Name:         pulumi.Any(workspaceTaskInputPortsName),
+//						ObjectStatus: pulumi.Any(workspaceTaskInputPortsObjectStatus),
+//						ParentRef: &dataintegration.WorkspaceTaskInputPortParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskInputPortsParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//						PortType: pulumi.Any(workspaceTaskInputPortsPortType),
+//					},
+//				},
+//				IsSingleLoad: pulumi.Any(workspaceTaskIsSingleLoad),
+//				JsonData:     workspaceTaskJsonData,
+//				Key:          pulumi.Any(workspaceTaskKey),
+//				MethodType:   workspaceTaskMethodType,
+//				ModelVersion: pulumi.Any(workspaceTaskModelVersion),
+//				ObjectStatus: pulumi.Any(workspaceTaskObjectStatus),
+//				OpConfigValues: &dataintegration.WorkspaceTaskOpConfigValuesArgs{
+//					ConfigParamValues: &dataintegration.WorkspaceTaskOpConfigValuesConfigParamValuesArgs{
+//						IntValue:        workspaceTaskOpConfigValuesConfigParamValuesIntValue,
+//						ObjectValue:     workspaceTaskOpConfigValuesConfigParamValuesObjectValue,
+//						ParameterValue:  workspaceTaskOpConfigValuesConfigParamValuesParameterValue,
+//						RefValue:        workspaceTaskOpConfigValuesConfigParamValuesRefValue,
+//						RootObjectValue: workspaceTaskOpConfigValuesConfigParamValuesRootObjectValue,
+//						StringValue:     workspaceTaskOpConfigValuesConfigParamValuesStringValue,
+//					},
+//					ParentRef: &dataintegration.WorkspaceTaskOpConfigValuesParentRefArgs{
+//						Parent:    pulumi.Any(workspaceTaskOpConfigValuesParentRefParent),
+//						RootDocId: pulumi.Any(testRootDoc.Id),
+//					},
+//				},
+//				Operation: pulumi.Any(workspaceTaskOperation),
+//				OutputPorts: dataintegration.WorkspaceTaskOutputPortArray{
+//					&dataintegration.WorkspaceTaskOutputPortArgs{
+//						ModelType: pulumi.Any(workspaceTaskOutputPortsModelType),
+//						ConfigValues: &dataintegration.WorkspaceTaskOutputPortConfigValuesArgs{
+//							ConfigParamValues: &dataintegration.WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs{
+//								IntValue:        pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue),
+//								ObjectValue:     pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesObjectValue),
+//								ParameterValue:  pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesParameterValue),
+//								RefValue:        pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesRefValue),
+//								RootObjectValue: pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesRootObjectValue),
+//								StringValue:     pulumi.Any(workspaceTaskOutputPortsConfigValuesConfigParamValuesStringValue),
+//							},
+//							ParentRef: &dataintegration.WorkspaceTaskOutputPortConfigValuesParentRefArgs{
+//								Parent:    pulumi.Any(workspaceTaskOutputPortsConfigValuesParentRefParent),
+//								RootDocId: pulumi.Any(testRootDoc.Id),
+//							},
+//						},
+//						Description:  pulumi.Any(workspaceTaskOutputPortsDescription),
+//						Fields:       pulumi.Any(workspaceTaskOutputPortsFields),
+//						Key:          pulumi.Any(workspaceTaskOutputPortsKey),
+//						ModelVersion: pulumi.Any(workspaceTaskOutputPortsModelVersion),
+//						Name:         pulumi.Any(workspaceTaskOutputPortsName),
+//						ObjectStatus: pulumi.Any(workspaceTaskOutputPortsObjectStatus),
+//						ParentRef: &dataintegration.WorkspaceTaskOutputPortParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskOutputPortsParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//						PortType: pulumi.Any(workspaceTaskOutputPortsPortType),
+//					},
+//				},
+//				ParallelLoadLimit: pulumi.Any(workspaceTaskParallelLoadLimit),
+//				Parameters: dataintegration.WorkspaceTaskParameterArray{
+//					&dataintegration.WorkspaceTaskParameterArgs{
+//						ModelType: pulumi.Any(workspaceTaskParametersModelType),
+//						ConfigValues: &dataintegration.WorkspaceTaskParameterConfigValuesArgs{
+//							ConfigParamValues: &dataintegration.WorkspaceTaskParameterConfigValuesConfigParamValuesArgs{
+//								IntValue:        workspaceTaskParametersConfigValuesConfigParamValuesIntValue,
+//								ObjectValue:     workspaceTaskParametersConfigValuesConfigParamValuesObjectValue,
+//								ParameterValue:  workspaceTaskParametersConfigValuesConfigParamValuesParameterValue,
+//								RefValue:        workspaceTaskParametersConfigValuesConfigParamValuesRefValue,
+//								RootObjectValue: workspaceTaskParametersConfigValuesConfigParamValuesRootObjectValue,
+//								StringValue:     workspaceTaskParametersConfigValuesConfigParamValuesStringValue,
+//							},
+//							ParentRef: &dataintegration.WorkspaceTaskParameterConfigValuesParentRefArgs{
+//								Parent:    pulumi.Any(workspaceTaskParametersConfigValuesParentRefParent),
+//								RootDocId: pulumi.Any(testRootDoc.Id),
+//							},
+//						},
+//						DefaultValue:          pulumi.Any(workspaceTaskParametersDefaultValue),
+//						Description:           pulumi.Any(workspaceTaskParametersDescription),
+//						IsInput:               pulumi.Any(workspaceTaskParametersIsInput),
+//						IsOutput:              pulumi.Any(workspaceTaskParametersIsOutput),
+//						Key:                   pulumi.Any(workspaceTaskParametersKey),
+//						ModelVersion:          pulumi.Any(workspaceTaskParametersModelVersion),
+//						Name:                  pulumi.Any(workspaceTaskParametersName),
+//						ObjectStatus:          pulumi.Any(workspaceTaskParametersObjectStatus),
+//						OutputAggregationType: pulumi.Any(workspaceTaskParametersOutputAggregationType),
+//						ParentRef: &dataintegration.WorkspaceTaskParameterParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskParametersParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//						RootObjectDefaultValue: pulumi.Any(workspaceTaskParametersRootObjectDefaultValue),
+//						Type:                   pulumi.Any(workspaceTaskParametersType),
+//						TypeName:               pulumi.Any(workspaceTaskParametersTypeName),
+//						UsedFor:                pulumi.Any(workspaceTaskParametersUsedFor),
+//					},
+//				},
+//				ParentRef: &dataintegration.WorkspaceTaskParentRefArgs{
+//					Parent:    pulumi.Any(workspaceTaskParentRefParent),
+//					RootDocId: pulumi.Any(testRootDoc.Id),
+//				},
+//				Pipeline: []map[string]interface{}{
+//					map[string]interface{}{
+//						"description": workspaceTaskPipelineDescription,
+//						"flowConfigValues": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configParamValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"intValue":        workspaceTaskPipelineFlowConfigValuesConfigParamValuesIntValue,
+//										"objectValue":     workspaceTaskPipelineFlowConfigValuesConfigParamValuesObjectValue,
+//										"parameterValue":  workspaceTaskPipelineFlowConfigValuesConfigParamValuesParameterValue,
+//										"refValue":        workspaceTaskPipelineFlowConfigValuesConfigParamValuesRefValue,
+//										"rootObjectValue": workspaceTaskPipelineFlowConfigValuesConfigParamValuesRootObjectValue,
+//										"stringValue":     workspaceTaskPipelineFlowConfigValuesConfigParamValuesStringValue,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskPipelineFlowConfigValuesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//							},
+//						},
+//						"identifier": workspaceTaskPipelineIdentifier,
+//						"key":        workspaceTaskPipelineKey,
+//						"metadata": []map[string]interface{}{
+//							map[string]interface{}{
+//								"aggregator": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description": workspaceTaskPipelineMetadataAggregatorDescription,
+//										"identifier":  workspaceTaskPipelineMetadataAggregatorIdentifier,
+//										"key":         workspaceTaskPipelineMetadataAggregatorKey,
+//										"name":        workspaceTaskPipelineMetadataAggregatorName,
+//										"type":        workspaceTaskPipelineMetadataAggregatorType,
+//									},
+//								},
+//								"aggregatorKey": workspaceTaskPipelineMetadataAggregatorKey,
+//								"countStatistics": []map[string]interface{}{
+//									map[string]interface{}{
+//										"objectTypeCountList": []map[string]interface{}{
+//											map[string]interface{}{
+//												"objectCount": workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectCount,
+//												"objectType":  workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectType,
+//											},
+//										},
+//									},
+//								},
+//								"createdBy":       workspaceTaskPipelineMetadataCreatedBy,
+//								"createdByName":   workspaceTaskPipelineMetadataCreatedByName,
+//								"identifierPath":  workspaceTaskPipelineMetadataIdentifierPath,
+//								"infoFields":      workspaceTaskPipelineMetadataInfoFields,
+//								"isFavorite":      workspaceTaskPipelineMetadataIsFavorite,
+//								"labels":          workspaceTaskPipelineMetadataLabels,
+//								"registryVersion": workspaceTaskPipelineMetadataRegistryVersion,
+//								"timeCreated":     workspaceTaskPipelineMetadataTimeCreated,
+//								"timeUpdated":     workspaceTaskPipelineMetadataTimeUpdated,
+//								"updatedBy":       workspaceTaskPipelineMetadataUpdatedBy,
+//								"updatedByName":   workspaceTaskPipelineMetadataUpdatedByName,
+//							},
+//						},
+//						"modelType":    workspaceTaskPipelineModelType,
+//						"modelVersion": workspaceTaskPipelineModelVersion,
+//						"name":         workspaceTaskPipelineName,
+//						"nodes": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configProviderDelegate": workspaceTaskPipelineNodesConfigProviderDelegate,
+//								"description":            workspaceTaskPipelineNodesDescription,
+//								"inputLinks": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description":  workspaceTaskPipelineNodesInputLinksDescription,
+//										"fieldMap":     workspaceTaskPipelineNodesInputLinksFieldMap,
+//										"fromLink":     workspaceTaskPipelineNodesInputLinksFromLink,
+//										"key":          workspaceTaskPipelineNodesInputLinksKey,
+//										"modelType":    workspaceTaskPipelineNodesInputLinksModelType,
+//										"modelVersion": workspaceTaskPipelineNodesInputLinksModelVersion,
+//										"objectStatus": workspaceTaskPipelineNodesInputLinksObjectStatus,
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskPipelineNodesInputLinksParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//										"port": workspaceTaskPipelineNodesInputLinksPort,
+//									},
+//								},
+//								"key":          workspaceTaskPipelineNodesKey,
+//								"modelType":    workspaceTaskPipelineNodesModelType,
+//								"modelVersion": workspaceTaskPipelineNodesModelVersion,
+//								"name":         workspaceTaskPipelineNodesName,
+//								"objectStatus": workspaceTaskPipelineNodesObjectStatus,
+//								"operator":     workspaceTaskPipelineNodesOperator,
+//								"outputLinks": []map[string]interface{}{
+//									map[string]interface{}{
+//										"description":  workspaceTaskPipelineNodesOutputLinksDescription,
+//										"key":          workspaceTaskPipelineNodesOutputLinksKey,
+//										"modelType":    workspaceTaskPipelineNodesOutputLinksModelType,
+//										"modelVersion": workspaceTaskPipelineNodesOutputLinksModelVersion,
+//										"objectStatus": workspaceTaskPipelineNodesOutputLinksObjectStatus,
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskPipelineNodesOutputLinksParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//										"port":    workspaceTaskPipelineNodesOutputLinksPort,
+//										"toLinks": workspaceTaskPipelineNodesOutputLinksToLinks,
+//									},
+//								},
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskPipelineNodesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"uiProperties": []map[string]interface{}{
+//									map[string]interface{}{
+//										"coordinateX": workspaceTaskPipelineNodesUiPropertiesCoordinateX,
+//										"coordinateY": workspaceTaskPipelineNodesUiPropertiesCoordinateY,
+//									},
+//								},
+//							},
+//						},
+//						"objectStatus":  workspaceTaskPipelineObjectStatus,
+//						"objectVersion": workspaceTaskPipelineObjectVersion,
+//						"parameters": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"configParamValues": []map[string]interface{}{
+//											map[string]interface{}{
+//												"intValue":        workspaceTaskPipelineParametersConfigValuesConfigParamValuesIntValue,
+//												"objectValue":     workspaceTaskPipelineParametersConfigValuesConfigParamValuesObjectValue,
+//												"parameterValue":  workspaceTaskPipelineParametersConfigValuesConfigParamValuesParameterValue,
+//												"refValue":        workspaceTaskPipelineParametersConfigValuesConfigParamValuesRefValue,
+//												"rootObjectValue": workspaceTaskPipelineParametersConfigValuesConfigParamValuesRootObjectValue,
+//												"stringValue":     workspaceTaskPipelineParametersConfigValuesConfigParamValuesStringValue,
+//											},
+//										},
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskPipelineParametersConfigValuesParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//									},
+//								},
+//								"defaultValue":          workspaceTaskPipelineParametersDefaultValue,
+//								"description":           workspaceTaskPipelineParametersDescription,
+//								"isInput":               workspaceTaskPipelineParametersIsInput,
+//								"isOutput":              workspaceTaskPipelineParametersIsOutput,
+//								"key":                   workspaceTaskPipelineParametersKey,
+//								"modelType":             workspaceTaskPipelineParametersModelType,
+//								"modelVersion":          workspaceTaskPipelineParametersModelVersion,
+//								"name":                  workspaceTaskPipelineParametersName,
+//								"objectStatus":          workspaceTaskPipelineParametersObjectStatus,
+//								"outputAggregationType": workspaceTaskPipelineParametersOutputAggregationType,
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskPipelineParametersParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"rootObjectDefaultValue": workspaceTaskPipelineParametersRootObjectDefaultValue,
+//								"type":                   workspaceTaskPipelineParametersType,
+//								"typeName":               workspaceTaskPipelineParametersTypeName,
+//								"usedFor":                workspaceTaskPipelineParametersUsedFor,
+//							},
+//						},
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskPipelineParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//						"variables": []map[string]interface{}{
+//							map[string]interface{}{
+//								"configValues": []map[string]interface{}{
+//									map[string]interface{}{
+//										"configParamValues": []map[string]interface{}{
+//											map[string]interface{}{
+//												"intValue":        workspaceTaskPipelineVariablesConfigValuesConfigParamValuesIntValue,
+//												"objectValue":     workspaceTaskPipelineVariablesConfigValuesConfigParamValuesObjectValue,
+//												"parameterValue":  workspaceTaskPipelineVariablesConfigValuesConfigParamValuesParameterValue,
+//												"refValue":        workspaceTaskPipelineVariablesConfigValuesConfigParamValuesRefValue,
+//												"rootObjectValue": workspaceTaskPipelineVariablesConfigValuesConfigParamValuesRootObjectValue,
+//												"stringValue":     workspaceTaskPipelineVariablesConfigValuesConfigParamValuesStringValue,
+//											},
+//										},
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskPipelineVariablesConfigValuesParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//									},
+//								},
+//								"defaultValue":  workspaceTaskPipelineVariablesDefaultValue,
+//								"description":   workspaceTaskPipelineVariablesDescription,
+//								"identifier":    workspaceTaskPipelineVariablesIdentifier,
+//								"key":           workspaceTaskPipelineVariablesKey,
+//								"modelType":     workspaceTaskPipelineVariablesModelType,
+//								"modelVersion":  workspaceTaskPipelineVariablesModelVersion,
+//								"name":          workspaceTaskPipelineVariablesName,
+//								"objectStatus":  workspaceTaskPipelineVariablesObjectStatus,
+//								"objectVersion": workspaceTaskPipelineVariablesObjectVersion,
+//								"parentRef": []map[string]interface{}{
+//									map[string]interface{}{
+//										"parent":    workspaceTaskPipelineVariablesParentRefParent,
+//										"rootDocId": testRootDoc.Id,
+//									},
+//								},
+//								"rootObjectDefaultValue": []map[string]interface{}{
+//									map[string]interface{}{
+//										"key":          workspaceTaskPipelineVariablesRootObjectDefaultValueKey,
+//										"modelType":    workspaceTaskPipelineVariablesRootObjectDefaultValueModelType,
+//										"modelVersion": workspaceTaskPipelineVariablesRootObjectDefaultValueModelVersion,
+//										"objectStatus": workspaceTaskPipelineVariablesRootObjectDefaultValueObjectStatus,
+//										"parentRef": []map[string]interface{}{
+//											map[string]interface{}{
+//												"parent":    workspaceTaskPipelineVariablesRootObjectDefaultValueParentRefParent,
+//												"rootDocId": testRootDoc.Id,
+//											},
+//										},
+//									},
+//								},
+//								"type": workspaceTaskPipelineVariablesType,
+//							},
+//						},
+//					},
+//				},
+//				PollRestCallConfig: &dataintegration.WorkspaceTaskPollRestCallConfigArgs{
+//					ConfigValues: &dataintegration.WorkspaceTaskPollRestCallConfigConfigValuesArgs{
+//						ConfigParamValues: &dataintegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs{
+//							IntValue:        workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesIntValue,
+//							ObjectValue:     workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesObjectValue,
+//							ParameterValue:  workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesParameterValue,
+//							RefValue:        workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRefValue,
+//							RootObjectValue: workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRootObjectValue,
+//							StringValue:     workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesStringValue,
+//						},
+//						ParentRef: &dataintegration.WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskPollRestCallConfigConfigValuesParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//					},
+//					MethodType:     pulumi.Any(workspaceTaskPollRestCallConfigMethodType),
+//					RequestHeaders: pulumi.Any(workspaceTaskPollRestCallConfigRequestHeaders),
+//				},
+//				Script: []map[string]interface{}{
+//					map[string]interface{}{
+//						"key":          workspaceTaskScriptKey,
+//						"modelType":    workspaceTaskScriptModelType,
+//						"modelVersion": workspaceTaskScriptModelVersion,
+//						"objectStatus": workspaceTaskScriptObjectStatus,
+//						"parentRef": []map[string]interface{}{
+//							map[string]interface{}{
+//								"parent":    workspaceTaskScriptParentRefParent,
+//								"rootDocId": testRootDoc.Id,
+//							},
+//						},
+//					},
+//				},
+//				SqlScriptType: workspaceTaskSqlScriptType,
+//				TypedExpressions: dataintegration.WorkspaceTaskTypedExpressionArray{
+//					&dataintegration.WorkspaceTaskTypedExpressionArgs{
+//						ConfigValues: &dataintegration.WorkspaceTaskTypedExpressionConfigValuesArgs{
+//							ConfigParamValues: &dataintegration.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs{
+//								IntValue:        workspaceTaskTypedExpressionsConfigValuesConfigParamValuesIntValue,
+//								ObjectValue:     workspaceTaskTypedExpressionsConfigValuesConfigParamValuesObjectValue,
+//								ParameterValue:  workspaceTaskTypedExpressionsConfigValuesConfigParamValuesParameterValue,
+//								RefValue:        workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRefValue,
+//								RootObjectValue: workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRootObjectValue,
+//								StringValue:     workspaceTaskTypedExpressionsConfigValuesConfigParamValuesStringValue,
+//							},
+//							ParentRef: &dataintegration.WorkspaceTaskTypedExpressionConfigValuesParentRefArgs{
+//								Parent:    pulumi.Any(workspaceTaskTypedExpressionsConfigValuesParentRefParent),
+//								RootDocId: pulumi.Any(testRootDoc.Id),
+//							},
+//						},
+//						Description:  pulumi.Any(workspaceTaskTypedExpressionsDescription),
+//						Expression:   pulumi.Any(workspaceTaskTypedExpressionsExpression),
+//						Key:          pulumi.Any(workspaceTaskTypedExpressionsKey),
+//						ModelType:    pulumi.Any(workspaceTaskTypedExpressionsModelType),
+//						ModelVersion: pulumi.Any(workspaceTaskTypedExpressionsModelVersion),
+//						Name:         pulumi.Any(workspaceTaskTypedExpressionsName),
+//						ObjectStatus: pulumi.Any(workspaceTaskTypedExpressionsObjectStatus),
+//						ParentRef: &dataintegration.WorkspaceTaskTypedExpressionParentRefArgs{
+//							Parent:    pulumi.Any(workspaceTaskTypedExpressionsParentRefParent),
+//							RootDocId: pulumi.Any(testRootDoc.Id),
+//						},
+//						Type: pulumi.Any(workspaceTaskTypedExpressionsType),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // WorkspaceTasks can be imported using the `id`, e.g.

@@ -175,6 +175,16 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_external_container_database_management = oci.database.ExternalContainerDatabaseManagement("test_external_container_database_management",
+            external_container_database_id=test_external_container_database["id"],
+            external_database_connector_id=test_external_database_connector["id"],
+            license_mode=external_non_container_database_management_license_model)
+        ```
+
         ## Import
 
         Import is not supported for this resource.
@@ -196,6 +206,16 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_external_container_database_management = oci.database.ExternalContainerDatabaseManagement("test_external_container_database_management",
+            external_container_database_id=test_external_container_database["id"],
+            external_database_connector_id=test_external_database_connector["id"],
+            license_mode=external_non_container_database_management_license_model)
+        ```
 
         ## Import
 

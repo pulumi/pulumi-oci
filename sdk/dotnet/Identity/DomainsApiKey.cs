@@ -12,6 +12,51 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testApiKey = new Oci.Identity.DomainsApiKey("test_api_key", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Key = apiKeyKey,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:apikey",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = apiKeyAuthorization,
+    ///         Description = apiKeyDescription,
+    ///         Id = apiKeyId,
+    ///         Ocid = apiKeyOcid,
+    ///         ResourceTypeSchemaVersion = apiKeyResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApiKeyTagArgs
+    ///             {
+    ///                 Key = apiKeyTagsKey,
+    ///                 Value = apiKeyTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsApiKeyUserArgs
+    ///         {
+    ///             Ocid = testUser.Ocid,
+    ///             Value = testUser.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ApiKeys can be imported using the `id`, e.g.

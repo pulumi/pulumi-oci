@@ -1312,6 +1312,41 @@ class DomainsGrant(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_grant = oci.identity.DomainsGrant("test_grant",
+            grant_mechanism=grant_grant_mechanism,
+            grantee={
+                "type": grant_grantee_type,
+                "value": grant_grantee_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Grant"],
+            app={
+                "value": grant_app_value,
+            },
+            app_entitlement_collection={
+                "value": grant_app_entitlement_collection_value,
+            },
+            attribute_sets=["all"],
+            attributes="",
+            authorization=grant_authorization,
+            entitlement={
+                "attribute_name": "appRoles",
+                "attribute_value": grant_entitlement_attribute_value,
+            },
+            granted_attribute_values_json=grant_granted_attribute_values_json,
+            id=grant_id,
+            ocid=grant_ocid,
+            resource_type_schema_version=grant_resource_type_schema_version,
+            tags=[{
+                "key": grant_tags_key,
+                "value": grant_tags_value,
+            }])
+        ```
+
         ## Import
 
         Grants can be imported using the `id`, e.g.
@@ -1440,6 +1475,41 @@ class DomainsGrant(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_grant = oci.identity.DomainsGrant("test_grant",
+            grant_mechanism=grant_grant_mechanism,
+            grantee={
+                "type": grant_grantee_type,
+                "value": grant_grantee_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Grant"],
+            app={
+                "value": grant_app_value,
+            },
+            app_entitlement_collection={
+                "value": grant_app_entitlement_collection_value,
+            },
+            attribute_sets=["all"],
+            attributes="",
+            authorization=grant_authorization,
+            entitlement={
+                "attribute_name": "appRoles",
+                "attribute_value": grant_entitlement_attribute_value,
+            },
+            granted_attribute_values_json=grant_granted_attribute_values_json,
+            id=grant_id,
+            ocid=grant_ocid,
+            resource_type_schema_version=grant_resource_type_schema_version,
+            tags=[{
+                "key": grant_tags_key,
+                "value": grant_tags_value,
+            }])
+        ```
 
         ## Import
 

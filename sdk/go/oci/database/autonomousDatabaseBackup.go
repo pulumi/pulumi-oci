@@ -14,6 +14,45 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewAutonomousDatabaseBackup(ctx, "test_autonomous_database_backup", &database.AutonomousDatabaseBackupArgs{
+//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//				BackupDestinationDetails: &database.AutonomousDatabaseBackupBackupDestinationDetailsArgs{
+//					Type:                             pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsType),
+//					BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
+//					DbrsPolicyId:                     testPolicy.Id,
+//					Id:                               pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsId),
+//					InternetProxy:                    pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsInternetProxy),
+//					IsRemote:                         pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsIsRemote),
+//					IsRetentionLockEnabled:           pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled),
+//					RemoteRegion:                     pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion),
+//					VpcPassword:                      pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsVpcPassword),
+//					VpcUser:                          pulumi.Any(autonomousDatabaseBackupBackupDestinationDetailsVpcUser),
+//				},
+//				DisplayName:           pulumi.Any(autonomousDatabaseBackupDisplayName),
+//				IsLongTermBackup:      pulumi.Any(autonomousDatabaseBackupIsLongTermBackup),
+//				RetentionPeriodInDays: pulumi.Any(autonomousDatabaseBackupRetentionPeriodInDays),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AutonomousDatabaseBackups can be imported using the `id`, e.g.

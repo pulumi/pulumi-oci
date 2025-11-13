@@ -182,6 +182,25 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_externalpluggabledatabase_external_pluggable_dbm_features_management = oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management",
+            external_pluggable_database_id=test_external_pluggable_database["id"],
+            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature,
+            feature_details={
+                "feature": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_feature,
+                "enable_external_pluggable_dbm_feature": enable_external_pluggable_dbm_feature,
+                "connector_details": {
+                    "connector_type": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -200,6 +219,25 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_externalpluggabledatabase_external_pluggable_dbm_features_management = oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management",
+            external_pluggable_database_id=test_external_pluggable_database["id"],
+            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature,
+            feature_details={
+                "feature": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_feature,
+                "enable_external_pluggable_dbm_feature": enable_external_pluggable_dbm_feature,
+                "connector_details": {
+                    "connector_type": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

@@ -12,6 +12,46 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyAuthToken = new Oci.Identity.DomainsMyAuthToken("test_my_auth_token", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:authToken",
+    ///         },
+    ///         Authorization = myAuthTokenAuthorization,
+    ///         Description = myAuthTokenDescription,
+    ///         ExpiresOn = myAuthTokenExpiresOn,
+    ///         Id = myAuthTokenId,
+    ///         Ocid = myAuthTokenOcid,
+    ///         ResourceTypeSchemaVersion = myAuthTokenResourceTypeSchemaVersion,
+    ///         Status = myAuthTokenStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyAuthTokenTagArgs
+    ///             {
+    ///                 Key = myAuthTokenTagsKey,
+    ///                 Value = myAuthTokenTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMyAuthTokenUserArgs
+    ///         {
+    ///             Ocid = myAuthTokenUserOcid,
+    ///             Value = myAuthTokenUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MyAuthTokens can be imported using the `id`, e.g.

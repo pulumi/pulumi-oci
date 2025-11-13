@@ -12,6 +12,44 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMySupportAccount = new Oci.Identity.DomainsMySupportAccount("test_my_support_account", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:supportAccount",
+    ///         },
+    ///         Token = mySupportAccountToken,
+    ///         Authorization = mySupportAccountAuthorization,
+    ///         Id = mySupportAccountId,
+    ///         Ocid = mySupportAccountOcid,
+    ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMySupportAccountTagArgs
+    ///             {
+    ///                 Key = mySupportAccountTagsKey,
+    ///                 Value = mySupportAccountTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMySupportAccountUserArgs
+    ///         {
+    ///             Ocid = mySupportAccountUserOcid,
+    ///             Value = mySupportAccountUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MySupportAccounts can be imported using the `id`, e.g.

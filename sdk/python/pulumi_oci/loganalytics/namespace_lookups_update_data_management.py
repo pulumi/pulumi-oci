@@ -245,6 +245,19 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_update_data_management = oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management",
+            update_lookup_file_body=namespace_lookups_update_data_management_update_lookup_file_body,
+            lookup_name=namespace_lookups_update_data_management_lookup_name,
+            namespace=namespace_lookups_update_data_management_namespace,
+            char_encoding=namespace_lookups_update_data_management_char_encoding,
+            expect=namespace_lookups_update_data_management_expect,
+            is_force=namespace_lookups_update_data_management_is_force)
+        ```
+
         ## Import
 
         Import is not supported for NamespaceLookupsUpdateDataManagement
@@ -269,6 +282,19 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_update_data_management = oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management",
+            update_lookup_file_body=namespace_lookups_update_data_management_update_lookup_file_body,
+            lookup_name=namespace_lookups_update_data_management_lookup_name,
+            namespace=namespace_lookups_update_data_management_namespace,
+            char_encoding=namespace_lookups_update_data_management_char_encoding,
+            expect=namespace_lookups_update_data_management_expect,
+            is_force=namespace_lookups_update_data_management_is_force)
+        ```
 
         ## Import
 

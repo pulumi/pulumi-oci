@@ -14,6 +14,35 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := loganalytics.NewNamespaceLookupsAppendDataManagement(ctx, "test_namespace_lookups_append_data_management", &loganalytics.NamespaceLookupsAppendDataManagementArgs{
+//				AppendLookupFileBody: namespaceLookupsAppendDataManagementAppendLookupFileBody,
+//				LookupName:           pulumi.Any(namespaceLookupsAppendDataManagementLookupName),
+//				Namespace:            pulumi.Any(namespaceLookupsAppendDataManagementNamespace),
+//				CharEncoding:         pulumi.Any(namespaceLookupsAppendDataManagementCharEncoding),
+//				Expect:               pulumi.Any(namespaceLookupsAppendDataManagementExpect),
+//				IsForce:              pulumi.Any(namespaceLookupsAppendDataManagementIsForce),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Import is not supported for NamespaceLookupsAppendDataManagement

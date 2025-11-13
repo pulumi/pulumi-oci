@@ -14,6 +14,63 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsGrant(ctx, "test_grant", &identity.DomainsGrantArgs{
+//				GrantMechanism: pulumi.Any(grantGrantMechanism),
+//				Grantee: &identity.DomainsGrantGranteeArgs{
+//					Type:  pulumi.Any(grantGranteeType),
+//					Value: pulumi.Any(grantGranteeValue),
+//				},
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Grant"),
+//				},
+//				App: &identity.DomainsGrantAppArgs{
+//					Value: pulumi.Any(grantAppValue),
+//				},
+//				AppEntitlementCollection: &identity.DomainsGrantAppEntitlementCollectionArgs{
+//					Value: pulumi.Any(grantAppEntitlementCollectionValue),
+//				},
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:    pulumi.String(""),
+//				Authorization: pulumi.Any(grantAuthorization),
+//				Entitlement: &identity.DomainsGrantEntitlementArgs{
+//					AttributeName:  pulumi.String("appRoles"),
+//					AttributeValue: pulumi.Any(grantEntitlementAttributeValue),
+//				},
+//				GrantedAttributeValuesJson: pulumi.Any(grantGrantedAttributeValuesJson),
+//				Id:                         grantId,
+//				Ocid:                       pulumi.Any(grantOcid),
+//				ResourceTypeSchemaVersion:  pulumi.Any(grantResourceTypeSchemaVersion),
+//				Tags: identity.DomainsGrantTagArray{
+//					&identity.DomainsGrantTagArgs{
+//						Key:   pulumi.Any(grantTagsKey),
+//						Value: pulumi.Any(grantTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Grants can be imported using the `id`, e.g.

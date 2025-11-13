@@ -14,6 +14,117 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/bigdataservice"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := bigdataservice.NewBdsInstance(ctx, "test_bds_instance", &bigdataservice.BdsInstanceArgs{
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceClusterAdminPassword),
+//				ClusterPublicKey:     pulumi.Any(bdsInstanceClusterPublicKey),
+//				ClusterVersion:       pulumi.Any(bdsInstanceClusterVersion),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DisplayName:          pulumi.Any(bdsInstanceDisplayName),
+//				IsHighAvailability:   pulumi.Any(bdsInstanceIsHighAvailability),
+//				IsSecure:             pulumi.Any(bdsInstanceIsSecure),
+//				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        pulumi.Any(bdsInstanceNumberOfNodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        pulumi.Any(bdsInstanceNumberOfNodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        pulumi.Any(bdsInstanceNumberOfNodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        pulumi.Any(bdsInstanceNumberOfNodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				EdgeNode: &bigdataservice.BdsInstanceEdgeNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        pulumi.Any(bdsInstanceNumberOfNodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceEdgeNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				KafkaBrokerNode: &bigdataservice.BdsInstanceKafkaBrokerNodeArgs{
+//					Shape:                pulumi.Any(bdsInstanceNodesShape),
+//					SubnetId:             pulumi.Any(testSubnet.Id),
+//					NumberOfNodes:        bdsInstanceNumberOfNodes,
+//					BlockVolumeSizeInGbs: pulumi.Any(bdsInstanceNodesBlockVolumeSizeInGbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceKafkaBrokerNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(bdsInstanceNodesShapeConfigMemoryInGbs),
+//						Nvmes:       pulumi.Any(bdsInstanceNodesShapeConfigNvmes),
+//						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
+//					},
+//				},
+//				BdsClusterVersionSummary: &bigdataservice.BdsInstanceBdsClusterVersionSummaryArgs{
+//					BdsVersion: pulumi.Any(bdsInstanceBdsClusterVersionSummaryBdsVersion),
+//					OdhVersion: pulumi.Any(bdsInstanceBdsClusterVersionSummaryOdhVersion),
+//				},
+//				BootstrapScriptUrl:        pulumi.Any(bdsInstanceBootstrapScriptUrl),
+//				ClusterProfile:            pulumi.Any(bdsInstanceClusterProfile),
+//				DefinedTags:               pulumi.Any(bdsInstanceDefinedTags),
+//				FreeformTags:              pulumi.Any(bdsInstanceFreeformTags),
+//				KerberosRealmName:         pulumi.Any(bdsInstanceKerberosRealmName),
+//				KmsKeyId:                  pulumi.Any(bdsInstanceKmsKeyId),
+//				IgnoreExistingNodesShapes: pulumi.Any(ignoreExistingNodesShape),
+//				NetworkConfig: &bigdataservice.BdsInstanceNetworkConfigArgs{
+//					CidrBlock:            pulumi.Any(bdsInstanceNetworkConfigCidrBlock),
+//					IsNatGatewayRequired: pulumi.Any(bdsInstanceNetworkConfigIsNatGatewayRequired),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // BdsInstances can be imported using the `id`, e.g.

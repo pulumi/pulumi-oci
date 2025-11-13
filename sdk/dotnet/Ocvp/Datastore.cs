@@ -12,6 +12,34 @@ namespace Pulumi.Oci.Ocvp
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDatastore = new Oci.Ocvp.Datastore("test_datastore", new()
+    ///     {
+    ///         AvailabilityDomain = datastoreAvailabilityDomain,
+    ///         BlockVolumeIds = datastoreBlockVolumeIds,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = datastoreDisplayName,
+    ///         DatastoreClusterId = testDatastoreCluster.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Datastores can be imported using the `id`, e.g.

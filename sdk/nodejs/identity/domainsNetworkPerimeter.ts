@@ -9,6 +9,34 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkPerimeter = new oci.identity.DomainsNetworkPerimeter("test_network_perimeter", {
+ *     idcsEndpoint: testDomain.url,
+ *     ipAddresses: [{
+ *         value: networkPerimeterIpAddressesValue,
+ *         type: networkPerimeterIpAddressesType,
+ *         version: networkPerimeterIpAddressesVersion,
+ *     }],
+ *     name: networkPerimeterName,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter"],
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: networkPerimeterAuthorization,
+ *     description: networkPerimeterDescription,
+ *     externalId: "externalId",
+ *     id: networkPerimeterId,
+ *     ocid: networkPerimeterOcid,
+ *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: networkPerimeterTagsKey,
+ *         value: networkPerimeterTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * NetworkPerimeters can be imported using the `id`, e.g.

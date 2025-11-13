@@ -12,6 +12,59 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCatalogItem = new Oci.FleetAppsManagement.CatalogItem("test_catalog_item", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         ConfigSourceType = catalogItemConfigSourceType,
+    ///         Description = catalogItemDescription,
+    ///         DisplayName = catalogItemDisplayName,
+    ///         PackageType = catalogItemPackageType,
+    ///         CatalogSourcePayload = new Oci.FleetAppsManagement.Inputs.CatalogItemCatalogSourcePayloadArgs
+    ///         {
+    ///             ConfigSourceType = catalogItemCatalogSourcePayloadConfigSourceType,
+    ///             AccessUri = catalogItemCatalogSourcePayloadAccessUri,
+    ///             BranchName = catalogItemCatalogSourcePayloadBranchName,
+    ///             Bucket = catalogItemCatalogSourcePayloadBucket,
+    ///             ConfigurationSourceProviderId = testConfigurationSourceProvider.Id,
+    ///             Description = catalogItemCatalogSourcePayloadDescription,
+    ///             ListingId = testListing.Id,
+    ///             LongDescription = catalogItemCatalogSourcePayloadLongDescription,
+    ///             Namespace = catalogItemCatalogSourcePayloadNamespace,
+    ///             Object = catalogItemCatalogSourcePayloadObject,
+    ///             RepositoryUrl = catalogItemCatalogSourcePayloadRepositoryUrl,
+    ///             TemplateDisplayName = catalogItemCatalogSourcePayloadTemplateDisplayName,
+    ///             TimeExpires = catalogItemCatalogSourcePayloadTimeExpires,
+    ///             Version = catalogItemCatalogSourcePayloadVersion,
+    ///             WorkingDirectory = catalogItemCatalogSourcePayloadWorkingDirectory,
+    ///             ZipFileBase64encoded = catalogItemCatalogSourcePayloadZipFileBase64encoded,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsItemLocked = catalogItemIsItemLocked,
+    ///         ListingId = testListing.Id,
+    ///         ListingVersion = catalogItemListingVersion,
+    ///         ShortDescription = catalogItemShortDescription,
+    ///         TimeReleased = catalogItemTimeReleased,
+    ///         VersionDescription = catalogItemVersionDescription,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CatalogItems can be imported using the `id`, e.g.

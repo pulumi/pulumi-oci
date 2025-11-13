@@ -24,6 +24,55 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsMyAuthToken;
+ * import com.pulumi.oci.Identity.DomainsMyAuthTokenArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMyAuthToken = new DomainsMyAuthToken("testMyAuthToken", DomainsMyAuthTokenArgs.builder()
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:authToken")
+ *             .authorization(myAuthTokenAuthorization)
+ *             .description(myAuthTokenDescription)
+ *             .expiresOn(myAuthTokenExpiresOn)
+ *             .id(myAuthTokenId)
+ *             .ocid(myAuthTokenOcid)
+ *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
+ *             .status(myAuthTokenStatus)
+ *             .tags(DomainsMyAuthTokenTagArgs.builder()
+ *                 .key(myAuthTokenTagsKey)
+ *                 .value(myAuthTokenTagsValue)
+ *                 .build())
+ *             .user(DomainsMyAuthTokenUserArgs.builder()
+ *                 .ocid(myAuthTokenUserOcid)
+ *                 .value(myAuthTokenUserValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * MyAuthTokens can be imported using the `id`, e.g.

@@ -9,6 +9,42 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOccDemandSignal = new oci.demandsignal.OccDemandSignal("test_occ_demand_signal", {
+ *     compartmentId: compartmentId,
+ *     isActive: occDemandSignalIsActive,
+ *     occDemandSignalId: occDemandSignalOccDemandSignalId,
+ *     occDemandSignals: [{
+ *         resourceType: occDemandSignalOccDemandSignalsResourceType,
+ *         units: occDemandSignalOccDemandSignalsUnits,
+ *         values: [{
+ *             timeExpected: occDemandSignalOccDemandSignalsValuesTimeExpected,
+ *             value: occDemandSignalOccDemandSignalsValuesValue,
+ *             comments: occDemandSignalOccDemandSignalsValuesComments,
+ *         }],
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: occDemandSignalDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     patchOperations: [{
+ *         operation: occDemandSignalPatchOperationsOperation,
+ *         selection: occDemandSignalPatchOperationsSelection,
+ *         from: occDemandSignalPatchOperationsFrom,
+ *         position: occDemandSignalPatchOperationsPosition,
+ *         selectedItem: occDemandSignalPatchOperationsSelectedItem,
+ *         value: occDemandSignalPatchOperationsValue,
+ *         values: occDemandSignalPatchOperationsValues,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * OccDemandSignals can be imported using the `id`, e.g.

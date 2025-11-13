@@ -313,6 +313,17 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
+            fusion_environment_id=test_fusion_environment["id"],
+            source_fusion_environment_id=test_fusion_environment["id"],
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
+        ```
+
         ## Import
 
         FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
@@ -335,6 +346,17 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
+            fusion_environment_id=test_fusion_environment["id"],
+            source_fusion_environment_id=test_fusion_environment["id"],
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
+        ```
 
         ## Import
 

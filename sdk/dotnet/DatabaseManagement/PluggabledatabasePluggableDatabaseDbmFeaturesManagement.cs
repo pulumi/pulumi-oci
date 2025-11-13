@@ -11,6 +11,58 @@ namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new Oci.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management", new()
+    ///     {
+    ///         PluggableDatabaseId = testPluggableDatabase.Id,
+    ///         EnablePluggableDatabaseDbmFeature = enablePluggableDatabaseDbmFeature,
+    ///         FeatureDetails = new Oci.DatabaseManagement.Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs
+    ///         {
+    ///             Feature = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature,
+    ///             EnablePluggableDatabaseDbmFeature = enablePluggableDatabaseDbmFeature,
+    ///             ConnectorDetails = new Oci.DatabaseManagement.Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs
+    ///             {
+    ///                 ConnectorType = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+    ///                 DatabaseConnectorId = testDatabaseConnector.Id,
+    ///                 ManagementAgentId = testManagementAgent.Id,
+    ///                 PrivateEndPointId = testPrivateEndPoint.Id,
+    ///             },
+    ///             DatabaseConnectionDetails = new Oci.DatabaseManagement.Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs
+    ///             {
+    ///                 ConnectionCredentials = new Oci.DatabaseManagement.Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs
+    ///                 {
+    ///                     CredentialName = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+    ///                     CredentialType = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+    ///                     NamedCredentialId = testNamedCredential.Id,
+    ///                     PasswordSecretId = testSecret.Id,
+    ///                     Role = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+    ///                     SslSecretId = testSecret.Id,
+    ///                     UserName = testUser.Name,
+    ///                 },
+    ///                 ConnectionString = new Oci.DatabaseManagement.Inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs
+    ///                 {
+    ///                     ConnectionType = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+    ///                     Port = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+    ///                     Protocol = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+    ///                     Service = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+    ///                 },
+    ///             },
+    ///             CanEnableAllCurrentPdbs = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+    ///             IsAutoEnablePluggableDatabase = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+    ///             ManagementType = pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement")]
     public partial class PluggabledatabasePluggableDatabaseDbmFeaturesManagement : global::Pulumi.CustomResource

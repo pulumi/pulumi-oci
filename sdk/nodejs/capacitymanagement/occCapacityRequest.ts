@@ -9,6 +9,57 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOccCapacityRequest = new oci.capacitymanagement.OccCapacityRequest("test_occ_capacity_request", {
+ *     compartmentId: compartmentId,
+ *     dateExpectedCapacityHandover: occCapacityRequestDateExpectedCapacityHandover,
+ *     details: [{
+ *         demandQuantity: occCapacityRequestDetailsDemandQuantity,
+ *         resourceName: testResource.name,
+ *         resourceType: occCapacityRequestDetailsResourceType,
+ *         workloadType: occCapacityRequestDetailsWorkloadType,
+ *         actualHandoverQuantity: occCapacityRequestDetailsActualHandoverQuantity,
+ *         associatedOccHandoverResourceBlockLists: [{
+ *             handoverQuantity: occCapacityRequestDetailsAssociatedOccHandoverResourceBlockListHandoverQuantity,
+ *             occHandoverResourceBlockId: testOccHandoverResourceBlock.id,
+ *         }],
+ *         availabilityDomain: occCapacityRequestDetailsAvailabilityDomain,
+ *         dateActualHandover: occCapacityRequestDetailsDateActualHandover,
+ *         dateExpectedHandover: occCapacityRequestDetailsDateExpectedHandover,
+ *         expectedHandoverQuantity: occCapacityRequestDetailsExpectedHandoverQuantity,
+ *         sourceWorkloadType: occCapacityRequestDetailsSourceWorkloadType,
+ *     }],
+ *     displayName: occCapacityRequestDisplayName,
+ *     namespace: occCapacityRequestNamespace,
+ *     occCapacityRequestId: occCapacityRequestOccCapacityRequestId,
+ *     region: occCapacityRequestRegion,
+ *     availabilityDomain: occCapacityRequestAvailabilityDomain,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     description: occCapacityRequestDescription,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     lifecycleDetails: occCapacityRequestLifecycleDetails,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
+ *     patchOperations: [{
+ *         operation: occCapacityRequestPatchOperationsOperation,
+ *         selection: occCapacityRequestPatchOperationsSelection,
+ *         from: occCapacityRequestPatchOperationsFrom,
+ *         position: occCapacityRequestPatchOperationsPosition,
+ *         selectedItem: occCapacityRequestPatchOperationsSelectedItem,
+ *         value: occCapacityRequestPatchOperationsValue,
+ *         values: occCapacityRequestPatchOperationsValues,
+ *     }],
+ *     requestState: occCapacityRequestRequestState,
+ *     requestType: occCapacityRequestRequestType,
+ * });
+ * ```
+ *
  * ## Import
  *
  * OccCapacityRequests can be imported using the `id`, e.g.

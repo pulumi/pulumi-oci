@@ -9,6 +9,71 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testShardedDatabase = new oci.globallydistributeddatabase.ShardedDatabase("test_sharded_database", {
+ *     catalogDetails: [{
+ *         adminPassword: shardedDatabaseCatalogDetailsAdminPassword,
+ *         cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *         computeCount: shardedDatabaseCatalogDetailsComputeCount,
+ *         dataStorageSizeInGbs: shardedDatabaseCatalogDetailsDataStorageSizeInGbs,
+ *         isAutoScalingEnabled: shardedDatabaseCatalogDetailsIsAutoScalingEnabled,
+ *         encryptionKeyDetails: {
+ *             kmsKeyId: testKey.id,
+ *             vaultId: testVault.id,
+ *             kmsKeyVersionId: testKeyVersion.id,
+ *         },
+ *         peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     }],
+ *     characterSet: shardedDatabaseCharacterSet,
+ *     compartmentId: compartmentId,
+ *     dbDeploymentType: shardedDatabaseDbDeploymentType,
+ *     dbVersion: shardedDatabaseDbVersion,
+ *     dbWorkload: shardedDatabaseDbWorkload,
+ *     displayName: shardedDatabaseDisplayName,
+ *     listenerPort: shardedDatabaseListenerPort,
+ *     listenerPortTls: shardedDatabaseListenerPortTls,
+ *     ncharacterSet: shardedDatabaseNcharacterSet,
+ *     onsPortLocal: shardedDatabaseOnsPortLocal,
+ *     onsPortRemote: shardedDatabaseOnsPortRemote,
+ *     prefix: shardedDatabasePrefix,
+ *     shardDetails: [{
+ *         adminPassword: shardedDatabaseShardDetailsAdminPassword,
+ *         cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *         computeCount: shardedDatabaseShardDetailsComputeCount,
+ *         dataStorageSizeInGbs: shardedDatabaseShardDetailsDataStorageSizeInGbs,
+ *         isAutoScalingEnabled: shardedDatabaseShardDetailsIsAutoScalingEnabled,
+ *         encryptionKeyDetails: {
+ *             kmsKeyId: testKey.id,
+ *             vaultId: testVault.id,
+ *             kmsKeyVersionId: testKeyVersion.id,
+ *         },
+ *         peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *         shardSpace: shardedDatabaseShardDetailsShardSpace,
+ *     }],
+ *     shardedDatabaseId: shardedDatabaseShardedDatabaseId,
+ *     shardingMethod: shardedDatabaseShardingMethod,
+ *     chunks: shardedDatabaseChunks,
+ *     clusterCertificateCommonName: shardedDatabaseClusterCertificateCommonName,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     patchOperations: [{
+ *         operation: shardedDatabasePatchOperationsOperation,
+ *         selection: shardedDatabasePatchOperationsSelection,
+ *         value: shardedDatabasePatchOperationsValue,
+ *     }],
+ *     replicationFactor: shardedDatabaseReplicationFactor,
+ *     replicationMethod: shardedDatabaseReplicationMethod,
+ *     replicationUnit: shardedDatabaseReplicationUnit,
+ * });
+ * ```
+ *
  * ## Import
  *
  * ShardedDatabases can be imported using the `id`, e.g.

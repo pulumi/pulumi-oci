@@ -12,6 +12,32 @@ namespace Pulumi.Oci.Waas
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testProtectionRule = new Oci.Waas.ProtectionRule("test_protection_rule", new()
+    ///     {
+    ///         WaasPolicyId = testWaasPolicy.Id,
+    ///         Key = key,
+    ///         Action = "DETECT",
+    ///         Exclusions = 
+    ///         {
+    ///             { "exclusions", new[]
+    ///             {
+    ///                 "example.com",
+    ///             } },
+    ///             { "target", "REQUEST_COOKIES" },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ProtectionRules can be imported using the `id`, e.g.

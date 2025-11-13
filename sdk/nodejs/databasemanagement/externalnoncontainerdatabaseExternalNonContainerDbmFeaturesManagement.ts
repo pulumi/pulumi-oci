@@ -8,6 +8,29 @@ import * as utilities from "../utilities";
 
 /**
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new oci.databasemanagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("test_externalnoncontainerdatabase_external_non_container_dbm_features_management", {
+ *     externalNonContainerDatabaseId: testExternalNonContainerDatabase.id,
+ *     enableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature,
+ *     featureDetails: {
+ *         feature: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsFeature,
+ *         enableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature,
+ *         connectorDetails: {
+ *             connectorType: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *         canEnableAllCurrentPdbs: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         licenseModel: externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
+ *     },
+ * });
+ * ```
  */
 export class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement extends pulumi.CustomResource {
     /**

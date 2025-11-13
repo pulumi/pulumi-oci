@@ -9,6 +9,23 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseUpgrade = new oci.database.DatabaseUpgrade("test_database_upgrade", {
+ *     action: databaseUpgradeAction,
+ *     databaseId: testDatabase.id,
+ *     databaseUpgradeSourceDetails: {
+ *         databaseSoftwareImageId: testDatabaseSoftwareImage.id,
+ *         dbHomeId: testDbHome.id,
+ *         dbVersion: databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion,
+ *         options: databaseUpgradeDatabaseUpgradeSourceDetailsOptions,
+ *         source: databaseUpgradeDatabaseUpgradeSourceDetailsSource,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Import is not supported for this resource.

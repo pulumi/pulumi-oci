@@ -9,6 +9,39 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerDatabaseAddStandby = new oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby", {
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds,
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled,
+ *     peerAutonomousContainerDatabaseBackupConfig: {
+ *         backupDestinationDetails: [{
+ *             type: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+ *             backupRetentionPolicyOnTerminate: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+ *             dbrsPolicyId: testPolicy.id,
+ *             id: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+ *             internetProxy: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+ *             isRemote: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+ *             isRetentionLockEnabled: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+ *             remoteRegion: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+ *             vpcPassword: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+ *             vpcUser: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+ *         }],
+ *         recoveryWindowInDays: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+ *     },
+ *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
+ *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName,
+ *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
+ *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     peerDbUniqueName: autonomousContainerDatabaseAddStandbyPeerDbUniqueName,
+ *     protectionMode: autonomousContainerDatabaseAddStandbyProtectionMode,
+ *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays,
+ * });
+ * ```
+ *
  * ## Import
  *
  * AutonomousContainerDatabaseAddStandby can be imported using the `id`, e.g.

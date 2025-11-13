@@ -21,6 +21,50 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.CloudDbSystemDiscovery;
+ * import com.pulumi.oci.DatabaseManagement.CloudDbSystemDiscoveryArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.CloudDbSystemDiscoveryPatchOperationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudDbSystemDiscovery = new CloudDbSystemDiscovery("testCloudDbSystemDiscovery", CloudDbSystemDiscoveryArgs.builder()
+ *             .agentId(testAgent.id())
+ *             .cloudDbSystemDiscoveryId(cloudDbSystemDiscoveryCloudDbSystemDiscoveryId)
+ *             .compartmentId(compartmentId)
+ *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+ *             .deploymentType(cloudDbSystemDiscoveryDeploymentType)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(cloudDbSystemDiscoveryDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .patchOperations(CloudDbSystemDiscoveryPatchOperationArgs.builder()
+ *                 .operation(cloudDbSystemDiscoveryPatchOperationsOperation)
+ *                 .selection(cloudDbSystemDiscoveryPatchOperationsSelection)
+ *                 .value(cloudDbSystemDiscoveryPatchOperationsValue[0])
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * CloudDbSystemDiscoveries can be imported using the `id`, e.g.

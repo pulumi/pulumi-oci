@@ -9,6 +9,35 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudGateServer = new oci.identity.DomainsCloudGateServer("test_cloud_gate_server", {
+ *     cloudGate: {
+ *         value: cloudGateServerCloudGateValue,
+ *     },
+ *     displayName: cloudGateServerDisplayName,
+ *     hostName: cloudGateServerHostName,
+ *     idcsEndpoint: testDomain.url,
+ *     port: cloudGateServerPort,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer"],
+ *     ssl: cloudGateServerSsl,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: cloudGateServerAuthorization,
+ *     description: cloudGateServerDescription,
+ *     id: cloudGateServerId,
+ *     nginxSettings: cloudGateServerNginxSettings,
+ *     ocid: cloudGateServerOcid,
+ *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: cloudGateServerTagsKey,
+ *         value: cloudGateServerTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * CloudGateServers can be imported using the `id`, e.g.

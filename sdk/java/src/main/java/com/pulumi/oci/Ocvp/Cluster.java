@@ -26,6 +26,71 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ocvp.Cluster;
+ * import com.pulumi.oci.Ocvp.ClusterArgs;
+ * import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
+ * import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()
+ *             .computeAvailabilityDomain(clusterComputeAvailabilityDomain)
+ *             .esxiHostsCount(clusterEsxiHostsCount)
+ *             .networkConfiguration(ClusterNetworkConfigurationArgs.builder()
+ *                 .nsxEdgeVtepVlanId(testVlan.id())
+ *                 .nsxVtepVlanId(testVlan.id())
+ *                 .provisioningSubnetId(testSubnet.id())
+ *                 .vmotionVlanId(testVlan.id())
+ *                 .vsanVlanId(testVlan.id())
+ *                 .hcxVlanId(testVlan.id())
+ *                 .nsxEdgeUplink1vlanId(testNsxEdgeUplink1vlan.id())
+ *                 .nsxEdgeUplink2vlanId(testNsxEdgeUplink2vlan.id())
+ *                 .provisioningVlanId(testVlan.id())
+ *                 .replicationVlanId(testVlan.id())
+ *                 .vsphereVlanId(testVlan.id())
+ *                 .build())
+ *             .sddcId(testSddc.id())
+ *             .capacityReservationId(testCapacityReservation.id())
+ *             .datastoreClusterIds(clusterDatastoreClusterIds)
+ *             .datastores(ClusterDatastoreArgs.builder()
+ *                 .blockVolumeIds(clusterDatastoresBlockVolumeIds)
+ *                 .datastoreType(clusterDatastoresDatastoreType)
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(clusterDisplayName)
+ *             .esxiSoftwareVersion(clusterEsxiSoftwareVersion)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .initialCommitment(clusterInitialCommitment)
+ *             .initialHostOcpuCount(clusterInitialHostOcpuCount)
+ *             .initialHostShapeName(testShape.name())
+ *             .instanceDisplayNamePrefix(clusterInstanceDisplayNamePrefix)
+ *             .isShieldedInstanceEnabled(clusterIsShieldedInstanceEnabled)
+ *             .vmwareSoftwareVersion(clusterVmwareSoftwareVersion)
+ *             .workloadNetworkCidr(clusterWorkloadNetworkCidr)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Clusters can be imported using the `id`, e.g.

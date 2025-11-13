@@ -14,6 +14,56 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewAutonomousContainerDatabaseAddStandby(ctx, "test_autonomous_container_database_add_standby", &database.AutonomousContainerDatabaseAddStandbyArgs{
+//				AutonomousContainerDatabaseId:      pulumi.Any(testAutonomousContainerDatabase.Id),
+//				FastStartFailOverLagLimitInSeconds: pulumi.Any(autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds),
+//				IsAutomaticFailoverEnabled:         pulumi.Any(autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled),
+//				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs{
+//					BackupDestinationDetails: database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
+//						&database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
+//							Type:                             pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
+//							BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
+//							DbrsPolicyId:                     pulumi.Any(testPolicy.Id),
+//							Id:                               pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
+//							InternetProxy:                    pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
+//							IsRemote:                         autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+//							IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
+//							RemoteRegion:                     autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+//							VpcPassword:                      pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
+//							VpcUser:                          pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
+//						},
+//					},
+//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
+//				},
+//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(testCompartment.Id),
+//				PeerAutonomousContainerDatabaseDisplayName:   pulumi.Any(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName),
+//				PeerAutonomousVmClusterId:                    pulumi.Any(testAutonomousVmCluster.Id),
+//				PeerCloudAutonomousVmClusterId:               pulumi.Any(testCloudAutonomousVmCluster.Id),
+//				PeerDbUniqueName:                             pulumi.Any(autonomousContainerDatabaseAddStandbyPeerDbUniqueName),
+//				ProtectionMode:                               pulumi.Any(autonomousContainerDatabaseAddStandbyProtectionMode),
+//				StandbyMaintenanceBufferInDays:               pulumi.Any(autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AutonomousContainerDatabaseAddStandby can be imported using the `id`, e.g.

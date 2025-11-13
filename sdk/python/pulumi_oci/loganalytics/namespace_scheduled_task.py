@@ -492,6 +492,55 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_scheduled_task = oci.loganalytics.NamespaceScheduledTask("test_namespace_scheduled_task",
+            compartment_id=compartment_id,
+            kind=namespace_scheduled_task_kind,
+            namespace=namespace_scheduled_task_namespace,
+            action={
+                "type": namespace_scheduled_task_action_type,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "data_type": namespace_scheduled_task_action_data_type,
+                "metric_extraction": {
+                    "compartment_id": compartment_id,
+                    "metric_name": test_metric["name"],
+                    "namespace": namespace_scheduled_task_action_metric_extraction_namespace,
+                    "resource_group": namespace_scheduled_task_action_metric_extraction_resource_group,
+                },
+                "purge_compartment_id": test_compartment["id"],
+                "purge_duration": namespace_scheduled_task_action_purge_duration,
+                "query_string": namespace_scheduled_task_action_query_string,
+                "saved_search_id": test_saved_search["id"],
+                "template_details": {
+                    "template_id": test_template["id"],
+                    "template_params": [{
+                        "key_field": namespace_scheduled_task_action_template_details_template_params_key_field,
+                        "value_field": namespace_scheduled_task_action_template_details_template_params_value_field,
+                    }],
+                },
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            display_name=namespace_scheduled_task_display_name,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            saved_search_id=test_saved_search["id"],
+            schedules={
+                "type": namespace_scheduled_task_schedules_type,
+                "expression": namespace_scheduled_task_schedules_expression,
+                "misfire_policy": namespace_scheduled_task_schedules_misfire_policy,
+                "recurring_interval": namespace_scheduled_task_schedules_recurring_interval,
+                "repeat_count": namespace_scheduled_task_schedules_repeat_count,
+                "time_zone": namespace_scheduled_task_schedules_time_zone,
+            },
+            task_type=namespace_scheduled_task_task_type)
+        ```
+
         ## Import
 
         NamespaceScheduledTasks can be imported using the `id`, e.g.
@@ -525,6 +574,55 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_scheduled_task = oci.loganalytics.NamespaceScheduledTask("test_namespace_scheduled_task",
+            compartment_id=compartment_id,
+            kind=namespace_scheduled_task_kind,
+            namespace=namespace_scheduled_task_namespace,
+            action={
+                "type": namespace_scheduled_task_action_type,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "data_type": namespace_scheduled_task_action_data_type,
+                "metric_extraction": {
+                    "compartment_id": compartment_id,
+                    "metric_name": test_metric["name"],
+                    "namespace": namespace_scheduled_task_action_metric_extraction_namespace,
+                    "resource_group": namespace_scheduled_task_action_metric_extraction_resource_group,
+                },
+                "purge_compartment_id": test_compartment["id"],
+                "purge_duration": namespace_scheduled_task_action_purge_duration,
+                "query_string": namespace_scheduled_task_action_query_string,
+                "saved_search_id": test_saved_search["id"],
+                "template_details": {
+                    "template_id": test_template["id"],
+                    "template_params": [{
+                        "key_field": namespace_scheduled_task_action_template_details_template_params_key_field,
+                        "value_field": namespace_scheduled_task_action_template_details_template_params_value_field,
+                    }],
+                },
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            display_name=namespace_scheduled_task_display_name,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            saved_search_id=test_saved_search["id"],
+            schedules={
+                "type": namespace_scheduled_task_schedules_type,
+                "expression": namespace_scheduled_task_schedules_expression,
+                "misfire_policy": namespace_scheduled_task_schedules_misfire_policy,
+                "recurring_interval": namespace_scheduled_task_schedules_recurring_interval,
+                "repeat_count": namespace_scheduled_task_schedules_repeat_count,
+                "time_zone": namespace_scheduled_task_schedules_time_zone,
+            },
+            task_type=namespace_scheduled_task_task_type)
+        ```
 
         ## Import
 

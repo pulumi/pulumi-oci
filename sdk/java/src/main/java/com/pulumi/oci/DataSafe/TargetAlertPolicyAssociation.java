@@ -18,6 +18,45 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociation;
+ * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", TargetAlertPolicyAssociationArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .isEnabled(targetAlertPolicyAssociationIsEnabled)
+ *             .policyId(testPolicy.id())
+ *             .targetId(testTarget.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(targetAlertPolicyAssociationDescription)
+ *             .displayName(targetAlertPolicyAssociationDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .targetType(targetAlertPolicyAssociationTargetType)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * TargetAlertPolicyAssociations can be imported using the `id`, e.g.

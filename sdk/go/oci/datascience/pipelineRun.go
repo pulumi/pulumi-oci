@@ -14,6 +14,142 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datascience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datascience.NewPipelineRun(ctx, "test_pipeline_run", &datascience.PipelineRunArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				PipelineId:    pulumi.Any(testPipeline.Id),
+//				ConfigurationOverrideDetails: &datascience.PipelineRunConfigurationOverrideDetailsArgs{
+//					Type:                    pulumi.Any(pipelineRunConfigurationOverrideDetailsType),
+//					CommandLineArguments:    pulumi.Any(pipelineRunConfigurationOverrideDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(pipelineRunConfigurationOverrideDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes),
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(pipelineRunDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				InfrastructureConfigurationOverrideDetails: &datascience.PipelineRunInfrastructureConfigurationOverrideDetailsArgs{
+//					BlockStorageSizeInGbs:              pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+//					ShapeName:                          pulumi.Any(testShape.Name),
+//					BlockStorageSizeInGbsParameterized: pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbsParameterized),
+//					ShapeConfigDetails: &datascience.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs{
+//						MemoryInGbs:              pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs),
+//						MemoryInGbsParameterized: pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbsParameterized),
+//						Ocpus:                    pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus),
+//						OcpusParameterized:       pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpusParameterized),
+//					},
+//					SubnetId: pulumi.Any(testSubnet.Id),
+//				},
+//				LogConfigurationOverrideDetails: &datascience.PipelineRunLogConfigurationOverrideDetailsArgs{
+//					EnableAutoLogCreation: pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
+//				},
+//				OpcParentRptUrl:    pulumi.Any(pipelineRunOpcParentRptUrl),
+//				ParametersOverride: pulumi.Any(pipelineRunParametersOverride),
+//				ProjectId:          pulumi.Any(testProject.Id),
+//				StepOverrideDetails: datascience.PipelineRunStepOverrideDetailArray{
+//					&datascience.PipelineRunStepOverrideDetailArgs{
+//						StepConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{
+//							CommandLineArguments:    pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments),
+//							EnvironmentVariables:    pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables),
+//							MaximumRuntimeInMinutes: pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
+//						},
+//						StepName: pulumi.Any(pipelineRunStepOverrideDetailsStepName),
+//						StepContainerConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{
+//							ContainerType:    pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType),
+//							Image:            pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage),
+//							Cmds:             pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd),
+//							Entrypoints:      pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint),
+//							ImageDigest:      pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest),
+//							ImageSignatureId: pulumi.Any(testImageSignature.Id),
+//						},
+//						StepDataflowConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs{
+//							Configuration: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration),
+//							DriverShape:   pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape),
+//							DriverShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{
+//								CpuBaseline:              pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
+//								MemoryInGbs:              pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs),
+//								MemoryInGbsParameterized: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbsParameterized),
+//								Ocpus:                    pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus),
+//								OcpusParameterized:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpusParameterized),
+//							},
+//							ExecutorShape: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape),
+//							ExecutorShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{
+//								CpuBaseline:              pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
+//								MemoryInGbs:              pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs),
+//								MemoryInGbsParameterized: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbsParameterized),
+//								Ocpus:                    pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus),
+//								OcpusParameterized:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpusParameterized),
+//							},
+//							LogsBucketUri:      pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri),
+//							NumExecutors:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors),
+//							WarehouseBucketUri: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri),
+//						},
+//						StepInfrastructureConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs{
+//							BlockStorageSizeInGbs:              pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//							ShapeName:                          pulumi.Any(testShape.Name),
+//							BlockStorageSizeInGbsParameterized: pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbsParameterized),
+//							ShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
+//								MemoryInGbs:              pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
+//								MemoryInGbsParameterized: pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbsParameterized),
+//								Ocpus:                    pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
+//								OcpusParameterized:       pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpusParameterized),
+//							},
+//							SubnetId: pulumi.Any(testSubnet.Id),
+//						},
+//						StepStorageMountConfigurationDetailsLists: datascience.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArray{
+//							&datascience.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs{
+//								DestinationDirectoryName: pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationDirectoryName),
+//								StorageType:              pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListStorageType),
+//								Bucket:                   pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListBucket),
+//								DestinationPath:          pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationPath),
+//								ExportId:                 pulumi.Any(testExport.Id),
+//								MountTargetId:            pulumi.Any(testMountTarget.Id),
+//								Namespace:                pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListNamespace),
+//								Prefix:                   pulumi.Any(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListPrefix),
+//							},
+//						},
+//					},
+//				},
+//				StorageMountConfigurationOverrideDetailsLists: datascience.PipelineRunStorageMountConfigurationOverrideDetailsListArray{
+//					&datascience.PipelineRunStorageMountConfigurationOverrideDetailsListArgs{
+//						DestinationDirectoryName: pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListDestinationDirectoryName),
+//						StorageType:              pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListStorageType),
+//						Bucket:                   pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListBucket),
+//						DestinationPath:          pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListDestinationPath),
+//						ExportId:                 pulumi.Any(testExport.Id),
+//						MountTargetId:            pulumi.Any(testMountTarget.Id),
+//						Namespace:                pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListNamespace),
+//						Prefix:                   pulumi.Any(pipelineRunStorageMountConfigurationOverrideDetailsListPrefix),
+//					},
+//				},
+//				SystemTags: pulumi.Any(pipelineRunSystemTags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // PipelineRuns can be imported using the `id`, e.g.

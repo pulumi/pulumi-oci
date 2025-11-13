@@ -14,6 +14,64 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/fleetappsmanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := fleetappsmanagement.NewCatalogItem(ctx, "test_catalog_item", &fleetappsmanagement.CatalogItemArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				ConfigSourceType: pulumi.Any(catalogItemConfigSourceType),
+//				Description:      pulumi.Any(catalogItemDescription),
+//				DisplayName:      pulumi.Any(catalogItemDisplayName),
+//				PackageType:      pulumi.Any(catalogItemPackageType),
+//				CatalogSourcePayload: &fleetappsmanagement.CatalogItemCatalogSourcePayloadArgs{
+//					ConfigSourceType:              pulumi.Any(catalogItemCatalogSourcePayloadConfigSourceType),
+//					AccessUri:                     pulumi.Any(catalogItemCatalogSourcePayloadAccessUri),
+//					BranchName:                    pulumi.Any(catalogItemCatalogSourcePayloadBranchName),
+//					Bucket:                        pulumi.Any(catalogItemCatalogSourcePayloadBucket),
+//					ConfigurationSourceProviderId: pulumi.Any(testConfigurationSourceProvider.Id),
+//					Description:                   pulumi.Any(catalogItemCatalogSourcePayloadDescription),
+//					ListingId:                     pulumi.Any(testListing.Id),
+//					LongDescription:               pulumi.Any(catalogItemCatalogSourcePayloadLongDescription),
+//					Namespace:                     pulumi.Any(catalogItemCatalogSourcePayloadNamespace),
+//					Object:                        pulumi.Any(catalogItemCatalogSourcePayloadObject),
+//					RepositoryUrl:                 pulumi.Any(catalogItemCatalogSourcePayloadRepositoryUrl),
+//					TemplateDisplayName:           pulumi.Any(catalogItemCatalogSourcePayloadTemplateDisplayName),
+//					TimeExpires:                   pulumi.Any(catalogItemCatalogSourcePayloadTimeExpires),
+//					Version:                       pulumi.Any(catalogItemCatalogSourcePayloadVersion),
+//					WorkingDirectory:              pulumi.Any(catalogItemCatalogSourcePayloadWorkingDirectory),
+//					ZipFileBase64encoded:          pulumi.Any(catalogItemCatalogSourcePayloadZipFileBase64encoded),
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				IsItemLocked:       catalogItemIsItemLocked,
+//				ListingId:          pulumi.Any(testListing.Id),
+//				ListingVersion:     pulumi.Any(catalogItemListingVersion),
+//				ShortDescription:   pulumi.Any(catalogItemShortDescription),
+//				TimeReleased:       pulumi.Any(catalogItemTimeReleased),
+//				VersionDescription: pulumi.Any(catalogItemVersionDescription),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CatalogItems can be imported using the `id`, e.g.

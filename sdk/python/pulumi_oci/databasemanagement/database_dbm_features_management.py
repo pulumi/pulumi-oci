@@ -232,6 +232,45 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_database_dbm_features_management = oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management",
+            database_id=test_database["id"],
+            enable_database_dbm_feature=enable_database_dbm_feature,
+            feature_details={
+                "feature": database_dbm_features_management_feature_details_feature,
+                "enable_database_dbm_feature": enable_database_dbm_feature,
+                "connector_details": {
+                    "connector_type": database_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "database_connection_details": {
+                    "connection_credentials": {
+                        "credential_name": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_name,
+                        "credential_type": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_type,
+                        "named_credential_id": test_named_credential["id"],
+                        "password_secret_id": test_secret["id"],
+                        "role": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_role,
+                        "ssl_secret_id": test_secret["id"],
+                        "user_name": test_user["name"],
+                    },
+                    "connection_string": {
+                        "connection_type": database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
+                        "port": database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "protocol": database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
+                        "service": database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
+                    },
+                },
+                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "management_type": database_dbm_features_management_feature_details_management_type,
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
@@ -250,6 +289,45 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_database_dbm_features_management = oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management",
+            database_id=test_database["id"],
+            enable_database_dbm_feature=enable_database_dbm_feature,
+            feature_details={
+                "feature": database_dbm_features_management_feature_details_feature,
+                "enable_database_dbm_feature": enable_database_dbm_feature,
+                "connector_details": {
+                    "connector_type": database_dbm_features_management_feature_details_connector_details_connector_type,
+                    "database_connector_id": test_database_connector["id"],
+                    "management_agent_id": test_management_agent["id"],
+                    "private_end_point_id": test_private_end_point["id"],
+                },
+                "database_connection_details": {
+                    "connection_credentials": {
+                        "credential_name": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_name,
+                        "credential_type": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_credential_type,
+                        "named_credential_id": test_named_credential["id"],
+                        "password_secret_id": test_secret["id"],
+                        "role": database_dbm_features_management_feature_details_database_connection_details_connection_credentials_role,
+                        "ssl_secret_id": test_secret["id"],
+                        "user_name": test_user["name"],
+                    },
+                    "connection_string": {
+                        "connection_type": database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
+                        "port": database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "protocol": database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
+                        "service": database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
+                    },
+                },
+                "can_enable_all_current_pdbs": database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
+                "is_auto_enable_pluggable_database": database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "management_type": database_dbm_features_management_feature_details_management_type,
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param DatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

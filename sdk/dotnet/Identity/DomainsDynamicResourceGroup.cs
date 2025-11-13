@@ -12,6 +12,63 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDynamicResourceGroup = new Oci.Identity.DomainsDynamicResourceGroup("test_dynamic_resource_group", new()
+    ///     {
+    ///         DisplayName = dynamicResourceGroupDisplayName,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         MatchingRule = dynamicResourceGroupMatchingRule,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = dynamicResourceGroupAuthorization,
+    ///         Description = dynamicResourceGroupDescription,
+    ///         Id = dynamicResourceGroupId,
+    ///         Ocid = dynamicResourceGroupOcid,
+    ///         ResourceTypeSchemaVersion = dynamicResourceGroupResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsDynamicResourceGroupTagArgs
+    ///             {
+    ///                 Key = dynamicResourceGroupTagsKey,
+    ///                 Value = dynamicResourceGroupTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionOciTags = new Oci.Identity.Inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs
+    ///         {
+    ///             DefinedTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
+    ///                 {
+    ///                     Key = dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+    ///                     Namespace = dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+    ///                     Value = dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+    ///                 },
+    ///             },
+    ///             FreeformTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs
+    ///                 {
+    ///                     Key = dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+    ///                     Value = dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// DynamicResourceGroups can be imported using the `id`, e.g.

@@ -14,6 +14,67 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsCloudGateMapping(ctx, "test_cloud_gate_mapping", &identity.DomainsCloudGateMappingArgs{
+//				CloudGate: &identity.DomainsCloudGateMappingCloudGateArgs{
+//					Value: pulumi.Any(cloudGateMappingCloudGateValue),
+//				},
+//				GatewayApp: &identity.DomainsCloudGateMappingGatewayAppArgs{
+//					Name:  pulumi.Any(cloudGateMappingGatewayAppName),
+//					Value: pulumi.Any(cloudGateMappingGatewayAppValue),
+//				},
+//				IdcsEndpoint:   pulumi.Any(testDomain.Url),
+//				PolicyName:     pulumi.Any(testPolicy.Name),
+//				ResourcePrefix: pulumi.Any(cloudGateMappingResourcePrefix),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping"),
+//				},
+//				Server: &identity.DomainsCloudGateMappingServerArgs{
+//					Value: pulumi.Any(cloudGateMappingServerValue),
+//				},
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(cloudGateMappingAuthorization),
+//				Description:               pulumi.Any(cloudGateMappingDescription),
+//				Id:                        cloudGateMappingId,
+//				IsOpcService:              cloudGateMappingIsOpcService,
+//				NginxSettings:             pulumi.Any(cloudGateMappingNginxSettings),
+//				Ocid:                      pulumi.Any(cloudGateMappingOcid),
+//				ProxyPass:                 pulumi.Any(cloudGateMappingProxyPass),
+//				ResourceTypeSchemaVersion: pulumi.Any(cloudGateMappingResourceTypeSchemaVersion),
+//				Tags: identity.DomainsCloudGateMappingTagArray{
+//					&identity.DomainsCloudGateMappingTagArgs{
+//						Key:   pulumi.Any(cloudGateMappingTagsKey),
+//						Value: pulumi.Any(cloudGateMappingTagsValue),
+//					},
+//				},
+//				UpstreamServerGroup: &identity.DomainsCloudGateMappingUpstreamServerGroupArgs{
+//					Ssl:   pulumi.Any(cloudGateMappingUpstreamServerGroupSsl),
+//					Value: pulumi.Any(cloudGateMappingUpstreamServerGroupValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CloudGateMappings can be imported using the `id`, e.g.

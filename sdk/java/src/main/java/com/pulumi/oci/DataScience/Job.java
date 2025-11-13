@@ -26,6 +26,146 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.Job;
+ * import com.pulumi.oci.DataScience.JobArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsStartupProbeDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testJob = new Job("testJob", JobArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .projectId(testProject.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(jobDescription)
+ *             .displayName(jobDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .jobConfigurationDetails(JobJobConfigurationDetailsArgs.builder()
+ *                 .jobType(jobJobConfigurationDetailsJobType)
+ *                 .commandLineArguments(jobJobConfigurationDetailsCommandLineArguments)
+ *                 .environmentVariables(jobJobConfigurationDetailsEnvironmentVariables)
+ *                 .maximumRuntimeInMinutes(jobJobConfigurationDetailsMaximumRuntimeInMinutes)
+ *                 .startupProbeDetails(JobJobConfigurationDetailsStartupProbeDetailsArgs.builder()
+ *                     .commands(jobJobConfigurationDetailsStartupProbeDetailsCommand)
+ *                     .jobProbeCheckType(jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType)
+ *                     .cpuBaseline(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline)
+ *                     .failureThreshold(jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold)
+ *                     .initialDelayInSeconds(jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds)
+ *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
+ *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                     .periodInSeconds(jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds)
+ *                     .build())
+ *                 .build())
+ *             .jobEnvironmentConfigurationDetails(JobJobEnvironmentConfigurationDetailsArgs.builder()
+ *                 .image(jobJobEnvironmentConfigurationDetailsImage)
+ *                 .jobEnvironmentType(jobJobEnvironmentConfigurationDetailsJobEnvironmentType)
+ *                 .cmds(jobJobEnvironmentConfigurationDetailsCmd)
+ *                 .entrypoints(jobJobEnvironmentConfigurationDetailsEntrypoint)
+ *                 .imageDigest(jobJobEnvironmentConfigurationDetailsImageDigest)
+ *                 .imageSignatureId(testImageSignature.id())
+ *                 .build())
+ *             .jobInfrastructureConfigurationDetails(JobJobInfrastructureConfigurationDetailsArgs.builder()
+ *                 .jobInfrastructureType(jobJobInfrastructureConfigurationDetailsJobInfrastructureType)
+ *                 .blockStorageSizeInGbs(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
+ *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .shapeName(testShape.name())
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
+ *             .jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs.builder()
+ *                 .enableAutoLogCreation(jobJobLogConfigurationDetailsEnableAutoLogCreation)
+ *                 .enableLogging(jobJobLogConfigurationDetailsEnableLogging)
+ *                 .logGroupId(testLogGroup.id())
+ *                 .logId(testLog.id())
+ *                 .build())
+ *             .jobNodeConfigurationDetails(JobJobNodeConfigurationDetailsArgs.builder()
+ *                 .jobNodeType(jobJobNodeConfigurationDetailsJobNodeType)
+ *                 .jobNetworkConfiguration(JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs.builder()
+ *                     .jobNetworkType(jobJobNodeConfigurationDetailsJobNetworkConfigurationJobNetworkType)
+ *                     .subnetId(testSubnet.id())
+ *                     .build())
+ *                 .jobNodeGroupConfigurationDetailsLists(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs.builder()
+ *                     .name(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListName)
+ *                     .jobConfigurationDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs.builder()
+ *                         .jobType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType)
+ *                         .commandLineArguments(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments)
+ *                         .environmentVariables(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables)
+ *                         .maximumRuntimeInMinutes(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes)
+ *                         .startupProbeDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs.builder()
+ *                             .commands(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand)
+ *                             .jobProbeCheckType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType)
+ *                             .failureThreshold(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold)
+ *                             .initialDelayInSeconds(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds)
+ *                             .periodInSeconds(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds)
+ *                             .build())
+ *                         .build())
+ *                     .jobEnvironmentConfigurationDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs.builder()
+ *                         .image(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage)
+ *                         .jobEnvironmentType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType)
+ *                         .cmds(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd)
+ *                         .entrypoints(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint)
+ *                         .imageDigest(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest)
+ *                         .imageSignatureId(testImageSignature.id())
+ *                         .build())
+ *                     .jobInfrastructureConfigurationDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs.builder()
+ *                         .jobInfrastructureType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType)
+ *                         .blockStorageSizeInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                         .jobShapeConfigDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
+ *                             .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
+ *                             .ocpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                             .build())
+ *                         .shapeName(testShape.name())
+ *                         .subnetId(testSubnet.id())
+ *                         .build())
+ *                     .minimumSuccessReplicas(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas)
+ *                     .replicas(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas)
+ *                     .build())
+ *                 .maximumRuntimeInMinutes(jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes)
+ *                 .startupOrder(jobJobNodeConfigurationDetailsStartupOrder)
+ *                 .build())
+ *             .jobStorageMountConfigurationDetailsLists(JobJobStorageMountConfigurationDetailsListArgs.builder()
+ *                 .destinationDirectoryName(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName)
+ *                 .storageType(jobJobStorageMountConfigurationDetailsListStorageType)
+ *                 .bucket(jobJobStorageMountConfigurationDetailsListBucket)
+ *                 .destinationPath(jobJobStorageMountConfigurationDetailsListDestinationPath)
+ *                 .exportId(testExport.id())
+ *                 .mountTargetId(testMountTarget.id())
+ *                 .namespace(jobJobStorageMountConfigurationDetailsListNamespace)
+ *                 .prefix(jobJobStorageMountConfigurationDetailsListPrefix)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Jobs can be imported using the `id`, e.g.

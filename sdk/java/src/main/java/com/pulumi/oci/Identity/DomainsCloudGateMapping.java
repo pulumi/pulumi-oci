@@ -27,6 +27,73 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsCloudGateMapping;
+ * import com.pulumi.oci.Identity.DomainsCloudGateMappingArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingCloudGateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingGatewayAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingServerArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingUpstreamServerGroupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudGateMapping = new DomainsCloudGateMapping("testCloudGateMapping", DomainsCloudGateMappingArgs.builder()
+ *             .cloudGate(DomainsCloudGateMappingCloudGateArgs.builder()
+ *                 .value(cloudGateMappingCloudGateValue)
+ *                 .build())
+ *             .gatewayApp(DomainsCloudGateMappingGatewayAppArgs.builder()
+ *                 .name(cloudGateMappingGatewayAppName)
+ *                 .value(cloudGateMappingGatewayAppValue)
+ *                 .build())
+ *             .idcsEndpoint(testDomain.url())
+ *             .policyName(testPolicy.name())
+ *             .resourcePrefix(cloudGateMappingResourcePrefix)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping")
+ *             .server(DomainsCloudGateMappingServerArgs.builder()
+ *                 .value(cloudGateMappingServerValue)
+ *                 .build())
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(cloudGateMappingAuthorization)
+ *             .description(cloudGateMappingDescription)
+ *             .id(cloudGateMappingId)
+ *             .isOpcService(cloudGateMappingIsOpcService)
+ *             .nginxSettings(cloudGateMappingNginxSettings)
+ *             .ocid(cloudGateMappingOcid)
+ *             .proxyPass(cloudGateMappingProxyPass)
+ *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
+ *             .tags(DomainsCloudGateMappingTagArgs.builder()
+ *                 .key(cloudGateMappingTagsKey)
+ *                 .value(cloudGateMappingTagsValue)
+ *                 .build())
+ *             .upstreamServerGroup(DomainsCloudGateMappingUpstreamServerGroupArgs.builder()
+ *                 .ssl(cloudGateMappingUpstreamServerGroupSsl)
+ *                 .value(cloudGateMappingUpstreamServerGroupValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * CloudGateMappings can be imported using the `id`, e.g.

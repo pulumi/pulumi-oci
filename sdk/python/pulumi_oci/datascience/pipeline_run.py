@@ -704,6 +704,120 @@ class PipelineRun(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pipeline_run = oci.datascience.PipelineRun("test_pipeline_run",
+            compartment_id=compartment_id,
+            pipeline_id=test_pipeline["id"],
+            configuration_override_details={
+                "type": pipeline_run_configuration_override_details_type,
+                "command_line_arguments": pipeline_run_configuration_override_details_command_line_arguments,
+                "environment_variables": pipeline_run_configuration_override_details_environment_variables,
+                "maximum_runtime_in_minutes": pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=pipeline_run_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            infrastructure_configuration_override_details={
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs,
+                    "memory_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs_parameterized,
+                    "ocpus": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus,
+                    "ocpus_parameterized": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus_parameterized,
+                },
+                "subnet_id": test_subnet["id"],
+            },
+            log_configuration_override_details={
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
+            parameters_override=pipeline_run_parameters_override,
+            project_id=test_project["id"],
+            step_override_details=[{
+                "step_configuration_details": {
+                    "command_line_arguments": pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
+                    "environment_variables": pipeline_run_step_override_details_step_configuration_details_environment_variables,
+                    "maximum_runtime_in_minutes": pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
+                },
+                "step_name": pipeline_run_step_override_details_step_name,
+                "step_container_configuration_details": {
+                    "container_type": pipeline_run_step_override_details_step_container_configuration_details_container_type,
+                    "image": pipeline_run_step_override_details_step_container_configuration_details_image,
+                    "cmds": pipeline_run_step_override_details_step_container_configuration_details_cmd,
+                    "entrypoints": pipeline_run_step_override_details_step_container_configuration_details_entrypoint,
+                    "image_digest": pipeline_run_step_override_details_step_container_configuration_details_image_digest,
+                    "image_signature_id": test_image_signature["id"],
+                },
+                "step_dataflow_configuration_details": {
+                    "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
+                    "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
+                    "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus_parameterized,
+                    },
+                    "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
+                    "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
+                    },
+                    "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_name": test_shape["name"],
+                    "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus_parameterized,
+                    },
+                    "subnet_id": test_subnet["id"],
+                },
+                "step_storage_mount_configuration_details_lists": [{
+                    "destination_directory_name": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_destination_directory_name,
+                    "storage_type": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_storage_type,
+                    "bucket": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_bucket,
+                    "destination_path": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_destination_path,
+                    "export_id": test_export["id"],
+                    "mount_target_id": test_mount_target["id"],
+                    "namespace": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_namespace,
+                    "prefix": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_prefix,
+                }],
+            }],
+            storage_mount_configuration_override_details_lists=[{
+                "destination_directory_name": pipeline_run_storage_mount_configuration_override_details_list_destination_directory_name,
+                "storage_type": pipeline_run_storage_mount_configuration_override_details_list_storage_type,
+                "bucket": pipeline_run_storage_mount_configuration_override_details_list_bucket,
+                "destination_path": pipeline_run_storage_mount_configuration_override_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": pipeline_run_storage_mount_configuration_override_details_list_namespace,
+                "prefix": pipeline_run_storage_mount_configuration_override_details_list_prefix,
+            }],
+            system_tags=pipeline_run_system_tags)
+        ```
+
         ## Import
 
         PipelineRuns can be imported using the `id`, e.g.
@@ -741,6 +855,120 @@ class PipelineRun(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pipeline_run = oci.datascience.PipelineRun("test_pipeline_run",
+            compartment_id=compartment_id,
+            pipeline_id=test_pipeline["id"],
+            configuration_override_details={
+                "type": pipeline_run_configuration_override_details_type,
+                "command_line_arguments": pipeline_run_configuration_override_details_command_line_arguments,
+                "environment_variables": pipeline_run_configuration_override_details_environment_variables,
+                "maximum_runtime_in_minutes": pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=pipeline_run_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            infrastructure_configuration_override_details={
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs,
+                    "memory_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs_parameterized,
+                    "ocpus": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus,
+                    "ocpus_parameterized": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus_parameterized,
+                },
+                "subnet_id": test_subnet["id"],
+            },
+            log_configuration_override_details={
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
+            parameters_override=pipeline_run_parameters_override,
+            project_id=test_project["id"],
+            step_override_details=[{
+                "step_configuration_details": {
+                    "command_line_arguments": pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
+                    "environment_variables": pipeline_run_step_override_details_step_configuration_details_environment_variables,
+                    "maximum_runtime_in_minutes": pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
+                },
+                "step_name": pipeline_run_step_override_details_step_name,
+                "step_container_configuration_details": {
+                    "container_type": pipeline_run_step_override_details_step_container_configuration_details_container_type,
+                    "image": pipeline_run_step_override_details_step_container_configuration_details_image,
+                    "cmds": pipeline_run_step_override_details_step_container_configuration_details_cmd,
+                    "entrypoints": pipeline_run_step_override_details_step_container_configuration_details_entrypoint,
+                    "image_digest": pipeline_run_step_override_details_step_container_configuration_details_image_digest,
+                    "image_signature_id": test_image_signature["id"],
+                },
+                "step_dataflow_configuration_details": {
+                    "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
+                    "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
+                    "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus_parameterized,
+                    },
+                    "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
+                    "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
+                        "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
+                    },
+                    "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
+                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_name": test_shape["name"],
+                    "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "memory_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs_parameterized,
+                        "ocpus": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                        "ocpus_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus_parameterized,
+                    },
+                    "subnet_id": test_subnet["id"],
+                },
+                "step_storage_mount_configuration_details_lists": [{
+                    "destination_directory_name": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_destination_directory_name,
+                    "storage_type": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_storage_type,
+                    "bucket": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_bucket,
+                    "destination_path": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_destination_path,
+                    "export_id": test_export["id"],
+                    "mount_target_id": test_mount_target["id"],
+                    "namespace": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_namespace,
+                    "prefix": pipeline_run_step_override_details_step_storage_mount_configuration_details_list_prefix,
+                }],
+            }],
+            storage_mount_configuration_override_details_lists=[{
+                "destination_directory_name": pipeline_run_storage_mount_configuration_override_details_list_destination_directory_name,
+                "storage_type": pipeline_run_storage_mount_configuration_override_details_list_storage_type,
+                "bucket": pipeline_run_storage_mount_configuration_override_details_list_bucket,
+                "destination_path": pipeline_run_storage_mount_configuration_override_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": pipeline_run_storage_mount_configuration_override_details_list_namespace,
+                "prefix": pipeline_run_storage_mount_configuration_override_details_list_prefix,
+            }],
+            system_tags=pipeline_run_system_tags)
+        ```
 
         ## Import
 

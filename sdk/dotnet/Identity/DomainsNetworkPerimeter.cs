@@ -12,6 +12,55 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testNetworkPerimeter = new Oci.Identity.DomainsNetworkPerimeter("test_network_perimeter", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         IpAddresses = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsNetworkPerimeterIpAddressArgs
+    ///             {
+    ///                 Value = networkPerimeterIpAddressesValue,
+    ///                 Type = networkPerimeterIpAddressesType,
+    ///                 Version = networkPerimeterIpAddressesVersion,
+    ///             },
+    ///         },
+    ///         Name = networkPerimeterName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter",
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = networkPerimeterAuthorization,
+    ///         Description = networkPerimeterDescription,
+    ///         ExternalId = "externalId",
+    ///         Id = networkPerimeterId,
+    ///         Ocid = networkPerimeterOcid,
+    ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsNetworkPerimeterTagArgs
+    ///             {
+    ///                 Key = networkPerimeterTagsKey,
+    ///                 Value = networkPerimeterTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// NetworkPerimeters can be imported using the `id`, e.g.

@@ -544,6 +544,29 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup",
+            autonomous_database_id=test_autonomous_database["id"],
+            backup_destination_details={
+                "type": autonomous_database_backup_backup_destination_details_type,
+                "backup_retention_policy_on_terminate": autonomous_database_backup_backup_destination_details_backup_retention_policy_on_terminate,
+                "dbrs_policy_id": test_policy["id"],
+                "id": autonomous_database_backup_backup_destination_details_id,
+                "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
+                "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
+                "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
+            },
+            display_name=autonomous_database_backup_display_name,
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
+            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+        ```
+
         ## Import
 
         AutonomousDatabaseBackups can be imported using the `id`, e.g.
@@ -572,6 +595,29 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup",
+            autonomous_database_id=test_autonomous_database["id"],
+            backup_destination_details={
+                "type": autonomous_database_backup_backup_destination_details_type,
+                "backup_retention_policy_on_terminate": autonomous_database_backup_backup_destination_details_backup_retention_policy_on_terminate,
+                "dbrs_policy_id": test_policy["id"],
+                "id": autonomous_database_backup_backup_destination_details_id,
+                "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
+                "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
+                "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
+            },
+            display_name=autonomous_database_backup_display_name,
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
+            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+        ```
 
         ## Import
 

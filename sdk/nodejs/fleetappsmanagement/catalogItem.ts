@@ -9,6 +9,49 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogItem = new oci.fleetappsmanagement.CatalogItem("test_catalog_item", {
+ *     compartmentId: compartmentId,
+ *     configSourceType: catalogItemConfigSourceType,
+ *     description: catalogItemDescription,
+ *     displayName: catalogItemDisplayName,
+ *     packageType: catalogItemPackageType,
+ *     catalogSourcePayload: {
+ *         configSourceType: catalogItemCatalogSourcePayloadConfigSourceType,
+ *         accessUri: catalogItemCatalogSourcePayloadAccessUri,
+ *         branchName: catalogItemCatalogSourcePayloadBranchName,
+ *         bucket: catalogItemCatalogSourcePayloadBucket,
+ *         configurationSourceProviderId: testConfigurationSourceProvider.id,
+ *         description: catalogItemCatalogSourcePayloadDescription,
+ *         listingId: testListing.id,
+ *         longDescription: catalogItemCatalogSourcePayloadLongDescription,
+ *         namespace: catalogItemCatalogSourcePayloadNamespace,
+ *         object: catalogItemCatalogSourcePayloadObject,
+ *         repositoryUrl: catalogItemCatalogSourcePayloadRepositoryUrl,
+ *         templateDisplayName: catalogItemCatalogSourcePayloadTemplateDisplayName,
+ *         timeExpires: catalogItemCatalogSourcePayloadTimeExpires,
+ *         version: catalogItemCatalogSourcePayloadVersion,
+ *         workingDirectory: catalogItemCatalogSourcePayloadWorkingDirectory,
+ *         zipFileBase64encoded: catalogItemCatalogSourcePayloadZipFileBase64encoded,
+ *     },
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     isItemLocked: catalogItemIsItemLocked,
+ *     listingId: testListing.id,
+ *     listingVersion: catalogItemListingVersion,
+ *     shortDescription: catalogItemShortDescription,
+ *     timeReleased: catalogItemTimeReleased,
+ *     versionDescription: catalogItemVersionDescription,
+ * });
+ * ```
+ *
  * ## Import
  *
  * CatalogItems can be imported using the `id`, e.g.

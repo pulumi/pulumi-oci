@@ -12,6 +12,48 @@ namespace Pulumi.Oci.GenerativeAi
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDataSource = new Oci.GenerativeAi.AgentDataSource("test_data_source", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DataSourceConfig = new Oci.GenerativeAi.Inputs.AgentDataSourceDataSourceConfigArgs
+    ///         {
+    ///             DataSourceConfigType = dataSourceDataSourceConfigDataSourceConfigType,
+    ///             ObjectStoragePrefixes = new[]
+    ///             {
+    ///                 new Oci.GenerativeAi.Inputs.AgentDataSourceDataSourceConfigObjectStoragePrefixArgs
+    ///                 {
+    ///                     Bucket = dataSourceDataSourceConfigObjectStoragePrefixesBucket,
+    ///                     Namespace = dataSourceDataSourceConfigObjectStoragePrefixesNamespace,
+    ///                     Prefix = dataSourceDataSourceConfigObjectStoragePrefixesPrefix,
+    ///                 },
+    ///             },
+    ///             ShouldEnableMultiModality = dataSourceDataSourceConfigShouldEnableMultiModality,
+    ///         },
+    ///         KnowledgeBaseId = testKnowledgeBase.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = dataSourceDescription,
+    ///         DisplayName = dataSourceDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Metadata = dataSourceMetadata,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// DataSources can be imported using the `id`, e.g.

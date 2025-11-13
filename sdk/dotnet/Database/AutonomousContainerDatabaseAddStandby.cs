@@ -12,6 +12,51 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousContainerDatabaseAddStandby = new Oci.Database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby", new()
+    ///     {
+    ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+    ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds,
+    ///         IsAutomaticFailoverEnabled = autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled,
+    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
+    ///                 {
+    ///                     Type = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                     BackupRetentionPolicyOnTerminate = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+    ///                     DbrsPolicyId = testPolicy.Id,
+    ///                     Id = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                     InternetProxy = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                     IsRemote = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                     IsRetentionLockEnabled = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+    ///                     RemoteRegion = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+    ///                     VpcPassword = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                     VpcUser = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+    ///                 },
+    ///             },
+    ///             RecoveryWindowInDays = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseCompartmentId = testCompartment.Id,
+    ///         PeerAutonomousContainerDatabaseDisplayName = autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName,
+    ///         PeerAutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         PeerDbUniqueName = autonomousContainerDatabaseAddStandbyPeerDbUniqueName,
+    ///         ProtectionMode = autonomousContainerDatabaseAddStandbyProtectionMode,
+    ///         StandbyMaintenanceBufferInDays = autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AutonomousContainerDatabaseAddStandby can be imported using the `id`, e.g.

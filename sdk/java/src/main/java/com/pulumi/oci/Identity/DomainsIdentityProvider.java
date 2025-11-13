@@ -29,6 +29,154 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsIdentityProvider;
+ * import com.pulumi.oci.Identity.DomainsIdentityProviderArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderCorrelationPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvAssignedGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvAttributesArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvGroupMappingArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIdentityProvider = new DomainsIdentityProvider("testIdentityProvider", DomainsIdentityProviderArgs.builder()
+ *             .enabled(false)
+ *             .idcsEndpoint(testDomain.url())
+ *             .partnerName(identityProviderPartnerName)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider")
+ *             .assertionAttribute(identityProviderAssertionAttribute)
+ *             .attributeSets()
+ *             .attributes("")
+ *             .authnRequestBinding(identityProviderAuthnRequestBinding)
+ *             .authorization(identityProviderAuthorization)
+ *             .correlationPolicy(DomainsIdentityProviderCorrelationPolicyArgs.builder()
+ *                 .type(identityProviderCorrelationPolicyType)
+ *                 .value(identityProviderCorrelationPolicyValue)
+ *                 .display(identityProviderCorrelationPolicyDisplay)
+ *                 .build())
+ *             .description(identityProviderDescription)
+ *             .encryptionCertificate(identityProviderEncryptionCertificate)
+ *             .externalId("externalId")
+ *             .iconUrl(identityProviderIconUrl)
+ *             .id(identityProviderId)
+ *             .idpSsoUrl(identityProviderIdpSsoUrl)
+ *             .includeSigningCertInSignature(identityProviderIncludeSigningCertInSignature)
+ *             .jitUserProvAssignedGroups(DomainsIdentityProviderJitUserProvAssignedGroupArgs.builder()
+ *                 .value(identityProviderJitUserProvAssignedGroupsValue)
+ *                 .build())
+ *             .jitUserProvAttributeUpdateEnabled(identityProviderJitUserProvAttributeUpdateEnabled)
+ *             .jitUserProvAttributes(DomainsIdentityProviderJitUserProvAttributesArgs.builder()
+ *                 .value(identityProviderJitUserProvAttributesValue)
+ *                 .build())
+ *             .jitUserProvCreateUserEnabled(identityProviderJitUserProvCreateUserEnabled)
+ *             .jitUserProvEnabled(identityProviderJitUserProvEnabled)
+ *             .jitUserProvGroupAssertionAttributeEnabled(identityProviderJitUserProvGroupAssertionAttributeEnabled)
+ *             .jitUserProvGroupAssignmentMethod(identityProviderJitUserProvGroupAssignmentMethod)
+ *             .jitUserProvGroupMappingMode(identityProviderJitUserProvGroupMappingMode)
+ *             .jitUserProvGroupMappings(DomainsIdentityProviderJitUserProvGroupMappingArgs.builder()
+ *                 .idpGroup(identityProviderJitUserProvGroupMappingsIdpGroup)
+ *                 .value(identityProviderJitUserProvGroupMappingsValue)
+ *                 .build())
+ *             .jitUserProvGroupSamlAttributeName(identityProviderJitUserProvGroupSamlAttributeName)
+ *             .jitUserProvGroupStaticListEnabled(identityProviderJitUserProvGroupStaticListEnabled)
+ *             .jitUserProvIgnoreErrorOnAbsentGroups(identityProviderJitUserProvIgnoreErrorOnAbsentGroups)
+ *             .logoutBinding(identityProviderLogoutBinding)
+ *             .logoutEnabled(identityProviderLogoutEnabled)
+ *             .logoutRequestUrl(identityProviderLogoutRequestUrl)
+ *             .logoutResponseUrl(identityProviderLogoutResponseUrl)
+ *             .metadata(identityProviderMetadata)
+ *             .nameIdFormat(identityProviderNameIdFormat)
+ *             .ocid(identityProviderOcid)
+ *             .partnerProviderId(identityProviderPartnerProviderId)
+ *             .requestedAuthenticationContexts(identityProviderRequestedAuthenticationContext)
+ *             .requireForceAuthn(identityProviderRequireForceAuthn)
+ *             .requiresEncryptedAssertion(identityProviderRequiresEncryptedAssertion)
+ *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
+ *             .samlHoKrequired(identityProviderSamlHoKrequired)
+ *             .serviceInstanceIdentifier(identityProviderServiceInstanceIdentifier)
+ *             .shownOnLoginPage(identityProviderShownOnLoginPage)
+ *             .signatureHashAlgorithm(identityProviderSignatureHashAlgorithm)
+ *             .signingCertificate(identityProviderSigningCertificate)
+ *             .succinctId("succinctId")
+ *             .tags(DomainsIdentityProviderTagArgs.builder()
+ *                 .key(identityProviderTagsKey)
+ *                 .value(identityProviderTagsValue)
+ *                 .build())
+ *             .type(identityProviderType)
+ *             .urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs.builder()
+ *                 .accountLinkingEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderAccountLinkingEnabled)
+ *                 .consumerKey(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerKey)
+ *                 .consumerSecret(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerSecret)
+ *                 .registrationEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderRegistrationEnabled)
+ *                 .serviceProviderName(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderServiceProviderName)
+ *                 .accessTokenUrl(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAccessTokenUrl)
+ *                 .adminScopes(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAdminScope)
+ *                 .appleDevId(testAppleDev.id())
+ *                 .appleKeyId(testKey.id())
+ *                 .authzUrl(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAuthzUrl)
+ *                 .autoRedirectEnabled(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAutoRedirectEnabled)
+ *                 .clientCredentialInPayload(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClientCredentialInPayload)
+ *                 .clockSkewInSeconds(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClockSkewInSeconds)
+ *                 .discoveryUrl(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderDiscoveryUrl)
+ *                 .idAttribute(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderIdAttribute)
+ *                 .jitProvAssignedGroups(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs.builder()
+ *                     .value(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsValue)
+ *                     .display(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsDisplay)
+ *                     .build())
+ *                 .jitProvGroupStaticListEnabled(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvGroupStaticListEnabled)
+ *                 .profileUrl(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderProfileUrl)
+ *                 .redirectUrl(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderRedirectUrl)
+ *                 .scopes(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderScope)
+ *                 .socialJitProvisioningEnabled(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderSocialJitProvisioningEnabled)
+ *                 .status(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderStatus)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionx509identityProvider(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs.builder()
+ *                 .certMatchAttribute(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCertMatchAttribute)
+ *                 .signingCertificateChains("signingCertificateChain")
+ *                 .userMatchAttribute(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderUserMatchAttribute)
+ *                 .crlCheckOnOcspFailureEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled)
+ *                 .crlEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled)
+ *                 .crlLocation(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlLocation)
+ *                 .crlReloadDuration(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlReloadDuration)
+ *                 .ekuValidationEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValidationEnabled)
+ *                 .ekuValues(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValues)
+ *                 .ocspAllowUnknownResponseStatus(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspAllowUnknownResponseStatus)
+ *                 .ocspEnableSignedResponse(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnableSignedResponse)
+ *                 .ocspEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnabled)
+ *                 .ocspResponderUrl(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspResponderUrl)
+ *                 .ocspRevalidateTime(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspRevalidateTime)
+ *                 .ocspServerName(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspServerName)
+ *                 .ocspTrustCertChains(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspTrustCertChain)
+ *                 .otherCertMatchAttribute(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOtherCertMatchAttribute)
+ *                 .build())
+ *             .userMappingMethod(identityProviderUserMappingMethod)
+ *             .userMappingStoreAttribute(identityProviderUserMappingStoreAttribute)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * IdentityProviders can be imported using the `id`, e.g.

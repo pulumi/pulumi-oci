@@ -1135,6 +1135,34 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_approval_workflow_step = oci.identity.DomainsApprovalWorkflowStep("test_approval_workflow_step",
+            idcs_endpoint=test_domain["url"],
+            order=approval_workflow_step_order,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"],
+            type=approval_workflow_step_type,
+            approvers=[{
+                "type": approval_workflow_step_approvers_type,
+                "value": approval_workflow_step_approvers_value,
+                "ocid": approval_workflow_step_approvers_ocid,
+            }],
+            approvers_expressions=approval_workflow_step_approvers_expressions,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=approval_workflow_step_authorization,
+            id=approval_workflow_step_id,
+            minimum_approvals=approval_workflow_step_minimum_approvals,
+            ocid=approval_workflow_step_ocid,
+            resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
+            tags=[{
+                "key": approval_workflow_step_tags_key,
+                "value": approval_workflow_step_tags_value,
+            }])
+        ```
+
         ## Import
 
         ApprovalWorkflowSteps can be imported using the `id`, e.g.
@@ -1255,6 +1283,34 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_approval_workflow_step = oci.identity.DomainsApprovalWorkflowStep("test_approval_workflow_step",
+            idcs_endpoint=test_domain["url"],
+            order=approval_workflow_step_order,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"],
+            type=approval_workflow_step_type,
+            approvers=[{
+                "type": approval_workflow_step_approvers_type,
+                "value": approval_workflow_step_approvers_value,
+                "ocid": approval_workflow_step_approvers_ocid,
+            }],
+            approvers_expressions=approval_workflow_step_approvers_expressions,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=approval_workflow_step_authorization,
+            id=approval_workflow_step_id,
+            minimum_approvals=approval_workflow_step_minimum_approvals,
+            ocid=approval_workflow_step_ocid,
+            resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
+            tags=[{
+                "key": approval_workflow_step_tags_key,
+                "value": approval_workflow_step_tags_value,
+            }])
+        ```
 
         ## Import
 

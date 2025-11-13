@@ -12,6 +12,47 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyCustomerSecretKey = new Oci.Identity.DomainsMyCustomerSecretKey("test_my_customer_secret_key", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey",
+    ///         },
+    ///         Authorization = myCustomerSecretKeyAuthorization,
+    ///         Description = myCustomerSecretKeyDescription,
+    ///         DisplayName = myCustomerSecretKeyDisplayName,
+    ///         ExpiresOn = myCustomerSecretKeyExpiresOn,
+    ///         Id = myCustomerSecretKeyId,
+    ///         Ocid = myCustomerSecretKeyOcid,
+    ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
+    ///         Status = myCustomerSecretKeyStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyCustomerSecretKeyTagArgs
+    ///             {
+    ///                 Key = myCustomerSecretKeyTagsKey,
+    ///                 Value = myCustomerSecretKeyTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMyCustomerSecretKeyUserArgs
+    ///         {
+    ///             Ocid = myCustomerSecretKeyUserOcid,
+    ///             Value = myCustomerSecretKeyUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MyCustomerSecretKeys can be imported using the `id`, e.g.

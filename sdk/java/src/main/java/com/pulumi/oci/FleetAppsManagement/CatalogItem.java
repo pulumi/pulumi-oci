@@ -23,6 +23,68 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.FleetAppsManagement.CatalogItem;
+ * import com.pulumi.oci.FleetAppsManagement.CatalogItemArgs;
+ * import com.pulumi.oci.FleetAppsManagement.inputs.CatalogItemCatalogSourcePayloadArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCatalogItem = new CatalogItem("testCatalogItem", CatalogItemArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .configSourceType(catalogItemConfigSourceType)
+ *             .description(catalogItemDescription)
+ *             .displayName(catalogItemDisplayName)
+ *             .packageType(catalogItemPackageType)
+ *             .catalogSourcePayload(CatalogItemCatalogSourcePayloadArgs.builder()
+ *                 .configSourceType(catalogItemCatalogSourcePayloadConfigSourceType)
+ *                 .accessUri(catalogItemCatalogSourcePayloadAccessUri)
+ *                 .branchName(catalogItemCatalogSourcePayloadBranchName)
+ *                 .bucket(catalogItemCatalogSourcePayloadBucket)
+ *                 .configurationSourceProviderId(testConfigurationSourceProvider.id())
+ *                 .description(catalogItemCatalogSourcePayloadDescription)
+ *                 .listingId(testListing.id())
+ *                 .longDescription(catalogItemCatalogSourcePayloadLongDescription)
+ *                 .namespace(catalogItemCatalogSourcePayloadNamespace)
+ *                 .object(catalogItemCatalogSourcePayloadObject)
+ *                 .repositoryUrl(catalogItemCatalogSourcePayloadRepositoryUrl)
+ *                 .templateDisplayName(catalogItemCatalogSourcePayloadTemplateDisplayName)
+ *                 .timeExpires(catalogItemCatalogSourcePayloadTimeExpires)
+ *                 .version(catalogItemCatalogSourcePayloadVersion)
+ *                 .workingDirectory(catalogItemCatalogSourcePayloadWorkingDirectory)
+ *                 .zipFileBase64encoded(catalogItemCatalogSourcePayloadZipFileBase64encoded)
+ *                 .build())
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isItemLocked(catalogItemIsItemLocked)
+ *             .listingId(testListing.id())
+ *             .listingVersion(catalogItemListingVersion)
+ *             .shortDescription(catalogItemShortDescription)
+ *             .timeReleased(catalogItemTimeReleased)
+ *             .versionDescription(catalogItemVersionDescription)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * CatalogItems can be imported using the `id`, e.g.

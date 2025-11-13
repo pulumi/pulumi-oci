@@ -12,6 +12,43 @@ namespace Pulumi.Oci.NetworkFirewall
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testNetworkFirewallPolicyDecryptionRule = new Oci.NetworkFirewall.NetworkFirewallPolicyDecryptionRule("test_network_firewall_policy_decryption_rule", new()
+    ///     {
+    ///         Lifecycle = 
+    ///         {
+    ///             { "ignoreChanges", new[]
+    ///             {
+    ///                 position,
+    ///             } },
+    ///         },
+    ///         Name = networkFirewallPolicyDecryptionRuleName,
+    ///         Action = networkFirewallPolicyDecryptionRuleAction,
+    ///         Condition = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs
+    ///         {
+    ///             DestinationAddresses = networkFirewallPolicyDecryptionRuleConditionDestinationAddress,
+    ///             SourceAddresses = networkFirewallPolicyDecryptionRuleConditionSourceAddress,
+    ///         },
+    ///         Position = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionRulePositionArgs
+    ///         {
+    ///             AfterRule = networkFirewallPolicyDecryptionRulePositionAfterRule,
+    ///             BeforeRule = networkFirewallPolicyDecryptionRulePositionBeforeRule,
+    ///         },
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         DecryptionProfile = networkFirewallPolicyDecryptionRuleDecryptionProfile,
+    ///         Secret = networkFirewallPolicyDecryptionRuleSecret,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.

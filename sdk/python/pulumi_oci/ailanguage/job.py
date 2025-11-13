@@ -483,6 +483,43 @@ class Job(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_job = oci.ailanguage.Job("test_job",
+            compartment_id=compartment_id,
+            input_location={
+                "bucket": job_input_location_bucket,
+                "location_type": job_input_location_location_type,
+                "namespace": job_input_location_namespace,
+                "object_names": job_input_location_object_names,
+                "prefix": job_input_location_prefix,
+            },
+            model_metadata_details=[{
+                "configuration": [{
+                    "configurationMap": job_model_metadata_details_configuration_configuration_map,
+                }],
+                "endpoint_id": test_endpoint["id"],
+                "language_code": job_model_metadata_details_language_code,
+                "model_id": test_model["id"],
+                "model_type": job_model_metadata_details_model_type,
+            }],
+            output_location={
+                "bucket": job_output_location_bucket,
+                "namespace": job_output_location_namespace,
+                "prefix": job_output_location_prefix,
+            },
+            description=job_description,
+            display_name=job_display_name,
+            input_configuration={
+                "configuration": [{
+                    "config": job_input_configuration_configuration_config,
+                }],
+                "document_types": job_input_configuration_document_types,
+            })
+        ```
+
         ## Import
 
         Jobs can be imported using the `id`, e.g.
@@ -513,6 +550,43 @@ class Job(pulumi.CustomResource):
         Creates a new language service async job.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_job = oci.ailanguage.Job("test_job",
+            compartment_id=compartment_id,
+            input_location={
+                "bucket": job_input_location_bucket,
+                "location_type": job_input_location_location_type,
+                "namespace": job_input_location_namespace,
+                "object_names": job_input_location_object_names,
+                "prefix": job_input_location_prefix,
+            },
+            model_metadata_details=[{
+                "configuration": [{
+                    "configurationMap": job_model_metadata_details_configuration_configuration_map,
+                }],
+                "endpoint_id": test_endpoint["id"],
+                "language_code": job_model_metadata_details_language_code,
+                "model_id": test_model["id"],
+                "model_type": job_model_metadata_details_model_type,
+            }],
+            output_location={
+                "bucket": job_output_location_bucket,
+                "namespace": job_output_location_namespace,
+                "prefix": job_output_location_prefix,
+            },
+            description=job_description,
+            display_name=job_display_name,
+            input_configuration={
+                "configuration": [{
+                    "config": job_input_configuration_configuration_config,
+                }],
+                "document_types": job_input_configuration_document_types,
+            })
+        ```
 
         ## Import
 

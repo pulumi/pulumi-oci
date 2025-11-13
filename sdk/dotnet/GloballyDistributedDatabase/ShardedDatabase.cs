@@ -12,6 +12,94 @@ namespace Pulumi.Oci.GloballyDistributedDatabase
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testShardedDatabase = new Oci.GloballyDistributedDatabase.ShardedDatabase("test_sharded_database", new()
+    ///     {
+    ///         CatalogDetails = new[]
+    ///         {
+    ///             new Oci.GloballyDistributedDatabase.Inputs.ShardedDatabaseCatalogDetailArgs
+    ///             {
+    ///                 AdminPassword = shardedDatabaseCatalogDetailsAdminPassword,
+    ///                 CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///                 ComputeCount = shardedDatabaseCatalogDetailsComputeCount,
+    ///                 DataStorageSizeInGbs = shardedDatabaseCatalogDetailsDataStorageSizeInGbs,
+    ///                 IsAutoScalingEnabled = shardedDatabaseCatalogDetailsIsAutoScalingEnabled,
+    ///                 EncryptionKeyDetails = new Oci.GloballyDistributedDatabase.Inputs.ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs
+    ///                 {
+    ///                     KmsKeyId = testKey.Id,
+    ///                     VaultId = testVault.Id,
+    ///                     KmsKeyVersionId = testKeyVersion.Id,
+    ///                 },
+    ///                 PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///             },
+    ///         },
+    ///         CharacterSet = shardedDatabaseCharacterSet,
+    ///         CompartmentId = compartmentId,
+    ///         DbDeploymentType = shardedDatabaseDbDeploymentType,
+    ///         DbVersion = shardedDatabaseDbVersion,
+    ///         DbWorkload = shardedDatabaseDbWorkload,
+    ///         DisplayName = shardedDatabaseDisplayName,
+    ///         ListenerPort = shardedDatabaseListenerPort,
+    ///         ListenerPortTls = shardedDatabaseListenerPortTls,
+    ///         NcharacterSet = shardedDatabaseNcharacterSet,
+    ///         OnsPortLocal = shardedDatabaseOnsPortLocal,
+    ///         OnsPortRemote = shardedDatabaseOnsPortRemote,
+    ///         Prefix = shardedDatabasePrefix,
+    ///         ShardDetails = new[]
+    ///         {
+    ///             new Oci.GloballyDistributedDatabase.Inputs.ShardedDatabaseShardDetailArgs
+    ///             {
+    ///                 AdminPassword = shardedDatabaseShardDetailsAdminPassword,
+    ///                 CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///                 ComputeCount = shardedDatabaseShardDetailsComputeCount,
+    ///                 DataStorageSizeInGbs = shardedDatabaseShardDetailsDataStorageSizeInGbs,
+    ///                 IsAutoScalingEnabled = shardedDatabaseShardDetailsIsAutoScalingEnabled,
+    ///                 EncryptionKeyDetails = new Oci.GloballyDistributedDatabase.Inputs.ShardedDatabaseShardDetailEncryptionKeyDetailsArgs
+    ///                 {
+    ///                     KmsKeyId = testKey.Id,
+    ///                     VaultId = testVault.Id,
+    ///                     KmsKeyVersionId = testKeyVersion.Id,
+    ///                 },
+    ///                 PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///                 ShardSpace = shardedDatabaseShardDetailsShardSpace,
+    ///             },
+    ///         },
+    ///         ShardedDatabaseId = shardedDatabaseShardedDatabaseId,
+    ///         ShardingMethod = shardedDatabaseShardingMethod,
+    ///         Chunks = shardedDatabaseChunks,
+    ///         ClusterCertificateCommonName = shardedDatabaseClusterCertificateCommonName,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.GloballyDistributedDatabase.Inputs.ShardedDatabasePatchOperationArgs
+    ///             {
+    ///                 Operation = shardedDatabasePatchOperationsOperation,
+    ///                 Selection = shardedDatabasePatchOperationsSelection,
+    ///                 Value = shardedDatabasePatchOperationsValue,
+    ///             },
+    ///         },
+    ///         ReplicationFactor = shardedDatabaseReplicationFactor,
+    ///         ReplicationMethod = shardedDatabaseReplicationMethod,
+    ///         ReplicationUnit = shardedDatabaseReplicationUnit,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ShardedDatabases can be imported using the `id`, e.g.

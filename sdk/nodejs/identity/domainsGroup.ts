@@ -9,6 +9,64 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGroup = new oci.identity.DomainsGroup("test_group", {
+ *     displayName: groupDisplayName,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: groupAuthorization,
+ *     externalId: "externalId",
+ *     forceDelete: groupForceDelete,
+ *     id: groupId,
+ *     members: [{
+ *         type: groupMembersType,
+ *         value: groupMembersValue,
+ *         ocid: groupMembersOcid,
+ *     }],
+ *     nonUniqueDisplayName: groupNonUniqueDisplayName,
+ *     ocid: groupOcid,
+ *     resourceTypeSchemaVersion: groupResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: groupTagsKey,
+ *         value: groupTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionOciTags: {
+ *         definedTags: [{
+ *             key: groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+ *             namespace: groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+ *             value: groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+ *         }],
+ *         freeformTags: [{
+ *             key: groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+ *             value: groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensiondynamicGroup: {
+ *         membershipRule: groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipRule,
+ *         membershipType: groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipType,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensiongroupGroup: {
+ *         creationMechanism: groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupCreationMechanism,
+ *         description: groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupDescription,
+ *         owners: [{
+ *             type: groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersType,
+ *             value: groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersValue,
+ *         }],
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionposixGroup: {
+ *         gidNumber: groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber,
+ *     },
+ *     urnietfparamsscimschemasoracleidcsextensionrequestableGroup: {
+ *         requestable: groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Groups can be imported using the `id`, e.g.

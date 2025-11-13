@@ -8,6 +8,26 @@ import * as utilities from "../utilities";
 
 /**
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = new oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management", {
+ *     externalPluggableDatabaseId: testExternalPluggableDatabase.id,
+ *     enableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature,
+ *     featureDetails: {
+ *         feature: externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature,
+ *         enableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature,
+ *         connectorDetails: {
+ *             connectorType: externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *     },
+ * });
+ * ```
  */
 export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement extends pulumi.CustomResource {
     /**

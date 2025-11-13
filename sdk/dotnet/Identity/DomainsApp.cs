@@ -12,6 +12,470 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testApp = new Oci.Identity.DomainsApp("test_app", new()
+    ///     {
+    ///         BasedOnTemplate = new Oci.Identity.Inputs.DomainsAppBasedOnTemplateArgs
+    ///         {
+    ///             Value = appBasedOnTemplateValue,
+    ///             WellKnownId = "CustomWebAppTemplateId",
+    ///         },
+    ///         DisplayName = appDisplayName,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:App",
+    ///         },
+    ///         AccessTokenExpiry = appAccessTokenExpiry,
+    ///         Active = appActive,
+    ///         AliasApps = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppAliasAppArgs
+    ///             {
+    ///                 Value = appAliasAppsValue,
+    ///             },
+    ///         },
+    ///         AllUrlSchemesAllowed = appAllUrlSchemesAllowed,
+    ///         AllowAccessControl = appAllowAccessControl,
+    ///         AllowOffline = appAllowOffline,
+    ///         AllowedGrants = appAllowedGrants,
+    ///         AllowedOperations = appAllowedOperations,
+    ///         AllowedScopes = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppAllowedScopeArgs
+    ///             {
+    ///                 Fqs = appAllowedScopesFqs,
+    ///             },
+    ///         },
+    ///         AllowedTags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppAllowedTagArgs
+    ///             {
+    ///                 Key = appAllowedTagsKey,
+    ///                 Value = appAllowedTagsValue,
+    ///             },
+    ///         },
+    ///         AppIcon = appAppIcon,
+    ///         AppSignonPolicy = new Oci.Identity.Inputs.DomainsAppAppSignonPolicyArgs
+    ///         {
+    ///             Value = appAppSignonPolicyValue,
+    ///         },
+    ///         AppThumbnail = appAppThumbnail,
+    ///         AppsNetworkPerimeters = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppAppsNetworkPerimeterArgs
+    ///             {
+    ///                 Value = appAppsNetworkPerimetersValue,
+    ///             },
+    ///         },
+    ///         AsOpcService = new Oci.Identity.Inputs.DomainsAppAsOpcServiceArgs
+    ///         {
+    ///             Value = appAsOpcServiceValue,
+    ///         },
+    ///         AttrRenderingMetadatas = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppAttrRenderingMetadataArgs
+    ///             {
+    ///                 Name = appAttrRenderingMetadataName,
+    ///                 Datatype = appAttrRenderingMetadataDatatype,
+    ///                 Helptext = appAttrRenderingMetadataHelptext,
+    ///                 Label = appAttrRenderingMetadataLabel,
+    ///                 MaxLength = appAttrRenderingMetadataMaxLength,
+    ///                 MaxSize = appAttrRenderingMetadataMaxSize,
+    ///                 MinLength = appAttrRenderingMetadataMinLength,
+    ///                 MinSize = appAttrRenderingMetadataMinSize,
+    ///                 Order = appAttrRenderingMetadataOrder,
+    ///                 ReadOnly = appAttrRenderingMetadataReadOnly,
+    ///                 Regexp = appAttrRenderingMetadataRegexp,
+    ///                 Required = appAttrRenderingMetadataRequired,
+    ///                 Section = appAttrRenderingMetadataSection,
+    ///                 Visible = appAttrRenderingMetadataVisible,
+    ///                 Widget = appAttrRenderingMetadataWidget,
+    ///             },
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Audience = appAudience,
+    ///         Authorization = appAuthorization,
+    ///         BypassConsent = appBypassConsent,
+    ///         Certificates = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppCertificateArgs
+    ///             {
+    ///                 CertAlias = appCertificatesCertAlias,
+    ///             },
+    ///         },
+    ///         ClientIpChecking = appClientIpChecking,
+    ///         ClientType = appClientType,
+    ///         ContactEmailAddress = appContactEmailAddress,
+    ///         DelegatedServiceNames = appDelegatedServiceNames,
+    ///         Description = appDescription,
+    ///         DisableKmsiTokenAuthentication = appDisableKmsiTokenAuthentication,
+    ///         ErrorPageUrl = appErrorPageUrl,
+    ///         ForceDelete = appForceDelete,
+    ///         HomePageUrl = appHomePageUrl,
+    ///         Icon = appIcon,
+    ///         Id = appId,
+    ///         IdTokenEncAlgo = appIdTokenEncAlgo,
+    ///         IdentityProviders = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppIdentityProviderArgs
+    ///             {
+    ///                 Value = appIdentityProvidersValue,
+    ///             },
+    ///         },
+    ///         IdpPolicy = new Oci.Identity.Inputs.DomainsAppIdpPolicyArgs
+    ///         {
+    ///             Value = appIdpPolicyValue,
+    ///         },
+    ///         IsAliasApp = appIsAliasApp,
+    ///         IsEnterpriseApp = appIsEnterpriseApp,
+    ///         IsFormFill = appIsFormFill,
+    ///         IsKerberosRealm = appIsKerberosRealm,
+    ///         IsLoginTarget = appIsLoginTarget,
+    ///         IsMobileTarget = appIsMobileTarget,
+    ///         IsMulticloudServiceApp = appIsMulticloudServiceApp,
+    ///         IsOauthClient = appIsOauthClient,
+    ///         IsOauthResource = appIsOauthResource,
+    ///         IsObligationCapable = appIsObligationCapable,
+    ///         IsRadiusApp = appIsRadiusApp,
+    ///         IsSamlServiceProvider = appIsSamlServiceProvider,
+    ///         IsUnmanagedApp = appIsUnmanagedApp,
+    ///         IsWebTierPolicy = appIsWebTierPolicy,
+    ///         LandingPageUrl = appLandingPageUrl,
+    ///         LinkingCallbackUrl = appLinkingCallbackUrl,
+    ///         LoginMechanism = appLoginMechanism,
+    ///         LoginPageUrl = appLoginPageUrl,
+    ///         LogoutPageUrl = appLogoutPageUrl,
+    ///         LogoutUri = appLogoutUri,
+    ///         Name = appName,
+    ///         Ocid = appOcid,
+    ///         PostLogoutRedirectUris = appPostLogoutRedirectUris,
+    ///         PrivacyPolicyUrl = appPrivacyPolicyUrl,
+    ///         ProductLogoUrl = appProductLogoUrl,
+    ///         ProductName = appProductName,
+    ///         ProtectableSecondaryAudiences = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppProtectableSecondaryAudienceArgs
+    ///             {
+    ///                 Value = appProtectableSecondaryAudiencesValue,
+    ///             },
+    ///         },
+    ///         RadiusPolicy = new Oci.Identity.Inputs.DomainsAppRadiusPolicyArgs
+    ///         {
+    ///             Value = appRadiusPolicyValue,
+    ///         },
+    ///         RedirectUris = appRedirectUris,
+    ///         RefreshTokenExpiry = appRefreshTokenExpiry,
+    ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
+    ///         SamlServiceProvider = new Oci.Identity.Inputs.DomainsAppSamlServiceProviderArgs
+    ///         {
+    ///             Value = appSamlServiceProviderValue,
+    ///         },
+    ///         Scopes = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppScopeArgs
+    ///             {
+    ///                 Value = appScopesValue,
+    ///                 Description = appScopesDescription,
+    ///                 DisplayName = appScopesDisplayName,
+    ///                 RequiresConsent = appScopesRequiresConsent,
+    ///             },
+    ///         },
+    ///         SecondaryAudiences = new[]
+    ///         {
+    ///             "secondaryAudiences",
+    ///         },
+    ///         ServiceParams = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppServiceParamArgs
+    ///             {
+    ///                 Name = appServiceParamsName,
+    ///                 Value = appServiceParamsValue,
+    ///             },
+    ///         },
+    ///         ServiceTypeUrn = appServiceTypeUrn,
+    ///         ServiceTypeVersion = appServiceTypeVersion,
+    ///         ShowInMyApps = appShowInMyApps,
+    ///         SignonPolicy = new Oci.Identity.Inputs.DomainsAppSignonPolicyArgs
+    ///         {
+    ///             Value = appSignonPolicyValue,
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppTagArgs
+    ///             {
+    ///                 Key = appTagsKey,
+    ///                 Value = appTagsValue,
+    ///             },
+    ///         },
+    ///         TermsOfServiceUrl = appTermsOfServiceUrl,
+    ///         TermsOfUse = new Oci.Identity.Inputs.DomainsAppTermsOfUseArgs
+    ///         {
+    ///             Value = appTermsOfUseValue,
+    ///         },
+    ///         TrustPolicies = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppTrustPolicyArgs
+    ///             {
+    ///                 Value = appTrustPoliciesValue,
+    ///             },
+    ///         },
+    ///         TrustScope = appTrustScope,
+    ///         UrnietfparamsscimschemasoracleidcsextensionOciTags = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs
+    ///         {
+    ///             DefinedTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
+    ///                 {
+    ///                     Key = appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+    ///                     Namespace = appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+    ///                     Value = appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+    ///                 },
+    ///             },
+    ///             FreeformTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs
+    ///                 {
+    ///                     Key = appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+    ///                     Value = appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensiondbcsApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs
+    ///         {
+    ///             DomainApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs
+    ///             {
+    ///                 Value = appUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppValue,
+    ///             },
+    ///             DomainName = "domainName",
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs
+    ///         {
+    ///             AllowAuthzDecisionTtl = appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl,
+    ///             AllowAuthzPolicy = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs
+    ///             {
+    ///                 Value = appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyValue,
+    ///             },
+    ///             AppResources = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs
+    ///                 {
+    ///                     Value = appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourcesValue,
+    ///                 },
+    ///             },
+    ///             DenyAuthzDecisionTtl = appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzDecisionTtl,
+    ///             DenyAuthzPolicy = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs
+    ///             {
+    ///                 Value = appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionformFillAppApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs
+    ///         {
+    ///             Configuration = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppConfiguration,
+    ///             FormCredMethod = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredMethod,
+    ///             FormCredentialSharingGroupId = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredentialSharingGroupId,
+    ///             FormFillUrlMatches = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs
+    ///                 {
+    ///                     FormUrl = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrl,
+    ///                     FormUrlMatchType = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrlMatchType,
+    ///                 },
+    ///             },
+    ///             FormType = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormType,
+    ///             RevealPasswordOnForm = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppRevealPasswordOnForm,
+    ///             UserNameFormExpression = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormExpression,
+    ///             UserNameFormTemplate = appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormTemplate,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs
+    ///         {
+    ///             Configuration = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateConfiguration,
+    ///             FormCredMethod = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredMethod,
+    ///             FormCredentialSharingGroupId = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredentialSharingGroupId,
+    ///             FormFillUrlMatches = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs
+    ///                 {
+    ///                     FormUrl = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrl,
+    ///                     FormUrlMatchType = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrlMatchType,
+    ///                 },
+    ///             },
+    ///             FormType = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormType,
+    ///             RevealPasswordOnForm = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateRevealPasswordOnForm,
+    ///             SyncFromTemplate = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateSyncFromTemplate,
+    ///             UserNameFormExpression = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormExpression,
+    ///             UserNameFormTemplate = appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormTemplate,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs
+    ///         {
+    ///             DefaultEncryptionSaltType = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppDefaultEncryptionSaltType,
+    ///             MasterKey = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMasterKey,
+    ///             MaxRenewableAge = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxRenewableAge,
+    ///             MaxTicketLife = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxTicketLife,
+    ///             RealmName = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppRealmName,
+    ///             SupportedEncryptionSaltTypes = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppSupportedEncryptionSaltTypes,
+    ///             TicketFlags = appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppTicketFlags,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionmanagedappApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs
+    ///         {
+    ///             AdminConsentGranted = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppAdminConsentGranted,
+    ///             BundleConfigurationProperties = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs
+    ///                 {
+    ///                     IcfType = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesIcfType,
+    ///                     Name = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesName,
+    ///                     Required = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesRequired,
+    ///                     Confidential = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesConfidential,
+    ///                     DisplayName = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesDisplayName,
+    ///                     HelpMessage = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesHelpMessage,
+    ///                     Order = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesOrder,
+    ///                     Values = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesValue,
+    ///                 },
+    ///             },
+    ///             BundlePoolConfiguration = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs
+    ///             {
+    ///                 MaxIdle = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxIdle,
+    ///                 MaxObjects = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxObjects,
+    ///                 MaxWait = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxWait,
+    ///                 MinEvictableIdleTimeMillis = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinEvictableIdleTimeMillis,
+    ///                 MinIdle = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinIdle,
+    ///             },
+    ///             Connected = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnected,
+    ///             EnableAuthSyncNewUserNotification = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableAuthSyncNewUserNotification,
+    ///             EnableSync = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSync,
+    ///             EnableSyncSummaryReportNotification = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSyncSummaryReportNotification,
+    ///             FlatFileBundleConfigurationProperties = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs
+    ///                 {
+    ///                     IcfType = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesIcfType,
+    ///                     Name = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesName,
+    ///                     Required = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesRequired,
+    ///                     Confidential = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesConfidential,
+    ///                     DisplayName = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesDisplayName,
+    ///                     HelpMessage = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesHelpMessage,
+    ///                     Order = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesOrder,
+    ///                     Values = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesValue,
+    ///                 },
+    ///             },
+    ///             FlatFileConnectorBundle = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs
+    ///             {
+    ///                 Value = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleValue,
+    ///                 Display = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleDisplay,
+    ///                 WellKnownId = testWellKnown.Id,
+    ///             },
+    ///             IsAuthoritative = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIsAuthoritative,
+    ///             ThreeLeggedOauthCredential = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs
+    ///             {
+    ///                 AccessToken = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessToken,
+    ///                 AccessTokenExpiry = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessTokenExpiry,
+    ///                 RefreshToken = appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialRefreshToken,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs
+    ///         {
+    ///             MulticloudServiceType = appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudServiceType,
+    ///             MulticloudPlatformUrl = appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudPlatformUrl,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionopcServiceApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs
+    ///         {
+    ///             ServiceInstanceIdentifier = appUrnietfparamsscimschemasoracleidcsextensionopcServiceAppServiceInstanceIdentifier,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionradiusAppApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs
+    ///         {
+    ///             ClientIp = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppClientIp,
+    ///             IncludeGroupInResponse = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppIncludeGroupInResponse,
+    ///             Port = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPort,
+    ///             SecretKey = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppSecretKey,
+    ///             CaptureClientIp = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp,
+    ///             CountryCodeResponseAttributeId = "1",
+    ///             EndUserIpAttribute = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppEndUserIpAttribute,
+    ///             GroupMembershipRadiusAttribute = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipRadiusAttribute,
+    ///             GroupMembershipToReturns = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs
+    ///                 {
+    ///                     Value = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnValue,
+    ///                 },
+    ///             },
+    ///             GroupNameFormat = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupNameFormat,
+    ///             PasswordAndOtpTogether = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether,
+    ///             RadiusVendorSpecificId = "radiusVendorSpecificId",
+    ///             ResponseFormat = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormat,
+    ///             ResponseFormatDelimiter = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormatDelimiter,
+    ///             TypeOfRadiusApp = appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppTypeOfRadiusApp,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionrequestableApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs
+    ///         {
+    ///             Requestable = appUrnietfparamsscimschemasoracleidcsextensionrequestableAppRequestable,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs
+    ///         {
+    ///             AssertionConsumerUrl = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppAssertionConsumerUrl,
+    ///             EncryptAssertion = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion,
+    ///             EncryptionAlgorithm = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptionAlgorithm,
+    ///             EncryptionCertificate = "encryptionCertificate",
+    ///             FederationProtocol = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppFederationProtocol,
+    ///             GroupAssertionAttributes = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs
+    ///                 {
+    ///                     Name = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesName,
+    ///                     Condition = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesCondition,
+    ///                     Format = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesFormat,
+    ///                     GroupName = "groupName",
+    ///                 },
+    ///             },
+    ///             HokAcsUrl = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokAcsUrl,
+    ///             HokRequired = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired,
+    ///             IncludeSigningCertInSignature = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppIncludeSigningCertInSignature,
+    ///             KeyEncryptionAlgorithm = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppKeyEncryptionAlgorithm,
+    ///             LogoutBinding = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutBinding,
+    ///             LogoutEnabled = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled,
+    ///             LogoutRequestUrl = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutRequestUrl,
+    ///             LogoutResponseUrl = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutResponseUrl,
+    ///             Metadata = "metadata",
+    ///             NameIdFormat = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdFormat,
+    ///             NameIdUserstoreAttribute = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdUserstoreAttribute,
+    ///             PartnerProviderId = "partnerProviderId",
+    ///             PartnerProviderPattern = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPartnerProviderPattern,
+    ///             SignResponseOrAssertion = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignResponseOrAssertion,
+    ///             SignatureHashAlgorithm = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignatureHashAlgorithm,
+    ///             SigningCertificate = "signingCertificate",
+    ///             SuccinctId = "succinctId",
+    ///             UserAssertionAttributes = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs
+    ///                 {
+    ///                     Name = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesName,
+    ///                     UserStoreAttributeName = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesUserStoreAttributeName,
+    ///                     Format = appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesFormat,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp = new Oci.Identity.Inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs
+    ///         {
+    ///             ResourceRef = appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResourceRef,
+    ///             WebTierPolicyAzControl = appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyAzControl,
+    ///             WebTierPolicyJson = appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyJson,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Apps can be imported using the `id`, e.g.

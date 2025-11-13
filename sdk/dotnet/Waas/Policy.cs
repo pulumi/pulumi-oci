@@ -12,6 +12,302 @@ namespace Pulumi.Oci.Waas
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testWaasPolicy = new Oci.Waas.Policy("test_waas_policy", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         Domain = waasPolicyDomain,
+    ///         AdditionalDomains = waasPolicyAdditionalDomains,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = waasPolicyDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         OriginGroups = new[]
+    ///         {
+    ///             new Oci.Waas.Inputs.PolicyOriginGroupArgs
+    ///             {
+    ///                 Origins = waasPolicyOriginGroupsOrigins,
+    ///             },
+    ///         },
+    ///         Origins = new[]
+    ///         {
+    ///             new Oci.Waas.Inputs.PolicyOriginArgs
+    ///             {
+    ///                 Uri = waasPolicyOriginsUri,
+    ///                 CustomHeaders = new[]
+    ///                 {
+    ///                     new Oci.Waas.Inputs.PolicyOriginCustomHeaderArgs
+    ///                     {
+    ///                         Name = waasPolicyOriginsCustomHeadersName,
+    ///                         Value = waasPolicyOriginsCustomHeadersValue,
+    ///                     },
+    ///                 },
+    ///                 HttpPort = waasPolicyOriginsHttpPort,
+    ///                 HttpsPort = waasPolicyOriginsHttpsPort,
+    ///             },
+    ///         },
+    ///         PolicyConfig = new Oci.Waas.Inputs.PolicyPolicyConfigArgs
+    ///         {
+    ///             CertificateId = testCertificate.Id,
+    ///             CipherGroup = waasPolicyPolicyConfigCipherGroup,
+    ///             ClientAddressHeader = waasPolicyPolicyConfigClientAddressHeader,
+    ///             HealthChecks = new Oci.Waas.Inputs.PolicyPolicyConfigHealthChecksArgs
+    ///             {
+    ///                 ExpectedResponseCodeGroups = waasPolicyPolicyConfigHealthChecksExpectedResponseCodeGroup,
+    ///                 ExpectedResponseText = waasPolicyPolicyConfigHealthChecksExpectedResponseText,
+    ///                 Headers = waasPolicyPolicyConfigHealthChecksHeaders,
+    ///                 HealthyThreshold = waasPolicyPolicyConfigHealthChecksHealthyThreshold,
+    ///                 IntervalInSeconds = waasPolicyPolicyConfigHealthChecksIntervalInSeconds,
+    ///                 IsEnabled = waasPolicyPolicyConfigHealthChecksIsEnabled,
+    ///                 IsResponseTextCheckEnabled = waasPolicyPolicyConfigHealthChecksIsResponseTextCheckEnabled,
+    ///                 Method = waasPolicyPolicyConfigHealthChecksMethod,
+    ///                 Path = waasPolicyPolicyConfigHealthChecksPath,
+    ///                 TimeoutInSeconds = waasPolicyPolicyConfigHealthChecksTimeoutInSeconds,
+    ///                 UnhealthyThreshold = waasPolicyPolicyConfigHealthChecksUnhealthyThreshold,
+    ///             },
+    ///             IsBehindCdn = waasPolicyPolicyConfigIsBehindCdn,
+    ///             IsCacheControlRespected = waasPolicyPolicyConfigIsCacheControlRespected,
+    ///             IsHttpsEnabled = waasPolicyPolicyConfigIsHttpsEnabled,
+    ///             IsHttpsForced = waasPolicyPolicyConfigIsHttpsForced,
+    ///             IsOriginCompressionEnabled = waasPolicyPolicyConfigIsOriginCompressionEnabled,
+    ///             IsResponseBufferingEnabled = waasPolicyPolicyConfigIsResponseBufferingEnabled,
+    ///             IsSniEnabled = waasPolicyPolicyConfigIsSniEnabled,
+    ///             LoadBalancingMethod = new Oci.Waas.Inputs.PolicyPolicyConfigLoadBalancingMethodArgs
+    ///             {
+    ///                 Method = waasPolicyPolicyConfigLoadBalancingMethodMethod,
+    ///                 Domain = waasPolicyPolicyConfigLoadBalancingMethodDomain,
+    ///                 ExpirationTimeInSeconds = waasPolicyPolicyConfigLoadBalancingMethodExpirationTimeInSeconds,
+    ///                 Name = waasPolicyPolicyConfigLoadBalancingMethodName,
+    ///             },
+    ///             TlsProtocols = waasPolicyPolicyConfigTlsProtocols,
+    ///             WebsocketPathPrefixes = waasPolicyPolicyConfigWebsocketPathPrefixes,
+    ///         },
+    ///         WafConfig = new Oci.Waas.Inputs.PolicyWafConfigArgs
+    ///         {
+    ///             AccessRules = new[]
+    ///             {
+    ///                 new Oci.Waas.Inputs.PolicyWafConfigAccessRuleArgs
+    ///                 {
+    ///                     Action = waasPolicyWafConfigAccessRulesAction,
+    ///                     Criterias = new[]
+    ///                     {
+    ///                         new Oci.Waas.Inputs.PolicyWafConfigAccessRuleCriteriaArgs
+    ///                         {
+    ///                             Condition = waasPolicyWafConfigAccessRulesCriteriaCondition,
+    ///                             Value = waasPolicyWafConfigAccessRulesCriteriaValue,
+    ///                             IsCaseSensitive = waasPolicyWafConfigAccessRulesCriteriaIsCaseSensitive,
+    ///                         },
+    ///                     },
+    ///                     Name = waasPolicyWafConfigAccessRulesName,
+    ///                     BlockAction = waasPolicyWafConfigAccessRulesBlockAction,
+    ///                     BlockErrorPageCode = waasPolicyWafConfigAccessRulesBlockErrorPageCode,
+    ///                     BlockErrorPageDescription = waasPolicyWafConfigAccessRulesBlockErrorPageDescription,
+    ///                     BlockErrorPageMessage = waasPolicyWafConfigAccessRulesBlockErrorPageMessage,
+    ///                     BlockResponseCode = waasPolicyWafConfigAccessRulesBlockResponseCode,
+    ///                     BypassChallenges = waasPolicyWafConfigAccessRulesBypassChallenges,
+    ///                     CaptchaFooter = waasPolicyWafConfigAccessRulesCaptchaFooter,
+    ///                     CaptchaHeader = waasPolicyWafConfigAccessRulesCaptchaHeader,
+    ///                     CaptchaSubmitLabel = waasPolicyWafConfigAccessRulesCaptchaSubmitLabel,
+    ///                     CaptchaTitle = waasPolicyWafConfigAccessRulesCaptchaTitle,
+    ///                     RedirectResponseCode = waasPolicyWafConfigAccessRulesRedirectResponseCode,
+    ///                     RedirectUrl = waasPolicyWafConfigAccessRulesRedirectUrl,
+    ///                     ResponseHeaderManipulations = new[]
+    ///                     {
+    ///                         new Oci.Waas.Inputs.PolicyWafConfigAccessRuleResponseHeaderManipulationArgs
+    ///                         {
+    ///                             Action = waasPolicyWafConfigAccessRulesResponseHeaderManipulationAction,
+    ///                             Header = waasPolicyWafConfigAccessRulesResponseHeaderManipulationHeader,
+    ///                             Value = waasPolicyWafConfigAccessRulesResponseHeaderManipulationValue,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             AddressRateLimiting = new Oci.Waas.Inputs.PolicyWafConfigAddressRateLimitingArgs
+    ///             {
+    ///                 IsEnabled = waasPolicyWafConfigAddressRateLimitingIsEnabled,
+    ///                 AllowedRatePerAddress = waasPolicyWafConfigAddressRateLimitingAllowedRatePerAddress,
+    ///                 BlockResponseCode = waasPolicyWafConfigAddressRateLimitingBlockResponseCode,
+    ///                 MaxDelayedCountPerAddress = waasPolicyWafConfigAddressRateLimitingMaxDelayedCountPerAddress,
+    ///             },
+    ///             CachingRules = new[]
+    ///             {
+    ///                 new Oci.Waas.Inputs.PolicyWafConfigCachingRuleArgs
+    ///                 {
+    ///                     Action = waasPolicyWafConfigCachingRulesAction,
+    ///                     Criterias = new[]
+    ///                     {
+    ///                         new Oci.Waas.Inputs.PolicyWafConfigCachingRuleCriteriaArgs
+    ///                         {
+    ///                             Condition = waasPolicyWafConfigCachingRulesCriteriaCondition,
+    ///                             Value = waasPolicyWafConfigCachingRulesCriteriaValue,
+    ///                         },
+    ///                     },
+    ///                     Name = waasPolicyWafConfigCachingRulesName,
+    ///                     CachingDuration = waasPolicyWafConfigCachingRulesCachingDuration,
+    ///                     ClientCachingDuration = waasPolicyWafConfigCachingRulesClientCachingDuration,
+    ///                     IsClientCachingEnabled = waasPolicyWafConfigCachingRulesIsClientCachingEnabled,
+    ///                     Key = waasPolicyWafConfigCachingRulesKey,
+    ///                 },
+    ///             },
+    ///             Captchas = new[]
+    ///             {
+    ///                 new Oci.Waas.Inputs.PolicyWafConfigCaptchaArgs
+    ///                 {
+    ///                     FailureMessage = waasPolicyWafConfigCaptchasFailureMessage,
+    ///                     SessionExpirationInSeconds = waasPolicyWafConfigCaptchasSessionExpirationInSeconds,
+    ///                     SubmitLabel = waasPolicyWafConfigCaptchasSubmitLabel,
+    ///                     Title = waasPolicyWafConfigCaptchasTitle,
+    ///                     Url = waasPolicyWafConfigCaptchasUrl,
+    ///                     FooterText = waasPolicyWafConfigCaptchasFooterText,
+    ///                     HeaderText = waasPolicyWafConfigCaptchasHeaderText,
+    ///                 },
+    ///             },
+    ///             CustomProtectionRules = new[]
+    ///             {
+    ///                 new Oci.Waas.Inputs.PolicyWafConfigCustomProtectionRuleArgs
+    ///                 {
+    ///                     Action = waasPolicyWafConfigCustomProtectionRulesAction,
+    ///                     Exclusions = new[]
+    ///                     {
+    ///                         new Oci.Waas.Inputs.PolicyWafConfigCustomProtectionRuleExclusionArgs
+    ///                         {
+    ///                             Exclusions = waasPolicyWafConfigCustomProtectionRulesExclusionsExclusions,
+    ///                             Target = waasPolicyWafConfigCustomProtectionRulesExclusionsTarget,
+    ///                         },
+    ///                     },
+    ///                     Id = waasPolicyWafConfigCustomProtectionRulesId,
+    ///                 },
+    ///             },
+    ///             DeviceFingerprintChallenge = new Oci.Waas.Inputs.PolicyWafConfigDeviceFingerprintChallengeArgs
+    ///             {
+    ///                 IsEnabled = waasPolicyWafConfigDeviceFingerprintChallengeIsEnabled,
+    ///                 Action = waasPolicyWafConfigDeviceFingerprintChallengeAction,
+    ///                 ActionExpirationInSeconds = waasPolicyWafConfigDeviceFingerprintChallengeActionExpirationInSeconds,
+    ///                 ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs
+    ///                 {
+    ///                     BlockAction = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockAction,
+    ///                     BlockErrorPageCode = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageCode,
+    ///                     BlockErrorPageDescription = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageDescription,
+    ///                     BlockErrorPageMessage = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageMessage,
+    ///                     BlockResponseCode = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockResponseCode,
+    ///                     CaptchaFooter = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaFooter,
+    ///                     CaptchaHeader = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaHeader,
+    ///                     CaptchaSubmitLabel = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaSubmitLabel,
+    ///                     CaptchaTitle = waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaTitle,
+    ///                 },
+    ///                 FailureThreshold = waasPolicyWafConfigDeviceFingerprintChallengeFailureThreshold,
+    ///                 FailureThresholdExpirationInSeconds = waasPolicyWafConfigDeviceFingerprintChallengeFailureThresholdExpirationInSeconds,
+    ///                 MaxAddressCount = waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCount,
+    ///                 MaxAddressCountExpirationInSeconds = waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCountExpirationInSeconds,
+    ///             },
+    ///             HumanInteractionChallenge = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeArgs
+    ///             {
+    ///                 IsEnabled = waasPolicyWafConfigHumanInteractionChallengeIsEnabled,
+    ///                 Action = waasPolicyWafConfigHumanInteractionChallengeAction,
+    ///                 ActionExpirationInSeconds = waasPolicyWafConfigHumanInteractionChallengeActionExpirationInSeconds,
+    ///                 ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs
+    ///                 {
+    ///                     BlockAction = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockAction,
+    ///                     BlockErrorPageCode = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageCode,
+    ///                     BlockErrorPageDescription = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageDescription,
+    ///                     BlockErrorPageMessage = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageMessage,
+    ///                     BlockResponseCode = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockResponseCode,
+    ///                     CaptchaFooter = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaFooter,
+    ///                     CaptchaHeader = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaHeader,
+    ///                     CaptchaSubmitLabel = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaSubmitLabel,
+    ///                     CaptchaTitle = waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaTitle,
+    ///                 },
+    ///                 FailureThreshold = waasPolicyWafConfigHumanInteractionChallengeFailureThreshold,
+    ///                 FailureThresholdExpirationInSeconds = waasPolicyWafConfigHumanInteractionChallengeFailureThresholdExpirationInSeconds,
+    ///                 InteractionThreshold = waasPolicyWafConfigHumanInteractionChallengeInteractionThreshold,
+    ///                 IsNatEnabled = waasPolicyWafConfigHumanInteractionChallengeIsNatEnabled,
+    ///                 RecordingPeriodInSeconds = waasPolicyWafConfigHumanInteractionChallengeRecordingPeriodInSeconds,
+    ///                 SetHttpHeader = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs
+    ///                 {
+    ///                     Name = waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderName,
+    ///                     Value = waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderValue,
+    ///                 },
+    ///             },
+    ///             JsChallenge = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeArgs
+    ///             {
+    ///                 IsEnabled = waasPolicyWafConfigJsChallengeIsEnabled,
+    ///                 Action = waasPolicyWafConfigJsChallengeAction,
+    ///                 ActionExpirationInSeconds = waasPolicyWafConfigJsChallengeActionExpirationInSeconds,
+    ///                 AreRedirectsChallenged = waasPolicyWafConfigJsChallengeAreRedirectsChallenged,
+    ///                 ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeChallengeSettingsArgs
+    ///                 {
+    ///                     BlockAction = waasPolicyWafConfigJsChallengeChallengeSettingsBlockAction,
+    ///                     BlockErrorPageCode = waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageCode,
+    ///                     BlockErrorPageDescription = waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageDescription,
+    ///                     BlockErrorPageMessage = waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageMessage,
+    ///                     BlockResponseCode = waasPolicyWafConfigJsChallengeChallengeSettingsBlockResponseCode,
+    ///                     CaptchaFooter = waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaFooter,
+    ///                     CaptchaHeader = waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaHeader,
+    ///                     CaptchaSubmitLabel = waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaSubmitLabel,
+    ///                     CaptchaTitle = waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaTitle,
+    ///                 },
+    ///                 Criterias = new[]
+    ///                 {
+    ///                     new Oci.Waas.Inputs.PolicyWafConfigJsChallengeCriteriaArgs
+    ///                     {
+    ///                         Condition = waasPolicyWafConfigJsChallengeCriteriaCondition,
+    ///                         Value = waasPolicyWafConfigJsChallengeCriteriaValue,
+    ///                         IsCaseSensitive = waasPolicyWafConfigJsChallengeCriteriaIsCaseSensitive,
+    ///                     },
+    ///                 },
+    ///                 FailureThreshold = waasPolicyWafConfigJsChallengeFailureThreshold,
+    ///                 IsNatEnabled = waasPolicyWafConfigJsChallengeIsNatEnabled,
+    ///                 SetHttpHeader = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeSetHttpHeaderArgs
+    ///                 {
+    ///                     Name = waasPolicyWafConfigJsChallengeSetHttpHeaderName,
+    ///                     Value = waasPolicyWafConfigJsChallengeSetHttpHeaderValue,
+    ///                 },
+    ///             },
+    ///             Origin = waasPolicyWafConfigOrigin,
+    ///             OriginGroups = waasPolicyWafConfigOriginGroups,
+    ///             ProtectionSettings = new Oci.Waas.Inputs.PolicyWafConfigProtectionSettingsArgs
+    ///             {
+    ///                 AllowedHttpMethods = waasPolicyWafConfigProtectionSettingsAllowedHttpMethods,
+    ///                 BlockAction = waasPolicyWafConfigProtectionSettingsBlockAction,
+    ///                 BlockErrorPageCode = waasPolicyWafConfigProtectionSettingsBlockErrorPageCode,
+    ///                 BlockErrorPageDescription = waasPolicyWafConfigProtectionSettingsBlockErrorPageDescription,
+    ///                 BlockErrorPageMessage = waasPolicyWafConfigProtectionSettingsBlockErrorPageMessage,
+    ///                 BlockResponseCode = waasPolicyWafConfigProtectionSettingsBlockResponseCode,
+    ///                 IsResponseInspected = waasPolicyWafConfigProtectionSettingsIsResponseInspected,
+    ///                 MaxArgumentCount = waasPolicyWafConfigProtectionSettingsMaxArgumentCount,
+    ///                 MaxNameLengthPerArgument = waasPolicyWafConfigProtectionSettingsMaxNameLengthPerArgument,
+    ///                 MaxResponseSizeInKiB = waasPolicyWafConfigProtectionSettingsMaxResponseSizeInKiB,
+    ///                 MaxTotalNameLengthOfArguments = waasPolicyWafConfigProtectionSettingsMaxTotalNameLengthOfArguments,
+    ///                 MediaTypes = waasPolicyWafConfigProtectionSettingsMediaTypes,
+    ///                 RecommendationsPeriodInDays = waasPolicyWafConfigProtectionSettingsRecommendationsPeriodInDays,
+    ///             },
+    ///             Whitelists = new[]
+    ///             {
+    ///                 new Oci.Waas.Inputs.PolicyWafConfigWhitelistArgs
+    ///                 {
+    ///                     Name = waasPolicyWafConfigWhitelistsName,
+    ///                     AddressLists = waasPolicyWafConfigWhitelistsAddressLists,
+    ///                     Addresses = waasPolicyWafConfigWhitelistsAddresses,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// WaasPolicies can be imported using the `id`, e.g.

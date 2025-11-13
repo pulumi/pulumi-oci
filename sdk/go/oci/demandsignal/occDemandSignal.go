@@ -14,6 +14,63 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/demandsignal"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := demandsignal.NewOccDemandSignal(ctx, "test_occ_demand_signal", &demandsignal.OccDemandSignalArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				IsActive:          pulumi.Any(occDemandSignalIsActive),
+//				OccDemandSignalId: pulumi.Any(occDemandSignalOccDemandSignalId),
+//				OccDemandSignals: demandsignal.OccDemandSignalOccDemandSignalArray{
+//					&demandsignal.OccDemandSignalOccDemandSignalArgs{
+//						ResourceType: pulumi.Any(occDemandSignalOccDemandSignalsResourceType),
+//						Units:        pulumi.Any(occDemandSignalOccDemandSignalsUnits),
+//						Values: demandsignal.OccDemandSignalOccDemandSignalValueArray{
+//							&demandsignal.OccDemandSignalOccDemandSignalValueArgs{
+//								TimeExpected: pulumi.Any(occDemandSignalOccDemandSignalsValuesTimeExpected),
+//								Value:        pulumi.Any(occDemandSignalOccDemandSignalsValuesValue),
+//								Comments:     pulumi.Any(occDemandSignalOccDemandSignalsValuesComments),
+//							},
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(occDemandSignalDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				PatchOperations: demandsignal.OccDemandSignalPatchOperationArray{
+//					&demandsignal.OccDemandSignalPatchOperationArgs{
+//						Operation:    pulumi.Any(occDemandSignalPatchOperationsOperation),
+//						Selection:    pulumi.Any(occDemandSignalPatchOperationsSelection),
+//						From:         pulumi.Any(occDemandSignalPatchOperationsFrom),
+//						Position:     pulumi.Any(occDemandSignalPatchOperationsPosition),
+//						SelectedItem: pulumi.Any(occDemandSignalPatchOperationsSelectedItem),
+//						Value:        pulumi.Any(occDemandSignalPatchOperationsValue),
+//						Values:       occDemandSignalPatchOperationsValues,
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // OccDemandSignals can be imported using the `id`, e.g.

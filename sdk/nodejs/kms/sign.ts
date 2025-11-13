@@ -7,6 +7,21 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSign = new oci.kms.Sign("test_sign", {
+ *     cryptoEndpoint: signMessageCryptoEndpoint,
+ *     keyId: testKey.id,
+ *     message: signMessage,
+ *     signingAlgorithm: signSigningAlgorithm,
+ *     keyVersionId: testKeyVersion.id,
+ *     loggingContext: signLoggingContext,
+ *     messageType: signMessageType,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Sign can be imported using the `id`, e.g.

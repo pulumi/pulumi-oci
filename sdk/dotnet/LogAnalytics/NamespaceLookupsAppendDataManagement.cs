@@ -12,6 +12,27 @@ namespace Pulumi.Oci.LogAnalytics
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testNamespaceLookupsAppendDataManagement = new Oci.LogAnalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management", new()
+    ///     {
+    ///         AppendLookupFileBody = namespaceLookupsAppendDataManagementAppendLookupFileBody,
+    ///         LookupName = namespaceLookupsAppendDataManagementLookupName,
+    ///         Namespace = namespaceLookupsAppendDataManagementNamespace,
+    ///         CharEncoding = namespaceLookupsAppendDataManagementCharEncoding,
+    ///         Expect = namespaceLookupsAppendDataManagementExpect,
+    ///         IsForce = namespaceLookupsAppendDataManagementIsForce,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for NamespaceLookupsAppendDataManagement

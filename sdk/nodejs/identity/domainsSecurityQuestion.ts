@@ -9,6 +9,34 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityQuestion = new oci.identity.DomainsSecurityQuestion("test_security_question", {
+ *     active: securityQuestionActive,
+ *     idcsEndpoint: testDomain.url,
+ *     questionTexts: [{
+ *         locale: "en",
+ *         value: securityQuestionQuestionTextValue,
+ *         "default": true,
+ *     }],
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion"],
+ *     type: "custom",
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: securityQuestionAuthorization,
+ *     externalId: "externalId",
+ *     id: securityQuestionId,
+ *     ocid: securityQuestionOcid,
+ *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: securityQuestionTagsKey,
+ *         value: securityQuestionTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * SecurityQuestions can be imported using the `id`, e.g.

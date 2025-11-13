@@ -14,6 +14,55 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsAuthToken(ctx, "test_auth_token", &identity.DomainsAuthTokenArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:authToken"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(authTokenAuthorization),
+//				Description:               pulumi.Any(authTokenDescription),
+//				ExpiresOn:                 pulumi.Any(authTokenExpiresOn),
+//				Id:                        authTokenId,
+//				Ocid:                      pulumi.Any(authTokenOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(authTokenResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(authTokenStatus),
+//				Tags: identity.DomainsAuthTokenTagArray{
+//					&identity.DomainsAuthTokenTagArgs{
+//						Key:   pulumi.Any(authTokenTagsKey),
+//						Value: pulumi.Any(authTokenTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsAuthTokenUserArgs{
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//					Value: pulumi.Any(testUser.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AuthTokens can be imported using the `id`, e.g.

@@ -14,6 +14,56 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsUserDbCredential(ctx, "test_user_db_credential", &identity.DomainsUserDbCredentialArgs{
+//				DbPassword:   pulumi.Any(userDbCredentialDbPassword),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(userDbCredentialAuthorization),
+//				Description:               pulumi.Any(userDbCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(userDbCredentialExpiresOn),
+//				Id:                        userDbCredentialId,
+//				Ocid:                      pulumi.Any(userDbCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(userDbCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(userDbCredentialStatus),
+//				Tags: identity.DomainsUserDbCredentialTagArray{
+//					&identity.DomainsUserDbCredentialTagArgs{
+//						Key:   pulumi.Any(userDbCredentialTagsKey),
+//						Value: pulumi.Any(userDbCredentialTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsUserDbCredentialUserArgs{
+//					Value: pulumi.Any(testUser.Id),
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // UserDbCredentials can be imported using the `id`, e.g.

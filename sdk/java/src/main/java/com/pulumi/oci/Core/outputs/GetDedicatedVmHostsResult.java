@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsDedicatedVmHost;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsFilter;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -43,6 +44,11 @@ public final class GetDedicatedVmHostsResult {
      */
     private String id;
     private @Nullable String instanceShapeName;
+    /**
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    private @Nullable Boolean isMemoryEncryptionEnabled;
     private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
     private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
     /**
@@ -93,6 +99,13 @@ public final class GetDedicatedVmHostsResult {
     public Optional<String> instanceShapeName() {
         return Optional.ofNullable(this.instanceShapeName);
     }
+    /**
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    public Optional<Boolean> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
     public Optional<Double> remainingMemoryInGbsGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.remainingMemoryInGbsGreaterThanOrEqualTo);
     }
@@ -123,6 +136,7 @@ public final class GetDedicatedVmHostsResult {
         private @Nullable List<GetDedicatedVmHostsFilter> filters;
         private String id;
         private @Nullable String instanceShapeName;
+        private @Nullable Boolean isMemoryEncryptionEnabled;
         private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
         private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
         private @Nullable String state;
@@ -136,6 +150,7 @@ public final class GetDedicatedVmHostsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.instanceShapeName = defaults.instanceShapeName;
+    	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
     	      this.remainingMemoryInGbsGreaterThanOrEqualTo = defaults.remainingMemoryInGbsGreaterThanOrEqualTo;
     	      this.remainingOcpusGreaterThanOrEqualTo = defaults.remainingOcpusGreaterThanOrEqualTo;
     	      this.state = defaults.state;
@@ -196,6 +211,12 @@ public final class GetDedicatedVmHostsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
+
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remainingMemoryInGbsGreaterThanOrEqualTo(@Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo) {
 
             this.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
@@ -222,6 +243,7 @@ public final class GetDedicatedVmHostsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.instanceShapeName = instanceShapeName;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             _resultValue.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
             _resultValue.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
             _resultValue.state = state;

@@ -100,18 +100,12 @@ public final class RunbookRunbookVersionArgs extends com.pulumi.resources.Resour
     /**
      * The version of the runbook.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return The version of the runbook.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> version() {
@@ -275,9 +269,6 @@ public final class RunbookRunbookVersionArgs extends com.pulumi.resources.Resour
         /**
          * @param version The version of the runbook.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -288,9 +279,6 @@ public final class RunbookRunbookVersionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param version The version of the runbook.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -40,7 +40,7 @@ public final class GetRunbookVersionsResult {
      */
     private List<GetRunbookVersionsRunbookVersionCollection> runbookVersionCollections;
     /**
-     * @return The current state of the FleetResource.
+     * @return The current state of the runbook version.
      * 
      */
     private @Nullable String state;
@@ -84,7 +84,7 @@ public final class GetRunbookVersionsResult {
         return this.runbookVersionCollections;
     }
     /**
-     * @return The current state of the FleetResource.
+     * @return The current state of the runbook version.
      * 
      */
     public Optional<String> state() {

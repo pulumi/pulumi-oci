@@ -17,7 +17,7 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
         /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// 
@@ -37,7 +37,8 @@ namespace Pulumi.Oci.Limits
         ///         LimitName = resourceAvailabilityLimitName,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
-        ///         SubscriptionId = subscriptionOcid,
+        ///         ExternalLocation = resourceAvailabilityExternalLocation,
+        ///         SubscriptionId = testSubscription.Id,
         ///     });
         /// 
         /// });
@@ -52,7 +53,7 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
         /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// 
@@ -72,7 +73,8 @@ namespace Pulumi.Oci.Limits
         ///         LimitName = resourceAvailabilityLimitName,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
-        ///         SubscriptionId = subscriptionOcid,
+        ///         ExternalLocation = resourceAvailabilityExternalLocation,
+        ///         SubscriptionId = testSubscription.Id,
         ///     });
         /// 
         /// });
@@ -87,7 +89,7 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
         /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// 
@@ -107,7 +109,8 @@ namespace Pulumi.Oci.Limits
         ///         LimitName = resourceAvailabilityLimitName,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
-        ///         SubscriptionId = subscriptionOcid,
+        ///         ExternalLocation = resourceAvailabilityExternalLocation,
+        ///         SubscriptionId = testSubscription.Id,
         ///     });
         /// 
         /// });
@@ -133,6 +136,12 @@ namespace Pulumi.Oci.Limits
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// External cloud provider location
+        /// </summary>
+        [Input("externalLocation")]
+        public string? ExternalLocation { get; set; }
+
+        /// <summary>
         /// The limit name for which to fetch the data.
         /// </summary>
         [Input("limitName", required: true)]
@@ -145,7 +154,7 @@ namespace Pulumi.Oci.Limits
         public string ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public string? SubscriptionId { get; set; }
@@ -171,6 +180,12 @@ namespace Pulumi.Oci.Limits
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// External cloud provider location
+        /// </summary>
+        [Input("externalLocation")]
+        public Input<string>? ExternalLocation { get; set; }
+
+        /// <summary>
         /// The limit name for which to fetch the data.
         /// </summary>
         [Input("limitName", required: true)]
@@ -183,7 +198,7 @@ namespace Pulumi.Oci.Limits
         public Input<string> ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }
@@ -208,6 +223,7 @@ namespace Pulumi.Oci.Limits
         /// The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
         /// </summary>
         public readonly double EffectiveQuotaValue;
+        public readonly string? ExternalLocation;
         /// <summary>
         /// The most accurate count of available resources.
         /// </summary>
@@ -238,6 +254,8 @@ namespace Pulumi.Oci.Limits
 
             double effectiveQuotaValue,
 
+            string? externalLocation,
+
             double fractionalAvailability,
 
             double fractionalUsage,
@@ -256,6 +274,7 @@ namespace Pulumi.Oci.Limits
             Available = available;
             CompartmentId = compartmentId;
             EffectiveQuotaValue = effectiveQuotaValue;
+            ExternalLocation = externalLocation;
             FractionalAvailability = fractionalAvailability;
             FractionalUsage = fractionalUsage;
             Id = id;

@@ -100,6 +100,21 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.resourceId);
     }
 
+    /**
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private GetFleetTargetsArgs() {}
 
     private GetFleetTargetsArgs(GetFleetTargetsArgs $) {
@@ -109,6 +124,7 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
         this.product = $.product;
         this.resourceDisplayName = $.resourceDisplayName;
         this.resourceId = $.resourceId;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -245,6 +261,27 @@ public final class GetFleetTargetsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder resourceId(String resourceId) {
             return resourceId(Output.of(resourceId));
+        }
+
+        /**
+         * @param state A filter to return fleets whose lifecycleState matches the given lifecycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state A filter to return fleets whose lifecycleState matches the given lifecycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public GetFleetTargetsArgs build() {

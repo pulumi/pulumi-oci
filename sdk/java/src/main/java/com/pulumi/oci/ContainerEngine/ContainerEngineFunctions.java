@@ -1399,6 +1399,7 @@ public final class ContainerEngineFunctions {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
      *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
      *             .compartmentId(compartmentId)
+     *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -1442,6 +1443,7 @@ public final class ContainerEngineFunctions {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
      *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
      *             .compartmentId(compartmentId)
+     *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -1485,6 +1487,7 @@ public final class ContainerEngineFunctions {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
      *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
      *             .compartmentId(compartmentId)
+     *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -1528,6 +1531,7 @@ public final class ContainerEngineFunctions {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
      *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
      *             .compartmentId(compartmentId)
+     *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -1571,6 +1575,7 @@ public final class ContainerEngineFunctions {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
      *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
      *             .compartmentId(compartmentId)
+     *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -2484,6 +2489,10 @@ public final class ContainerEngineFunctions {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
      *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
      *             .compartmentId(compartmentId)
+     *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
+     *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
+     *             .nodePoolOsType(nodePoolOptionNodePoolOsType)
+     *             .shouldListAllPatchVersions(nodePoolOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -2527,6 +2536,10 @@ public final class ContainerEngineFunctions {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
      *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
      *             .compartmentId(compartmentId)
+     *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
+     *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
+     *             .nodePoolOsType(nodePoolOptionNodePoolOsType)
+     *             .shouldListAllPatchVersions(nodePoolOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -2570,6 +2583,10 @@ public final class ContainerEngineFunctions {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
      *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
      *             .compartmentId(compartmentId)
+     *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
+     *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
+     *             .nodePoolOsType(nodePoolOptionNodePoolOsType)
+     *             .shouldListAllPatchVersions(nodePoolOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -2613,6 +2630,10 @@ public final class ContainerEngineFunctions {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
      *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
      *             .compartmentId(compartmentId)
+     *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
+     *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
+     *             .nodePoolOsType(nodePoolOptionNodePoolOsType)
+     *             .shouldListAllPatchVersions(nodePoolOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }
@@ -2656,6 +2677,10 @@ public final class ContainerEngineFunctions {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
      *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
      *             .compartmentId(compartmentId)
+     *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
+     *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
+     *             .nodePoolOsType(nodePoolOptionNodePoolOsType)
+     *             .shouldListAllPatchVersions(nodePoolOptionShouldListAllPatchVersions)
      *             .build());
      * 
      *     }

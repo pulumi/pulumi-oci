@@ -19,8 +19,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<bool>? ShouldNotifyOnPause { get; set; }
 
         /// <summary>
-        /// (Updatable) Enables or disables notification on Task
-        /// Failures.
+        /// (Updatable) Enables or disables notification on Task Failures.
         /// </summary>
         [Input("shouldNotifyOnTaskFailure")]
         public Input<bool>? ShouldNotifyOnTaskFailure { get; set; }

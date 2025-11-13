@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     product: fleetTargetProduct,
  *     resourceDisplayName: fleetTargetResourceDisplayName,
  *     resourceId: testResource.id,
+ *     state: fleetTargetState,
  * });
  * ```
  */
@@ -35,6 +36,7 @@ export function getFleetTargets(args: GetFleetTargetsArgs, opts?: pulumi.InvokeO
         "product": args.product,
         "resourceDisplayName": args.resourceDisplayName,
         "resourceId": args.resourceId,
+        "state": args.state,
     }, opts);
 }
 
@@ -63,6 +65,10 @@ export interface GetFleetTargetsArgs {
      * Resource Identifier
      */
     resourceId?: string;
+    /**
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     */
+    state?: string;
 }
 
 /**
@@ -95,6 +101,10 @@ export interface GetFleetTargetsResult {
      * The OCID of the resource.
      */
     readonly resourceId?: string;
+    /**
+     * The current state of the FleetTarget.
+     */
+    readonly state?: string;
 }
 /**
  * This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -113,6 +123,7 @@ export interface GetFleetTargetsResult {
  *     product: fleetTargetProduct,
  *     resourceDisplayName: fleetTargetResourceDisplayName,
  *     resourceId: testResource.id,
+ *     state: fleetTargetState,
  * });
  * ```
  */
@@ -125,6 +136,7 @@ export function getFleetTargetsOutput(args: GetFleetTargetsOutputArgs, opts?: pu
         "product": args.product,
         "resourceDisplayName": args.resourceDisplayName,
         "resourceId": args.resourceId,
+        "state": args.state,
     }, opts);
 }
 
@@ -153,4 +165,8 @@ export interface GetFleetTargetsOutputArgs {
      * Resource Identifier
      */
     resourceId?: pulumi.Input<string>;
+    /**
+     * A filter to return fleets whose lifecycleState matches the given lifecycleState.
+     */
+    state?: pulumi.Input<string>;
 }

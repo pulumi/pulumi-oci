@@ -21,6 +21,7 @@ public final class GetLimitValuesResult {
      */
     private @Nullable String availabilityDomain;
     private String compartmentId;
+    private @Nullable String externalLocation;
     private @Nullable List<GetLimitValuesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -55,6 +56,9 @@ public final class GetLimitValuesResult {
     }
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
     }
     public List<GetLimitValuesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -105,6 +109,7 @@ public final class GetLimitValuesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
+        private @Nullable String externalLocation;
         private @Nullable List<GetLimitValuesFilter> filters;
         private String id;
         private List<GetLimitValuesLimitValue> limitValues;
@@ -117,6 +122,7 @@ public final class GetLimitValuesResult {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.externalLocation = defaults.externalLocation;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.limitValues = defaults.limitValues;
@@ -138,6 +144,12 @@ public final class GetLimitValuesResult {
               throw new MissingRequiredPropertyException("GetLimitValuesResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocation(@Nullable String externalLocation) {
+
+            this.externalLocation = externalLocation;
             return this;
         }
         @CustomType.Setter
@@ -198,6 +210,7 @@ public final class GetLimitValuesResult {
             final var _resultValue = new GetLimitValuesResult();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.externalLocation = externalLocation;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.limitValues = limitValues;

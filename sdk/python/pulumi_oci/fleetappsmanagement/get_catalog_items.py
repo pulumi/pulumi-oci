@@ -28,7 +28,7 @@ class GetCatalogItemsResult:
     """
     A collection of values returned by getCatalogItems.
     """
-    def __init__(__self__, catalog_item_collections=None, catalog_listing_id=None, catalog_listing_version_criteria=None, compartment_id=None, config_source_type=None, display_name=None, filters=None, id=None, should_list_public_items=None, state=None):
+    def __init__(__self__, catalog_item_collections=None, catalog_listing_id=None, catalog_listing_version_criteria=None, compartment_id=None, config_source_type=None, display_name=None, filters=None, id=None, package_type=None, should_list_public_items=None, state=None):
         if catalog_item_collections and not isinstance(catalog_item_collections, list):
             raise TypeError("Expected argument 'catalog_item_collections' to be a list")
         pulumi.set(__self__, "catalog_item_collections", catalog_item_collections)
@@ -53,6 +53,9 @@ class GetCatalogItemsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if package_type and not isinstance(package_type, str):
+            raise TypeError("Expected argument 'package_type' to be a str")
+        pulumi.set(__self__, "package_type", package_type)
         if should_list_public_items and not isinstance(should_list_public_items, bool):
             raise TypeError("Expected argument 'should_list_public_items' to be a bool")
         pulumi.set(__self__, "should_list_public_items", should_list_public_items)
@@ -116,6 +119,14 @@ class GetCatalogItemsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> Optional[_builtins.str]:
+        """
+        Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+        """
+        return pulumi.get(self, "package_type")
+
+    @_builtins.property
     @pulumi.getter(name="shouldListPublicItems")
     def should_list_public_items(self) -> Optional[_builtins.bool]:
         """
@@ -146,6 +157,7 @@ class AwaitableGetCatalogItemsResult(GetCatalogItemsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            package_type=self.package_type,
             should_list_public_items=self.should_list_public_items,
             state=self.state)
 
@@ -156,6 +168,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
                       config_source_type: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
                       filters: Optional[Sequence[Union['GetCatalogItemsFilterArgs', 'GetCatalogItemsFilterArgsDict']]] = None,
+                      package_type: Optional[_builtins.str] = None,
                       should_list_public_items: Optional[_builtins.bool] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogItemsResult:
@@ -175,6 +188,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
+        package_type=catalog_item_package_type,
         should_list_public_items=catalog_item_should_list_public_items,
         state=catalog_item_state)
     ```
@@ -185,6 +199,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: (Updatable) The ID of the compartment in which to list resources.
     :param _builtins.str config_source_type: The [ConfigSourceType](https://www.terraform.io/definitions/CatalogItem/configSourceType) Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, URL_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+    :param _builtins.str package_type: A filter to return only resources that match the given package type. The state value is case-insensitive.
     :param _builtins.bool should_list_public_items: The indicator to append Public Items from the root compartment to any query, when set to TRUE.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -195,6 +210,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
     __args__['configSourceType'] = config_source_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['packageType'] = package_type
     __args__['shouldListPublicItems'] = should_list_public_items
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -209,6 +225,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        package_type=pulumi.get(__ret__, 'package_type'),
         should_list_public_items=pulumi.get(__ret__, 'should_list_public_items'),
         state=pulumi.get(__ret__, 'state'))
 def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -217,6 +234,7 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
                              config_source_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCatalogItemsFilterArgs', 'GetCatalogItemsFilterArgsDict']]]]] = None,
+                             package_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              should_list_public_items: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogItemsResult]:
@@ -236,6 +254,7 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
+        package_type=catalog_item_package_type,
         should_list_public_items=catalog_item_should_list_public_items,
         state=catalog_item_state)
     ```
@@ -246,6 +265,7 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
     :param _builtins.str compartment_id: (Updatable) The ID of the compartment in which to list resources.
     :param _builtins.str config_source_type: The [ConfigSourceType](https://www.terraform.io/definitions/CatalogItem/configSourceType) Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, URL_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+    :param _builtins.str package_type: A filter to return only resources that match the given package type. The state value is case-insensitive.
     :param _builtins.bool should_list_public_items: The indicator to append Public Items from the root compartment to any query, when set to TRUE.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -256,6 +276,7 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
     __args__['configSourceType'] = config_source_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['packageType'] = package_type
     __args__['shouldListPublicItems'] = should_list_public_items
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -269,5 +290,6 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        package_type=pulumi.get(__response__, 'package_type'),
         should_list_public_items=pulumi.get(__response__, 'should_list_public_items'),
         state=pulumi.get(__response__, 'state')))

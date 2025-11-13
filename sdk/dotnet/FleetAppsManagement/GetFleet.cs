@@ -177,7 +177,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string ParentFleetId;
         /// <summary>
-        /// Products associated with the Fleet.
+        /// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
         /// </summary>
         public readonly ImmutableArray<string> Products;
         /// <summary>

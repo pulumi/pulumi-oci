@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class DedicatedVmHostPlacementConstraintDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the compute bare metal host.
+        /// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         /// </summary>
         [Input("computeBareMetalHostId")]
         public Input<string>? ComputeBareMetalHostId { get; set; }
 
         /// <summary>
-        /// Determines the type of targeted launch.
+        /// The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
         /// 
         /// 
         /// ** IMPORTANT **

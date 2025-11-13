@@ -12,229 +12,6 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// ## Example Usage
     /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testRunbookVersion = new Oci.FleetAppsManagement.RunbookVersion("test_runbook_version", new()
-    ///     {
-    ///         ExecutionWorkflowDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionExecutionWorkflowDetailsArgs
-    ///         {
-    ///             Workflows = new[]
-    ///             {
-    ///                 new Oci.FleetAppsManagement.Inputs.RunbookVersionExecutionWorkflowDetailsWorkflowArgs
-    ///                 {
-    ///                     GroupName = testGroup.Name,
-    ///                     Steps = new[]
-    ///                     {
-    ///                         new Oci.FleetAppsManagement.Inputs.RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs
-    ///                         {
-    ///                             Type = runbookVersionExecutionWorkflowDetailsWorkflowStepsType,
-    ///                             GroupName = testGroup.Name,
-    ///                             StepName = runbookVersionExecutionWorkflowDetailsWorkflowStepsStepName,
-    ///                             Steps = runbookVersionExecutionWorkflowDetailsWorkflowStepsSteps,
-    ///                         },
-    ///                     },
-    ///                     Type = runbookVersionExecutionWorkflowDetailsWorkflowType,
-    ///                 },
-    ///             },
-    ///         },
-    ///         Groups = new[]
-    ///         {
-    ///             new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupArgs
-    ///             {
-    ///                 Name = runbookVersionGroupsName,
-    ///                 Type = runbookVersionGroupsType,
-    ///                 Properties = new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesArgs
-    ///                 {
-    ///                     ActionOnFailure = runbookVersionGroupsPropertiesActionOnFailure,
-    ///                     NotificationPreferences = new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesNotificationPreferencesArgs
-    ///                     {
-    ///                         ShouldNotifyOnPause = runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause,
-    ///                         ShouldNotifyOnTaskFailure = runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
-    ///                         ShouldNotifyOnTaskSuccess = runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
-    ///                     },
-    ///                     PauseDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesPauseDetailsArgs
-    ///                     {
-    ///                         Kind = runbookVersionGroupsPropertiesPauseDetailsKind,
-    ///                         DurationInMinutes = runbookVersionGroupsPropertiesPauseDetailsDurationInMinutes,
-    ///                     },
-    ///                     PreCondition = runbookVersionGroupsPropertiesPreCondition,
-    ///                     RunOn = new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesRunOnArgs
-    ///                     {
-    ///                         Kind = runbookVersionGroupsPropertiesRunOnKind,
-    ///                         Condition = runbookVersionGroupsPropertiesRunOnCondition,
-    ///                         Host = runbookVersionGroupsPropertiesRunOnHost,
-    ///                         PreviousTaskInstanceDetails = new[]
-    ///                         {
-    ///                             new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs
-    ///                             {
-    ///                                 OutputVariableDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs
-    ///                                 {
-    ///                                     OutputVariableName = runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName,
-    ///                                     StepName = runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName,
-    ///                                 },
-    ///                                 ResourceId = testResource.Id,
-    ///                                 ResourceType = runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsResourceType,
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///         RunbookId = testRunbook.Id,
-    ///         Tasks = new[]
-    ///         {
-    ///             new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskArgs
-    ///             {
-    ///                 StepName = runbookVersionTasksStepName,
-    ///                 TaskRecordDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsArgs
-    ///                 {
-    ///                     Scope = runbookVersionTasksTaskRecordDetailsScope,
-    ///                     Description = runbookVersionTasksTaskRecordDetailsDescription,
-    ///                     ExecutionDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs
-    ///                     {
-    ///                         ExecutionType = runbookVersionTasksTaskRecordDetailsExecutionDetailsExecutionType,
-    ///                         CatalogId = testCatalog.Id,
-    ///                         Command = runbookVersionTasksTaskRecordDetailsExecutionDetailsCommand,
-    ///                         ConfigFile = runbookVersionTasksTaskRecordDetailsExecutionDetailsConfigFile,
-    ///                         Content = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs
-    ///                         {
-    ///                             SourceType = runbookVersionTasksTaskRecordDetailsExecutionDetailsContentSourceType,
-    ///                             Bucket = runbookVersionTasksTaskRecordDetailsExecutionDetailsContentBucket,
-    ///                             CatalogId = testCatalog.Id,
-    ///                             Checksum = runbookVersionTasksTaskRecordDetailsExecutionDetailsContentChecksum,
-    ///                             Namespace = runbookVersionTasksTaskRecordDetailsExecutionDetailsContentNamespace,
-    ///                             Object = runbookVersionTasksTaskRecordDetailsExecutionDetailsContentObject,
-    ///                         },
-    ///                         Credentials = new[]
-    ///                         {
-    ///                             new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs
-    ///                             {
-    ///                                 DisplayName = runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsDisplayName,
-    ///                                 Id = runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId,
-    ///                             },
-    ///                         },
-    ///                         Endpoint = runbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint,
-    ///                         IsExecutableContent = runbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent,
-    ///                         IsLocked = runbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked,
-    ///                         IsReadOutputVariableEnabled = runbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
-    ///                         TargetCompartmentId = testCompartment.Id,
-    ///                         Variables = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs
-    ///                         {
-    ///                             InputVariables = new[]
-    ///                             {
-    ///                                 new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs
-    ///                                 {
-    ///                                     Description = runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesDescription,
-    ///                                     Name = runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesName,
-    ///                                     Type = runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesType,
-    ///                                 },
-    ///                             },
-    ///                             OutputVariables = runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables,
-    ///                         },
-    ///                     },
-    ///                     IsApplySubjectTask = runbookVersionTasksTaskRecordDetailsIsApplySubjectTask,
-    ///                     IsCopyToLibraryEnabled = runbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled,
-    ///                     IsDiscoveryOutputTask = runbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask,
-    ///                     Name = runbookVersionTasksTaskRecordDetailsName,
-    ///                     OsType = runbookVersionTasksTaskRecordDetailsOsType,
-    ///                     Platform = runbookVersionTasksTaskRecordDetailsPlatform,
-    ///                     Properties = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskTaskRecordDetailsPropertiesArgs
-    ///                     {
-    ///                         NumRetries = runbookVersionTasksTaskRecordDetailsPropertiesNumRetries,
-    ///                         TimeoutInSeconds = runbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds,
-    ///                     },
-    ///                     TaskRecordId = testTaskRecord.Id,
-    ///                 },
-    ///                 OutputVariableMappings = new[]
-    ///                 {
-    ///                     new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskOutputVariableMappingArgs
-    ///                     {
-    ///                         Name = runbookVersionTasksOutputVariableMappingsName,
-    ///                         OutputVariableDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs
-    ///                         {
-    ///                             OutputVariableName = runbookVersionTasksOutputVariableMappingsOutputVariableDetailsOutputVariableName,
-    ///                             StepName = runbookVersionTasksOutputVariableMappingsOutputVariableDetailsStepName,
-    ///                         },
-    ///                     },
-    ///                 },
-    ///                 StepProperties = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesArgs
-    ///                 {
-    ///                     ActionOnFailure = runbookVersionTasksStepPropertiesActionOnFailure,
-    ///                     NotificationPreferences = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesNotificationPreferencesArgs
-    ///                     {
-    ///                         ShouldNotifyOnPause = runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause,
-    ///                         ShouldNotifyOnTaskFailure = runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
-    ///                         ShouldNotifyOnTaskSuccess = runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
-    ///                     },
-    ///                     PauseDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesPauseDetailsArgs
-    ///                     {
-    ///                         Kind = runbookVersionTasksStepPropertiesPauseDetailsKind,
-    ///                         DurationInMinutes = runbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes,
-    ///                     },
-    ///                     PreCondition = runbookVersionTasksStepPropertiesPreCondition,
-    ///                     RunOn = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesRunOnArgs
-    ///                     {
-    ///                         Kind = runbookVersionTasksStepPropertiesRunOnKind,
-    ///                         Condition = runbookVersionTasksStepPropertiesRunOnCondition,
-    ///                         Host = runbookVersionTasksStepPropertiesRunOnHost,
-    ///                         PreviousTaskInstanceDetails = new[]
-    ///                         {
-    ///                             new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs
-    ///                             {
-    ///                                 OutputVariableDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs
-    ///                                 {
-    ///                                     OutputVariableName = runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName,
-    ///                                     StepName = runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName,
-    ///                                 },
-    ///                                 ResourceId = testResource.Id,
-    ///                                 ResourceType = runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsResourceType,
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         RollbackWorkflowDetails = new Oci.FleetAppsManagement.Inputs.RunbookVersionRollbackWorkflowDetailsArgs
-    ///         {
-    ///             Scope = runbookVersionRollbackWorkflowDetailsScope,
-    ///             Workflows = new[]
-    ///             {
-    ///                 new Oci.FleetAppsManagement.Inputs.RunbookVersionRollbackWorkflowDetailsWorkflowArgs
-    ///                 {
-    ///                     GroupName = testGroup.Name,
-    ///                     Steps = new[]
-    ///                     {
-    ///                         new Oci.FleetAppsManagement.Inputs.RunbookVersionRollbackWorkflowDetailsWorkflowStepArgs
-    ///                         {
-    ///                             Type = runbookVersionRollbackWorkflowDetailsWorkflowStepsType,
-    ///                             GroupName = testGroup.Name,
-    ///                             StepName = runbookVersionRollbackWorkflowDetailsWorkflowStepsStepName,
-    ///                             Steps = runbookVersionRollbackWorkflowDetailsWorkflowStepsSteps,
-    ///                         },
-    ///                     },
-    ///                     Type = runbookVersionRollbackWorkflowDetailsWorkflowType,
-    ///                 },
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// RunbookVersions can be imported using the `id`, e.g.
@@ -258,6 +35,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) Execution Workflow details.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("executionWorkflowDetails")]
         public Output<Outputs.RunbookVersionExecutionWorkflowDetails> ExecutionWorkflowDetails { get; private set; } = null!;
@@ -318,6 +96,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) A set of tasks to execute in the runbook.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("tasks")]
         public Output<ImmutableArray<Outputs.RunbookVersionTask>> Tasks { get; private set; } = null!;
@@ -395,6 +174,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) Execution Workflow details.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("executionWorkflowDetails", required: true)]
         public Input<Inputs.RunbookVersionExecutionWorkflowDetailsArgs> ExecutionWorkflowDetails { get; set; } = null!;
@@ -441,6 +221,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) A set of tasks to execute in the runbook.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskArgs> Tasks
         {
@@ -474,6 +255,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) Execution Workflow details.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("executionWorkflowDetails")]
         public Input<Inputs.RunbookVersionExecutionWorkflowDetailsGetArgs>? ExecutionWorkflowDetails { get; set; }
@@ -555,6 +337,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) A set of tasks to execute in the runbook.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskGetArgs> Tasks
         {

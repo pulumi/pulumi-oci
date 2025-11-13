@@ -63,7 +63,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ListingVersion;
         /// <summary>
-        /// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+        /// A filter to return only resources that match the given package type. The state value is case-insensitive.
         /// </summary>
         public readonly string PackageType;
         /// <summary>

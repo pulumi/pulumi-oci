@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *             isExecutableContent: taskRecordDetailsExecutionDetailsIsExecutableContent,
  *             isLocked: taskRecordDetailsExecutionDetailsIsLocked,
  *             isReadOutputVariableEnabled: taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+ *             systemVariables: taskRecordDetailsExecutionDetailsSystemVariables,
  *             targetCompartmentId: testCompartment.id,
  *             variables: {
  *                 inputVariables: [{

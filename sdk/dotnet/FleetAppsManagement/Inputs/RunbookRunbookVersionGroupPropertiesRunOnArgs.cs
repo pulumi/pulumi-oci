@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class RunbookRunbookVersionGroupPropertiesRunOnArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Build control flow conditions that determine the relevance of the task execution.
+        /// Build control flow conditions that determine the relevance of the task execution against targets.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

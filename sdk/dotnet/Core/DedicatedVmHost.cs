@@ -25,6 +25,7 @@ namespace Pulumi.Oci.Core
     ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
     ///         CompartmentId = compartmentId,
     ///         DedicatedVmHostShape = dedicatedVmHostDedicatedVmHostShape,
+    ///         CapacityConfig = dedicatedVmHostCapacityConfig,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -35,6 +36,7 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsMemoryEncryptionEnabled = dedicatedVmHostIsMemoryEncryptionEnabled,
     ///         PlacementConstraintDetails = new Oci.Core.Inputs.DedicatedVmHostPlacementConstraintDetailsArgs
     ///         {
     ///             Type = dedicatedVmHostPlacementConstraintDetailsType,
@@ -63,10 +65,16 @@ namespace Pulumi.Oci.Core
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// A list of total and remaining CPU &amp; memory per capacity bucket.
+        /// A list of total and remaining CPU and memory per capacity bucket.
         /// </summary>
         [Output("capacityBins")]
         public Output<ImmutableArray<Outputs.DedicatedVmHostCapacityBin>> CapacityBins { get; private set; } = null!;
+
+        /// <summary>
+        /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        /// </summary>
+        [Output("capacityConfig")]
+        public Output<string> CapacityConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -75,7 +83,7 @@ namespace Pulumi.Oci.Core
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the compute bare metal host.
+        /// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         /// </summary>
         [Output("computeBareMetalHostId")]
         public Output<string> ComputeBareMetalHostId { get; private set; } = null!;
@@ -115,7 +123,13 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `True`, only Confidential VMs can be launched. If `False`, Confidential VMs cannot be launched.
+        /// </summary>
+        [Output("isMemoryEncryptionEnabled")]
+        public Output<bool> IsMemoryEncryptionEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// The details for providing placement constraints.
         /// </summary>
         [Output("placementConstraintDetails")]
         public Output<Outputs.DedicatedVmHostPlacementConstraintDetails> PlacementConstraintDetails { get; private set; } = null!;
@@ -209,6 +223,12 @@ namespace Pulumi.Oci.Core
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
+        /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        /// </summary>
+        [Input("capacityConfig")]
+        public Input<string>? CapacityConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -261,7 +281,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `True`, only Confidential VMs can be launched. If `False`, Confidential VMs cannot be launched.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public Input<bool>? IsMemoryEncryptionEnabled { get; set; }
+
+        /// <summary>
+        /// The details for providing placement constraints.
         /// </summary>
         [Input("placementConstraintDetails")]
         public Input<Inputs.DedicatedVmHostPlacementConstraintDetailsArgs>? PlacementConstraintDetails { get; set; }
@@ -284,7 +310,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>? _capacityBins;
 
         /// <summary>
-        /// A list of total and remaining CPU &amp; memory per capacity bucket.
+        /// A list of total and remaining CPU and memory per capacity bucket.
         /// </summary>
         public InputList<Inputs.DedicatedVmHostCapacityBinGetArgs> CapacityBins
         {
@@ -293,13 +319,19 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        /// </summary>
+        [Input("capacityConfig")]
+        public Input<string>? CapacityConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The OCID of the compute bare metal host.
+        /// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         /// </summary>
         [Input("computeBareMetalHostId")]
         public Input<string>? ComputeBareMetalHostId { get; set; }
@@ -351,7 +383,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `True`, only Confidential VMs can be launched. If `False`, Confidential VMs cannot be launched.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public Input<bool>? IsMemoryEncryptionEnabled { get; set; }
+
+        /// <summary>
+        /// The details for providing placement constraints.
         /// </summary>
         [Input("placementConstraintDetails")]
         public Input<Inputs.DedicatedVmHostPlacementConstraintDetailsGetArgs>? PlacementConstraintDetails { get; set; }

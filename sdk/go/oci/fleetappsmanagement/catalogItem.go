@@ -14,63 +14,6 @@ import (
 
 // ## Example Usage
 //
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/fleetappsmanagement"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := fleetappsmanagement.NewCatalogItem(ctx, "test_catalog_item", &fleetappsmanagement.CatalogItemArgs{
-//				CompartmentId:    pulumi.Any(compartmentId),
-//				ConfigSourceType: pulumi.Any(catalogItemConfigSourceType),
-//				Description:      pulumi.Any(catalogItemDescription),
-//				DisplayName:      pulumi.Any(catalogItemDisplayName),
-//				PackageType:      pulumi.Any(catalogItemPackageType),
-//				CatalogSourcePayload: &fleetappsmanagement.CatalogItemCatalogSourcePayloadArgs{
-//					ConfigSourceType:              pulumi.Any(catalogItemCatalogSourcePayloadConfigSourceType),
-//					AccessUri:                     pulumi.Any(catalogItemCatalogSourcePayloadAccessUri),
-//					BranchName:                    pulumi.Any(catalogItemCatalogSourcePayloadBranchName),
-//					Bucket:                        pulumi.Any(catalogItemCatalogSourcePayloadBucket),
-//					ConfigurationSourceProviderId: pulumi.Any(testConfigurationSourceProvider.Id),
-//					Description:                   pulumi.Any(catalogItemCatalogSourcePayloadDescription),
-//					ListingId:                     pulumi.Any(testListing.Id),
-//					LongDescription:               pulumi.Any(catalogItemCatalogSourcePayloadLongDescription),
-//					Namespace:                     pulumi.Any(catalogItemCatalogSourcePayloadNamespace),
-//					Object:                        pulumi.Any(catalogItemCatalogSourcePayloadObject),
-//					RepositoryUrl:                 pulumi.Any(catalogItemCatalogSourcePayloadRepositoryUrl),
-//					TemplateDisplayName:           pulumi.Any(catalogItemCatalogSourcePayloadTemplateDisplayName),
-//					TimeExpires:                   pulumi.Any(catalogItemCatalogSourcePayloadTimeExpires),
-//					Version:                       pulumi.Any(catalogItemCatalogSourcePayloadVersion),
-//					WorkingDirectory:              pulumi.Any(catalogItemCatalogSourcePayloadWorkingDirectory),
-//					ZipFileBase64encoded:          pulumi.Any(catalogItemCatalogSourcePayloadZipFileBase64encoded),
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				ListingId:          pulumi.Any(testListing.Id),
-//				ListingVersion:     pulumi.Any(catalogItemListingVersion),
-//				ShortDescription:   pulumi.Any(catalogItemShortDescription),
-//				TimeReleased:       pulumi.Any(catalogItemTimeReleased),
-//				VersionDescription: pulumi.Any(catalogItemVersionDescription),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // CatalogItems can be imported using the `id`, e.g.
@@ -86,9 +29,6 @@ type CatalogItem struct {
 	// Catalog source payload.
 	CatalogSourcePayload CatalogItemCatalogSourcePayloadOutput `pulumi:"catalogSourcePayload"`
 	// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CloneCatalogItemTrigger pulumi.IntPtrOutput `pulumi:"cloneCatalogItemTrigger"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -182,9 +122,6 @@ type catalogItemState struct {
 	// Catalog source payload.
 	CatalogSourcePayload *CatalogItemCatalogSourcePayload `pulumi:"catalogSourcePayload"`
 	// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CloneCatalogItemTrigger *int `pulumi:"cloneCatalogItemTrigger"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -234,9 +171,6 @@ type CatalogItemState struct {
 	// Catalog source payload.
 	CatalogSourcePayload CatalogItemCatalogSourcePayloadPtrInput
 	// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CloneCatalogItemTrigger pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -288,9 +222,6 @@ type catalogItemArgs struct {
 	// Catalog source payload.
 	CatalogSourcePayload *CatalogItemCatalogSourcePayload `pulumi:"catalogSourcePayload"`
 	// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CloneCatalogItemTrigger *int `pulumi:"cloneCatalogItemTrigger"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -323,9 +254,6 @@ type CatalogItemArgs struct {
 	// Catalog source payload.
 	CatalogSourcePayload CatalogItemCatalogSourcePayloadPtrInput
 	// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CloneCatalogItemTrigger pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
@@ -451,9 +379,6 @@ func (o CatalogItemOutput) CatalogSourcePayload() CatalogItemCatalogSourcePayloa
 }
 
 // (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogItemOutput) CloneCatalogItemTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *CatalogItem) pulumi.IntPtrOutput { return v.CloneCatalogItemTrigger }).(pulumi.IntPtrOutput)
 }

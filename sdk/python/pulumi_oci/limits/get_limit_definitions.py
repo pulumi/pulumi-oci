@@ -123,9 +123,9 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 
-    Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-    If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-    compartment level.
+    Includes a list of resource limits that are currently supported.
+    If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+    If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
 
     ## Example Usage
 
@@ -143,7 +143,7 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
     :param _builtins.str name: Optional field, filter for a specific resource limit.
     :param _builtins.str service_name: The target service name.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,9 +171,9 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[_builtins
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 
-    Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-    If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-    compartment level.
+    Includes a list of resource limits that are currently supported.
+    If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+    If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
 
     ## Example Usage
 
@@ -191,7 +191,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[_builtins
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
     :param _builtins.str name: Optional field, filter for a specific resource limit.
     :param _builtins.str service_name: The target service name.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

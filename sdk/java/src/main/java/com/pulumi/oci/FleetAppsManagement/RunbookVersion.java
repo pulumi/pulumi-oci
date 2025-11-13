@@ -23,193 +23,6 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.FleetAppsManagement.RunbookVersion;
- * import com.pulumi.oci.FleetAppsManagement.RunbookVersionArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionExecutionWorkflowDetailsArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionGroupArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionGroupPropertiesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionGroupPropertiesNotificationPreferencesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionGroupPropertiesPauseDetailsArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionGroupPropertiesRunOnArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskTaskRecordDetailsArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskTaskRecordDetailsPropertiesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskStepPropertiesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskStepPropertiesNotificationPreferencesArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskStepPropertiesPauseDetailsArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionTaskStepPropertiesRunOnArgs;
- * import com.pulumi.oci.FleetAppsManagement.inputs.RunbookVersionRollbackWorkflowDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testRunbookVersion = new RunbookVersion("testRunbookVersion", RunbookVersionArgs.builder()
- *             .executionWorkflowDetails(RunbookVersionExecutionWorkflowDetailsArgs.builder()
- *                 .workflows(RunbookVersionExecutionWorkflowDetailsWorkflowArgs.builder()
- *                     .groupName(testGroup.name())
- *                     .steps(RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs.builder()
- *                         .type(runbookVersionExecutionWorkflowDetailsWorkflowStepsType)
- *                         .groupName(testGroup.name())
- *                         .stepName(runbookVersionExecutionWorkflowDetailsWorkflowStepsStepName)
- *                         .steps(runbookVersionExecutionWorkflowDetailsWorkflowStepsSteps)
- *                         .build())
- *                     .type(runbookVersionExecutionWorkflowDetailsWorkflowType)
- *                     .build())
- *                 .build())
- *             .groups(RunbookVersionGroupArgs.builder()
- *                 .name(runbookVersionGroupsName)
- *                 .type(runbookVersionGroupsType)
- *                 .properties(RunbookVersionGroupPropertiesArgs.builder()
- *                     .actionOnFailure(runbookVersionGroupsPropertiesActionOnFailure)
- *                     .notificationPreferences(RunbookVersionGroupPropertiesNotificationPreferencesArgs.builder()
- *                         .shouldNotifyOnPause(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause)
- *                         .shouldNotifyOnTaskFailure(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure)
- *                         .shouldNotifyOnTaskSuccess(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess)
- *                         .build())
- *                     .pauseDetails(RunbookVersionGroupPropertiesPauseDetailsArgs.builder()
- *                         .kind(runbookVersionGroupsPropertiesPauseDetailsKind)
- *                         .durationInMinutes(runbookVersionGroupsPropertiesPauseDetailsDurationInMinutes)
- *                         .build())
- *                     .preCondition(runbookVersionGroupsPropertiesPreCondition)
- *                     .runOn(RunbookVersionGroupPropertiesRunOnArgs.builder()
- *                         .kind(runbookVersionGroupsPropertiesRunOnKind)
- *                         .condition(runbookVersionGroupsPropertiesRunOnCondition)
- *                         .host(runbookVersionGroupsPropertiesRunOnHost)
- *                         .previousTaskInstanceDetails(RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs.builder()
- *                             .outputVariableDetails(RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs.builder()
- *                                 .outputVariableName(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName)
- *                                 .stepName(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName)
- *                                 .build())
- *                             .resourceId(testResource.id())
- *                             .resourceType(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsResourceType)
- *                             .build())
- *                         .build())
- *                     .build())
- *                 .build())
- *             .runbookId(testRunbook.id())
- *             .tasks(RunbookVersionTaskArgs.builder()
- *                 .stepName(runbookVersionTasksStepName)
- *                 .taskRecordDetails(RunbookVersionTaskTaskRecordDetailsArgs.builder()
- *                     .scope(runbookVersionTasksTaskRecordDetailsScope)
- *                     .description(runbookVersionTasksTaskRecordDetailsDescription)
- *                     .executionDetails(RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs.builder()
- *                         .executionType(runbookVersionTasksTaskRecordDetailsExecutionDetailsExecutionType)
- *                         .catalogId(testCatalog.id())
- *                         .command(runbookVersionTasksTaskRecordDetailsExecutionDetailsCommand)
- *                         .configFile(runbookVersionTasksTaskRecordDetailsExecutionDetailsConfigFile)
- *                         .content(RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs.builder()
- *                             .sourceType(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentSourceType)
- *                             .bucket(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentBucket)
- *                             .catalogId(testCatalog.id())
- *                             .checksum(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentChecksum)
- *                             .namespace(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentNamespace)
- *                             .object(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentObject)
- *                             .build())
- *                         .credentials(RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs.builder()
- *                             .displayName(runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsDisplayName)
- *                             .id(runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId)
- *                             .build())
- *                         .endpoint(runbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint)
- *                         .isExecutableContent(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent)
- *                         .isLocked(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked)
- *                         .isReadOutputVariableEnabled(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled)
- *                         .targetCompartmentId(testCompartment.id())
- *                         .variables(RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs.builder()
- *                             .inputVariables(RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs.builder()
- *                                 .description(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesDescription)
- *                                 .name(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesName)
- *                                 .type(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesType)
- *                                 .build())
- *                             .outputVariables(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables)
- *                             .build())
- *                         .build())
- *                     .isApplySubjectTask(runbookVersionTasksTaskRecordDetailsIsApplySubjectTask)
- *                     .isCopyToLibraryEnabled(runbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled)
- *                     .isDiscoveryOutputTask(runbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask)
- *                     .name(runbookVersionTasksTaskRecordDetailsName)
- *                     .osType(runbookVersionTasksTaskRecordDetailsOsType)
- *                     .platform(runbookVersionTasksTaskRecordDetailsPlatform)
- *                     .properties(RunbookVersionTaskTaskRecordDetailsPropertiesArgs.builder()
- *                         .numRetries(runbookVersionTasksTaskRecordDetailsPropertiesNumRetries)
- *                         .timeoutInSeconds(runbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds)
- *                         .build())
- *                     .taskRecordId(testTaskRecord.id())
- *                     .build())
- *                 .outputVariableMappings(RunbookVersionTaskOutputVariableMappingArgs.builder()
- *                     .name(runbookVersionTasksOutputVariableMappingsName)
- *                     .outputVariableDetails(RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs.builder()
- *                         .outputVariableName(runbookVersionTasksOutputVariableMappingsOutputVariableDetailsOutputVariableName)
- *                         .stepName(runbookVersionTasksOutputVariableMappingsOutputVariableDetailsStepName)
- *                         .build())
- *                     .build())
- *                 .stepProperties(RunbookVersionTaskStepPropertiesArgs.builder()
- *                     .actionOnFailure(runbookVersionTasksStepPropertiesActionOnFailure)
- *                     .notificationPreferences(RunbookVersionTaskStepPropertiesNotificationPreferencesArgs.builder()
- *                         .shouldNotifyOnPause(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause)
- *                         .shouldNotifyOnTaskFailure(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure)
- *                         .shouldNotifyOnTaskSuccess(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess)
- *                         .build())
- *                     .pauseDetails(RunbookVersionTaskStepPropertiesPauseDetailsArgs.builder()
- *                         .kind(runbookVersionTasksStepPropertiesPauseDetailsKind)
- *                         .durationInMinutes(runbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes)
- *                         .build())
- *                     .preCondition(runbookVersionTasksStepPropertiesPreCondition)
- *                     .runOn(RunbookVersionTaskStepPropertiesRunOnArgs.builder()
- *                         .kind(runbookVersionTasksStepPropertiesRunOnKind)
- *                         .condition(runbookVersionTasksStepPropertiesRunOnCondition)
- *                         .host(runbookVersionTasksStepPropertiesRunOnHost)
- *                         .previousTaskInstanceDetails(RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs.builder()
- *                             .outputVariableDetails(RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs.builder()
- *                                 .outputVariableName(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName)
- *                                 .stepName(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName)
- *                                 .build())
- *                             .resourceId(testResource.id())
- *                             .resourceType(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsResourceType)
- *                             .build())
- *                         .build())
- *                     .build())
- *                 .build())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .rollbackWorkflowDetails(RunbookVersionRollbackWorkflowDetailsArgs.builder()
- *                 .scope(runbookVersionRollbackWorkflowDetailsScope)
- *                 .workflows(RunbookVersionRollbackWorkflowDetailsWorkflowArgs.builder()
- *                     .groupName(testGroup.name())
- *                     .steps(RunbookVersionRollbackWorkflowDetailsWorkflowStepArgs.builder()
- *                         .type(runbookVersionRollbackWorkflowDetailsWorkflowStepsType)
- *                         .groupName(testGroup.name())
- *                         .stepName(runbookVersionRollbackWorkflowDetailsWorkflowStepsStepName)
- *                         .steps(runbookVersionRollbackWorkflowDetailsWorkflowStepsSteps)
- *                         .build())
- *                     .type(runbookVersionRollbackWorkflowDetailsWorkflowType)
- *                     .build())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * 
  * ## Import
  * 
  * RunbookVersions can be imported using the `id`, e.g.
@@ -245,6 +58,7 @@ public class RunbookVersion extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) Execution Workflow details.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="executionWorkflowDetails", refs={RunbookVersionExecutionWorkflowDetails.class}, tree="[0]")
@@ -252,6 +66,7 @@ public class RunbookVersion extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) Execution Workflow details.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<RunbookVersionExecutionWorkflowDetails> executionWorkflowDetails() {
@@ -383,6 +198,7 @@ public class RunbookVersion extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) A set of tasks to execute in the runbook.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="tasks", refs={List.class,RunbookVersionTask.class}, tree="[0,1]")
@@ -390,6 +206,7 @@ public class RunbookVersion extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) A set of tasks to execute in the runbook.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<List<RunbookVersionTask>> tasks() {

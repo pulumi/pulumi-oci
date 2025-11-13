@@ -36,6 +36,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
         ///         DisplayName = dedicatedVmHostDisplayName,
         ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostIsMemoryEncryptionEnabled,
         ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
         ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
         ///         State = dedicatedVmHostState,
@@ -72,6 +73,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
         ///         DisplayName = dedicatedVmHostDisplayName,
         ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostIsMemoryEncryptionEnabled,
         ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
         ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
         ///         State = dedicatedVmHostState,
@@ -108,6 +110,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
         ///         DisplayName = dedicatedVmHostDisplayName,
         ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostIsMemoryEncryptionEnabled,
         ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
         ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
         ///         State = dedicatedVmHostState,
@@ -154,6 +157,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("instanceShapeName")]
         public string? InstanceShapeName { get; set; }
+
+        /// <summary>
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public bool? IsMemoryEncryptionEnabled { get; set; }
 
         /// <summary>
         /// The remaining memory of the dedicated VM host, in GBs.
@@ -214,6 +223,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? InstanceShapeName { get; set; }
 
         /// <summary>
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public Input<bool>? IsMemoryEncryptionEnabled { get; set; }
+
+        /// <summary>
         /// The remaining memory of the dedicated VM host, in GBs.
         /// </summary>
         [Input("remainingMemoryInGbsGreaterThanOrEqualTo")]
@@ -263,6 +278,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         public readonly string? InstanceShapeName;
+        /// <summary>
+        /// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `True`, only Confidential VMs can be launched. If `False`, Confidential VMs cannot be launched.
+        /// </summary>
+        public readonly bool? IsMemoryEncryptionEnabled;
         public readonly double? RemainingMemoryInGbsGreaterThanOrEqualTo;
         public readonly double? RemainingOcpusGreaterThanOrEqualTo;
         /// <summary>
@@ -286,6 +305,8 @@ namespace Pulumi.Oci.Core
 
             string? instanceShapeName,
 
+            bool? isMemoryEncryptionEnabled,
+
             double? remainingMemoryInGbsGreaterThanOrEqualTo,
 
             double? remainingOcpusGreaterThanOrEqualTo,
@@ -299,6 +320,7 @@ namespace Pulumi.Oci.Core
             Filters = filters;
             Id = id;
             InstanceShapeName = instanceShapeName;
+            IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             RemainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
             RemainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
             State = state;

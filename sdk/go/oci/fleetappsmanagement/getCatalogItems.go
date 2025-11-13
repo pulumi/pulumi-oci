@@ -35,6 +35,7 @@ import (
 //				CatalogListingVersionCriteria: pulumi.StringRef(catalogItemCatalogListingVersionCriteria),
 //				ConfigSourceType:              pulumi.StringRef(catalogItemConfigSourceType),
 //				DisplayName:                   pulumi.StringRef(catalogItemDisplayName),
+//				PackageType:                   pulumi.StringRef(catalogItemPackageType),
 //				ShouldListPublicItems:         pulumi.BoolRef(catalogItemShouldListPublicItems),
 //				State:                         pulumi.StringRef(catalogItemState),
 //			}, nil)
@@ -69,6 +70,8 @@ type GetCatalogItemsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetCatalogItemsFilter `pulumi:"filters"`
+	// A filter to return only resources that match the given package type. The state value is case-insensitive.
+	PackageType *string `pulumi:"packageType"`
 	// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
 	ShouldListPublicItems *bool `pulumi:"shouldListPublicItems"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -90,6 +93,8 @@ type GetCatalogItemsResult struct {
 	Filters     []GetCatalogItemsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+	PackageType *string `pulumi:"packageType"`
 	// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
 	ShouldListPublicItems *bool `pulumi:"shouldListPublicItems"`
 	// The current state of the CatalogItem.
@@ -118,6 +123,8 @@ type GetCatalogItemsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetCatalogItemsFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match the given package type. The state value is case-insensitive.
+	PackageType pulumi.StringPtrInput `pulumi:"packageType"`
 	// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
 	ShouldListPublicItems pulumi.BoolPtrInput `pulumi:"shouldListPublicItems"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -178,6 +185,11 @@ func (o GetCatalogItemsResultOutput) Filters() GetCatalogItemsFilterArrayOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetCatalogItemsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+func (o GetCatalogItemsResultOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogItemsResult) *string { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // The indicator to append Public Items from the root compartment to any query, when set to TRUE.

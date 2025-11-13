@@ -40,14 +40,14 @@ public final class GetServicesPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      * 
      */
     @Import(name="subscriptionId")
     private @Nullable String subscriptionId;
 
     /**
-     * @return The OCID of the subscription assigned to tenant
+     * @return The subscription OCID assigned to the tenant.
      * 
      */
     public Optional<String> subscriptionId() {
@@ -101,7 +101,7 @@ public final class GetServicesPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * @param subscriptionId The subscription OCID assigned to the tenant.
          * 
          * @return builder
          * 

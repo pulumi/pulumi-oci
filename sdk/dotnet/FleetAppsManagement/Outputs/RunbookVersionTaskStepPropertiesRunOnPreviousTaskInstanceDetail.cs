@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail
     {
         /// <summary>
-        /// (Updatable) The details of
-        /// the output variable that will be used for mapping.
+        /// (Updatable) The details of the output variable that will be used for mapping.
         /// </summary>
         public readonly Outputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails? OutputVariableDetails;
         /// <summary>

@@ -17,14 +17,14 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
     public static final DedicatedVmHostPlacementConstraintDetailsArgs Empty = new DedicatedVmHostPlacementConstraintDetailsArgs();
 
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     @Import(name="computeBareMetalHostId")
     private @Nullable Output<String> computeBareMetalHostId;
 
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     public Optional<Output<String>> computeBareMetalHostId() {
@@ -32,7 +32,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
     }
 
     /**
-     * Determines the type of targeted launch.
+     * The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -42,7 +42,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
     private Output<String> type;
 
     /**
-     * @return Determines the type of targeted launch.
+     * @return The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -78,7 +78,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
         }
 
         /**
-         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * @param computeBareMetalHostId The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
         }
 
         /**
-         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * @param computeBareMetalHostId The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
         }
 
         /**
-         * @param type Determines the type of targeted launch.
+         * @param type The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -113,7 +113,7 @@ public final class DedicatedVmHostPlacementConstraintDetailsArgs extends com.pul
         }
 
         /**
-         * @param type Determines the type of targeted launch.
+         * @param type The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

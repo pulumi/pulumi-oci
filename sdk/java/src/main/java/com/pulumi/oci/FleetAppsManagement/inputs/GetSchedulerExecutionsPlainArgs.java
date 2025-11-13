@@ -5,6 +5,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -32,6 +33,21 @@ public final class GetSchedulerExecutionsPlainArgs extends com.pulumi.resources.
     }
 
     /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Boolean compartmentIdInSubtree;
+
+    /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    /**
      * A filter to return only resources that match the entire display name given.
      * 
      */
@@ -51,6 +67,21 @@ public final class GetSchedulerExecutionsPlainArgs extends com.pulumi.resources.
 
     public Optional<List<GetSchedulerExecutionsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     * 
+     */
+    @Import(name="lifecycleOperation")
+    private @Nullable String lifecycleOperation;
+
+    /**
+     * @return A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     * 
+     */
+    public Optional<String> lifecycleOperation() {
+        return Optional.ofNullable(this.lifecycleOperation);
     }
 
     /**
@@ -177,8 +208,10 @@ public final class GetSchedulerExecutionsPlainArgs extends com.pulumi.resources.
 
     private GetSchedulerExecutionsPlainArgs(GetSchedulerExecutionsPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.lifecycleOperation = $.lifecycleOperation;
         this.resourceId = $.resourceId;
         this.runbookId = $.runbookId;
         this.runbookVersionName = $.runbookVersionName;
@@ -219,6 +252,17 @@ public final class GetSchedulerExecutionsPlainArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * @param displayName A filter to return only resources that match the entire display name given.
          * 
          * @return builder
@@ -236,6 +280,17 @@ public final class GetSchedulerExecutionsPlainArgs extends com.pulumi.resources.
 
         public Builder filters(GetSchedulerExecutionsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param lifecycleOperation A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleOperation(@Nullable String lifecycleOperation) {
+            $.lifecycleOperation = lifecycleOperation;
+            return this;
         }
 
         /**

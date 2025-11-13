@@ -48,15 +48,19 @@ export interface GetDedicatedVmHostResult {
      */
     readonly availabilityDomain: string;
     /**
-     * A list of total and remaining CPU & memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      */
     readonly capacityBins: outputs.Core.GetDedicatedVmHostCapacityBin[];
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+     */
+    readonly capacityConfig: string;
     /**
      * The OCID of the compartment that contains the dedicated virtual machine host.
      */
     readonly compartmentId: string;
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      */
     readonly computeBareMetalHostId: string;
     readonly dedicatedVmHostId: string;
@@ -85,7 +89,11 @@ export interface GetDedicatedVmHostResult {
      */
     readonly id: string;
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     */
+    readonly isMemoryEncryptionEnabled: boolean;
+    /**
+     * The details for providing placement constraints.
      */
     readonly placementConstraintDetails: outputs.Core.GetDedicatedVmHostPlacementConstraintDetail[];
     /**

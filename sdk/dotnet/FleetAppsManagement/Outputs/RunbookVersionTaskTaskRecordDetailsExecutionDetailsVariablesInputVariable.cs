@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable
     {
         /// <summary>
-        /// (Updatable) The description of the
-        /// argument.
+        /// (Updatable) The description of the argument.
         /// </summary>
         public readonly string? Description;
         /// <summary>

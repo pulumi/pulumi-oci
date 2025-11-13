@@ -45,6 +45,11 @@ export const getCatalogItem: typeof import("./getCatalogItem").getCatalogItem = 
 export const getCatalogItemOutput: typeof import("./getCatalogItem").getCatalogItemOutput = null as any;
 utilities.lazyLoad(exports, ["getCatalogItem","getCatalogItemOutput"], () => require("./getCatalogItem"));
 
+export { GetCatalogItemVariablesDefinitionArgs, GetCatalogItemVariablesDefinitionResult, GetCatalogItemVariablesDefinitionOutputArgs } from "./getCatalogItemVariablesDefinition";
+export const getCatalogItemVariablesDefinition: typeof import("./getCatalogItemVariablesDefinition").getCatalogItemVariablesDefinition = null as any;
+export const getCatalogItemVariablesDefinitionOutput: typeof import("./getCatalogItemVariablesDefinition").getCatalogItemVariablesDefinitionOutput = null as any;
+utilities.lazyLoad(exports, ["getCatalogItemVariablesDefinition","getCatalogItemVariablesDefinitionOutput"], () => require("./getCatalogItemVariablesDefinition"));
+
 export { GetCatalogItemsArgs, GetCatalogItemsResult, GetCatalogItemsOutputArgs } from "./getCatalogItems";
 export const getCatalogItems: typeof import("./getCatalogItems").getCatalogItems = null as any;
 export const getCatalogItemsOutput: typeof import("./getCatalogItems").getCatalogItemsOutput = null as any;
@@ -84,6 +89,11 @@ export { GetFleetArgs, GetFleetResult, GetFleetOutputArgs } from "./getFleet";
 export const getFleet: typeof import("./getFleet").getFleet = null as any;
 export const getFleetOutput: typeof import("./getFleet").getFleetOutput = null as any;
 utilities.lazyLoad(exports, ["getFleet","getFleetOutput"], () => require("./getFleet"));
+
+export { GetFleetComplianceArgs, GetFleetComplianceResult, GetFleetComplianceOutputArgs } from "./getFleetCompliance";
+export const getFleetCompliance: typeof import("./getFleetCompliance").getFleetCompliance = null as any;
+export const getFleetComplianceOutput: typeof import("./getFleetCompliance").getFleetComplianceOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetCompliance","getFleetComplianceOutput"], () => require("./getFleetCompliance"));
 
 export { GetFleetComplianceReportArgs, GetFleetComplianceReportResult, GetFleetComplianceReportOutputArgs } from "./getFleetComplianceReport";
 export const getFleetComplianceReport: typeof import("./getFleetComplianceReport").getFleetComplianceReport = null as any;
@@ -134,6 +144,11 @@ export { GetFleetsArgs, GetFleetsResult, GetFleetsOutputArgs } from "./getFleets
 export const getFleets: typeof import("./getFleets").getFleets = null as any;
 export const getFleetsOutput: typeof import("./getFleets").getFleetsOutput = null as any;
 utilities.lazyLoad(exports, ["getFleets","getFleetsOutput"], () => require("./getFleets"));
+
+export { GetInstalledPatchesArgs, GetInstalledPatchesResult, GetInstalledPatchesOutputArgs } from "./getInstalledPatches";
+export const getInstalledPatches: typeof import("./getInstalledPatches").getInstalledPatches = null as any;
+export const getInstalledPatchesOutput: typeof import("./getInstalledPatches").getInstalledPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstalledPatches","getInstalledPatchesOutput"], () => require("./getInstalledPatches"));
 
 export { GetInventoryRecordsArgs, GetInventoryRecordsResult, GetInventoryRecordsOutputArgs } from "./getInventoryRecords";
 export const getInventoryRecords: typeof import("./getInventoryRecords").getInventoryRecords = null as any;
@@ -210,10 +225,40 @@ export const getProvisions: typeof import("./getProvisions").getProvisions = nul
 export const getProvisionsOutput: typeof import("./getProvisions").getProvisionsOutput = null as any;
 utilities.lazyLoad(exports, ["getProvisions","getProvisionsOutput"], () => require("./getProvisions"));
 
+export { GetRecommendedPatchesArgs, GetRecommendedPatchesResult, GetRecommendedPatchesOutputArgs } from "./getRecommendedPatches";
+export const getRecommendedPatches: typeof import("./getRecommendedPatches").getRecommendedPatches = null as any;
+export const getRecommendedPatchesOutput: typeof import("./getRecommendedPatches").getRecommendedPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getRecommendedPatches","getRecommendedPatchesOutput"], () => require("./getRecommendedPatches"));
+
+export { GetReportMetadataArgs, GetReportMetadataResult, GetReportMetadataOutputArgs } from "./getReportMetadata";
+export const getReportMetadata: typeof import("./getReportMetadata").getReportMetadata = null as any;
+export const getReportMetadataOutput: typeof import("./getReportMetadata").getReportMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getReportMetadata","getReportMetadataOutput"], () => require("./getReportMetadata"));
+
 export { GetRunbookArgs, GetRunbookResult, GetRunbookOutputArgs } from "./getRunbook";
 export const getRunbook: typeof import("./getRunbook").getRunbook = null as any;
 export const getRunbookOutput: typeof import("./getRunbook").getRunbookOutput = null as any;
 utilities.lazyLoad(exports, ["getRunbook","getRunbookOutput"], () => require("./getRunbook"));
+
+export { GetRunbookExportArgs, GetRunbookExportResult, GetRunbookExportOutputArgs } from "./getRunbookExport";
+export const getRunbookExport: typeof import("./getRunbookExport").getRunbookExport = null as any;
+export const getRunbookExportOutput: typeof import("./getRunbookExport").getRunbookExportOutput = null as any;
+utilities.lazyLoad(exports, ["getRunbookExport","getRunbookExportOutput"], () => require("./getRunbookExport"));
+
+export { GetRunbookExportStatusesArgs, GetRunbookExportStatusesResult, GetRunbookExportStatusesOutputArgs } from "./getRunbookExportStatuses";
+export const getRunbookExportStatuses: typeof import("./getRunbookExportStatuses").getRunbookExportStatuses = null as any;
+export const getRunbookExportStatusesOutput: typeof import("./getRunbookExportStatuses").getRunbookExportStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getRunbookExportStatuses","getRunbookExportStatusesOutput"], () => require("./getRunbookExportStatuses"));
+
+export { GetRunbookImportArgs, GetRunbookImportResult, GetRunbookImportOutputArgs } from "./getRunbookImport";
+export const getRunbookImport: typeof import("./getRunbookImport").getRunbookImport = null as any;
+export const getRunbookImportOutput: typeof import("./getRunbookImport").getRunbookImportOutput = null as any;
+utilities.lazyLoad(exports, ["getRunbookImport","getRunbookImportOutput"], () => require("./getRunbookImport"));
+
+export { GetRunbookImportStatusesArgs, GetRunbookImportStatusesResult, GetRunbookImportStatusesOutputArgs } from "./getRunbookImportStatuses";
+export const getRunbookImportStatuses: typeof import("./getRunbookImportStatuses").getRunbookImportStatuses = null as any;
+export const getRunbookImportStatusesOutput: typeof import("./getRunbookImportStatuses").getRunbookImportStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getRunbookImportStatuses","getRunbookImportStatusesOutput"], () => require("./getRunbookImportStatuses"));
 
 export { GetRunbookVersionArgs, GetRunbookVersionResult, GetRunbookVersionOutputArgs } from "./getRunbookVersion";
 export const getRunbookVersion: typeof import("./getRunbookVersion").getRunbookVersion = null as any;
@@ -264,6 +309,16 @@ export { GetSchedulerJobJobActivityStepsArgs, GetSchedulerJobJobActivityStepsRes
 export const getSchedulerJobJobActivitySteps: typeof import("./getSchedulerJobJobActivitySteps").getSchedulerJobJobActivitySteps = null as any;
 export const getSchedulerJobJobActivityStepsOutput: typeof import("./getSchedulerJobJobActivitySteps").getSchedulerJobJobActivityStepsOutput = null as any;
 utilities.lazyLoad(exports, ["getSchedulerJobJobActivitySteps","getSchedulerJobJobActivityStepsOutput"], () => require("./getSchedulerJobJobActivitySteps"));
+
+export { GetTargetComponentsArgs, GetTargetComponentsResult, GetTargetComponentsOutputArgs } from "./getTargetComponents";
+export const getTargetComponents: typeof import("./getTargetComponents").getTargetComponents = null as any;
+export const getTargetComponentsOutput: typeof import("./getTargetComponents").getTargetComponentsOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetComponents","getTargetComponentsOutput"], () => require("./getTargetComponents"));
+
+export { GetTargetPropertiesArgs, GetTargetPropertiesResult, GetTargetPropertiesOutputArgs } from "./getTargetProperties";
+export const getTargetProperties: typeof import("./getTargetProperties").getTargetProperties = null as any;
+export const getTargetPropertiesOutput: typeof import("./getTargetProperties").getTargetPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetProperties","getTargetPropertiesOutput"], () => require("./getTargetProperties"));
 
 export { GetTaskRecordArgs, GetTaskRecordResult, GetTaskRecordOutputArgs } from "./getTaskRecord";
 export const getTaskRecord: typeof import("./getTaskRecord").getTaskRecord = null as any;

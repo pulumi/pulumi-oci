@@ -13,8 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables {
     /**
-     * @return (Updatable) The input variables for the
-     * task.
+     * @return (Updatable) The input variables for the task.
      * 
      */
     private @Nullable List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable> inputVariables;
@@ -26,8 +25,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables 
 
     private RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables() {}
     /**
-     * @return (Updatable) The input variables for the
-     * task.
+     * @return (Updatable) The input variables for the task.
      * 
      */
     public List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable> inputVariables() {

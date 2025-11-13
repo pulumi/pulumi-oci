@@ -48,16 +48,14 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs extend
     }
 
     /**
-     * (Updatable) Tasks within the Group. Provide the
-     * stepName for all applicable tasks.
+     * (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     @Import(name="steps")
     private @Nullable Output<List<String>> steps;
 
     /**
-     * @return (Updatable) Tasks within the Group. Provide the
-     * stepName for all applicable tasks.
+     * @return (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     public Optional<Output<List<String>>> steps() {
@@ -149,8 +147,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs extend
         }
 
         /**
-         * @param steps (Updatable) Tasks within the Group. Provide the
-         * stepName for all applicable tasks.
+         * @param steps (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
          * 
          * @return builder
          * 
@@ -161,8 +158,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs extend
         }
 
         /**
-         * @param steps (Updatable) Tasks within the Group. Provide the
-         * stepName for all applicable tasks.
+         * @param steps (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
          * 
          * @return builder
          * 
@@ -172,8 +168,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs extend
         }
 
         /**
-         * @param steps (Updatable) Tasks within the Group. Provide the
-         * stepName for all applicable tasks.
+         * @param steps (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
          * 
          * @return builder
          * 

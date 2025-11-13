@@ -13,6 +13,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
+    /**
+     * @return Zero-based index for the corresponding capacity bucket.
+     * 
+     */
     private Integer capacityIndex;
     /**
      * @return The current available memory of the dedicated VM host, in GBs.
@@ -24,6 +28,10 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
      * 
      */
     private Double remainingOcpus;
+    /**
+     * @return List of VMI shapes supported on each capacity bucket.
+     * 
+     */
     private List<String> supportedShapes;
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
@@ -37,6 +45,10 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
     private Double totalOcpus;
 
     private GetDedicatedVmHostsDedicatedVmHostCapacityBin() {}
+    /**
+     * @return Zero-based index for the corresponding capacity bucket.
+     * 
+     */
     public Integer capacityIndex() {
         return this.capacityIndex;
     }
@@ -54,6 +66,10 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
     public Double remainingOcpus() {
         return this.remainingOcpus;
     }
+    /**
+     * @return List of VMI shapes supported on each capacity bucket.
+     * 
+     */
     public List<String> supportedShapes() {
         return this.supportedShapes;
     }

@@ -101,6 +101,21 @@ public final class GetCatalogItemsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
+     * A filter to return only resources that match the given package type. The state value is case-insensitive.
+     * 
+     */
+    @Import(name="packageType")
+    private @Nullable String packageType;
+
+    /**
+     * @return A filter to return only resources that match the given package type. The state value is case-insensitive.
+     * 
+     */
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
+    }
+
+    /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      * 
      */
@@ -139,6 +154,7 @@ public final class GetCatalogItemsPlainArgs extends com.pulumi.resources.InvokeA
         this.configSourceType = $.configSourceType;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.packageType = $.packageType;
         this.shouldListPublicItems = $.shouldListPublicItems;
         this.state = $.state;
     }
@@ -223,6 +239,17 @@ public final class GetCatalogItemsPlainArgs extends com.pulumi.resources.InvokeA
 
         public Builder filters(GetCatalogItemsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param packageType A filter to return only resources that match the given package type. The state value is case-insensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packageType(@Nullable String packageType) {
+            $.packageType = packageType;
+            return this;
         }
 
         /**

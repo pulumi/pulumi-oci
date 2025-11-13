@@ -81,7 +81,7 @@ export interface GetRunbookResult {
      */
     readonly isSudoAccessNeeded: boolean;
     /**
-     * Latest runbook version
+     * Latest runbook version.
      */
     readonly latestVersion: string;
     /**
@@ -106,7 +106,7 @@ export interface GetRunbookResult {
     readonly resourceRegion: string;
     readonly runbookId: string;
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */
     readonly runbookVersions: outputs.FleetAppsManagement.GetRunbookRunbookVersion[];
     /**

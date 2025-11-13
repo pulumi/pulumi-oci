@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
+        /// A list of capacity configs that are supported by this dedicated VM host shape.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult> CapacityConfigs;
+        /// <summary>
+        /// The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes).
         /// </summary>
         public readonly string DedicatedVmHostShape;
 
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.Core.Outputs
         private GetDedicatedVmHostShapesDedicatedVmHostShapeResult(
             string availabilityDomain,
 
+            ImmutableArray<Outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult> capacityConfigs,
+
             string dedicatedVmHostShape)
         {
             AvailabilityDomain = availabilityDomain;
+            CapacityConfigs = capacityConfigs;
             DedicatedVmHostShape = dedicatedVmHostShape;
         }
     }

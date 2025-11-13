@@ -45,6 +45,11 @@ public final class GetCatalogItemsResult {
      */
     private String id;
     /**
+     * @return Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+     * 
+     */
+    private @Nullable String packageType;
+    /**
      * @return The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      * 
      */
@@ -101,6 +106,13 @@ public final class GetCatalogItemsResult {
         return this.id;
     }
     /**
+     * @return Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+     * 
+     */
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
+    }
+    /**
      * @return The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      * 
      */
@@ -132,6 +144,7 @@ public final class GetCatalogItemsResult {
         private @Nullable String displayName;
         private @Nullable List<GetCatalogItemsFilter> filters;
         private String id;
+        private @Nullable String packageType;
         private @Nullable Boolean shouldListPublicItems;
         private @Nullable String state;
         public Builder() {}
@@ -145,6 +158,7 @@ public final class GetCatalogItemsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.packageType = defaults.packageType;
     	      this.shouldListPublicItems = defaults.shouldListPublicItems;
     	      this.state = defaults.state;
         }
@@ -210,6 +224,12 @@ public final class GetCatalogItemsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder packageType(@Nullable String packageType) {
+
+            this.packageType = packageType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shouldListPublicItems(@Nullable Boolean shouldListPublicItems) {
 
             this.shouldListPublicItems = shouldListPublicItems;
@@ -231,6 +251,7 @@ public final class GetCatalogItemsResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.packageType = packageType;
             _resultValue.shouldListPublicItems = shouldListPublicItems;
             _resultValue.state = state;
             return _resultValue;

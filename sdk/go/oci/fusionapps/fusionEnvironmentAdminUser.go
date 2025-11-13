@@ -64,6 +64,8 @@ type FusionEnvironmentAdminUser struct {
 	// The administrator's last name.
 	LastName pulumi.StringOutput `pulumi:"lastName"`
 	// The password for the administrator.
+	//
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password pulumi.StringOutput `pulumi:"password"`
 	// The username for the administrator.
 	//
@@ -135,6 +137,8 @@ type fusionEnvironmentAdminUserState struct {
 	// The administrator's last name.
 	LastName *string `pulumi:"lastName"`
 	// The password for the administrator.
+	//
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	//
@@ -155,6 +159,8 @@ type FusionEnvironmentAdminUserState struct {
 	// The administrator's last name.
 	LastName pulumi.StringPtrInput
 	// The password for the administrator.
+	//
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password pulumi.StringPtrInput
 	// The username for the administrator.
 	//
@@ -177,6 +183,8 @@ type fusionEnvironmentAdminUserArgs struct {
 	// The administrator's last name.
 	LastName string `pulumi:"lastName"`
 	// The password for the administrator.
+	//
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	//
@@ -196,6 +204,8 @@ type FusionEnvironmentAdminUserArgs struct {
 	// The administrator's last name.
 	LastName pulumi.StringInput
 	// The password for the administrator.
+	//
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password pulumi.StringPtrInput
 	// The username for the administrator.
 	//
@@ -317,6 +327,8 @@ func (o FusionEnvironmentAdminUserOutput) LastName() pulumi.StringOutput {
 }
 
 // The password for the administrator.
+//
+// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 func (o FusionEnvironmentAdminUserOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentAdminUser) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }

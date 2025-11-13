@@ -222,7 +222,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRunbookVersionsRunbookVersionCollectionResult> RunbookVersionCollections;
         /// <summary>
-        /// The current state of the FleetResource.
+        /// The current state of the runbook version.
         /// </summary>
         public readonly string? State;
 

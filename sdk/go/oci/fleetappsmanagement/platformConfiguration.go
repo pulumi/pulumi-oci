@@ -77,7 +77,13 @@ import (
 //					Versions: pulumi.Any(platformConfigurationConfigCategoryDetailsVersions),
 //				},
 //				DisplayName: pulumi.Any(platformConfigurationDisplayName),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
 //				Description: pulumi.Any(platformConfigurationDescription),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -102,16 +108,16 @@ type PlatformConfiguration struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Config Category Details.
 	ConfigCategoryDetails PlatformConfigurationConfigCategoryDetailsOutput `pulumi:"configCategoryDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -172,16 +178,16 @@ type platformConfigurationState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Config Category Details.
 	ConfigCategoryDetails *PlatformConfigurationConfigCategoryDetails `pulumi:"configCategoryDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName *string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -204,16 +210,16 @@ type PlatformConfigurationState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Config Category Details.
 	ConfigCategoryDetails PlatformConfigurationConfigCategoryDetailsPtrInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+	DisplayName pulumi.StringPtrInput
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -240,13 +246,17 @@ type platformConfigurationArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Config Category Details.
 	ConfigCategoryDetails PlatformConfigurationConfigCategoryDetails `pulumi:"configCategoryDetails"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName string `pulumi:"displayName"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a PlatformConfiguration resource.
@@ -255,13 +265,17 @@ type PlatformConfigurationArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Config Category Details.
 	ConfigCategoryDetails PlatformConfigurationConfigCategoryDetailsInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+	DisplayName pulumi.StringInput
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName pulumi.StringInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (PlatformConfigurationArgs) ElementType() reflect.Type {
@@ -363,7 +377,7 @@ func (o PlatformConfigurationOutput) ConfigCategoryDetails() PlatformConfigurati
 	}).(PlatformConfigurationConfigCategoryDetailsOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o PlatformConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PlatformConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -374,14 +388,14 @@ func (o PlatformConfigurationOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PlatformConfigurationOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PlatformConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PlatformConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PlatformConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }

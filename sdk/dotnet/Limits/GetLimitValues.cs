@@ -14,7 +14,8 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+        /// Includes a full list of resource limits belonging to a given service.
+        /// If the subscription ID is provided, the limit value for the subscription will be returned.
         /// 
         /// 
         /// ## Example Usage
@@ -32,6 +33,7 @@ namespace Pulumi.Oci.Limits
         ///         CompartmentId = tenancyOcid,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         ExternalLocation = limitValueExternalLocation,
         ///         Name = limitValueName,
         ///         ScopeType = limitValueScopeType,
         ///         SubscriptionId = subscriptionOcid,
@@ -46,7 +48,8 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+        /// Includes a full list of resource limits belonging to a given service.
+        /// If the subscription ID is provided, the limit value for the subscription will be returned.
         /// 
         /// 
         /// ## Example Usage
@@ -64,6 +67,7 @@ namespace Pulumi.Oci.Limits
         ///         CompartmentId = tenancyOcid,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         ExternalLocation = limitValueExternalLocation,
         ///         Name = limitValueName,
         ///         ScopeType = limitValueScopeType,
         ///         SubscriptionId = subscriptionOcid,
@@ -78,7 +82,8 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+        /// Includes a full list of resource limits belonging to a given service.
+        /// If the subscription ID is provided, the limit value for the subscription will be returned.
         /// 
         /// 
         /// ## Example Usage
@@ -96,6 +101,7 @@ namespace Pulumi.Oci.Limits
         ///         CompartmentId = tenancyOcid,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         ExternalLocation = limitValueExternalLocation,
         ///         Name = limitValueName,
         ///         ScopeType = limitValueScopeType,
         ///         SubscriptionId = subscriptionOcid,
@@ -122,6 +128,12 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// External cloud provider location
+        /// </summary>
+        [Input("externalLocation")]
+        public string? ExternalLocation { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetLimitValuesFilterArgs>? _filters;
@@ -150,7 +162,7 @@ namespace Pulumi.Oci.Limits
         public string ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public string? SubscriptionId { get; set; }
@@ -174,6 +186,12 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// External cloud provider location
+        /// </summary>
+        [Input("externalLocation")]
+        public Input<string>? ExternalLocation { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetLimitValuesFilterInputArgs>? _filters;
@@ -202,7 +220,7 @@ namespace Pulumi.Oci.Limits
         public Input<string> ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }
@@ -222,6 +240,7 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public readonly string? AvailabilityDomain;
         public readonly string CompartmentId;
+        public readonly string? ExternalLocation;
         public readonly ImmutableArray<Outputs.GetLimitValuesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -248,6 +267,8 @@ namespace Pulumi.Oci.Limits
 
             string compartmentId,
 
+            string? externalLocation,
+
             ImmutableArray<Outputs.GetLimitValuesFilterResult> filters,
 
             string id,
@@ -264,6 +285,7 @@ namespace Pulumi.Oci.Limits
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
+            ExternalLocation = externalLocation;
             Filters = filters;
             Id = id;
             LimitValues = limitValues;

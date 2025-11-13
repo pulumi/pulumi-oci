@@ -85,7 +85,7 @@ type LookupFleetResult struct {
 	NotificationPreferences []GetFleetNotificationPreference `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId string `pulumi:"parentFleetId"`
-	// Products associated with the Fleet.
+	// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
 	Products []string `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties []GetFleetPropertyType `pulumi:"properties"`
@@ -208,7 +208,7 @@ func (o LookupFleetResultOutput) ParentFleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.ParentFleetId }).(pulumi.StringOutput)
 }
 
-// Products associated with the Fleet.
+// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
 func (o LookupFleetResultOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFleetResult) []string { return v.Products }).(pulumi.StringArrayOutput)
 }

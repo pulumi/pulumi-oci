@@ -10,7 +10,7 @@ import * as utilities from "../utilities";
  * For a given compartmentId, resource limit name, and scope, returns the following:
  *   * The number of available resources associated with the given limit.
  *   * The usage in the selected compartment for the given limit.
- *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
  *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
@@ -24,7 +24,8 @@ import * as utilities from "../utilities";
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
  *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
- *     subscriptionId: subscriptionOcid,
+ *     externalLocation: resourceAvailabilityExternalLocation,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getResourceAvailability(args: GetResourceAvailabilityArgs, opts?
     return pulumi.runtime.invoke("oci:Limits/getResourceAvailability:getResourceAvailability", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "externalLocation": args.externalLocation,
         "limitName": args.limitName,
         "serviceName": args.serviceName,
         "subscriptionId": args.subscriptionId,
@@ -52,6 +54,10 @@ export interface GetResourceAvailabilityArgs {
      */
     compartmentId: string;
     /**
+     * External cloud provider location
+     */
+    externalLocation?: string;
+    /**
      * The limit name for which to fetch the data.
      */
     limitName: string;
@@ -60,7 +66,7 @@ export interface GetResourceAvailabilityArgs {
      */
     serviceName: string;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: string;
 }
@@ -79,6 +85,7 @@ export interface GetResourceAvailabilityResult {
      * The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
      */
     readonly effectiveQuotaValue: number;
+    readonly externalLocation?: string;
     /**
      * The most accurate count of available resources.
      */
@@ -105,7 +112,7 @@ export interface GetResourceAvailabilityResult {
  * For a given compartmentId, resource limit name, and scope, returns the following:
  *   * The number of available resources associated with the given limit.
  *   * The usage in the selected compartment for the given limit.
- *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
  *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
@@ -119,7 +126,8 @@ export interface GetResourceAvailabilityResult {
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
  *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
- *     subscriptionId: subscriptionOcid,
+ *     externalLocation: resourceAvailabilityExternalLocation,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  */
@@ -128,6 +136,7 @@ export function getResourceAvailabilityOutput(args: GetResourceAvailabilityOutpu
     return pulumi.runtime.invokeOutput("oci:Limits/getResourceAvailability:getResourceAvailability", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "externalLocation": args.externalLocation,
         "limitName": args.limitName,
         "serviceName": args.serviceName,
         "subscriptionId": args.subscriptionId,
@@ -147,6 +156,10 @@ export interface GetResourceAvailabilityOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * External cloud provider location
+     */
+    externalLocation?: pulumi.Input<string>;
+    /**
      * The limit name for which to fetch the data.
      */
     limitName: pulumi.Input<string>;
@@ -155,7 +168,7 @@ export interface GetResourceAvailabilityOutputArgs {
      */
     serviceName: pulumi.Input<string>;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: pulumi.Input<string>;
 }

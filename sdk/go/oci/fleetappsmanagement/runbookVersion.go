@@ -14,195 +14,6 @@ import (
 
 // ## Example Usage
 //
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/fleetappsmanagement"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := fleetappsmanagement.NewRunbookVersion(ctx, "test_runbook_version", &fleetappsmanagement.RunbookVersionArgs{
-//				ExecutionWorkflowDetails: &fleetappsmanagement.RunbookVersionExecutionWorkflowDetailsArgs{
-//					Workflows: fleetappsmanagement.RunbookVersionExecutionWorkflowDetailsWorkflowArray{
-//						&fleetappsmanagement.RunbookVersionExecutionWorkflowDetailsWorkflowArgs{
-//							GroupName: pulumi.Any(testGroup.Name),
-//							Steps: fleetappsmanagement.RunbookVersionExecutionWorkflowDetailsWorkflowStepArray{
-//								&fleetappsmanagement.RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs{
-//									Type:      pulumi.Any(runbookVersionExecutionWorkflowDetailsWorkflowStepsType),
-//									GroupName: pulumi.Any(testGroup.Name),
-//									StepName:  pulumi.Any(runbookVersionExecutionWorkflowDetailsWorkflowStepsStepName),
-//									Steps:     pulumi.Any(runbookVersionExecutionWorkflowDetailsWorkflowStepsSteps),
-//								},
-//							},
-//							Type: pulumi.Any(runbookVersionExecutionWorkflowDetailsWorkflowType),
-//						},
-//					},
-//				},
-//				Groups: fleetappsmanagement.RunbookVersionGroupArray{
-//					&fleetappsmanagement.RunbookVersionGroupArgs{
-//						Name: pulumi.Any(runbookVersionGroupsName),
-//						Type: pulumi.Any(runbookVersionGroupsType),
-//						Properties: &fleetappsmanagement.RunbookVersionGroupPropertiesArgs{
-//							ActionOnFailure: pulumi.Any(runbookVersionGroupsPropertiesActionOnFailure),
-//							NotificationPreferences: &fleetappsmanagement.RunbookVersionGroupPropertiesNotificationPreferencesArgs{
-//								ShouldNotifyOnPause:       pulumi.Any(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause),
-//								ShouldNotifyOnTaskFailure: pulumi.Any(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure),
-//								ShouldNotifyOnTaskSuccess: pulumi.Any(runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess),
-//							},
-//							PauseDetails: &fleetappsmanagement.RunbookVersionGroupPropertiesPauseDetailsArgs{
-//								Kind:              pulumi.Any(runbookVersionGroupsPropertiesPauseDetailsKind),
-//								DurationInMinutes: pulumi.Any(runbookVersionGroupsPropertiesPauseDetailsDurationInMinutes),
-//							},
-//							PreCondition: pulumi.Any(runbookVersionGroupsPropertiesPreCondition),
-//							RunOn: &fleetappsmanagement.RunbookVersionGroupPropertiesRunOnArgs{
-//								Kind:      pulumi.Any(runbookVersionGroupsPropertiesRunOnKind),
-//								Condition: pulumi.Any(runbookVersionGroupsPropertiesRunOnCondition),
-//								Host:      pulumi.Any(runbookVersionGroupsPropertiesRunOnHost),
-//								PreviousTaskInstanceDetails: fleetappsmanagement.RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArray{
-//									&fleetappsmanagement.RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs{
-//										OutputVariableDetails: &fleetappsmanagement.RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs{
-//											OutputVariableName: pulumi.Any(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName),
-//											StepName:           pulumi.Any(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName),
-//										},
-//										ResourceId:   pulumi.Any(testResource.Id),
-//										ResourceType: pulumi.Any(runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsResourceType),
-//									},
-//								},
-//							},
-//						},
-//					},
-//				},
-//				RunbookId: pulumi.Any(testRunbook.Id),
-//				Tasks: fleetappsmanagement.RunbookVersionTaskArray{
-//					&fleetappsmanagement.RunbookVersionTaskArgs{
-//						StepName: pulumi.Any(runbookVersionTasksStepName),
-//						TaskRecordDetails: &fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsArgs{
-//							Scope:       pulumi.Any(runbookVersionTasksTaskRecordDetailsScope),
-//							Description: pulumi.Any(runbookVersionTasksTaskRecordDetailsDescription),
-//							ExecutionDetails: &fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs{
-//								ExecutionType: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsExecutionType),
-//								CatalogId:     pulumi.Any(testCatalog.Id),
-//								Command:       pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsCommand),
-//								ConfigFile:    pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsConfigFile),
-//								Content: &fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs{
-//									SourceType: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentSourceType),
-//									Bucket:     pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentBucket),
-//									CatalogId:  pulumi.Any(testCatalog.Id),
-//									Checksum:   pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentChecksum),
-//									Namespace:  pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentNamespace),
-//									Object:     pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsContentObject),
-//								},
-//								Credentials: fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArray{
-//									&fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs{
-//										DisplayName: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsDisplayName),
-//										Id:          pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId),
-//									},
-//								},
-//								Endpoint:                    pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint),
-//								IsExecutableContent:         pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent),
-//								IsLocked:                    pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked),
-//								IsReadOutputVariableEnabled: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled),
-//								TargetCompartmentId:         pulumi.Any(testCompartment.Id),
-//								Variables: &fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs{
-//									InputVariables: fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArray{
-//										&fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs{
-//											Description: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesDescription),
-//											Name:        pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesName),
-//											Type:        pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesType),
-//										},
-//									},
-//									OutputVariables: pulumi.Any(runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables),
-//								},
-//							},
-//							IsApplySubjectTask:     pulumi.Any(runbookVersionTasksTaskRecordDetailsIsApplySubjectTask),
-//							IsCopyToLibraryEnabled: pulumi.Any(runbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled),
-//							IsDiscoveryOutputTask:  pulumi.Any(runbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask),
-//							Name:                   pulumi.Any(runbookVersionTasksTaskRecordDetailsName),
-//							OsType:                 pulumi.Any(runbookVersionTasksTaskRecordDetailsOsType),
-//							Platform:               pulumi.Any(runbookVersionTasksTaskRecordDetailsPlatform),
-//							Properties: &fleetappsmanagement.RunbookVersionTaskTaskRecordDetailsPropertiesArgs{
-//								NumRetries:       pulumi.Any(runbookVersionTasksTaskRecordDetailsPropertiesNumRetries),
-//								TimeoutInSeconds: pulumi.Any(runbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds),
-//							},
-//							TaskRecordId: pulumi.Any(testTaskRecord.Id),
-//						},
-//						OutputVariableMappings: fleetappsmanagement.RunbookVersionTaskOutputVariableMappingArray{
-//							&fleetappsmanagement.RunbookVersionTaskOutputVariableMappingArgs{
-//								Name: pulumi.Any(runbookVersionTasksOutputVariableMappingsName),
-//								OutputVariableDetails: &fleetappsmanagement.RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs{
-//									OutputVariableName: pulumi.Any(runbookVersionTasksOutputVariableMappingsOutputVariableDetailsOutputVariableName),
-//									StepName:           pulumi.Any(runbookVersionTasksOutputVariableMappingsOutputVariableDetailsStepName),
-//								},
-//							},
-//						},
-//						StepProperties: &fleetappsmanagement.RunbookVersionTaskStepPropertiesArgs{
-//							ActionOnFailure: pulumi.Any(runbookVersionTasksStepPropertiesActionOnFailure),
-//							NotificationPreferences: &fleetappsmanagement.RunbookVersionTaskStepPropertiesNotificationPreferencesArgs{
-//								ShouldNotifyOnPause:       pulumi.Any(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause),
-//								ShouldNotifyOnTaskFailure: pulumi.Any(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure),
-//								ShouldNotifyOnTaskSuccess: pulumi.Any(runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess),
-//							},
-//							PauseDetails: &fleetappsmanagement.RunbookVersionTaskStepPropertiesPauseDetailsArgs{
-//								Kind:              pulumi.Any(runbookVersionTasksStepPropertiesPauseDetailsKind),
-//								DurationInMinutes: pulumi.Any(runbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes),
-//							},
-//							PreCondition: pulumi.Any(runbookVersionTasksStepPropertiesPreCondition),
-//							RunOn: &fleetappsmanagement.RunbookVersionTaskStepPropertiesRunOnArgs{
-//								Kind:      pulumi.Any(runbookVersionTasksStepPropertiesRunOnKind),
-//								Condition: pulumi.Any(runbookVersionTasksStepPropertiesRunOnCondition),
-//								Host:      pulumi.Any(runbookVersionTasksStepPropertiesRunOnHost),
-//								PreviousTaskInstanceDetails: fleetappsmanagement.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArray{
-//									&fleetappsmanagement.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs{
-//										OutputVariableDetails: &fleetappsmanagement.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs{
-//											OutputVariableName: pulumi.Any(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName),
-//											StepName:           pulumi.Any(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName),
-//										},
-//										ResourceId:   pulumi.Any(testResource.Id),
-//										ResourceType: pulumi.Any(runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsResourceType),
-//									},
-//								},
-//							},
-//						},
-//					},
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				RollbackWorkflowDetails: &fleetappsmanagement.RunbookVersionRollbackWorkflowDetailsArgs{
-//					Scope: pulumi.Any(runbookVersionRollbackWorkflowDetailsScope),
-//					Workflows: fleetappsmanagement.RunbookVersionRollbackWorkflowDetailsWorkflowArray{
-//						&fleetappsmanagement.RunbookVersionRollbackWorkflowDetailsWorkflowArgs{
-//							GroupName: pulumi.Any(testGroup.Name),
-//							Steps: fleetappsmanagement.RunbookVersionRollbackWorkflowDetailsWorkflowStepArray{
-//								&fleetappsmanagement.RunbookVersionRollbackWorkflowDetailsWorkflowStepArgs{
-//									Type:      pulumi.Any(runbookVersionRollbackWorkflowDetailsWorkflowStepsType),
-//									GroupName: pulumi.Any(testGroup.Name),
-//									StepName:  pulumi.Any(runbookVersionRollbackWorkflowDetailsWorkflowStepsStepName),
-//									Steps:     pulumi.Any(runbookVersionRollbackWorkflowDetailsWorkflowStepsSteps),
-//								},
-//							},
-//							Type: pulumi.Any(runbookVersionRollbackWorkflowDetailsWorkflowType),
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // RunbookVersions can be imported using the `id`, e.g.
@@ -218,6 +29,7 @@ type RunbookVersion struct {
 	// `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Execution Workflow details.
+	// <<<<<<< ours
 	ExecutionWorkflowDetails RunbookVersionExecutionWorkflowDetailsOutput `pulumi:"executionWorkflowDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists
 	// for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -240,6 +52,7 @@ type RunbookVersion struct {
 	// `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) A set of tasks to execute in the runbook.
+	// <<<<<<< ours
 	Tasks RunbookVersionTaskArrayOutput `pulumi:"tasks"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -294,6 +107,7 @@ type runbookVersionState struct {
 	// `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Execution Workflow details.
+	// <<<<<<< ours
 	ExecutionWorkflowDetails *RunbookVersionExecutionWorkflowDetails `pulumi:"executionWorkflowDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists
 	// for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -316,6 +130,7 @@ type runbookVersionState struct {
 	// `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) A set of tasks to execute in the runbook.
+	// <<<<<<< ours
 	Tasks []RunbookVersionTask `pulumi:"tasks"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -329,6 +144,7 @@ type RunbookVersionState struct {
 	// `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Execution Workflow details.
+	// <<<<<<< ours
 	ExecutionWorkflowDetails RunbookVersionExecutionWorkflowDetailsPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists
 	// for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -351,6 +167,7 @@ type RunbookVersionState struct {
 	// `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// (Updatable) A set of tasks to execute in the runbook.
+	// <<<<<<< ours
 	Tasks RunbookVersionTaskArrayInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -367,6 +184,7 @@ type runbookVersionArgs struct {
 	// `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Execution Workflow details.
+	// <<<<<<< ours
 	ExecutionWorkflowDetails RunbookVersionExecutionWorkflowDetails `pulumi:"executionWorkflowDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists
 	// for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -378,6 +196,7 @@ type runbookVersionArgs struct {
 	// The OCID of the resource.
 	RunbookId string `pulumi:"runbookId"`
 	// (Updatable) A set of tasks to execute in the runbook.
+	// <<<<<<< ours
 	Tasks []RunbookVersionTask `pulumi:"tasks"`
 }
 
@@ -387,6 +206,7 @@ type RunbookVersionArgs struct {
 	// `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Execution Workflow details.
+	// <<<<<<< ours
 	ExecutionWorkflowDetails RunbookVersionExecutionWorkflowDetailsInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists
 	// for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -398,6 +218,7 @@ type RunbookVersionArgs struct {
 	// The OCID of the resource.
 	RunbookId pulumi.StringInput
 	// (Updatable) A set of tasks to execute in the runbook.
+	// <<<<<<< ours
 	Tasks RunbookVersionTaskArrayInput
 }
 
@@ -499,6 +320,7 @@ func (o RunbookVersionOutput) DefinedTags() pulumi.StringMapOutput {
 }
 
 // (Updatable) Execution Workflow details.
+// <<<<<<< ours
 func (o RunbookVersionOutput) ExecutionWorkflowDetails() RunbookVersionExecutionWorkflowDetailsOutput {
 	return o.ApplyT(func(v *RunbookVersion) RunbookVersionExecutionWorkflowDetailsOutput {
 		return v.ExecutionWorkflowDetails
@@ -553,6 +375,7 @@ func (o RunbookVersionOutput) SystemTags() pulumi.StringMapOutput {
 }
 
 // (Updatable) A set of tasks to execute in the runbook.
+// <<<<<<< ours
 func (o RunbookVersionOutput) Tasks() RunbookVersionTaskArrayOutput {
 	return o.ApplyT(func(v *RunbookVersion) RunbookVersionTaskArrayOutput { return v.Tasks }).(RunbookVersionTaskArrayOutput)
 }

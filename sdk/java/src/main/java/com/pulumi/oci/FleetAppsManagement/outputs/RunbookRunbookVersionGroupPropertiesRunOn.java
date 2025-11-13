@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookRunbookVersionGroupPropertiesRunOn {
     /**
-     * @return Build control flow conditions that determine the relevance of the task execution.
+     * @return Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     private @Nullable String condition;
@@ -37,7 +37,7 @@ public final class RunbookRunbookVersionGroupPropertiesRunOn {
 
     private RunbookRunbookVersionGroupPropertiesRunOn() {}
     /**
-     * @return Build control flow conditions that determine the relevance of the task execution.
+     * @return Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     public Optional<String> condition() {

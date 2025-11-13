@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.inputs.DedicatedVmHostState;
 import com.pulumi.oci.Core.outputs.DedicatedVmHostCapacityBin;
 import com.pulumi.oci.Core.outputs.DedicatedVmHostPlacementConstraintDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -48,10 +49,12 @@ import javax.annotation.Nullable;
  *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .dedicatedVmHostShape(dedicatedVmHostDedicatedVmHostShape)
+ *             .capacityConfig(dedicatedVmHostCapacityConfig)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(dedicatedVmHostDisplayName)
  *             .faultDomain(dedicatedVmHostFaultDomain)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
  *             .placementConstraintDetails(DedicatedVmHostPlacementConstraintDetailsArgs.builder()
  *                 .type(dedicatedVmHostPlacementConstraintDetailsType)
  *                 .computeBareMetalHostId(testComputeBareMetalHost.id())
@@ -89,18 +92,32 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
-     * A list of total and remaining CPU &amp; memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     @Export(name="capacityBins", refs={List.class,DedicatedVmHostCapacityBin.class}, tree="[0,1]")
     private Output<List<DedicatedVmHostCapacityBin>> capacityBins;
 
     /**
-     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * @return A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     public Output<List<DedicatedVmHostCapacityBin>> capacityBins() {
         return this.capacityBins;
+    }
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    @Export(name="capacityConfig", refs={String.class}, tree="[0]")
+    private Output<String> capacityConfig;
+
+    /**
+     * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    public Output<String> capacityConfig() {
+        return this.capacityConfig;
     }
     /**
      * (Updatable) The OCID of the compartment.
@@ -117,14 +134,14 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     @Export(name="computeBareMetalHostId", refs={String.class}, tree="[0]")
     private Output<String> computeBareMetalHostId;
 
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     public Output<String> computeBareMetalHostId() {
@@ -209,14 +226,28 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    @Export(name="isMemoryEncryptionEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMemoryEncryptionEnabled;
+
+    /**
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    public Output<Boolean> isMemoryEncryptionEnabled() {
+        return this.isMemoryEncryptionEnabled;
+    }
+    /**
+     * The details for providing placement constraints.
      * 
      */
     @Export(name="placementConstraintDetails", refs={DedicatedVmHostPlacementConstraintDetails.class}, tree="[0]")
     private Output<DedicatedVmHostPlacementConstraintDetails> placementConstraintDetails;
 
     /**
-     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * @return The details for providing placement constraints.
      * 
      */
     public Output<DedicatedVmHostPlacementConstraintDetails> placementConstraintDetails() {

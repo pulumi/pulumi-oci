@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -33,6 +34,21 @@ public final class GetSchedulerExecutionsArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Output<Boolean> compartmentIdInSubtree;
+
+    /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    public Optional<Output<Boolean>> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    /**
      * A filter to return only resources that match the entire display name given.
      * 
      */
@@ -52,6 +68,21 @@ public final class GetSchedulerExecutionsArgs extends com.pulumi.resources.Invok
 
     public Optional<Output<List<GetSchedulerExecutionsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     * 
+     */
+    @Import(name="lifecycleOperation")
+    private @Nullable Output<String> lifecycleOperation;
+
+    /**
+     * @return A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     * 
+     */
+    public Optional<Output<String>> lifecycleOperation() {
+        return Optional.ofNullable(this.lifecycleOperation);
     }
 
     /**
@@ -178,8 +209,10 @@ public final class GetSchedulerExecutionsArgs extends com.pulumi.resources.Invok
 
     private GetSchedulerExecutionsArgs(GetSchedulerExecutionsArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.lifecycleOperation = $.lifecycleOperation;
         this.resourceId = $.resourceId;
         this.runbookId = $.runbookId;
         this.runbookVersionName = $.runbookVersionName;
@@ -230,6 +263,27 @@ public final class GetSchedulerExecutionsArgs extends com.pulumi.resources.Invok
         }
 
         /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Output<Boolean> compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        /**
          * @param displayName A filter to return only resources that match the entire display name given.
          * 
          * @return builder
@@ -261,6 +315,27 @@ public final class GetSchedulerExecutionsArgs extends com.pulumi.resources.Invok
 
         public Builder filters(GetSchedulerExecutionsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param lifecycleOperation A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleOperation(@Nullable Output<String> lifecycleOperation) {
+            $.lifecycleOperation = lifecycleOperation;
+            return this;
+        }
+
+        /**
+         * @param lifecycleOperation A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleOperation(String lifecycleOperation) {
+            return lifecycleOperation(Output.of(lifecycleOperation));
         }
 
         /**

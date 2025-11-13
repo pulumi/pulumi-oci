@@ -28,8 +28,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<string>? _steps;
 
         /// <summary>
-        /// (Updatable) Tasks within the Group. Provide the
-        /// stepName for all applicable tasks.
+        /// (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
         /// </summary>
         public InputList<string> Steps
         {

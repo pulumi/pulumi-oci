@@ -16,16 +16,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesI
     public static final RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs Empty = new RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs();
 
     /**
-     * (Updatable) The description of the
-     * argument.
+     * (Updatable) The description of the argument.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the
-     * argument.
+     * @return (Updatable) The description of the argument.
      * 
      */
     public Optional<Output<String>> description() {
@@ -89,8 +87,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesI
         }
 
         /**
-         * @param description (Updatable) The description of the
-         * argument.
+         * @param description (Updatable) The description of the argument.
          * 
          * @return builder
          * 
@@ -101,8 +98,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesI
         }
 
         /**
-         * @param description (Updatable) The description of the
-         * argument.
+         * @param description (Updatable) The description of the argument.
          * 
          * @return builder
          * 

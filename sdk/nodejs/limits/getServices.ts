@@ -43,7 +43,7 @@ export interface GetServicesArgs {
     compartmentId: string;
     filters?: inputs.Limits.GetServicesFilter[];
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: string;
 }
@@ -101,7 +101,7 @@ export interface GetServicesOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetServicesFilterArgs>[]>;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: pulumi.Input<string>;
 }

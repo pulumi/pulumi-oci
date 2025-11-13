@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolOptionSource;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,12 +31,16 @@ public final class GetNodePoolOptionResult {
      * 
      */
     private List<String> kubernetesVersions;
+    private @Nullable String nodePoolK8sVersion;
     private String nodePoolOptionId;
+    private @Nullable String nodePoolOsArch;
+    private @Nullable String nodePoolOsType;
     /**
      * @return Available shapes for nodes.
      * 
      */
     private List<String> shapes;
+    private @Nullable Boolean shouldListAllPatchVersions;
     /**
      * @return Available source of the node.
      * 
@@ -67,8 +72,17 @@ public final class GetNodePoolOptionResult {
     public List<String> kubernetesVersions() {
         return this.kubernetesVersions;
     }
+    public Optional<String> nodePoolK8sVersion() {
+        return Optional.ofNullable(this.nodePoolK8sVersion);
+    }
     public String nodePoolOptionId() {
         return this.nodePoolOptionId;
+    }
+    public Optional<String> nodePoolOsArch() {
+        return Optional.ofNullable(this.nodePoolOsArch);
+    }
+    public Optional<String> nodePoolOsType() {
+        return Optional.ofNullable(this.nodePoolOsType);
     }
     /**
      * @return Available shapes for nodes.
@@ -76,6 +90,9 @@ public final class GetNodePoolOptionResult {
      */
     public List<String> shapes() {
         return this.shapes;
+    }
+    public Optional<Boolean> shouldListAllPatchVersions() {
+        return Optional.ofNullable(this.shouldListAllPatchVersions);
     }
     /**
      * @return Available source of the node.
@@ -98,8 +115,12 @@ public final class GetNodePoolOptionResult {
         private String id;
         private List<String> images;
         private List<String> kubernetesVersions;
+        private @Nullable String nodePoolK8sVersion;
         private String nodePoolOptionId;
+        private @Nullable String nodePoolOsArch;
+        private @Nullable String nodePoolOsType;
         private List<String> shapes;
+        private @Nullable Boolean shouldListAllPatchVersions;
         private List<GetNodePoolOptionSource> sources;
         public Builder() {}
         public Builder(GetNodePoolOptionResult defaults) {
@@ -108,8 +129,12 @@ public final class GetNodePoolOptionResult {
     	      this.id = defaults.id;
     	      this.images = defaults.images;
     	      this.kubernetesVersions = defaults.kubernetesVersions;
+    	      this.nodePoolK8sVersion = defaults.nodePoolK8sVersion;
     	      this.nodePoolOptionId = defaults.nodePoolOptionId;
+    	      this.nodePoolOsArch = defaults.nodePoolOsArch;
+    	      this.nodePoolOsType = defaults.nodePoolOsType;
     	      this.shapes = defaults.shapes;
+    	      this.shouldListAllPatchVersions = defaults.shouldListAllPatchVersions;
     	      this.sources = defaults.sources;
         }
 
@@ -150,11 +175,29 @@ public final class GetNodePoolOptionResult {
             return kubernetesVersions(List.of(kubernetesVersions));
         }
         @CustomType.Setter
+        public Builder nodePoolK8sVersion(@Nullable String nodePoolK8sVersion) {
+
+            this.nodePoolK8sVersion = nodePoolK8sVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodePoolOptionId(String nodePoolOptionId) {
             if (nodePoolOptionId == null) {
               throw new MissingRequiredPropertyException("GetNodePoolOptionResult", "nodePoolOptionId");
             }
             this.nodePoolOptionId = nodePoolOptionId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodePoolOsArch(@Nullable String nodePoolOsArch) {
+
+            this.nodePoolOsArch = nodePoolOsArch;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodePoolOsType(@Nullable String nodePoolOsType) {
+
+            this.nodePoolOsType = nodePoolOsType;
             return this;
         }
         @CustomType.Setter
@@ -167,6 +210,12 @@ public final class GetNodePoolOptionResult {
         }
         public Builder shapes(String... shapes) {
             return shapes(List.of(shapes));
+        }
+        @CustomType.Setter
+        public Builder shouldListAllPatchVersions(@Nullable Boolean shouldListAllPatchVersions) {
+
+            this.shouldListAllPatchVersions = shouldListAllPatchVersions;
+            return this;
         }
         @CustomType.Setter
         public Builder sources(List<GetNodePoolOptionSource> sources) {
@@ -185,8 +234,12 @@ public final class GetNodePoolOptionResult {
             _resultValue.id = id;
             _resultValue.images = images;
             _resultValue.kubernetesVersions = kubernetesVersions;
+            _resultValue.nodePoolK8sVersion = nodePoolK8sVersion;
             _resultValue.nodePoolOptionId = nodePoolOptionId;
+            _resultValue.nodePoolOsArch = nodePoolOsArch;
+            _resultValue.nodePoolOsType = nodePoolOsType;
             _resultValue.shapes = shapes;
+            _resultValue.shouldListAllPatchVersions = shouldListAllPatchVersions;
             _resultValue.sources = sources;
             return _resultValue;
         }

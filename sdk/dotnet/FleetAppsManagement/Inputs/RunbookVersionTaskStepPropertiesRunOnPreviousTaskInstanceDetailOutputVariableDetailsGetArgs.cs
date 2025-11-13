@@ -13,15 +13,13 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the
-        /// output variable whose value has to be mapped.
+        /// (Updatable) The name of the output variable whose value has to be mapped.
         /// </summary>
         [Input("outputVariableName")]
         public Input<string>? OutputVariableName { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the task step
-        /// the output variable belongs to.
+        /// (Updatable) The name of the task step the output variable belongs to.
         /// </summary>
         [Input("stepName")]
         public Input<string>? StepName { get; set; }

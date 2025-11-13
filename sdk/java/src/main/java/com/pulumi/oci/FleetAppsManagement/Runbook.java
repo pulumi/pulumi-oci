@@ -117,6 +117,7 @@ import javax.annotation.Nullable;
  *                             .isExecutableContent(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent)
  *                             .isLocked(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked)
  *                             .isReadOutputVariableEnabled(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled)
+ *                             .systemVariables(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsSystemVariables)
  *                             .targetCompartmentId(testCompartment.id())
  *                             .variables(RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs.builder()
  *                                 .inputVariables(RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs.builder()
@@ -342,14 +343,14 @@ public class Runbook extends com.pulumi.resources.CustomResource {
         return this.isSudoAccessNeeded;
     }
     /**
-     * Latest runbook version
+     * Latest runbook version.
      * 
      */
     @Export(name="latestVersion", refs={String.class}, tree="[0]")
     private Output<String> latestVersion;
 
     /**
-     * @return Latest runbook version
+     * @return Latest runbook version.
      * 
      */
     public Output<String> latestVersion() {
@@ -426,14 +427,14 @@ public class Runbook extends com.pulumi.resources.CustomResource {
         return this.resourceRegion;
     }
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     @Export(name="runbookVersion", refs={RunbookRunbookVersion.class}, tree="[0]")
     private Output<RunbookRunbookVersion> runbookVersion;
 
     /**
-     * @return Version for the runbook.
+     * @return Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     public Output<RunbookRunbookVersion> runbookVersion() {

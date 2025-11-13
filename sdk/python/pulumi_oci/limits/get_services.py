@@ -112,7 +112,7 @@ def get_services(compartment_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -149,7 +149,7 @@ def get_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
 
 
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

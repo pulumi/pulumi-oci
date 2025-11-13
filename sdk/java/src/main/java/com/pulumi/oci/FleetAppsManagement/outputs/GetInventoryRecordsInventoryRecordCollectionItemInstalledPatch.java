@@ -21,6 +21,11 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
      */
     private String patchId;
     /**
+     * @return Patch Level.
+     * 
+     */
+    private String patchLevel;
+    /**
      * @return Name of the installed patch
      * 
      */
@@ -35,6 +40,11 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
      * 
      */
     private String timeApplied;
+    /**
+     * @return The date on which patch was released.
+     * 
+     */
+    private String timeReleased;
 
     private GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch() {}
     /**
@@ -50,6 +60,13 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
      */
     public String patchId() {
         return this.patchId;
+    }
+    /**
+     * @return Patch Level.
+     * 
+     */
+    public String patchLevel() {
+        return this.patchLevel;
     }
     /**
      * @return Name of the installed patch
@@ -72,6 +89,13 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
     public String timeApplied() {
         return this.timeApplied;
     }
+    /**
+     * @return The date on which patch was released.
+     * 
+     */
+    public String timeReleased() {
+        return this.timeReleased;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -84,17 +108,21 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
     public static final class Builder {
         private String patchDescription;
         private String patchId;
+        private String patchLevel;
         private String patchName;
         private String patchType;
         private String timeApplied;
+        private String timeReleased;
         public Builder() {}
         public Builder(GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.patchDescription = defaults.patchDescription;
     	      this.patchId = defaults.patchId;
+    	      this.patchLevel = defaults.patchLevel;
     	      this.patchName = defaults.patchName;
     	      this.patchType = defaults.patchType;
     	      this.timeApplied = defaults.timeApplied;
+    	      this.timeReleased = defaults.timeReleased;
         }
 
         @CustomType.Setter
@@ -111,6 +139,14 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
               throw new MissingRequiredPropertyException("GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch", "patchId");
             }
             this.patchId = patchId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder patchLevel(String patchLevel) {
+            if (patchLevel == null) {
+              throw new MissingRequiredPropertyException("GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch", "patchLevel");
+            }
+            this.patchLevel = patchLevel;
             return this;
         }
         @CustomType.Setter
@@ -137,13 +173,23 @@ public final class GetInventoryRecordsInventoryRecordCollectionItemInstalledPatc
             this.timeApplied = timeApplied;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeReleased(String timeReleased) {
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
+            return this;
+        }
         public GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch build() {
             final var _resultValue = new GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch();
             _resultValue.patchDescription = patchDescription;
             _resultValue.patchId = patchId;
+            _resultValue.patchLevel = patchLevel;
             _resultValue.patchName = patchName;
             _resultValue.patchType = patchType;
             _resultValue.timeApplied = timeApplied;
+            _resultValue.timeReleased = timeReleased;
             return _resultValue;
         }
     }

@@ -15,8 +15,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     {
         public readonly string? CatalogId;
         /// <summary>
-        /// (Updatable) Optional command to execute the content.
-        /// You can provide any commands/arguments that can't be part of the script.
+        /// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         /// </summary>
         public readonly string? Command;
         /// <summary>
@@ -28,8 +27,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent? Content;
         /// <summary>
-        /// (Updatable) Credentials required for executing the
-        /// task.
+        /// (Updatable) Credentials required for executing the task.
         /// </summary>
         public readonly ImmutableArray<Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential> Credentials;
         /// <summary>
@@ -41,28 +39,27 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ExecutionType;
         /// <summary>
-        /// (Updatable) Is the Content an executable
-        /// file?
+        /// (Updatable) Is the Content an executable file?
         /// </summary>
         public readonly bool? IsExecutableContent;
         /// <summary>
-        /// (Updatable) Is the script locked to prevent changes
-        /// directly in Object Storage?
+        /// (Updatable) Is the script locked to prevent changes directly in Object Storage?
         /// </summary>
         public readonly bool? IsLocked;
         /// <summary>
-        /// (Updatable) Is read output
-        /// variable enabled
+        /// (Updatable) Is read output variable enabled
         /// </summary>
         public readonly bool? IsReadOutputVariableEnabled;
         /// <summary>
-        /// (Updatable) OCID of the compartment to
-        /// which the resource belongs to.
+        /// (Updatable) The list of system variables.
+        /// </summary>
+        public readonly ImmutableArray<string> SystemVariables;
+        /// <summary>
+        /// (Updatable) OCID of the compartment to which the resource belongs to.
         /// </summary>
         public readonly string? TargetCompartmentId;
         /// <summary>
-        /// (Updatable) The variable of the task. At least one
-        /// of the dynamicArguments or output needs to be provided.
+        /// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         /// </summary>
         public readonly Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables? Variables;
 
@@ -88,6 +85,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             bool? isReadOutputVariableEnabled,
 
+            ImmutableArray<string> systemVariables,
+
             string? targetCompartmentId,
 
             Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables? variables)
@@ -102,6 +101,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             IsExecutableContent = isExecutableContent;
             IsLocked = isLocked;
             IsReadOutputVariableEnabled = isReadOutputVariableEnabled;
+            SystemVariables = systemVariables;
             TargetCompartmentId = targetCompartmentId;
             Variables = variables;
         }

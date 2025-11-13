@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskOutputVariableMappingOutputVariableDetails
     {
         /// <summary>
-        /// (Updatable) The name of the output variable whose value has to be
-        /// mapped.
+        /// (Updatable) The name of the output variable whose value has to be mapped.
         /// </summary>
         public readonly string OutputVariableName;
         /// <summary>

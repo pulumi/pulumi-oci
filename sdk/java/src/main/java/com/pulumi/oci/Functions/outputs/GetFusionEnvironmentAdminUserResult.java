@@ -34,6 +34,12 @@ public final class GetFusionEnvironmentAdminUserResult {
      * 
      */
     private String lastName;
+    /**
+     * @deprecated
+     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+     * 
+     */
+    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
     private String password;
     /**
      * @return Admin username
@@ -76,6 +82,12 @@ public final class GetFusionEnvironmentAdminUserResult {
     public String lastName() {
         return this.lastName;
     }
+    /**
+     * @deprecated
+     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+     * 
+     */
+    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
     public String password() {
         return this.password;
     }

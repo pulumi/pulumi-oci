@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTask
     {
         /// <summary>
-        /// (Updatable) Mapping output variables of previous tasks to the input
-        /// variables of the current task.
+        /// (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
         /// </summary>
         public readonly ImmutableArray<Outputs.RunbookVersionTaskOutputVariableMapping> OutputVariableMappings;
         /// <summary>

@@ -24,16 +24,19 @@ class DedicatedVmHostArgs:
                  availability_domain: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  dedicated_vm_host_shape: pulumi.Input[_builtins.str],
+                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None):
         """
         The set of arguments for constructing a DedicatedVmHost resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
+        :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
@@ -42,11 +45,14 @@ class DedicatedVmHostArgs:
                
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: The details for providing placement constraints.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
+        if capacity_config is not None:
+            pulumi.set(__self__, "capacity_config", capacity_config)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -55,6 +61,8 @@ class DedicatedVmHostArgs:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_memory_encryption_enabled is not None:
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if placement_constraint_details is not None:
             pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
 
@@ -93,6 +101,18 @@ class DedicatedVmHostArgs:
     @dedicated_vm_host_shape.setter
     def dedicated_vm_host_shape(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "dedicated_vm_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfig")
+    def capacity_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        """
+        return pulumi.get(self, "capacity_config")
+
+    @capacity_config.setter
+    def capacity_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -147,10 +167,22 @@ class DedicatedVmHostArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_memory_encryption_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
     def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
         """
-        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
@@ -164,6 +196,7 @@ class _DedicatedVmHostState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]] = None,
+                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_bare_metal_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -171,6 +204,7 @@ class _DedicatedVmHostState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None,
                  remaining_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  remaining_ocpus: Optional[pulumi.Input[_builtins.float]] = None,
@@ -181,9 +215,10 @@ class _DedicatedVmHostState:
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU & memory per capacity bucket.
+        :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
+        :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -193,7 +228,8 @@ class _DedicatedVmHostState:
                
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: The details for providing placement constraints.
         :param pulumi.Input[_builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[_builtins.str] state: The current state of the dedicated VM host.
@@ -205,6 +241,8 @@ class _DedicatedVmHostState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if capacity_bins is not None:
             pulumi.set(__self__, "capacity_bins", capacity_bins)
+        if capacity_config is not None:
+            pulumi.set(__self__, "capacity_config", capacity_config)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_bare_metal_host_id is not None:
@@ -219,6 +257,8 @@ class _DedicatedVmHostState:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_memory_encryption_enabled is not None:
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if placement_constraint_details is not None:
             pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if remaining_memory_in_gbs is not None:
@@ -250,13 +290,25 @@ class _DedicatedVmHostState:
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
         """
-        A list of total and remaining CPU & memory per capacity bucket.
+        A list of total and remaining CPU and memory per capacity bucket.
         """
         return pulumi.get(self, "capacity_bins")
 
     @capacity_bins.setter
     def capacity_bins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]):
         pulumi.set(self, "capacity_bins", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfig")
+    def capacity_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        """
+        return pulumi.get(self, "capacity_config")
+
+    @capacity_config.setter
+    def capacity_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -274,7 +326,7 @@ class _DedicatedVmHostState:
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -347,10 +399,22 @@ class _DedicatedVmHostState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_memory_encryption_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
     def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
         """
-        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
@@ -438,12 +502,14 @@ class DedicatedVmHost(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         """
@@ -457,6 +523,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             availability_domain=dedicated_vm_host_availability_domain,
             compartment_id=compartment_id,
             dedicated_vm_host_shape=dedicated_vm_host_dedicated_vm_host_shape,
+            capacity_config=dedicated_vm_host_capacity_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -465,6 +532,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
@@ -482,6 +550,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -492,7 +561,8 @@ class DedicatedVmHost(pulumi.CustomResource):
                
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: The details for providing placement constraints.
         """
         ...
     @overload
@@ -511,6 +581,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             availability_domain=dedicated_vm_host_availability_domain,
             compartment_id=compartment_id,
             dedicated_vm_host_shape=dedicated_vm_host_dedicated_vm_host_shape,
+            capacity_config=dedicated_vm_host_capacity_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -519,6 +590,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
@@ -549,12 +621,14 @@ class DedicatedVmHost(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -568,6 +642,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
+            __props__.__dict__["capacity_config"] = capacity_config
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -578,6 +653,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_memory_encryption_enabled"] = is_memory_encryption_enabled
             __props__.__dict__["placement_constraint_details"] = placement_constraint_details
             __props__.__dict__["capacity_bins"] = None
             __props__.__dict__["compute_bare_metal_host_id"] = None
@@ -599,6 +675,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]]] = None,
+            capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_bare_metal_host_id: Optional[pulumi.Input[_builtins.str]] = None,
             dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -606,6 +683,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
             remaining_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
             remaining_ocpus: Optional[pulumi.Input[_builtins.float]] = None,
@@ -621,9 +699,10 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]] capacity_bins: A list of total and remaining CPU & memory per capacity bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
+        :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -633,7 +712,8 @@ class DedicatedVmHost(pulumi.CustomResource):
                
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: The details for providing placement constraints.
         :param pulumi.Input[_builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[_builtins.str] state: The current state of the dedicated VM host.
@@ -647,6 +727,7 @@ class DedicatedVmHost(pulumi.CustomResource):
 
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["capacity_bins"] = capacity_bins
+        __props__.__dict__["capacity_config"] = capacity_config
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_bare_metal_host_id"] = compute_bare_metal_host_id
         __props__.__dict__["dedicated_vm_host_shape"] = dedicated_vm_host_shape
@@ -654,6 +735,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_memory_encryption_enabled"] = is_memory_encryption_enabled
         __props__.__dict__["placement_constraint_details"] = placement_constraint_details
         __props__.__dict__["remaining_memory_in_gbs"] = remaining_memory_in_gbs
         __props__.__dict__["remaining_ocpus"] = remaining_ocpus
@@ -675,9 +757,17 @@ class DedicatedVmHost(pulumi.CustomResource):
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> pulumi.Output[Sequence['outputs.DedicatedVmHostCapacityBin']]:
         """
-        A list of total and remaining CPU & memory per capacity bucket.
+        A list of total and remaining CPU and memory per capacity bucket.
         """
         return pulumi.get(self, "capacity_bins")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfig")
+    def capacity_config(self) -> pulumi.Output[_builtins.str]:
+        """
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+        """
+        return pulumi.get(self, "capacity_config")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -691,7 +781,7 @@ class DedicatedVmHost(pulumi.CustomResource):
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -740,10 +830,18 @@ class DedicatedVmHost(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
     def placement_constraint_details(self) -> pulumi.Output['outputs.DedicatedVmHostPlacementConstraintDetails']:
         """
-        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 

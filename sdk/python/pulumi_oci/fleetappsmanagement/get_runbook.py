@@ -179,7 +179,7 @@ class GetRunbookResult:
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> _builtins.str:
         """
-        Latest runbook version
+        Latest runbook version.
         """
         return pulumi.get(self, "latest_version")
 
@@ -232,7 +232,7 @@ class GetRunbookResult:
     @pulumi.getter(name="runbookVersions")
     def runbook_versions(self) -> Sequence['outputs.GetRunbookRunbookVersionResult']:
         """
-        Version for the runbook.
+        Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         return pulumi.get(self, "runbook_versions")
 

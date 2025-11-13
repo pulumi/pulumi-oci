@@ -24,6 +24,12 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
+
         [Input("conditions")]
         private InputList<Inputs.FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs>? _conditions;
 
@@ -35,6 +41,12 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
             get => _conditions ?? (_conditions = new InputList<Inputs.FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs>());
             set => _conditions = value;
         }
+
+        /// <summary>
+        /// (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+        /// </summary>
+        [Input("matchCondition")]
+        public Input<string>? MatchCondition { get; set; }
 
         /// <summary>
         /// (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.

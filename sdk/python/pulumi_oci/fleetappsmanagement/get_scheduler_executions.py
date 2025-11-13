@@ -28,10 +28,13 @@ class GetSchedulerExecutionsResult:
     """
     A collection of values returned by getSchedulerExecutions.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, resource_id=None, runbook_id=None, runbook_version_name=None, scheduler_defintion_id=None, scheduler_execution_collections=None, scheduler_job_id=None, substate=None, time_scheduled_greater_than_or_equal_to=None, time_scheduled_less_than=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, lifecycle_operation=None, resource_id=None, runbook_id=None, runbook_version_name=None, scheduler_defintion_id=None, scheduler_execution_collections=None, scheduler_job_id=None, substate=None, time_scheduled_greater_than_or_equal_to=None, time_scheduled_less_than=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
+            raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
+        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -41,6 +44,9 @@ class GetSchedulerExecutionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_operation and not isinstance(lifecycle_operation, str):
+            raise TypeError("Expected argument 'lifecycle_operation' to be a str")
+        pulumi.set(__self__, "lifecycle_operation", lifecycle_operation)
         if resource_id and not isinstance(resource_id, str):
             raise TypeError("Expected argument 'resource_id' to be a str")
         pulumi.set(__self__, "resource_id", resource_id)
@@ -78,6 +84,11 @@ class GetSchedulerExecutionsResult:
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "compartment_id_in_subtree")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
@@ -99,10 +110,15 @@ class GetSchedulerExecutionsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="lifecycleOperation")
+    def lifecycle_operation(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "lifecycle_operation")
+
+    @_builtins.property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[_builtins.str]:
         """
-        ResourceId associated with the Schedule.
+        FleetId associated with the Schedule.
         """
         return pulumi.get(self, "resource_id")
 
@@ -139,7 +155,7 @@ class GetSchedulerExecutionsResult:
     @pulumi.getter(name="schedulerJobId")
     def scheduler_job_id(self) -> Optional[_builtins.str]:
         """
-        jobId associated with the Schedule.
+        SchedulerJobId associated with the Schedule.
         """
         return pulumi.get(self, "scheduler_job_id")
 
@@ -166,9 +182,11 @@ class AwaitableGetSchedulerExecutionsResult(GetSchedulerExecutionsResult):
             yield self
         return GetSchedulerExecutionsResult(
             compartment_id=self.compartment_id,
+            compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            lifecycle_operation=self.lifecycle_operation,
             resource_id=self.resource_id,
             runbook_id=self.runbook_id,
             runbook_version_name=self.runbook_version_name,
@@ -181,8 +199,10 @@ class AwaitableGetSchedulerExecutionsResult(GetSchedulerExecutionsResult):
 
 
 def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
+                             compartment_id_in_subtree: Optional[_builtins.bool] = None,
                              display_name: Optional[_builtins.str] = None,
                              filters: Optional[Sequence[Union['GetSchedulerExecutionsFilterArgs', 'GetSchedulerExecutionsFilterArgsDict']]] = None,
+                             lifecycle_operation: Optional[_builtins.str] = None,
                              resource_id: Optional[_builtins.str] = None,
                              runbook_id: Optional[_builtins.str] = None,
                              runbook_version_name: Optional[_builtins.str] = None,
@@ -195,7 +215,7 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of all Fleets that are scheduled.
+    Returns a list of all executions that are scheduled.
 
     ## Example Usage
 
@@ -204,7 +224,9 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
         display_name=scheduler_execution_display_name,
+        lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],
         runbook_id=test_runbook["id"],
         runbook_version_name=test_runbook_version["name"],
@@ -217,7 +239,9 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+    :param _builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+    :param _builtins.str lifecycle_operation: A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
     :param _builtins.str resource_id: ResourceId filter (Example FleetId)
     :param _builtins.str runbook_id: A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
     :param _builtins.str runbook_version_name: RunbookVersion Name filter
@@ -229,8 +253,10 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['lifecycleOperation'] = lifecycle_operation
     __args__['resourceId'] = resource_id
     __args__['runbookId'] = runbook_id
     __args__['runbookVersionName'] = runbook_version_name
@@ -244,9 +270,11 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
 
     return AwaitableGetSchedulerExecutionsResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_operation=pulumi.get(__ret__, 'lifecycle_operation'),
         resource_id=pulumi.get(__ret__, 'resource_id'),
         runbook_id=pulumi.get(__ret__, 'runbook_id'),
         runbook_version_name=pulumi.get(__ret__, 'runbook_version_name'),
@@ -257,8 +285,10 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
         time_scheduled_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_greater_than_or_equal_to'),
         time_scheduled_less_than=pulumi.get(__ret__, 'time_scheduled_less_than'))
 def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerExecutionsFilterArgs', 'GetSchedulerExecutionsFilterArgsDict']]]]] = None,
+                                    lifecycle_operation: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     runbook_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     runbook_version_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -271,7 +301,7 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     """
     This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of all Fleets that are scheduled.
+    Returns a list of all executions that are scheduled.
 
     ## Example Usage
 
@@ -280,7 +310,9 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     import pulumi_oci as oci
 
     test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
         display_name=scheduler_execution_display_name,
+        lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],
         runbook_id=test_runbook["id"],
         runbook_version_name=test_runbook_version["name"],
@@ -293,7 +325,9 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+    :param _builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+    :param _builtins.str lifecycle_operation: A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
     :param _builtins.str resource_id: ResourceId filter (Example FleetId)
     :param _builtins.str runbook_id: A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
     :param _builtins.str runbook_version_name: RunbookVersion Name filter
@@ -305,8 +339,10 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['lifecycleOperation'] = lifecycle_operation
     __args__['resourceId'] = resource_id
     __args__['runbookId'] = runbook_id
     __args__['runbookVersionName'] = runbook_version_name
@@ -319,9 +355,11 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getSchedulerExecutions:getSchedulerExecutions', __args__, opts=opts, typ=GetSchedulerExecutionsResult)
     return __ret__.apply(lambda __response__: GetSchedulerExecutionsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        lifecycle_operation=pulumi.get(__response__, 'lifecycle_operation'),
         resource_id=pulumi.get(__response__, 'resource_id'),
         runbook_id=pulumi.get(__response__, 'runbook_id'),
         runbook_version_name=pulumi.get(__response__, 'runbook_version_name'),

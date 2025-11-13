@@ -36,7 +36,7 @@ type Fleet struct {
 	Details FleetDetailsOutput `pulumi:"details"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+	// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -48,7 +48,7 @@ type Fleet struct {
 	NotificationPreferences FleetNotificationPreferenceArrayOutput `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId pulumi.StringOutput `pulumi:"parentFleetId"`
-	// (Updatable) Products associated with the Fleet.
+	// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 	Products pulumi.StringArrayOutput `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties FleetPropertyTypeArrayOutput `pulumi:"properties"`
@@ -119,7 +119,7 @@ type fleetState struct {
 	Details *FleetDetails `pulumi:"details"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+	// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -131,7 +131,7 @@ type fleetState struct {
 	NotificationPreferences []FleetNotificationPreference `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId *string `pulumi:"parentFleetId"`
-	// (Updatable) Products associated with the Fleet.
+	// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 	Products []string `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties []FleetPropertyType `pulumi:"properties"`
@@ -164,7 +164,7 @@ type FleetState struct {
 	Details FleetDetailsPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+	// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
@@ -176,7 +176,7 @@ type FleetState struct {
 	NotificationPreferences FleetNotificationPreferenceArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId pulumi.StringPtrInput
-	// (Updatable) Products associated with the Fleet.
+	// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 	Products pulumi.StringArrayInput
 	// Properties associated with the Fleet.
 	Properties FleetPropertyTypeArrayInput
@@ -213,7 +213,7 @@ type fleetArgs struct {
 	Details *FleetDetails `pulumi:"details"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+	// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -223,7 +223,7 @@ type fleetArgs struct {
 	NotificationPreferences []FleetNotificationPreference `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId *string `pulumi:"parentFleetId"`
-	// (Updatable) Products associated with the Fleet.
+	// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 	Products []string `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties []FleetPropertyType `pulumi:"properties"`
@@ -247,7 +247,7 @@ type FleetArgs struct {
 	Details FleetDetailsPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringInput
-	// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+	// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
@@ -257,7 +257,7 @@ type FleetArgs struct {
 	NotificationPreferences FleetNotificationPreferenceArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId pulumi.StringPtrInput
-	// (Updatable) Products associated with the Fleet.
+	// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 	Products pulumi.StringArrayInput
 	// Properties associated with the Fleet.
 	Properties FleetPropertyTypeArrayInput
@@ -384,7 +384,7 @@ func (o FleetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
 func (o FleetOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
 }
@@ -414,7 +414,7 @@ func (o FleetOutput) ParentFleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.StringOutput { return v.ParentFleetId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Products associated with the Fleet.
+// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 func (o FleetOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.StringArrayOutput { return v.Products }).(pulumi.StringArrayOutput)
 }

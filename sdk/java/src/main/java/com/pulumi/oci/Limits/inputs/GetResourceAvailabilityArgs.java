@@ -47,6 +47,21 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * External cloud provider location
+     * 
+     */
+    @Import(name="externalLocation")
+    private @Nullable Output<String> externalLocation;
+
+    /**
+     * @return External cloud provider location
+     * 
+     */
+    public Optional<Output<String>> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
+    }
+
+    /**
      * The limit name for which to fetch the data.
      * 
      */
@@ -77,14 +92,14 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      * 
      */
     @Import(name="subscriptionId")
     private @Nullable Output<String> subscriptionId;
 
     /**
-     * @return The OCID of the subscription assigned to tenant
+     * @return The subscription OCID assigned to the tenant.
      * 
      */
     public Optional<Output<String>> subscriptionId() {
@@ -96,6 +111,7 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
     private GetResourceAvailabilityArgs(GetResourceAvailabilityArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.externalLocation = $.externalLocation;
         this.limitName = $.limitName;
         this.serviceName = $.serviceName;
         this.subscriptionId = $.subscriptionId;
@@ -162,6 +178,27 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
         }
 
         /**
+         * @param externalLocation External cloud provider location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(@Nullable Output<String> externalLocation) {
+            $.externalLocation = externalLocation;
+            return this;
+        }
+
+        /**
+         * @param externalLocation External cloud provider location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(String externalLocation) {
+            return externalLocation(Output.of(externalLocation));
+        }
+
+        /**
          * @param limitName The limit name for which to fetch the data.
          * 
          * @return builder
@@ -204,7 +241,7 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * @param subscriptionId The subscription OCID assigned to the tenant.
          * 
          * @return builder
          * 
@@ -215,7 +252,7 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * @param subscriptionId The subscription OCID assigned to the tenant.
          * 
          * @return builder
          * 

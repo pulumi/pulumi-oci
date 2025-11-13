@@ -22,7 +22,7 @@ public final class GetServicesService {
      */
     private String name;
     /**
-     * @return An array of subscription types supported by the service. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * @return An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
      * 
      */
     private List<String> supportedSubscriptions;
@@ -43,7 +43,7 @@ public final class GetServicesService {
         return this.name;
     }
     /**
-     * @return An array of subscription types supported by the service. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * @return An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
      * 
      */
     public List<String> supportedSubscriptions() {

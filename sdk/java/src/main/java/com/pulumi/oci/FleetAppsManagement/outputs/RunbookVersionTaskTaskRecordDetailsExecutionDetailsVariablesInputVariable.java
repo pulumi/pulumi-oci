@@ -12,8 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable {
     /**
-     * @return (Updatable) The description of the
-     * argument.
+     * @return (Updatable) The description of the argument.
      * 
      */
     private @Nullable String description;
@@ -30,8 +29,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesI
 
     private RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable() {}
     /**
-     * @return (Updatable) The description of the
-     * argument.
+     * @return (Updatable) The description of the argument.
      * 
      */
     public Optional<String> description() {

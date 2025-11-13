@@ -31,8 +31,7 @@ public final class RunbookVersionTaskStepProperties {
      */
     private @Nullable RunbookVersionTaskStepPropertiesPauseDetails pauseDetails;
     /**
-     * @return (Updatable) Build control flow conditions that determine the relevance of the
-     * task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     private @Nullable String preCondition;
@@ -65,8 +64,7 @@ public final class RunbookVersionTaskStepProperties {
         return Optional.ofNullable(this.pauseDetails);
     }
     /**
-     * @return (Updatable) Build control flow conditions that determine the relevance of the
-     * task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     public Optional<String> preCondition() {

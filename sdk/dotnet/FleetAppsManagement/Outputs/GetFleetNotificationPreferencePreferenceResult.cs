@@ -14,9 +14,25 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetNotificationPreferencePreferenceResult
     {
         /// <summary>
+        /// Enables or disables notification on job canceled.
+        /// </summary>
+        public readonly bool OnJobCanceled;
+        /// <summary>
         /// Enables or disables notification on Job Failures.
         /// </summary>
         public readonly bool OnJobFailure;
+        /// <summary>
+        /// Enables or disables notification on job schedule change.
+        /// </summary>
+        public readonly bool OnJobScheduleChange;
+        /// <summary>
+        /// Enables or disables notification on job start.
+        /// </summary>
+        public readonly bool OnJobStart;
+        /// <summary>
+        /// Enables or disables notification on job success.
+        /// </summary>
+        public readonly bool OnJobSuccess;
         /// <summary>
         /// Enables or disables notification when fleet resource becomes non compliant.
         /// </summary>
@@ -48,7 +64,15 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
         [OutputConstructor]
         private GetFleetNotificationPreferencePreferenceResult(
+            bool onJobCanceled,
+
             bool onJobFailure,
+
+            bool onJobScheduleChange,
+
+            bool onJobStart,
+
+            bool onJobSuccess,
 
             bool onResourceNonCompliance,
 
@@ -64,7 +88,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             ImmutableArray<Outputs.GetFleetNotificationPreferencePreferenceUpcomingScheduleResult> upcomingSchedules)
         {
+            OnJobCanceled = onJobCanceled;
             OnJobFailure = onJobFailure;
+            OnJobScheduleChange = onJobScheduleChange;
+            OnJobStart = onJobStart;
+            OnJobSuccess = onJobSuccess;
             OnResourceNonCompliance = onResourceNonCompliance;
             OnRunbookNewerVersion = onRunbookNewerVersion;
             OnTaskFailure = onTaskFailure;

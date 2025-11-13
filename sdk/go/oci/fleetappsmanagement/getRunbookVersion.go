@@ -79,7 +79,7 @@ type LookupRunbookVersionResult struct {
 	// The OCID of the resource.
 	RunbookId        string `pulumi:"runbookId"`
 	RunbookVersionId string `pulumi:"runbookVersionId"`
-	// The current state of the FleetResource.
+	// The current state of the runbook version.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -186,7 +186,7 @@ func (o LookupRunbookVersionResultOutput) RunbookVersionId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupRunbookVersionResult) string { return v.RunbookVersionId }).(pulumi.StringOutput)
 }
 
-// The current state of the FleetResource.
+// The current state of the runbook version.
 func (o LookupRunbookVersionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRunbookVersionResult) string { return v.State }).(pulumi.StringOutput)
 }

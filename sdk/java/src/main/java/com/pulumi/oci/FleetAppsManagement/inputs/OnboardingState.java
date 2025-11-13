@@ -36,6 +36,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Tenancy OCID
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="compartmentId")
@@ -43,6 +44,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return Tenancy OCID
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -50,16 +52,14 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -82,16 +82,14 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -118,6 +116,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -130,6 +129,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -301,6 +301,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param compartmentId Tenancy OCID
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -312,6 +313,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param compartmentId Tenancy OCID
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -321,8 +323,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -333,8 +334,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -365,8 +365,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-         * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -377,8 +376,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-         * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -413,6 +411,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not.
          * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -429,6 +428,7 @@ public final class OnboardingState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isFamsTagEnabled A value determining if the Fleet Application Management tagging is enabled or not.
          * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the

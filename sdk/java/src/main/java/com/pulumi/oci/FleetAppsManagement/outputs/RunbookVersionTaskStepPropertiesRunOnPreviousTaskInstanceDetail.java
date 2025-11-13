@@ -13,8 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail {
     /**
-     * @return (Updatable) The details of
-     * the output variable that will be used for mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     private @Nullable RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails outputVariableDetails;
@@ -31,8 +30,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
 
     private RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail() {}
     /**
-     * @return (Updatable) The details of
-     * the output variable that will be used for mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     public Optional<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails> outputVariableDetails() {

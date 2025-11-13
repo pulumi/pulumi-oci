@@ -12,30 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails {
     /**
-     * @return (Updatable) The name of the
-     * output variable whose value has to be mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     private @Nullable String outputVariableName;
     /**
-     * @return (Updatable) The name of the task step
-     * the output variable belongs to.
+     * @return (Updatable) The name of the task step the output variable belongs to.
      * 
      */
     private @Nullable String stepName;
 
     private RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails() {}
     /**
-     * @return (Updatable) The name of the
-     * output variable whose value has to be mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     public Optional<String> outputVariableName() {
         return Optional.ofNullable(this.outputVariableName);
     }
     /**
-     * @return (Updatable) The name of the task step
-     * the output variable belongs to.
+     * @return (Updatable) The name of the task step the output variable belongs to.
      * 
      */
     public Optional<String> stepName() {

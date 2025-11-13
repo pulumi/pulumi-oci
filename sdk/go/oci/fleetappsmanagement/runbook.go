@@ -110,6 +110,7 @@ import (
 //									IsExecutableContent:         pulumi.Any(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent),
 //									IsLocked:                    pulumi.Any(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked),
 //									IsReadOutputVariableEnabled: pulumi.Any(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled),
+//									SystemVariables:             pulumi.Any(runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsSystemVariables),
 //									TargetCompartmentId:         pulumi.Any(testCompartment.Id),
 //									Variables: &fleetappsmanagement.RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs{
 //										InputVariables: fleetappsmanagement.RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArray{
@@ -243,7 +244,7 @@ type Runbook struct {
 	IsDefault pulumi.BoolOutput `pulumi:"isDefault"`
 	// (Updatable) Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded pulumi.BoolOutput `pulumi:"isSudoAccessNeeded"`
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion pulumi.StringOutput `pulumi:"latestVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -255,7 +256,7 @@ type Runbook struct {
 	Platform pulumi.StringOutput `pulumi:"platform"`
 	// Associated region
 	ResourceRegion pulumi.StringOutput `pulumi:"resourceRegion"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersion RunbookRunbookVersionOutput `pulumi:"runbookVersion"`
 	// The current state of the runbook.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -329,7 +330,7 @@ type runbookState struct {
 	IsDefault *bool `pulumi:"isDefault"`
 	// (Updatable) Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded *bool `pulumi:"isSudoAccessNeeded"`
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion *string `pulumi:"latestVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -341,7 +342,7 @@ type runbookState struct {
 	Platform *string `pulumi:"platform"`
 	// Associated region
 	ResourceRegion *string `pulumi:"resourceRegion"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersion *RunbookRunbookVersion `pulumi:"runbookVersion"`
 	// The current state of the runbook.
 	State *string `pulumi:"state"`
@@ -374,7 +375,7 @@ type RunbookState struct {
 	IsDefault pulumi.BoolPtrInput
 	// (Updatable) Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded pulumi.BoolPtrInput
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -386,7 +387,7 @@ type RunbookState struct {
 	Platform pulumi.StringPtrInput
 	// Associated region
 	ResourceRegion pulumi.StringPtrInput
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersion RunbookRunbookVersionPtrInput
 	// The current state of the runbook.
 	State pulumi.StringPtrInput
@@ -427,7 +428,7 @@ type runbookArgs struct {
 	OsType *string `pulumi:"osType"`
 	// (Updatable) The platform of the runbook.
 	Platform *string `pulumi:"platform"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersion RunbookRunbookVersion `pulumi:"runbookVersion"`
 }
 
@@ -455,7 +456,7 @@ type RunbookArgs struct {
 	OsType pulumi.StringPtrInput
 	// (Updatable) The platform of the runbook.
 	Platform pulumi.StringPtrInput
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersion RunbookRunbookVersionInput
 }
 
@@ -591,7 +592,7 @@ func (o RunbookOutput) IsSudoAccessNeeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Runbook) pulumi.BoolOutput { return v.IsSudoAccessNeeded }).(pulumi.BoolOutput)
 }
 
-// Latest runbook version
+// Latest runbook version.
 func (o RunbookOutput) LatestVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Runbook) pulumi.StringOutput { return v.LatestVersion }).(pulumi.StringOutput)
 }
@@ -621,7 +622,7 @@ func (o RunbookOutput) ResourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Runbook) pulumi.StringOutput { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-// Version for the runbook.
+// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 func (o RunbookOutput) RunbookVersion() RunbookRunbookVersionOutput {
 	return o.ApplyT(func(v *Runbook) RunbookRunbookVersionOutput { return v.RunbookVersion }).(RunbookRunbookVersionOutput)
 }

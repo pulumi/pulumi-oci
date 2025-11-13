@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DedicatedVmHostPlacementConstraintDetails {
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     private @Nullable String computeBareMetalHostId;
     /**
-     * @return Determines the type of targeted launch.
+     * @return The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28,14 +28,14 @@ public final class DedicatedVmHostPlacementConstraintDetails {
 
     private DedicatedVmHostPlacementConstraintDetails() {}
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     public Optional<String> computeBareMetalHostId() {
         return Optional.ofNullable(this.computeBareMetalHostId);
     }
     /**
-     * @return Determines the type of targeted launch.
+     * @return The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

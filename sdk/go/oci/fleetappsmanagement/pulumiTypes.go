@@ -2138,8 +2138,16 @@ func (o FleetNotificationPreferenceArrayOutput) Index(i pulumi.IntInput) FleetNo
 }
 
 type FleetNotificationPreferencePreferences struct {
+	// (Updatable) Enables or disables notification on job canceled.
+	OnJobCanceled *bool `pulumi:"onJobCanceled"`
 	// (Updatable) Enables or disables notification on Job Failures.
 	OnJobFailure *bool `pulumi:"onJobFailure"`
+	// (Updatable) Enables or disables notification on job schedule change.
+	OnJobScheduleChange *bool `pulumi:"onJobScheduleChange"`
+	// (Updatable) Enables or disables notification on job start.
+	OnJobStart *bool `pulumi:"onJobStart"`
+	// (Updatable) Enables or disables notification on job success.
+	OnJobSuccess *bool `pulumi:"onJobSuccess"`
 	// (Updatable) Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance *bool `pulumi:"onResourceNonCompliance"`
 	// (Updatable) Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -2168,8 +2176,16 @@ type FleetNotificationPreferencePreferencesInput interface {
 }
 
 type FleetNotificationPreferencePreferencesArgs struct {
+	// (Updatable) Enables or disables notification on job canceled.
+	OnJobCanceled pulumi.BoolPtrInput `pulumi:"onJobCanceled"`
 	// (Updatable) Enables or disables notification on Job Failures.
 	OnJobFailure pulumi.BoolPtrInput `pulumi:"onJobFailure"`
+	// (Updatable) Enables or disables notification on job schedule change.
+	OnJobScheduleChange pulumi.BoolPtrInput `pulumi:"onJobScheduleChange"`
+	// (Updatable) Enables or disables notification on job start.
+	OnJobStart pulumi.BoolPtrInput `pulumi:"onJobStart"`
+	// (Updatable) Enables or disables notification on job success.
+	OnJobSuccess pulumi.BoolPtrInput `pulumi:"onJobSuccess"`
 	// (Updatable) Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance pulumi.BoolPtrInput `pulumi:"onResourceNonCompliance"`
 	// (Updatable) Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -2263,9 +2279,29 @@ func (o FleetNotificationPreferencePreferencesOutput) ToFleetNotificationPrefere
 	}).(FleetNotificationPreferencePreferencesPtrOutput)
 }
 
+// (Updatable) Enables or disables notification on job canceled.
+func (o FleetNotificationPreferencePreferencesOutput) OnJobCanceled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetNotificationPreferencePreferences) *bool { return v.OnJobCanceled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Enables or disables notification on Job Failures.
 func (o FleetNotificationPreferencePreferencesOutput) OnJobFailure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FleetNotificationPreferencePreferences) *bool { return v.OnJobFailure }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job schedule change.
+func (o FleetNotificationPreferencePreferencesOutput) OnJobScheduleChange() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetNotificationPreferencePreferences) *bool { return v.OnJobScheduleChange }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job start.
+func (o FleetNotificationPreferencePreferencesOutput) OnJobStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetNotificationPreferencePreferences) *bool { return v.OnJobStart }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job success.
+func (o FleetNotificationPreferencePreferencesOutput) OnJobSuccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetNotificationPreferencePreferences) *bool { return v.OnJobSuccess }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Enables or disables notification when fleet resource becomes non compliant.
@@ -2329,6 +2365,16 @@ func (o FleetNotificationPreferencePreferencesPtrOutput) Elem() FleetNotificatio
 	}).(FleetNotificationPreferencePreferencesOutput)
 }
 
+// (Updatable) Enables or disables notification on job canceled.
+func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobCanceled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetNotificationPreferencePreferences) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OnJobCanceled
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Enables or disables notification on Job Failures.
 func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobFailure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *FleetNotificationPreferencePreferences) *bool {
@@ -2336,6 +2382,36 @@ func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobFailure() pulumi.B
 			return nil
 		}
 		return v.OnJobFailure
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job schedule change.
+func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobScheduleChange() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetNotificationPreferencePreferences) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OnJobScheduleChange
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job start.
+func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetNotificationPreferencePreferences) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OnJobStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables notification on job success.
+func (o FleetNotificationPreferencePreferencesPtrOutput) OnJobSuccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetNotificationPreferencePreferences) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OnJobSuccess
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -3152,8 +3228,12 @@ type FleetResourceSelectionRuleSelectionCriteriaRule struct {
 	Basis *string `pulumi:"basis"`
 	// (Updatable) Compartment Id for which the rule is created.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// (Updatable) Rule Conditions
 	Conditions []FleetResourceSelectionRuleSelectionCriteriaRuleCondition `pulumi:"conditions"`
+	// (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition *string `pulumi:"matchCondition"`
 	// (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 }
@@ -3174,8 +3254,12 @@ type FleetResourceSelectionRuleSelectionCriteriaRuleArgs struct {
 	Basis pulumi.StringPtrInput `pulumi:"basis"`
 	// (Updatable) Compartment Id for which the rule is created.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// (Updatable) Rule Conditions
 	Conditions FleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayInput `pulumi:"conditions"`
+	// (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition pulumi.StringPtrInput `pulumi:"matchCondition"`
 	// (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId pulumi.StringPtrInput `pulumi:"resourceCompartmentId"`
 }
@@ -3241,11 +3325,21 @@ func (o FleetResourceSelectionRuleSelectionCriteriaRuleOutput) CompartmentId() p
 	return o.ApplyT(func(v FleetResourceSelectionRuleSelectionCriteriaRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+func (o FleetResourceSelectionRuleSelectionCriteriaRuleOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetResourceSelectionRuleSelectionCriteriaRule) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Rule Conditions
 func (o FleetResourceSelectionRuleSelectionCriteriaRuleOutput) Conditions() FleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput {
 	return o.ApplyT(func(v FleetResourceSelectionRuleSelectionCriteriaRule) []FleetResourceSelectionRuleSelectionCriteriaRuleCondition {
 		return v.Conditions
 	}).(FleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput)
+}
+
+// (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+func (o FleetResourceSelectionRuleSelectionCriteriaRuleOutput) MatchCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetResourceSelectionRuleSelectionCriteriaRule) *string { return v.MatchCondition }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
@@ -6092,9 +6186,6 @@ type RunbookRunbookVersion struct {
 	// A set of tasks to execute in the runbook.
 	Tasks []RunbookRunbookVersionTask `pulumi:"tasks"`
 	// The version of the runbook.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -6121,9 +6212,6 @@ type RunbookRunbookVersionArgs struct {
 	// A set of tasks to execute in the runbook.
 	Tasks RunbookRunbookVersionTaskArrayInput `pulumi:"tasks"`
 	// The version of the runbook.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
@@ -6234,9 +6322,6 @@ func (o RunbookRunbookVersionOutput) Tasks() RunbookRunbookVersionTaskArrayOutpu
 }
 
 // The version of the runbook.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RunbookRunbookVersionOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersion) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
@@ -6316,9 +6401,6 @@ func (o RunbookRunbookVersionPtrOutput) Tasks() RunbookRunbookVersionTaskArrayOu
 }
 
 // The version of the runbook.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RunbookRunbookVersionPtrOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookRunbookVersion) *string {
 		if v == nil {
@@ -7380,7 +7462,7 @@ func (o RunbookRunbookVersionGroupPropertiesPauseDetailsPtrOutput) Kind() pulumi
 }
 
 type RunbookRunbookVersionGroupPropertiesRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition *string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host *string `pulumi:"host"`
@@ -7402,7 +7484,7 @@ type RunbookRunbookVersionGroupPropertiesRunOnInput interface {
 }
 
 type RunbookRunbookVersionGroupPropertiesRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringPtrInput `pulumi:"host"`
@@ -7489,7 +7571,7 @@ func (o RunbookRunbookVersionGroupPropertiesRunOnOutput) ToRunbookRunbookVersion
 	}).(RunbookRunbookVersionGroupPropertiesRunOnPtrOutput)
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookRunbookVersionGroupPropertiesRunOnOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersionGroupPropertiesRunOn) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -7535,7 +7617,7 @@ func (o RunbookRunbookVersionGroupPropertiesRunOnPtrOutput) Elem() RunbookRunboo
 	}).(RunbookRunbookVersionGroupPropertiesRunOnOutput)
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookRunbookVersionGroupPropertiesRunOnPtrOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookRunbookVersionGroupPropertiesRunOn) *string {
 		if v == nil {
@@ -9111,7 +9193,7 @@ func (o RunbookRunbookVersionTaskStepPropertiesPauseDetailsPtrOutput) Kind() pul
 }
 
 type RunbookRunbookVersionTaskStepPropertiesRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition *string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host *string `pulumi:"host"`
@@ -9133,7 +9215,7 @@ type RunbookRunbookVersionTaskStepPropertiesRunOnInput interface {
 }
 
 type RunbookRunbookVersionTaskStepPropertiesRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringPtrInput `pulumi:"host"`
@@ -9220,7 +9302,7 @@ func (o RunbookRunbookVersionTaskStepPropertiesRunOnOutput) ToRunbookRunbookVers
 	}).(RunbookRunbookVersionTaskStepPropertiesRunOnPtrOutput)
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookRunbookVersionTaskStepPropertiesRunOnOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersionTaskStepPropertiesRunOn) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -9266,7 +9348,7 @@ func (o RunbookRunbookVersionTaskStepPropertiesRunOnPtrOutput) Elem() RunbookRun
 	}).(RunbookRunbookVersionTaskStepPropertiesRunOnOutput)
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookRunbookVersionTaskStepPropertiesRunOnPtrOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookRunbookVersionTaskStepPropertiesRunOn) *string {
 		if v == nil {
@@ -9753,6 +9835,8 @@ type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails struct {
 	IsLocked *bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled *bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -9790,6 +9874,8 @@ type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs struct {
 	IsLocked pulumi.BoolPtrInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolPtrInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringPtrInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -9928,6 +10014,11 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) IsRead
 	}).(pulumi.BoolPtrOutput)
 }
 
+// The list of system variables.
+func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
+}
+
 // OCID of the compartment to which the resource belongs to.
 func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) TargetCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails) *string {
@@ -10063,6 +10154,16 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsR
 		}
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// The list of system variables.
+func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SystemVariables
+	}).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -11002,7 +11103,7 @@ type RunbookVersionExecutionWorkflowDetailsWorkflow struct {
 	GroupName string `pulumi:"groupName"`
 	// (Updatable) Steps within the Group.
 	Steps []RunbookVersionExecutionWorkflowDetailsWorkflowStep `pulumi:"steps"`
-	// (Updatable) Workflow Group Details.
+	// (Updatable) Workflow Group  Details.
 	Type string `pulumi:"type"`
 }
 
@@ -11022,7 +11123,7 @@ type RunbookVersionExecutionWorkflowDetailsWorkflowArgs struct {
 	GroupName pulumi.StringInput `pulumi:"groupName"`
 	// (Updatable) Steps within the Group.
 	Steps RunbookVersionExecutionWorkflowDetailsWorkflowStepArrayInput `pulumi:"steps"`
-	// (Updatable) Workflow Group Details.
+	// (Updatable) Workflow Group  Details.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -11089,7 +11190,7 @@ func (o RunbookVersionExecutionWorkflowDetailsWorkflowOutput) Steps() RunbookVer
 	}).(RunbookVersionExecutionWorkflowDetailsWorkflowStepArrayOutput)
 }
 
-// (Updatable) Workflow Group Details.
+// (Updatable) Workflow Group  Details.
 func (o RunbookVersionExecutionWorkflowDetailsWorkflowOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v RunbookVersionExecutionWorkflowDetailsWorkflow) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -11119,8 +11220,7 @@ type RunbookVersionExecutionWorkflowDetailsWorkflowStep struct {
 	GroupName *string `pulumi:"groupName"`
 	// (Updatable) Provide StepName for the Task.
 	StepName *string `pulumi:"stepName"`
-	// (Updatable) Tasks within the Group. Provide the
-	// stepName for all applicable tasks.
+	// (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
 	Steps []string `pulumi:"steps"`
 	// (Updatable) Content Source Details.
 	Type string `pulumi:"type"`
@@ -11142,8 +11242,7 @@ type RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs struct {
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
 	// (Updatable) Provide StepName for the Task.
 	StepName pulumi.StringPtrInput `pulumi:"stepName"`
-	// (Updatable) Tasks within the Group. Provide the
-	// stepName for all applicable tasks.
+	// (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
 	Steps pulumi.StringArrayInput `pulumi:"steps"`
 	// (Updatable) Content Source Details.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -11210,8 +11309,7 @@ func (o RunbookVersionExecutionWorkflowDetailsWorkflowStepOutput) StepName() pul
 	return o.ApplyT(func(v RunbookVersionExecutionWorkflowDetailsWorkflowStep) *string { return v.StepName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Tasks within the Group. Provide the
-// stepName for all applicable tasks.
+// (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
 func (o RunbookVersionExecutionWorkflowDetailsWorkflowStepOutput) Steps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RunbookVersionExecutionWorkflowDetailsWorkflowStep) []string { return v.Steps }).(pulumi.StringArrayOutput)
 }
@@ -11249,6 +11347,7 @@ type RunbookVersionGroup struct {
 	// (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
 	// inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
 	// Executes tasks across resources in a rolling order.
+	// > > > > > > > theirs
 	Type string `pulumi:"type"`
 }
 
@@ -11271,6 +11370,7 @@ type RunbookVersionGroupArgs struct {
 	// (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
 	// inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
 	// Executes tasks across resources in a rolling order.
+	// > > > > > > > theirs
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -11338,6 +11438,7 @@ func (o RunbookVersionGroupOutput) Properties() RunbookVersionGroupPropertiesPtr
 // (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
 // inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
 // Executes tasks across resources in a rolling order.
+// > > > > > > > theirs
 func (o RunbookVersionGroupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v RunbookVersionGroup) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -12813,8 +12914,7 @@ func (o RunbookVersionRollbackWorkflowDetailsWorkflowStepArrayOutput) Index(i pu
 }
 
 type RunbookVersionTask struct {
-	// (Updatable) Mapping output variables of previous tasks to the input
-	// variables of the current task.
+	// (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
 	OutputVariableMappings []RunbookVersionTaskOutputVariableMapping `pulumi:"outputVariableMappings"`
 	// (Updatable) The name of the task step.
 	StepName string `pulumi:"stepName"`
@@ -12836,8 +12936,7 @@ type RunbookVersionTaskInput interface {
 }
 
 type RunbookVersionTaskArgs struct {
-	// (Updatable) Mapping output variables of previous tasks to the input
-	// variables of the current task.
+	// (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
 	OutputVariableMappings RunbookVersionTaskOutputVariableMappingArrayInput `pulumi:"outputVariableMappings"`
 	// (Updatable) The name of the task step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
@@ -12898,8 +12997,7 @@ func (o RunbookVersionTaskOutput) ToRunbookVersionTaskOutputWithContext(ctx cont
 	return o
 }
 
-// (Updatable) Mapping output variables of previous tasks to the input
-// variables of the current task.
+// (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
 func (o RunbookVersionTaskOutput) OutputVariableMappings() RunbookVersionTaskOutputVariableMappingArrayOutput {
 	return o.ApplyT(func(v RunbookVersionTask) []RunbookVersionTaskOutputVariableMapping { return v.OutputVariableMappings }).(RunbookVersionTaskOutputVariableMappingArrayOutput)
 }
@@ -12942,8 +13040,7 @@ func (o RunbookVersionTaskArrayOutput) Index(i pulumi.IntInput) RunbookVersionTa
 type RunbookVersionTaskOutputVariableMapping struct {
 	// (Updatable) The name of the input variable.
 	Name string `pulumi:"name"`
-	// (Updatable) The details of the output variable that will be used for
-	// mapping.
+	// (Updatable) The details of the output variable that will be used for mapping.
 	OutputVariableDetails RunbookVersionTaskOutputVariableMappingOutputVariableDetails `pulumi:"outputVariableDetails"`
 }
 
@@ -12961,8 +13058,7 @@ type RunbookVersionTaskOutputVariableMappingInput interface {
 type RunbookVersionTaskOutputVariableMappingArgs struct {
 	// (Updatable) The name of the input variable.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) The details of the output variable that will be used for
-	// mapping.
+	// (Updatable) The details of the output variable that will be used for mapping.
 	OutputVariableDetails RunbookVersionTaskOutputVariableMappingOutputVariableDetailsInput `pulumi:"outputVariableDetails"`
 }
 
@@ -13022,8 +13118,7 @@ func (o RunbookVersionTaskOutputVariableMappingOutput) Name() pulumi.StringOutpu
 	return o.ApplyT(func(v RunbookVersionTaskOutputVariableMapping) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) The details of the output variable that will be used for
-// mapping.
+// (Updatable) The details of the output variable that will be used for mapping.
 func (o RunbookVersionTaskOutputVariableMappingOutput) OutputVariableDetails() RunbookVersionTaskOutputVariableMappingOutputVariableDetailsOutput {
 	return o.ApplyT(func(v RunbookVersionTaskOutputVariableMapping) RunbookVersionTaskOutputVariableMappingOutputVariableDetails {
 		return v.OutputVariableDetails
@@ -13051,8 +13146,7 @@ func (o RunbookVersionTaskOutputVariableMappingArrayOutput) Index(i pulumi.IntIn
 }
 
 type RunbookVersionTaskOutputVariableMappingOutputVariableDetails struct {
-	// (Updatable) The name of the output variable whose value has to be
-	// mapped.
+	// (Updatable) The name of the output variable whose value has to be mapped.
 	OutputVariableName string `pulumi:"outputVariableName"`
 	// (Updatable) The name of the task step the output variable belongs to.
 	StepName string `pulumi:"stepName"`
@@ -13070,8 +13164,7 @@ type RunbookVersionTaskOutputVariableMappingOutputVariableDetailsInput interface
 }
 
 type RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs struct {
-	// (Updatable) The name of the output variable whose value has to be
-	// mapped.
+	// (Updatable) The name of the output variable whose value has to be mapped.
 	OutputVariableName pulumi.StringInput `pulumi:"outputVariableName"`
 	// (Updatable) The name of the task step the output variable belongs to.
 	StepName pulumi.StringInput `pulumi:"stepName"`
@@ -13103,8 +13196,7 @@ func (o RunbookVersionTaskOutputVariableMappingOutputVariableDetailsOutput) ToRu
 	return o
 }
 
-// (Updatable) The name of the output variable whose value has to be
-// mapped.
+// (Updatable) The name of the output variable whose value has to be mapped.
 func (o RunbookVersionTaskOutputVariableMappingOutputVariableDetailsOutput) OutputVariableName() pulumi.StringOutput {
 	return o.ApplyT(func(v RunbookVersionTaskOutputVariableMappingOutputVariableDetails) string {
 		return v.OutputVariableName
@@ -13123,8 +13215,7 @@ type RunbookVersionTaskStepProperties struct {
 	NotificationPreferences *RunbookVersionTaskStepPropertiesNotificationPreferences `pulumi:"notificationPreferences"`
 	// (Updatable) Pause Details
 	PauseDetails *RunbookVersionTaskStepPropertiesPauseDetails `pulumi:"pauseDetails"`
-	// (Updatable) Build control flow conditions that determine the relevance of the
-	// task execution.
+	// (Updatable) Build control flow conditions that determine the relevance of the task execution.
 	PreCondition *string `pulumi:"preCondition"`
 	// (Updatable) The runon conditions
 	RunOn *RunbookVersionTaskStepPropertiesRunOn `pulumi:"runOn"`
@@ -13148,8 +13239,7 @@ type RunbookVersionTaskStepPropertiesArgs struct {
 	NotificationPreferences RunbookVersionTaskStepPropertiesNotificationPreferencesPtrInput `pulumi:"notificationPreferences"`
 	// (Updatable) Pause Details
 	PauseDetails RunbookVersionTaskStepPropertiesPauseDetailsPtrInput `pulumi:"pauseDetails"`
-	// (Updatable) Build control flow conditions that determine the relevance of the
-	// task execution.
+	// (Updatable) Build control flow conditions that determine the relevance of the task execution.
 	PreCondition pulumi.StringPtrInput `pulumi:"preCondition"`
 	// (Updatable) The runon conditions
 	RunOn RunbookVersionTaskStepPropertiesRunOnPtrInput `pulumi:"runOn"`
@@ -13251,8 +13341,7 @@ func (o RunbookVersionTaskStepPropertiesOutput) PauseDetails() RunbookVersionTas
 	}).(RunbookVersionTaskStepPropertiesPauseDetailsPtrOutput)
 }
 
-// (Updatable) Build control flow conditions that determine the relevance of the
-// task execution.
+// (Updatable) Build control flow conditions that determine the relevance of the task execution.
 func (o RunbookVersionTaskStepPropertiesOutput) PreCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepProperties) *string { return v.PreCondition }).(pulumi.StringPtrOutput)
 }
@@ -13316,8 +13405,7 @@ func (o RunbookVersionTaskStepPropertiesPtrOutput) PauseDetails() RunbookVersion
 	}).(RunbookVersionTaskStepPropertiesPauseDetailsPtrOutput)
 }
 
-// (Updatable) Build control flow conditions that determine the relevance of the
-// task execution.
+// (Updatable) Build control flow conditions that determine the relevance of the task execution.
 func (o RunbookVersionTaskStepPropertiesPtrOutput) PreCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepProperties) *string {
 		if v == nil {
@@ -13340,8 +13428,7 @@ func (o RunbookVersionTaskStepPropertiesPtrOutput) RunOn() RunbookVersionTaskSte
 type RunbookVersionTaskStepPropertiesNotificationPreferences struct {
 	// (Updatable) Enables notification on pause.
 	ShouldNotifyOnPause *bool `pulumi:"shouldNotifyOnPause"`
-	// (Updatable) Enables or disables notification on Task
-	// Failures.
+	// (Updatable) Enables or disables notification on Task Failures.
 	ShouldNotifyOnTaskFailure *bool `pulumi:"shouldNotifyOnTaskFailure"`
 	// (Updatable) Enables or disables notification on Task Success.
 	ShouldNotifyOnTaskSuccess *bool `pulumi:"shouldNotifyOnTaskSuccess"`
@@ -13361,8 +13448,7 @@ type RunbookVersionTaskStepPropertiesNotificationPreferencesInput interface {
 type RunbookVersionTaskStepPropertiesNotificationPreferencesArgs struct {
 	// (Updatable) Enables notification on pause.
 	ShouldNotifyOnPause pulumi.BoolPtrInput `pulumi:"shouldNotifyOnPause"`
-	// (Updatable) Enables or disables notification on Task
-	// Failures.
+	// (Updatable) Enables or disables notification on Task Failures.
 	ShouldNotifyOnTaskFailure pulumi.BoolPtrInput `pulumi:"shouldNotifyOnTaskFailure"`
 	// (Updatable) Enables or disables notification on Task Success.
 	ShouldNotifyOnTaskSuccess pulumi.BoolPtrInput `pulumi:"shouldNotifyOnTaskSuccess"`
@@ -13450,8 +13536,7 @@ func (o RunbookVersionTaskStepPropertiesNotificationPreferencesOutput) ShouldNot
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesNotificationPreferences) *bool { return v.ShouldNotifyOnPause }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Enables or disables notification on Task
-// Failures.
+// (Updatable) Enables or disables notification on Task Failures.
 func (o RunbookVersionTaskStepPropertiesNotificationPreferencesOutput) ShouldNotifyOnTaskFailure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesNotificationPreferences) *bool {
 		return v.ShouldNotifyOnTaskFailure
@@ -13499,8 +13584,7 @@ func (o RunbookVersionTaskStepPropertiesNotificationPreferencesPtrOutput) Should
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Enables or disables notification on Task
-// Failures.
+// (Updatable) Enables or disables notification on Task Failures.
 func (o RunbookVersionTaskStepPropertiesNotificationPreferencesPtrOutput) ShouldNotifyOnTaskFailure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepPropertiesNotificationPreferences) *bool {
 		if v == nil {
@@ -13677,15 +13761,13 @@ func (o RunbookVersionTaskStepPropertiesPauseDetailsPtrOutput) Kind() pulumi.Str
 }
 
 type RunbookVersionTaskStepPropertiesRunOn struct {
-	// (Updatable) Build control flow conditions that
-	// determine the relevance of the task execution.
+	// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition *string `pulumi:"condition"`
 	// (Updatable) OCID of the self hosted instance.
 	Host *string `pulumi:"host"`
 	// (Updatable) Run on based On.
 	Kind string `pulumi:"kind"`
-	// (Updatable) Previous Task
-	// Instance Details
+	// (Updatable) Previous Task Instance Details
 	PreviousTaskInstanceDetails []RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail `pulumi:"previousTaskInstanceDetails"`
 }
 
@@ -13701,15 +13783,13 @@ type RunbookVersionTaskStepPropertiesRunOnInput interface {
 }
 
 type RunbookVersionTaskStepPropertiesRunOnArgs struct {
-	// (Updatable) Build control flow conditions that
-	// determine the relevance of the task execution.
+	// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) OCID of the self hosted instance.
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) Run on based On.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Updatable) Previous Task
-	// Instance Details
+	// (Updatable) Previous Task Instance Details
 	PreviousTaskInstanceDetails RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArrayInput `pulumi:"previousTaskInstanceDetails"`
 }
 
@@ -13790,8 +13870,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnOutput) ToRunbookVersionTaskStepPro
 	}).(RunbookVersionTaskStepPropertiesRunOnPtrOutput)
 }
 
-// (Updatable) Build control flow conditions that
-// determine the relevance of the task execution.
+// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookVersionTaskStepPropertiesRunOnOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOn) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -13806,8 +13885,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnOutput) Kind() pulumi.StringOutput 
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOn) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// (Updatable) Previous Task
-// Instance Details
+// (Updatable) Previous Task Instance Details
 func (o RunbookVersionTaskStepPropertiesRunOnOutput) PreviousTaskInstanceDetails() RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArrayOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOn) []RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail {
 		return v.PreviousTaskInstanceDetails
@@ -13838,8 +13916,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPtrOutput) Elem() RunbookVersionTas
 	}).(RunbookVersionTaskStepPropertiesRunOnOutput)
 }
 
-// (Updatable) Build control flow conditions that
-// determine the relevance of the task execution.
+// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
 func (o RunbookVersionTaskStepPropertiesRunOnPtrOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepPropertiesRunOn) *string {
 		if v == nil {
@@ -13869,8 +13946,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPtrOutput) Kind() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Previous Task
-// Instance Details
+// (Updatable) Previous Task Instance Details
 func (o RunbookVersionTaskStepPropertiesRunOnPtrOutput) PreviousTaskInstanceDetails() RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArrayOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepPropertiesRunOn) []RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail {
 		if v == nil {
@@ -13881,8 +13957,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPtrOutput) PreviousTaskInstanceDeta
 }
 
 type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail struct {
-	// (Updatable) The details of
-	// the output variable that will be used for mapping.
+	// (Updatable) The details of the output variable that will be used for mapping.
 	OutputVariableDetails *RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails `pulumi:"outputVariableDetails"`
 	// (Updatable) Resource Ocid.
 	ResourceId *string `pulumi:"resourceId"`
@@ -13902,8 +13977,7 @@ type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailInput interf
 }
 
 type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs struct {
-	// (Updatable) The details of
-	// the output variable that will be used for mapping.
+	// (Updatable) The details of the output variable that will be used for mapping.
 	OutputVariableDetails RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsPtrInput `pulumi:"outputVariableDetails"`
 	// (Updatable) Resource Ocid.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
@@ -13962,8 +14036,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutput) T
 	return o
 }
 
-// (Updatable) The details of
-// the output variable that will be used for mapping.
+// (Updatable) The details of the output variable that will be used for mapping.
 func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutput) OutputVariableDetails() RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail) *RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails {
 		return v.OutputVariableDetails
@@ -14001,11 +14074,9 @@ func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArrayOutp
 }
 
 type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails struct {
-	// (Updatable) The name of the
-	// output variable whose value has to be mapped.
+	// (Updatable) The name of the output variable whose value has to be mapped.
 	OutputVariableName *string `pulumi:"outputVariableName"`
-	// (Updatable) The name of the task step
-	// the output variable belongs to.
+	// (Updatable) The name of the task step the output variable belongs to.
 	StepName *string `pulumi:"stepName"`
 }
 
@@ -14021,11 +14092,9 @@ type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariab
 }
 
 type RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs struct {
-	// (Updatable) The name of the
-	// output variable whose value has to be mapped.
+	// (Updatable) The name of the output variable whose value has to be mapped.
 	OutputVariableName pulumi.StringPtrInput `pulumi:"outputVariableName"`
-	// (Updatable) The name of the task step
-	// the output variable belongs to.
+	// (Updatable) The name of the task step the output variable belongs to.
 	StepName pulumi.StringPtrInput `pulumi:"stepName"`
 }
 
@@ -14106,16 +14175,14 @@ func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVar
 	}).(RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsPtrOutput)
 }
 
-// (Updatable) The name of the
-// output variable whose value has to be mapped.
+// (Updatable) The name of the output variable whose value has to be mapped.
 func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsOutput) OutputVariableName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails) *string {
 		return v.OutputVariableName
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the task step
-// the output variable belongs to.
+// (Updatable) The name of the task step the output variable belongs to.
 func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsOutput) StepName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails) *string {
 		return v.StepName
@@ -14146,8 +14213,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVar
 	}).(RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsOutput)
 }
 
-// (Updatable) The name of the
-// output variable whose value has to be mapped.
+// (Updatable) The name of the output variable whose value has to be mapped.
 func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsPtrOutput) OutputVariableName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails) *string {
 		if v == nil {
@@ -14157,8 +14223,7 @@ func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVar
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the task step
-// the output variable belongs to.
+// (Updatable) The name of the task step the output variable belongs to.
 func (o RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsPtrOutput) StepName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails) *string {
 		if v == nil {
@@ -14173,8 +14238,7 @@ type RunbookVersionTaskTaskRecordDetails struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Execution details.
 	ExecutionDetails *RunbookVersionTaskTaskRecordDetailsExecutionDetails `pulumi:"executionDetails"`
-	// (Updatable) Is this an Apply Subject Task? Ex. Patch
-	// Execution Task
+	// (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
 	IsApplySubjectTask *bool `pulumi:"isApplySubjectTask"`
 	// (Updatable) Make a copy of this task in Library
 	IsCopyToLibraryEnabled *bool `pulumi:"isCopyToLibraryEnabled"`
@@ -14191,10 +14255,6 @@ type RunbookVersionTaskTaskRecordDetails struct {
 	// (Updatable) The scope of the task.
 	Scope string `pulumi:"scope"`
 	// (Updatable) The ID of taskRecord.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
-	// new property values
 	TaskRecordId *string `pulumi:"taskRecordId"`
 }
 
@@ -14214,8 +14274,7 @@ type RunbookVersionTaskTaskRecordDetailsArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Execution details.
 	ExecutionDetails RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrInput `pulumi:"executionDetails"`
-	// (Updatable) Is this an Apply Subject Task? Ex. Patch
-	// Execution Task
+	// (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
 	IsApplySubjectTask pulumi.BoolPtrInput `pulumi:"isApplySubjectTask"`
 	// (Updatable) Make a copy of this task in Library
 	IsCopyToLibraryEnabled pulumi.BoolPtrInput `pulumi:"isCopyToLibraryEnabled"`
@@ -14232,10 +14291,6 @@ type RunbookVersionTaskTaskRecordDetailsArgs struct {
 	// (Updatable) The scope of the task.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// (Updatable) The ID of taskRecord.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
-	// new property values
 	TaskRecordId pulumi.StringPtrInput `pulumi:"taskRecordId"`
 }
 
@@ -14277,8 +14332,7 @@ func (o RunbookVersionTaskTaskRecordDetailsOutput) ExecutionDetails() RunbookVer
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput)
 }
 
-// (Updatable) Is this an Apply Subject Task? Ex. Patch
-// Execution Task
+// (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
 func (o RunbookVersionTaskTaskRecordDetailsOutput) IsApplySubjectTask() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetails) *bool { return v.IsApplySubjectTask }).(pulumi.BoolPtrOutput)
 }
@@ -14321,44 +14375,35 @@ func (o RunbookVersionTaskTaskRecordDetailsOutput) Scope() pulumi.StringOutput {
 }
 
 // (Updatable) The ID of taskRecord.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the
-// new property values
 func (o RunbookVersionTaskTaskRecordDetailsOutput) TaskRecordId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetails) *string { return v.TaskRecordId }).(pulumi.StringPtrOutput)
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetails struct {
 	CatalogId *string `pulumi:"catalogId"`
-	// (Updatable) Optional command to execute the content.
-	// You can provide any commands/arguments that can't be part of the script.
+	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command *string `pulumi:"command"`
 	// (Updatable) Catalog Id having config file.
 	ConfigFile *string `pulumi:"configFile"`
 	// (Updatable) Content Source details.
 	Content *RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent `pulumi:"content"`
-	// (Updatable) Credentials required for executing the
-	// task.
+	// (Updatable) Credentials required for executing the task.
 	Credentials []RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential `pulumi:"credentials"`
 	// (Updatable) Endpoint to be invoked.
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) The action type of the task
 	ExecutionType string `pulumi:"executionType"`
-	// (Updatable) Is the Content an executable
-	// file?
+	// (Updatable) Is the Content an executable file?
 	IsExecutableContent *bool `pulumi:"isExecutableContent"`
-	// (Updatable) Is the script locked to prevent changes
-	// directly in Object Storage?
+	// (Updatable) Is the script locked to prevent changes directly in Object Storage?
 	IsLocked *bool `pulumi:"isLocked"`
-	// (Updatable) Is read output
-	// variable enabled
+	// (Updatable) Is read output variable enabled
 	IsReadOutputVariableEnabled *bool `pulumi:"isReadOutputVariableEnabled"`
-	// (Updatable) OCID of the compartment to
-	// which the resource belongs to.
+	// (Updatable) The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
+	// (Updatable) OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
-	// (Updatable) The variable of the task. At least one
-	// of the dynamicArguments or output needs to be provided.
+	// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
 	Variables *RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables `pulumi:"variables"`
 }
 
@@ -14375,34 +14420,29 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsInput interface {
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs struct {
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
-	// (Updatable) Optional command to execute the content.
-	// You can provide any commands/arguments that can't be part of the script.
+	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringPtrInput `pulumi:"command"`
 	// (Updatable) Catalog Id having config file.
 	ConfigFile pulumi.StringPtrInput `pulumi:"configFile"`
 	// (Updatable) Content Source details.
 	Content RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrInput `pulumi:"content"`
-	// (Updatable) Credentials required for executing the
-	// task.
+	// (Updatable) Credentials required for executing the task.
 	Credentials RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArrayInput `pulumi:"credentials"`
 	// (Updatable) Endpoint to be invoked.
 	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
 	// (Updatable) The action type of the task
 	ExecutionType pulumi.StringInput `pulumi:"executionType"`
-	// (Updatable) Is the Content an executable
-	// file?
+	// (Updatable) Is the Content an executable file?
 	IsExecutableContent pulumi.BoolPtrInput `pulumi:"isExecutableContent"`
-	// (Updatable) Is the script locked to prevent changes
-	// directly in Object Storage?
+	// (Updatable) Is the script locked to prevent changes directly in Object Storage?
 	IsLocked pulumi.BoolPtrInput `pulumi:"isLocked"`
-	// (Updatable) Is read output
-	// variable enabled
+	// (Updatable) Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolPtrInput `pulumi:"isReadOutputVariableEnabled"`
-	// (Updatable) OCID of the compartment to
-	// which the resource belongs to.
+	// (Updatable) The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
+	// (Updatable) OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringPtrInput `pulumi:"targetCompartmentId"`
-	// (Updatable) The variable of the task. At least one
-	// of the dynamicArguments or output needs to be provided.
+	// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
 	Variables RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrInput `pulumi:"variables"`
 }
 
@@ -14487,8 +14527,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) CatalogId() p
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Optional command to execute the content.
-// You can provide any commands/arguments that can't be part of the script.
+// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) Command() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string { return v.Command }).(pulumi.StringPtrOutput)
 }
@@ -14505,8 +14544,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) Content() Run
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput)
 }
 
-// (Updatable) Credentials required for executing the
-// task.
+// (Updatable) Credentials required for executing the task.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) Credentials() RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArrayOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) []RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential {
 		return v.Credentials
@@ -14523,34 +14561,34 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) ExecutionType
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) string { return v.ExecutionType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Is the Content an executable
-// file?
+// (Updatable) Is the Content an executable file?
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) IsExecutableContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool { return v.IsExecutableContent }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Is the script locked to prevent changes
-// directly in Object Storage?
+// (Updatable) Is the script locked to prevent changes directly in Object Storage?
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) IsLocked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool { return v.IsLocked }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Is read output
-// variable enabled
+// (Updatable) Is read output variable enabled
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) IsReadOutputVariableEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) OCID of the compartment to
-// which the resource belongs to.
+// (Updatable) The list of system variables.
+func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) OCID of the compartment to which the resource belongs to.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) TargetCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string { return v.TargetCompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The variable of the task. At least one
-// of the dynamicArguments or output needs to be provided.
+// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) Variables() RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables {
 		return v.Variables
@@ -14590,8 +14628,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) CatalogId(
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Optional command to execute the content.
-// You can provide any commands/arguments that can't be part of the script.
+// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Command() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string {
 		if v == nil {
@@ -14621,8 +14658,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Content() 
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput)
 }
 
-// (Updatable) Credentials required for executing the
-// task.
+// (Updatable) Credentials required for executing the task.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Credentials() RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArrayOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) []RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential {
 		if v == nil {
@@ -14652,8 +14688,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) ExecutionT
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Is the Content an executable
-// file?
+// (Updatable) Is the Content an executable file?
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsExecutableContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool {
 		if v == nil {
@@ -14663,8 +14698,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsExecutab
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Is the script locked to prevent changes
-// directly in Object Storage?
+// (Updatable) Is the script locked to prevent changes directly in Object Storage?
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsLocked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool {
 		if v == nil {
@@ -14674,8 +14708,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsLocked()
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Is read output
-// variable enabled
+// (Updatable) Is read output variable enabled
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsReadOutputVariableEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *bool {
 		if v == nil {
@@ -14685,8 +14718,17 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) IsReadOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) OCID of the compartment to
-// which the resource belongs to.
+// (Updatable) The list of system variables.
+func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SystemVariables
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) OCID of the compartment to which the resource belongs to.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) TargetCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string {
 		if v == nil {
@@ -14696,8 +14738,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) TargetComp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The variable of the task. At least one
-// of the dynamicArguments or output needs to be provided.
+// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Variables() RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables {
 		if v == nil {
@@ -14711,8 +14752,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent struct {
 	// (Updatable) Bucket Name.
 	Bucket    *string `pulumi:"bucket"`
 	CatalogId *string `pulumi:"catalogId"`
-	// (Updatable) md5 checksum of the
-	// artifact.
+	// (Updatable) md5 checksum of the artifact.
 	Checksum *string `pulumi:"checksum"`
 	// (Updatable) Namespace.
 	Namespace *string `pulumi:"namespace"`
@@ -14737,8 +14777,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs struct {
 	// (Updatable) Bucket Name.
 	Bucket    pulumi.StringPtrInput `pulumi:"bucket"`
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
-	// (Updatable) md5 checksum of the
-	// artifact.
+	// (Updatable) md5 checksum of the artifact.
 	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// (Updatable) Namespace.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
@@ -14834,8 +14873,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput) Catalo
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) md5 checksum of the
-// artifact.
+// (Updatable) md5 checksum of the artifact.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
@@ -14898,8 +14936,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) Cat
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) md5 checksum of the
-// artifact.
+// (Updatable) md5 checksum of the artifact.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string {
 		if v == nil {
@@ -14940,9 +14977,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) Sou
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential struct {
-	// (Updatable) A user-friendly name. Does not
-	// have to be unique, and it's changeable. Avoid entering confidential information. Example:
-	// `My new resource`
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The OCID of the resource.
 	Id *string `pulumi:"id"`
@@ -14960,9 +14995,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialInput interfac
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs struct {
-	// (Updatable) A user-friendly name. Does not
-	// have to be unique, and it's changeable. Avoid entering confidential information. Example:
-	// `My new resource`
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) The OCID of the resource.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -15019,9 +15052,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialOutput) ToR
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not
-// have to be unique, and it's changeable. Avoid entering confidential information. Example:
-// `My new resource`
+// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -15052,8 +15083,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArrayOutput
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables struct {
-	// (Updatable) The input variables for the
-	// task.
+	// (Updatable) The input variables for the task.
 	InputVariables []RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable `pulumi:"inputVariables"`
 	// (Updatable) The list of output variables.
 	OutputVariables []string `pulumi:"outputVariables"`
@@ -15071,8 +15101,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInput interface
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs struct {
-	// (Updatable) The input variables for the
-	// task.
+	// (Updatable) The input variables for the task.
 	InputVariables RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArrayInput `pulumi:"inputVariables"`
 	// (Updatable) The list of output variables.
 	OutputVariables pulumi.StringArrayInput `pulumi:"outputVariables"`
@@ -15155,8 +15184,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesOutput) ToRu
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput)
 }
 
-// (Updatable) The input variables for the
-// task.
+// (Updatable) The input variables for the task.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesOutput) InputVariables() RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArrayOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables) []RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable {
 		return v.InputVariables
@@ -15194,8 +15222,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput) E
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesOutput)
 }
 
-// (Updatable) The input variables for the
-// task.
+// (Updatable) The input variables for the task.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput) InputVariables() RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArrayOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables) []RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable {
 		if v == nil {
@@ -15216,8 +15243,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesPtrOutput) O
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable struct {
-	// (Updatable) The description of the
-	// argument.
+	// (Updatable) The description of the argument.
 	Description *string `pulumi:"description"`
 	// (Updatable) The name of the argument.
 	Name *string `pulumi:"name"`
@@ -15237,8 +15263,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableIn
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs struct {
-	// (Updatable) The description of the
-	// argument.
+	// (Updatable) The description of the argument.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The name of the argument.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -15297,8 +15322,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariabl
 	return o
 }
 
-// (Updatable) The description of the
-// argument.
+// (Updatable) The description of the argument.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable) *string {
 		return v.Description
@@ -16716,6 +16740,8 @@ type TaskRecordDetailsExecutionDetails struct {
 	IsLocked *bool `pulumi:"isLocked"`
 	// (Updatable) Is read output variable enabled
 	IsReadOutputVariableEnabled *bool `pulumi:"isReadOutputVariableEnabled"`
+	// (Updatable) The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -16753,6 +16779,8 @@ type TaskRecordDetailsExecutionDetailsArgs struct {
 	IsLocked pulumi.BoolPtrInput `pulumi:"isLocked"`
 	// (Updatable) Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolPtrInput `pulumi:"isReadOutputVariableEnabled"`
+	// (Updatable) The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// (Updatable) OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringPtrInput `pulumi:"targetCompartmentId"`
 	// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -16885,6 +16913,11 @@ func (o TaskRecordDetailsExecutionDetailsOutput) IsLocked() pulumi.BoolPtrOutput
 // (Updatable) Is read output variable enabled
 func (o TaskRecordDetailsExecutionDetailsOutput) IsReadOutputVariableEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TaskRecordDetailsExecutionDetails) *bool { return v.IsReadOutputVariableEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of system variables.
+func (o TaskRecordDetailsExecutionDetailsOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskRecordDetailsExecutionDetails) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) OCID of the compartment to which the resource belongs to.
@@ -17020,6 +17053,16 @@ func (o TaskRecordDetailsExecutionDetailsPtrOutput) IsReadOutputVariableEnabled(
 		}
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of system variables.
+func (o TaskRecordDetailsExecutionDetailsPtrOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TaskRecordDetailsExecutionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SystemVariables
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) OCID of the compartment to which the resource belongs to.
@@ -18637,6 +18680,931 @@ func (o GetCatalogItemCatalogSourcePayloadArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetCatalogItemCatalogSourcePayloadOutput)
 }
 
+type GetCatalogItemVariablesDefinitionSchemaDocument struct {
+	// Indicates if the stack allows users to view state information.
+	CanAllowViewState bool `pulumi:"canAllowViewState"`
+	// Extended help or summary for understanding output.
+	Description string `pulumi:"description"`
+	// variable groups object.
+	Groupings []GetCatalogItemVariablesDefinitionSchemaDocumentGrouping `pulumi:"groupings"`
+	// Informational text or notes relevant to the stack or its use.
+	InformationalText string `pulumi:"informationalText"`
+	// Setup or usage instructions for this stack.
+	Instructions string `pulumi:"instructions"`
+	// The locale/language for the schema user interface (default is EN).
+	Locale string `pulumi:"locale"`
+	// logo url.
+	LogoUrl string `pulumi:"logoUrl"`
+	// Array of output group objects to group outputs for display or logical purposes.
+	OutputGroups []GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup `pulumi:"outputGroups"`
+	// A mapping of output variable names to their definitions.
+	Outputs []GetCatalogItemVariablesDefinitionSchemaDocumentOutputType `pulumi:"outputs"`
+	// The version of the package associated with this schema.
+	PackageVersion string `pulumi:"packageVersion"`
+	// primary output button value.
+	PrimaryOutputButton string `pulumi:"primaryOutputButton"`
+	// The version of the schema definition format in use for this document.
+	SchemaVersion string `pulumi:"schemaVersion"`
+	// Object representing the source information for the stack, indicating origin type and a reference string.
+	Sources []GetCatalogItemVariablesDefinitionSchemaDocumentSource `pulumi:"sources"`
+	// Additional details describing the stack's purpose or use-case.
+	StackDescription string `pulumi:"stackDescription"`
+	// Display title for the group of variables.
+	Title string `pulumi:"title"`
+	// Troubleshooting tips, guidance, or steps for stack usage.
+	Troubleshooting string `pulumi:"troubleshooting"`
+	// An array of variable group definitions for organizing variables together.
+	VariableGroups []GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup `pulumi:"variableGroups"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables string `pulumi:"variables"`
+	// The version identifier for this schema document.
+	Version string `pulumi:"version"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentArgs and GetCatalogItemVariablesDefinitionSchemaDocumentOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentArgs struct {
+	// Indicates if the stack allows users to view state information.
+	CanAllowViewState pulumi.BoolInput `pulumi:"canAllowViewState"`
+	// Extended help or summary for understanding output.
+	Description pulumi.StringInput `pulumi:"description"`
+	// variable groups object.
+	Groupings GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput `pulumi:"groupings"`
+	// Informational text or notes relevant to the stack or its use.
+	InformationalText pulumi.StringInput `pulumi:"informationalText"`
+	// Setup or usage instructions for this stack.
+	Instructions pulumi.StringInput `pulumi:"instructions"`
+	// The locale/language for the schema user interface (default is EN).
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// logo url.
+	LogoUrl pulumi.StringInput `pulumi:"logoUrl"`
+	// Array of output group objects to group outputs for display or logical purposes.
+	OutputGroups GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayInput `pulumi:"outputGroups"`
+	// A mapping of output variable names to their definitions.
+	Outputs GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayInput `pulumi:"outputs"`
+	// The version of the package associated with this schema.
+	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	// primary output button value.
+	PrimaryOutputButton pulumi.StringInput `pulumi:"primaryOutputButton"`
+	// The version of the schema definition format in use for this document.
+	SchemaVersion pulumi.StringInput `pulumi:"schemaVersion"`
+	// Object representing the source information for the stack, indicating origin type and a reference string.
+	Sources GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayInput `pulumi:"sources"`
+	// Additional details describing the stack's purpose or use-case.
+	StackDescription pulumi.StringInput `pulumi:"stackDescription"`
+	// Display title for the group of variables.
+	Title pulumi.StringInput `pulumi:"title"`
+	// Troubleshooting tips, guidance, or steps for stack usage.
+	Troubleshooting pulumi.StringInput `pulumi:"troubleshooting"`
+	// An array of variable group definitions for organizing variables together.
+	VariableGroups GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayInput `pulumi:"variableGroups"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables pulumi.StringInput `pulumi:"variables"`
+	// The version identifier for this schema document.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocument)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentArray and GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentArray{ GetCatalogItemVariablesDefinitionSchemaDocumentArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentArray []GetCatalogItemVariablesDefinitionSchemaDocumentInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocument)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocument)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutput {
+	return o
+}
+
+// Indicates if the stack allows users to view state information.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) CanAllowViewState() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) bool { return v.CanAllowViewState }).(pulumi.BoolOutput)
+}
+
+// Extended help or summary for understanding output.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// variable groups object.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Groupings() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) []GetCatalogItemVariablesDefinitionSchemaDocumentGrouping {
+		return v.Groupings
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput)
+}
+
+// Informational text or notes relevant to the stack or its use.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) InformationalText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.InformationalText }).(pulumi.StringOutput)
+}
+
+// Setup or usage instructions for this stack.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Instructions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Instructions }).(pulumi.StringOutput)
+}
+
+// The locale/language for the schema user interface (default is EN).
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// logo url.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) LogoUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.LogoUrl }).(pulumi.StringOutput)
+}
+
+// Array of output group objects to group outputs for display or logical purposes.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) OutputGroups() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) []GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup {
+		return v.OutputGroups
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput)
+}
+
+// A mapping of output variable names to their definitions.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Outputs() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) []GetCatalogItemVariablesDefinitionSchemaDocumentOutputType {
+		return v.Outputs
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput)
+}
+
+// The version of the package associated with this schema.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) PackageVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.PackageVersion }).(pulumi.StringOutput)
+}
+
+// primary output button value.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) PrimaryOutputButton() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.PrimaryOutputButton }).(pulumi.StringOutput)
+}
+
+// The version of the schema definition format in use for this document.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) SchemaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.SchemaVersion }).(pulumi.StringOutput)
+}
+
+// Object representing the source information for the stack, indicating origin type and a reference string.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Sources() GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) []GetCatalogItemVariablesDefinitionSchemaDocumentSource {
+		return v.Sources
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput)
+}
+
+// Additional details describing the stack's purpose or use-case.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) StackDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.StackDescription }).(pulumi.StringOutput)
+}
+
+// Display title for the group of variables.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// Troubleshooting tips, guidance, or steps for stack usage.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Troubleshooting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Troubleshooting }).(pulumi.StringOutput)
+}
+
+// An array of variable group definitions for organizing variables together.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) VariableGroups() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) []GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup {
+		return v.VariableGroups
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput)
+}
+
+// Key-value map of input variables defined for use by the stack.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Variables() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Variables }).(pulumi.StringOutput)
+}
+
+// The version identifier for this schema document.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocument) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocument)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocument {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocument)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGrouping struct {
+	// Map of group names to their respective VariableGroup objects.
+	Arrays []GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray `pulumi:"arrays"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentGroupingInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs and GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentGroupingInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs struct {
+	// Map of group names to their respective VariableGroup objects.
+	Arrays GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayInput `pulumi:"arrays"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGrouping)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGrouping)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput {
+	return o
+}
+
+// Map of group names to their respective VariableGroup objects.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput) Arrays() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentGrouping) []GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray {
+		return v.Arrays
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray struct {
+	// Display title for the group of variables.
+	Title string `pulumi:"title"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables []string `pulumi:"variables"`
+	// Hint controlling the group's visibility.
+	Visible string `pulumi:"visible"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray and GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray{ GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs struct {
+	// Display title for the group of variables.
+	Title pulumi.StringInput `pulumi:"title"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables pulumi.StringArrayInput `pulumi:"variables"`
+	// Hint controlling the group's visibility.
+	Visible pulumi.StringInput `pulumi:"visible"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray and GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray{ GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray []GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return o
+}
+
+// Display title for the group of variables.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// Key-value map of input variables defined for use by the stack.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) Variables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray) []string { return v.Variables }).(pulumi.StringArrayOutput)
+}
+
+// Hint controlling the group's visibility.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput) Visible() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray) string { return v.Visible }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArray)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputType struct {
+	// Extended help or summary for understanding output.
+	Description string `pulumi:"description"`
+	// Display label abel for the URL.
+	DisplayText string `pulumi:"displayText"`
+	// Hint about formatting or rendering the output value.
+	Format string `pulumi:"format"`
+	// If true, marks this output as sensitive.
+	IsSensitive bool `pulumi:"isSensitive"`
+	// Display title for the group of variables.
+	Title string `pulumi:"title"`
+	// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+	Type string `pulumi:"type"`
+	// Value of string that user can easily copy.
+	Value bool `pulumi:"value"`
+	// Hint controlling the group's visibility.
+	Visible string `pulumi:"visible"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs and GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs struct {
+	// Extended help or summary for understanding output.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Display label abel for the URL.
+	DisplayText pulumi.StringInput `pulumi:"displayText"`
+	// Hint about formatting or rendering the output value.
+	Format pulumi.StringInput `pulumi:"format"`
+	// If true, marks this output as sensitive.
+	IsSensitive pulumi.BoolInput `pulumi:"isSensitive"`
+	// Display title for the group of variables.
+	Title pulumi.StringInput `pulumi:"title"`
+	// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of string that user can easily copy.
+	Value pulumi.BoolInput `pulumi:"value"`
+	// Hint controlling the group's visibility.
+	Visible pulumi.StringInput `pulumi:"visible"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputType)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray and GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray{ GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray []GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentOutputType)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputType)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput {
+	return o
+}
+
+// Extended help or summary for understanding output.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Display label abel for the URL.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) DisplayText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.DisplayText }).(pulumi.StringOutput)
+}
+
+// Hint about formatting or rendering the output value.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// If true, marks this output as sensitive.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) IsSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) bool { return v.IsSensitive }).(pulumi.BoolOutput)
+}
+
+// Display title for the group of variables.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Value of string that user can easily copy.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Value() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) bool { return v.Value }).(pulumi.BoolOutput)
+}
+
+// Hint controlling the group's visibility.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput) Visible() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputType) string { return v.Visible }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentOutputType)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocumentOutputType {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocumentOutputType)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup struct {
+	// A mapping of output variable names to their definitions.
+	Outputs []string `pulumi:"outputs"`
+	// Display title for the group of variables.
+	Title string `pulumi:"title"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs and GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs struct {
+	// A mapping of output variable names to their definitions.
+	Outputs pulumi.StringArrayInput `pulumi:"outputs"`
+	// Display title for the group of variables.
+	Title pulumi.StringInput `pulumi:"title"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray and GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray{ GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray []GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput {
+	return o
+}
+
+// A mapping of output variable names to their definitions.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput) Outputs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup) []string { return v.Outputs }).(pulumi.StringArrayOutput)
+}
+
+// Display title for the group of variables.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup) string { return v.Title }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroup)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentSource struct {
+	// Reference string providing a pointer or identifier for the source.
+	Reference string `pulumi:"reference"`
+	// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+	Type string `pulumi:"type"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentSourceInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs and GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentSourceInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs struct {
+	// Reference string providing a pointer or identifier for the source.
+	Reference pulumi.StringInput `pulumi:"reference"`
+	// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentSource)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray and GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray{ GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray []GetCatalogItemVariablesDefinitionSchemaDocumentSourceInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentSource)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentSource)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput {
+	return o
+}
+
+// Reference string providing a pointer or identifier for the source.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput) Reference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentSource) string { return v.Reference }).(pulumi.StringOutput)
+}
+
+// The source type of the stack (e.g. MARKETPLACE, QUICKSTART, or WEB).
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentSource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentSource)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocumentSource {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocumentSource)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup struct {
+	// Display title for the group of variables.
+	Title string `pulumi:"title"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables []string `pulumi:"variables"`
+	// Hint controlling the group's visibility.
+	Visible string `pulumi:"visible"`
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs and GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs{...}
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs struct {
+	// Display title for the group of variables.
+	Title pulumi.StringInput `pulumi:"title"`
+	// Key-value map of input variables defined for use by the stack.
+	Variables pulumi.StringArrayInput `pulumi:"variables"`
+	// Hint controlling the group's visibility.
+	Visible pulumi.StringInput `pulumi:"visible"`
+}
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput)
+}
+
+// GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayInput is an input type that accepts GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray and GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput values.
+// You can construct a concrete instance of `GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayInput` via:
+//
+//	GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray{ GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs{...} }
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput
+	ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutputWithContext(context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray []GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupInput
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup)(nil)).Elem()
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput {
+	return i.ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput {
+	return o
+}
+
+// Display title for the group of variables.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// Key-value map of input variables defined for use by the stack.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) Variables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup) []string { return v.Variables }).(pulumi.StringArrayOutput)
+}
+
+// Hint controlling the group's visibility.
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput) Visible() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup) string { return v.Visible }).(pulumi.StringOutput)
+}
+
+type GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup)(nil)).Elem()
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput() GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput) ToGetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutputWithContext(ctx context.Context) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput {
+	return o
+}
+
+func (o GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput) Index(i pulumi.IntInput) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup {
+		return vs[0].([]GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroup)[vs[1].(int)]
+	}).(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput)
+}
+
 type GetCatalogItemsCatalogItemCollection struct {
 	Items []GetCatalogItemsCatalogItemCollectionItem `pulumi:"items"`
 }
@@ -18759,7 +19727,7 @@ type GetCatalogItemsCatalogItemCollectionItem struct {
 	ListingId string `pulumi:"listingId"`
 	// The catalog package version.
 	ListingVersion string `pulumi:"listingVersion"`
-	// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+	// A filter to return only resources that match the given package type. The state value is case-insensitive.
 	PackageType string `pulumi:"packageType"`
 	// Short description about the catalog item.
 	ShortDescription string `pulumi:"shortDescription"`
@@ -18820,7 +19788,7 @@ type GetCatalogItemsCatalogItemCollectionItemArgs struct {
 	ListingId pulumi.StringInput `pulumi:"listingId"`
 	// The catalog package version.
 	ListingVersion pulumi.StringInput `pulumi:"listingVersion"`
-	// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+	// A filter to return only resources that match the given package type. The state value is case-insensitive.
 	PackageType pulumi.StringInput `pulumi:"packageType"`
 	// Short description about the catalog item.
 	ShortDescription pulumi.StringInput `pulumi:"shortDescription"`
@@ -18963,7 +19931,7 @@ func (o GetCatalogItemsCatalogItemCollectionItemOutput) ListingVersion() pulumi.
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItem) string { return v.ListingVersion }).(pulumi.StringOutput)
 }
 
-// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+// A filter to return only resources that match the given package type. The state value is case-insensitive.
 func (o GetCatalogItemsCatalogItemCollectionItemOutput) PackageType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItem) string { return v.PackageType }).(pulumi.StringOutput)
 }
@@ -25027,8 +25995,16 @@ func (o GetFleetNotificationPreferenceArrayOutput) Index(i pulumi.IntInput) GetF
 }
 
 type GetFleetNotificationPreferencePreference struct {
+	// Enables or disables notification on job canceled.
+	OnJobCanceled bool `pulumi:"onJobCanceled"`
 	// Enables or disables notification on Job Failures.
 	OnJobFailure bool `pulumi:"onJobFailure"`
+	// Enables or disables notification on job schedule change.
+	OnJobScheduleChange bool `pulumi:"onJobScheduleChange"`
+	// Enables or disables notification on job start.
+	OnJobStart bool `pulumi:"onJobStart"`
+	// Enables or disables notification on job success.
+	OnJobSuccess bool `pulumi:"onJobSuccess"`
 	// Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance bool `pulumi:"onResourceNonCompliance"`
 	// Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -25057,8 +26033,16 @@ type GetFleetNotificationPreferencePreferenceInput interface {
 }
 
 type GetFleetNotificationPreferencePreferenceArgs struct {
+	// Enables or disables notification on job canceled.
+	OnJobCanceled pulumi.BoolInput `pulumi:"onJobCanceled"`
 	// Enables or disables notification on Job Failures.
 	OnJobFailure pulumi.BoolInput `pulumi:"onJobFailure"`
+	// Enables or disables notification on job schedule change.
+	OnJobScheduleChange pulumi.BoolInput `pulumi:"onJobScheduleChange"`
+	// Enables or disables notification on job start.
+	OnJobStart pulumi.BoolInput `pulumi:"onJobStart"`
+	// Enables or disables notification on job success.
+	OnJobSuccess pulumi.BoolInput `pulumi:"onJobSuccess"`
 	// Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance pulumi.BoolInput `pulumi:"onResourceNonCompliance"`
 	// Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -25126,9 +26110,29 @@ func (o GetFleetNotificationPreferencePreferenceOutput) ToGetFleetNotificationPr
 	return o
 }
 
+// Enables or disables notification on job canceled.
+func (o GetFleetNotificationPreferencePreferenceOutput) OnJobCanceled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetNotificationPreferencePreference) bool { return v.OnJobCanceled }).(pulumi.BoolOutput)
+}
+
 // Enables or disables notification on Job Failures.
 func (o GetFleetNotificationPreferencePreferenceOutput) OnJobFailure() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetNotificationPreferencePreference) bool { return v.OnJobFailure }).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job schedule change.
+func (o GetFleetNotificationPreferencePreferenceOutput) OnJobScheduleChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetNotificationPreferencePreference) bool { return v.OnJobScheduleChange }).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job start.
+func (o GetFleetNotificationPreferencePreferenceOutput) OnJobStart() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetNotificationPreferencePreference) bool { return v.OnJobStart }).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job success.
+func (o GetFleetNotificationPreferencePreferenceOutput) OnJobSuccess() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetNotificationPreferencePreference) bool { return v.OnJobSuccess }).(pulumi.BoolOutput)
 }
 
 // Enables or disables notification when fleet resource becomes non compliant.
@@ -26513,7 +27517,7 @@ func (o GetFleetResourceSelectionArrayOutput) Index(i pulumi.IntInput) GetFleetR
 }
 
 type GetFleetResourceSelectionRuleSelectionCriteria struct {
-	// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 	MatchCondition string `pulumi:"matchCondition"`
 	// Rules.
 	Rules []GetFleetResourceSelectionRuleSelectionCriteriaRule `pulumi:"rules"`
@@ -26531,7 +27535,7 @@ type GetFleetResourceSelectionRuleSelectionCriteriaInput interface {
 }
 
 type GetFleetResourceSelectionRuleSelectionCriteriaArgs struct {
-	// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 	MatchCondition pulumi.StringInput `pulumi:"matchCondition"`
 	// Rules.
 	Rules GetFleetResourceSelectionRuleSelectionCriteriaRuleArrayInput `pulumi:"rules"`
@@ -26588,7 +27592,7 @@ func (o GetFleetResourceSelectionRuleSelectionCriteriaOutput) ToGetFleetResource
 	return o
 }
 
-// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 func (o GetFleetResourceSelectionRuleSelectionCriteriaOutput) MatchCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetResourceSelectionRuleSelectionCriteria) string { return v.MatchCondition }).(pulumi.StringOutput)
 }
@@ -26625,8 +27629,12 @@ type GetFleetResourceSelectionRuleSelectionCriteriaRule struct {
 	Basis string `pulumi:"basis"`
 	// Compartment Identifier[OCID].
 	CompartmentId string `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// Rule Conditions
 	Conditions []GetFleetResourceSelectionRuleSelectionCriteriaRuleCondition `pulumi:"conditions"`
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition string `pulumi:"matchCondition"`
 	// The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
 }
@@ -26647,8 +27655,12 @@ type GetFleetResourceSelectionRuleSelectionCriteriaRuleArgs struct {
 	Basis pulumi.StringInput `pulumi:"basis"`
 	// Compartment Identifier[OCID].
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// Rule Conditions
 	Conditions GetFleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayInput `pulumi:"conditions"`
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition pulumi.StringInput `pulumi:"matchCondition"`
 	// The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
 }
@@ -26714,11 +27726,21 @@ func (o GetFleetResourceSelectionRuleSelectionCriteriaRuleOutput) CompartmentId(
 	return o.ApplyT(func(v GetFleetResourceSelectionRuleSelectionCriteriaRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+func (o GetFleetResourceSelectionRuleSelectionCriteriaRuleOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetResourceSelectionRuleSelectionCriteriaRule) bool { return v.CompartmentIdInSubtree }).(pulumi.BoolOutput)
+}
+
 // Rule Conditions
 func (o GetFleetResourceSelectionRuleSelectionCriteriaRuleOutput) Conditions() GetFleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput {
 	return o.ApplyT(func(v GetFleetResourceSelectionRuleSelectionCriteriaRule) []GetFleetResourceSelectionRuleSelectionCriteriaRuleCondition {
 		return v.Conditions
 	}).(GetFleetResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput)
+}
+
+// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+func (o GetFleetResourceSelectionRuleSelectionCriteriaRuleOutput) MatchCondition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetResourceSelectionRuleSelectionCriteriaRule) string { return v.MatchCondition }).(pulumi.StringOutput)
 }
 
 // The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
@@ -27560,7 +28582,7 @@ type GetFleetTargetsFleetTargetCollectionItem struct {
 	Product string `pulumi:"product"`
 	// Resource Information for the Target.
 	Resources []GetFleetTargetsFleetTargetCollectionItemResource `pulumi:"resources"`
-	// The current state of the FleetTarget.
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -27598,7 +28620,7 @@ type GetFleetTargetsFleetTargetCollectionItemArgs struct {
 	Product pulumi.StringInput `pulumi:"product"`
 	// Resource Information for the Target.
 	Resources GetFleetTargetsFleetTargetCollectionItemResourceArrayInput `pulumi:"resources"`
-	// The current state of the FleetTarget.
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
@@ -27698,7 +28720,7 @@ func (o GetFleetTargetsFleetTargetCollectionItemOutput) Resources() GetFleetTarg
 	}).(GetFleetTargetsFleetTargetCollectionItemResourceArrayOutput)
 }
 
-// The current state of the FleetTarget.
+// A filter to return fleets whose lifecycleState matches the given lifecycleState.
 func (o GetFleetTargetsFleetTargetCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetTargetsFleetTargetCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
@@ -28079,7 +29101,7 @@ type GetFleetsFleetCollectionItem struct {
 	NotificationPreferences []GetFleetsFleetCollectionItemNotificationPreference `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId string `pulumi:"parentFleetId"`
-	// Products associated with the Fleet.
+	// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
 	Products []string `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties []GetFleetsFleetCollectionItemProperty `pulumi:"properties"`
@@ -28137,7 +29159,7 @@ type GetFleetsFleetCollectionItemArgs struct {
 	NotificationPreferences GetFleetsFleetCollectionItemNotificationPreferenceArrayInput `pulumi:"notificationPreferences"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
 	ParentFleetId pulumi.StringInput `pulumi:"parentFleetId"`
-	// Products associated with the Fleet.
+	// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
 	Products pulumi.StringArrayInput `pulumi:"products"`
 	// Properties associated with the Fleet.
 	Properties GetFleetsFleetCollectionItemPropertyArrayInput `pulumi:"properties"`
@@ -28275,7 +29297,7 @@ func (o GetFleetsFleetCollectionItemOutput) ParentFleetId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.ParentFleetId }).(pulumi.StringOutput)
 }
 
-// Products associated with the Fleet.
+// Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
 func (o GetFleetsFleetCollectionItemOutput) Products() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) []string { return v.Products }).(pulumi.StringArrayOutput)
 }
@@ -29230,8 +30252,16 @@ func (o GetFleetsFleetCollectionItemNotificationPreferenceArrayOutput) Index(i p
 }
 
 type GetFleetsFleetCollectionItemNotificationPreferencePreference struct {
+	// Enables or disables notification on job canceled.
+	OnJobCanceled bool `pulumi:"onJobCanceled"`
 	// Enables or disables notification on Job Failures.
 	OnJobFailure bool `pulumi:"onJobFailure"`
+	// Enables or disables notification on job schedule change.
+	OnJobScheduleChange bool `pulumi:"onJobScheduleChange"`
+	// Enables or disables notification on job start.
+	OnJobStart bool `pulumi:"onJobStart"`
+	// Enables or disables notification on job success.
+	OnJobSuccess bool `pulumi:"onJobSuccess"`
 	// Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance bool `pulumi:"onResourceNonCompliance"`
 	// Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -29260,8 +30290,16 @@ type GetFleetsFleetCollectionItemNotificationPreferencePreferenceInput interface
 }
 
 type GetFleetsFleetCollectionItemNotificationPreferencePreferenceArgs struct {
+	// Enables or disables notification on job canceled.
+	OnJobCanceled pulumi.BoolInput `pulumi:"onJobCanceled"`
 	// Enables or disables notification on Job Failures.
 	OnJobFailure pulumi.BoolInput `pulumi:"onJobFailure"`
+	// Enables or disables notification on job schedule change.
+	OnJobScheduleChange pulumi.BoolInput `pulumi:"onJobScheduleChange"`
+	// Enables or disables notification on job start.
+	OnJobStart pulumi.BoolInput `pulumi:"onJobStart"`
+	// Enables or disables notification on job success.
+	OnJobSuccess pulumi.BoolInput `pulumi:"onJobSuccess"`
 	// Enables or disables notification when fleet resource becomes non compliant.
 	OnResourceNonCompliance pulumi.BoolInput `pulumi:"onResourceNonCompliance"`
 	// Enables or disables notification when a newer version of runbook associated with a fleet is available
@@ -29329,9 +30367,31 @@ func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) ToGe
 	return o
 }
 
+// Enables or disables notification on job canceled.
+func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) OnJobCanceled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemNotificationPreferencePreference) bool { return v.OnJobCanceled }).(pulumi.BoolOutput)
+}
+
 // Enables or disables notification on Job Failures.
 func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) OnJobFailure() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItemNotificationPreferencePreference) bool { return v.OnJobFailure }).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job schedule change.
+func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) OnJobScheduleChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemNotificationPreferencePreference) bool {
+		return v.OnJobScheduleChange
+	}).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job start.
+func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) OnJobStart() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemNotificationPreferencePreference) bool { return v.OnJobStart }).(pulumi.BoolOutput)
+}
+
+// Enables or disables notification on job success.
+func (o GetFleetsFleetCollectionItemNotificationPreferencePreferenceOutput) OnJobSuccess() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemNotificationPreferencePreference) bool { return v.OnJobSuccess }).(pulumi.BoolOutput)
 }
 
 // Enables or disables notification when fleet resource becomes non compliant.
@@ -29873,7 +30933,7 @@ func (o GetFleetsFleetCollectionItemResourceSelectionArrayOutput) Index(i pulumi
 }
 
 type GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteria struct {
-	// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 	MatchCondition string `pulumi:"matchCondition"`
 	// Rules.
 	Rules []GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule `pulumi:"rules"`
@@ -29891,7 +30951,7 @@ type GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaInput int
 }
 
 type GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaArgs struct {
-	// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 	MatchCondition pulumi.StringInput `pulumi:"matchCondition"`
 	// Rules.
 	Rules GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleArrayInput `pulumi:"rules"`
@@ -29948,7 +31008,7 @@ func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaOutput
 	return o
 }
 
-// Match condition for the rule selection. Include resources that match all rules or any of the rules.
+// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
 func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaOutput) MatchCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteria) string {
 		return v.MatchCondition
@@ -29987,8 +31047,12 @@ type GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule stru
 	Basis string `pulumi:"basis"`
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// Rule Conditions
 	Conditions []GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition `pulumi:"conditions"`
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition string `pulumi:"matchCondition"`
 	// The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
 }
@@ -30009,8 +31073,12 @@ type GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleArgs 
 	Basis pulumi.StringInput `pulumi:"basis"`
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// Rule Conditions
 	Conditions GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArrayInput `pulumi:"conditions"`
+	// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+	MatchCondition pulumi.StringInput `pulumi:"matchCondition"`
 	// The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
 	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
 }
@@ -30078,11 +31146,25 @@ func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleOu
 	}).(pulumi.StringOutput)
 }
 
+// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule) bool {
+		return v.CompartmentIdInSubtree
+	}).(pulumi.BoolOutput)
+}
+
 // Rule Conditions
 func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleOutput) Conditions() GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule) []GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition {
 		return v.Conditions
 	}).(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput)
+}
+
+// Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleOutput) MatchCondition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule) string {
+		return v.MatchCondition
+	}).(pulumi.StringOutput)
 }
 
 // The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
@@ -30231,6 +31313,371 @@ func (o GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition {
 		return vs[0].([]GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition)[vs[1].(int)]
 	}).(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionOutput)
+}
+
+type GetInstalledPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInstalledPatchesFilterInput is an input type that accepts GetInstalledPatchesFilterArgs and GetInstalledPatchesFilterOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesFilterInput` via:
+//
+//	GetInstalledPatchesFilterArgs{...}
+type GetInstalledPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesFilterOutput() GetInstalledPatchesFilterOutput
+	ToGetInstalledPatchesFilterOutputWithContext(context.Context) GetInstalledPatchesFilterOutput
+}
+
+type GetInstalledPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInstalledPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesFilterArgs) ToGetInstalledPatchesFilterOutput() GetInstalledPatchesFilterOutput {
+	return i.ToGetInstalledPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesFilterArgs) ToGetInstalledPatchesFilterOutputWithContext(ctx context.Context) GetInstalledPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesFilterOutput)
+}
+
+// GetInstalledPatchesFilterArrayInput is an input type that accepts GetInstalledPatchesFilterArray and GetInstalledPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesFilterArrayInput` via:
+//
+//	GetInstalledPatchesFilterArray{ GetInstalledPatchesFilterArgs{...} }
+type GetInstalledPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesFilterArrayOutput() GetInstalledPatchesFilterArrayOutput
+	ToGetInstalledPatchesFilterArrayOutputWithContext(context.Context) GetInstalledPatchesFilterArrayOutput
+}
+
+type GetInstalledPatchesFilterArray []GetInstalledPatchesFilterInput
+
+func (GetInstalledPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesFilterArray) ToGetInstalledPatchesFilterArrayOutput() GetInstalledPatchesFilterArrayOutput {
+	return i.ToGetInstalledPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesFilterArray) ToGetInstalledPatchesFilterArrayOutputWithContext(ctx context.Context) GetInstalledPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesFilterArrayOutput)
+}
+
+type GetInstalledPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesFilterOutput) ToGetInstalledPatchesFilterOutput() GetInstalledPatchesFilterOutput {
+	return o
+}
+
+func (o GetInstalledPatchesFilterOutput) ToGetInstalledPatchesFilterOutputWithContext(ctx context.Context) GetInstalledPatchesFilterOutput {
+	return o
+}
+
+func (o GetInstalledPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInstalledPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstalledPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInstalledPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstalledPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInstalledPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesFilterArrayOutput) ToGetInstalledPatchesFilterArrayOutput() GetInstalledPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesFilterArrayOutput) ToGetInstalledPatchesFilterArrayOutputWithContext(ctx context.Context) GetInstalledPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetInstalledPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstalledPatchesFilter {
+		return vs[0].([]GetInstalledPatchesFilter)[vs[1].(int)]
+	}).(GetInstalledPatchesFilterOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollection struct {
+	// List of installed patches
+	Items []GetInstalledPatchesInstalledPatchCollectionItem `pulumi:"items"`
+}
+
+// GetInstalledPatchesInstalledPatchCollectionInput is an input type that accepts GetInstalledPatchesInstalledPatchCollectionArgs and GetInstalledPatchesInstalledPatchCollectionOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesInstalledPatchCollectionInput` via:
+//
+//	GetInstalledPatchesInstalledPatchCollectionArgs{...}
+type GetInstalledPatchesInstalledPatchCollectionInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesInstalledPatchCollectionOutput() GetInstalledPatchesInstalledPatchCollectionOutput
+	ToGetInstalledPatchesInstalledPatchCollectionOutputWithContext(context.Context) GetInstalledPatchesInstalledPatchCollectionOutput
+}
+
+type GetInstalledPatchesInstalledPatchCollectionArgs struct {
+	// List of installed patches
+	Items GetInstalledPatchesInstalledPatchCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInstalledPatchesInstalledPatchCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionArgs) ToGetInstalledPatchesInstalledPatchCollectionOutput() GetInstalledPatchesInstalledPatchCollectionOutput {
+	return i.ToGetInstalledPatchesInstalledPatchCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionArgs) ToGetInstalledPatchesInstalledPatchCollectionOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesInstalledPatchCollectionOutput)
+}
+
+// GetInstalledPatchesInstalledPatchCollectionArrayInput is an input type that accepts GetInstalledPatchesInstalledPatchCollectionArray and GetInstalledPatchesInstalledPatchCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesInstalledPatchCollectionArrayInput` via:
+//
+//	GetInstalledPatchesInstalledPatchCollectionArray{ GetInstalledPatchesInstalledPatchCollectionArgs{...} }
+type GetInstalledPatchesInstalledPatchCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesInstalledPatchCollectionArrayOutput() GetInstalledPatchesInstalledPatchCollectionArrayOutput
+	ToGetInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(context.Context) GetInstalledPatchesInstalledPatchCollectionArrayOutput
+}
+
+type GetInstalledPatchesInstalledPatchCollectionArray []GetInstalledPatchesInstalledPatchCollectionInput
+
+func (GetInstalledPatchesInstalledPatchCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionArray) ToGetInstalledPatchesInstalledPatchCollectionArrayOutput() GetInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return i.ToGetInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionArray) ToGetInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesInstalledPatchCollectionArrayOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesInstalledPatchCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionOutput) ToGetInstalledPatchesInstalledPatchCollectionOutput() GetInstalledPatchesInstalledPatchCollectionOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionOutput) ToGetInstalledPatchesInstalledPatchCollectionOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionOutput {
+	return o
+}
+
+// List of installed patches
+func (o GetInstalledPatchesInstalledPatchCollectionOutput) Items() GetInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollection) []GetInstalledPatchesInstalledPatchCollectionItem {
+		return v.Items
+	}).(GetInstalledPatchesInstalledPatchCollectionItemArrayOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesInstalledPatchCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionArrayOutput) ToGetInstalledPatchesInstalledPatchCollectionArrayOutput() GetInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionArrayOutput) ToGetInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionArrayOutput) Index(i pulumi.IntInput) GetInstalledPatchesInstalledPatchCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstalledPatchesInstalledPatchCollection {
+		return vs[0].([]GetInstalledPatchesInstalledPatchCollection)[vs[1].(int)]
+	}).(GetInstalledPatchesInstalledPatchCollectionOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollectionItem struct {
+	// Description of the patch
+	PatchDescription string `pulumi:"patchDescription"`
+	// The OCID of the patch.
+	PatchId string `pulumi:"patchId"`
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	PatchLevel string `pulumi:"patchLevel"`
+	// Name of the patch.
+	PatchName string `pulumi:"patchName"`
+	// Patch type.
+	PatchType string `pulumi:"patchType"`
+	// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+	Severity string `pulumi:"severity"`
+	// Date on which the patch was applied to the target.
+	TimeApplied string `pulumi:"timeApplied"`
+	// Date on which the patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
+}
+
+// GetInstalledPatchesInstalledPatchCollectionItemInput is an input type that accepts GetInstalledPatchesInstalledPatchCollectionItemArgs and GetInstalledPatchesInstalledPatchCollectionItemOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesInstalledPatchCollectionItemInput` via:
+//
+//	GetInstalledPatchesInstalledPatchCollectionItemArgs{...}
+type GetInstalledPatchesInstalledPatchCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesInstalledPatchCollectionItemOutput() GetInstalledPatchesInstalledPatchCollectionItemOutput
+	ToGetInstalledPatchesInstalledPatchCollectionItemOutputWithContext(context.Context) GetInstalledPatchesInstalledPatchCollectionItemOutput
+}
+
+type GetInstalledPatchesInstalledPatchCollectionItemArgs struct {
+	// Description of the patch
+	PatchDescription pulumi.StringInput `pulumi:"patchDescription"`
+	// The OCID of the patch.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	PatchLevel pulumi.StringInput `pulumi:"patchLevel"`
+	// Name of the patch.
+	PatchName pulumi.StringInput `pulumi:"patchName"`
+	// Patch type.
+	PatchType pulumi.StringInput `pulumi:"patchType"`
+	// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Date on which the patch was applied to the target.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+	// Date on which the patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+}
+
+func (GetInstalledPatchesInstalledPatchCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionItemArgs) ToGetInstalledPatchesInstalledPatchCollectionItemOutput() GetInstalledPatchesInstalledPatchCollectionItemOutput {
+	return i.ToGetInstalledPatchesInstalledPatchCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionItemArgs) ToGetInstalledPatchesInstalledPatchCollectionItemOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesInstalledPatchCollectionItemOutput)
+}
+
+// GetInstalledPatchesInstalledPatchCollectionItemArrayInput is an input type that accepts GetInstalledPatchesInstalledPatchCollectionItemArray and GetInstalledPatchesInstalledPatchCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInstalledPatchesInstalledPatchCollectionItemArrayInput` via:
+//
+//	GetInstalledPatchesInstalledPatchCollectionItemArray{ GetInstalledPatchesInstalledPatchCollectionItemArgs{...} }
+type GetInstalledPatchesInstalledPatchCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetInstalledPatchesInstalledPatchCollectionItemArrayOutput
+	ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(context.Context) GetInstalledPatchesInstalledPatchCollectionItemArrayOutput
+}
+
+type GetInstalledPatchesInstalledPatchCollectionItemArray []GetInstalledPatchesInstalledPatchCollectionItemInput
+
+func (GetInstalledPatchesInstalledPatchCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionItemArray) ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return i.ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstalledPatchesInstalledPatchCollectionItemArray) ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstalledPatchesInstalledPatchCollectionItemArrayOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesInstalledPatchCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) ToGetInstalledPatchesInstalledPatchCollectionItemOutput() GetInstalledPatchesInstalledPatchCollectionItemOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) ToGetInstalledPatchesInstalledPatchCollectionItemOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionItemOutput {
+	return o
+}
+
+// Description of the patch
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchDescription }).(pulumi.StringOutput)
+}
+
+// The OCID of the patch.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchLevel }).(pulumi.StringOutput)
+}
+
+// Name of the patch.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchName }).(pulumi.StringOutput)
+}
+
+// Patch type.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+// Date on which the patch was applied to the target.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+// Date on which the patch was released.
+func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+type GetInstalledPatchesInstalledPatchCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstalledPatchesInstalledPatchCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionItemArrayOutput) ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionItemArrayOutput) ToGetInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInstalledPatchesInstalledPatchCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInstalledPatchesInstalledPatchCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstalledPatchesInstalledPatchCollectionItem {
+		return vs[0].([]GetInstalledPatchesInstalledPatchCollectionItem)[vs[1].(int)]
+	}).(GetInstalledPatchesInstalledPatchCollectionItemOutput)
 }
 
 type GetInventoryRecordsFilter struct {
@@ -30456,7 +31903,7 @@ type GetInventoryRecordsInventoryRecordCollectionItem struct {
 	Properties []GetInventoryRecordsInventoryRecordCollectionItemProperty `pulumi:"properties"`
 	// The current state of the Inventory target.
 	State string `pulumi:"state"`
-	// The OCID of the Inventory target.
+	// The id of the Inventory target.
 	TargetId string `pulumi:"targetId"`
 	// Name of the target
 	TargetName string `pulumi:"targetName"`
@@ -30502,7 +31949,7 @@ type GetInventoryRecordsInventoryRecordCollectionItemArgs struct {
 	Properties GetInventoryRecordsInventoryRecordCollectionItemPropertyArrayInput `pulumi:"properties"`
 	// The current state of the Inventory target.
 	State pulumi.StringInput `pulumi:"state"`
-	// The OCID of the Inventory target.
+	// The id of the Inventory target.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Name of the target
 	TargetName pulumi.StringInput `pulumi:"targetName"`
@@ -30614,7 +32061,7 @@ func (o GetInventoryRecordsInventoryRecordCollectionItemOutput) State() pulumi.S
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the Inventory target.
+// The id of the Inventory target.
 func (o GetInventoryRecordsInventoryRecordCollectionItemOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
 }
@@ -30916,12 +32363,16 @@ type GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch struct {
 	PatchDescription string `pulumi:"patchDescription"`
 	// OCID of the installed patch
 	PatchId string `pulumi:"patchId"`
+	// Patch Level.
+	PatchLevel string `pulumi:"patchLevel"`
 	// Name of the installed patch
 	PatchName string `pulumi:"patchName"`
 	// Type of patch applied
 	PatchType string `pulumi:"patchType"`
 	// Date on which the patch was applied to the target
 	TimeApplied string `pulumi:"timeApplied"`
+	// The date on which patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
 }
 
 // GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchInput is an input type that accepts GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArgs and GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput values.
@@ -30940,12 +32391,16 @@ type GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArgs struct {
 	PatchDescription pulumi.StringInput `pulumi:"patchDescription"`
 	// OCID of the installed patch
 	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// Patch Level.
+	PatchLevel pulumi.StringInput `pulumi:"patchLevel"`
 	// Name of the installed patch
 	PatchName pulumi.StringInput `pulumi:"patchName"`
 	// Type of patch applied
 	PatchType pulumi.StringInput `pulumi:"patchType"`
 	// Date on which the patch was applied to the target
 	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+	// The date on which patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
 }
 
 func (GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArgs) ElementType() reflect.Type {
@@ -31011,6 +32466,11 @@ func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) Pa
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch) string { return v.PatchId }).(pulumi.StringOutput)
 }
 
+// Patch Level.
+func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) PatchLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch) string { return v.PatchLevel }).(pulumi.StringOutput)
+}
+
 // Name of the installed patch
 func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) PatchName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch) string { return v.PatchName }).(pulumi.StringOutput)
@@ -31024,6 +32484,11 @@ func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) Pa
 // Date on which the patch was applied to the target
 func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) TimeApplied() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+// The date on which patch was released.
+func (o GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch) string { return v.TimeReleased }).(pulumi.StringOutput)
 }
 
 type GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArrayOutput struct{ *pulumi.OutputState }
@@ -39235,6 +40700,1730 @@ func (o GetProvisionsProvisionCollectionItemTfOutputArrayOutput) Index(i pulumi.
 	}).(GetProvisionsProvisionCollectionItemTfOutputOutput)
 }
 
+type GetRecommendedPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRecommendedPatchesFilterInput is an input type that accepts GetRecommendedPatchesFilterArgs and GetRecommendedPatchesFilterOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesFilterInput` via:
+//
+//	GetRecommendedPatchesFilterArgs{...}
+type GetRecommendedPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesFilterOutput() GetRecommendedPatchesFilterOutput
+	ToGetRecommendedPatchesFilterOutputWithContext(context.Context) GetRecommendedPatchesFilterOutput
+}
+
+type GetRecommendedPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRecommendedPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesFilter)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesFilterArgs) ToGetRecommendedPatchesFilterOutput() GetRecommendedPatchesFilterOutput {
+	return i.ToGetRecommendedPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesFilterArgs) ToGetRecommendedPatchesFilterOutputWithContext(ctx context.Context) GetRecommendedPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesFilterOutput)
+}
+
+// GetRecommendedPatchesFilterArrayInput is an input type that accepts GetRecommendedPatchesFilterArray and GetRecommendedPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesFilterArrayInput` via:
+//
+//	GetRecommendedPatchesFilterArray{ GetRecommendedPatchesFilterArgs{...} }
+type GetRecommendedPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesFilterArrayOutput() GetRecommendedPatchesFilterArrayOutput
+	ToGetRecommendedPatchesFilterArrayOutputWithContext(context.Context) GetRecommendedPatchesFilterArrayOutput
+}
+
+type GetRecommendedPatchesFilterArray []GetRecommendedPatchesFilterInput
+
+func (GetRecommendedPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesFilter)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesFilterArray) ToGetRecommendedPatchesFilterArrayOutput() GetRecommendedPatchesFilterArrayOutput {
+	return i.ToGetRecommendedPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesFilterArray) ToGetRecommendedPatchesFilterArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesFilterArrayOutput)
+}
+
+type GetRecommendedPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesFilter)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesFilterOutput) ToGetRecommendedPatchesFilterOutput() GetRecommendedPatchesFilterOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesFilterOutput) ToGetRecommendedPatchesFilterOutputWithContext(ctx context.Context) GetRecommendedPatchesFilterOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRecommendedPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRecommendedPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRecommendedPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesFilter)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesFilterArrayOutput) ToGetRecommendedPatchesFilterArrayOutput() GetRecommendedPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesFilterArrayOutput) ToGetRecommendedPatchesFilterArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetRecommendedPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendedPatchesFilter {
+		return vs[0].([]GetRecommendedPatchesFilter)[vs[1].(int)]
+	}).(GetRecommendedPatchesFilterOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollection struct {
+	// List of recommended patches
+	Items []GetRecommendedPatchesRecommendedPatchCollectionItem `pulumi:"items"`
+}
+
+// GetRecommendedPatchesRecommendedPatchCollectionInput is an input type that accepts GetRecommendedPatchesRecommendedPatchCollectionArgs and GetRecommendedPatchesRecommendedPatchCollectionOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesRecommendedPatchCollectionInput` via:
+//
+//	GetRecommendedPatchesRecommendedPatchCollectionArgs{...}
+type GetRecommendedPatchesRecommendedPatchCollectionInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesRecommendedPatchCollectionOutput() GetRecommendedPatchesRecommendedPatchCollectionOutput
+	ToGetRecommendedPatchesRecommendedPatchCollectionOutputWithContext(context.Context) GetRecommendedPatchesRecommendedPatchCollectionOutput
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionArgs struct {
+	// List of recommended patches
+	Items GetRecommendedPatchesRecommendedPatchCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRecommendedPatchesRecommendedPatchCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollection)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionArgs) ToGetRecommendedPatchesRecommendedPatchCollectionOutput() GetRecommendedPatchesRecommendedPatchCollectionOutput {
+	return i.ToGetRecommendedPatchesRecommendedPatchCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionArgs) ToGetRecommendedPatchesRecommendedPatchCollectionOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesRecommendedPatchCollectionOutput)
+}
+
+// GetRecommendedPatchesRecommendedPatchCollectionArrayInput is an input type that accepts GetRecommendedPatchesRecommendedPatchCollectionArray and GetRecommendedPatchesRecommendedPatchCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesRecommendedPatchCollectionArrayInput` via:
+//
+//	GetRecommendedPatchesRecommendedPatchCollectionArray{ GetRecommendedPatchesRecommendedPatchCollectionArgs{...} }
+type GetRecommendedPatchesRecommendedPatchCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionArrayOutput
+	ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutputWithContext(context.Context) GetRecommendedPatchesRecommendedPatchCollectionArrayOutput
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionArray []GetRecommendedPatchesRecommendedPatchCollectionInput
+
+func (GetRecommendedPatchesRecommendedPatchCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesRecommendedPatchCollection)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionArray) ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionArrayOutput {
+	return i.ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionArray) ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesRecommendedPatchCollectionArrayOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesRecommendedPatchCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollection)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionOutput) ToGetRecommendedPatchesRecommendedPatchCollectionOutput() GetRecommendedPatchesRecommendedPatchCollectionOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionOutput) ToGetRecommendedPatchesRecommendedPatchCollectionOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionOutput {
+	return o
+}
+
+// List of recommended patches
+func (o GetRecommendedPatchesRecommendedPatchCollectionOutput) Items() GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollection) []GetRecommendedPatchesRecommendedPatchCollectionItem {
+		return v.Items
+	}).(GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesRecommendedPatchCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesRecommendedPatchCollection)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionArrayOutput) ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionArrayOutput) ToGetRecommendedPatchesRecommendedPatchCollectionArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionArrayOutput) Index(i pulumi.IntInput) GetRecommendedPatchesRecommendedPatchCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendedPatchesRecommendedPatchCollection {
+		return vs[0].([]GetRecommendedPatchesRecommendedPatchCollection)[vs[1].(int)]
+	}).(GetRecommendedPatchesRecommendedPatchCollectionOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionItem struct {
+	// Description of the patch
+	PatchDescription string `pulumi:"patchDescription"`
+	// Patch identifier.
+	PatchId string `pulumi:"patchId"`
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	PatchLevel string `pulumi:"patchLevel"`
+	// Name of the patch.
+	PatchName string `pulumi:"patchName"`
+	// Patch type.
+	PatchType string `pulumi:"patchType"`
+	// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+	Severity string `pulumi:"severity"`
+	// Date on which the patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
+}
+
+// GetRecommendedPatchesRecommendedPatchCollectionItemInput is an input type that accepts GetRecommendedPatchesRecommendedPatchCollectionItemArgs and GetRecommendedPatchesRecommendedPatchCollectionItemOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesRecommendedPatchCollectionItemInput` via:
+//
+//	GetRecommendedPatchesRecommendedPatchCollectionItemArgs{...}
+type GetRecommendedPatchesRecommendedPatchCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesRecommendedPatchCollectionItemOutput() GetRecommendedPatchesRecommendedPatchCollectionItemOutput
+	ToGetRecommendedPatchesRecommendedPatchCollectionItemOutputWithContext(context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemOutput
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionItemArgs struct {
+	// Description of the patch
+	PatchDescription pulumi.StringInput `pulumi:"patchDescription"`
+	// Patch identifier.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	PatchLevel pulumi.StringInput `pulumi:"patchLevel"`
+	// Name of the patch.
+	PatchName pulumi.StringInput `pulumi:"patchName"`
+	// Patch type.
+	PatchType pulumi.StringInput `pulumi:"patchType"`
+	// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Date on which the patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+}
+
+func (GetRecommendedPatchesRecommendedPatchCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionItemArgs) ToGetRecommendedPatchesRecommendedPatchCollectionItemOutput() GetRecommendedPatchesRecommendedPatchCollectionItemOutput {
+	return i.ToGetRecommendedPatchesRecommendedPatchCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionItemArgs) ToGetRecommendedPatchesRecommendedPatchCollectionItemOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesRecommendedPatchCollectionItemOutput)
+}
+
+// GetRecommendedPatchesRecommendedPatchCollectionItemArrayInput is an input type that accepts GetRecommendedPatchesRecommendedPatchCollectionItemArray and GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRecommendedPatchesRecommendedPatchCollectionItemArrayInput` via:
+//
+//	GetRecommendedPatchesRecommendedPatchCollectionItemArray{ GetRecommendedPatchesRecommendedPatchCollectionItemArgs{...} }
+type GetRecommendedPatchesRecommendedPatchCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput
+	ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutputWithContext(context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionItemArray []GetRecommendedPatchesRecommendedPatchCollectionItemInput
+
+func (GetRecommendedPatchesRecommendedPatchCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesRecommendedPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionItemArray) ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput {
+	return i.ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecommendedPatchesRecommendedPatchCollectionItemArray) ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesRecommendedPatchCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) ToGetRecommendedPatchesRecommendedPatchCollectionItemOutput() GetRecommendedPatchesRecommendedPatchCollectionItemOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) ToGetRecommendedPatchesRecommendedPatchCollectionItemOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemOutput {
+	return o
+}
+
+// Description of the patch
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchDescription }).(pulumi.StringOutput)
+}
+
+// Patch identifier.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchLevel }).(pulumi.StringOutput)
+}
+
+// Name of the patch.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchName }).(pulumi.StringOutput)
+}
+
+// Patch type.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+// Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+// Date on which the patch was released.
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+type GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecommendedPatchesRecommendedPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput) ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput() GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput) ToGetRecommendedPatchesRecommendedPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecommendedPatchesRecommendedPatchCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendedPatchesRecommendedPatchCollectionItem {
+		return vs[0].([]GetRecommendedPatchesRecommendedPatchCollectionItem)[vs[1].(int)]
+	}).(GetRecommendedPatchesRecommendedPatchCollectionItemOutput)
+}
+
+type GetReportMetadataFilter struct {
+	// Name of Report.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetReportMetadataFilterInput is an input type that accepts GetReportMetadataFilterArgs and GetReportMetadataFilterOutput values.
+// You can construct a concrete instance of `GetReportMetadataFilterInput` via:
+//
+//	GetReportMetadataFilterArgs{...}
+type GetReportMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataFilterOutput() GetReportMetadataFilterOutput
+	ToGetReportMetadataFilterOutputWithContext(context.Context) GetReportMetadataFilterOutput
+}
+
+type GetReportMetadataFilterArgs struct {
+	// Name of Report.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetReportMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataFilter)(nil)).Elem()
+}
+
+func (i GetReportMetadataFilterArgs) ToGetReportMetadataFilterOutput() GetReportMetadataFilterOutput {
+	return i.ToGetReportMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataFilterArgs) ToGetReportMetadataFilterOutputWithContext(ctx context.Context) GetReportMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataFilterOutput)
+}
+
+// GetReportMetadataFilterArrayInput is an input type that accepts GetReportMetadataFilterArray and GetReportMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataFilterArrayInput` via:
+//
+//	GetReportMetadataFilterArray{ GetReportMetadataFilterArgs{...} }
+type GetReportMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataFilterArrayOutput() GetReportMetadataFilterArrayOutput
+	ToGetReportMetadataFilterArrayOutputWithContext(context.Context) GetReportMetadataFilterArrayOutput
+}
+
+type GetReportMetadataFilterArray []GetReportMetadataFilterInput
+
+func (GetReportMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataFilter)(nil)).Elem()
+}
+
+func (i GetReportMetadataFilterArray) ToGetReportMetadataFilterArrayOutput() GetReportMetadataFilterArrayOutput {
+	return i.ToGetReportMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataFilterArray) ToGetReportMetadataFilterArrayOutputWithContext(ctx context.Context) GetReportMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataFilterArrayOutput)
+}
+
+type GetReportMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataFilter)(nil)).Elem()
+}
+
+func (o GetReportMetadataFilterOutput) ToGetReportMetadataFilterOutput() GetReportMetadataFilterOutput {
+	return o
+}
+
+func (o GetReportMetadataFilterOutput) ToGetReportMetadataFilterOutputWithContext(ctx context.Context) GetReportMetadataFilterOutput {
+	return o
+}
+
+// Name of Report.
+func (o GetReportMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetReportMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReportMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetReportMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReportMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetReportMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataFilter)(nil)).Elem()
+}
+
+func (o GetReportMetadataFilterArrayOutput) ToGetReportMetadataFilterArrayOutput() GetReportMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataFilterArrayOutput) ToGetReportMetadataFilterArrayOutputWithContext(ctx context.Context) GetReportMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetReportMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataFilter {
+		return vs[0].([]GetReportMetadataFilter)[vs[1].(int)]
+	}).(GetReportMetadataFilterOutput)
+}
+
+type GetReportMetadataReportMetadataCollection struct {
+	// List of ReportMetadata.
+	Items []GetReportMetadataReportMetadataCollectionItem `pulumi:"items"`
+}
+
+// GetReportMetadataReportMetadataCollectionInput is an input type that accepts GetReportMetadataReportMetadataCollectionArgs and GetReportMetadataReportMetadataCollectionOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionArgs{...}
+type GetReportMetadataReportMetadataCollectionInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionOutput() GetReportMetadataReportMetadataCollectionOutput
+	ToGetReportMetadataReportMetadataCollectionOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionOutput
+}
+
+type GetReportMetadataReportMetadataCollectionArgs struct {
+	// List of ReportMetadata.
+	Items GetReportMetadataReportMetadataCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetReportMetadataReportMetadataCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollection)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionArgs) ToGetReportMetadataReportMetadataCollectionOutput() GetReportMetadataReportMetadataCollectionOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionArgs) ToGetReportMetadataReportMetadataCollectionOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionOutput)
+}
+
+// GetReportMetadataReportMetadataCollectionArrayInput is an input type that accepts GetReportMetadataReportMetadataCollectionArray and GetReportMetadataReportMetadataCollectionArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionArrayInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionArray{ GetReportMetadataReportMetadataCollectionArgs{...} }
+type GetReportMetadataReportMetadataCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionArrayOutput() GetReportMetadataReportMetadataCollectionArrayOutput
+	ToGetReportMetadataReportMetadataCollectionArrayOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionArrayOutput
+}
+
+type GetReportMetadataReportMetadataCollectionArray []GetReportMetadataReportMetadataCollectionInput
+
+func (GetReportMetadataReportMetadataCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollection)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionArray) ToGetReportMetadataReportMetadataCollectionArrayOutput() GetReportMetadataReportMetadataCollectionArrayOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionArray) ToGetReportMetadataReportMetadataCollectionArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollection)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionOutput) ToGetReportMetadataReportMetadataCollectionOutput() GetReportMetadataReportMetadataCollectionOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionOutput) ToGetReportMetadataReportMetadataCollectionOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionOutput {
+	return o
+}
+
+// List of ReportMetadata.
+func (o GetReportMetadataReportMetadataCollectionOutput) Items() GetReportMetadataReportMetadataCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollection) []GetReportMetadataReportMetadataCollectionItem {
+		return v.Items
+	}).(GetReportMetadataReportMetadataCollectionItemArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollection)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionArrayOutput) ToGetReportMetadataReportMetadataCollectionArrayOutput() GetReportMetadataReportMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionArrayOutput) ToGetReportMetadataReportMetadataCollectionArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionArrayOutput) Index(i pulumi.IntInput) GetReportMetadataReportMetadataCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataReportMetadataCollection {
+		return vs[0].([]GetReportMetadataReportMetadataCollection)[vs[1].(int)]
+	}).(GetReportMetadataReportMetadataCollectionOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItem struct {
+	// Column Metadata.
+	ColumnMetadatas []GetReportMetadataReportMetadataCollectionItemColumnMetadata `pulumi:"columnMetadatas"`
+	// default order clause for reports.
+	DefaultOrderClauses []GetReportMetadataReportMetadataCollectionItemDefaultOrderClause `pulumi:"defaultOrderClauses"`
+	// Filter description.
+	Description string `pulumi:"description"`
+	// metricMetadata.
+	Filters []GetReportMetadataReportMetadataCollectionItemFilter `pulumi:"filters"`
+	// Metric Name.
+	Metric string `pulumi:"metric"`
+	// Name of Report.
+	Name string `pulumi:"name"`
+}
+
+// GetReportMetadataReportMetadataCollectionItemInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemArgs and GetReportMetadataReportMetadataCollectionItemOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemArgs{...}
+type GetReportMetadataReportMetadataCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemOutput() GetReportMetadataReportMetadataCollectionItemOutput
+	ToGetReportMetadataReportMetadataCollectionItemOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemArgs struct {
+	// Column Metadata.
+	ColumnMetadatas GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayInput `pulumi:"columnMetadatas"`
+	// default order clause for reports.
+	DefaultOrderClauses GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayInput `pulumi:"defaultOrderClauses"`
+	// Filter description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// metricMetadata.
+	Filters GetReportMetadataReportMetadataCollectionItemFilterArrayInput `pulumi:"filters"`
+	// Metric Name.
+	Metric pulumi.StringInput `pulumi:"metric"`
+	// Name of Report.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetReportMetadataReportMetadataCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemArgs) ToGetReportMetadataReportMetadataCollectionItemOutput() GetReportMetadataReportMetadataCollectionItemOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemArgs) ToGetReportMetadataReportMetadataCollectionItemOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemOutput)
+}
+
+// GetReportMetadataReportMetadataCollectionItemArrayInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemArray and GetReportMetadataReportMetadataCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemArrayInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemArray{ GetReportMetadataReportMetadataCollectionItemArgs{...} }
+type GetReportMetadataReportMetadataCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemArrayOutput() GetReportMetadataReportMetadataCollectionItemArrayOutput
+	ToGetReportMetadataReportMetadataCollectionItemArrayOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemArrayOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemArray []GetReportMetadataReportMetadataCollectionItemInput
+
+func (GetReportMetadataReportMetadataCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemArray) ToGetReportMetadataReportMetadataCollectionItemArrayOutput() GetReportMetadataReportMetadataCollectionItemArrayOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemArray) ToGetReportMetadataReportMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemOutput) ToGetReportMetadataReportMetadataCollectionItemOutput() GetReportMetadataReportMetadataCollectionItemOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemOutput) ToGetReportMetadataReportMetadataCollectionItemOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemOutput {
+	return o
+}
+
+// Column Metadata.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) ColumnMetadatas() GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) []GetReportMetadataReportMetadataCollectionItemColumnMetadata {
+		return v.ColumnMetadatas
+	}).(GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput)
+}
+
+// default order clause for reports.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) DefaultOrderClauses() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) []GetReportMetadataReportMetadataCollectionItemDefaultOrderClause {
+		return v.DefaultOrderClauses
+	}).(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput)
+}
+
+// Filter description.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// metricMetadata.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) Filters() GetReportMetadataReportMetadataCollectionItemFilterArrayOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) []GetReportMetadataReportMetadataCollectionItemFilter {
+		return v.Filters
+	}).(GetReportMetadataReportMetadataCollectionItemFilterArrayOutput)
+}
+
+// Metric Name.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) Metric() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) string { return v.Metric }).(pulumi.StringOutput)
+}
+
+// Name of Report.
+func (o GetReportMetadataReportMetadataCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemArrayOutput) ToGetReportMetadataReportMetadataCollectionItemArrayOutput() GetReportMetadataReportMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemArrayOutput) ToGetReportMetadataReportMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemArrayOutput) Index(i pulumi.IntInput) GetReportMetadataReportMetadataCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataReportMetadataCollectionItem {
+		return vs[0].([]GetReportMetadataReportMetadataCollectionItem)[vs[1].(int)]
+	}).(GetReportMetadataReportMetadataCollectionItemOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemColumnMetadata struct {
+	// Filter description.
+	Description string `pulumi:"description"`
+	// Name of Report.
+	Name string `pulumi:"name"`
+	// Column value type.
+	Type string `pulumi:"type"`
+}
+
+// GetReportMetadataReportMetadataCollectionItemColumnMetadataInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs and GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemColumnMetadataInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs{...}
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput
+	ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs struct {
+	// Filter description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Name of Report.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Column value type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemColumnMetadata)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput)
+}
+
+// GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemColumnMetadataArray and GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemColumnMetadataArray{ GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs{...} }
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput
+	ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataArray []GetReportMetadataReportMetadataCollectionItemColumnMetadataInput
+
+func (GetReportMetadataReportMetadataCollectionItemColumnMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemColumnMetadata)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemColumnMetadataArray) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemColumnMetadataArray) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemColumnMetadata)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput {
+	return o
+}
+
+// Filter description.
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemColumnMetadata) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Name of Report.
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemColumnMetadata) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Column value type.
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemColumnMetadata) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemColumnMetadata)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput() GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput) ToGetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput) Index(i pulumi.IntInput) GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataReportMetadataCollectionItemColumnMetadata {
+		return vs[0].([]GetReportMetadataReportMetadataCollectionItemColumnMetadata)[vs[1].(int)]
+	}).(GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClause struct {
+	// Column to sort by.
+	SortBy string `pulumi:"sortBy"`
+	// Sort direction either ASC or DESC.
+	SortOrder string `pulumi:"sortOrder"`
+}
+
+// GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs and GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs{...}
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput
+	ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs struct {
+	// Column to sort by.
+	SortBy pulumi.StringInput `pulumi:"sortBy"`
+	// Sort direction either ASC or DESC.
+	SortOrder pulumi.StringInput `pulumi:"sortOrder"`
+}
+
+func (GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemDefaultOrderClause)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput)
+}
+
+// GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray and GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray{ GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs{...} }
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput
+	ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray []GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseInput
+
+func (GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemDefaultOrderClause)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemDefaultOrderClause)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput {
+	return o
+}
+
+// Column to sort by.
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput) SortBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemDefaultOrderClause) string { return v.SortBy }).(pulumi.StringOutput)
+}
+
+// Sort direction either ASC or DESC.
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput) SortOrder() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemDefaultOrderClause) string { return v.SortOrder }).(pulumi.StringOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemDefaultOrderClause)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput() GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput) ToGetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput) Index(i pulumi.IntInput) GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataReportMetadataCollectionItemDefaultOrderClause {
+		return vs[0].([]GetReportMetadataReportMetadataCollectionItemDefaultOrderClause)[vs[1].(int)]
+	}).(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemFilter struct {
+	// Filter description.
+	Description string `pulumi:"description"`
+	// Name of Report.
+	Name string `pulumi:"name"`
+	// Filter value source.
+	ValueSource string `pulumi:"valueSource"`
+}
+
+// GetReportMetadataReportMetadataCollectionItemFilterInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemFilterArgs and GetReportMetadataReportMetadataCollectionItemFilterOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemFilterInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemFilterArgs{...}
+type GetReportMetadataReportMetadataCollectionItemFilterInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemFilterOutput() GetReportMetadataReportMetadataCollectionItemFilterOutput
+	ToGetReportMetadataReportMetadataCollectionItemFilterOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemFilterOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemFilterArgs struct {
+	// Filter description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Name of Report.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Filter value source.
+	ValueSource pulumi.StringInput `pulumi:"valueSource"`
+}
+
+func (GetReportMetadataReportMetadataCollectionItemFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemFilter)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemFilterArgs) ToGetReportMetadataReportMetadataCollectionItemFilterOutput() GetReportMetadataReportMetadataCollectionItemFilterOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemFilterOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemFilterArgs) ToGetReportMetadataReportMetadataCollectionItemFilterOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemFilterOutput)
+}
+
+// GetReportMetadataReportMetadataCollectionItemFilterArrayInput is an input type that accepts GetReportMetadataReportMetadataCollectionItemFilterArray and GetReportMetadataReportMetadataCollectionItemFilterArrayOutput values.
+// You can construct a concrete instance of `GetReportMetadataReportMetadataCollectionItemFilterArrayInput` via:
+//
+//	GetReportMetadataReportMetadataCollectionItemFilterArray{ GetReportMetadataReportMetadataCollectionItemFilterArgs{...} }
+type GetReportMetadataReportMetadataCollectionItemFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutput() GetReportMetadataReportMetadataCollectionItemFilterArrayOutput
+	ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutputWithContext(context.Context) GetReportMetadataReportMetadataCollectionItemFilterArrayOutput
+}
+
+type GetReportMetadataReportMetadataCollectionItemFilterArray []GetReportMetadataReportMetadataCollectionItemFilterInput
+
+func (GetReportMetadataReportMetadataCollectionItemFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemFilter)(nil)).Elem()
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemFilterArray) ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutput() GetReportMetadataReportMetadataCollectionItemFilterArrayOutput {
+	return i.ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetReportMetadataReportMetadataCollectionItemFilterArray) ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReportMetadataReportMetadataCollectionItemFilterArrayOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemFilterOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemFilter)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemFilterOutput) ToGetReportMetadataReportMetadataCollectionItemFilterOutput() GetReportMetadataReportMetadataCollectionItemFilterOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemFilterOutput) ToGetReportMetadataReportMetadataCollectionItemFilterOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemFilterOutput {
+	return o
+}
+
+// Filter description.
+func (o GetReportMetadataReportMetadataCollectionItemFilterOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemFilter) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Name of Report.
+func (o GetReportMetadataReportMetadataCollectionItemFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Filter value source.
+func (o GetReportMetadataReportMetadataCollectionItemFilterOutput) ValueSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportMetadataReportMetadataCollectionItemFilter) string { return v.ValueSource }).(pulumi.StringOutput)
+}
+
+type GetReportMetadataReportMetadataCollectionItemFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReportMetadataReportMetadataCollectionItemFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReportMetadataReportMetadataCollectionItemFilter)(nil)).Elem()
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemFilterArrayOutput) ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutput() GetReportMetadataReportMetadataCollectionItemFilterArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemFilterArrayOutput) ToGetReportMetadataReportMetadataCollectionItemFilterArrayOutputWithContext(ctx context.Context) GetReportMetadataReportMetadataCollectionItemFilterArrayOutput {
+	return o
+}
+
+func (o GetReportMetadataReportMetadataCollectionItemFilterArrayOutput) Index(i pulumi.IntInput) GetReportMetadataReportMetadataCollectionItemFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportMetadataReportMetadataCollectionItemFilter {
+		return vs[0].([]GetReportMetadataReportMetadataCollectionItemFilter)[vs[1].(int)]
+	}).(GetReportMetadataReportMetadataCollectionItemFilterOutput)
+}
+
+type GetRunbookExportStatusesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRunbookExportStatusesFilterInput is an input type that accepts GetRunbookExportStatusesFilterArgs and GetRunbookExportStatusesFilterOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesFilterInput` via:
+//
+//	GetRunbookExportStatusesFilterArgs{...}
+type GetRunbookExportStatusesFilterInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesFilterOutput() GetRunbookExportStatusesFilterOutput
+	ToGetRunbookExportStatusesFilterOutputWithContext(context.Context) GetRunbookExportStatusesFilterOutput
+}
+
+type GetRunbookExportStatusesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRunbookExportStatusesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesFilter)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesFilterArgs) ToGetRunbookExportStatusesFilterOutput() GetRunbookExportStatusesFilterOutput {
+	return i.ToGetRunbookExportStatusesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesFilterArgs) ToGetRunbookExportStatusesFilterOutputWithContext(ctx context.Context) GetRunbookExportStatusesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesFilterOutput)
+}
+
+// GetRunbookExportStatusesFilterArrayInput is an input type that accepts GetRunbookExportStatusesFilterArray and GetRunbookExportStatusesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesFilterArrayInput` via:
+//
+//	GetRunbookExportStatusesFilterArray{ GetRunbookExportStatusesFilterArgs{...} }
+type GetRunbookExportStatusesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesFilterArrayOutput() GetRunbookExportStatusesFilterArrayOutput
+	ToGetRunbookExportStatusesFilterArrayOutputWithContext(context.Context) GetRunbookExportStatusesFilterArrayOutput
+}
+
+type GetRunbookExportStatusesFilterArray []GetRunbookExportStatusesFilterInput
+
+func (GetRunbookExportStatusesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesFilter)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesFilterArray) ToGetRunbookExportStatusesFilterArrayOutput() GetRunbookExportStatusesFilterArrayOutput {
+	return i.ToGetRunbookExportStatusesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesFilterArray) ToGetRunbookExportStatusesFilterArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesFilterArrayOutput)
+}
+
+type GetRunbookExportStatusesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesFilter)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesFilterOutput) ToGetRunbookExportStatusesFilterOutput() GetRunbookExportStatusesFilterOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesFilterOutput) ToGetRunbookExportStatusesFilterOutputWithContext(ctx context.Context) GetRunbookExportStatusesFilterOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRunbookExportStatusesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRunbookExportStatusesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRunbookExportStatusesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesFilter)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesFilterArrayOutput) ToGetRunbookExportStatusesFilterArrayOutput() GetRunbookExportStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesFilterArrayOutput) ToGetRunbookExportStatusesFilterArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetRunbookExportStatusesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookExportStatusesFilter {
+		return vs[0].([]GetRunbookExportStatusesFilter)[vs[1].(int)]
+	}).(GetRunbookExportStatusesFilterOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollection struct {
+	// List of Runbook export status.
+	Items []GetRunbookExportStatusesRunbookExportStatusCollectionItem `pulumi:"items"`
+}
+
+// GetRunbookExportStatusesRunbookExportStatusCollectionInput is an input type that accepts GetRunbookExportStatusesRunbookExportStatusCollectionArgs and GetRunbookExportStatusesRunbookExportStatusCollectionOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesRunbookExportStatusCollectionInput` via:
+//
+//	GetRunbookExportStatusesRunbookExportStatusCollectionArgs{...}
+type GetRunbookExportStatusesRunbookExportStatusCollectionInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionOutput() GetRunbookExportStatusesRunbookExportStatusCollectionOutput
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionOutputWithContext(context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionOutput
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionArgs struct {
+	// List of Runbook export status.
+	Items GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollection)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionArgs) ToGetRunbookExportStatusesRunbookExportStatusCollectionOutput() GetRunbookExportStatusesRunbookExportStatusCollectionOutput {
+	return i.ToGetRunbookExportStatusesRunbookExportStatusCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionArgs) ToGetRunbookExportStatusesRunbookExportStatusCollectionOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesRunbookExportStatusCollectionOutput)
+}
+
+// GetRunbookExportStatusesRunbookExportStatusCollectionArrayInput is an input type that accepts GetRunbookExportStatusesRunbookExportStatusCollectionArray and GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesRunbookExportStatusCollectionArrayInput` via:
+//
+//	GetRunbookExportStatusesRunbookExportStatusCollectionArray{ GetRunbookExportStatusesRunbookExportStatusCollectionArgs{...} }
+type GetRunbookExportStatusesRunbookExportStatusCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutputWithContext(context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionArray []GetRunbookExportStatusesRunbookExportStatusCollectionInput
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesRunbookExportStatusCollection)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionArray) ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput {
+	return i.ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionArray) ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollection)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionOutput() GetRunbookExportStatusesRunbookExportStatusCollectionOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionOutput {
+	return o
+}
+
+// List of Runbook export status.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionOutput) Items() GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollection) []GetRunbookExportStatusesRunbookExportStatusCollectionItem {
+		return v.Items
+	}).(GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesRunbookExportStatusCollection)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput) Index(i pulumi.IntInput) GetRunbookExportStatusesRunbookExportStatusCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookExportStatusesRunbookExportStatusCollection {
+		return vs[0].([]GetRunbookExportStatusesRunbookExportStatusCollection)[vs[1].(int)]
+	}).(GetRunbookExportStatusesRunbookExportStatusCollectionOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionItem struct {
+	// The OCID of the runbook.
+	RunbookId string `pulumi:"runbookId"`
+	// Runbook name.
+	RunbookName string `pulumi:"runbookName"`
+	// Runbook version.
+	RunbookVersion string `pulumi:"runbookVersion"`
+	// Runbook export status.
+	Status string `pulumi:"status"`
+	// Tracking/Export identifier.
+	TrackingId string `pulumi:"trackingId"`
+}
+
+// GetRunbookExportStatusesRunbookExportStatusCollectionItemInput is an input type that accepts GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs and GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesRunbookExportStatusCollectionItemInput` via:
+//
+//	GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs{...}
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutputWithContext(context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs struct {
+	// The OCID of the runbook.
+	RunbookId pulumi.StringInput `pulumi:"runbookId"`
+	// Runbook name.
+	RunbookName pulumi.StringInput `pulumi:"runbookName"`
+	// Runbook version.
+	RunbookVersion pulumi.StringInput `pulumi:"runbookVersion"`
+	// Runbook export status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Tracking/Export identifier.
+	TrackingId pulumi.StringInput `pulumi:"trackingId"`
+}
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput {
+	return i.ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput)
+}
+
+// GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayInput is an input type that accepts GetRunbookExportStatusesRunbookExportStatusCollectionItemArray and GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayInput` via:
+//
+//	GetRunbookExportStatusesRunbookExportStatusCollectionItemArray{ GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs{...} }
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput
+	ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutputWithContext(context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemArray []GetRunbookExportStatusesRunbookExportStatusCollectionItemInput
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesRunbookExportStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionItemArray) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput {
+	return i.ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookExportStatusesRunbookExportStatusCollectionItemArray) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput {
+	return o
+}
+
+// The OCID of the runbook.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) RunbookId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollectionItem) string { return v.RunbookId }).(pulumi.StringOutput)
+}
+
+// Runbook name.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) RunbookName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollectionItem) string { return v.RunbookName }).(pulumi.StringOutput)
+}
+
+// Runbook version.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) RunbookVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollectionItem) string { return v.RunbookVersion }).(pulumi.StringOutput)
+}
+
+// Runbook export status.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Tracking/Export identifier.
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput) TrackingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookExportStatusesRunbookExportStatusCollectionItem) string { return v.TrackingId }).(pulumi.StringOutput)
+}
+
+type GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookExportStatusesRunbookExportStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput() GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput) ToGetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookExportStatusesRunbookExportStatusCollectionItem {
+		return vs[0].([]GetRunbookExportStatusesRunbookExportStatusCollectionItem)[vs[1].(int)]
+	}).(GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput)
+}
+
+type GetRunbookImportStatusesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRunbookImportStatusesFilterInput is an input type that accepts GetRunbookImportStatusesFilterArgs and GetRunbookImportStatusesFilterOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesFilterInput` via:
+//
+//	GetRunbookImportStatusesFilterArgs{...}
+type GetRunbookImportStatusesFilterInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesFilterOutput() GetRunbookImportStatusesFilterOutput
+	ToGetRunbookImportStatusesFilterOutputWithContext(context.Context) GetRunbookImportStatusesFilterOutput
+}
+
+type GetRunbookImportStatusesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRunbookImportStatusesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesFilter)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesFilterArgs) ToGetRunbookImportStatusesFilterOutput() GetRunbookImportStatusesFilterOutput {
+	return i.ToGetRunbookImportStatusesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesFilterArgs) ToGetRunbookImportStatusesFilterOutputWithContext(ctx context.Context) GetRunbookImportStatusesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesFilterOutput)
+}
+
+// GetRunbookImportStatusesFilterArrayInput is an input type that accepts GetRunbookImportStatusesFilterArray and GetRunbookImportStatusesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesFilterArrayInput` via:
+//
+//	GetRunbookImportStatusesFilterArray{ GetRunbookImportStatusesFilterArgs{...} }
+type GetRunbookImportStatusesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesFilterArrayOutput() GetRunbookImportStatusesFilterArrayOutput
+	ToGetRunbookImportStatusesFilterArrayOutputWithContext(context.Context) GetRunbookImportStatusesFilterArrayOutput
+}
+
+type GetRunbookImportStatusesFilterArray []GetRunbookImportStatusesFilterInput
+
+func (GetRunbookImportStatusesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesFilter)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesFilterArray) ToGetRunbookImportStatusesFilterArrayOutput() GetRunbookImportStatusesFilterArrayOutput {
+	return i.ToGetRunbookImportStatusesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesFilterArray) ToGetRunbookImportStatusesFilterArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesFilterArrayOutput)
+}
+
+type GetRunbookImportStatusesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesFilter)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesFilterOutput) ToGetRunbookImportStatusesFilterOutput() GetRunbookImportStatusesFilterOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesFilterOutput) ToGetRunbookImportStatusesFilterOutputWithContext(ctx context.Context) GetRunbookImportStatusesFilterOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRunbookImportStatusesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRunbookImportStatusesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRunbookImportStatusesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesFilter)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesFilterArrayOutput) ToGetRunbookImportStatusesFilterArrayOutput() GetRunbookImportStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesFilterArrayOutput) ToGetRunbookImportStatusesFilterArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetRunbookImportStatusesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookImportStatusesFilter {
+		return vs[0].([]GetRunbookImportStatusesFilter)[vs[1].(int)]
+	}).(GetRunbookImportStatusesFilterOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollection struct {
+	// List of Runbook import status.
+	Items []GetRunbookImportStatusesRunbookImportStatusCollectionItem `pulumi:"items"`
+}
+
+// GetRunbookImportStatusesRunbookImportStatusCollectionInput is an input type that accepts GetRunbookImportStatusesRunbookImportStatusCollectionArgs and GetRunbookImportStatusesRunbookImportStatusCollectionOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesRunbookImportStatusCollectionInput` via:
+//
+//	GetRunbookImportStatusesRunbookImportStatusCollectionArgs{...}
+type GetRunbookImportStatusesRunbookImportStatusCollectionInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionOutput() GetRunbookImportStatusesRunbookImportStatusCollectionOutput
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionOutputWithContext(context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionOutput
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionArgs struct {
+	// List of Runbook import status.
+	Items GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollection)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionArgs) ToGetRunbookImportStatusesRunbookImportStatusCollectionOutput() GetRunbookImportStatusesRunbookImportStatusCollectionOutput {
+	return i.ToGetRunbookImportStatusesRunbookImportStatusCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionArgs) ToGetRunbookImportStatusesRunbookImportStatusCollectionOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesRunbookImportStatusCollectionOutput)
+}
+
+// GetRunbookImportStatusesRunbookImportStatusCollectionArrayInput is an input type that accepts GetRunbookImportStatusesRunbookImportStatusCollectionArray and GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesRunbookImportStatusCollectionArrayInput` via:
+//
+//	GetRunbookImportStatusesRunbookImportStatusCollectionArray{ GetRunbookImportStatusesRunbookImportStatusCollectionArgs{...} }
+type GetRunbookImportStatusesRunbookImportStatusCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutputWithContext(context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionArray []GetRunbookImportStatusesRunbookImportStatusCollectionInput
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesRunbookImportStatusCollection)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionArray) ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput {
+	return i.ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionArray) ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollection)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionOutput() GetRunbookImportStatusesRunbookImportStatusCollectionOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionOutput {
+	return o
+}
+
+// List of Runbook import status.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionOutput) Items() GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollection) []GetRunbookImportStatusesRunbookImportStatusCollectionItem {
+		return v.Items
+	}).(GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesRunbookImportStatusCollection)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput) Index(i pulumi.IntInput) GetRunbookImportStatusesRunbookImportStatusCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookImportStatusesRunbookImportStatusCollection {
+		return vs[0].([]GetRunbookImportStatusesRunbookImportStatusCollection)[vs[1].(int)]
+	}).(GetRunbookImportStatusesRunbookImportStatusCollectionOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionItem struct {
+	// The OCID of the runbook.
+	RunbookId string `pulumi:"runbookId"`
+	// Runbook name.
+	RunbookName string `pulumi:"runbookName"`
+	// Runbook version.
+	RunbookVersion string `pulumi:"runbookVersion"`
+	// Status.
+	Status string `pulumi:"status"`
+	// Tracking/Import identifier.
+	TrackingId string `pulumi:"trackingId"`
+}
+
+// GetRunbookImportStatusesRunbookImportStatusCollectionItemInput is an input type that accepts GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs and GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesRunbookImportStatusCollectionItemInput` via:
+//
+//	GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs{...}
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutputWithContext(context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs struct {
+	// The OCID of the runbook.
+	RunbookId pulumi.StringInput `pulumi:"runbookId"`
+	// Runbook name.
+	RunbookName pulumi.StringInput `pulumi:"runbookName"`
+	// Runbook version.
+	RunbookVersion pulumi.StringInput `pulumi:"runbookVersion"`
+	// Status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Tracking/Import identifier.
+	TrackingId pulumi.StringInput `pulumi:"trackingId"`
+}
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput {
+	return i.ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput)
+}
+
+// GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayInput is an input type that accepts GetRunbookImportStatusesRunbookImportStatusCollectionItemArray and GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayInput` via:
+//
+//	GetRunbookImportStatusesRunbookImportStatusCollectionItemArray{ GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs{...} }
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput
+	ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutputWithContext(context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemArray []GetRunbookImportStatusesRunbookImportStatusCollectionItemInput
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesRunbookImportStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionItemArray) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput {
+	return i.ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunbookImportStatusesRunbookImportStatusCollectionItemArray) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput {
+	return o
+}
+
+// The OCID of the runbook.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) RunbookId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollectionItem) string { return v.RunbookId }).(pulumi.StringOutput)
+}
+
+// Runbook name.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) RunbookName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollectionItem) string { return v.RunbookName }).(pulumi.StringOutput)
+}
+
+// Runbook version.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) RunbookVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollectionItem) string { return v.RunbookVersion }).(pulumi.StringOutput)
+}
+
+// Status.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Tracking/Import identifier.
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput) TrackingId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunbookImportStatusesRunbookImportStatusCollectionItem) string { return v.TrackingId }).(pulumi.StringOutput)
+}
+
+type GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunbookImportStatusesRunbookImportStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput() GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput) ToGetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunbookImportStatusesRunbookImportStatusCollectionItem {
+		return vs[0].([]GetRunbookImportStatusesRunbookImportStatusCollectionItem)[vs[1].(int)]
+	}).(GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput)
+}
+
 type GetRunbookRunbookVersion struct {
 	// Execution Workflow details.
 	ExecutionWorkflowDetails []GetRunbookRunbookVersionExecutionWorkflowDetail `pulumi:"executionWorkflowDetails"`
@@ -40201,7 +43390,7 @@ func (o GetRunbookRunbookVersionGroupPropertyPauseDetailArrayOutput) Index(i pul
 }
 
 type GetRunbookRunbookVersionGroupPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -40223,7 +43412,7 @@ type GetRunbookRunbookVersionGroupPropertyRunOnInput interface {
 }
 
 type GetRunbookRunbookVersionGroupPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -40284,7 +43473,7 @@ func (o GetRunbookRunbookVersionGroupPropertyRunOnOutput) ToGetRunbookRunbookVer
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookRunbookVersionGroupPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookRunbookVersionGroupPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -41621,7 +44810,7 @@ func (o GetRunbookRunbookVersionTaskStepPropertyPauseDetailArrayOutput) Index(i 
 }
 
 type GetRunbookRunbookVersionTaskStepPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -41643,7 +44832,7 @@ type GetRunbookRunbookVersionTaskStepPropertyRunOnInput interface {
 }
 
 type GetRunbookRunbookVersionTaskStepPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -41704,7 +44893,7 @@ func (o GetRunbookRunbookVersionTaskStepPropertyRunOnOutput) ToGetRunbookRunbook
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookRunbookVersionTaskStepPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookRunbookVersionTaskStepPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -42188,6 +45377,8 @@ type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetail struct {
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -42225,6 +45416,8 @@ type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailArgs struct {
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -42335,6 +45528,11 @@ func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) IsRea
 	return o.ApplyT(func(v GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetail) bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetail) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -43769,7 +46967,7 @@ func (o GetRunbookVersionGroupPropertyPauseDetailArrayOutput) Index(i pulumi.Int
 }
 
 type GetRunbookVersionGroupPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -43791,7 +46989,7 @@ type GetRunbookVersionGroupPropertyRunOnInput interface {
 }
 
 type GetRunbookVersionGroupPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -43852,7 +47050,7 @@ func (o GetRunbookVersionGroupPropertyRunOnOutput) ToGetRunbookVersionGroupPrope
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookVersionGroupPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionGroupPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -45175,7 +48373,7 @@ func (o GetRunbookVersionTaskStepPropertyPauseDetailArrayOutput) Index(i pulumi.
 }
 
 type GetRunbookVersionTaskStepPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -45197,7 +48395,7 @@ type GetRunbookVersionTaskStepPropertyRunOnInput interface {
 }
 
 type GetRunbookVersionTaskStepPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -45258,7 +48456,7 @@ func (o GetRunbookVersionTaskStepPropertyRunOnOutput) ToGetRunbookVersionTaskSte
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookVersionTaskStepPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionTaskStepPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -45738,6 +48936,8 @@ type GetRunbookVersionTaskTaskRecordDetailExecutionDetail struct {
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -45775,6 +48975,8 @@ type GetRunbookVersionTaskTaskRecordDetailExecutionDetailArgs struct {
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -45885,6 +49087,11 @@ func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) IsReadOutput
 	return o.ApplyT(func(v GetRunbookVersionTaskTaskRecordDetailExecutionDetail) bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbookVersionTaskTaskRecordDetailExecutionDetail) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -47781,7 +50988,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyPauseDetailAr
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -47803,7 +51010,7 @@ type GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOnInput inter
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -47864,7 +51071,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOnOutput) 
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -49219,7 +52426,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyPauseDetai
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -49241,7 +52448,7 @@ type GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOnInput in
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -49302,7 +52509,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOnOutpu
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemTaskStepPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -49796,6 +53003,8 @@ type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecution
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -49833,6 +53042,8 @@ type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecution
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -49957,6 +53168,13 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecut
 	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetail) bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetail) []string {
+		return v.SystemVariables
+	}).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -50819,7 +54037,7 @@ type GetRunbooksRunbookCollectionItem struct {
 	IsDefault bool `pulumi:"isDefault"`
 	// Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded bool `pulumi:"isSudoAccessNeeded"`
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion string `pulumi:"latestVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -50831,7 +54049,7 @@ type GetRunbooksRunbookCollectionItem struct {
 	Platform string `pulumi:"platform"`
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersions []GetRunbooksRunbookCollectionItemRunbookVersion `pulumi:"runbookVersions"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
@@ -50877,7 +54095,7 @@ type GetRunbooksRunbookCollectionItemArgs struct {
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
 	// Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded pulumi.BoolInput `pulumi:"isSudoAccessNeeded"`
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion pulumi.StringInput `pulumi:"latestVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -50889,7 +54107,7 @@ type GetRunbooksRunbookCollectionItemArgs struct {
 	Platform pulumi.StringInput `pulumi:"platform"`
 	// Associated region
 	ResourceRegion pulumi.StringInput `pulumi:"resourceRegion"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersions GetRunbooksRunbookCollectionItemRunbookVersionArrayInput `pulumi:"runbookVersions"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
@@ -51004,7 +54222,7 @@ func (o GetRunbooksRunbookCollectionItemOutput) IsSudoAccessNeeded() pulumi.Bool
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItem) bool { return v.IsSudoAccessNeeded }).(pulumi.BoolOutput)
 }
 
-// Latest runbook version
+// Latest runbook version.
 func (o GetRunbooksRunbookCollectionItemOutput) LatestVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItem) string { return v.LatestVersion }).(pulumi.StringOutput)
 }
@@ -51034,7 +54252,7 @@ func (o GetRunbooksRunbookCollectionItemOutput) ResourceRegion() pulumi.StringOu
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItem) string { return v.ResourceRegion }).(pulumi.StringOutput)
 }
 
-// Version for the runbook.
+// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 func (o GetRunbooksRunbookCollectionItemOutput) RunbookVersions() GetRunbooksRunbookCollectionItemRunbookVersionArrayOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItem) []GetRunbooksRunbookCollectionItemRunbookVersion {
 		return v.RunbookVersions
@@ -52074,7 +55292,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyPauseDetailAr
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -52096,7 +55314,7 @@ type GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOnInput inter
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -52157,7 +55375,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOnOutput) 
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionGroupPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -53512,7 +56730,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyPauseDetai
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOn struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition string `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host string `pulumi:"host"`
@@ -53534,7 +56752,7 @@ type GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOnInput in
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOnArgs struct {
-	// Build control flow conditions that determine the relevance of the task execution.
+	// Build control flow conditions that determine the relevance of the task execution against targets.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// OCID of the self hosted instance.
 	Host pulumi.StringInput `pulumi:"host"`
@@ -53595,7 +56813,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOnOutpu
 	return o
 }
 
-// Build control flow conditions that determine the relevance of the task execution.
+// Build control flow conditions that determine the relevance of the task execution against targets.
 func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOnOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOn) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -54089,6 +57307,8 @@ type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecution
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -54126,6 +57346,8 @@ type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecution
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -54250,6 +57472,13 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecut
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetail) bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetail) []string {
+		return v.SystemVariables
+	}).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -57508,6 +60737,8 @@ type GetSchedulerExecutionsSchedulerExecutionCollectionItem struct {
 	ActivityId string `pulumi:"activityId"`
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Name of the compartment in which resource exist.
+	CompartmentName string `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
@@ -57520,11 +60751,11 @@ type GetSchedulerExecutionsSchedulerExecutionCollectionItem struct {
 	LatestRunbookVersionName string `pulumi:"latestRunbookVersionName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Resource DsiplayName associated with the Schedule.
+	// Display Name of the Fleet associated with the Schedule.
 	ResourceDisplayName string `pulumi:"resourceDisplayName"`
 	// ResourceId filter (Example FleetId)
 	ResourceId string `pulumi:"resourceId"`
-	// DsiplayName of Runbook associated with the Schedule.
+	// Display name of Runbook associated with the Schedule.
 	RunbookDisplayName string `pulumi:"runbookDisplayName"`
 	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
 	RunbookId string `pulumi:"runbookId"`
@@ -57566,6 +60797,8 @@ type GetSchedulerExecutionsSchedulerExecutionCollectionItemArgs struct {
 	ActivityId pulumi.StringInput `pulumi:"activityId"`
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Name of the compartment in which resource exist.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
@@ -57578,11 +60811,11 @@ type GetSchedulerExecutionsSchedulerExecutionCollectionItemArgs struct {
 	LatestRunbookVersionName pulumi.StringInput `pulumi:"latestRunbookVersionName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Resource DsiplayName associated with the Schedule.
+	// Display Name of the Fleet associated with the Schedule.
 	ResourceDisplayName pulumi.StringInput `pulumi:"resourceDisplayName"`
 	// ResourceId filter (Example FleetId)
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// DsiplayName of Runbook associated with the Schedule.
+	// Display name of Runbook associated with the Schedule.
 	RunbookDisplayName pulumi.StringInput `pulumi:"runbookDisplayName"`
 	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
 	RunbookId pulumi.StringInput `pulumi:"runbookId"`
@@ -57669,6 +60902,11 @@ func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) Compartmen
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Name of the compartment in which resource exist.
+func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -57703,7 +60941,7 @@ func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) LifecycleD
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Resource DsiplayName associated with the Schedule.
+// Display Name of the Fleet associated with the Schedule.
 func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) ResourceDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.ResourceDisplayName }).(pulumi.StringOutput)
 }
@@ -57713,7 +60951,7 @@ func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) ResourceId
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// DsiplayName of Runbook associated with the Schedule.
+// Display name of Runbook associated with the Schedule.
 func (o GetSchedulerExecutionsSchedulerExecutionCollectionItemOutput) RunbookDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsSchedulerExecutionCollectionItem) string { return v.RunbookDisplayName }).(pulumi.StringOutput)
 }
@@ -59184,6 +62422,760 @@ func (o GetSchedulerJobJobActivityStepsStepCollectionItemArrayOutput) Index(i pu
 	}).(GetSchedulerJobJobActivityStepsStepCollectionItemOutput)
 }
 
+type GetTargetComponentsFilter struct {
+	// Target Component Name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetComponentsFilterInput is an input type that accepts GetTargetComponentsFilterArgs and GetTargetComponentsFilterOutput values.
+// You can construct a concrete instance of `GetTargetComponentsFilterInput` via:
+//
+//	GetTargetComponentsFilterArgs{...}
+type GetTargetComponentsFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsFilterOutput() GetTargetComponentsFilterOutput
+	ToGetTargetComponentsFilterOutputWithContext(context.Context) GetTargetComponentsFilterOutput
+}
+
+type GetTargetComponentsFilterArgs struct {
+	// Target Component Name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetComponentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsFilter)(nil)).Elem()
+}
+
+func (i GetTargetComponentsFilterArgs) ToGetTargetComponentsFilterOutput() GetTargetComponentsFilterOutput {
+	return i.ToGetTargetComponentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsFilterArgs) ToGetTargetComponentsFilterOutputWithContext(ctx context.Context) GetTargetComponentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsFilterOutput)
+}
+
+// GetTargetComponentsFilterArrayInput is an input type that accepts GetTargetComponentsFilterArray and GetTargetComponentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetComponentsFilterArrayInput` via:
+//
+//	GetTargetComponentsFilterArray{ GetTargetComponentsFilterArgs{...} }
+type GetTargetComponentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsFilterArrayOutput() GetTargetComponentsFilterArrayOutput
+	ToGetTargetComponentsFilterArrayOutputWithContext(context.Context) GetTargetComponentsFilterArrayOutput
+}
+
+type GetTargetComponentsFilterArray []GetTargetComponentsFilterInput
+
+func (GetTargetComponentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsFilter)(nil)).Elem()
+}
+
+func (i GetTargetComponentsFilterArray) ToGetTargetComponentsFilterArrayOutput() GetTargetComponentsFilterArrayOutput {
+	return i.ToGetTargetComponentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsFilterArray) ToGetTargetComponentsFilterArrayOutputWithContext(ctx context.Context) GetTargetComponentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsFilterArrayOutput)
+}
+
+type GetTargetComponentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsFilter)(nil)).Elem()
+}
+
+func (o GetTargetComponentsFilterOutput) ToGetTargetComponentsFilterOutput() GetTargetComponentsFilterOutput {
+	return o
+}
+
+func (o GetTargetComponentsFilterOutput) ToGetTargetComponentsFilterOutputWithContext(ctx context.Context) GetTargetComponentsFilterOutput {
+	return o
+}
+
+// Target Component Name.
+func (o GetTargetComponentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetComponentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetComponentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetComponentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetComponentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetComponentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsFilter)(nil)).Elem()
+}
+
+func (o GetTargetComponentsFilterArrayOutput) ToGetTargetComponentsFilterArrayOutput() GetTargetComponentsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsFilterArrayOutput) ToGetTargetComponentsFilterArrayOutputWithContext(ctx context.Context) GetTargetComponentsFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetComponentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetComponentsFilter {
+		return vs[0].([]GetTargetComponentsFilter)[vs[1].(int)]
+	}).(GetTargetComponentsFilterOutput)
+}
+
+type GetTargetComponentsTargetComponentCollection struct {
+	// List of target components.
+	Items []GetTargetComponentsTargetComponentCollectionItem `pulumi:"items"`
+}
+
+// GetTargetComponentsTargetComponentCollectionInput is an input type that accepts GetTargetComponentsTargetComponentCollectionArgs and GetTargetComponentsTargetComponentCollectionOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionArgs{...}
+type GetTargetComponentsTargetComponentCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionOutput() GetTargetComponentsTargetComponentCollectionOutput
+	ToGetTargetComponentsTargetComponentCollectionOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionArgs struct {
+	// List of target components.
+	Items GetTargetComponentsTargetComponentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetComponentsTargetComponentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollection)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionArgs) ToGetTargetComponentsTargetComponentCollectionOutput() GetTargetComponentsTargetComponentCollectionOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionArgs) ToGetTargetComponentsTargetComponentCollectionOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionOutput)
+}
+
+// GetTargetComponentsTargetComponentCollectionArrayInput is an input type that accepts GetTargetComponentsTargetComponentCollectionArray and GetTargetComponentsTargetComponentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionArrayInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionArray{ GetTargetComponentsTargetComponentCollectionArgs{...} }
+type GetTargetComponentsTargetComponentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionArrayOutput() GetTargetComponentsTargetComponentCollectionArrayOutput
+	ToGetTargetComponentsTargetComponentCollectionArrayOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionArrayOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionArray []GetTargetComponentsTargetComponentCollectionInput
+
+func (GetTargetComponentsTargetComponentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollection)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionArray) ToGetTargetComponentsTargetComponentCollectionArrayOutput() GetTargetComponentsTargetComponentCollectionArrayOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionArray) ToGetTargetComponentsTargetComponentCollectionArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionArrayOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollection)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionOutput) ToGetTargetComponentsTargetComponentCollectionOutput() GetTargetComponentsTargetComponentCollectionOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionOutput) ToGetTargetComponentsTargetComponentCollectionOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionOutput {
+	return o
+}
+
+// List of target components.
+func (o GetTargetComponentsTargetComponentCollectionOutput) Items() GetTargetComponentsTargetComponentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollection) []GetTargetComponentsTargetComponentCollectionItem {
+		return v.Items
+	}).(GetTargetComponentsTargetComponentCollectionItemArrayOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollection)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionArrayOutput) ToGetTargetComponentsTargetComponentCollectionArrayOutput() GetTargetComponentsTargetComponentCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionArrayOutput) ToGetTargetComponentsTargetComponentCollectionArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetComponentsTargetComponentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetComponentsTargetComponentCollection {
+		return vs[0].([]GetTargetComponentsTargetComponentCollection)[vs[1].(int)]
+	}).(GetTargetComponentsTargetComponentCollectionOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItem struct {
+	// Target Component Name.
+	Name string `pulumi:"name"`
+	// Path of the component.
+	Path string `pulumi:"path"`
+	// List of properties.
+	Properties []GetTargetComponentsTargetComponentCollectionItemProperty `pulumi:"properties"`
+	// Version of the component.
+	Version string `pulumi:"version"`
+}
+
+// GetTargetComponentsTargetComponentCollectionItemInput is an input type that accepts GetTargetComponentsTargetComponentCollectionItemArgs and GetTargetComponentsTargetComponentCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionItemInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionItemArgs{...}
+type GetTargetComponentsTargetComponentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionItemOutput() GetTargetComponentsTargetComponentCollectionItemOutput
+	ToGetTargetComponentsTargetComponentCollectionItemOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionItemOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionItemArgs struct {
+	// Target Component Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Path of the component.
+	Path pulumi.StringInput `pulumi:"path"`
+	// List of properties.
+	Properties GetTargetComponentsTargetComponentCollectionItemPropertyArrayInput `pulumi:"properties"`
+	// Version of the component.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetTargetComponentsTargetComponentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemArgs) ToGetTargetComponentsTargetComponentCollectionItemOutput() GetTargetComponentsTargetComponentCollectionItemOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemArgs) ToGetTargetComponentsTargetComponentCollectionItemOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionItemOutput)
+}
+
+// GetTargetComponentsTargetComponentCollectionItemArrayInput is an input type that accepts GetTargetComponentsTargetComponentCollectionItemArray and GetTargetComponentsTargetComponentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionItemArrayInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionItemArray{ GetTargetComponentsTargetComponentCollectionItemArgs{...} }
+type GetTargetComponentsTargetComponentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionItemArrayOutput() GetTargetComponentsTargetComponentCollectionItemArrayOutput
+	ToGetTargetComponentsTargetComponentCollectionItemArrayOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionItemArrayOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionItemArray []GetTargetComponentsTargetComponentCollectionItemInput
+
+func (GetTargetComponentsTargetComponentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemArray) ToGetTargetComponentsTargetComponentCollectionItemArrayOutput() GetTargetComponentsTargetComponentCollectionItemArrayOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemArray) ToGetTargetComponentsTargetComponentCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionItemArrayOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) ToGetTargetComponentsTargetComponentCollectionItemOutput() GetTargetComponentsTargetComponentCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) ToGetTargetComponentsTargetComponentCollectionItemOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemOutput {
+	return o
+}
+
+// Target Component Name.
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Path of the component.
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItem) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// List of properties.
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) Properties() GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItem) []GetTargetComponentsTargetComponentCollectionItemProperty {
+		return v.Properties
+	}).(GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput)
+}
+
+// Version of the component.
+func (o GetTargetComponentsTargetComponentCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemArrayOutput) ToGetTargetComponentsTargetComponentCollectionItemArrayOutput() GetTargetComponentsTargetComponentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemArrayOutput) ToGetTargetComponentsTargetComponentCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetComponentsTargetComponentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetComponentsTargetComponentCollectionItem {
+		return vs[0].([]GetTargetComponentsTargetComponentCollectionItem)[vs[1].(int)]
+	}).(GetTargetComponentsTargetComponentCollectionItemOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItemProperty struct {
+	// Target Component Name.
+	Name string `pulumi:"name"`
+	// Value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetTargetComponentsTargetComponentCollectionItemPropertyInput is an input type that accepts GetTargetComponentsTargetComponentCollectionItemPropertyArgs and GetTargetComponentsTargetComponentCollectionItemPropertyOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionItemPropertyInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionItemPropertyArgs{...}
+type GetTargetComponentsTargetComponentCollectionItemPropertyInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionItemPropertyOutput() GetTargetComponentsTargetComponentCollectionItemPropertyOutput
+	ToGetTargetComponentsTargetComponentCollectionItemPropertyOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionItemPropertyArgs struct {
+	// Target Component Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTargetComponentsTargetComponentCollectionItemPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemPropertyArgs) ToGetTargetComponentsTargetComponentCollectionItemPropertyOutput() GetTargetComponentsTargetComponentCollectionItemPropertyOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionItemPropertyOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemPropertyArgs) ToGetTargetComponentsTargetComponentCollectionItemPropertyOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionItemPropertyOutput)
+}
+
+// GetTargetComponentsTargetComponentCollectionItemPropertyArrayInput is an input type that accepts GetTargetComponentsTargetComponentCollectionItemPropertyArray and GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput values.
+// You can construct a concrete instance of `GetTargetComponentsTargetComponentCollectionItemPropertyArrayInput` via:
+//
+//	GetTargetComponentsTargetComponentCollectionItemPropertyArray{ GetTargetComponentsTargetComponentCollectionItemPropertyArgs{...} }
+type GetTargetComponentsTargetComponentCollectionItemPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput() GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput
+	ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutputWithContext(context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput
+}
+
+type GetTargetComponentsTargetComponentCollectionItemPropertyArray []GetTargetComponentsTargetComponentCollectionItemPropertyInput
+
+func (GetTargetComponentsTargetComponentCollectionItemPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemPropertyArray) ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput() GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput {
+	return i.ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetComponentsTargetComponentCollectionItemPropertyArray) ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItemPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionItemPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyOutput) ToGetTargetComponentsTargetComponentCollectionItemPropertyOutput() GetTargetComponentsTargetComponentCollectionItemPropertyOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyOutput) ToGetTargetComponentsTargetComponentCollectionItemPropertyOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyOutput {
+	return o
+}
+
+// Target Component Name.
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItemProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the property.
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetComponentsTargetComponentCollectionItemProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetComponentsTargetComponentCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput) ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput() GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput) ToGetTargetComponentsTargetComponentCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetTargetComponentsTargetComponentCollectionItemPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetComponentsTargetComponentCollectionItemProperty {
+		return vs[0].([]GetTargetComponentsTargetComponentCollectionItemProperty)[vs[1].(int)]
+	}).(GetTargetComponentsTargetComponentCollectionItemPropertyOutput)
+}
+
+type GetTargetPropertiesFilter struct {
+	// Name of the property.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetPropertiesFilterInput is an input type that accepts GetTargetPropertiesFilterArgs and GetTargetPropertiesFilterOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesFilterInput` via:
+//
+//	GetTargetPropertiesFilterArgs{...}
+type GetTargetPropertiesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesFilterOutput() GetTargetPropertiesFilterOutput
+	ToGetTargetPropertiesFilterOutputWithContext(context.Context) GetTargetPropertiesFilterOutput
+}
+
+type GetTargetPropertiesFilterArgs struct {
+	// Name of the property.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetPropertiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesFilter)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesFilterArgs) ToGetTargetPropertiesFilterOutput() GetTargetPropertiesFilterOutput {
+	return i.ToGetTargetPropertiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesFilterArgs) ToGetTargetPropertiesFilterOutputWithContext(ctx context.Context) GetTargetPropertiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesFilterOutput)
+}
+
+// GetTargetPropertiesFilterArrayInput is an input type that accepts GetTargetPropertiesFilterArray and GetTargetPropertiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesFilterArrayInput` via:
+//
+//	GetTargetPropertiesFilterArray{ GetTargetPropertiesFilterArgs{...} }
+type GetTargetPropertiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesFilterArrayOutput() GetTargetPropertiesFilterArrayOutput
+	ToGetTargetPropertiesFilterArrayOutputWithContext(context.Context) GetTargetPropertiesFilterArrayOutput
+}
+
+type GetTargetPropertiesFilterArray []GetTargetPropertiesFilterInput
+
+func (GetTargetPropertiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesFilter)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesFilterArray) ToGetTargetPropertiesFilterArrayOutput() GetTargetPropertiesFilterArrayOutput {
+	return i.ToGetTargetPropertiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesFilterArray) ToGetTargetPropertiesFilterArrayOutputWithContext(ctx context.Context) GetTargetPropertiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesFilterArrayOutput)
+}
+
+type GetTargetPropertiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesFilter)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesFilterOutput) ToGetTargetPropertiesFilterOutput() GetTargetPropertiesFilterOutput {
+	return o
+}
+
+func (o GetTargetPropertiesFilterOutput) ToGetTargetPropertiesFilterOutputWithContext(ctx context.Context) GetTargetPropertiesFilterOutput {
+	return o
+}
+
+// Name of the property.
+func (o GetTargetPropertiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetPropertiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetPropertiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetPropertiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetPropertiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetPropertiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetPropertiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesFilter)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesFilterArrayOutput) ToGetTargetPropertiesFilterArrayOutput() GetTargetPropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesFilterArrayOutput) ToGetTargetPropertiesFilterArrayOutputWithContext(ctx context.Context) GetTargetPropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetPropertiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetPropertiesFilter {
+		return vs[0].([]GetTargetPropertiesFilter)[vs[1].(int)]
+	}).(GetTargetPropertiesFilterOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollection struct {
+	// List of target properties.
+	Items []GetTargetPropertiesTargetPropertyCollectionItem `pulumi:"items"`
+}
+
+// GetTargetPropertiesTargetPropertyCollectionInput is an input type that accepts GetTargetPropertiesTargetPropertyCollectionArgs and GetTargetPropertiesTargetPropertyCollectionOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesTargetPropertyCollectionInput` via:
+//
+//	GetTargetPropertiesTargetPropertyCollectionArgs{...}
+type GetTargetPropertiesTargetPropertyCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesTargetPropertyCollectionOutput() GetTargetPropertiesTargetPropertyCollectionOutput
+	ToGetTargetPropertiesTargetPropertyCollectionOutputWithContext(context.Context) GetTargetPropertiesTargetPropertyCollectionOutput
+}
+
+type GetTargetPropertiesTargetPropertyCollectionArgs struct {
+	// List of target properties.
+	Items GetTargetPropertiesTargetPropertyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetPropertiesTargetPropertyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollection)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionArgs) ToGetTargetPropertiesTargetPropertyCollectionOutput() GetTargetPropertiesTargetPropertyCollectionOutput {
+	return i.ToGetTargetPropertiesTargetPropertyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionArgs) ToGetTargetPropertiesTargetPropertyCollectionOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesTargetPropertyCollectionOutput)
+}
+
+// GetTargetPropertiesTargetPropertyCollectionArrayInput is an input type that accepts GetTargetPropertiesTargetPropertyCollectionArray and GetTargetPropertiesTargetPropertyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesTargetPropertyCollectionArrayInput` via:
+//
+//	GetTargetPropertiesTargetPropertyCollectionArray{ GetTargetPropertiesTargetPropertyCollectionArgs{...} }
+type GetTargetPropertiesTargetPropertyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesTargetPropertyCollectionArrayOutput() GetTargetPropertiesTargetPropertyCollectionArrayOutput
+	ToGetTargetPropertiesTargetPropertyCollectionArrayOutputWithContext(context.Context) GetTargetPropertiesTargetPropertyCollectionArrayOutput
+}
+
+type GetTargetPropertiesTargetPropertyCollectionArray []GetTargetPropertiesTargetPropertyCollectionInput
+
+func (GetTargetPropertiesTargetPropertyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesTargetPropertyCollection)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionArray) ToGetTargetPropertiesTargetPropertyCollectionArrayOutput() GetTargetPropertiesTargetPropertyCollectionArrayOutput {
+	return i.ToGetTargetPropertiesTargetPropertyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionArray) ToGetTargetPropertiesTargetPropertyCollectionArrayOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesTargetPropertyCollectionArrayOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesTargetPropertyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollection)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionOutput) ToGetTargetPropertiesTargetPropertyCollectionOutput() GetTargetPropertiesTargetPropertyCollectionOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionOutput) ToGetTargetPropertiesTargetPropertyCollectionOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionOutput {
+	return o
+}
+
+// List of target properties.
+func (o GetTargetPropertiesTargetPropertyCollectionOutput) Items() GetTargetPropertiesTargetPropertyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetPropertiesTargetPropertyCollection) []GetTargetPropertiesTargetPropertyCollectionItem {
+		return v.Items
+	}).(GetTargetPropertiesTargetPropertyCollectionItemArrayOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesTargetPropertyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesTargetPropertyCollection)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionArrayOutput) ToGetTargetPropertiesTargetPropertyCollectionArrayOutput() GetTargetPropertiesTargetPropertyCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionArrayOutput) ToGetTargetPropertiesTargetPropertyCollectionArrayOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetPropertiesTargetPropertyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetPropertiesTargetPropertyCollection {
+		return vs[0].([]GetTargetPropertiesTargetPropertyCollection)[vs[1].(int)]
+	}).(GetTargetPropertiesTargetPropertyCollectionOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollectionItem struct {
+	// Name of the property.
+	Name string `pulumi:"name"`
+	// Value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetTargetPropertiesTargetPropertyCollectionItemInput is an input type that accepts GetTargetPropertiesTargetPropertyCollectionItemArgs and GetTargetPropertiesTargetPropertyCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesTargetPropertyCollectionItemInput` via:
+//
+//	GetTargetPropertiesTargetPropertyCollectionItemArgs{...}
+type GetTargetPropertiesTargetPropertyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesTargetPropertyCollectionItemOutput() GetTargetPropertiesTargetPropertyCollectionItemOutput
+	ToGetTargetPropertiesTargetPropertyCollectionItemOutputWithContext(context.Context) GetTargetPropertiesTargetPropertyCollectionItemOutput
+}
+
+type GetTargetPropertiesTargetPropertyCollectionItemArgs struct {
+	// Name of the property.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTargetPropertiesTargetPropertyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionItemArgs) ToGetTargetPropertiesTargetPropertyCollectionItemOutput() GetTargetPropertiesTargetPropertyCollectionItemOutput {
+	return i.ToGetTargetPropertiesTargetPropertyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionItemArgs) ToGetTargetPropertiesTargetPropertyCollectionItemOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesTargetPropertyCollectionItemOutput)
+}
+
+// GetTargetPropertiesTargetPropertyCollectionItemArrayInput is an input type that accepts GetTargetPropertiesTargetPropertyCollectionItemArray and GetTargetPropertiesTargetPropertyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetPropertiesTargetPropertyCollectionItemArrayInput` via:
+//
+//	GetTargetPropertiesTargetPropertyCollectionItemArray{ GetTargetPropertiesTargetPropertyCollectionItemArgs{...} }
+type GetTargetPropertiesTargetPropertyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutput() GetTargetPropertiesTargetPropertyCollectionItemArrayOutput
+	ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutputWithContext(context.Context) GetTargetPropertiesTargetPropertyCollectionItemArrayOutput
+}
+
+type GetTargetPropertiesTargetPropertyCollectionItemArray []GetTargetPropertiesTargetPropertyCollectionItemInput
+
+func (GetTargetPropertiesTargetPropertyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesTargetPropertyCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionItemArray) ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutput() GetTargetPropertiesTargetPropertyCollectionItemArrayOutput {
+	return i.ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetPropertiesTargetPropertyCollectionItemArray) ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetPropertiesTargetPropertyCollectionItemArrayOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesTargetPropertyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionItemOutput) ToGetTargetPropertiesTargetPropertyCollectionItemOutput() GetTargetPropertiesTargetPropertyCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionItemOutput) ToGetTargetPropertiesTargetPropertyCollectionItemOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionItemOutput {
+	return o
+}
+
+// Name of the property.
+func (o GetTargetPropertiesTargetPropertyCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetPropertiesTargetPropertyCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the property.
+func (o GetTargetPropertiesTargetPropertyCollectionItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetPropertiesTargetPropertyCollectionItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTargetPropertiesTargetPropertyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetPropertiesTargetPropertyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetPropertiesTargetPropertyCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionItemArrayOutput) ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutput() GetTargetPropertiesTargetPropertyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionItemArrayOutput) ToGetTargetPropertiesTargetPropertyCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetPropertiesTargetPropertyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetPropertiesTargetPropertyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetPropertiesTargetPropertyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetPropertiesTargetPropertyCollectionItem {
+		return vs[0].([]GetTargetPropertiesTargetPropertyCollectionItem)[vs[1].(int)]
+	}).(GetTargetPropertiesTargetPropertyCollectionItemOutput)
+}
+
 type GetTaskRecordDetail struct {
 	// Execution details.
 	ExecutionDetails []GetTaskRecordDetailExecutionDetail `pulumi:"executionDetails"`
@@ -59364,6 +63356,8 @@ type GetTaskRecordDetailExecutionDetail struct {
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -59401,6 +63395,8 @@ type GetTaskRecordDetailExecutionDetailArgs struct {
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -59509,6 +63505,11 @@ func (o GetTaskRecordDetailExecutionDetailOutput) IsLocked() pulumi.BoolOutput {
 // Is read output variable enabled
 func (o GetTaskRecordDetailExecutionDetailOutput) IsReadOutputVariableEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTaskRecordDetailExecutionDetail) bool { return v.IsReadOutputVariableEnabled }).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetTaskRecordDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskRecordDetailExecutionDetail) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -60729,6 +64730,8 @@ type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail struct {
 	IsLocked bool `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled bool `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables []string `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -60766,6 +64769,8 @@ type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailArgs struct {
 	IsLocked pulumi.BoolInput `pulumi:"isLocked"`
 	// Is read output variable enabled
 	IsReadOutputVariableEnabled pulumi.BoolInput `pulumi:"isReadOutputVariableEnabled"`
+	// The list of system variables.
+	SystemVariables pulumi.StringArrayInput `pulumi:"systemVariables"`
 	// OCID of the compartment to which the resource belongs to.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
 	// The variable of the task. At least one of the dynamicArguments or output needs to be provided.
@@ -60876,6 +64881,11 @@ func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailOutput) IsRea
 	return o.ApplyT(func(v GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail) bool {
 		return v.IsReadOutputVariableEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// The list of system variables.
+func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailOutput) SystemVariables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail) []string { return v.SystemVariables }).(pulumi.StringArrayOutput)
 }
 
 // OCID of the compartment to which the resource belongs to.
@@ -61722,6 +65732,19 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemCatalogResultPayloadArrayInput)(nil)).Elem(), GetCatalogItemCatalogResultPayloadArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemCatalogSourcePayloadInput)(nil)).Elem(), GetCatalogItemCatalogSourcePayloadArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemCatalogSourcePayloadArrayInput)(nil)).Elem(), GetCatalogItemCatalogSourcePayloadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGroupingInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentSourceInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayInput)(nil)).Elem(), GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemsCatalogItemCollectionInput)(nil)).Elem(), GetCatalogItemsCatalogItemCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemsCatalogItemCollectionArrayInput)(nil)).Elem(), GetCatalogItemsCatalogItemCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogItemsCatalogItemCollectionItemInput)(nil)).Elem(), GetCatalogItemsCatalogItemCollectionItemArgs{})
@@ -61896,6 +65919,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleArrayInput)(nil)).Elem(), GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionInput)(nil)).Elem(), GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArrayInput)(nil)).Elem(), GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesFilterInput)(nil)).Elem(), GetInstalledPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesFilterArrayInput)(nil)).Elem(), GetInstalledPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionInput)(nil)).Elem(), GetInstalledPatchesInstalledPatchCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionArrayInput)(nil)).Elem(), GetInstalledPatchesInstalledPatchCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionItemInput)(nil)).Elem(), GetInstalledPatchesInstalledPatchCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstalledPatchesInstalledPatchCollectionItemArrayInput)(nil)).Elem(), GetInstalledPatchesInstalledPatchCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoryRecordsFilterInput)(nil)).Elem(), GetInventoryRecordsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoryRecordsFilterArrayInput)(nil)).Elem(), GetInventoryRecordsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoryRecordsInventoryRecordCollectionInput)(nil)).Elem(), GetInventoryRecordsInventoryRecordCollectionArgs{})
@@ -62036,6 +66065,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProvisionsProvisionCollectionItemDeployedResourceResourceInstanceListArrayInput)(nil)).Elem(), GetProvisionsProvisionCollectionItemDeployedResourceResourceInstanceListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProvisionsProvisionCollectionItemTfOutputInput)(nil)).Elem(), GetProvisionsProvisionCollectionItemTfOutputArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProvisionsProvisionCollectionItemTfOutputArrayInput)(nil)).Elem(), GetProvisionsProvisionCollectionItemTfOutputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesFilterInput)(nil)).Elem(), GetRecommendedPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesFilterArrayInput)(nil)).Elem(), GetRecommendedPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionInput)(nil)).Elem(), GetRecommendedPatchesRecommendedPatchCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionArrayInput)(nil)).Elem(), GetRecommendedPatchesRecommendedPatchCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionItemInput)(nil)).Elem(), GetRecommendedPatchesRecommendedPatchCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecommendedPatchesRecommendedPatchCollectionItemArrayInput)(nil)).Elem(), GetRecommendedPatchesRecommendedPatchCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataFilterInput)(nil)).Elem(), GetReportMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataFilterArrayInput)(nil)).Elem(), GetReportMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionArrayInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemArrayInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemColumnMetadataInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemColumnMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemColumnMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemFilterInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReportMetadataReportMetadataCollectionItemFilterArrayInput)(nil)).Elem(), GetReportMetadataReportMetadataCollectionItemFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesFilterInput)(nil)).Elem(), GetRunbookExportStatusesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesFilterArrayInput)(nil)).Elem(), GetRunbookExportStatusesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionInput)(nil)).Elem(), GetRunbookExportStatusesRunbookExportStatusCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionArrayInput)(nil)).Elem(), GetRunbookExportStatusesRunbookExportStatusCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionItemInput)(nil)).Elem(), GetRunbookExportStatusesRunbookExportStatusCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayInput)(nil)).Elem(), GetRunbookExportStatusesRunbookExportStatusCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesFilterInput)(nil)).Elem(), GetRunbookImportStatusesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesFilterArrayInput)(nil)).Elem(), GetRunbookImportStatusesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionInput)(nil)).Elem(), GetRunbookImportStatusesRunbookImportStatusCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionArrayInput)(nil)).Elem(), GetRunbookImportStatusesRunbookImportStatusCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionItemInput)(nil)).Elem(), GetRunbookImportStatusesRunbookImportStatusCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayInput)(nil)).Elem(), GetRunbookImportStatusesRunbookImportStatusCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookRunbookVersionInput)(nil)).Elem(), GetRunbookRunbookVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookRunbookVersionArrayInput)(nil)).Elem(), GetRunbookRunbookVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunbookRunbookVersionExecutionWorkflowDetailInput)(nil)).Elem(), GetRunbookRunbookVersionExecutionWorkflowDetailArgs{})
@@ -62350,6 +66409,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulerJobJobActivityStepsStepCollectionArrayInput)(nil)).Elem(), GetSchedulerJobJobActivityStepsStepCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulerJobJobActivityStepsStepCollectionItemInput)(nil)).Elem(), GetSchedulerJobJobActivityStepsStepCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulerJobJobActivityStepsStepCollectionItemArrayInput)(nil)).Elem(), GetSchedulerJobJobActivityStepsStepCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsFilterInput)(nil)).Elem(), GetTargetComponentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsFilterArrayInput)(nil)).Elem(), GetTargetComponentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionArrayInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemArrayInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemPropertyInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionItemPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetComponentsTargetComponentCollectionItemPropertyArrayInput)(nil)).Elem(), GetTargetComponentsTargetComponentCollectionItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesFilterInput)(nil)).Elem(), GetTargetPropertiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesFilterArrayInput)(nil)).Elem(), GetTargetPropertiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionInput)(nil)).Elem(), GetTargetPropertiesTargetPropertyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionArrayInput)(nil)).Elem(), GetTargetPropertiesTargetPropertyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionItemInput)(nil)).Elem(), GetTargetPropertiesTargetPropertyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetPropertiesTargetPropertyCollectionItemArrayInput)(nil)).Elem(), GetTargetPropertiesTargetPropertyCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskRecordDetailInput)(nil)).Elem(), GetTaskRecordDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskRecordDetailArrayInput)(nil)).Elem(), GetTaskRecordDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskRecordDetailExecutionDetailInput)(nil)).Elem(), GetTaskRecordDetailExecutionDetailArgs{})
@@ -62609,6 +66682,20 @@ func init() {
 	pulumi.RegisterOutputType(GetCatalogItemCatalogResultPayloadArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogItemCatalogSourcePayloadOutput{})
 	pulumi.RegisterOutputType(GetCatalogItemCatalogSourcePayloadArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentGroupingArrayArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentOutputTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentOutputGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentSourceOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupOutput{})
+	pulumi.RegisterOutputType(GetCatalogItemVariablesDefinitionSchemaDocumentVariableGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogItemsCatalogItemCollectionOutput{})
 	pulumi.RegisterOutputType(GetCatalogItemsCatalogItemCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogItemsCatalogItemCollectionItemOutput{})
@@ -62783,6 +66870,12 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesInstalledPatchCollectionOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesInstalledPatchCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesInstalledPatchCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInstalledPatchesInstalledPatchCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetInventoryRecordsFilterOutput{})
 	pulumi.RegisterOutputType(GetInventoryRecordsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetInventoryRecordsInventoryRecordCollectionOutput{})
@@ -62923,6 +67016,36 @@ func init() {
 	pulumi.RegisterOutputType(GetProvisionsProvisionCollectionItemDeployedResourceResourceInstanceListArrayOutput{})
 	pulumi.RegisterOutputType(GetProvisionsProvisionCollectionItemTfOutputOutput{})
 	pulumi.RegisterOutputType(GetProvisionsProvisionCollectionItemTfOutputArrayOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesRecommendedPatchCollectionOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesRecommendedPatchCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesRecommendedPatchCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRecommendedPatchesRecommendedPatchCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemColumnMetadataOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemColumnMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemDefaultOrderClauseArrayOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemFilterOutput{})
+	pulumi.RegisterOutputType(GetReportMetadataReportMetadataCollectionItemFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesFilterOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesRunbookExportStatusCollectionOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesRunbookExportStatusCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesRunbookExportStatusCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRunbookExportStatusesRunbookExportStatusCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesFilterOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesRunbookImportStatusCollectionOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesRunbookImportStatusCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesRunbookImportStatusCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRunbookImportStatusesRunbookImportStatusCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRunbookRunbookVersionOutput{})
 	pulumi.RegisterOutputType(GetRunbookRunbookVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetRunbookRunbookVersionExecutionWorkflowDetailOutput{})
@@ -63237,6 +67360,20 @@ func init() {
 	pulumi.RegisterOutputType(GetSchedulerJobJobActivityStepsStepCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulerJobJobActivityStepsStepCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSchedulerJobJobActivityStepsStepCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionItemPropertyOutput{})
+	pulumi.RegisterOutputType(GetTargetComponentsTargetComponentCollectionItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesTargetPropertyCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesTargetPropertyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesTargetPropertyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetPropertiesTargetPropertyCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetTaskRecordDetailOutput{})
 	pulumi.RegisterOutputType(GetTaskRecordDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetTaskRecordDetailExecutionDetailOutput{})

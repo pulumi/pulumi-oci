@@ -39,16 +39,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArg
     }
 
     /**
-     * (Updatable) md5 checksum of the
-     * artifact.
+     * (Updatable) md5 checksum of the artifact.
      * 
      */
     @Import(name="checksum")
     private @Nullable Output<String> checksum;
 
     /**
-     * @return (Updatable) md5 checksum of the
-     * artifact.
+     * @return (Updatable) md5 checksum of the artifact.
      * 
      */
     public Optional<Output<String>> checksum() {
@@ -160,8 +158,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArg
         }
 
         /**
-         * @param checksum (Updatable) md5 checksum of the
-         * artifact.
+         * @param checksum (Updatable) md5 checksum of the artifact.
          * 
          * @return builder
          * 
@@ -172,8 +169,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArg
         }
 
         /**
-         * @param checksum (Updatable) md5 checksum of the
-         * artifact.
+         * @param checksum (Updatable) md5 checksum of the artifact.
          * 
          * @return builder
          * 

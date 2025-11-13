@@ -69,6 +69,7 @@ import javax.annotation.Nullable;
  *                     .isExecutableContent(taskRecordDetailsExecutionDetailsIsExecutableContent)
  *                     .isLocked(taskRecordDetailsExecutionDetailsIsLocked)
  *                     .isReadOutputVariableEnabled(taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled)
+ *                     .systemVariables(taskRecordDetailsExecutionDetailsSystemVariables)
  *                     .targetCompartmentId(testCompartment.id())
  *                     .variables(TaskRecordDetailsExecutionDetailsVariablesArgs.builder()
  *                         .inputVariables(TaskRecordDetailsExecutionDetailsVariablesInputVariableArgs.builder()

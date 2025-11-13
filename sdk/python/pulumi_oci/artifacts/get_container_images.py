@@ -28,7 +28,7 @@ class GetContainerImagesResult:
     """
     A collection of values returned by getContainerImages.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, container_image_collections=None, display_name=None, filters=None, id=None, image_id=None, is_versioned=None, repository_id=None, repository_name=None, state=None, version=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, container_image_collections=None, display_name=None, filters=None, id=None, image_digest=None, image_id=None, is_versioned=None, repository_id=None, repository_name=None, state=None, version=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetContainerImagesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if image_digest and not isinstance(image_digest, str):
+            raise TypeError("Expected argument 'image_digest' to be a str")
+        pulumi.set(__self__, "image_digest", image_digest)
         if image_id and not isinstance(image_id, str):
             raise TypeError("Expected argument 'image_id' to be a str")
         pulumi.set(__self__, "image_id", image_id)
@@ -109,6 +112,11 @@ class GetContainerImagesResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "image_id")
@@ -163,6 +171,7 @@ class AwaitableGetContainerImagesResult(GetContainerImagesResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            image_digest=self.image_digest,
             image_id=self.image_id,
             is_versioned=self.is_versioned,
             repository_id=self.repository_id,
@@ -175,6 +184,7 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
                          compartment_id_in_subtree: Optional[_builtins.bool] = None,
                          display_name: Optional[_builtins.str] = None,
                          filters: Optional[Sequence[Union['GetContainerImagesFilterArgs', 'GetContainerImagesFilterArgsDict']]] = None,
+                         image_digest: Optional[_builtins.str] = None,
                          image_id: Optional[_builtins.str] = None,
                          is_versioned: Optional[_builtins.bool] = None,
                          repository_id: Optional[_builtins.str] = None,
@@ -196,6 +206,7 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
     test_container_images = oci.Artifacts.get_container_images(compartment_id=compartment_id,
         compartment_id_in_subtree=container_image_compartment_id_in_subtree,
         display_name=container_image_display_name,
+        image_digest=container_image_image_digest,
         image_id=test_image["id"],
         is_versioned=container_image_is_versioned,
         repository_id=test_repository["id"],
@@ -208,6 +219,7 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+    :param _builtins.str image_digest: The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
     :param _builtins.str image_id: A filter to return a container image summary only for the specified container image OCID.
     :param _builtins.bool is_versioned: A filter to return container images based on whether there are any associated versions.
     :param _builtins.str repository_id: A filter to return container images only for the specified container repository OCID.
@@ -220,6 +232,7 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['imageDigest'] = image_digest
     __args__['imageId'] = image_id
     __args__['isVersioned'] = is_versioned
     __args__['repositoryId'] = repository_id
@@ -236,6 +249,7 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        image_digest=pulumi.get(__ret__, 'image_digest'),
         image_id=pulumi.get(__ret__, 'image_id'),
         is_versioned=pulumi.get(__ret__, 'is_versioned'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
@@ -246,6 +260,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerImagesFilterArgs', 'GetContainerImagesFilterArgsDict']]]]] = None,
+                                image_digest: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 is_versioned: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                 repository_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -267,6 +282,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
     test_container_images = oci.Artifacts.get_container_images(compartment_id=compartment_id,
         compartment_id_in_subtree=container_image_compartment_id_in_subtree,
         display_name=container_image_display_name,
+        image_digest=container_image_image_digest,
         image_id=test_image["id"],
         is_versioned=container_image_is_versioned,
         repository_id=test_repository["id"],
@@ -279,6 +295,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+    :param _builtins.str image_digest: The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
     :param _builtins.str image_id: A filter to return a container image summary only for the specified container image OCID.
     :param _builtins.bool is_versioned: A filter to return container images based on whether there are any associated versions.
     :param _builtins.str repository_id: A filter to return container images only for the specified container repository OCID.
@@ -291,6 +308,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['imageDigest'] = image_digest
     __args__['imageId'] = image_id
     __args__['isVersioned'] = is_versioned
     __args__['repositoryId'] = repository_id
@@ -306,6 +324,7 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        image_digest=pulumi.get(__response__, 'image_digest'),
         image_id=pulumi.get(__response__, 'image_id'),
         is_versioned=pulumi.get(__response__, 'is_versioned'),
         repository_id=pulumi.get(__response__, 'repository_id'),

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult> Resources;
         /// <summary>
-        /// The current state of the FleetTarget.
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>

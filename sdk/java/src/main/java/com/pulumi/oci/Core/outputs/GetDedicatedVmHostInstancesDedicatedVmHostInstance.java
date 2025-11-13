@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -25,6 +26,11 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
      * 
      */
     private String instanceId;
+    /**
+     * @return A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    private Boolean isMemoryEncryptionEnabled;
     /**
      * @return The shape of the VM instance.
      * 
@@ -59,6 +65,13 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
         return this.instanceId;
     }
     /**
+     * @return A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    public Boolean isMemoryEncryptionEnabled() {
+        return this.isMemoryEncryptionEnabled;
+    }
+    /**
      * @return The shape of the VM instance.
      * 
      */
@@ -85,6 +98,7 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
         private String availabilityDomain;
         private String compartmentId;
         private String instanceId;
+        private Boolean isMemoryEncryptionEnabled;
         private String shape;
         private String timeCreated;
         public Builder() {}
@@ -93,6 +107,7 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
     	      this.instanceId = defaults.instanceId;
+    	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
     	      this.shape = defaults.shape;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -122,6 +137,14 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            if (isMemoryEncryptionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesDedicatedVmHostInstance", "isMemoryEncryptionEnabled");
+            }
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesDedicatedVmHostInstance", "shape");
@@ -142,6 +165,7 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.compartmentId = compartmentId;
             _resultValue.instanceId = instanceId;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             _resultValue.shape = shape;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

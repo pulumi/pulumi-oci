@@ -14,9 +14,9 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-        /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-        /// compartment level.
+        /// Includes a list of resource limits that are currently supported.
+        /// If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+        /// If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
         /// 
         /// 
         /// ## Example Usage
@@ -46,9 +46,9 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-        /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-        /// compartment level.
+        /// Includes a list of resource limits that are currently supported.
+        /// If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+        /// If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
         /// 
         /// 
         /// ## Example Usage
@@ -78,9 +78,9 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-        /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-        /// compartment level.
+        /// Includes a list of resource limits that are currently supported.
+        /// If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+        /// If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
         /// 
         /// 
         /// ## Example Usage
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Limits
         public string? ServiceName { get; set; }
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public string? SubscriptionId { get; set; }
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.Limits
         public Input<string>? ServiceName { get; set; }
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }

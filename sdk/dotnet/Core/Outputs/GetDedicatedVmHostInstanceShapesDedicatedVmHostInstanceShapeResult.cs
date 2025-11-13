@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Core.Outputs
         /// The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
         /// </summary>
         public readonly string InstanceShapeName;
+        /// <summary>
+        /// Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult> SupportedCapabilities;
 
         [OutputConstructor]
         private GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult(
             string availabilityDomain,
 
-            string instanceShapeName)
+            string instanceShapeName,
+
+            ImmutableArray<Outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult> supportedCapabilities)
         {
             AvailabilityDomain = availabilityDomain;
             InstanceShapeName = instanceShapeName;
+            SupportedCapabilities = supportedCapabilities;
         }
     }
 }

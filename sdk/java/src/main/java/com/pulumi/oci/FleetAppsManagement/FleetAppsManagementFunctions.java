@@ -12,6 +12,8 @@ import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
@@ -27,6 +29,8 @@ import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsPlainA
 import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCompliancePlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
@@ -48,6 +52,8 @@ import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
@@ -78,7 +84,19 @@ import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionPlainArgs;
@@ -100,12 +118,17 @@ import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResou
 import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsPlainArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsPlainArgs;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetAnnouncementsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetCatalogItemResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetCatalogItemVariablesDefinitionResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetCatalogItemsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetCompliancePoliciesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetCompliancePolicyResult;
@@ -114,6 +137,7 @@ import com.pulumi.oci.FleetAppsManagement.outputs.GetCompliancePolicyRulesResult
 import com.pulumi.oci.FleetAppsManagement.outputs.GetComplianceRecordCountsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetComplianceRecordsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetComplianceReportResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetComplianceResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetCredentialResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetCredentialsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetProductsResult;
@@ -124,6 +148,7 @@ import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetResourcesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetTargetsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetsResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetInstalledPatchesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetInventoryRecordsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetInventoryResourcesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetMaintenanceWindowResult;
@@ -139,6 +164,12 @@ import com.pulumi.oci.FleetAppsManagement.outputs.GetPropertiesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetPropertyResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetProvisionResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetProvisionsResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRecommendedPatchesResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetReportMetadataResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookExportResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookExportStatusesResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookImportResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookImportStatusesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookVersionResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetRunbookVersionsResult;
@@ -150,6 +181,8 @@ import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerExecutionsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerJobCountsResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerJobJobActivityResourcesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerJobJobActivityStepsResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetTargetComponentsResult;
+import com.pulumi.oci.FleetAppsManagement.outputs.GetTargetPropertiesResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordResult;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetTaskRecordsResult;
 import com.pulumi.oci.Utilities;
@@ -587,6 +620,216 @@ public final class FleetAppsManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getCatalogItem:getCatalogItem", TypeShape.of(GetCatalogItemResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets information about a CatalogItem Variables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
+     *             .catalogItemId(testCatalogItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCatalogItemVariablesDefinitionResult> getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs args) {
+        return getCatalogItemVariablesDefinition(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets information about a CatalogItem Variables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
+     *             .catalogItemId(testCatalogItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCatalogItemVariablesDefinitionResult> getCatalogItemVariablesDefinitionPlain(GetCatalogItemVariablesDefinitionPlainArgs args) {
+        return getCatalogItemVariablesDefinitionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets information about a CatalogItem Variables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
+     *             .catalogItemId(testCatalogItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCatalogItemVariablesDefinitionResult> getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getCatalogItemVariablesDefinition:getCatalogItemVariablesDefinition", TypeShape.of(GetCatalogItemVariablesDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets information about a CatalogItem Variables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
+     *             .catalogItemId(testCatalogItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCatalogItemVariablesDefinitionResult> getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getCatalogItemVariablesDefinition:getCatalogItemVariablesDefinition", TypeShape.of(GetCatalogItemVariablesDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets information about a CatalogItem Variables.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
+     *             .catalogItemId(testCatalogItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCatalogItemVariablesDefinitionResult> getCatalogItemVariablesDefinitionPlain(GetCatalogItemVariablesDefinitionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getCatalogItemVariablesDefinition:getCatalogItemVariablesDefinition", TypeShape.of(GetCatalogItemVariablesDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Catalog Items in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
      * Gets a list of Catalog Items in a compartment.
@@ -621,6 +864,7 @@ public final class FleetAppsManagementFunctions {
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
+     *             .packageType(catalogItemPackageType)
      *             .shouldListPublicItems(catalogItemShouldListPublicItems)
      *             .state(catalogItemState)
      *             .build());
@@ -669,6 +913,7 @@ public final class FleetAppsManagementFunctions {
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
+     *             .packageType(catalogItemPackageType)
      *             .shouldListPublicItems(catalogItemShouldListPublicItems)
      *             .state(catalogItemState)
      *             .build());
@@ -717,6 +962,7 @@ public final class FleetAppsManagementFunctions {
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
+     *             .packageType(catalogItemPackageType)
      *             .shouldListPublicItems(catalogItemShouldListPublicItems)
      *             .state(catalogItemState)
      *             .build());
@@ -765,6 +1011,7 @@ public final class FleetAppsManagementFunctions {
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
+     *             .packageType(catalogItemPackageType)
      *             .shouldListPublicItems(catalogItemShouldListPublicItems)
      *             .state(catalogItemState)
      *             .build());
@@ -813,6 +1060,7 @@ public final class FleetAppsManagementFunctions {
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
+     *             .packageType(catalogItemPackageType)
      *             .shouldListPublicItems(catalogItemShouldListPublicItems)
      *             .state(catalogItemState)
      *             .build());
@@ -2661,6 +2909,216 @@ public final class FleetAppsManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getFleet:getFleet", TypeShape.of(GetFleetResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Retrieve compliance for a fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetComplianceResult> getFleetCompliance(GetFleetComplianceArgs args) {
+        return getFleetCompliance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Retrieve compliance for a fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetComplianceResult> getFleetCompliancePlain(GetFleetCompliancePlainArgs args) {
+        return getFleetCompliancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Retrieve compliance for a fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetComplianceResult> getFleetCompliance(GetFleetComplianceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getFleetCompliance:getFleetCompliance", TypeShape.of(GetFleetComplianceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Retrieve compliance for a fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetComplianceResult> getFleetCompliance(GetFleetComplianceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getFleetCompliance:getFleetCompliance", TypeShape.of(GetFleetComplianceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Compliance resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Retrieve compliance for a fleet.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetComplianceResult> getFleetCompliancePlain(GetFleetCompliancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getFleetCompliance:getFleetCompliance", TypeShape.of(GetFleetComplianceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
      * Retrieve compliance report for a fleet.
@@ -4480,6 +4938,7 @@ public final class FleetAppsManagementFunctions {
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
      *             .resourceId(testResource.id())
+     *             .state(fleetTargetState)
      *             .build());
      * 
      *     }
@@ -4526,6 +4985,7 @@ public final class FleetAppsManagementFunctions {
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
      *             .resourceId(testResource.id())
+     *             .state(fleetTargetState)
      *             .build());
      * 
      *     }
@@ -4572,6 +5032,7 @@ public final class FleetAppsManagementFunctions {
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
      *             .resourceId(testResource.id())
+     *             .state(fleetTargetState)
      *             .build());
      * 
      *     }
@@ -4618,6 +5079,7 @@ public final class FleetAppsManagementFunctions {
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
      *             .resourceId(testResource.id())
+     *             .state(fleetTargetState)
      *             .build());
      * 
      *     }
@@ -4664,6 +5126,7 @@ public final class FleetAppsManagementFunctions {
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
      *             .resourceId(testResource.id())
+     *             .state(fleetTargetState)
      *             .build());
      * 
      *     }
@@ -5026,6 +5489,246 @@ public final class FleetAppsManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getFleets:getFleets", TypeShape.of(GetFleetsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Installed Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of installed patches for the specified target.
+     * CompartmentId should be the compartment OCID of the resource (Containing the target).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstalledPatches = FleetAppsManagementFunctions.getInstalledPatches(GetInstalledPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchLevel(installedPatchPatchLevel)
+     *             .patchType(installedPatchPatchType)
+     *             .severity(installedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInstalledPatchesResult> getInstalledPatches(GetInstalledPatchesArgs args) {
+        return getInstalledPatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Installed Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of installed patches for the specified target.
+     * CompartmentId should be the compartment OCID of the resource (Containing the target).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstalledPatches = FleetAppsManagementFunctions.getInstalledPatches(GetInstalledPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchLevel(installedPatchPatchLevel)
+     *             .patchType(installedPatchPatchType)
+     *             .severity(installedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetInstalledPatchesResult> getInstalledPatchesPlain(GetInstalledPatchesPlainArgs args) {
+        return getInstalledPatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Installed Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of installed patches for the specified target.
+     * CompartmentId should be the compartment OCID of the resource (Containing the target).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstalledPatches = FleetAppsManagementFunctions.getInstalledPatches(GetInstalledPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchLevel(installedPatchPatchLevel)
+     *             .patchType(installedPatchPatchType)
+     *             .severity(installedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInstalledPatchesResult> getInstalledPatches(GetInstalledPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getInstalledPatches:getInstalledPatches", TypeShape.of(GetInstalledPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Installed Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of installed patches for the specified target.
+     * CompartmentId should be the compartment OCID of the resource (Containing the target).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstalledPatches = FleetAppsManagementFunctions.getInstalledPatches(GetInstalledPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchLevel(installedPatchPatchLevel)
+     *             .patchType(installedPatchPatchType)
+     *             .severity(installedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInstalledPatchesResult> getInstalledPatches(GetInstalledPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getInstalledPatches:getInstalledPatches", TypeShape.of(GetInstalledPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Installed Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of installed patches for the specified target.
+     * CompartmentId should be the compartment OCID of the resource (Containing the target).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstalledPatches = FleetAppsManagementFunctions.getInstalledPatches(GetInstalledPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchLevel(installedPatchPatchLevel)
+     *             .patchType(installedPatchPatchType)
+     *             .severity(installedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetInstalledPatchesResult> getInstalledPatchesPlain(GetInstalledPatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getInstalledPatches:getInstalledPatches", TypeShape.of(GetInstalledPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Inventory Records in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
      * Gets a list of inventoryDetails.
@@ -5058,6 +5761,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
      *             .fleetId(testFleet.id())
+     *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
      *             .resourceId(testResource.id())
      *             .build());
      * 
@@ -5103,6 +5807,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
      *             .fleetId(testFleet.id())
+     *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
      *             .resourceId(testResource.id())
      *             .build());
      * 
@@ -5148,6 +5853,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
      *             .fleetId(testFleet.id())
+     *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
      *             .resourceId(testResource.id())
      *             .build());
      * 
@@ -5193,6 +5899,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
      *             .fleetId(testFleet.id())
+     *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
      *             .resourceId(testResource.id())
      *             .build());
      * 
@@ -5238,6 +5945,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
      *             .fleetId(testFleet.id())
+     *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
      *             .resourceId(testResource.id())
      *             .build());
      * 
@@ -9090,6 +9798,461 @@ public final class FleetAppsManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getProvisions:getProvisions", TypeShape.of(GetProvisionsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of recommended patches for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendedPatches = FleetAppsManagementFunctions.getRecommendedPatches(GetRecommendedPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchId(testPatch.id())
+     *             .patchLevel(recommendedPatchPatchLevel)
+     *             .patchType(recommendedPatchPatchType)
+     *             .severity(recommendedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRecommendedPatchesResult> getRecommendedPatches(GetRecommendedPatchesArgs args) {
+        return getRecommendedPatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of recommended patches for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendedPatches = FleetAppsManagementFunctions.getRecommendedPatches(GetRecommendedPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchId(testPatch.id())
+     *             .patchLevel(recommendedPatchPatchLevel)
+     *             .patchType(recommendedPatchPatchType)
+     *             .severity(recommendedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRecommendedPatchesResult> getRecommendedPatchesPlain(GetRecommendedPatchesPlainArgs args) {
+        return getRecommendedPatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of recommended patches for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendedPatches = FleetAppsManagementFunctions.getRecommendedPatches(GetRecommendedPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchId(testPatch.id())
+     *             .patchLevel(recommendedPatchPatchLevel)
+     *             .patchType(recommendedPatchPatchType)
+     *             .severity(recommendedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRecommendedPatchesResult> getRecommendedPatches(GetRecommendedPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRecommendedPatches:getRecommendedPatches", TypeShape.of(GetRecommendedPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of recommended patches for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendedPatches = FleetAppsManagementFunctions.getRecommendedPatches(GetRecommendedPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchId(testPatch.id())
+     *             .patchLevel(recommendedPatchPatchLevel)
+     *             .patchType(recommendedPatchPatchType)
+     *             .severity(recommendedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRecommendedPatchesResult> getRecommendedPatches(GetRecommendedPatchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRecommendedPatches:getRecommendedPatches", TypeShape.of(GetRecommendedPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of recommended patches for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendedPatches = FleetAppsManagementFunctions.getRecommendedPatches(GetRecommendedPatchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .patchId(testPatch.id())
+     *             .patchLevel(recommendedPatchPatchLevel)
+     *             .patchType(recommendedPatchPatchType)
+     *             .severity(recommendedPatchSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRecommendedPatchesResult> getRecommendedPatchesPlain(GetRecommendedPatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRecommendedPatches:getRecommendedPatches", TypeShape.of(GetRecommendedPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the report metadata.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportMetadata = FleetAppsManagementFunctions.getReportMetadata(GetReportMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .reportName(reportName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetReportMetadataResult> getReportMetadata(GetReportMetadataArgs args) {
+        return getReportMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the report metadata.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportMetadata = FleetAppsManagementFunctions.getReportMetadata(GetReportMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .reportName(reportName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetReportMetadataResult> getReportMetadataPlain(GetReportMetadataPlainArgs args) {
+        return getReportMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the report metadata.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportMetadata = FleetAppsManagementFunctions.getReportMetadata(GetReportMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .reportName(reportName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetReportMetadataResult> getReportMetadata(GetReportMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getReportMetadata:getReportMetadata", TypeShape.of(GetReportMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the report metadata.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportMetadata = FleetAppsManagementFunctions.getReportMetadata(GetReportMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .reportName(reportName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetReportMetadataResult> getReportMetadata(GetReportMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getReportMetadata:getReportMetadata", TypeShape.of(GetReportMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the report metadata.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportMetadata = FleetAppsManagementFunctions.getReportMetadata(GetReportMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .reportName(reportName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetReportMetadataResult> getReportMetadataPlain(GetReportMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getReportMetadata:getReportMetadata", TypeShape.of(GetReportMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
      * Get the details of a runbook in Fleet Application Management.
@@ -9298,6 +10461,866 @@ public final class FleetAppsManagementFunctions {
      */
     public static CompletableFuture<GetRunbookResult> getRunbookPlain(GetRunbookPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRunbook:getRunbook", TypeShape.of(GetRunbookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Export resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook export status for provided runbook and exportId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
+     *             .exportId(runbookExportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportResult> getRunbookExport(GetRunbookExportArgs args) {
+        return getRunbookExport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Runbook Export resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook export status for provided runbook and exportId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
+     *             .exportId(runbookExportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookExportResult> getRunbookExportPlain(GetRunbookExportPlainArgs args) {
+        return getRunbookExportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Runbook Export resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook export status for provided runbook and exportId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
+     *             .exportId(runbookExportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportResult> getRunbookExport(GetRunbookExportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookExport:getRunbookExport", TypeShape.of(GetRunbookExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Export resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook export status for provided runbook and exportId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
+     *             .exportId(runbookExportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportResult> getRunbookExport(GetRunbookExportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookExport:getRunbookExport", TypeShape.of(GetRunbookExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Export resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook export status for provided runbook and exportId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
+     *             .exportId(runbookExportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookExportResult> getRunbookExportPlain(GetRunbookExportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRunbookExport:getRunbookExport", TypeShape.of(GetRunbookExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook export status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExportStatuses = FleetAppsManagementFunctions.getRunbookExportStatuses(GetRunbookExportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportStatusesResult> getRunbookExportStatuses(GetRunbookExportStatusesArgs args) {
+        return getRunbookExportStatuses(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook export status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExportStatuses = FleetAppsManagementFunctions.getRunbookExportStatuses(GetRunbookExportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookExportStatusesResult> getRunbookExportStatusesPlain(GetRunbookExportStatusesPlainArgs args) {
+        return getRunbookExportStatusesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook export status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExportStatuses = FleetAppsManagementFunctions.getRunbookExportStatuses(GetRunbookExportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportStatusesResult> getRunbookExportStatuses(GetRunbookExportStatusesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookExportStatuses:getRunbookExportStatuses", TypeShape.of(GetRunbookExportStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook export status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExportStatuses = FleetAppsManagementFunctions.getRunbookExportStatuses(GetRunbookExportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookExportStatusesResult> getRunbookExportStatuses(GetRunbookExportStatusesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookExportStatuses:getRunbookExportStatuses", TypeShape.of(GetRunbookExportStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Export Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook export status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookExportStatuses = FleetAppsManagementFunctions.getRunbookExportStatuses(GetRunbookExportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookExportStatusesResult> getRunbookExportStatusesPlain(GetRunbookExportStatusesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRunbookExportStatuses:getRunbookExportStatuses", TypeShape.of(GetRunbookExportStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook import status for provided runbook and importId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
+     *             .importId(runbookImportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportResult> getRunbookImport(GetRunbookImportArgs args) {
+        return getRunbookImport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook import status for provided runbook and importId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
+     *             .importId(runbookImportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookImportResult> getRunbookImportPlain(GetRunbookImportPlainArgs args) {
+        return getRunbookImportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook import status for provided runbook and importId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
+     *             .importId(runbookImportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportResult> getRunbookImport(GetRunbookImportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookImport:getRunbookImport", TypeShape.of(GetRunbookImportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook import status for provided runbook and importId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
+     *             .importId(runbookImportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportResult> getRunbookImport(GetRunbookImportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookImport:getRunbookImport", TypeShape.of(GetRunbookImportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Get the runbook import status for provided runbook and importId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
+     *             .importId(runbookImportId)
+     *             .runbookId(testRunbook.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookImportResult> getRunbookImportPlain(GetRunbookImportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRunbookImport:getRunbookImport", TypeShape.of(GetRunbookImportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Import Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook import status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImportStatuses = FleetAppsManagementFunctions.getRunbookImportStatuses(GetRunbookImportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportStatusesResult> getRunbookImportStatuses(GetRunbookImportStatusesArgs args) {
+        return getRunbookImportStatuses(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Runbook Import Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook import status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImportStatuses = FleetAppsManagementFunctions.getRunbookImportStatuses(GetRunbookImportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookImportStatusesResult> getRunbookImportStatusesPlain(GetRunbookImportStatusesPlainArgs args) {
+        return getRunbookImportStatusesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Runbook Import Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook import status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImportStatuses = FleetAppsManagementFunctions.getRunbookImportStatuses(GetRunbookImportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportStatusesResult> getRunbookImportStatuses(GetRunbookImportStatusesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookImportStatuses:getRunbookImportStatuses", TypeShape.of(GetRunbookImportStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Import Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook import status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImportStatuses = FleetAppsManagementFunctions.getRunbookImportStatuses(GetRunbookImportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRunbookImportStatusesResult> getRunbookImportStatuses(GetRunbookImportStatusesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getRunbookImportStatuses:getRunbookImportStatuses", TypeShape.of(GetRunbookImportStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Runbook Import Statuses in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Returns a list of all the Runbook import status in the specified compartment.
+     * The query parameter `compartmentId` is required.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunbookImportStatuses = FleetAppsManagementFunctions.getRunbookImportStatuses(GetRunbookImportStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRunbookImportStatusesResult> getRunbookImportStatusesPlain(GetRunbookImportStatusesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getRunbookImportStatuses:getRunbookImportStatuses", TypeShape.of(GetRunbookImportStatusesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -10973,7 +12996,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11001,7 +13024,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11024,7 +13049,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11052,7 +13077,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11075,7 +13102,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11103,7 +13130,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11126,7 +13155,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11154,7 +13183,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11177,7 +13208,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11205,7 +13236,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11228,7 +13261,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11256,7 +13289,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -11279,7 +13314,7 @@ public final class FleetAppsManagementFunctions {
     /**
      * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
      * 
-     * Returns a list of all Fleets that are scheduled.
+     * Returns a list of all executions that are scheduled.
      * 
      * ## Example Usage
      * 
@@ -11307,7 +13342,9 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedulerExecutions = FleetAppsManagementFunctions.getSchedulerExecutions(GetSchedulerExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
+     *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
      *             .resourceId(testResource.id())
      *             .runbookId(testRunbook.id())
      *             .runbookVersionName(testRunbookVersion.name())
@@ -12097,6 +14134,461 @@ public final class FleetAppsManagementFunctions {
      */
     public static CompletableFuture<GetSchedulerJobJobActivityStepsResult> getSchedulerJobJobActivityStepsPlain(GetSchedulerJobJobActivityStepsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getSchedulerJobJobActivitySteps:getSchedulerJobJobActivitySteps", TypeShape.of(GetSchedulerJobJobActivityStepsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target component for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetComponents = FleetAppsManagementFunctions.getTargetComponents(GetTargetComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .name(targetComponentName)
+     *             .severity(targetComponentSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetComponentsResult> getTargetComponents(GetTargetComponentsArgs args) {
+        return getTargetComponents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target component for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetComponents = FleetAppsManagementFunctions.getTargetComponents(GetTargetComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .name(targetComponentName)
+     *             .severity(targetComponentSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetComponentsResult> getTargetComponentsPlain(GetTargetComponentsPlainArgs args) {
+        return getTargetComponentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target component for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetComponents = FleetAppsManagementFunctions.getTargetComponents(GetTargetComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .name(targetComponentName)
+     *             .severity(targetComponentSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetComponentsResult> getTargetComponents(GetTargetComponentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getTargetComponents:getTargetComponents", TypeShape.of(GetTargetComponentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target component for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetComponents = FleetAppsManagementFunctions.getTargetComponents(GetTargetComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .name(targetComponentName)
+     *             .severity(targetComponentSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetComponentsResult> getTargetComponents(GetTargetComponentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getTargetComponents:getTargetComponents", TypeShape.of(GetTargetComponentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target component for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetComponents = FleetAppsManagementFunctions.getTargetComponents(GetTargetComponentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .name(targetComponentName)
+     *             .severity(targetComponentSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetComponentsResult> getTargetComponentsPlain(GetTargetComponentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getTargetComponents:getTargetComponents", TypeShape.of(GetTargetComponentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target properties for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetProperties = FleetAppsManagementFunctions.getTargetProperties(GetTargetPropertiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .severity(targetPropertySeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetPropertiesResult> getTargetProperties(GetTargetPropertiesArgs args) {
+        return getTargetProperties(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target properties for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetProperties = FleetAppsManagementFunctions.getTargetProperties(GetTargetPropertiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .severity(targetPropertySeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetPropertiesResult> getTargetPropertiesPlain(GetTargetPropertiesPlainArgs args) {
+        return getTargetPropertiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target properties for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetProperties = FleetAppsManagementFunctions.getTargetProperties(GetTargetPropertiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .severity(targetPropertySeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetPropertiesResult> getTargetProperties(GetTargetPropertiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getTargetProperties:getTargetProperties", TypeShape.of(GetTargetPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target properties for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetProperties = FleetAppsManagementFunctions.getTargetProperties(GetTargetPropertiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .severity(targetPropertySeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetPropertiesResult> getTargetProperties(GetTargetPropertiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetAppsManagement/getTargetProperties:getTargetProperties", TypeShape.of(GetTargetPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
+     * 
+     * Gets a list of target properties for the specified target.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
+     * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetProperties = FleetAppsManagementFunctions.getTargetProperties(GetTargetPropertiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .targetId(fleetTargetId)
+     *             .targetName(fleetTargetName)
+     *             .severity(targetPropertySeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetPropertiesResult> getTargetPropertiesPlain(GetTargetPropertiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetAppsManagement/getTargetProperties:getTargetProperties", TypeShape.of(GetTargetPropertiesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.

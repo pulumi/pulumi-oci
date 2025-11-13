@@ -4691,7 +4691,7 @@ if not MYPY:
     class DedicatedVmHostPlacementConstraintDetailsArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
-        Determines the type of targeted launch.
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
 
 
         ** IMPORTANT **
@@ -4699,7 +4699,7 @@ if not MYPY:
         """
         compute_bare_metal_host_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
 elif False:
     DedicatedVmHostPlacementConstraintDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -4710,12 +4710,12 @@ class DedicatedVmHostPlacementConstraintDetailsArgs:
                  type: pulumi.Input[_builtins.str],
                  compute_bare_metal_host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: Determines the type of targeted launch.
+        :param pulumi.Input[_builtins.str] type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         pulumi.set(__self__, "type", type)
         if compute_bare_metal_host_id is not None:
@@ -4725,7 +4725,7 @@ class DedicatedVmHostPlacementConstraintDetailsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Determines the type of targeted launch.
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
 
 
         ** IMPORTANT **
@@ -4741,7 +4741,7 @@ class DedicatedVmHostPlacementConstraintDetailsArgs:
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testClusterOption = oci.ContainerEngine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -28,6 +29,7 @@ export function getClusterOption(args: GetClusterOptionArgs, opts?: pulumi.Invok
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterOption:getClusterOption", {
         "clusterOptionId": args.clusterOptionId,
         "compartmentId": args.compartmentId,
+        "shouldListAllPatchVersions": args.shouldListAllPatchVersions,
     }, opts);
 }
 
@@ -43,6 +45,10 @@ export interface GetClusterOptionArgs {
      * The OCID of the compartment.
      */
     compartmentId?: string;
+    /**
+     * Option to show all kubernetes patch versions
+     */
+    shouldListAllPatchVersions?: boolean;
 }
 
 /**
@@ -63,6 +69,7 @@ export interface GetClusterOptionResult {
      * Available Kubernetes versions.
      */
     readonly kubernetesVersions: string[];
+    readonly shouldListAllPatchVersions?: boolean;
 }
 /**
  * This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -78,6 +85,7 @@ export interface GetClusterOptionResult {
  * const testClusterOption = oci.ContainerEngine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -86,6 +94,7 @@ export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: 
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", {
         "clusterOptionId": args.clusterOptionId,
         "compartmentId": args.compartmentId,
+        "shouldListAllPatchVersions": args.shouldListAllPatchVersions,
     }, opts);
 }
 
@@ -101,4 +110,8 @@ export interface GetClusterOptionOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * Option to show all kubernetes patch versions
+     */
+    shouldListAllPatchVersions?: pulumi.Input<boolean>;
 }

@@ -15296,6 +15296,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .dedicatedVmHostId(testDedicatedVmHost.id())
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
      * 
      *     }
@@ -15340,6 +15341,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .dedicatedVmHostId(testDedicatedVmHost.id())
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
      * 
      *     }
@@ -15384,6 +15386,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .dedicatedVmHostId(testDedicatedVmHost.id())
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
      * 
      *     }
@@ -15428,6 +15431,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .dedicatedVmHostId(testDedicatedVmHost.id())
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
      * 
      *     }
@@ -15472,6 +15476,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .dedicatedVmHostId(testDedicatedVmHost.id())
      *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled)
      *             .build());
      * 
      *     }
@@ -15740,6 +15745,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
      *             .displayName(dedicatedVmHostDisplayName)
      *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
      *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
      *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
      *             .state(dedicatedVmHostState)
@@ -15791,6 +15797,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
      *             .displayName(dedicatedVmHostDisplayName)
      *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
      *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
      *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
      *             .state(dedicatedVmHostState)
@@ -15842,6 +15849,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
      *             .displayName(dedicatedVmHostDisplayName)
      *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
      *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
      *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
      *             .state(dedicatedVmHostState)
@@ -15893,6 +15901,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
      *             .displayName(dedicatedVmHostDisplayName)
      *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
      *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
      *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
      *             .state(dedicatedVmHostState)
@@ -15944,6 +15953,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
      *             .displayName(dedicatedVmHostDisplayName)
      *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
      *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
      *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
      *             .state(dedicatedVmHostState)

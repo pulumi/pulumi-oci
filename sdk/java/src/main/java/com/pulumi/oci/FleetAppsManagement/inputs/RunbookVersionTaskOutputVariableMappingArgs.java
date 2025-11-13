@@ -31,16 +31,14 @@ public final class RunbookVersionTaskOutputVariableMappingArgs extends com.pulum
     }
 
     /**
-     * (Updatable) The details of the output variable that will be used for
-     * mapping.
+     * (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     @Import(name="outputVariableDetails", required=true)
     private Output<RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs> outputVariableDetails;
 
     /**
-     * @return (Updatable) The details of the output variable that will be used for
-     * mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     public Output<RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs> outputVariableDetails() {
@@ -94,8 +92,7 @@ public final class RunbookVersionTaskOutputVariableMappingArgs extends com.pulum
         }
 
         /**
-         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for
-         * mapping.
+         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for mapping.
          * 
          * @return builder
          * 
@@ -106,8 +103,7 @@ public final class RunbookVersionTaskOutputVariableMappingArgs extends com.pulum
         }
 
         /**
-         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for
-         * mapping.
+         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for mapping.
          * 
          * @return builder
          * 

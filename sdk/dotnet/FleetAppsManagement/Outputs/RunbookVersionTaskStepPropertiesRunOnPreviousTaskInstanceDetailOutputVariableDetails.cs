@@ -14,13 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails
     {
         /// <summary>
-        /// (Updatable) The name of the
-        /// output variable whose value has to be mapped.
+        /// (Updatable) The name of the output variable whose value has to be mapped.
         /// </summary>
         public readonly string? OutputVariableName;
         /// <summary>
-        /// (Updatable) The name of the task step
-        /// the output variable belongs to.
+        /// (Updatable) The name of the task step the output variable belongs to.
         /// </summary>
         public readonly string? StepName;
 

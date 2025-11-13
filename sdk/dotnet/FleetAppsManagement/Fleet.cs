@@ -60,7 +60,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        /// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Output("environmentType")]
         public Output<string> EnvironmentType { get; private set; } = null!;
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> ParentFleetId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Products associated with the Fleet.
+        /// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         /// </summary>
         [Output("products")]
         public Output<ImmutableArray<string>> Products { get; private set; } = null!;
@@ -244,7 +244,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        /// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _products;
 
         /// <summary>
-        /// (Updatable) Products associated with the Fleet.
+        /// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         /// </summary>
         public InputList<string> Products
         {
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        /// (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
@@ -435,7 +435,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputList<string>? _products;
 
         /// <summary>
-        /// (Updatable) Products associated with the Fleet.
+        /// (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         /// </summary>
         public InputList<string> Products
         {

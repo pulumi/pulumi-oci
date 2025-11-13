@@ -86,7 +86,15 @@ namespace Pulumi.Oci.FleetAppsManagement
     ///             Versions = platformConfigurationConfigCategoryDetailsVersions,
     ///         },
     ///         DisplayName = platformConfigurationDisplayName,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
     ///         Description = platformConfigurationDescription,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
     ///     });
     /// 
     /// });
@@ -116,7 +124,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<Outputs.PlatformConfigurationConfigCategoryDetails> ConfigCategoryDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
@@ -128,17 +136,17 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -243,6 +251,18 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("configCategoryDetails", required: true)]
         public Input<Inputs.PlatformConfigurationConfigCategoryDetailsArgs> ConfigCategoryDetails { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         /// </summary>
@@ -250,14 +270,26 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        /// </summary>
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
 
         public PlatformConfigurationArgs()
         {
@@ -283,7 +315,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -298,11 +330,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -311,7 +339,11 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<string> FreeformTags
         {

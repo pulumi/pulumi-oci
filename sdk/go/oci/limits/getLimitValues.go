@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 //
-// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+// Includes a full list of resource limits belonging to a given service.
+// If the subscription ID is provided, the limit value for the subscription will be returned.
 //
 // ## Example Usage
 //
@@ -33,6 +34,7 @@ import (
 //				CompartmentId:      tenancyOcid,
 //				ServiceName:        testService.Name,
 //				AvailabilityDomain: pulumi.StringRef(limitValueAvailabilityDomain),
+//				ExternalLocation:   pulumi.StringRef(limitValueExternalLocation),
 //				Name:               pulumi.StringRef(limitValueName),
 //				ScopeType:          pulumi.StringRef(limitValueScopeType),
 //				SubscriptionId:     pulumi.StringRef(subscriptionOcid),
@@ -60,15 +62,17 @@ type GetLimitValuesArgs struct {
 	// Filter entries by availability domain. This implies that only AD-specific values are returned.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-	CompartmentId string                 `pulumi:"compartmentId"`
-	Filters       []GetLimitValuesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// External cloud provider location
+	ExternalLocation *string                `pulumi:"externalLocation"`
+	Filters          []GetLimitValuesFilter `pulumi:"filters"`
 	// Optional field, can be used to see a specific resource limit value.
 	Name *string `pulumi:"name"`
 	// Filter entries by scope type.
 	ScopeType *string `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName string `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
@@ -77,6 +81,7 @@ type GetLimitValuesResult struct {
 	// If present, the returned value is only specific to this availability domain.
 	AvailabilityDomain *string                `pulumi:"availabilityDomain"`
 	CompartmentId      string                 `pulumi:"compartmentId"`
+	ExternalLocation   *string                `pulumi:"externalLocation"`
 	Filters            []GetLimitValuesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -104,15 +109,17 @@ type GetLimitValuesOutputArgs struct {
 	// Filter entries by availability domain. This implies that only AD-specific values are returned.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-	CompartmentId pulumi.StringInput             `pulumi:"compartmentId"`
-	Filters       GetLimitValuesFilterArrayInput `pulumi:"filters"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// External cloud provider location
+	ExternalLocation pulumi.StringPtrInput          `pulumi:"externalLocation"`
+	Filters          GetLimitValuesFilterArrayInput `pulumi:"filters"`
 	// Optional field, can be used to see a specific resource limit value.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filter entries by scope type.
 	ScopeType pulumi.StringPtrInput `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
@@ -142,6 +149,10 @@ func (o GetLimitValuesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput 
 
 func (o GetLimitValuesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLimitValuesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetLimitValuesResultOutput) ExternalLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesResult) *string { return v.ExternalLocation }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLimitValuesResultOutput) Filters() GetLimitValuesFilterArrayOutput {

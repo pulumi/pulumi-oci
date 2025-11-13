@@ -185,14 +185,14 @@ public final class RunbookArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     @Import(name="runbookVersion", required=true)
     private Output<RunbookRunbookVersionArgs> runbookVersion;
 
     /**
-     * @return Version for the runbook.
+     * @return Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     public Output<RunbookRunbookVersionArgs> runbookVersion() {
@@ -466,7 +466,7 @@ public final class RunbookArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param runbookVersion Version for the runbook.
+         * @param runbookVersion Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class RunbookArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param runbookVersion Version for the runbook.
+         * @param runbookVersion Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
          * 
          * @return builder
          * 

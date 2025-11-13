@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of all Fleets that are scheduled.
+        /// Returns a list of all executions that are scheduled.
         /// 
         /// 
         /// ## Example Usage
@@ -30,7 +30,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerExecutions = Oci.FleetAppsManagement.GetSchedulerExecutions.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerExecutionCompartmentIdInSubtree,
         ///         DisplayName = schedulerExecutionDisplayName,
+        ///         LifecycleOperation = schedulerExecutionLifecycleOperation,
         ///         ResourceId = testResource.Id,
         ///         RunbookId = testRunbook.Id,
         ///         RunbookVersionName = testRunbookVersion.Name,
@@ -50,7 +52,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of all Fleets that are scheduled.
+        /// Returns a list of all executions that are scheduled.
         /// 
         /// 
         /// ## Example Usage
@@ -66,7 +68,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerExecutions = Oci.FleetAppsManagement.GetSchedulerExecutions.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerExecutionCompartmentIdInSubtree,
         ///         DisplayName = schedulerExecutionDisplayName,
+        ///         LifecycleOperation = schedulerExecutionLifecycleOperation,
         ///         ResourceId = testResource.Id,
         ///         RunbookId = testRunbook.Id,
         ///         RunbookVersionName = testRunbookVersion.Name,
@@ -86,7 +90,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Returns a list of all Fleets that are scheduled.
+        /// Returns a list of all executions that are scheduled.
         /// 
         /// 
         /// ## Example Usage
@@ -102,7 +106,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerExecutions = Oci.FleetAppsManagement.GetSchedulerExecutions.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerExecutionCompartmentIdInSubtree,
         ///         DisplayName = schedulerExecutionDisplayName,
+        ///         LifecycleOperation = schedulerExecutionLifecycleOperation,
         ///         ResourceId = testResource.Id,
         ///         RunbookId = testRunbook.Id,
         ///         RunbookVersionName = testRunbookVersion.Name,
@@ -130,6 +136,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? CompartmentId { get; set; }
 
         /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public bool? CompartmentIdInSubtree { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         [Input("displayName")]
@@ -142,6 +154,12 @@ namespace Pulumi.Oci.FleetAppsManagement
             get => _filters ?? (_filters = new List<Inputs.GetSchedulerExecutionsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+        /// </summary>
+        [Input("lifecycleOperation")]
+        public string? LifecycleOperation { get; set; }
 
         /// <summary>
         /// ResourceId filter (Example FleetId)
@@ -206,6 +224,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         [Input("displayName")]
@@ -218,6 +242,12 @@ namespace Pulumi.Oci.FleetAppsManagement
             get => _filters ?? (_filters = new InputList<Inputs.GetSchedulerExecutionsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+        /// </summary>
+        [Input("lifecycleOperation")]
+        public Input<string>? LifecycleOperation { get; set; }
 
         /// <summary>
         /// ResourceId filter (Example FleetId)
@@ -281,6 +311,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Compartment OCID
         /// </summary>
         public readonly string? CompartmentId;
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
@@ -290,8 +321,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? LifecycleOperation;
         /// <summary>
-        /// ResourceId associated with the Schedule.
+        /// FleetId associated with the Schedule.
         /// </summary>
         public readonly string? ResourceId;
         /// <summary>
@@ -308,7 +340,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulerExecutionsSchedulerExecutionCollectionResult> SchedulerExecutionCollections;
         /// <summary>
-        /// jobId associated with the Schedule.
+        /// SchedulerJobId associated with the Schedule.
         /// </summary>
         public readonly string? SchedulerJobId;
         public readonly string? Substate;
@@ -319,11 +351,15 @@ namespace Pulumi.Oci.FleetAppsManagement
         private GetSchedulerExecutionsResult(
             string? compartmentId,
 
+            bool? compartmentIdInSubtree,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetSchedulerExecutionsFilterResult> filters,
 
             string id,
+
+            string? lifecycleOperation,
 
             string? resourceId,
 
@@ -344,9 +380,11 @@ namespace Pulumi.Oci.FleetAppsManagement
             string? timeScheduledLessThan)
         {
             CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            LifecycleOperation = lifecycleOperation;
             ResourceId = resourceId;
             RunbookId = runbookId;
             RunbookVersionName = runbookVersionName;

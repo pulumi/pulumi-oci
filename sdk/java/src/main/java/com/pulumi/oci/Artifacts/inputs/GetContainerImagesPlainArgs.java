@@ -71,6 +71,21 @@ public final class GetContainerImagesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+     * 
+     */
+    @Import(name="imageDigest")
+    private @Nullable String imageDigest;
+
+    /**
+     * @return The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+     * 
+     */
+    public Optional<String> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
+    }
+
+    /**
      * A filter to return a container image summary only for the specified container image OCID.
      * 
      */
@@ -167,6 +182,7 @@ public final class GetContainerImagesPlainArgs extends com.pulumi.resources.Invo
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.imageDigest = $.imageDigest;
         this.imageId = $.imageId;
         this.isVersioned = $.isVersioned;
         this.repositoryId = $.repositoryId;
@@ -233,6 +249,17 @@ public final class GetContainerImagesPlainArgs extends com.pulumi.resources.Invo
 
         public Builder filters(GetContainerImagesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param imageDigest The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder imageDigest(@Nullable String imageDigest) {
+            $.imageDigest = imageDigest;
+            return this;
         }
 
         /**

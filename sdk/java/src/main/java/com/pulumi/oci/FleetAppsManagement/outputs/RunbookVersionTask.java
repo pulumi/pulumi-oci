@@ -17,8 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTask {
     /**
-     * @return (Updatable) Mapping output variables of previous tasks to the input
-     * variables of the current task.
+     * @return (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
      * 
      */
     private @Nullable List<RunbookVersionTaskOutputVariableMapping> outputVariableMappings;
@@ -40,8 +39,7 @@ public final class RunbookVersionTask {
 
     private RunbookVersionTask() {}
     /**
-     * @return (Updatable) Mapping output variables of previous tasks to the input
-     * variables of the current task.
+     * @return (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
      * 
      */
     public List<RunbookVersionTaskOutputVariableMapping> outputVariableMappings() {

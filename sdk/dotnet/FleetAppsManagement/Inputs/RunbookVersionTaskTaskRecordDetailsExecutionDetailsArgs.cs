@@ -16,8 +16,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string>? CatalogId { get; set; }
 
         /// <summary>
-        /// (Updatable) Optional command to execute the content.
-        /// You can provide any commands/arguments that can't be part of the script.
+        /// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         /// </summary>
         [Input("command")]
         public Input<string>? Command { get; set; }
@@ -38,8 +37,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs>? _credentials;
 
         /// <summary>
-        /// (Updatable) Credentials required for executing the
-        /// task.
+        /// (Updatable) Credentials required for executing the task.
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs> Credentials
         {
@@ -60,36 +58,43 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string> ExecutionType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Is the Content an executable
-        /// file?
+        /// (Updatable) Is the Content an executable file?
         /// </summary>
         [Input("isExecutableContent")]
         public Input<bool>? IsExecutableContent { get; set; }
 
         /// <summary>
-        /// (Updatable) Is the script locked to prevent changes
-        /// directly in Object Storage?
+        /// (Updatable) Is the script locked to prevent changes directly in Object Storage?
         /// </summary>
         [Input("isLocked")]
         public Input<bool>? IsLocked { get; set; }
 
         /// <summary>
-        /// (Updatable) Is read output
-        /// variable enabled
+        /// (Updatable) Is read output variable enabled
         /// </summary>
         [Input("isReadOutputVariableEnabled")]
         public Input<bool>? IsReadOutputVariableEnabled { get; set; }
 
+        [Input("systemVariables")]
+        private InputList<string>? _systemVariables;
+
         /// <summary>
-        /// (Updatable) OCID of the compartment to
-        /// which the resource belongs to.
+        /// (Updatable) The list of system variables.
+        /// </summary>
+        public InputList<string> SystemVariables
+        {
+            get => _systemVariables ?? (_systemVariables = new InputList<string>());
+            set => _systemVariables = value;
+        }
+
+        /// <summary>
+        /// (Updatable) OCID of the compartment to which the resource belongs to.
         /// </summary>
         [Input("targetCompartmentId")]
         public Input<string>? TargetCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The variable of the task. At least one
-        /// of the dynamicArguments or output needs to be provided.
+        /// (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
         /// </summary>
         [Input("variables")]
         public Input<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs>? Variables { get; set; }

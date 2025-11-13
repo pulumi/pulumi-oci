@@ -50,16 +50,14 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Is this an Apply Subject Task? Ex. Patch
-     * Execution Task
+     * (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
      * 
      */
     @Import(name="isApplySubjectTask")
     private @Nullable Output<Boolean> isApplySubjectTask;
 
     /**
-     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch
-     * Execution Task
+     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
      * 
      */
     public Optional<Output<Boolean>> isApplySubjectTask() {
@@ -174,20 +172,12 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
     /**
      * (Updatable) The ID of taskRecord.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-     * new property values
-     * 
      */
     @Import(name="taskRecordId")
     private @Nullable Output<String> taskRecordId;
 
     /**
      * @return (Updatable) The ID of taskRecord.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-     * new property values
      * 
      */
     public Optional<Output<String>> taskRecordId() {
@@ -271,8 +261,7 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param isApplySubjectTask (Updatable) Is this an Apply Subject Task? Ex. Patch
-         * Execution Task
+         * @param isApplySubjectTask (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
          * 
          * @return builder
          * 
@@ -283,8 +272,7 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param isApplySubjectTask (Updatable) Is this an Apply Subject Task? Ex. Patch
-         * Execution Task
+         * @param isApplySubjectTask (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
          * 
          * @return builder
          * 
@@ -443,10 +431,6 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
         /**
          * @param taskRecordId (Updatable) The ID of taskRecord.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-         * new property values
-         * 
          * @return builder
          * 
          */
@@ -457,10 +441,6 @@ public final class RunbookVersionTaskTaskRecordDetailsArgs extends com.pulumi.re
 
         /**
          * @param taskRecordId (Updatable) The ID of taskRecord.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-         * new property values
          * 
          * @return builder
          * 

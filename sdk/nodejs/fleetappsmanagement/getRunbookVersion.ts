@@ -83,7 +83,7 @@ export interface GetRunbookVersionResult {
     readonly runbookId: string;
     readonly runbookVersionId: string;
     /**
-     * The current state of the FleetResource.
+     * The current state of the runbook version.
      */
     readonly state: string;
     /**

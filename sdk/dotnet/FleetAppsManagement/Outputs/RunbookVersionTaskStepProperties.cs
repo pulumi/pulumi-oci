@@ -26,8 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly Outputs.RunbookVersionTaskStepPropertiesPauseDetails? PauseDetails;
         /// <summary>
-        /// (Updatable) Build control flow conditions that determine the relevance of the
-        /// task execution.
+        /// (Updatable) Build control flow conditions that determine the relevance of the task execution.
         /// </summary>
         public readonly string? PreCondition;
         /// <summary>

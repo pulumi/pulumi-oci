@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Limits.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// An array of subscription types that support ExternalLocations.
+        /// </summary>
+        public readonly ImmutableArray<string> ExternalLocationSupportedSubscriptions;
+        /// <summary>
         /// Indicates if the limit has been deprecated.
         /// </summary>
         public readonly bool IsDeprecated;
@@ -54,7 +58,7 @@ namespace Pulumi.Oci.Limits.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SupportedQuotaFamilies;
         /// <summary>
-        /// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        /// An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
         /// </summary>
         public readonly ImmutableArray<string> SupportedSubscriptions;
 
@@ -63,6 +67,8 @@ namespace Pulumi.Oci.Limits.Outputs
             bool areQuotasSupported,
 
             string description,
+
+            ImmutableArray<string> externalLocationSupportedSubscriptions,
 
             bool isDeprecated,
 
@@ -84,6 +90,7 @@ namespace Pulumi.Oci.Limits.Outputs
         {
             AreQuotasSupported = areQuotasSupported;
             Description = description;
+            ExternalLocationSupportedSubscriptions = externalLocationSupportedSubscriptions;
             IsDeprecated = isDeprecated;
             IsDynamic = isDynamic;
             IsEligibleForLimitIncrease = isEligibleForLimitIncrease;

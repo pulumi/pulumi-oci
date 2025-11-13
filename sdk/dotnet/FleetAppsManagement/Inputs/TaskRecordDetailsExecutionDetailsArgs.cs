@@ -75,6 +75,18 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         [Input("isReadOutputVariableEnabled")]
         public Input<bool>? IsReadOutputVariableEnabled { get; set; }
 
+        [Input("systemVariables")]
+        private InputList<string>? _systemVariables;
+
+        /// <summary>
+        /// (Updatable) The list of system variables.
+        /// </summary>
+        public InputList<string> SystemVariables
+        {
+            get => _systemVariables ?? (_systemVariables = new InputList<string>());
+            set => _systemVariables = value;
+        }
+
         /// <summary>
         /// (Updatable) OCID of the compartment to which the resource belongs to.
         /// </summary>

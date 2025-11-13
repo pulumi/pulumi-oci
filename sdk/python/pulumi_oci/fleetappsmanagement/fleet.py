@@ -45,12 +45,12 @@ class FleetArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input['FleetDetailsArgs'] details: Fleet Type
-        :param pulumi.Input[_builtins.str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         :param pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]] properties: Properties associated with the Fleet.
         :param pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
         """
@@ -170,7 +170,7 @@ class FleetArgs:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -230,7 +230,7 @@ class FleetArgs:
     @pulumi.getter
     def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Products associated with the Fleet.
+        (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         """
         return pulumi.get(self, "products")
 
@@ -295,13 +295,13 @@ class _FleetState:
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input['FleetDetailsArgs'] details: Fleet Type
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[_builtins.str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         :param pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]] properties: Properties associated with the Fleet.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
         :param pulumi.Input['FleetResourceSelectionArgs'] resource_selection: (Updatable) Resource Selection Type
@@ -430,7 +430,7 @@ class _FleetState:
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -502,7 +502,7 @@ class _FleetState:
     @pulumi.getter
     def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Products associated with the Fleet.
+        (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         """
         return pulumi.get(self, "products")
 
@@ -648,12 +648,12 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']] details: Fleet Type
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[_builtins.str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]] properties: Properties associated with the Fleet.
         :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']] resource_selection: (Updatable) Resource Selection Type
         :param pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
@@ -785,13 +785,13 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']] details: Fleet Type
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[_builtins.str] environment_type: Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]] properties: Properties associated with the Fleet.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
         :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']] resource_selection: (Updatable) Resource Selection Type
@@ -880,7 +880,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter(name="environmentType")
     def environment_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+        (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
@@ -928,7 +928,7 @@ class Fleet(pulumi.CustomResource):
     @pulumi.getter
     def products(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) Products associated with the Fleet.
+        (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         """
         return pulumi.get(self, "products")
 

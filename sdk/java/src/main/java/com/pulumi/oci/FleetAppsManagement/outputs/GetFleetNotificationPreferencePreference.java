@@ -13,10 +13,30 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetNotificationPreferencePreference {
     /**
+     * @return Enables or disables notification on job canceled.
+     * 
+     */
+    private Boolean onJobCanceled;
+    /**
      * @return Enables or disables notification on Job Failures.
      * 
      */
     private Boolean onJobFailure;
+    /**
+     * @return Enables or disables notification on job schedule change.
+     * 
+     */
+    private Boolean onJobScheduleChange;
+    /**
+     * @return Enables or disables notification on job start.
+     * 
+     */
+    private Boolean onJobStart;
+    /**
+     * @return Enables or disables notification on job success.
+     * 
+     */
+    private Boolean onJobSuccess;
     /**
      * @return Enables or disables notification when fleet resource becomes non compliant.
      * 
@@ -55,11 +75,39 @@ public final class GetFleetNotificationPreferencePreference {
 
     private GetFleetNotificationPreferencePreference() {}
     /**
+     * @return Enables or disables notification on job canceled.
+     * 
+     */
+    public Boolean onJobCanceled() {
+        return this.onJobCanceled;
+    }
+    /**
      * @return Enables or disables notification on Job Failures.
      * 
      */
     public Boolean onJobFailure() {
         return this.onJobFailure;
+    }
+    /**
+     * @return Enables or disables notification on job schedule change.
+     * 
+     */
+    public Boolean onJobScheduleChange() {
+        return this.onJobScheduleChange;
+    }
+    /**
+     * @return Enables or disables notification on job start.
+     * 
+     */
+    public Boolean onJobStart() {
+        return this.onJobStart;
+    }
+    /**
+     * @return Enables or disables notification on job success.
+     * 
+     */
+    public Boolean onJobSuccess() {
+        return this.onJobSuccess;
     }
     /**
      * @return Enables or disables notification when fleet resource becomes non compliant.
@@ -120,7 +168,11 @@ public final class GetFleetNotificationPreferencePreference {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean onJobCanceled;
         private Boolean onJobFailure;
+        private Boolean onJobScheduleChange;
+        private Boolean onJobStart;
+        private Boolean onJobSuccess;
         private Boolean onResourceNonCompliance;
         private Boolean onRunbookNewerVersion;
         private Boolean onTaskFailure;
@@ -131,7 +183,11 @@ public final class GetFleetNotificationPreferencePreference {
         public Builder() {}
         public Builder(GetFleetNotificationPreferencePreference defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.onJobCanceled = defaults.onJobCanceled;
     	      this.onJobFailure = defaults.onJobFailure;
+    	      this.onJobScheduleChange = defaults.onJobScheduleChange;
+    	      this.onJobStart = defaults.onJobStart;
+    	      this.onJobSuccess = defaults.onJobSuccess;
     	      this.onResourceNonCompliance = defaults.onResourceNonCompliance;
     	      this.onRunbookNewerVersion = defaults.onRunbookNewerVersion;
     	      this.onTaskFailure = defaults.onTaskFailure;
@@ -142,11 +198,43 @@ public final class GetFleetNotificationPreferencePreference {
         }
 
         @CustomType.Setter
+        public Builder onJobCanceled(Boolean onJobCanceled) {
+            if (onJobCanceled == null) {
+              throw new MissingRequiredPropertyException("GetFleetNotificationPreferencePreference", "onJobCanceled");
+            }
+            this.onJobCanceled = onJobCanceled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder onJobFailure(Boolean onJobFailure) {
             if (onJobFailure == null) {
               throw new MissingRequiredPropertyException("GetFleetNotificationPreferencePreference", "onJobFailure");
             }
             this.onJobFailure = onJobFailure;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobScheduleChange(Boolean onJobScheduleChange) {
+            if (onJobScheduleChange == null) {
+              throw new MissingRequiredPropertyException("GetFleetNotificationPreferencePreference", "onJobScheduleChange");
+            }
+            this.onJobScheduleChange = onJobScheduleChange;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobStart(Boolean onJobStart) {
+            if (onJobStart == null) {
+              throw new MissingRequiredPropertyException("GetFleetNotificationPreferencePreference", "onJobStart");
+            }
+            this.onJobStart = onJobStart;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobSuccess(Boolean onJobSuccess) {
+            if (onJobSuccess == null) {
+              throw new MissingRequiredPropertyException("GetFleetNotificationPreferencePreference", "onJobSuccess");
+            }
+            this.onJobSuccess = onJobSuccess;
             return this;
         }
         @CustomType.Setter
@@ -210,7 +298,11 @@ public final class GetFleetNotificationPreferencePreference {
         }
         public GetFleetNotificationPreferencePreference build() {
             final var _resultValue = new GetFleetNotificationPreferencePreference();
+            _resultValue.onJobCanceled = onJobCanceled;
             _resultValue.onJobFailure = onJobFailure;
+            _resultValue.onJobScheduleChange = onJobScheduleChange;
+            _resultValue.onJobStart = onJobStart;
+            _resultValue.onJobSuccess = onJobSuccess;
             _resultValue.onResourceNonCompliance = onResourceNonCompliance;
             _resultValue.onRunbookNewerVersion = onRunbookNewerVersion;
             _resultValue.onTaskFailure = onTaskFailure;

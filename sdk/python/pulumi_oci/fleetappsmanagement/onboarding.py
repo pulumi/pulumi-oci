@@ -22,21 +22,31 @@ __all__ = ['OnboardingArgs', 'Onboarding']
 class OnboardingArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Onboarding resource.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
+               <<<<<<< ours
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+               >>>>>>> theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
                new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cost_tracking_tag_enabled is not None:
             pulumi.set(__self__, "is_cost_tracking_tag_enabled", is_cost_tracking_tag_enabled)
         if is_fams_tag_enabled is not None:
@@ -47,12 +57,37 @@ class OnboardingArgs:
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
         Tenancy OCID
+        <<<<<<< ours
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCostTrackingTagEnabled")
@@ -73,6 +108,7 @@ class OnboardingArgs:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        >>>>>>> theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -105,15 +141,15 @@ class _OnboardingState:
         Input properties used for looking up and filtering Onboarding resources.
         :param pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-               `{"foo-namespace.bar-key": "value"}`
+               <<<<<<< ours
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] discovery_frequency: Provide discovery frequency.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-               cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+               >>>>>>> theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -170,6 +206,7 @@ class _OnboardingState:
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Tenancy OCID
+        <<<<<<< ours
         """
         return pulumi.get(self, "compartment_id")
 
@@ -181,8 +218,7 @@ class _OnboardingState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-        `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -206,8 +242,7 @@ class _OnboardingState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -234,6 +269,7 @@ class _OnboardingState:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        >>>>>>> theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -326,21 +362,13 @@ class Onboarding(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_onboarding = oci.fleetappsmanagement.Onboarding("test_onboarding",
-            compartment_id=compartment_id,
-            is_cost_tracking_tag_enabled=onboarding_is_cost_tracking_tag_enabled,
-            is_fams_tag_enabled=onboarding_is_fams_tag_enabled)
-        ```
 
         ## Import
 
@@ -353,10 +381,14 @@ class Onboarding(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
+               <<<<<<< ours
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+               >>>>>>> theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -370,16 +402,6 @@ class Onboarding(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_onboarding = oci.fleetappsmanagement.Onboarding("test_onboarding",
-            compartment_id=compartment_id,
-            is_cost_tracking_tag_enabled=onboarding_is_cost_tracking_tag_enabled,
-            is_fams_tag_enabled=onboarding_is_fams_tag_enabled)
-        ```
 
         ## Import
 
@@ -405,6 +427,8 @@ class Onboarding(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
@@ -419,12 +443,12 @@ class Onboarding(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cost_tracking_tag_enabled"] = is_cost_tracking_tag_enabled
             __props__.__dict__["is_fams_tag_enabled"] = is_fams_tag_enabled
             __props__.__dict__["applied_policies"] = None
-            __props__.__dict__["defined_tags"] = None
             __props__.__dict__["discovery_frequency"] = None
-            __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["resource_region"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -463,15 +487,15 @@ class Onboarding(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-               `{"foo-namespace.bar-key": "value"}`
+               <<<<<<< ours
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] discovery_frequency: Provide discovery frequency.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-               cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_cost_tracking_tag_enabled: A value determining if the cost tracking tag is enabled or not. Allow
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+               >>>>>>> theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -516,6 +540,7 @@ class Onboarding(pulumi.CustomResource):
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
         Tenancy OCID
+        <<<<<<< ours
         """
         return pulumi.get(self, "compartment_id")
 
@@ -523,8 +548,7 @@ class Onboarding(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-        `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -540,8 +564,7 @@ class Onboarding(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -560,6 +583,7 @@ class Onboarding(pulumi.CustomResource):
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        >>>>>>> theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the

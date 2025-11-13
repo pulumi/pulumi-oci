@@ -78,7 +78,7 @@ public final class GetCatalogItemsCatalogItemCollectionItem {
      */
     private String listingVersion;
     /**
-     * @return Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+     * @return A filter to return only resources that match the given package type. The state value is case-insensitive.
      * 
      */
     private String packageType;
@@ -222,7 +222,7 @@ public final class GetCatalogItemsCatalogItemCollectionItem {
         return this.listingVersion;
     }
     /**
-     * @return Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+     * @return A filter to return only resources that match the given package type. The state value is case-insensitive.
      * 
      */
     public String packageType() {

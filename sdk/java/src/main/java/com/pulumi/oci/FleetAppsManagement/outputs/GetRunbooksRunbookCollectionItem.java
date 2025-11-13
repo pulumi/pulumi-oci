@@ -65,7 +65,7 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private Boolean isSudoAccessNeeded;
     /**
-     * @return Latest runbook version
+     * @return Latest runbook version.
      * 
      */
     private String latestVersion;
@@ -95,7 +95,7 @@ public final class GetRunbooksRunbookCollectionItem {
      */
     private String resourceRegion;
     /**
-     * @return Version for the runbook.
+     * @return Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     private List<GetRunbooksRunbookCollectionItemRunbookVersion> runbookVersions;
@@ -197,7 +197,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.isSudoAccessNeeded;
     }
     /**
-     * @return Latest runbook version
+     * @return Latest runbook version.
      * 
      */
     public String latestVersion() {
@@ -239,7 +239,7 @@ public final class GetRunbooksRunbookCollectionItem {
         return this.resourceRegion;
     }
     /**
-     * @return Version for the runbook.
+     * @return Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      * 
      */
     public List<GetRunbooksRunbookCollectionItemRunbookVersion> runbookVersions() {

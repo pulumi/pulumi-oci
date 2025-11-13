@@ -18,8 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) The details of the output variable that will be used for
-        /// mapping.
+        /// (Updatable) The details of the output variable that will be used for mapping.
         /// </summary>
         public readonly Outputs.RunbookVersionTaskOutputVariableMappingOutputVariableDetails OutputVariableDetails;
 

@@ -50,7 +50,7 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
      */
     private String state;
     /**
-     * @return The OCID of the Inventory target.
+     * @return The id of the Inventory target.
      * 
      */
     private String targetId;
@@ -146,7 +146,7 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
         return this.state;
     }
     /**
-     * @return The OCID of the Inventory target.
+     * @return The id of the Inventory target.
      * 
      */
     public String targetId() {

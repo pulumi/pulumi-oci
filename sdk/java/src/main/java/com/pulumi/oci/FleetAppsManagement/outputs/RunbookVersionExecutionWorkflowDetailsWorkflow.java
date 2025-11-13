@@ -23,7 +23,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflow {
      */
     private List<RunbookVersionExecutionWorkflowDetailsWorkflowStep> steps;
     /**
-     * @return (Updatable) Workflow Group Details.
+     * @return (Updatable) Workflow Group  Details.
      * 
      */
     private String type;
@@ -44,7 +44,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflow {
         return this.steps;
     }
     /**
-     * @return (Updatable) Workflow Group Details.
+     * @return (Updatable) Workflow Group  Details.
      * 
      */
     public String type() {

@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := containerengine.GetClusterOption(ctx, &containerengine.GetClusterOptionArgs{
-//				ClusterOptionId: testClusterOptionOciContainerengineClusterOption.Id,
-//				CompartmentId:   pulumi.StringRef(compartmentId),
+//				ClusterOptionId:            testClusterOptionOciContainerengineClusterOption.Id,
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				ShouldListAllPatchVersions: pulumi.BoolRef(clusterOptionShouldListAllPatchVersions),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -57,6 +58,8 @@ type LookupClusterOptionArgs struct {
 	ClusterOptionId string `pulumi:"clusterOptionId"`
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Option to show all kubernetes patch versions
+	ShouldListAllPatchVersions *bool `pulumi:"shouldListAllPatchVersions"`
 }
 
 // A collection of values returned by getClusterOption.
@@ -68,7 +71,8 @@ type LookupClusterOptionResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Available Kubernetes versions.
-	KubernetesVersions []string `pulumi:"kubernetesVersions"`
+	KubernetesVersions         []string `pulumi:"kubernetesVersions"`
+	ShouldListAllPatchVersions *bool    `pulumi:"shouldListAllPatchVersions"`
 }
 
 func LookupClusterOptionOutput(ctx *pulumi.Context, args LookupClusterOptionOutputArgs, opts ...pulumi.InvokeOption) LookupClusterOptionResultOutput {
@@ -86,6 +90,8 @@ type LookupClusterOptionOutputArgs struct {
 	ClusterOptionId pulumi.StringInput `pulumi:"clusterOptionId"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Option to show all kubernetes patch versions
+	ShouldListAllPatchVersions pulumi.BoolPtrInput `pulumi:"shouldListAllPatchVersions"`
 }
 
 func (LookupClusterOptionOutputArgs) ElementType() reflect.Type {
@@ -130,6 +136,10 @@ func (o LookupClusterOptionResultOutput) Id() pulumi.StringOutput {
 // Available Kubernetes versions.
 func (o LookupClusterOptionResultOutput) KubernetesVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClusterOptionResult) []string { return v.KubernetesVersions }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupClusterOptionResultOutput) ShouldListAllPatchVersions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupClusterOptionResult) *bool { return v.ShouldListAllPatchVersions }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

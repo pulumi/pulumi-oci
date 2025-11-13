@@ -28,13 +28,16 @@ class GetLimitValuesResult:
     """
     A collection of values returned by getLimitValues.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, limit_values=None, name=None, scope_type=None, service_name=None, subscription_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, external_location=None, filters=None, id=None, limit_values=None, name=None, scope_type=None, service_name=None, subscription_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if external_location and not isinstance(external_location, str):
+            raise TypeError("Expected argument 'external_location' to be a str")
+        pulumi.set(__self__, "external_location", external_location)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -69,6 +72,11 @@ class GetLimitValuesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocation")
+    def external_location(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "external_location")
 
     @_builtins.property
     @pulumi.getter
@@ -126,6 +134,7 @@ class AwaitableGetLimitValuesResult(GetLimitValuesResult):
         return GetLimitValuesResult(
             availability_domain=self.availability_domain,
             compartment_id=self.compartment_id,
+            external_location=self.external_location,
             filters=self.filters,
             id=self.id,
             limit_values=self.limit_values,
@@ -137,6 +146,7 @@ class AwaitableGetLimitValuesResult(GetLimitValuesResult):
 
 def get_limit_values(availability_domain: Optional[_builtins.str] = None,
                      compartment_id: Optional[_builtins.str] = None,
+                     external_location: Optional[_builtins.str] = None,
                      filters: Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]] = None,
                      name: Optional[_builtins.str] = None,
                      scope_type: Optional[_builtins.str] = None,
@@ -146,7 +156,8 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 
-    Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+    Includes a full list of resource limits belonging to a given service.
+    If the subscription ID is provided, the limit value for the subscription will be returned.
 
     ## Example Usage
 
@@ -157,6 +168,7 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
     test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
+        external_location=limit_value_external_location,
         name=limit_value_name,
         scope_type=limit_value_scope_type,
         subscription_id=subscription_ocid)
@@ -165,14 +177,16 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
 
     :param _builtins.str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+    :param _builtins.str external_location: External cloud provider location
     :param _builtins.str name: Optional field, can be used to see a specific resource limit value.
     :param _builtins.str scope_type: Filter entries by scope type.
     :param _builtins.str service_name: The target service name.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['externalLocation'] = external_location
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['scopeType'] = scope_type
@@ -184,6 +198,7 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
     return AwaitableGetLimitValuesResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        external_location=pulumi.get(__ret__, 'external_location'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         limit_values=pulumi.get(__ret__, 'limit_values'),
@@ -193,6 +208,7 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                            external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                             scope_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -202,7 +218,8 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 
-    Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+    Includes a full list of resource limits belonging to a given service.
+    If the subscription ID is provided, the limit value for the subscription will be returned.
 
     ## Example Usage
 
@@ -213,6 +230,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
+        external_location=limit_value_external_location,
         name=limit_value_name,
         scope_type=limit_value_scope_type,
         subscription_id=subscription_ocid)
@@ -221,14 +239,16 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
 
     :param _builtins.str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.
     :param _builtins.str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+    :param _builtins.str external_location: External cloud provider location
     :param _builtins.str name: Optional field, can be used to see a specific resource limit value.
     :param _builtins.str scope_type: Filter entries by scope type.
     :param _builtins.str service_name: The target service name.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['externalLocation'] = external_location
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['scopeType'] = scope_type
@@ -239,6 +259,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     return __ret__.apply(lambda __response__: GetLimitValuesResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        external_location=pulumi.get(__response__, 'external_location'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         limit_values=pulumi.get(__response__, 'limit_values'),

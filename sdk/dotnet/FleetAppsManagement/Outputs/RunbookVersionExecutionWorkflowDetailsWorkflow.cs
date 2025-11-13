@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.RunbookVersionExecutionWorkflowDetailsWorkflowStep> Steps;
         /// <summary>
-        /// (Updatable) Workflow Group Details.
+        /// (Updatable) Workflow Group  Details.
         /// </summary>
         public readonly string Type;
 

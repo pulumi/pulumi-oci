@@ -29,16 +29,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) Optional command to execute the content.
-     * You can provide any commands/arguments that can&#39;t be part of the script.
+     * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     @Import(name="command")
     private @Nullable Output<String> command;
 
     /**
-     * @return (Updatable) Optional command to execute the content.
-     * You can provide any commands/arguments that can&#39;t be part of the script.
+     * @return (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     public Optional<Output<String>> command() {
@@ -76,16 +74,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) Credentials required for executing the
-     * task.
+     * (Updatable) Credentials required for executing the task.
      * 
      */
     @Import(name="credentials")
     private @Nullable Output<List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs>> credentials;
 
     /**
-     * @return (Updatable) Credentials required for executing the
-     * task.
+     * @return (Updatable) Credentials required for executing the task.
      * 
      */
     public Optional<Output<List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs>>> credentials() {
@@ -123,16 +119,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) Is the Content an executable
-     * file?
+     * (Updatable) Is the Content an executable file?
      * 
      */
     @Import(name="isExecutableContent")
     private @Nullable Output<Boolean> isExecutableContent;
 
     /**
-     * @return (Updatable) Is the Content an executable
-     * file?
+     * @return (Updatable) Is the Content an executable file?
      * 
      */
     public Optional<Output<Boolean>> isExecutableContent() {
@@ -140,16 +134,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) Is the script locked to prevent changes
-     * directly in Object Storage?
+     * (Updatable) Is the script locked to prevent changes directly in Object Storage?
      * 
      */
     @Import(name="isLocked")
     private @Nullable Output<Boolean> isLocked;
 
     /**
-     * @return (Updatable) Is the script locked to prevent changes
-     * directly in Object Storage?
+     * @return (Updatable) Is the script locked to prevent changes directly in Object Storage?
      * 
      */
     public Optional<Output<Boolean>> isLocked() {
@@ -157,16 +149,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) Is read output
-     * variable enabled
+     * (Updatable) Is read output variable enabled
      * 
      */
     @Import(name="isReadOutputVariableEnabled")
     private @Nullable Output<Boolean> isReadOutputVariableEnabled;
 
     /**
-     * @return (Updatable) Is read output
-     * variable enabled
+     * @return (Updatable) Is read output variable enabled
      * 
      */
     public Optional<Output<Boolean>> isReadOutputVariableEnabled() {
@@ -174,16 +164,29 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) OCID of the compartment to
-     * which the resource belongs to.
+     * (Updatable) The list of system variables.
+     * 
+     */
+    @Import(name="systemVariables")
+    private @Nullable Output<List<String>> systemVariables;
+
+    /**
+     * @return (Updatable) The list of system variables.
+     * 
+     */
+    public Optional<Output<List<String>>> systemVariables() {
+        return Optional.ofNullable(this.systemVariables);
+    }
+
+    /**
+     * (Updatable) OCID of the compartment to which the resource belongs to.
      * 
      */
     @Import(name="targetCompartmentId")
     private @Nullable Output<String> targetCompartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment to
-     * which the resource belongs to.
+     * @return (Updatable) OCID of the compartment to which the resource belongs to.
      * 
      */
     public Optional<Output<String>> targetCompartmentId() {
@@ -191,16 +194,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
     }
 
     /**
-     * (Updatable) The variable of the task. At least one
-     * of the dynamicArguments or output needs to be provided.
+     * (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     @Import(name="variables")
     private @Nullable Output<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs> variables;
 
     /**
-     * @return (Updatable) The variable of the task. At least one
-     * of the dynamicArguments or output needs to be provided.
+     * @return (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     public Optional<Output<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs>> variables() {
@@ -220,6 +221,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         this.isExecutableContent = $.isExecutableContent;
         this.isLocked = $.isLocked;
         this.isReadOutputVariableEnabled = $.isReadOutputVariableEnabled;
+        this.systemVariables = $.systemVariables;
         this.targetCompartmentId = $.targetCompartmentId;
         this.variables = $.variables;
     }
@@ -252,8 +254,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param command (Updatable) Optional command to execute the content.
-         * You can provide any commands/arguments that can&#39;t be part of the script.
+         * @param command (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
          * 
          * @return builder
          * 
@@ -264,8 +265,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param command (Updatable) Optional command to execute the content.
-         * You can provide any commands/arguments that can&#39;t be part of the script.
+         * @param command (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
          * 
          * @return builder
          * 
@@ -317,8 +317,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param credentials (Updatable) Credentials required for executing the
-         * task.
+         * @param credentials (Updatable) Credentials required for executing the task.
          * 
          * @return builder
          * 
@@ -329,8 +328,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param credentials (Updatable) Credentials required for executing the
-         * task.
+         * @param credentials (Updatable) Credentials required for executing the task.
          * 
          * @return builder
          * 
@@ -340,8 +338,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param credentials (Updatable) Credentials required for executing the
-         * task.
+         * @param credentials (Updatable) Credentials required for executing the task.
          * 
          * @return builder
          * 
@@ -393,8 +390,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isExecutableContent (Updatable) Is the Content an executable
-         * file?
+         * @param isExecutableContent (Updatable) Is the Content an executable file?
          * 
          * @return builder
          * 
@@ -405,8 +401,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isExecutableContent (Updatable) Is the Content an executable
-         * file?
+         * @param isExecutableContent (Updatable) Is the Content an executable file?
          * 
          * @return builder
          * 
@@ -416,8 +411,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isLocked (Updatable) Is the script locked to prevent changes
-         * directly in Object Storage?
+         * @param isLocked (Updatable) Is the script locked to prevent changes directly in Object Storage?
          * 
          * @return builder
          * 
@@ -428,8 +422,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isLocked (Updatable) Is the script locked to prevent changes
-         * directly in Object Storage?
+         * @param isLocked (Updatable) Is the script locked to prevent changes directly in Object Storage?
          * 
          * @return builder
          * 
@@ -439,8 +432,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isReadOutputVariableEnabled (Updatable) Is read output
-         * variable enabled
+         * @param isReadOutputVariableEnabled (Updatable) Is read output variable enabled
          * 
          * @return builder
          * 
@@ -451,8 +443,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param isReadOutputVariableEnabled (Updatable) Is read output
-         * variable enabled
+         * @param isReadOutputVariableEnabled (Updatable) Is read output variable enabled
          * 
          * @return builder
          * 
@@ -462,8 +453,38 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param targetCompartmentId (Updatable) OCID of the compartment to
-         * which the resource belongs to.
+         * @param systemVariables (Updatable) The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(@Nullable Output<List<String>> systemVariables) {
+            $.systemVariables = systemVariables;
+            return this;
+        }
+
+        /**
+         * @param systemVariables (Updatable) The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(List<String> systemVariables) {
+            return systemVariables(Output.of(systemVariables));
+        }
+
+        /**
+         * @param systemVariables (Updatable) The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(String... systemVariables) {
+            return systemVariables(List.of(systemVariables));
+        }
+
+        /**
+         * @param targetCompartmentId (Updatable) OCID of the compartment to which the resource belongs to.
          * 
          * @return builder
          * 
@@ -474,8 +495,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param targetCompartmentId (Updatable) OCID of the compartment to
-         * which the resource belongs to.
+         * @param targetCompartmentId (Updatable) OCID of the compartment to which the resource belongs to.
          * 
          * @return builder
          * 
@@ -485,8 +505,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param variables (Updatable) The variable of the task. At least one
-         * of the dynamicArguments or output needs to be provided.
+         * @param variables (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
          * 
          * @return builder
          * 
@@ -497,8 +516,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs exten
         }
 
         /**
-         * @param variables (Updatable) The variable of the task. At least one
-         * of the dynamicArguments or output needs to be provided.
+         * @param variables (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
          * 
          * @return builder
          * 

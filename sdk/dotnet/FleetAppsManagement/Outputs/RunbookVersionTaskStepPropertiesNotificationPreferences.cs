@@ -18,8 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly bool? ShouldNotifyOnPause;
         /// <summary>
-        /// (Updatable) Enables or disables notification on Task
-        /// Failures.
+        /// (Updatable) Enables or disables notification on Task Failures.
         /// </summary>
         public readonly bool? ShouldNotifyOnTaskFailure;
         /// <summary>

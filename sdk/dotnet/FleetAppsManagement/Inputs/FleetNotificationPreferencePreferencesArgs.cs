@@ -13,10 +13,34 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class FleetNotificationPreferencePreferencesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Enables or disables notification on job canceled.
+        /// </summary>
+        [Input("onJobCanceled")]
+        public Input<bool>? OnJobCanceled { get; set; }
+
+        /// <summary>
         /// (Updatable) Enables or disables notification on Job Failures.
         /// </summary>
         [Input("onJobFailure")]
         public Input<bool>? OnJobFailure { get; set; }
+
+        /// <summary>
+        /// (Updatable) Enables or disables notification on job schedule change.
+        /// </summary>
+        [Input("onJobScheduleChange")]
+        public Input<bool>? OnJobScheduleChange { get; set; }
+
+        /// <summary>
+        /// (Updatable) Enables or disables notification on job start.
+        /// </summary>
+        [Input("onJobStart")]
+        public Input<bool>? OnJobStart { get; set; }
+
+        /// <summary>
+        /// (Updatable) Enables or disables notification on job success.
+        /// </summary>
+        [Input("onJobSuccess")]
+        public Input<bool>? OnJobSuccess { get; set; }
 
         /// <summary>
         /// (Updatable) Enables or disables notification when fleet resource becomes non compliant.

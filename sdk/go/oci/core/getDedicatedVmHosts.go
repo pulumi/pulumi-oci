@@ -37,6 +37,7 @@ import (
 //				AvailabilityDomain:                       pulumi.StringRef(dedicatedVmHostAvailabilityDomain),
 //				DisplayName:                              pulumi.StringRef(dedicatedVmHostDisplayName),
 //				InstanceShapeName:                        pulumi.StringRef(dedicatedVmHostInstanceShapeName),
+//				IsMemoryEncryptionEnabled:                pulumi.BoolRef(dedicatedVmHostIsMemoryEncryptionEnabled),
 //				RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo),
 //				RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo),
 //				State:                                    pulumi.StringRef(dedicatedVmHostState),
@@ -70,6 +71,8 @@ type GetDedicatedVmHostsArgs struct {
 	Filters     []GetDedicatedVmHostsFilter `pulumi:"filters"`
 	// The name for the instance's shape.
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
+	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
 	// The remaining memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	// The available OCPUs of the dedicated VM host.
@@ -90,8 +93,10 @@ type GetDedicatedVmHostsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetDedicatedVmHostsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                       string   `pulumi:"id"`
-	InstanceShapeName                        *string  `pulumi:"instanceShapeName"`
+	Id                string  `pulumi:"id"`
+	InstanceShapeName *string `pulumi:"instanceShapeName"`
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled                *bool    `pulumi:"isMemoryEncryptionEnabled"`
 	RemainingMemoryInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	RemainingOcpusGreaterThanOrEqualTo       *float64 `pulumi:"remainingOcpusGreaterThanOrEqualTo"`
 	// The current state of the dedicated VM host.
@@ -118,6 +123,8 @@ type GetDedicatedVmHostsOutputArgs struct {
 	Filters     GetDedicatedVmHostsFilterArrayInput `pulumi:"filters"`
 	// The name for the instance's shape.
 	InstanceShapeName pulumi.StringPtrInput `pulumi:"instanceShapeName"`
+	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+	IsMemoryEncryptionEnabled pulumi.BoolPtrInput `pulumi:"isMemoryEncryptionEnabled"`
 	// The remaining memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbsGreaterThanOrEqualTo pulumi.Float64PtrInput `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	// The available OCPUs of the dedicated VM host.
@@ -176,6 +183,11 @@ func (o GetDedicatedVmHostsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetDedicatedVmHostsResultOutput) InstanceShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostsResult) *string { return v.InstanceShapeName }).(pulumi.StringPtrOutput)
+}
+
+// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+func (o GetDedicatedVmHostsResultOutput) IsMemoryEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostsResult) *bool { return v.IsMemoryEncryptionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetDedicatedVmHostsResultOutput) RemainingMemoryInGbsGreaterThanOrEqualTo() pulumi.Float64PtrOutput {

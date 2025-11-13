@@ -51,6 +51,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly bool IsReadOutputVariableEnabled;
         /// <summary>
+        /// The list of system variables.
+        /// </summary>
+        public readonly ImmutableArray<string> SystemVariables;
+        /// <summary>
         /// OCID of the compartment to which the resource belongs to.
         /// </summary>
         public readonly string TargetCompartmentId;
@@ -81,6 +85,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             bool isReadOutputVariableEnabled,
 
+            ImmutableArray<string> systemVariables,
+
             string targetCompartmentId,
 
             ImmutableArray<Outputs.GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailVariableResult> variables)
@@ -95,6 +101,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             IsExecutableContent = isExecutableContent;
             IsLocked = isLocked;
             IsReadOutputVariableEnabled = isReadOutputVariableEnabled;
+            SystemVariables = systemVariables;
             TargetCompartmentId = targetCompartmentId;
             Variables = variables;
         }

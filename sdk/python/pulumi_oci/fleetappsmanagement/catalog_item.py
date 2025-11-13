@@ -44,10 +44,6 @@ class CatalogItemArgs:
         :param pulumi.Input[_builtins.str] package_type: Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
         :param pulumi.Input['CatalogItemCatalogSourcePayloadArgs'] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] listing_id: The catalog listing Id.
@@ -157,10 +153,6 @@ class CatalogItemArgs:
     def clone_catalog_item_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "clone_catalog_item_trigger")
 
@@ -284,10 +276,6 @@ class _CatalogItemState:
         :param pulumi.Input[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]] catalog_result_payloads: Catalog result payload.
         :param pulumi.Input['CatalogItemCatalogSourcePayloadArgs'] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -385,10 +373,6 @@ class _CatalogItemState:
     def clone_catalog_item_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "clone_catalog_item_trigger")
 
@@ -661,47 +645,6 @@ class CatalogItem(pulumi.CustomResource):
         """
         ## Example Usage
 
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog_item = oci.fleetappsmanagement.CatalogItem("test_catalog_item",
-            compartment_id=compartment_id,
-            config_source_type=catalog_item_config_source_type,
-            description=catalog_item_description,
-            display_name=catalog_item_display_name,
-            package_type=catalog_item_package_type,
-            catalog_source_payload={
-                "config_source_type": catalog_item_catalog_source_payload_config_source_type,
-                "access_uri": catalog_item_catalog_source_payload_access_uri,
-                "branch_name": catalog_item_catalog_source_payload_branch_name,
-                "bucket": catalog_item_catalog_source_payload_bucket,
-                "configuration_source_provider_id": test_configuration_source_provider["id"],
-                "description": catalog_item_catalog_source_payload_description,
-                "listing_id": test_listing["id"],
-                "long_description": catalog_item_catalog_source_payload_long_description,
-                "namespace": catalog_item_catalog_source_payload_namespace,
-                "object": catalog_item_catalog_source_payload_object,
-                "repository_url": catalog_item_catalog_source_payload_repository_url,
-                "template_display_name": catalog_item_catalog_source_payload_template_display_name,
-                "time_expires": catalog_item_catalog_source_payload_time_expires,
-                "version": catalog_item_catalog_source_payload_version,
-                "working_directory": catalog_item_catalog_source_payload_working_directory,
-                "zip_file_base64encoded": catalog_item_catalog_source_payload_zip_file_base64encoded,
-            },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            listing_id=test_listing["id"],
-            listing_version=catalog_item_listing_version,
-            short_description=catalog_item_short_description,
-            time_released=catalog_item_time_released,
-            version_description=catalog_item_version_description)
-        ```
-
         ## Import
 
         CatalogItems can be imported using the `id`, e.g.
@@ -714,10 +657,6 @@ class CatalogItem(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -739,47 +678,6 @@ class CatalogItem(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_catalog_item = oci.fleetappsmanagement.CatalogItem("test_catalog_item",
-            compartment_id=compartment_id,
-            config_source_type=catalog_item_config_source_type,
-            description=catalog_item_description,
-            display_name=catalog_item_display_name,
-            package_type=catalog_item_package_type,
-            catalog_source_payload={
-                "config_source_type": catalog_item_catalog_source_payload_config_source_type,
-                "access_uri": catalog_item_catalog_source_payload_access_uri,
-                "branch_name": catalog_item_catalog_source_payload_branch_name,
-                "bucket": catalog_item_catalog_source_payload_bucket,
-                "configuration_source_provider_id": test_configuration_source_provider["id"],
-                "description": catalog_item_catalog_source_payload_description,
-                "listing_id": test_listing["id"],
-                "long_description": catalog_item_catalog_source_payload_long_description,
-                "namespace": catalog_item_catalog_source_payload_namespace,
-                "object": catalog_item_catalog_source_payload_object,
-                "repository_url": catalog_item_catalog_source_payload_repository_url,
-                "template_display_name": catalog_item_catalog_source_payload_template_display_name,
-                "time_expires": catalog_item_catalog_source_payload_time_expires,
-                "version": catalog_item_catalog_source_payload_version,
-                "working_directory": catalog_item_catalog_source_payload_working_directory,
-                "zip_file_base64encoded": catalog_item_catalog_source_payload_zip_file_base64encoded,
-            },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            listing_id=test_listing["id"],
-            listing_version=catalog_item_listing_version,
-            short_description=catalog_item_short_description,
-            time_released=catalog_item_time_released,
-            version_description=catalog_item_version_description)
-        ```
 
         ## Import
 
@@ -903,10 +801,6 @@ class CatalogItem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict']]]] catalog_result_payloads: Catalog result payload.
         :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -978,10 +872,6 @@ class CatalogItem(pulumi.CustomResource):
     def clone_catalog_item_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "clone_catalog_item_trigger")
 

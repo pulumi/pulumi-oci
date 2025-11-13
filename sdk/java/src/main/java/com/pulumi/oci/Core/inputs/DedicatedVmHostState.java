@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostCapacityBinArgs;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostPlacementConstraintDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -36,18 +37,33 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A list of total and remaining CPU &amp; memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     @Import(name="capacityBins")
     private @Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins;
 
     /**
-     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * @return A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     public Optional<Output<List<DedicatedVmHostCapacityBinArgs>>> capacityBins() {
         return Optional.ofNullable(this.capacityBins);
+    }
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    @Import(name="capacityConfig")
+    private @Nullable Output<String> capacityConfig;
+
+    /**
+     * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    public Optional<Output<String>> capacityConfig() {
+        return Optional.ofNullable(this.capacityConfig);
     }
 
     /**
@@ -66,14 +82,14 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     @Import(name="computeBareMetalHostId")
     private @Nullable Output<String> computeBareMetalHostId;
 
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     public Optional<Output<String>> computeBareMetalHostId() {
@@ -164,14 +180,29 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Output<Boolean> isMemoryEncryptionEnabled;
+
+    /**
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    public Optional<Output<Boolean>> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
+    /**
+     * The details for providing placement constraints.
      * 
      */
     @Import(name="placementConstraintDetails")
     private @Nullable Output<DedicatedVmHostPlacementConstraintDetailsArgs> placementConstraintDetails;
 
     /**
-     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * @return The details for providing placement constraints.
      * 
      */
     public Optional<Output<DedicatedVmHostPlacementConstraintDetailsArgs>> placementConstraintDetails() {
@@ -273,6 +304,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     private DedicatedVmHostState(DedicatedVmHostState $) {
         this.availabilityDomain = $.availabilityDomain;
         this.capacityBins = $.capacityBins;
+        this.capacityConfig = $.capacityConfig;
         this.compartmentId = $.compartmentId;
         this.computeBareMetalHostId = $.computeBareMetalHostId;
         this.dedicatedVmHostShape = $.dedicatedVmHostShape;
@@ -280,6 +312,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         this.displayName = $.displayName;
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
         this.placementConstraintDetails = $.placementConstraintDetails;
         this.remainingMemoryInGbs = $.remainingMemoryInGbs;
         this.remainingOcpus = $.remainingOcpus;
@@ -329,7 +362,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
          * 
          * @return builder
          * 
@@ -340,7 +373,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
          * 
          * @return builder
          * 
@@ -350,13 +383,34 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
          * 
          * @return builder
          * 
          */
         public Builder capacityBins(DedicatedVmHostCapacityBinArgs... capacityBins) {
             return capacityBins(List.of(capacityBins));
+        }
+
+        /**
+         * @param capacityConfig The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityConfig(@Nullable Output<String> capacityConfig) {
+            $.capacityConfig = capacityConfig;
+            return this;
+        }
+
+        /**
+         * @param capacityConfig The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityConfig(String capacityConfig) {
+            return capacityConfig(Output.of(capacityConfig));
         }
 
         /**
@@ -381,7 +435,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * @param computeBareMetalHostId The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
          * 
          * @return builder
          * 
@@ -392,7 +446,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * @param computeBareMetalHostId The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
          * 
          * @return builder
          * 
@@ -515,7 +569,28 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * @param isMemoryEncryptionEnabled Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Output<Boolean> isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            return isMemoryEncryptionEnabled(Output.of(isMemoryEncryptionEnabled));
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
          * 
          * @return builder
          * 
@@ -526,7 +601,7 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * @param placementConstraintDetails The details for providing placement constraints.
          * 
          * @return builder
          * 

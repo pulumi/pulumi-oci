@@ -86,7 +86,7 @@ public final class GetFleetResult {
      */
     private String parentFleetId;
     /**
-     * @return Products associated with the Fleet.
+     * @return Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
      * 
      */
     private List<String> products;
@@ -227,7 +227,7 @@ public final class GetFleetResult {
         return this.parentFleetId;
     }
     /**
-     * @return Products associated with the Fleet.
+     * @return Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
      * 
      */
     public List<String> products() {

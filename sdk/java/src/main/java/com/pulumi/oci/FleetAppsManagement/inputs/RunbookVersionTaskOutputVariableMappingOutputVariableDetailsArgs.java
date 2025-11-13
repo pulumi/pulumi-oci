@@ -15,16 +15,14 @@ public final class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsA
     public static final RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs Empty = new RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs();
 
     /**
-     * (Updatable) The name of the output variable whose value has to be
-     * mapped.
+     * (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     @Import(name="outputVariableName", required=true)
     private Output<String> outputVariableName;
 
     /**
-     * @return (Updatable) The name of the output variable whose value has to be
-     * mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     public Output<String> outputVariableName() {
@@ -72,8 +70,7 @@ public final class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsA
         }
 
         /**
-         * @param outputVariableName (Updatable) The name of the output variable whose value has to be
-         * mapped.
+         * @param outputVariableName (Updatable) The name of the output variable whose value has to be mapped.
          * 
          * @return builder
          * 
@@ -84,8 +81,7 @@ public final class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsA
         }
 
         /**
-         * @param outputVariableName (Updatable) The name of the output variable whose value has to be
-         * mapped.
+         * @param outputVariableName (Updatable) The name of the output variable whose value has to be mapped.
          * 
          * @return builder
          * 

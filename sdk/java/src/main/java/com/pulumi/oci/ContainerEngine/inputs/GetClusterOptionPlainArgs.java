@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -45,11 +46,27 @@ public final class GetClusterOptionPlainArgs extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * Option to show all kubernetes patch versions
+     * 
+     */
+    @Import(name="shouldListAllPatchVersions")
+    private @Nullable Boolean shouldListAllPatchVersions;
+
+    /**
+     * @return Option to show all kubernetes patch versions
+     * 
+     */
+    public Optional<Boolean> shouldListAllPatchVersions() {
+        return Optional.ofNullable(this.shouldListAllPatchVersions);
+    }
+
     private GetClusterOptionPlainArgs() {}
 
     private GetClusterOptionPlainArgs(GetClusterOptionPlainArgs $) {
         this.clusterOptionId = $.clusterOptionId;
         this.compartmentId = $.compartmentId;
+        this.shouldListAllPatchVersions = $.shouldListAllPatchVersions;
     }
 
     public static Builder builder() {
@@ -89,6 +106,17 @@ public final class GetClusterOptionPlainArgs extends com.pulumi.resources.Invoke
          */
         public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param shouldListAllPatchVersions Option to show all kubernetes patch versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldListAllPatchVersions(@Nullable Boolean shouldListAllPatchVersions) {
+            $.shouldListAllPatchVersions = shouldListAllPatchVersions;
             return this;
         }
 

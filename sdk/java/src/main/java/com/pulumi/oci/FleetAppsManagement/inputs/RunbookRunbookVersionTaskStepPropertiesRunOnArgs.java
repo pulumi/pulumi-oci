@@ -19,14 +19,14 @@ public final class RunbookRunbookVersionTaskStepPropertiesRunOnArgs extends com.
     public static final RunbookRunbookVersionTaskStepPropertiesRunOnArgs Empty = new RunbookRunbookVersionTaskStepPropertiesRunOnArgs();
 
     /**
-     * Build control flow conditions that determine the relevance of the task execution.
+     * Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return Build control flow conditions that determine the relevance of the task execution.
+     * @return Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -106,7 +106,7 @@ public final class RunbookRunbookVersionTaskStepPropertiesRunOnArgs extends com.
         }
 
         /**
-         * @param condition Build control flow conditions that determine the relevance of the task execution.
+         * @param condition Build control flow conditions that determine the relevance of the task execution against targets.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class RunbookRunbookVersionTaskStepPropertiesRunOnArgs extends com.
         }
 
         /**
-         * @param condition Build control flow conditions that determine the relevance of the task execution.
+         * @param condition Build control flow conditions that determine the relevance of the task execution against targets.
          * 
          * @return builder
          * 

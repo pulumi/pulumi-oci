@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionClusterPodNetworkOption;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,7 @@ public final class GetClusterOptionResult {
      * 
      */
     private List<String> kubernetesVersions;
+    private @Nullable Boolean shouldListAllPatchVersions;
 
     private GetClusterOptionResult() {}
     public String clusterOptionId() {
@@ -60,6 +62,9 @@ public final class GetClusterOptionResult {
     public List<String> kubernetesVersions() {
         return this.kubernetesVersions;
     }
+    public Optional<Boolean> shouldListAllPatchVersions() {
+        return Optional.ofNullable(this.shouldListAllPatchVersions);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +80,7 @@ public final class GetClusterOptionResult {
         private @Nullable String compartmentId;
         private String id;
         private List<String> kubernetesVersions;
+        private @Nullable Boolean shouldListAllPatchVersions;
         public Builder() {}
         public Builder(GetClusterOptionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,6 +89,7 @@ public final class GetClusterOptionResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.id = defaults.id;
     	      this.kubernetesVersions = defaults.kubernetesVersions;
+    	      this.shouldListAllPatchVersions = defaults.shouldListAllPatchVersions;
         }
 
         @CustomType.Setter
@@ -129,6 +136,12 @@ public final class GetClusterOptionResult {
         public Builder kubernetesVersions(String... kubernetesVersions) {
             return kubernetesVersions(List.of(kubernetesVersions));
         }
+        @CustomType.Setter
+        public Builder shouldListAllPatchVersions(@Nullable Boolean shouldListAllPatchVersions) {
+
+            this.shouldListAllPatchVersions = shouldListAllPatchVersions;
+            return this;
+        }
         public GetClusterOptionResult build() {
             final var _resultValue = new GetClusterOptionResult();
             _resultValue.clusterOptionId = clusterOptionId;
@@ -136,6 +149,7 @@ public final class GetClusterOptionResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.id = id;
             _resultValue.kubernetesVersions = kubernetesVersions;
+            _resultValue.shouldListAllPatchVersions = shouldListAllPatchVersions;
             return _resultValue;
         }
     }

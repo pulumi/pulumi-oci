@@ -12,24 +12,6 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// ## Example Usage
     /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testOnboarding = new Oci.FleetAppsManagement.Onboarding("test_onboarding", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         IsCostTrackingTagEnabled = onboardingIsCostTrackingTagEnabled,
-    ///         IsFamsTagEnabled = onboardingIsFamsTagEnabled,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Onboardings can be imported using the `id`, e.g.
@@ -49,13 +31,13 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// Tenancy OCID
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-        /// `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
@@ -67,8 +49,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Output<string> DiscoveryFrequency { get; private set; } = null!;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        /// cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -83,6 +64,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -176,9 +158,34 @@ namespace Pulumi.Oci.FleetAppsManagement
     {
         /// <summary>
         /// Tenancy OCID
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// A value determining if the cost tracking tag is enabled or not. Allow
@@ -190,6 +197,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -220,6 +228,7 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// Tenancy OCID
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -228,8 +237,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-        /// `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -247,8 +255,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        /// cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -266,6 +273,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the

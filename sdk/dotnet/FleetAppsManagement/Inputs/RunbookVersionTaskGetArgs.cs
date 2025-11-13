@@ -16,8 +16,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.RunbookVersionTaskOutputVariableMappingGetArgs>? _outputVariableMappings;
 
         /// <summary>
-        /// (Updatable) Mapping output variables of previous tasks to the input
-        /// variables of the current task.
+        /// (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskOutputVariableMappingGetArgs> OutputVariableMappings
         {

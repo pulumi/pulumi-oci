@@ -65,16 +65,14 @@ public final class RunbookVersionTaskStepPropertiesArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) Build control flow conditions that determine the relevance of the
-     * task execution.
+     * (Updatable) Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     @Import(name="preCondition")
     private @Nullable Output<String> preCondition;
 
     /**
-     * @return (Updatable) Build control flow conditions that determine the relevance of the
-     * task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution.
      * 
      */
     public Optional<Output<String>> preCondition() {
@@ -188,8 +186,7 @@ public final class RunbookVersionTaskStepPropertiesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param preCondition (Updatable) Build control flow conditions that determine the relevance of the
-         * task execution.
+         * @param preCondition (Updatable) Build control flow conditions that determine the relevance of the task execution.
          * 
          * @return builder
          * 
@@ -200,8 +197,7 @@ public final class RunbookVersionTaskStepPropertiesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param preCondition (Updatable) Build control flow conditions that determine the relevance of the
-         * task execution.
+         * @param preCondition (Updatable) Build control flow conditions that determine the relevance of the task execution.
          * 
          * @return builder
          * 

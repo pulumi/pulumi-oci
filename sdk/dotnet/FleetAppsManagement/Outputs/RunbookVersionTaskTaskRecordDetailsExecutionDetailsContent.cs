@@ -19,8 +19,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         public readonly string? Bucket;
         public readonly string? CatalogId;
         /// <summary>
-        /// (Updatable) md5 checksum of the
-        /// artifact.
+        /// (Updatable) md5 checksum of the artifact.
         /// </summary>
         public readonly string? Checksum;
         /// <summary>

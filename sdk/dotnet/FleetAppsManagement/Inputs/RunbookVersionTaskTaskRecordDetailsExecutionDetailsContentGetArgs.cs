@@ -22,8 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string>? CatalogId { get; set; }
 
         /// <summary>
-        /// (Updatable) md5 checksum of the
-        /// artifact.
+        /// (Updatable) md5 checksum of the artifact.
         /// </summary>
         [Input("checksum")]
         public Input<string>? Checksum { get; set; }

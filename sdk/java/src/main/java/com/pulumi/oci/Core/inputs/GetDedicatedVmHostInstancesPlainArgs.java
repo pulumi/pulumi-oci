@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -69,6 +70,21 @@ public final class GetDedicatedVmHostInstancesPlainArgs extends com.pulumi.resou
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * @return A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    public Optional<Boolean> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
     private GetDedicatedVmHostInstancesPlainArgs() {}
 
     private GetDedicatedVmHostInstancesPlainArgs(GetDedicatedVmHostInstancesPlainArgs $) {
@@ -76,6 +92,7 @@ public final class GetDedicatedVmHostInstancesPlainArgs extends com.pulumi.resou
         this.compartmentId = $.compartmentId;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
         this.filters = $.filters;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
     }
 
     public static Builder builder() {
@@ -136,6 +153,17 @@ public final class GetDedicatedVmHostInstancesPlainArgs extends com.pulumi.resou
 
         public Builder filters(GetDedicatedVmHostInstancesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
         }
 
         public GetDedicatedVmHostInstancesPlainArgs build() {

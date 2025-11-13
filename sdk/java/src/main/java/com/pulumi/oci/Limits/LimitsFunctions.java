@@ -33,9 +33,9 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-     * If the &#39;areQuotasSupported&#39; property is true, you can create quota policies on top of this limit at the
-     * compartment level.
+     * Includes a list of resource limits that are currently supported.
+     * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+     * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
      * 
      * ## Example Usage
      * 
@@ -80,9 +80,9 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-     * If the &#39;areQuotasSupported&#39; property is true, you can create quota policies on top of this limit at the
-     * compartment level.
+     * Includes a list of resource limits that are currently supported.
+     * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+     * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
      * 
      * ## Example Usage
      * 
@@ -127,9 +127,9 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-     * If the &#39;areQuotasSupported&#39; property is true, you can create quota policies on top of this limit at the
-     * compartment level.
+     * Includes a list of resource limits that are currently supported.
+     * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+     * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
      * 
      * ## Example Usage
      * 
@@ -174,9 +174,9 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-     * If the &#39;areQuotasSupported&#39; property is true, you can create quota policies on top of this limit at the
-     * compartment level.
+     * Includes a list of resource limits that are currently supported.
+     * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+     * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
      * 
      * ## Example Usage
      * 
@@ -221,9 +221,9 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-     * If the &#39;areQuotasSupported&#39; property is true, you can create quota policies on top of this limit at the
-     * compartment level.
+     * Includes a list of resource limits that are currently supported.
+     * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+     * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
      * 
      * ## Example Usage
      * 
@@ -268,7 +268,8 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+     * Includes a full list of resource limits belonging to a given service.
+     * If the subscription ID is provided, the limit value for the subscription will be returned.
      * 
      * ## Example Usage
      * 
@@ -298,6 +299,7 @@ public final class LimitsFunctions {
      *             .compartmentId(tenancyOcid)
      *             .serviceName(testService.name())
      *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
      *             .scopeType(limitValueScopeType)
      *             .subscriptionId(subscriptionOcid)
@@ -315,7 +317,8 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+     * Includes a full list of resource limits belonging to a given service.
+     * If the subscription ID is provided, the limit value for the subscription will be returned.
      * 
      * ## Example Usage
      * 
@@ -345,6 +348,7 @@ public final class LimitsFunctions {
      *             .compartmentId(tenancyOcid)
      *             .serviceName(testService.name())
      *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
      *             .scopeType(limitValueScopeType)
      *             .subscriptionId(subscriptionOcid)
@@ -362,7 +366,8 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+     * Includes a full list of resource limits belonging to a given service.
+     * If the subscription ID is provided, the limit value for the subscription will be returned.
      * 
      * ## Example Usage
      * 
@@ -392,6 +397,7 @@ public final class LimitsFunctions {
      *             .compartmentId(tenancyOcid)
      *             .serviceName(testService.name())
      *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
      *             .scopeType(limitValueScopeType)
      *             .subscriptionId(subscriptionOcid)
@@ -409,7 +415,8 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+     * Includes a full list of resource limits belonging to a given service.
+     * If the subscription ID is provided, the limit value for the subscription will be returned.
      * 
      * ## Example Usage
      * 
@@ -439,6 +446,7 @@ public final class LimitsFunctions {
      *             .compartmentId(tenancyOcid)
      *             .serviceName(testService.name())
      *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
      *             .scopeType(limitValueScopeType)
      *             .subscriptionId(subscriptionOcid)
@@ -456,7 +464,8 @@ public final class LimitsFunctions {
     /**
      * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
      * 
-     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+     * Includes a full list of resource limits belonging to a given service.
+     * If the subscription ID is provided, the limit value for the subscription will be returned.
      * 
      * ## Example Usage
      * 
@@ -486,6 +495,7 @@ public final class LimitsFunctions {
      *             .compartmentId(tenancyOcid)
      *             .serviceName(testService.name())
      *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .externalLocation(limitValueExternalLocation)
      *             .name(limitValueName)
      *             .scopeType(limitValueScopeType)
      *             .subscriptionId(subscriptionOcid)
@@ -936,7 +946,7 @@ public final class LimitsFunctions {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
      *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
@@ -968,7 +978,8 @@ public final class LimitsFunctions {
      *             .limitName(resourceAvailabilityLimitName)
      *             .serviceName(testService.name())
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
-     *             .subscriptionId(subscriptionOcid)
+     *             .externalLocation(resourceAvailabilityExternalLocation)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -986,7 +997,7 @@ public final class LimitsFunctions {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
      *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
@@ -1018,7 +1029,8 @@ public final class LimitsFunctions {
      *             .limitName(resourceAvailabilityLimitName)
      *             .serviceName(testService.name())
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
-     *             .subscriptionId(subscriptionOcid)
+     *             .externalLocation(resourceAvailabilityExternalLocation)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -1036,7 +1048,7 @@ public final class LimitsFunctions {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
      *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
@@ -1068,7 +1080,8 @@ public final class LimitsFunctions {
      *             .limitName(resourceAvailabilityLimitName)
      *             .serviceName(testService.name())
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
-     *             .subscriptionId(subscriptionOcid)
+     *             .externalLocation(resourceAvailabilityExternalLocation)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -1086,7 +1099,7 @@ public final class LimitsFunctions {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
      *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
@@ -1118,7 +1131,8 @@ public final class LimitsFunctions {
      *             .limitName(resourceAvailabilityLimitName)
      *             .serviceName(testService.name())
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
-     *             .subscriptionId(subscriptionOcid)
+     *             .externalLocation(resourceAvailabilityExternalLocation)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -1136,7 +1150,7 @@ public final class LimitsFunctions {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     *     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
      *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
@@ -1168,7 +1182,8 @@ public final class LimitsFunctions {
      *             .limitName(resourceAvailabilityLimitName)
      *             .serviceName(testService.name())
      *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
-     *             .subscriptionId(subscriptionOcid)
+     *             .externalLocation(resourceAvailabilityExternalLocation)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }

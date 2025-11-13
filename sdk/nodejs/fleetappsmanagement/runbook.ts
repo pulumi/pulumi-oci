@@ -86,6 +86,7 @@ import * as utilities from "../utilities";
  *                     isExecutableContent: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent,
  *                     isLocked: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked,
  *                     isReadOutputVariableEnabled: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+ *                     systemVariables: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsSystemVariables,
  *                     targetCompartmentId: testCompartment.id,
  *                     variables: {
  *                         inputVariables: [{
@@ -246,7 +247,7 @@ export class Runbook extends pulumi.CustomResource {
      */
     declare public readonly isSudoAccessNeeded: pulumi.Output<boolean>;
     /**
-     * Latest runbook version
+     * Latest runbook version.
      */
     declare public /*out*/ readonly latestVersion: pulumi.Output<string>;
     /**
@@ -270,7 +271,7 @@ export class Runbook extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */
     declare public readonly runbookVersion: pulumi.Output<outputs.FleetAppsManagement.RunbookRunbookVersion>;
     /**
@@ -410,7 +411,7 @@ export interface RunbookState {
      */
     isSudoAccessNeeded?: pulumi.Input<boolean>;
     /**
-     * Latest runbook version
+     * Latest runbook version.
      */
     latestVersion?: pulumi.Input<string>;
     /**
@@ -434,7 +435,7 @@ export interface RunbookState {
      */
     resourceRegion?: pulumi.Input<string>;
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */
     runbookVersion?: pulumi.Input<inputs.FleetAppsManagement.RunbookRunbookVersion>;
     /**
@@ -508,7 +509,7 @@ export interface RunbookArgs {
      */
     platform?: pulumi.Input<string>;
     /**
-     * Version for the runbook.
+     * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */
     runbookVersion: pulumi.Input<inputs.FleetAppsManagement.RunbookRunbookVersion>;
 }

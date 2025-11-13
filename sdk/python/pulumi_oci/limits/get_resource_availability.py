@@ -26,7 +26,7 @@ class GetResourceAvailabilityResult:
     """
     A collection of values returned by getResourceAvailability.
     """
-    def __init__(__self__, availability_domain=None, available=None, compartment_id=None, effective_quota_value=None, fractional_availability=None, fractional_usage=None, id=None, limit_name=None, service_name=None, subscription_id=None, used=None):
+    def __init__(__self__, availability_domain=None, available=None, compartment_id=None, effective_quota_value=None, external_location=None, fractional_availability=None, fractional_usage=None, id=None, limit_name=None, service_name=None, subscription_id=None, used=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -39,6 +39,9 @@ class GetResourceAvailabilityResult:
         if effective_quota_value and not isinstance(effective_quota_value, float):
             raise TypeError("Expected argument 'effective_quota_value' to be a float")
         pulumi.set(__self__, "effective_quota_value", effective_quota_value)
+        if external_location and not isinstance(external_location, str):
+            raise TypeError("Expected argument 'external_location' to be a str")
+        pulumi.set(__self__, "external_location", external_location)
         if fractional_availability and not isinstance(fractional_availability, float):
             raise TypeError("Expected argument 'fractional_availability' to be a float")
         pulumi.set(__self__, "fractional_availability", fractional_availability)
@@ -86,6 +89,11 @@ class GetResourceAvailabilityResult:
         The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
         """
         return pulumi.get(self, "effective_quota_value")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocation")
+    def external_location(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "external_location")
 
     @_builtins.property
     @pulumi.getter(name="fractionalAvailability")
@@ -145,6 +153,7 @@ class AwaitableGetResourceAvailabilityResult(GetResourceAvailabilityResult):
             available=self.available,
             compartment_id=self.compartment_id,
             effective_quota_value=self.effective_quota_value,
+            external_location=self.external_location,
             fractional_availability=self.fractional_availability,
             fractional_usage=self.fractional_usage,
             id=self.id,
@@ -156,6 +165,7 @@ class AwaitableGetResourceAvailabilityResult(GetResourceAvailabilityResult):
 
 def get_resource_availability(availability_domain: Optional[_builtins.str] = None,
                               compartment_id: Optional[_builtins.str] = None,
+                              external_location: Optional[_builtins.str] = None,
                               limit_name: Optional[_builtins.str] = None,
                               service_name: Optional[_builtins.str] = None,
                               subscription_id: Optional[_builtins.str] = None,
@@ -166,7 +176,7 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
     For a given compartmentId, resource limit name, and scope, returns the following:
       * The number of available resources associated with the given limit.
       * The usage in the selected compartment for the given limit.
-        If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        If the subscription ID is provided, then usage for resource created in that subscription will be returned.
         Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
     ## Example Usage
@@ -179,19 +189,22 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain,
-        subscription_id=subscription_ocid)
+        external_location=resource_availability_external_location,
+        subscription_id=test_subscription["id"])
     ```
 
 
     :param _builtins.str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
     :param _builtins.str compartment_id: The OCID of the compartment for which data is being fetched.
+    :param _builtins.str external_location: External cloud provider location
     :param _builtins.str limit_name: The limit name for which to fetch the data.
     :param _builtins.str service_name: The service name of the target quota.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['externalLocation'] = external_location
     __args__['limitName'] = limit_name
     __args__['serviceName'] = service_name
     __args__['subscriptionId'] = subscription_id
@@ -203,6 +216,7 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
         available=pulumi.get(__ret__, 'available'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         effective_quota_value=pulumi.get(__ret__, 'effective_quota_value'),
+        external_location=pulumi.get(__ret__, 'external_location'),
         fractional_availability=pulumi.get(__ret__, 'fractional_availability'),
         fractional_usage=pulumi.get(__ret__, 'fractional_usage'),
         id=pulumi.get(__ret__, 'id'),
@@ -212,6 +226,7 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
         used=pulumi.get(__ret__, 'used'))
 def get_resource_availability_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                     external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      limit_name: Optional[pulumi.Input[_builtins.str]] = None,
                                      service_name: Optional[pulumi.Input[_builtins.str]] = None,
                                      subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -222,7 +237,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     For a given compartmentId, resource limit name, and scope, returns the following:
       * The number of available resources associated with the given limit.
       * The usage in the selected compartment for the given limit.
-        If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        If the subscription ID is provided, then usage for resource created in that subscription will be returned.
         Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
     ## Example Usage
@@ -235,19 +250,22 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain,
-        subscription_id=subscription_ocid)
+        external_location=resource_availability_external_location,
+        subscription_id=test_subscription["id"])
     ```
 
 
     :param _builtins.str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
     :param _builtins.str compartment_id: The OCID of the compartment for which data is being fetched.
+    :param _builtins.str external_location: External cloud provider location
     :param _builtins.str limit_name: The limit name for which to fetch the data.
     :param _builtins.str service_name: The service name of the target quota.
-    :param _builtins.str subscription_id: The OCID of the subscription assigned to tenant
+    :param _builtins.str subscription_id: The subscription OCID assigned to the tenant.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['externalLocation'] = external_location
     __args__['limitName'] = limit_name
     __args__['serviceName'] = service_name
     __args__['subscriptionId'] = subscription_id
@@ -258,6 +276,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
         available=pulumi.get(__response__, 'available'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         effective_quota_value=pulumi.get(__response__, 'effective_quota_value'),
+        external_location=pulumi.get(__response__, 'external_location'),
         fractional_availability=pulumi.get(__response__, 'fractional_availability'),
         fractional_usage=pulumi.get(__response__, 'fractional_usage'),
         id=pulumi.get(__response__, 'id'),

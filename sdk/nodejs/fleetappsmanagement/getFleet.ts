@@ -97,7 +97,7 @@ export interface GetFleetResult {
      */
     readonly parentFleetId: string;
     /**
-     * Products associated with the Fleet.
+     * Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
      */
     readonly products: string[];
     /**

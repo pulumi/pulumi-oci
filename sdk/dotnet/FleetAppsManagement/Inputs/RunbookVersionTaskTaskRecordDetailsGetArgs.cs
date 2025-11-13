@@ -25,8 +25,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsGetArgs>? ExecutionDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Is this an Apply Subject Task? Ex. Patch
-        /// Execution Task
+        /// (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
         /// </summary>
         [Input("isApplySubjectTask")]
         public Input<bool>? IsApplySubjectTask { get; set; }
@@ -75,10 +74,6 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
 
         /// <summary>
         /// (Updatable) The ID of taskRecord.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
-        /// new property values
         /// </summary>
         [Input("taskRecordId")]
         public Input<string>? TaskRecordId { get; set; }

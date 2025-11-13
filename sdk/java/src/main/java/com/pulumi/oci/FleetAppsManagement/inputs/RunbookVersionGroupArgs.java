@@ -51,6 +51,7 @@ public final class RunbookVersionGroupArgs extends com.pulumi.resources.Resource
      * (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
      * inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
      * Executes tasks across resources in a rolling order.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="type", required=true)
@@ -60,6 +61,7 @@ public final class RunbookVersionGroupArgs extends com.pulumi.resources.Resource
      * @return (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
      * inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
      * Executes tasks across resources in a rolling order.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> type() {
@@ -138,6 +140,7 @@ public final class RunbookVersionGroupArgs extends com.pulumi.resources.Resource
          * @param type (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
          * inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
          * Executes tasks across resources in a rolling order.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -151,6 +154,7 @@ public final class RunbookVersionGroupArgs extends com.pulumi.resources.Resource
          * @param type (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
          * inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
          * Executes tasks across resources in a rolling order.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

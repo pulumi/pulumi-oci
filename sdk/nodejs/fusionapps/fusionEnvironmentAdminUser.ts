@@ -81,6 +81,8 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
     declare public readonly lastName: pulumi.Output<string>;
     /**
      * The password for the administrator.
+     *
+     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
      */
     declare public readonly password: pulumi.Output<string>;
     /**
@@ -170,6 +172,8 @@ export interface FusionEnvironmentAdminUserState {
     lastName?: pulumi.Input<string>;
     /**
      * The password for the administrator.
+     *
+     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
      */
     password?: pulumi.Input<string>;
     /**
@@ -204,6 +208,8 @@ export interface FusionEnvironmentAdminUserArgs {
     lastName: pulumi.Input<string>;
     /**
      * The password for the administrator.
+     *
+     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
      */
     password?: pulumi.Input<string>;
     /**

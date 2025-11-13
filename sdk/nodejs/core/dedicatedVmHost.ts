@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     dedicatedVmHostShape: dedicatedVmHostDedicatedVmHostShape,
+ *     capacityConfig: dedicatedVmHostCapacityConfig,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -25,6 +26,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
  *     placementConstraintDetails: {
  *         type: dedicatedVmHostPlacementConstraintDetailsType,
  *         computeBareMetalHostId: testComputeBareMetalHost.id,
@@ -73,15 +75,19 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      */
     declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
-     * A list of total and remaining CPU & memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      */
     declare public /*out*/ readonly capacityBins: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     */
+    declare public readonly capacityConfig: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      */
     declare public /*out*/ readonly computeBareMetalHostId: pulumi.Output<string>;
     /**
@@ -109,7 +115,11 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     */
+    declare public readonly isMemoryEncryptionEnabled: pulumi.Output<boolean>;
+    /**
+     * The details for providing placement constraints.
      */
     declare public readonly placementConstraintDetails: pulumi.Output<outputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
@@ -152,6 +162,7 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             const state = argsOrState as DedicatedVmHostState | undefined;
             resourceInputs["availabilityDomain"] = state?.availabilityDomain;
             resourceInputs["capacityBins"] = state?.capacityBins;
+            resourceInputs["capacityConfig"] = state?.capacityConfig;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeBareMetalHostId"] = state?.computeBareMetalHostId;
             resourceInputs["dedicatedVmHostShape"] = state?.dedicatedVmHostShape;
@@ -159,6 +170,7 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["faultDomain"] = state?.faultDomain;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isMemoryEncryptionEnabled"] = state?.isMemoryEncryptionEnabled;
             resourceInputs["placementConstraintDetails"] = state?.placementConstraintDetails;
             resourceInputs["remainingMemoryInGbs"] = state?.remainingMemoryInGbs;
             resourceInputs["remainingOcpus"] = state?.remainingOcpus;
@@ -178,12 +190,14 @@ export class DedicatedVmHost extends pulumi.CustomResource {
                 throw new Error("Missing required property 'dedicatedVmHostShape'");
             }
             resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["capacityConfig"] = args?.capacityConfig;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["dedicatedVmHostShape"] = args?.dedicatedVmHostShape;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["faultDomain"] = args?.faultDomain;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isMemoryEncryptionEnabled"] = args?.isMemoryEncryptionEnabled;
             resourceInputs["placementConstraintDetails"] = args?.placementConstraintDetails;
             resourceInputs["capacityBins"] = undefined /*out*/;
             resourceInputs["computeBareMetalHostId"] = undefined /*out*/;
@@ -208,15 +222,19 @@ export interface DedicatedVmHostState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * A list of total and remaining CPU & memory per capacity bucket.
+     * A list of total and remaining CPU and memory per capacity bucket.
      */
     capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[]>;
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     */
+    capacityConfig?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The OCID of the compute bare metal host.
+     * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      */
     computeBareMetalHostId?: pulumi.Input<string>;
     /**
@@ -244,7 +262,11 @@ export interface DedicatedVmHostState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     */
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    /**
+     * The details for providing placement constraints.
      */
     placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
@@ -282,6 +304,10 @@ export interface DedicatedVmHostArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     */
+    capacityConfig?: pulumi.Input<string>;
+    /**
      * (Updatable) The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
@@ -310,7 +336,11 @@ export interface DedicatedVmHostArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     */
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    /**
+     * The details for providing placement constraints.
      */
     placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
 }

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getDedicatedVmHostInstances(args: GetDedicatedVmHostInstancesArg
         "compartmentId": args.compartmentId,
         "dedicatedVmHostId": args.dedicatedVmHostId,
         "filters": args.filters,
+        "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
     }, opts);
 }
 
@@ -51,6 +53,10 @@ export interface GetDedicatedVmHostInstancesArgs {
      */
     dedicatedVmHostId: string;
     filters?: inputs.Core.GetDedicatedVmHostInstancesFilter[];
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     */
+    isMemoryEncryptionEnabled?: boolean;
 }
 
 /**
@@ -75,6 +81,10 @@ export interface GetDedicatedVmHostInstancesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Specifies whether the VM instance is confidential.
+     */
+    readonly isMemoryEncryptionEnabled?: boolean;
 }
 /**
  * This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -91,6 +101,7 @@ export interface GetDedicatedVmHostInstancesResult {
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
  * });
  * ```
  */
@@ -101,6 +112,7 @@ export function getDedicatedVmHostInstancesOutput(args: GetDedicatedVmHostInstan
         "compartmentId": args.compartmentId,
         "dedicatedVmHostId": args.dedicatedVmHostId,
         "filters": args.filters,
+        "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
     }, opts);
 }
 
@@ -121,4 +133,8 @@ export interface GetDedicatedVmHostInstancesOutputArgs {
      */
     dedicatedVmHostId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostInstancesFilterArgs>[]>;
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     */
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
 }

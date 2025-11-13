@@ -64,14 +64,22 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs 
     /**
      * The password for the administrator.
      * 
+     * @deprecated
+     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+     * 
      */
+    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return The password for the administrator.
      * 
+     * @deprecated
+     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+     * 
      */
+    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
     }
@@ -187,7 +195,11 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs 
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+         * 
          */
+        @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
             return this;
@@ -198,7 +210,11 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs 
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+         * 
          */
+        @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
         public Builder password(String password) {
             return password(Output.of(password));
         }

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostCapacityBin;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostPlacementConstraintDetail;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -21,17 +22,22 @@ public final class GetDedicatedVmHostResult {
      */
     private String availabilityDomain;
     /**
-     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * @return A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     private List<GetDedicatedVmHostCapacityBin> capacityBins;
+    /**
+     * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+     * 
+     */
+    private String capacityConfig;
     /**
      * @return The OCID of the compartment that contains the dedicated virtual machine host.
      * 
      */
     private String compartmentId;
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     private String computeBareMetalHostId;
@@ -67,7 +73,12 @@ public final class GetDedicatedVmHostResult {
      */
     private String id;
     /**
-     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    private Boolean isMemoryEncryptionEnabled;
+    /**
+     * @return The details for providing placement constraints.
      * 
      */
     private List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
@@ -111,11 +122,18 @@ public final class GetDedicatedVmHostResult {
         return this.availabilityDomain;
     }
     /**
-     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * @return A list of total and remaining CPU and memory per capacity bucket.
      * 
      */
     public List<GetDedicatedVmHostCapacityBin> capacityBins() {
         return this.capacityBins;
+    }
+    /**
+     * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+     * 
+     */
+    public String capacityConfig() {
+        return this.capacityConfig;
     }
     /**
      * @return The OCID of the compartment that contains the dedicated virtual machine host.
@@ -125,7 +143,7 @@ public final class GetDedicatedVmHostResult {
         return this.compartmentId;
     }
     /**
-     * @return The OCID of the compute bare metal host.
+     * @return The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
      * 
      */
     public String computeBareMetalHostId() {
@@ -177,7 +195,14 @@ public final class GetDedicatedVmHostResult {
         return this.id;
     }
     /**
-     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    public Boolean isMemoryEncryptionEnabled() {
+        return this.isMemoryEncryptionEnabled;
+    }
+    /**
+     * @return The details for providing placement constraints.
      * 
      */
     public List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails() {
@@ -237,6 +262,7 @@ public final class GetDedicatedVmHostResult {
     public static final class Builder {
         private String availabilityDomain;
         private List<GetDedicatedVmHostCapacityBin> capacityBins;
+        private String capacityConfig;
         private String compartmentId;
         private String computeBareMetalHostId;
         private String dedicatedVmHostId;
@@ -246,6 +272,7 @@ public final class GetDedicatedVmHostResult {
         private String faultDomain;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isMemoryEncryptionEnabled;
         private List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
         private Double remainingMemoryInGbs;
         private Double remainingOcpus;
@@ -258,6 +285,7 @@ public final class GetDedicatedVmHostResult {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityBins = defaults.capacityBins;
+    	      this.capacityConfig = defaults.capacityConfig;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeBareMetalHostId = defaults.computeBareMetalHostId;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
@@ -267,6 +295,7 @@ public final class GetDedicatedVmHostResult {
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
     	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.remainingMemoryInGbs = defaults.remainingMemoryInGbs;
     	      this.remainingOcpus = defaults.remainingOcpus;
@@ -294,6 +323,14 @@ public final class GetDedicatedVmHostResult {
         }
         public Builder capacityBins(GetDedicatedVmHostCapacityBin... capacityBins) {
             return capacityBins(List.of(capacityBins));
+        }
+        @CustomType.Setter
+        public Builder capacityConfig(String capacityConfig) {
+            if (capacityConfig == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "capacityConfig");
+            }
+            this.capacityConfig = capacityConfig;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -368,6 +405,14 @@ public final class GetDedicatedVmHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            if (isMemoryEncryptionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "isMemoryEncryptionEnabled");
+            }
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder placementConstraintDetails(List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails) {
             if (placementConstraintDetails == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "placementConstraintDetails");
@@ -430,6 +475,7 @@ public final class GetDedicatedVmHostResult {
             final var _resultValue = new GetDedicatedVmHostResult();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityBins = capacityBins;
+            _resultValue.capacityConfig = capacityConfig;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeBareMetalHostId = computeBareMetalHostId;
             _resultValue.dedicatedVmHostId = dedicatedVmHostId;
@@ -439,6 +485,7 @@ public final class GetDedicatedVmHostResult {
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
             _resultValue.remainingOcpus = remainingOcpus;

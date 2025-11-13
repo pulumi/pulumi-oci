@@ -38,6 +38,7 @@ public final class GetContainerImagesResult {
      * 
      */
     private String id;
+    private @Nullable String imageDigest;
     private @Nullable String imageId;
     private @Nullable Boolean isVersioned;
     /**
@@ -96,6 +97,9 @@ public final class GetContainerImagesResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
+    }
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
@@ -146,6 +150,7 @@ public final class GetContainerImagesResult {
         private @Nullable String displayName;
         private @Nullable List<GetContainerImagesFilter> filters;
         private String id;
+        private @Nullable String imageDigest;
         private @Nullable String imageId;
         private @Nullable Boolean isVersioned;
         private @Nullable String repositoryId;
@@ -161,6 +166,7 @@ public final class GetContainerImagesResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.imageDigest = defaults.imageDigest;
     	      this.imageId = defaults.imageId;
     	      this.isVersioned = defaults.isVersioned;
     	      this.repositoryId = defaults.repositoryId;
@@ -218,6 +224,12 @@ public final class GetContainerImagesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder imageDigest(@Nullable String imageDigest) {
+
+            this.imageDigest = imageDigest;
+            return this;
+        }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
 
             this.imageId = imageId;
@@ -261,6 +273,7 @@ public final class GetContainerImagesResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.imageDigest = imageDigest;
             _resultValue.imageId = imageId;
             _resultValue.isVersioned = isVersioned;
             _resultValue.repositoryId = repositoryId;

@@ -171,7 +171,7 @@ class GetRunbookVersionResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the FleetResource.
+        The current state of the runbook version.
         """
         return pulumi.get(self, "state")
 

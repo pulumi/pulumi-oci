@@ -62,6 +62,11 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
      */
     private Boolean isReadOutputVariableEnabled;
     /**
+     * @return The list of system variables.
+     * 
+     */
+    private List<String> systemVariables;
+    /**
      * @return OCID of the compartment to which the resource belongs to.
      * 
      */
@@ -140,6 +145,13 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
         return this.isReadOutputVariableEnabled;
     }
     /**
+     * @return The list of system variables.
+     * 
+     */
+    public List<String> systemVariables() {
+        return this.systemVariables;
+    }
+    /**
      * @return OCID of the compartment to which the resource belongs to.
      * 
      */
@@ -173,6 +185,7 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
         private Boolean isExecutableContent;
         private Boolean isLocked;
         private Boolean isReadOutputVariableEnabled;
+        private List<String> systemVariables;
         private String targetCompartmentId;
         private List<GetRunbookVersionTaskTaskRecordDetailExecutionDetailVariable> variables;
         public Builder() {}
@@ -188,6 +201,7 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
     	      this.isExecutableContent = defaults.isExecutableContent;
     	      this.isLocked = defaults.isLocked;
     	      this.isReadOutputVariableEnabled = defaults.isReadOutputVariableEnabled;
+    	      this.systemVariables = defaults.systemVariables;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.variables = defaults.variables;
         }
@@ -279,6 +293,17 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder systemVariables(List<String> systemVariables) {
+            if (systemVariables == null) {
+              throw new MissingRequiredPropertyException("GetRunbookVersionTaskTaskRecordDetailExecutionDetail", "systemVariables");
+            }
+            this.systemVariables = systemVariables;
+            return this;
+        }
+        public Builder systemVariables(String... systemVariables) {
+            return systemVariables(List.of(systemVariables));
+        }
+        @CustomType.Setter
         public Builder targetCompartmentId(String targetCompartmentId) {
             if (targetCompartmentId == null) {
               throw new MissingRequiredPropertyException("GetRunbookVersionTaskTaskRecordDetailExecutionDetail", "targetCompartmentId");
@@ -309,6 +334,7 @@ public final class GetRunbookVersionTaskTaskRecordDetailExecutionDetail {
             _resultValue.isExecutableContent = isExecutableContent;
             _resultValue.isLocked = isLocked;
             _resultValue.isReadOutputVariableEnabled = isReadOutputVariableEnabled;
+            _resultValue.systemVariables = systemVariables;
             _resultValue.targetCompartmentId = targetCompartmentId;
             _resultValue.variables = variables;
             return _resultValue;

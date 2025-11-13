@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Limits
         }
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public string? SubscriptionId { get; set; }
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Limits
         }
 
         /// <summary>
-        /// The OCID of the subscription assigned to tenant
+        /// The subscription OCID assigned to the tenant.
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }

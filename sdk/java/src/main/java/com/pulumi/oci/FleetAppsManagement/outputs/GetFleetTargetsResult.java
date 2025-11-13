@@ -47,6 +47,11 @@ public final class GetFleetTargetsResult {
      * 
      */
     private @Nullable String resourceId;
+    /**
+     * @return The current state of the FleetTarget.
+     * 
+     */
+    private @Nullable String state;
 
     private GetFleetTargetsResult() {}
     /**
@@ -97,6 +102,13 @@ public final class GetFleetTargetsResult {
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
+    /**
+     * @return The current state of the FleetTarget.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -115,6 +127,7 @@ public final class GetFleetTargetsResult {
         private @Nullable String product;
         private @Nullable String resourceDisplayName;
         private @Nullable String resourceId;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetFleetTargetsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,6 +139,7 @@ public final class GetFleetTargetsResult {
     	      this.product = defaults.product;
     	      this.resourceDisplayName = defaults.resourceDisplayName;
     	      this.resourceId = defaults.resourceId;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -188,6 +202,12 @@ public final class GetFleetTargetsResult {
             this.resourceId = resourceId;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
         public GetFleetTargetsResult build() {
             final var _resultValue = new GetFleetTargetsResult();
             _resultValue.displayName = displayName;
@@ -198,6 +218,7 @@ public final class GetFleetTargetsResult {
             _resultValue.product = product;
             _resultValue.resourceDisplayName = resourceDisplayName;
             _resultValue.resourceId = resourceId;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

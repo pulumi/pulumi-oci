@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerExecutionsFilter;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerExecutionsSchedulerExecutionCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -20,6 +21,7 @@ public final class GetSchedulerExecutionsResult {
      * 
      */
     private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
@@ -31,8 +33,9 @@ public final class GetSchedulerExecutionsResult {
      * 
      */
     private String id;
+    private @Nullable String lifecycleOperation;
     /**
-     * @return ResourceId associated with the Schedule.
+     * @return FleetId associated with the Schedule.
      * 
      */
     private @Nullable String resourceId;
@@ -53,7 +56,7 @@ public final class GetSchedulerExecutionsResult {
      */
     private List<GetSchedulerExecutionsSchedulerExecutionCollection> schedulerExecutionCollections;
     /**
-     * @return jobId associated with the Schedule.
+     * @return SchedulerJobId associated with the Schedule.
      * 
      */
     private @Nullable String schedulerJobId;
@@ -68,6 +71,9 @@ public final class GetSchedulerExecutionsResult {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -86,8 +92,11 @@ public final class GetSchedulerExecutionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> lifecycleOperation() {
+        return Optional.ofNullable(this.lifecycleOperation);
+    }
     /**
-     * @return ResourceId associated with the Schedule.
+     * @return FleetId associated with the Schedule.
      * 
      */
     public Optional<String> resourceId() {
@@ -118,7 +127,7 @@ public final class GetSchedulerExecutionsResult {
         return this.schedulerExecutionCollections;
     }
     /**
-     * @return jobId associated with the Schedule.
+     * @return SchedulerJobId associated with the Schedule.
      * 
      */
     public Optional<String> schedulerJobId() {
@@ -144,9 +153,11 @@ public final class GetSchedulerExecutionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetSchedulerExecutionsFilter> filters;
         private String id;
+        private @Nullable String lifecycleOperation;
         private @Nullable String resourceId;
         private @Nullable String runbookId;
         private @Nullable String runbookVersionName;
@@ -160,9 +171,11 @@ public final class GetSchedulerExecutionsResult {
         public Builder(GetSchedulerExecutionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.lifecycleOperation = defaults.lifecycleOperation;
     	      this.resourceId = defaults.resourceId;
     	      this.runbookId = defaults.runbookId;
     	      this.runbookVersionName = defaults.runbookVersionName;
@@ -178,6 +191,12 @@ public final class GetSchedulerExecutionsResult {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -201,6 +220,12 @@ public final class GetSchedulerExecutionsResult {
               throw new MissingRequiredPropertyException("GetSchedulerExecutionsResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleOperation(@Nullable String lifecycleOperation) {
+
+            this.lifecycleOperation = lifecycleOperation;
             return this;
         }
         @CustomType.Setter
@@ -265,9 +290,11 @@ public final class GetSchedulerExecutionsResult {
         public GetSchedulerExecutionsResult build() {
             final var _resultValue = new GetSchedulerExecutionsResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.lifecycleOperation = lifecycleOperation;
             _resultValue.resourceId = resourceId;
             _resultValue.runbookId = runbookId;
             _resultValue.runbookVersionName = runbookVersionName;

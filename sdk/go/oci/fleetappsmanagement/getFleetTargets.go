@@ -35,6 +35,7 @@ import (
 //				Product:             pulumi.StringRef(fleetTargetProduct),
 //				ResourceDisplayName: pulumi.StringRef(fleetTargetResourceDisplayName),
 //				ResourceId:          pulumi.StringRef(testResource.Id),
+//				State:               pulumi.StringRef(fleetTargetState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetFleetTargetsArgs struct {
 	ResourceDisplayName *string `pulumi:"resourceDisplayName"`
 	// Resource Identifier
 	ResourceId *string `pulumi:"resourceId"`
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
+	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getFleetTargets.
@@ -85,6 +88,8 @@ type GetFleetTargetsResult struct {
 	ResourceDisplayName *string `pulumi:"resourceDisplayName"`
 	// The OCID of the resource.
 	ResourceId *string `pulumi:"resourceId"`
+	// The current state of the FleetTarget.
+	State *string `pulumi:"state"`
 }
 
 func GetFleetTargetsOutput(ctx *pulumi.Context, args GetFleetTargetsOutputArgs, opts ...pulumi.InvokeOption) GetFleetTargetsResultOutput {
@@ -109,6 +114,8 @@ type GetFleetTargetsOutputArgs struct {
 	ResourceDisplayName pulumi.StringPtrInput `pulumi:"resourceDisplayName"`
 	// Resource Identifier
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// A filter to return fleets whose lifecycleState matches the given lifecycleState.
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetFleetTargetsOutputArgs) ElementType() reflect.Type {
@@ -166,6 +173,11 @@ func (o GetFleetTargetsResultOutput) ResourceDisplayName() pulumi.StringPtrOutpu
 // The OCID of the resource.
 func (o GetFleetTargetsResultOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetTargetsResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the FleetTarget.
+func (o GetFleetTargetsResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetTargetsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

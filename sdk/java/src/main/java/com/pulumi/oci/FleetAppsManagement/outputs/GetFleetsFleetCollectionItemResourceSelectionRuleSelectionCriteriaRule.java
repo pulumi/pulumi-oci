@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,10 +24,20 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
      */
     private String compartmentId;
     /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+     * 
+     */
+    private Boolean compartmentIdInSubtree;
+    /**
      * @return Rule Conditions
      * 
      */
     private List<GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition> conditions;
+    /**
+     * @return Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+     * 
+     */
+    private String matchCondition;
     /**
      * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
      * 
@@ -49,11 +60,25 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
         return this.compartmentId;
     }
     /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+     * 
+     */
+    public Boolean compartmentIdInSubtree() {
+        return this.compartmentIdInSubtree;
+    }
+    /**
      * @return Rule Conditions
      * 
      */
     public List<GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition> conditions() {
         return this.conditions;
+    }
+    /**
+     * @return Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+     * 
+     */
+    public String matchCondition() {
+        return this.matchCondition;
     }
     /**
      * @return The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
@@ -74,14 +99,18 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
     public static final class Builder {
         private String basis;
         private String compartmentId;
+        private Boolean compartmentIdInSubtree;
         private List<GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition> conditions;
+        private String matchCondition;
         private String resourceCompartmentId;
         public Builder() {}
         public Builder(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.basis = defaults.basis;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.conditions = defaults.conditions;
+    	      this.matchCondition = defaults.matchCondition;
     	      this.resourceCompartmentId = defaults.resourceCompartmentId;
         }
 
@@ -102,6 +131,14 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
             return this;
         }
         @CustomType.Setter
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+        @CustomType.Setter
         public Builder conditions(List<GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition> conditions) {
             if (conditions == null) {
               throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule", "conditions");
@@ -111,6 +148,14 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
         }
         public Builder conditions(GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRuleCondition... conditions) {
             return conditions(List.of(conditions));
+        }
+        @CustomType.Setter
+        public Builder matchCondition(String matchCondition) {
+            if (matchCondition == null) {
+              throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule", "matchCondition");
+            }
+            this.matchCondition = matchCondition;
+            return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
@@ -124,7 +169,9 @@ public final class GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCri
             final var _resultValue = new GetFleetsFleetCollectionItemResourceSelectionRuleSelectionCriteriaRule();
             _resultValue.basis = basis;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.conditions = conditions;
+            _resultValue.matchCondition = matchCondition;
             _resultValue.resourceCompartmentId = resourceCompartmentId;
             return _resultValue;
         }

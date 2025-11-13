@@ -14,9 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential
     {
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not
-        /// have to be unique, and it's changeable. Avoid entering confidential information. Example:
-        /// `My new resource`
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

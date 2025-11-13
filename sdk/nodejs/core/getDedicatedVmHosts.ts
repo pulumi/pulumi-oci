@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -39,6 +40,7 @@ export function getDedicatedVmHosts(args: GetDedicatedVmHostsArgs, opts?: pulumi
         "displayName": args.displayName,
         "filters": args.filters,
         "instanceShapeName": args.instanceShapeName,
+        "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
         "remainingMemoryInGbsGreaterThanOrEqualTo": args.remainingMemoryInGbsGreaterThanOrEqualTo,
         "remainingOcpusGreaterThanOrEqualTo": args.remainingOcpusGreaterThanOrEqualTo,
         "state": args.state,
@@ -66,6 +68,10 @@ export interface GetDedicatedVmHostsArgs {
      * The name for the instance's shape.
      */
     instanceShapeName?: string;
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     */
+    isMemoryEncryptionEnabled?: boolean;
     /**
      * The remaining memory of the dedicated VM host, in GBs.
      */
@@ -106,6 +112,10 @@ export interface GetDedicatedVmHostsResult {
      */
     readonly id: string;
     readonly instanceShapeName?: string;
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     */
+    readonly isMemoryEncryptionEnabled?: boolean;
     readonly remainingMemoryInGbsGreaterThanOrEqualTo?: number;
     readonly remainingOcpusGreaterThanOrEqualTo?: number;
     /**
@@ -132,6 +142,7 @@ export interface GetDedicatedVmHostsResult {
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -146,6 +157,7 @@ export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, o
         "displayName": args.displayName,
         "filters": args.filters,
         "instanceShapeName": args.instanceShapeName,
+        "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
         "remainingMemoryInGbsGreaterThanOrEqualTo": args.remainingMemoryInGbsGreaterThanOrEqualTo,
         "remainingOcpusGreaterThanOrEqualTo": args.remainingOcpusGreaterThanOrEqualTo,
         "state": args.state,
@@ -173,6 +185,10 @@ export interface GetDedicatedVmHostsOutputArgs {
      * The name for the instance's shape.
      */
     instanceShapeName?: pulumi.Input<string>;
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     */
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
     /**
      * The remaining memory of the dedicated VM host, in GBs.
      */

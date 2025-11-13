@@ -25,6 +25,7 @@ public final class GetResourceAvailabilityResult {
      * 
      */
     private Double effectiveQuotaValue;
+    private @Nullable String externalLocation;
     /**
      * @return The most accurate count of available resources.
      * 
@@ -69,6 +70,9 @@ public final class GetResourceAvailabilityResult {
      */
     public Double effectiveQuotaValue() {
         return this.effectiveQuotaValue;
+    }
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
     }
     /**
      * @return The most accurate count of available resources.
@@ -121,6 +125,7 @@ public final class GetResourceAvailabilityResult {
         private String available;
         private String compartmentId;
         private Double effectiveQuotaValue;
+        private @Nullable String externalLocation;
         private Double fractionalAvailability;
         private Double fractionalUsage;
         private String id;
@@ -135,6 +140,7 @@ public final class GetResourceAvailabilityResult {
     	      this.available = defaults.available;
     	      this.compartmentId = defaults.compartmentId;
     	      this.effectiveQuotaValue = defaults.effectiveQuotaValue;
+    	      this.externalLocation = defaults.externalLocation;
     	      this.fractionalAvailability = defaults.fractionalAvailability;
     	      this.fractionalUsage = defaults.fractionalUsage;
     	      this.id = defaults.id;
@@ -172,6 +178,12 @@ public final class GetResourceAvailabilityResult {
               throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "effectiveQuotaValue");
             }
             this.effectiveQuotaValue = effectiveQuotaValue;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocation(@Nullable String externalLocation) {
+
+            this.externalLocation = externalLocation;
             return this;
         }
         @CustomType.Setter
@@ -234,6 +246,7 @@ public final class GetResourceAvailabilityResult {
             _resultValue.available = available;
             _resultValue.compartmentId = compartmentId;
             _resultValue.effectiveQuotaValue = effectiveQuotaValue;
+            _resultValue.externalLocation = externalLocation;
             _resultValue.fractionalAvailability = fractionalAvailability;
             _resultValue.fractionalUsage = fractionalUsage;
             _resultValue.id = id;

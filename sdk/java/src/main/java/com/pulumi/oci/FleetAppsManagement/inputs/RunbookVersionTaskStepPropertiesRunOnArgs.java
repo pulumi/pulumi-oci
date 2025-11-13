@@ -19,16 +19,14 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
     public static final RunbookVersionTaskStepPropertiesRunOnArgs Empty = new RunbookVersionTaskStepPropertiesRunOnArgs();
 
     /**
-     * (Updatable) Build control flow conditions that
-     * determine the relevance of the task execution.
+     * (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Build control flow conditions that
-     * determine the relevance of the task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -66,16 +64,14 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Previous Task
-     * Instance Details
+     * (Updatable) Previous Task Instance Details
      * 
      */
     @Import(name="previousTaskInstanceDetails")
     private @Nullable Output<List<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs>> previousTaskInstanceDetails;
 
     /**
-     * @return (Updatable) Previous Task
-     * Instance Details
+     * @return (Updatable) Previous Task Instance Details
      * 
      */
     public Optional<Output<List<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs>>> previousTaskInstanceDetails() {
@@ -110,8 +106,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
         }
 
         /**
-         * @param condition (Updatable) Build control flow conditions that
-         * determine the relevance of the task execution.
+         * @param condition (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
          * 
          * @return builder
          * 
@@ -122,8 +117,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
         }
 
         /**
-         * @param condition (Updatable) Build control flow conditions that
-         * determine the relevance of the task execution.
+         * @param condition (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
          * 
          * @return builder
          * 
@@ -175,8 +169,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
         }
 
         /**
-         * @param previousTaskInstanceDetails (Updatable) Previous Task
-         * Instance Details
+         * @param previousTaskInstanceDetails (Updatable) Previous Task Instance Details
          * 
          * @return builder
          * 
@@ -187,8 +180,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
         }
 
         /**
-         * @param previousTaskInstanceDetails (Updatable) Previous Task
-         * Instance Details
+         * @param previousTaskInstanceDetails (Updatable) Previous Task Instance Details
          * 
          * @return builder
          * 
@@ -198,8 +190,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnArgs extends com.pulumi.
         }
 
         /**
-         * @param previousTaskInstanceDetails (Updatable) Previous Task
-         * Instance Details
+         * @param previousTaskInstanceDetails (Updatable) Previous Task Instance Details
          * 
          * @return builder
          * 

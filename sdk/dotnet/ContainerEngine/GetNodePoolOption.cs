@@ -30,6 +30,10 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         NodePoolOptionId = testNodePoolOptionOciContainerengineNodePoolOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         NodePoolK8sVersion = nodePoolOptionNodePoolK8sVersion,
+        ///         NodePoolOsArch = nodePoolOptionNodePoolOsArch,
+        ///         NodePoolOsType = nodePoolOptionNodePoolOsType,
+        ///         ShouldListAllPatchVersions = nodePoolOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -57,6 +61,10 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         NodePoolOptionId = testNodePoolOptionOciContainerengineNodePoolOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         NodePoolK8sVersion = nodePoolOptionNodePoolK8sVersion,
+        ///         NodePoolOsArch = nodePoolOptionNodePoolOsArch,
+        ///         NodePoolOsType = nodePoolOptionNodePoolOsType,
+        ///         ShouldListAllPatchVersions = nodePoolOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -84,6 +92,10 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         NodePoolOptionId = testNodePoolOptionOciContainerengineNodePoolOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         NodePoolK8sVersion = nodePoolOptionNodePoolK8sVersion,
+        ///         NodePoolOsArch = nodePoolOptionNodePoolOsArch,
+        ///         NodePoolOsType = nodePoolOptionNodePoolOsType,
+        ///         ShouldListAllPatchVersions = nodePoolOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -103,10 +115,34 @@ namespace Pulumi.Oci.ContainerEngine
         public string? CompartmentId { get; set; }
 
         /// <summary>
+        /// Filter node pool options by Kubernetes version.
+        /// </summary>
+        [Input("nodePoolK8sVersion")]
+        public string? NodePoolK8sVersion { get; set; }
+
+        /// <summary>
         /// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
         /// </summary>
         [Input("nodePoolOptionId", required: true)]
         public string NodePoolOptionId { get; set; } = null!;
+
+        /// <summary>
+        /// Filter node pool options by OS architecture.
+        /// </summary>
+        [Input("nodePoolOsArch")]
+        public string? NodePoolOsArch { get; set; }
+
+        /// <summary>
+        /// Filter node pool options by OS type.
+        /// </summary>
+        [Input("nodePoolOsType")]
+        public string? NodePoolOsType { get; set; }
+
+        /// <summary>
+        /// Option to show all kubernetes patch versions
+        /// </summary>
+        [Input("shouldListAllPatchVersions")]
+        public bool? ShouldListAllPatchVersions { get; set; }
 
         public GetNodePoolOptionArgs()
         {
@@ -123,10 +159,34 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// Filter node pool options by Kubernetes version.
+        /// </summary>
+        [Input("nodePoolK8sVersion")]
+        public Input<string>? NodePoolK8sVersion { get; set; }
+
+        /// <summary>
         /// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
         /// </summary>
         [Input("nodePoolOptionId", required: true)]
         public Input<string> NodePoolOptionId { get; set; } = null!;
+
+        /// <summary>
+        /// Filter node pool options by OS architecture.
+        /// </summary>
+        [Input("nodePoolOsArch")]
+        public Input<string>? NodePoolOsArch { get; set; }
+
+        /// <summary>
+        /// Filter node pool options by OS type.
+        /// </summary>
+        [Input("nodePoolOsType")]
+        public Input<string>? NodePoolOsType { get; set; }
+
+        /// <summary>
+        /// Option to show all kubernetes patch versions
+        /// </summary>
+        [Input("shouldListAllPatchVersions")]
+        public Input<bool>? ShouldListAllPatchVersions { get; set; }
 
         public GetNodePoolOptionInvokeArgs()
         {
@@ -151,11 +211,15 @@ namespace Pulumi.Oci.ContainerEngine
         /// Available Kubernetes versions.
         /// </summary>
         public readonly ImmutableArray<string> KubernetesVersions;
+        public readonly string? NodePoolK8sVersion;
         public readonly string NodePoolOptionId;
+        public readonly string? NodePoolOsArch;
+        public readonly string? NodePoolOsType;
         /// <summary>
         /// Available shapes for nodes.
         /// </summary>
         public readonly ImmutableArray<string> Shapes;
+        public readonly bool? ShouldListAllPatchVersions;
         /// <summary>
         /// Available source of the node.
         /// </summary>
@@ -171,9 +235,17 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<string> kubernetesVersions,
 
+            string? nodePoolK8sVersion,
+
             string nodePoolOptionId,
 
+            string? nodePoolOsArch,
+
+            string? nodePoolOsType,
+
             ImmutableArray<string> shapes,
+
+            bool? shouldListAllPatchVersions,
 
             ImmutableArray<Outputs.GetNodePoolOptionSourceResult> sources)
         {
@@ -181,8 +253,12 @@ namespace Pulumi.Oci.ContainerEngine
             Id = id;
             Images = images;
             KubernetesVersions = kubernetesVersions;
+            NodePoolK8sVersion = nodePoolK8sVersion;
             NodePoolOptionId = nodePoolOptionId;
+            NodePoolOsArch = nodePoolOsArch;
+            NodePoolOsType = nodePoolOsType;
             Shapes = shapes;
+            ShouldListAllPatchVersions = shouldListAllPatchVersions;
             Sources = sources;
         }
     }

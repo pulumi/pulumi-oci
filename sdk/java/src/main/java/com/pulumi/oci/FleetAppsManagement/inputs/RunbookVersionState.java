@@ -48,6 +48,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
     /**
      * (Updatable) Execution Workflow details.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="executionWorkflowDetails")
@@ -55,6 +56,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
     /**
      * @return (Updatable) Execution Workflow details.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<RunbookVersionExecutionWorkflowDetailsArgs>> executionWorkflowDetails() {
@@ -196,6 +198,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
     /**
      * (Updatable) A set of tasks to execute in the runbook.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="tasks")
@@ -203,6 +206,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
     /**
      * @return (Updatable) A set of tasks to execute in the runbook.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<List<RunbookVersionTaskArgs>>> tasks() {
@@ -311,6 +315,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param executionWorkflowDetails (Updatable) Execution Workflow details.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -322,6 +327,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param executionWorkflowDetails (Updatable) Execution Workflow details.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -525,6 +531,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param tasks (Updatable) A set of tasks to execute in the runbook.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -536,6 +543,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param tasks (Updatable) A set of tasks to execute in the runbook.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -546,6 +554,7 @@ public final class RunbookVersionState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param tasks (Updatable) A set of tasks to execute in the runbook.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 

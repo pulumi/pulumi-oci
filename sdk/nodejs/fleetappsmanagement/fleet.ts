@@ -70,7 +70,7 @@ export class Fleet extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     declare public readonly environmentType: pulumi.Output<string>;
     /**
@@ -94,7 +94,7 @@ export class Fleet extends pulumi.CustomResource {
      */
     declare public readonly parentFleetId: pulumi.Output<string>;
     /**
-     * (Updatable) Products associated with the Fleet.
+     * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      */
     declare public readonly products: pulumi.Output<string[]>;
     /**
@@ -231,7 +231,7 @@ export interface FleetState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     environmentType?: pulumi.Input<string>;
     /**
@@ -255,7 +255,7 @@ export interface FleetState {
      */
     parentFleetId?: pulumi.Input<string>;
     /**
-     * (Updatable) Products associated with the Fleet.
+     * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      */
     products?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -321,7 +321,7 @@ export interface FleetArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
     environmentType?: pulumi.Input<string>;
     /**
@@ -341,7 +341,7 @@ export interface FleetArgs {
      */
     parentFleetId?: pulumi.Input<string>;
     /**
-     * (Updatable) Products associated with the Fleet.
+     * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      */
     products?: pulumi.Input<pulumi.Input<string>[]>;
     /**

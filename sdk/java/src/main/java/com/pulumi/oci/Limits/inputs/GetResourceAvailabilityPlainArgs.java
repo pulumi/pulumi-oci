@@ -46,6 +46,21 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
     }
 
     /**
+     * External cloud provider location
+     * 
+     */
+    @Import(name="externalLocation")
+    private @Nullable String externalLocation;
+
+    /**
+     * @return External cloud provider location
+     * 
+     */
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
+    }
+
+    /**
      * The limit name for which to fetch the data.
      * 
      */
@@ -76,14 +91,14 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
     }
 
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      * 
      */
     @Import(name="subscriptionId")
     private @Nullable String subscriptionId;
 
     /**
-     * @return The OCID of the subscription assigned to tenant
+     * @return The subscription OCID assigned to the tenant.
      * 
      */
     public Optional<String> subscriptionId() {
@@ -95,6 +110,7 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
     private GetResourceAvailabilityPlainArgs(GetResourceAvailabilityPlainArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.externalLocation = $.externalLocation;
         this.limitName = $.limitName;
         this.serviceName = $.serviceName;
         this.subscriptionId = $.subscriptionId;
@@ -141,6 +157,17 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
         }
 
         /**
+         * @param externalLocation External cloud provider location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(@Nullable String externalLocation) {
+            $.externalLocation = externalLocation;
+            return this;
+        }
+
+        /**
          * @param limitName The limit name for which to fetch the data.
          * 
          * @return builder
@@ -163,7 +190,7 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * @param subscriptionId The subscription OCID assigned to the tenant.
          * 
          * @return builder
          * 

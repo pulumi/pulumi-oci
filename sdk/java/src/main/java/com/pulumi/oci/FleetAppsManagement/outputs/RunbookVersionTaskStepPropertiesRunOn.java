@@ -15,8 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskStepPropertiesRunOn {
     /**
-     * @return (Updatable) Build control flow conditions that
-     * determine the relevance of the task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     private @Nullable String condition;
@@ -31,16 +30,14 @@ public final class RunbookVersionTaskStepPropertiesRunOn {
      */
     private String kind;
     /**
-     * @return (Updatable) Previous Task
-     * Instance Details
+     * @return (Updatable) Previous Task Instance Details
      * 
      */
     private @Nullable List<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail> previousTaskInstanceDetails;
 
     private RunbookVersionTaskStepPropertiesRunOn() {}
     /**
-     * @return (Updatable) Build control flow conditions that
-     * determine the relevance of the task execution.
+     * @return (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     public Optional<String> condition() {
@@ -61,8 +58,7 @@ public final class RunbookVersionTaskStepPropertiesRunOn {
         return this.kind;
     }
     /**
-     * @return (Updatable) Previous Task
-     * Instance Details
+     * @return (Updatable) Previous Task Instance Details
      * 
      */
     public List<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail> previousTaskInstanceDetails() {

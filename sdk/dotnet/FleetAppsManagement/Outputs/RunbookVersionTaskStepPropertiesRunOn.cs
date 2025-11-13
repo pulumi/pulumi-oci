@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskStepPropertiesRunOn
     {
         /// <summary>
-        /// (Updatable) Build control flow conditions that
-        /// determine the relevance of the task execution.
+        /// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
@@ -27,8 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// (Updatable) Previous Task
-        /// Instance Details
+        /// (Updatable) Previous Task Instance Details
         /// </summary>
         public readonly ImmutableArray<Outputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail> PreviousTaskInstanceDetails;
 

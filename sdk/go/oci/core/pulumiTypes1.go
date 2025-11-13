@@ -13,6 +13,530 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+	Ipv6address string `pulumi:"ipv6address"`
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled bool `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled pulumi.BoolInput `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
+	return o
+}
+
+// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption) bool {
+		return v.AreLegacyImdsEndpointsDisabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType string `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware string `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType string `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware pulumi.StringInput `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
+	return o
+}
+
+// Emulation type for the boot volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
+		return v.BootVolumeType
+	}).(pulumi.StringOutput)
+}
+
+// Firmware used to boot VM. Select the option that matches your operating system.
+// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) Firmware() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
+		return v.Firmware
+	}).(pulumi.StringOutput)
+}
+
+// Whether to enable consistent volume naming feature. Defaults to false.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
+		return v.IsConsistentVolumeNamingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
+		return v.IsPvEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Emulation type for the physical network interface card (NIC).
+// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// Emulation type for volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
+		return v.RemoteDataVolumeType
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType string `pulumi:"licenseType"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
+	return o
+}
+
+// License Type for the OS license.
+// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig) string {
+		return v.LicenseType
+	}).(pulumi.StringOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput)
+}
+
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail struct {
 	// The OCID of the compute host group. This is only available for dedicated capacity customers.
 	ComputeHostGroupId string `pulumi:"computeHostGroupId"`
@@ -40171,6 +40695,14 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{})
@@ -40745,6 +41277,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput{})

@@ -4062,6 +4062,7 @@ type GetFusionEnvironmentAdminUsersAdminUserCollectionItem struct {
 	Items []GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem `pulumi:"items"`
 	// Admin users last name
 	LastName string `pulumi:"lastName"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password string `pulumi:"password"`
 	// Admin username
 	Username string `pulumi:"username"`
@@ -4090,6 +4091,7 @@ type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs struct {
 	Items GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput `pulumi:"items"`
 	// Admin users last name
 	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 	Password pulumi.StringInput `pulumi:"password"`
 	// Admin username
 	Username pulumi.StringInput `pulumi:"username"`
@@ -4177,6 +4179,7 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) LastName() 
 	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.LastName }).(pulumi.StringOutput)
 }
 
+// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Password }).(pulumi.StringOutput)
 }
@@ -4440,8 +4443,9 @@ type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail struct {
 	EmailAddress string `pulumi:"emailAddress"`
 	FirstName    string `pulumi:"firstName"`
 	LastName     string `pulumi:"lastName"`
-	Password     string `pulumi:"password"`
-	Username     string `pulumi:"username"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
+	Password string `pulumi:"password"`
+	Username string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput values.
@@ -4459,8 +4463,9 @@ type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs struct {
 	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
 	FirstName    pulumi.StringInput `pulumi:"firstName"`
 	LastName     pulumi.StringInput `pulumi:"lastName"`
-	Password     pulumi.StringInput `pulumi:"password"`
-	Username     pulumi.StringInput `pulumi:"username"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
+	Password pulumi.StringInput `pulumi:"password"`
+	Username pulumi.StringInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
@@ -4526,6 +4531,7 @@ func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) LastNa
 	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.LastName }).(pulumi.StringOutput)
 }
 
+// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.Password }).(pulumi.StringOutput)
 }
@@ -9669,8 +9675,9 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironment
 	EmailAddress string `pulumi:"emailAddress"`
 	FirstName    string `pulumi:"firstName"`
 	LastName     string `pulumi:"lastName"`
-	Password     string `pulumi:"password"`
-	Username     string `pulumi:"username"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
+	Password string `pulumi:"password"`
+	Username string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput values.
@@ -9688,8 +9695,9 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironment
 	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
 	FirstName    pulumi.StringInput `pulumi:"firstName"`
 	LastName     pulumi.StringInput `pulumi:"lastName"`
-	Password     pulumi.StringInput `pulumi:"password"`
-	Username     pulumi.StringInput `pulumi:"username"`
+	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
+	Password pulumi.StringInput `pulumi:"password"`
+	Username pulumi.StringInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
@@ -9761,6 +9769,7 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 	}).(pulumi.StringOutput)
 }
 
+// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
 		return v.Password

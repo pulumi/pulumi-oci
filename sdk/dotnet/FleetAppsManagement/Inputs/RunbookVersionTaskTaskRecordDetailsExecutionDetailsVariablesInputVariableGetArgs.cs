@@ -13,8 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The description of the
-        /// argument.
+        /// (Updatable) The description of the argument.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

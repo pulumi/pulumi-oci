@@ -19,8 +19,7 @@ import javax.annotation.Nullable;
 public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
     private @Nullable String catalogId;
     /**
-     * @return (Updatable) Optional command to execute the content.
-     * You can provide any commands/arguments that can&#39;t be part of the script.
+     * @return (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     private @Nullable String command;
@@ -35,8 +34,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
      */
     private @Nullable RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent content;
     /**
-     * @return (Updatable) Credentials required for executing the
-     * task.
+     * @return (Updatable) Credentials required for executing the task.
      * 
      */
     private @Nullable List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential> credentials;
@@ -51,32 +49,32 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
      */
     private String executionType;
     /**
-     * @return (Updatable) Is the Content an executable
-     * file?
+     * @return (Updatable) Is the Content an executable file?
      * 
      */
     private @Nullable Boolean isExecutableContent;
     /**
-     * @return (Updatable) Is the script locked to prevent changes
-     * directly in Object Storage?
+     * @return (Updatable) Is the script locked to prevent changes directly in Object Storage?
      * 
      */
     private @Nullable Boolean isLocked;
     /**
-     * @return (Updatable) Is read output
-     * variable enabled
+     * @return (Updatable) Is read output variable enabled
      * 
      */
     private @Nullable Boolean isReadOutputVariableEnabled;
     /**
-     * @return (Updatable) OCID of the compartment to
-     * which the resource belongs to.
+     * @return (Updatable) The list of system variables.
+     * 
+     */
+    private @Nullable List<String> systemVariables;
+    /**
+     * @return (Updatable) OCID of the compartment to which the resource belongs to.
      * 
      */
     private @Nullable String targetCompartmentId;
     /**
-     * @return (Updatable) The variable of the task. At least one
-     * of the dynamicArguments or output needs to be provided.
+     * @return (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     private @Nullable RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables variables;
@@ -86,8 +84,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
         return Optional.ofNullable(this.catalogId);
     }
     /**
-     * @return (Updatable) Optional command to execute the content.
-     * You can provide any commands/arguments that can&#39;t be part of the script.
+     * @return (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
      * 
      */
     public Optional<String> command() {
@@ -108,8 +105,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
         return Optional.ofNullable(this.content);
     }
     /**
-     * @return (Updatable) Credentials required for executing the
-     * task.
+     * @return (Updatable) Credentials required for executing the task.
      * 
      */
     public List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential> credentials() {
@@ -130,40 +126,42 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
         return this.executionType;
     }
     /**
-     * @return (Updatable) Is the Content an executable
-     * file?
+     * @return (Updatable) Is the Content an executable file?
      * 
      */
     public Optional<Boolean> isExecutableContent() {
         return Optional.ofNullable(this.isExecutableContent);
     }
     /**
-     * @return (Updatable) Is the script locked to prevent changes
-     * directly in Object Storage?
+     * @return (Updatable) Is the script locked to prevent changes directly in Object Storage?
      * 
      */
     public Optional<Boolean> isLocked() {
         return Optional.ofNullable(this.isLocked);
     }
     /**
-     * @return (Updatable) Is read output
-     * variable enabled
+     * @return (Updatable) Is read output variable enabled
      * 
      */
     public Optional<Boolean> isReadOutputVariableEnabled() {
         return Optional.ofNullable(this.isReadOutputVariableEnabled);
     }
     /**
-     * @return (Updatable) OCID of the compartment to
-     * which the resource belongs to.
+     * @return (Updatable) The list of system variables.
+     * 
+     */
+    public List<String> systemVariables() {
+        return this.systemVariables == null ? List.of() : this.systemVariables;
+    }
+    /**
+     * @return (Updatable) OCID of the compartment to which the resource belongs to.
      * 
      */
     public Optional<String> targetCompartmentId() {
         return Optional.ofNullable(this.targetCompartmentId);
     }
     /**
-     * @return (Updatable) The variable of the task. At least one
-     * of the dynamicArguments or output needs to be provided.
+     * @return (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
      * 
      */
     public Optional<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables> variables() {
@@ -189,6 +187,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
         private @Nullable Boolean isExecutableContent;
         private @Nullable Boolean isLocked;
         private @Nullable Boolean isReadOutputVariableEnabled;
+        private @Nullable List<String> systemVariables;
         private @Nullable String targetCompartmentId;
         private @Nullable RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables variables;
         public Builder() {}
@@ -204,6 +203,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
     	      this.isExecutableContent = defaults.isExecutableContent;
     	      this.isLocked = defaults.isLocked;
     	      this.isReadOutputVariableEnabled = defaults.isReadOutputVariableEnabled;
+    	      this.systemVariables = defaults.systemVariables;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.variables = defaults.variables;
         }
@@ -274,6 +274,15 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder systemVariables(@Nullable List<String> systemVariables) {
+
+            this.systemVariables = systemVariables;
+            return this;
+        }
+        public Builder systemVariables(String... systemVariables) {
+            return systemVariables(List.of(systemVariables));
+        }
+        @CustomType.Setter
         public Builder targetCompartmentId(@Nullable String targetCompartmentId) {
 
             this.targetCompartmentId = targetCompartmentId;
@@ -297,6 +306,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
             _resultValue.isExecutableContent = isExecutableContent;
             _resultValue.isLocked = isLocked;
             _resultValue.isReadOutputVariableEnabled = isReadOutputVariableEnabled;
+            _resultValue.systemVariables = systemVariables;
             _resultValue.targetCompartmentId = targetCompartmentId;
             _resultValue.variables = variables;
             return _resultValue;

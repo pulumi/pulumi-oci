@@ -31,16 +31,14 @@ public final class RunbookVersionTaskStepPropertiesNotificationPreferencesArgs e
     }
 
     /**
-     * (Updatable) Enables or disables notification on Task
-     * Failures.
+     * (Updatable) Enables or disables notification on Task Failures.
      * 
      */
     @Import(name="shouldNotifyOnTaskFailure")
     private @Nullable Output<Boolean> shouldNotifyOnTaskFailure;
 
     /**
-     * @return (Updatable) Enables or disables notification on Task
-     * Failures.
+     * @return (Updatable) Enables or disables notification on Task Failures.
      * 
      */
     public Optional<Output<Boolean>> shouldNotifyOnTaskFailure() {
@@ -110,8 +108,7 @@ public final class RunbookVersionTaskStepPropertiesNotificationPreferencesArgs e
         }
 
         /**
-         * @param shouldNotifyOnTaskFailure (Updatable) Enables or disables notification on Task
-         * Failures.
+         * @param shouldNotifyOnTaskFailure (Updatable) Enables or disables notification on Task Failures.
          * 
          * @return builder
          * 
@@ -122,8 +119,7 @@ public final class RunbookVersionTaskStepPropertiesNotificationPreferencesArgs e
         }
 
         /**
-         * @param shouldNotifyOnTaskFailure (Updatable) Enables or disables notification on Task
-         * Failures.
+         * @param shouldNotifyOnTaskFailure (Updatable) Enables or disables notification on Task Failures.
          * 
          * @return builder
          * 

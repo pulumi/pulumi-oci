@@ -13,8 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class RunbookVersionTaskStepPropertiesRunOnArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Build control flow conditions that
-        /// determine the relevance of the task execution.
+        /// (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
@@ -35,8 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs>? _previousTaskInstanceDetails;
 
         /// <summary>
-        /// (Updatable) Previous Task
-        /// Instance Details
+        /// (Updatable) Previous Task Instance Details
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs> PreviousTaskInstanceDetails
         {

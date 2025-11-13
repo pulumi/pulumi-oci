@@ -25,6 +25,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
         /// inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
         /// Executes tasks across resources in a rolling order.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public readonly string Type;
 

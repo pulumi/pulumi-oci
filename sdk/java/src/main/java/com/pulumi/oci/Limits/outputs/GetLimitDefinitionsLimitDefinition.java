@@ -23,6 +23,11 @@ public final class GetLimitDefinitionsLimitDefinition {
      */
     private String description;
     /**
+     * @return An array of subscription types that support ExternalLocations.
+     * 
+     */
+    private List<String> externalLocationSupportedSubscriptions;
+    /**
      * @return Indicates if the limit has been deprecated.
      * 
      */
@@ -63,7 +68,7 @@ public final class GetLimitDefinitionsLimitDefinition {
      */
     private List<String> supportedQuotaFamilies;
     /**
-     * @return An array of subscription types supported by the limit. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * @return An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
      * 
      */
     private List<String> supportedSubscriptions;
@@ -82,6 +87,13 @@ public final class GetLimitDefinitionsLimitDefinition {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return An array of subscription types that support ExternalLocations.
+     * 
+     */
+    public List<String> externalLocationSupportedSubscriptions() {
+        return this.externalLocationSupportedSubscriptions;
     }
     /**
      * @return Indicates if the limit has been deprecated.
@@ -140,7 +152,7 @@ public final class GetLimitDefinitionsLimitDefinition {
         return this.supportedQuotaFamilies;
     }
     /**
-     * @return An array of subscription types supported by the limit. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * @return An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
      * 
      */
     public List<String> supportedSubscriptions() {
@@ -158,6 +170,7 @@ public final class GetLimitDefinitionsLimitDefinition {
     public static final class Builder {
         private Boolean areQuotasSupported;
         private String description;
+        private List<String> externalLocationSupportedSubscriptions;
         private Boolean isDeprecated;
         private Boolean isDynamic;
         private Boolean isEligibleForLimitIncrease;
@@ -172,6 +185,7 @@ public final class GetLimitDefinitionsLimitDefinition {
     	      Objects.requireNonNull(defaults);
     	      this.areQuotasSupported = defaults.areQuotasSupported;
     	      this.description = defaults.description;
+    	      this.externalLocationSupportedSubscriptions = defaults.externalLocationSupportedSubscriptions;
     	      this.isDeprecated = defaults.isDeprecated;
     	      this.isDynamic = defaults.isDynamic;
     	      this.isEligibleForLimitIncrease = defaults.isEligibleForLimitIncrease;
@@ -198,6 +212,17 @@ public final class GetLimitDefinitionsLimitDefinition {
             }
             this.description = description;
             return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocationSupportedSubscriptions(List<String> externalLocationSupportedSubscriptions) {
+            if (externalLocationSupportedSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "externalLocationSupportedSubscriptions");
+            }
+            this.externalLocationSupportedSubscriptions = externalLocationSupportedSubscriptions;
+            return this;
+        }
+        public Builder externalLocationSupportedSubscriptions(String... externalLocationSupportedSubscriptions) {
+            return externalLocationSupportedSubscriptions(List.of(externalLocationSupportedSubscriptions));
         }
         @CustomType.Setter
         public Builder isDeprecated(Boolean isDeprecated) {
@@ -281,6 +306,7 @@ public final class GetLimitDefinitionsLimitDefinition {
             final var _resultValue = new GetLimitDefinitionsLimitDefinition();
             _resultValue.areQuotasSupported = areQuotasSupported;
             _resultValue.description = description;
+            _resultValue.externalLocationSupportedSubscriptions = externalLocationSupportedSubscriptions;
             _resultValue.isDeprecated = isDeprecated;
             _resultValue.isDynamic = isDynamic;
             _resultValue.isEligibleForLimitIncrease = isEligibleForLimitIncrease;

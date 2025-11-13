@@ -30,6 +30,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         ClusterOptionId = testClusterOptionOciContainerengineClusterOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         ShouldListAllPatchVersions = clusterOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         ClusterOptionId = testClusterOptionOciContainerengineClusterOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         ShouldListAllPatchVersions = clusterOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         ClusterOptionId = testClusterOptionOciContainerengineClusterOption.Id,
         ///         CompartmentId = compartmentId,
+        ///         ShouldListAllPatchVersions = clusterOptionShouldListAllPatchVersions,
         ///     });
         /// 
         /// });
@@ -108,6 +111,12 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
 
+        /// <summary>
+        /// Option to show all kubernetes patch versions
+        /// </summary>
+        [Input("shouldListAllPatchVersions")]
+        public bool? ShouldListAllPatchVersions { get; set; }
+
         public GetClusterOptionArgs()
         {
         }
@@ -127,6 +136,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// Option to show all kubernetes patch versions
+        /// </summary>
+        [Input("shouldListAllPatchVersions")]
+        public Input<bool>? ShouldListAllPatchVersions { get; set; }
 
         public GetClusterOptionInvokeArgs()
         {
@@ -152,6 +167,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Available Kubernetes versions.
         /// </summary>
         public readonly ImmutableArray<string> KubernetesVersions;
+        public readonly bool? ShouldListAllPatchVersions;
 
         [OutputConstructor]
         private GetClusterOptionResult(
@@ -163,13 +179,16 @@ namespace Pulumi.Oci.ContainerEngine
 
             string id,
 
-            ImmutableArray<string> kubernetesVersions)
+            ImmutableArray<string> kubernetesVersions,
+
+            bool? shouldListAllPatchVersions)
         {
             ClusterOptionId = clusterOptionId;
             ClusterPodNetworkOptions = clusterPodNetworkOptions;
             CompartmentId = compartmentId;
             Id = id;
             KubernetesVersions = kubernetesVersions;
+            ShouldListAllPatchVersions = shouldListAllPatchVersions;
         }
     }
 }

@@ -14,6 +14,7 @@ from .fleet_property import *
 from .fleet_resource import *
 from .get_announcements import *
 from .get_catalog_item import *
+from .get_catalog_item_variables_definition import *
 from .get_catalog_items import *
 from .get_compliance_policies import *
 from .get_compliance_policy import *
@@ -22,6 +23,7 @@ from .get_compliance_policy_rules import *
 from .get_compliance_record_counts import *
 from .get_compliance_records import *
 from .get_fleet import *
+from .get_fleet_compliance import *
 from .get_fleet_compliance_report import *
 from .get_fleet_credential import *
 from .get_fleet_credentials import *
@@ -32,6 +34,7 @@ from .get_fleet_resource import *
 from .get_fleet_resources import *
 from .get_fleet_targets import *
 from .get_fleets import *
+from .get_installed_patches import *
 from .get_inventory_records import *
 from .get_inventory_resources import *
 from .get_maintenance_window import *
@@ -47,7 +50,13 @@ from .get_properties import *
 from .get_property import *
 from .get_provision import *
 from .get_provisions import *
+from .get_recommended_patches import *
+from .get_report_metadata import *
 from .get_runbook import *
+from .get_runbook_export import *
+from .get_runbook_export_statuses import *
+from .get_runbook_import import *
+from .get_runbook_import_statuses import *
 from .get_runbook_version import *
 from .get_runbook_versions import *
 from .get_runbooks import *
@@ -58,6 +67,8 @@ from .get_scheduler_executions import *
 from .get_scheduler_job_counts import *
 from .get_scheduler_job_job_activity_resources import *
 from .get_scheduler_job_job_activity_steps import *
+from .get_target_components import *
+from .get_target_properties import *
 from .get_task_record import *
 from .get_task_records import *
 from .maintenance_window import *

@@ -56,10 +56,6 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
 
         /// <summary>
         /// The version of the runbook.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

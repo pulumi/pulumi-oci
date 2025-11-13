@@ -19,8 +19,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The details of the output variable that will be used for
-        /// mapping.
+        /// (Updatable) The details of the output variable that will be used for mapping.
         /// </summary>
         [Input("outputVariableDetails", required: true)]
         public Input<Inputs.RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs> OutputVariableDetails { get; set; } = null!;

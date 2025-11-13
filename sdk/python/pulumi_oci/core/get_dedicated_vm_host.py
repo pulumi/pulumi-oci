@@ -27,13 +27,16 @@ class GetDedicatedVmHostResult:
     """
     A collection of values returned by getDedicatedVmHost.
     """
-    def __init__(__self__, availability_domain=None, capacity_bins=None, compartment_id=None, compute_bare_metal_host_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
+    def __init__(__self__, availability_domain=None, capacity_bins=None, capacity_config=None, compartment_id=None, compute_bare_metal_host_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, is_memory_encryption_enabled=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
         if capacity_bins and not isinstance(capacity_bins, list):
             raise TypeError("Expected argument 'capacity_bins' to be a list")
         pulumi.set(__self__, "capacity_bins", capacity_bins)
+        if capacity_config and not isinstance(capacity_config, str):
+            raise TypeError("Expected argument 'capacity_config' to be a str")
+        pulumi.set(__self__, "capacity_config", capacity_config)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +64,9 @@ class GetDedicatedVmHostResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_memory_encryption_enabled and not isinstance(is_memory_encryption_enabled, bool):
+            raise TypeError("Expected argument 'is_memory_encryption_enabled' to be a bool")
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if placement_constraint_details and not isinstance(placement_constraint_details, list):
             raise TypeError("Expected argument 'placement_constraint_details' to be a list")
         pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
@@ -95,9 +101,17 @@ class GetDedicatedVmHostResult:
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostCapacityBinResult']:
         """
-        A list of total and remaining CPU & memory per capacity bucket.
+        A list of total and remaining CPU and memory per capacity bucket.
         """
         return pulumi.get(self, "capacity_bins")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfig")
+    def capacity_config(self) -> _builtins.str:
+        """
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+        """
+        return pulumi.get(self, "capacity_config")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -111,7 +125,7 @@ class GetDedicatedVmHostResult:
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> _builtins.str:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -169,10 +183,18 @@ class GetDedicatedVmHostResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> _builtins.bool:
+        """
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
     def placement_constraint_details(self) -> Sequence['outputs.GetDedicatedVmHostPlacementConstraintDetailResult']:
         """
-        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
@@ -233,6 +255,7 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
         return GetDedicatedVmHostResult(
             availability_domain=self.availability_domain,
             capacity_bins=self.capacity_bins,
+            capacity_config=self.capacity_config,
             compartment_id=self.compartment_id,
             compute_bare_metal_host_id=self.compute_bare_metal_host_id,
             dedicated_vm_host_id=self.dedicated_vm_host_id,
@@ -242,6 +265,7 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
             fault_domain=self.fault_domain,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_memory_encryption_enabled=self.is_memory_encryption_enabled,
             placement_constraint_details=self.placement_constraint_details,
             remaining_memory_in_gbs=self.remaining_memory_in_gbs,
             remaining_ocpus=self.remaining_ocpus,
@@ -278,6 +302,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[_builtins.str] = None,
     return AwaitableGetDedicatedVmHostResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         capacity_bins=pulumi.get(__ret__, 'capacity_bins'),
+        capacity_config=pulumi.get(__ret__, 'capacity_config'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_bare_metal_host_id=pulumi.get(__ret__, 'compute_bare_metal_host_id'),
         dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
@@ -287,6 +312,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[_builtins.str] = None,
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_memory_encryption_enabled=pulumi.get(__ret__, 'is_memory_encryption_enabled'),
         placement_constraint_details=pulumi.get(__ret__, 'placement_constraint_details'),
         remaining_memory_in_gbs=pulumi.get(__ret__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__ret__, 'remaining_ocpus'),
@@ -320,6 +346,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[_bu
     return __ret__.apply(lambda __response__: GetDedicatedVmHostResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         capacity_bins=pulumi.get(__response__, 'capacity_bins'),
+        capacity_config=pulumi.get(__response__, 'capacity_config'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_bare_metal_host_id=pulumi.get(__response__, 'compute_bare_metal_host_id'),
         dedicated_vm_host_id=pulumi.get(__response__, 'dedicated_vm_host_id'),
@@ -329,6 +356,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[_bu
         fault_domain=pulumi.get(__response__, 'fault_domain'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_memory_encryption_enabled=pulumi.get(__response__, 'is_memory_encryption_enabled'),
         placement_constraint_details=pulumi.get(__response__, 'placement_constraint_details'),
         remaining_memory_in_gbs=pulumi.get(__response__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__response__, 'remaining_ocpus'),

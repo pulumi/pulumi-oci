@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+ * Includes a full list of resource limits belonging to a given service.
+ * If the subscription ID is provided, the limit value for the subscription will be returned.
  *
  * ## Example Usage
  *
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,
+ *     externalLocation: limitValueExternalLocation,
  *     name: limitValueName,
  *     scopeType: limitValueScopeType,
  *     subscriptionId: subscriptionOcid,
@@ -32,6 +34,7 @@ export function getLimitValues(args: GetLimitValuesArgs, opts?: pulumi.InvokeOpt
     return pulumi.runtime.invoke("oci:Limits/getLimitValues:getLimitValues", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "externalLocation": args.externalLocation,
         "filters": args.filters,
         "name": args.name,
         "scopeType": args.scopeType,
@@ -52,6 +55,10 @@ export interface GetLimitValuesArgs {
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: string;
+    /**
+     * External cloud provider location
+     */
+    externalLocation?: string;
     filters?: inputs.Limits.GetLimitValuesFilter[];
     /**
      * Optional field, can be used to see a specific resource limit value.
@@ -66,7 +73,7 @@ export interface GetLimitValuesArgs {
      */
     serviceName: string;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: string;
 }
@@ -80,6 +87,7 @@ export interface GetLimitValuesResult {
      */
     readonly availabilityDomain?: string;
     readonly compartmentId: string;
+    readonly externalLocation?: string;
     readonly filters?: outputs.Limits.GetLimitValuesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -103,7 +111,8 @@ export interface GetLimitValuesResult {
 /**
  * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+ * Includes a full list of resource limits belonging to a given service.
+ * If the subscription ID is provided, the limit value for the subscription will be returned.
  *
  * ## Example Usage
  *
@@ -115,6 +124,7 @@ export interface GetLimitValuesResult {
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,
+ *     externalLocation: limitValueExternalLocation,
  *     name: limitValueName,
  *     scopeType: limitValueScopeType,
  *     subscriptionId: subscriptionOcid,
@@ -126,6 +136,7 @@ export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulu
     return pulumi.runtime.invokeOutput("oci:Limits/getLimitValues:getLimitValues", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "externalLocation": args.externalLocation,
         "filters": args.filters,
         "name": args.name,
         "scopeType": args.scopeType,
@@ -146,6 +157,10 @@ export interface GetLimitValuesOutputArgs {
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * External cloud provider location
+     */
+    externalLocation?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetLimitValuesFilterArgs>[]>;
     /**
      * Optional field, can be used to see a specific resource limit value.
@@ -160,7 +175,7 @@ export interface GetLimitValuesOutputArgs {
      */
     serviceName: pulumi.Input<string>;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: pulumi.Input<string>;
 }

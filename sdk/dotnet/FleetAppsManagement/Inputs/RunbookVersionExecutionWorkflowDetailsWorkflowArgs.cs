@@ -31,7 +31,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Workflow Group Details.
+        /// (Updatable) Workflow Group  Details.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

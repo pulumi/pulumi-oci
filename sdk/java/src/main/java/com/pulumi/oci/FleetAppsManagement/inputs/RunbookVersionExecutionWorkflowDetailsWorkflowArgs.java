@@ -47,14 +47,14 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowArgs extends co
     }
 
     /**
-     * (Updatable) Workflow Group Details.
+     * (Updatable) Workflow Group  Details.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Workflow Group Details.
+     * @return (Updatable) Workflow Group  Details.
      * 
      */
     public Output<String> type() {
@@ -140,7 +140,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowArgs extends co
         }
 
         /**
-         * @param type (Updatable) Workflow Group Details.
+         * @param type (Updatable) Workflow Group  Details.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowArgs extends co
         }
 
         /**
-         * @param type (Updatable) Workflow Group Details.
+         * @param type (Updatable) Workflow Group  Details.
          * 
          * @return builder
          * 

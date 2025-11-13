@@ -36,6 +36,7 @@ namespace Pulumi.Oci.FusionApps.Inputs
         /// <summary>
         /// The password for the administrator.
         /// </summary>
+        [Obsolete(@"The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.")]
         public Input<string>? Password
         {
             get => _password;

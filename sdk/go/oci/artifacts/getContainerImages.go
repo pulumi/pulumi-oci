@@ -33,6 +33,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(containerImageCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(containerImageDisplayName),
+//				ImageDigest:            pulumi.StringRef(containerImageImageDigest),
 //				ImageId:                pulumi.StringRef(testImage.Id),
 //				IsVersioned:            pulumi.BoolRef(containerImageIsVersioned),
 //				RepositoryId:           pulumi.StringRef(testRepository.Id),
@@ -67,6 +68,8 @@ type GetContainerImagesArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetContainerImagesFilter `pulumi:"filters"`
+	// The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+	ImageDigest *string `pulumi:"imageDigest"`
 	// A filter to return a container image summary only for the specified container image OCID.
 	ImageId *string `pulumi:"imageId"`
 	// A filter to return container images based on whether there are any associated versions.
@@ -93,6 +96,7 @@ type GetContainerImagesResult struct {
 	Filters     []GetContainerImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id          string  `pulumi:"id"`
+	ImageDigest *string `pulumi:"imageDigest"`
 	ImageId     *string `pulumi:"imageId"`
 	IsVersioned *bool   `pulumi:"isVersioned"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
@@ -123,6 +127,8 @@ type GetContainerImagesOutputArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetContainerImagesFilterArrayInput `pulumi:"filters"`
+	// The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
 	// A filter to return a container image summary only for the specified container image OCID.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// A filter to return container images based on whether there are any associated versions.
@@ -184,6 +190,10 @@ func (o GetContainerImagesResultOutput) Filters() GetContainerImagesFilterArrayO
 // The provider-assigned unique ID for this managed resource.
 func (o GetContainerImagesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerImagesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetContainerImagesResultOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesResult) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
 }
 
 func (o GetContainerImagesResultOutput) ImageId() pulumi.StringPtrOutput {

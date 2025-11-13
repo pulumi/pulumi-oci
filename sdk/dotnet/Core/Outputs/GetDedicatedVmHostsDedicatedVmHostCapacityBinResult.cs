@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult
     {
+        /// <summary>
+        /// Zero-based index for the corresponding capacity bucket.
+        /// </summary>
         public readonly int CapacityIndex;
         /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
@@ -22,6 +25,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// The current available OCPUs of the dedicated VM host.
         /// </summary>
         public readonly double RemainingOcpus;
+        /// <summary>
+        /// List of VMI shapes supported on each capacity bucket.
+        /// </summary>
         public readonly ImmutableArray<string> SupportedShapes;
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.

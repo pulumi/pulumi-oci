@@ -52,6 +52,7 @@ import (
 //						IsExecutableContent:         pulumi.Any(taskRecordDetailsExecutionDetailsIsExecutableContent),
 //						IsLocked:                    pulumi.Any(taskRecordDetailsExecutionDetailsIsLocked),
 //						IsReadOutputVariableEnabled: pulumi.Any(taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled),
+//						SystemVariables:             pulumi.Any(taskRecordDetailsExecutionDetailsSystemVariables),
 //						TargetCompartmentId:         pulumi.Any(testCompartment.Id),
 //						Variables: &fleetappsmanagement.TaskRecordDetailsExecutionDetailsVariablesArgs{
 //							InputVariables: fleetappsmanagement.TaskRecordDetailsExecutionDetailsVariablesInputVariableArray{

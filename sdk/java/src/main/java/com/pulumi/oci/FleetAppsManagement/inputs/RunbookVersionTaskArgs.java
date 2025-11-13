@@ -21,16 +21,14 @@ public final class RunbookVersionTaskArgs extends com.pulumi.resources.ResourceA
     public static final RunbookVersionTaskArgs Empty = new RunbookVersionTaskArgs();
 
     /**
-     * (Updatable) Mapping output variables of previous tasks to the input
-     * variables of the current task.
+     * (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
      * 
      */
     @Import(name="outputVariableMappings")
     private @Nullable Output<List<RunbookVersionTaskOutputVariableMappingArgs>> outputVariableMappings;
 
     /**
-     * @return (Updatable) Mapping output variables of previous tasks to the input
-     * variables of the current task.
+     * @return (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
      * 
      */
     public Optional<Output<List<RunbookVersionTaskOutputVariableMappingArgs>>> outputVariableMappings() {
@@ -110,8 +108,7 @@ public final class RunbookVersionTaskArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input
-         * variables of the current task.
+         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
          * 
          * @return builder
          * 
@@ -122,8 +119,7 @@ public final class RunbookVersionTaskArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input
-         * variables of the current task.
+         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
          * 
          * @return builder
          * 
@@ -133,8 +129,7 @@ public final class RunbookVersionTaskArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input
-         * variables of the current task.
+         * @param outputVariableMappings (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
          * 
          * @return builder
          * 

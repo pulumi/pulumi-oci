@@ -399,11 +399,15 @@ __all__ = [
     'GetCrossConnectsFilterResult',
     'GetDedicatedVmHostCapacityBinResult',
     'GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult',
+    'GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult',
     'GetDedicatedVmHostInstanceShapesFilterResult',
     'GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult',
     'GetDedicatedVmHostInstancesFilterResult',
     'GetDedicatedVmHostPlacementConstraintDetailResult',
     'GetDedicatedVmHostShapesDedicatedVmHostShapeResult',
+    'GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult',
+    'GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResult',
+    'GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigSupportedCapabilityResult',
     'GetDedicatedVmHostShapesFilterResult',
     'GetDedicatedVmHostsDedicatedVmHostResult',
     'GetDedicatedVmHostsDedicatedVmHostCapacityBinResult',
@@ -4103,12 +4107,12 @@ class DedicatedVmHostPlacementConstraintDetails(dict):
                  type: _builtins.str,
                  compute_bare_metal_host_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: Determines the type of targeted launch.
+        :param _builtins.str type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         pulumi.set(__self__, "type", type)
         if compute_bare_metal_host_id is not None:
@@ -4118,7 +4122,7 @@ class DedicatedVmHostPlacementConstraintDetails(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Determines the type of targeted launch.
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
 
 
         ** IMPORTANT **
@@ -4130,7 +4134,7 @@ class DedicatedVmHostPlacementConstraintDetails(dict):
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -26845,13 +26849,16 @@ class GetDedicatedVmHostCapacityBinResult(dict):
 class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
-                 instance_shape_name: _builtins.str):
+                 instance_shape_name: _builtins.str,
+                 supported_capabilities: Sequence['outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult']):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param _builtins.str instance_shape_name: The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
+        :param Sequence['GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityArgs'] supported_capabilities: Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        pulumi.set(__self__, "supported_capabilities", supported_capabilities)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -26868,6 +26875,32 @@ class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult(dict):
         The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
         """
         return pulumi.get(self, "instance_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedCapabilities")
+    def supported_capabilities(self) -> Sequence['outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult']:
+        """
+        Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+        """
+        return pulumi.get(self, "supported_capabilities")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapabilityResult(dict):
+    def __init__(__self__, *,
+                 is_memory_encryption_supported: _builtins.bool):
+        """
+        :param _builtins.bool is_memory_encryption_supported: Whether the DVMH shape could support confidential VMs or the VM instance shape could be confidential.
+        """
+        pulumi.set(__self__, "is_memory_encryption_supported", is_memory_encryption_supported)
+
+    @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionSupported")
+    def is_memory_encryption_supported(self) -> _builtins.bool:
+        """
+        Whether the DVMH shape could support confidential VMs or the VM instance shape could be confidential.
+        """
+        return pulumi.get(self, "is_memory_encryption_supported")
 
 
 @pulumi.output_type
@@ -26903,18 +26936,21 @@ class GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult(dict):
                  availability_domain: _builtins.str,
                  compartment_id: _builtins.str,
                  instance_id: _builtins.str,
+                 is_memory_encryption_enabled: _builtins.bool,
                  shape: _builtins.str,
                  time_created: _builtins.str):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str instance_id: The OCID of the virtual machine instance.
+        :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
         :param _builtins.str shape: The shape of the VM instance.
         :param _builtins.str time_created: The date and time the virtual machine instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -26941,6 +26977,14 @@ class GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult(dict):
         The OCID of the virtual machine instance.
         """
         return pulumi.get(self, "instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> _builtins.bool:
+        """
+        A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
 
     @_builtins.property
     @pulumi.getter
@@ -26992,8 +27036,8 @@ class GetDedicatedVmHostPlacementConstraintDetailResult(dict):
                  compute_bare_metal_host_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
-        :param _builtins.str type: Determines the type of targeted launch.
+        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
         """
         pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         pulumi.set(__self__, "type", type)
@@ -27002,7 +27046,7 @@ class GetDedicatedVmHostPlacementConstraintDetailResult(dict):
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> _builtins.str:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -27010,7 +27054,7 @@ class GetDedicatedVmHostPlacementConstraintDetailResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Determines the type of targeted launch.
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
         """
         return pulumi.get(self, "type")
 
@@ -27019,12 +27063,15 @@ class GetDedicatedVmHostPlacementConstraintDetailResult(dict):
 class GetDedicatedVmHostShapesDedicatedVmHostShapeResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 capacity_configs: Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult'],
                  dedicated_vm_host_shape: _builtins.str):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param _builtins.str dedicated_vm_host_shape: The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
+        :param Sequence['GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigArgs'] capacity_configs: A list of capacity configs that are supported by this dedicated VM host shape.
+        :param _builtins.str dedicated_vm_host_shape: The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "capacity_configs", capacity_configs)
         pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
 
     @_builtins.property
@@ -27036,12 +27083,140 @@ class GetDedicatedVmHostShapesDedicatedVmHostShapeResult(dict):
         return pulumi.get(self, "availability_domain")
 
     @_builtins.property
+    @pulumi.getter(name="capacityConfigs")
+    def capacity_configs(self) -> Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult']:
+        """
+        A list of capacity configs that are supported by this dedicated VM host shape.
+        """
+        return pulumi.get(self, "capacity_configs")
+
+    @_builtins.property
     @pulumi.getter(name="dedicatedVmHostShape")
     def dedicated_vm_host_shape(self) -> _builtins.str:
         """
-        The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
+        The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes).
         """
         return pulumi.get(self, "dedicated_vm_host_shape")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigResult(dict):
+    def __init__(__self__, *,
+                 capacity_bins: Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResult'],
+                 capacity_config_name: _builtins.str,
+                 is_default: _builtins.bool,
+                 supported_capabilities: Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigSupportedCapabilityResult']):
+        """
+        :param Sequence['GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinArgs'] capacity_bins: A list of total CPU and memory per capacity bucket.
+        :param _builtins.str capacity_config_name: The name of each capacity config.
+        :param _builtins.bool is_default: Whether this capacity config is the default config.
+        :param Sequence['GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigSupportedCapabilityArgs'] supported_capabilities: Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+        """
+        pulumi.set(__self__, "capacity_bins", capacity_bins)
+        pulumi.set(__self__, "capacity_config_name", capacity_config_name)
+        pulumi.set(__self__, "is_default", is_default)
+        pulumi.set(__self__, "supported_capabilities", supported_capabilities)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityBins")
+    def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResult']:
+        """
+        A list of total CPU and memory per capacity bucket.
+        """
+        return pulumi.get(self, "capacity_bins")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfigName")
+    def capacity_config_name(self) -> _builtins.str:
+        """
+        The name of each capacity config.
+        """
+        return pulumi.get(self, "capacity_config_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isDefault")
+    def is_default(self) -> _builtins.bool:
+        """
+        Whether this capacity config is the default config.
+        """
+        return pulumi.get(self, "is_default")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedCapabilities")
+    def supported_capabilities(self) -> Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigSupportedCapabilityResult']:
+        """
+        Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+        """
+        return pulumi.get(self, "supported_capabilities")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResult(dict):
+    def __init__(__self__, *,
+                 capacity_index: _builtins.int,
+                 supported_shapes: Sequence[_builtins.str],
+                 total_memory_in_gbs: _builtins.float,
+                 total_ocpus: _builtins.float):
+        """
+        :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param _builtins.float total_memory_in_gbs: The total memory of the capacity bucket, in GBs.
+        :param _builtins.float total_ocpus: The total OCPUs of the capacity bucket.
+        """
+        pulumi.set(__self__, "capacity_index", capacity_index)
+        pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        pulumi.set(__self__, "total_ocpus", total_ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityIndex")
+    def capacity_index(self) -> _builtins.int:
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
+        return pulumi.get(self, "capacity_index")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedShapes")
+    def supported_shapes(self) -> Sequence[_builtins.str]:
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
+        return pulumi.get(self, "supported_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> _builtins.float:
+        """
+        The total memory of the capacity bucket, in GBs.
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalOcpus")
+    def total_ocpus(self) -> _builtins.float:
+        """
+        The total OCPUs of the capacity bucket.
+        """
+        return pulumi.get(self, "total_ocpus")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigSupportedCapabilityResult(dict):
+    def __init__(__self__, *,
+                 is_memory_encryption_supported: _builtins.bool):
+        """
+        :param _builtins.bool is_memory_encryption_supported: Whether the DVMH shape could support confidential VMs or the VM instance shape could be confidential.
+        """
+        pulumi.set(__self__, "is_memory_encryption_supported", is_memory_encryption_supported)
+
+    @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionSupported")
+    def is_memory_encryption_supported(self) -> _builtins.bool:
+        """
+        Whether the DVMH shape could support confidential VMs or the VM instance shape could be confidential.
+        """
+        return pulumi.get(self, "is_memory_encryption_supported")
 
 
 @pulumi.output_type
@@ -27076,6 +27251,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
                  capacity_bins: Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult'],
+                 capacity_config: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_bare_metal_host_id: _builtins.str,
                  dedicated_vm_host_shape: _builtins.str,
@@ -27084,6 +27260,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  fault_domain: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_memory_encryption_enabled: _builtins.bool,
                  placement_constraint_details: Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult'],
                  remaining_memory_in_gbs: _builtins.float,
                  remaining_ocpus: _builtins.float,
@@ -27093,15 +27270,18 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  total_ocpus: _builtins.float):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param Sequence['GetDedicatedVmHostsDedicatedVmHostCapacityBinArgs'] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
+        :param _builtins.str capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         :param _builtins.str dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
-        :param Sequence['GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        :param Sequence['GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
@@ -27111,6 +27291,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_bins", capacity_bins)
+        pulumi.set(__self__, "capacity_config", capacity_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
@@ -27119,6 +27300,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
@@ -27138,7 +27320,18 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult']:
+        """
+        A list of total and remaining CPU and memory per capacity bucket.
+        """
         return pulumi.get(self, "capacity_bins")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityConfig")
+    def capacity_config(self) -> _builtins.str:
+        """
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+        """
+        return pulumi.get(self, "capacity_config")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -27152,7 +27345,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> _builtins.str:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -27205,10 +27398,18 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> _builtins.bool:
+        """
+        A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
     def placement_constraint_details(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult']:
         """
-        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
@@ -27271,8 +27472,10 @@ class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
                  total_memory_in_gbs: _builtins.float,
                  total_ocpus: _builtins.float):
         """
+        :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
+        :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
         :param _builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param _builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
@@ -27286,6 +27489,9 @@ class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityIndex")
     def capacity_index(self) -> _builtins.int:
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
         return pulumi.get(self, "capacity_index")
 
     @_builtins.property
@@ -27307,6 +27513,9 @@ class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
     @_builtins.property
     @pulumi.getter(name="supportedShapes")
     def supported_shapes(self) -> Sequence[_builtins.str]:
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
         return pulumi.get(self, "supported_shapes")
 
     @_builtins.property
@@ -27332,8 +27541,8 @@ class GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult(dict):
                  compute_bare_metal_host_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
-        :param _builtins.str type: Determines the type of targeted launch.
+        :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
         """
         pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         pulumi.set(__self__, "type", type)
@@ -27342,7 +27551,7 @@ class GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult(dict):
     @pulumi.getter(name="computeBareMetalHostId")
     def compute_bare_metal_host_id(self) -> _builtins.str:
         """
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
@@ -27350,7 +27559,7 @@ class GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Determines the type of targeted launch.
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
         """
         return pulumi.get(self, "type")
 

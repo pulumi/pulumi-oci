@@ -17,16 +17,14 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
     public static final RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs Empty = new RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs();
 
     /**
-     * (Updatable) The details of
-     * the output variable that will be used for mapping.
+     * (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     @Import(name="outputVariableDetails")
     private @Nullable Output<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs> outputVariableDetails;
 
     /**
-     * @return (Updatable) The details of
-     * the output variable that will be used for mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     public Optional<Output<RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs>> outputVariableDetails() {
@@ -90,8 +88,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param outputVariableDetails (Updatable) The details of
-         * the output variable that will be used for mapping.
+         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for mapping.
          * 
          * @return builder
          * 
@@ -102,8 +99,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param outputVariableDetails (Updatable) The details of
-         * the output variable that will be used for mapping.
+         * @param outputVariableDetails (Updatable) The details of the output variable that will be used for mapping.
          * 
          * @return builder
          * 

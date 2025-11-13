@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = containerImageCompartmentIdInSubtree,
         ///         DisplayName = containerImageDisplayName,
+        ///         ImageDigest = containerImageImageDigest,
         ///         ImageId = testImage.Id,
         ///         IsVersioned = containerImageIsVersioned,
         ///         RepositoryId = testRepository.Id,
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = containerImageCompartmentIdInSubtree,
         ///         DisplayName = containerImageDisplayName,
+        ///         ImageDigest = containerImageImageDigest,
         ///         ImageId = testImage.Id,
         ///         IsVersioned = containerImageIsVersioned,
         ///         RepositoryId = testRepository.Id,
@@ -99,6 +101,7 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = containerImageCompartmentIdInSubtree,
         ///         DisplayName = containerImageDisplayName,
+        ///         ImageDigest = containerImageImageDigest,
         ///         ImageId = testImage.Id,
         ///         IsVersioned = containerImageIsVersioned,
         ///         RepositoryId = testRepository.Id,
@@ -142,6 +145,12 @@ namespace Pulumi.Oci.Artifacts
             get => _filters ?? (_filters = new List<Inputs.GetContainerImagesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+        /// </summary>
+        [Input("imageDigest")]
+        public string? ImageDigest { get; set; }
 
         /// <summary>
         /// A filter to return a container image summary only for the specified container image OCID.
@@ -214,6 +223,12 @@ namespace Pulumi.Oci.Artifacts
         }
 
         /// <summary>
+        /// The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+        /// </summary>
+        [Input("imageDigest")]
+        public Input<string>? ImageDigest { get; set; }
+
+        /// <summary>
         /// A filter to return a container image summary only for the specified container image OCID.
         /// </summary>
         [Input("imageId")]
@@ -277,6 +292,7 @@ namespace Pulumi.Oci.Artifacts
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ImageDigest;
         public readonly string? ImageId;
         public readonly bool? IsVersioned;
         /// <summary>
@@ -310,6 +326,8 @@ namespace Pulumi.Oci.Artifacts
 
             string id,
 
+            string? imageDigest,
+
             string? imageId,
 
             bool? isVersioned,
@@ -328,6 +346,7 @@ namespace Pulumi.Oci.Artifacts
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            ImageDigest = imageDigest;
             ImageId = imageId;
             IsVersioned = isVersioned;
             RepositoryId = repositoryId;

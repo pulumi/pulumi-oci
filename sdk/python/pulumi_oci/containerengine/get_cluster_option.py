@@ -27,7 +27,7 @@ class GetClusterOptionResult:
     """
     A collection of values returned by getClusterOption.
     """
-    def __init__(__self__, cluster_option_id=None, cluster_pod_network_options=None, compartment_id=None, id=None, kubernetes_versions=None):
+    def __init__(__self__, cluster_option_id=None, cluster_pod_network_options=None, compartment_id=None, id=None, kubernetes_versions=None, should_list_all_patch_versions=None):
         if cluster_option_id and not isinstance(cluster_option_id, str):
             raise TypeError("Expected argument 'cluster_option_id' to be a str")
         pulumi.set(__self__, "cluster_option_id", cluster_option_id)
@@ -43,6 +43,9 @@ class GetClusterOptionResult:
         if kubernetes_versions and not isinstance(kubernetes_versions, list):
             raise TypeError("Expected argument 'kubernetes_versions' to be a list")
         pulumi.set(__self__, "kubernetes_versions", kubernetes_versions)
+        if should_list_all_patch_versions and not isinstance(should_list_all_patch_versions, bool):
+            raise TypeError("Expected argument 'should_list_all_patch_versions' to be a bool")
+        pulumi.set(__self__, "should_list_all_patch_versions", should_list_all_patch_versions)
 
     @_builtins.property
     @pulumi.getter(name="clusterOptionId")
@@ -78,6 +81,11 @@ class GetClusterOptionResult:
         """
         return pulumi.get(self, "kubernetes_versions")
 
+    @_builtins.property
+    @pulumi.getter(name="shouldListAllPatchVersions")
+    def should_list_all_patch_versions(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_list_all_patch_versions")
+
 
 class AwaitableGetClusterOptionResult(GetClusterOptionResult):
     # pylint: disable=using-constant-test
@@ -89,11 +97,13 @@ class AwaitableGetClusterOptionResult(GetClusterOptionResult):
             cluster_pod_network_options=self.cluster_pod_network_options,
             compartment_id=self.compartment_id,
             id=self.id,
-            kubernetes_versions=self.kubernetes_versions)
+            kubernetes_versions=self.kubernetes_versions,
+            should_list_all_patch_versions=self.should_list_all_patch_versions)
 
 
 def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
                        compartment_id: Optional[_builtins.str] = None,
+                       should_list_all_patch_versions: Optional[_builtins.bool] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterOptionResult:
     """
     This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -107,16 +117,19 @@ def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
-        compartment_id=compartment_id)
+        compartment_id=compartment_id,
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
     ```
 
 
     :param _builtins.str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
     :param _builtins.str compartment_id: The OCID of the compartment.
+    :param _builtins.bool should_list_all_patch_versions: Option to show all kubernetes patch versions
     """
     __args__ = dict()
     __args__['clusterOptionId'] = cluster_option_id
     __args__['compartmentId'] = compartment_id
+    __args__['shouldListAllPatchVersions'] = should_list_all_patch_versions
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getClusterOption:getClusterOption', __args__, opts=opts, typ=GetClusterOptionResult).value
 
@@ -125,9 +138,11 @@ def get_cluster_option(cluster_option_id: Optional[_builtins.str] = None,
         cluster_pod_network_options=pulumi.get(__ret__, 'cluster_pod_network_options'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
-        kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'))
+        kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'),
+        should_list_all_patch_versions=pulumi.get(__ret__, 'should_list_all_patch_versions'))
 def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[_builtins.str]] = None,
                               compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                              should_list_all_patch_versions: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterOptionResult]:
     """
     This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -141,16 +156,19 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[_builtins
     import pulumi_oci as oci
 
     test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=test_cluster_option_oci_containerengine_cluster_option["id"],
-        compartment_id=compartment_id)
+        compartment_id=compartment_id,
+        should_list_all_patch_versions=cluster_option_should_list_all_patch_versions)
     ```
 
 
     :param _builtins.str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
     :param _builtins.str compartment_id: The OCID of the compartment.
+    :param _builtins.bool should_list_all_patch_versions: Option to show all kubernetes patch versions
     """
     __args__ = dict()
     __args__['clusterOptionId'] = cluster_option_id
     __args__['compartmentId'] = compartment_id
+    __args__['shouldListAllPatchVersions'] = should_list_all_patch_versions
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterOption:getClusterOption', __args__, opts=opts, typ=GetClusterOptionResult)
     return __ret__.apply(lambda __response__: GetClusterOptionResult(
@@ -158,4 +176,5 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[_builtins
         cluster_pod_network_options=pulumi.get(__response__, 'cluster_pod_network_options'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         id=pulumi.get(__response__, 'id'),
-        kubernetes_versions=pulumi.get(__response__, 'kubernetes_versions')))
+        kubernetes_versions=pulumi.get(__response__, 'kubernetes_versions'),
+        should_list_all_patch_versions=pulumi.get(__response__, 'should_list_all_patch_versions')))

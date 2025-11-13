@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
+ *     packageType: catalogItemPackageType,
  *     shouldListPublicItems: catalogItemShouldListPublicItems,
  *     state: catalogItemState,
  * });
@@ -37,6 +38,7 @@ export function getCatalogItems(args: GetCatalogItemsArgs, opts?: pulumi.InvokeO
         "configSourceType": args.configSourceType,
         "displayName": args.displayName,
         "filters": args.filters,
+        "packageType": args.packageType,
         "shouldListPublicItems": args.shouldListPublicItems,
         "state": args.state,
     }, opts);
@@ -67,6 +69,10 @@ export interface GetCatalogItemsArgs {
      */
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetCatalogItemsFilter[];
+    /**
+     * A filter to return only resources that match the given package type. The state value is case-insensitive.
+     */
+    packageType?: string;
     /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */
@@ -105,6 +111,10 @@ export interface GetCatalogItemsResult {
      */
     readonly id: string;
     /**
+     * Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+     */
+    readonly packageType?: string;
+    /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */
     readonly shouldListPublicItems?: boolean;
@@ -130,6 +140,7 @@ export interface GetCatalogItemsResult {
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
+ *     packageType: catalogItemPackageType,
  *     shouldListPublicItems: catalogItemShouldListPublicItems,
  *     state: catalogItemState,
  * });
@@ -144,6 +155,7 @@ export function getCatalogItemsOutput(args: GetCatalogItemsOutputArgs, opts?: pu
         "configSourceType": args.configSourceType,
         "displayName": args.displayName,
         "filters": args.filters,
+        "packageType": args.packageType,
         "shouldListPublicItems": args.shouldListPublicItems,
         "state": args.state,
     }, opts);
@@ -174,6 +186,10 @@ export interface GetCatalogItemsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCatalogItemsFilterArgs>[]>;
+    /**
+     * A filter to return only resources that match the given package type. The state value is case-insensitive.
+     */
+    packageType?: pulumi.Input<string>;
     /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */

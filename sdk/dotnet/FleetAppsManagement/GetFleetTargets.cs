@@ -34,6 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Product = fleetTargetProduct,
         ///         ResourceDisplayName = fleetTargetResourceDisplayName,
         ///         ResourceId = testResource.Id,
+        ///         State = fleetTargetState,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Product = fleetTargetProduct,
         ///         ResourceDisplayName = fleetTargetResourceDisplayName,
         ///         ResourceId = testResource.Id,
+        ///         State = fleetTargetState,
         ///     });
         /// 
         /// });
@@ -96,6 +98,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Product = fleetTargetProduct,
         ///         ResourceDisplayName = fleetTargetResourceDisplayName,
         ///         ResourceId = testResource.Id,
+        ///         State = fleetTargetState,
         ///     });
         /// 
         /// });
@@ -146,6 +149,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("resourceId")]
         public string? ResourceId { get; set; }
 
+        /// <summary>
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
+        /// </summary>
+        [Input("state")]
+        public string? State { get; set; }
+
         public GetFleetTargetsArgs()
         {
         }
@@ -192,6 +201,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }
 
+        /// <summary>
+        /// A filter to return fleets whose lifecycleState matches the given lifecycleState.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
         public GetFleetTargetsInvokeArgs()
         {
         }
@@ -228,6 +243,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The OCID of the resource.
         /// </summary>
         public readonly string? ResourceId;
+        /// <summary>
+        /// The current state of the FleetTarget.
+        /// </summary>
+        public readonly string? State;
 
         [OutputConstructor]
         private GetFleetTargetsResult(
@@ -245,7 +264,9 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string? resourceDisplayName,
 
-            string? resourceId)
+            string? resourceId,
+
+            string? state)
         {
             DisplayName = displayName;
             Filters = filters;
@@ -255,6 +276,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             Product = product;
             ResourceDisplayName = resourceDisplayName;
             ResourceId = resourceId;
+            State = state;
         }
     }
 }

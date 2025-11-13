@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,6 +32,21 @@ public final class GetNodePoolOptionPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * Filter node pool options by Kubernetes version.
+     * 
+     */
+    @Import(name="nodePoolK8sVersion")
+    private @Nullable String nodePoolK8sVersion;
+
+    /**
+     * @return Filter node pool options by Kubernetes version.
+     * 
+     */
+    public Optional<String> nodePoolK8sVersion() {
+        return Optional.ofNullable(this.nodePoolK8sVersion);
+    }
+
+    /**
      * The id of the option set to retrieve. Use &#34;all&#34; get all options, or use a cluster ID to get options specific to the provided cluster.
      * 
      */
@@ -45,11 +61,60 @@ public final class GetNodePoolOptionPlainArgs extends com.pulumi.resources.Invok
         return this.nodePoolOptionId;
     }
 
+    /**
+     * Filter node pool options by OS architecture.
+     * 
+     */
+    @Import(name="nodePoolOsArch")
+    private @Nullable String nodePoolOsArch;
+
+    /**
+     * @return Filter node pool options by OS architecture.
+     * 
+     */
+    public Optional<String> nodePoolOsArch() {
+        return Optional.ofNullable(this.nodePoolOsArch);
+    }
+
+    /**
+     * Filter node pool options by OS type.
+     * 
+     */
+    @Import(name="nodePoolOsType")
+    private @Nullable String nodePoolOsType;
+
+    /**
+     * @return Filter node pool options by OS type.
+     * 
+     */
+    public Optional<String> nodePoolOsType() {
+        return Optional.ofNullable(this.nodePoolOsType);
+    }
+
+    /**
+     * Option to show all kubernetes patch versions
+     * 
+     */
+    @Import(name="shouldListAllPatchVersions")
+    private @Nullable Boolean shouldListAllPatchVersions;
+
+    /**
+     * @return Option to show all kubernetes patch versions
+     * 
+     */
+    public Optional<Boolean> shouldListAllPatchVersions() {
+        return Optional.ofNullable(this.shouldListAllPatchVersions);
+    }
+
     private GetNodePoolOptionPlainArgs() {}
 
     private GetNodePoolOptionPlainArgs(GetNodePoolOptionPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.nodePoolK8sVersion = $.nodePoolK8sVersion;
         this.nodePoolOptionId = $.nodePoolOptionId;
+        this.nodePoolOsArch = $.nodePoolOsArch;
+        this.nodePoolOsType = $.nodePoolOsType;
+        this.shouldListAllPatchVersions = $.shouldListAllPatchVersions;
     }
 
     public static Builder builder() {
@@ -82,6 +147,17 @@ public final class GetNodePoolOptionPlainArgs extends com.pulumi.resources.Invok
         }
 
         /**
+         * @param nodePoolK8sVersion Filter node pool options by Kubernetes version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolK8sVersion(@Nullable String nodePoolK8sVersion) {
+            $.nodePoolK8sVersion = nodePoolK8sVersion;
+            return this;
+        }
+
+        /**
          * @param nodePoolOptionId The id of the option set to retrieve. Use &#34;all&#34; get all options, or use a cluster ID to get options specific to the provided cluster.
          * 
          * @return builder
@@ -89,6 +165,39 @@ public final class GetNodePoolOptionPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder nodePoolOptionId(String nodePoolOptionId) {
             $.nodePoolOptionId = nodePoolOptionId;
+            return this;
+        }
+
+        /**
+         * @param nodePoolOsArch Filter node pool options by OS architecture.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolOsArch(@Nullable String nodePoolOsArch) {
+            $.nodePoolOsArch = nodePoolOsArch;
+            return this;
+        }
+
+        /**
+         * @param nodePoolOsType Filter node pool options by OS type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolOsType(@Nullable String nodePoolOsType) {
+            $.nodePoolOsType = nodePoolOsType;
+            return this;
+        }
+
+        /**
+         * @param shouldListAllPatchVersions Option to show all kubernetes patch versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldListAllPatchVersions(@Nullable Boolean shouldListAllPatchVersions) {
+            $.shouldListAllPatchVersions = shouldListAllPatchVersions;
             return this;
         }
 

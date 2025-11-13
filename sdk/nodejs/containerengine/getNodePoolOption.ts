@@ -20,6 +20,10 @@ import * as utilities from "../utilities";
  * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
+ *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
+ *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
+ *     nodePoolOsType: nodePoolOptionNodePoolOsType,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -27,7 +31,11 @@ export function getNodePoolOption(args: GetNodePoolOptionArgs, opts?: pulumi.Inv
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", {
         "compartmentId": args.compartmentId,
+        "nodePoolK8sVersion": args.nodePoolK8sVersion,
         "nodePoolOptionId": args.nodePoolOptionId,
+        "nodePoolOsArch": args.nodePoolOsArch,
+        "nodePoolOsType": args.nodePoolOsType,
+        "shouldListAllPatchVersions": args.shouldListAllPatchVersions,
     }, opts);
 }
 
@@ -40,9 +48,25 @@ export interface GetNodePoolOptionArgs {
      */
     compartmentId?: string;
     /**
+     * Filter node pool options by Kubernetes version.
+     */
+    nodePoolK8sVersion?: string;
+    /**
      * The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
      */
     nodePoolOptionId: string;
+    /**
+     * Filter node pool options by OS architecture.
+     */
+    nodePoolOsArch?: string;
+    /**
+     * Filter node pool options by OS type.
+     */
+    nodePoolOsType?: string;
+    /**
+     * Option to show all kubernetes patch versions
+     */
+    shouldListAllPatchVersions?: boolean;
 }
 
 /**
@@ -62,11 +86,15 @@ export interface GetNodePoolOptionResult {
      * Available Kubernetes versions.
      */
     readonly kubernetesVersions: string[];
+    readonly nodePoolK8sVersion?: string;
     readonly nodePoolOptionId: string;
+    readonly nodePoolOsArch?: string;
+    readonly nodePoolOsType?: string;
     /**
      * Available shapes for nodes.
      */
     readonly shapes: string[];
+    readonly shouldListAllPatchVersions?: boolean;
     /**
      * Available source of the node.
      */
@@ -86,6 +114,10 @@ export interface GetNodePoolOptionResult {
  * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
+ *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
+ *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
+ *     nodePoolOsType: nodePoolOptionNodePoolOsType,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -93,7 +125,11 @@ export function getNodePoolOptionOutput(args: GetNodePoolOptionOutputArgs, opts?
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getNodePoolOption:getNodePoolOption", {
         "compartmentId": args.compartmentId,
+        "nodePoolK8sVersion": args.nodePoolK8sVersion,
         "nodePoolOptionId": args.nodePoolOptionId,
+        "nodePoolOsArch": args.nodePoolOsArch,
+        "nodePoolOsType": args.nodePoolOsType,
+        "shouldListAllPatchVersions": args.shouldListAllPatchVersions,
     }, opts);
 }
 
@@ -106,7 +142,23 @@ export interface GetNodePoolOptionOutputArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * Filter node pool options by Kubernetes version.
+     */
+    nodePoolK8sVersion?: pulumi.Input<string>;
+    /**
      * The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
      */
     nodePoolOptionId: pulumi.Input<string>;
+    /**
+     * Filter node pool options by OS architecture.
+     */
+    nodePoolOsArch?: pulumi.Input<string>;
+    /**
+     * Filter node pool options by OS type.
+     */
+    nodePoolOsType?: pulumi.Input<string>;
+    /**
+     * Option to show all kubernetes patch versions
+     */
+    shouldListAllPatchVersions?: pulumi.Input<boolean>;
 }

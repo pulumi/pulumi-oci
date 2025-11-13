@@ -28,7 +28,7 @@ class GetInventoryRecordsResult:
     """
     A collection of values returned by getInventoryRecords.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, fleet_id=None, id=None, inventory_record_collections=None, resource_id=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, fleet_id=None, id=None, inventory_record_collections=None, is_details_required=None, resource_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetInventoryRecordsResult:
         if inventory_record_collections and not isinstance(inventory_record_collections, list):
             raise TypeError("Expected argument 'inventory_record_collections' to be a list")
         pulumi.set(__self__, "inventory_record_collections", inventory_record_collections)
+        if is_details_required and not isinstance(is_details_required, bool):
+            raise TypeError("Expected argument 'is_details_required' to be a bool")
+        pulumi.set(__self__, "is_details_required", is_details_required)
         if resource_id and not isinstance(resource_id, str):
             raise TypeError("Expected argument 'resource_id' to be a str")
         pulumi.set(__self__, "resource_id", resource_id)
@@ -91,6 +94,11 @@ class GetInventoryRecordsResult:
         return pulumi.get(self, "inventory_record_collections")
 
     @_builtins.property
+    @pulumi.getter(name="isDetailsRequired")
+    def is_details_required(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_details_required")
+
+    @_builtins.property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "resource_id")
@@ -108,6 +116,7 @@ class AwaitableGetInventoryRecordsResult(GetInventoryRecordsResult):
             fleet_id=self.fleet_id,
             id=self.id,
             inventory_record_collections=self.inventory_record_collections,
+            is_details_required=self.is_details_required,
             resource_id=self.resource_id)
 
 
@@ -115,6 +124,7 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
                           compartment_id_in_subtree: Optional[_builtins.bool] = None,
                           filters: Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]] = None,
                           fleet_id: Optional[_builtins.str] = None,
+                          is_details_required: Optional[_builtins.bool] = None,
                           resource_id: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInventoryRecordsResult:
     """
@@ -131,6 +141,7 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
     test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
         compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
         fleet_id=test_fleet["id"],
+        is_details_required=inventory_record_is_details_required,
         resource_id=test_resource["id"])
     ```
 
@@ -138,6 +149,7 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     :param _builtins.str fleet_id: unique Fleet identifier
+    :param _builtins.bool is_details_required: If set to true, inventory details will be returned.
     :param _builtins.str resource_id: Resource Identifier
     """
     __args__ = dict()
@@ -145,6 +157,7 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
+    __args__['isDetailsRequired'] = is_details_required
     __args__['resourceId'] = resource_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getInventoryRecords:getInventoryRecords', __args__, opts=opts, typ=GetInventoryRecordsResult).value
@@ -156,11 +169,13 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'),
         inventory_record_collections=pulumi.get(__ret__, 'inventory_record_collections'),
+        is_details_required=pulumi.get(__ret__, 'is_details_required'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
 def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]]]] = None,
                                  fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                 is_details_required: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                  resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoryRecordsResult]:
     """
@@ -177,6 +192,7 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
     test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
         compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
         fleet_id=test_fleet["id"],
+        is_details_required=inventory_record_is_details_required,
         resource_id=test_resource["id"])
     ```
 
@@ -184,6 +200,7 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     :param _builtins.str fleet_id: unique Fleet identifier
+    :param _builtins.bool is_details_required: If set to true, inventory details will be returned.
     :param _builtins.str resource_id: Resource Identifier
     """
     __args__ = dict()
@@ -191,6 +208,7 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
+    __args__['isDetailsRequired'] = is_details_required
     __args__['resourceId'] = resource_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getInventoryRecords:getInventoryRecords', __args__, opts=opts, typ=GetInventoryRecordsResult)
@@ -201,4 +219,5 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
         fleet_id=pulumi.get(__response__, 'fleet_id'),
         id=pulumi.get(__response__, 'id'),
         inventory_record_collections=pulumi.get(__response__, 'inventory_record_collections'),
+        is_details_required=pulumi.get(__response__, 'is_details_required'),
         resource_id=pulumi.get(__response__, 'resource_id')))

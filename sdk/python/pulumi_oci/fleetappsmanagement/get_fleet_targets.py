@@ -28,7 +28,7 @@ class GetFleetTargetsResult:
     """
     A collection of values returned by getFleetTargets.
     """
-    def __init__(__self__, display_name=None, filters=None, fleet_id=None, fleet_target_collections=None, id=None, product=None, resource_display_name=None, resource_id=None):
+    def __init__(__self__, display_name=None, filters=None, fleet_id=None, fleet_target_collections=None, id=None, product=None, resource_display_name=None, resource_id=None, state=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -53,6 +53,9 @@ class GetFleetTargetsResult:
         if resource_id and not isinstance(resource_id, str):
             raise TypeError("Expected argument 'resource_id' to be a str")
         pulumi.set(__self__, "resource_id", resource_id)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -112,6 +115,14 @@ class GetFleetTargetsResult:
         """
         return pulumi.get(self, "resource_id")
 
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The current state of the FleetTarget.
+        """
+        return pulumi.get(self, "state")
+
 
 class AwaitableGetFleetTargetsResult(GetFleetTargetsResult):
     # pylint: disable=using-constant-test
@@ -126,7 +137,8 @@ class AwaitableGetFleetTargetsResult(GetFleetTargetsResult):
             id=self.id,
             product=self.product,
             resource_display_name=self.resource_display_name,
-            resource_id=self.resource_id)
+            resource_id=self.resource_id,
+            state=self.state)
 
 
 def get_fleet_targets(display_name: Optional[_builtins.str] = None,
@@ -135,6 +147,7 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
                       product: Optional[_builtins.str] = None,
                       resource_display_name: Optional[_builtins.str] = None,
                       resource_id: Optional[_builtins.str] = None,
+                      state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetTargetsResult:
     """
     This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -151,7 +164,8 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
         display_name=fleet_target_display_name,
         product=fleet_target_product,
         resource_display_name=fleet_target_resource_display_name,
-        resource_id=test_resource["id"])
+        resource_id=test_resource["id"],
+        state=fleet_target_state)
     ```
 
 
@@ -160,6 +174,7 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
     :param _builtins.str product: Product Name.
     :param _builtins.str resource_display_name: Resource Display Name.
     :param _builtins.str resource_id: Resource Identifier
+    :param _builtins.str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,6 +183,7 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
     __args__['product'] = product
     __args__['resourceDisplayName'] = resource_display_name
     __args__['resourceId'] = resource_id
+    __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getFleetTargets:getFleetTargets', __args__, opts=opts, typ=GetFleetTargetsResult).value
 
@@ -179,13 +195,15 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         product=pulumi.get(__ret__, 'product'),
         resource_display_name=pulumi.get(__ret__, 'resource_display_name'),
-        resource_id=pulumi.get(__ret__, 'resource_id'))
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        state=pulumi.get(__ret__, 'state'))
 def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetTargetsFilterArgs', 'GetFleetTargetsFilterArgsDict']]]]] = None,
                              fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
                              product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              resource_display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetTargetsResult]:
     """
     This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -202,7 +220,8 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_built
         display_name=fleet_target_display_name,
         product=fleet_target_product,
         resource_display_name=fleet_target_resource_display_name,
-        resource_id=test_resource["id"])
+        resource_id=test_resource["id"],
+        state=fleet_target_state)
     ```
 
 
@@ -211,6 +230,7 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_built
     :param _builtins.str product: Product Name.
     :param _builtins.str resource_display_name: Resource Display Name.
     :param _builtins.str resource_id: Resource Identifier
+    :param _builtins.str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -219,6 +239,7 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_built
     __args__['product'] = product
     __args__['resourceDisplayName'] = resource_display_name
     __args__['resourceId'] = resource_id
+    __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getFleetTargets:getFleetTargets', __args__, opts=opts, typ=GetFleetTargetsResult)
     return __ret__.apply(lambda __response__: GetFleetTargetsResult(
@@ -229,4 +250,5 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_built
         id=pulumi.get(__response__, 'id'),
         product=pulumi.get(__response__, 'product'),
         resource_display_name=pulumi.get(__response__, 'resource_display_name'),
-        resource_id=pulumi.get(__response__, 'resource_id')))
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state')))

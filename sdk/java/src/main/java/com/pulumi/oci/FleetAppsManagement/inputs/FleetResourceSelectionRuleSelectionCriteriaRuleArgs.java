@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetAppsManagement.inputs.FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +49,21 @@ public final class FleetResourceSelectionRuleSelectionCriteriaRuleArgs extends c
     }
 
     /**
+     * (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Output<Boolean> compartmentIdInSubtree;
+
+    /**
+     * @return (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+     * 
+     */
+    public Optional<Output<Boolean>> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    /**
      * (Updatable) Rule Conditions
      * 
      */
@@ -60,6 +76,21 @@ public final class FleetResourceSelectionRuleSelectionCriteriaRuleArgs extends c
      */
     public Optional<Output<List<FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
+    }
+
+    /**
+     * (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+     * 
+     */
+    @Import(name="matchCondition")
+    private @Nullable Output<String> matchCondition;
+
+    /**
+     * @return (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+     * 
+     */
+    public Optional<Output<String>> matchCondition() {
+        return Optional.ofNullable(this.matchCondition);
     }
 
     /**
@@ -82,7 +113,9 @@ public final class FleetResourceSelectionRuleSelectionCriteriaRuleArgs extends c
     private FleetResourceSelectionRuleSelectionCriteriaRuleArgs(FleetResourceSelectionRuleSelectionCriteriaRuleArgs $) {
         this.basis = $.basis;
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.conditions = $.conditions;
+        this.matchCondition = $.matchCondition;
         this.resourceCompartmentId = $.resourceCompartmentId;
     }
 
@@ -147,6 +180,27 @@ public final class FleetResourceSelectionRuleSelectionCriteriaRuleArgs extends c
         }
 
         /**
+         * @param compartmentIdInSubtree (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Output<Boolean> compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        /**
          * @param conditions (Updatable) Rule Conditions
          * 
          * @return builder
@@ -175,6 +229,27 @@ public final class FleetResourceSelectionRuleSelectionCriteriaRuleArgs extends c
          */
         public Builder conditions(FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs... conditions) {
             return conditions(List.of(conditions));
+        }
+
+        /**
+         * @param matchCondition (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchCondition(@Nullable Output<String> matchCondition) {
+            $.matchCondition = matchCondition;
+            return this;
+        }
+
+        /**
+         * @param matchCondition (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchCondition(String matchCondition) {
+            return matchCondition(Output.of(matchCondition));
         }
 
         /**

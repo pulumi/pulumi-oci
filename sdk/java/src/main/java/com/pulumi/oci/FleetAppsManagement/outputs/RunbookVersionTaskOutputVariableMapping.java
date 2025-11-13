@@ -17,8 +17,7 @@ public final class RunbookVersionTaskOutputVariableMapping {
      */
     private String name;
     /**
-     * @return (Updatable) The details of the output variable that will be used for
-     * mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     private RunbookVersionTaskOutputVariableMappingOutputVariableDetails outputVariableDetails;
@@ -32,8 +31,7 @@ public final class RunbookVersionTaskOutputVariableMapping {
         return this.name;
     }
     /**
-     * @return (Updatable) The details of the output variable that will be used for
-     * mapping.
+     * @return (Updatable) The details of the output variable that will be used for mapping.
      * 
      */
     public RunbookVersionTaskOutputVariableMappingOutputVariableDetails outputVariableDetails() {

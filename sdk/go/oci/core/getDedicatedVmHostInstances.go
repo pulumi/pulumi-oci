@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.GetDedicatedVmHostInstances(ctx, &core.GetDedicatedVmHostInstancesArgs{
-//				CompartmentId:      compartmentId,
-//				DedicatedVmHostId:  testDedicatedVmHost.Id,
-//				AvailabilityDomain: pulumi.StringRef(dedicatedVmHostsInstanceAvailabilityDomain),
+//				CompartmentId:             compartmentId,
+//				DedicatedVmHostId:         testDedicatedVmHost.Id,
+//				AvailabilityDomain:        pulumi.StringRef(dedicatedVmHostsInstanceAvailabilityDomain),
+//				IsMemoryEncryptionEnabled: pulumi.BoolRef(dedicatedVmHostsInstanceIsMemoryEncryptionEnabled),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type GetDedicatedVmHostInstancesArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string                              `pulumi:"dedicatedVmHostId"`
 	Filters           []GetDedicatedVmHostInstancesFilter `pulumi:"filters"`
+	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
 }
 
 // A collection of values returned by getDedicatedVmHostInstances.
@@ -75,6 +78,8 @@ type GetDedicatedVmHostInstancesResult struct {
 	Filters                  []GetDedicatedVmHostInstancesFilter                  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Specifies whether the VM instance is confidential.
+	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
 }
 
 func GetDedicatedVmHostInstancesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstancesResultOutput {
@@ -95,6 +100,8 @@ type GetDedicatedVmHostInstancesOutputArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput                          `pulumi:"dedicatedVmHostId"`
 	Filters           GetDedicatedVmHostInstancesFilterArrayInput `pulumi:"filters"`
+	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+	IsMemoryEncryptionEnabled pulumi.BoolPtrInput `pulumi:"isMemoryEncryptionEnabled"`
 }
 
 func (GetDedicatedVmHostInstancesOutputArgs) ElementType() reflect.Type {
@@ -144,6 +151,11 @@ func (o GetDedicatedVmHostInstancesResultOutput) Filters() GetDedicatedVmHostIns
 // The provider-assigned unique ID for this managed resource.
 func (o GetDedicatedVmHostInstancesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies whether the VM instance is confidential.
+func (o GetDedicatedVmHostInstancesResultOutput) IsMemoryEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostInstancesResult) *bool { return v.IsMemoryEncryptionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

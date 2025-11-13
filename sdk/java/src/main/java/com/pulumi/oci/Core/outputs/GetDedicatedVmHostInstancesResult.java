@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstancesDedicatedVmHostInstance;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstancesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -37,6 +38,11 @@ public final class GetDedicatedVmHostInstancesResult {
      * 
      */
     private String id;
+    /**
+     * @return Specifies whether the VM instance is confidential.
+     * 
+     */
+    private @Nullable Boolean isMemoryEncryptionEnabled;
 
     private GetDedicatedVmHostInstancesResult() {}
     /**
@@ -73,6 +79,13 @@ public final class GetDedicatedVmHostInstancesResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Specifies whether the VM instance is confidential.
+     * 
+     */
+    public Optional<Boolean> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,6 +102,7 @@ public final class GetDedicatedVmHostInstancesResult {
         private List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
         private @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
         private String id;
+        private @Nullable Boolean isMemoryEncryptionEnabled;
         public Builder() {}
         public Builder(GetDedicatedVmHostInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,6 +112,7 @@ public final class GetDedicatedVmHostInstancesResult {
     	      this.dedicatedVmHostInstances = defaults.dedicatedVmHostInstances;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
         }
 
         @CustomType.Setter
@@ -150,6 +165,12 @@ public final class GetDedicatedVmHostInstancesResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
+
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
         public GetDedicatedVmHostInstancesResult build() {
             final var _resultValue = new GetDedicatedVmHostInstancesResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -158,6 +179,7 @@ public final class GetDedicatedVmHostInstancesResult {
             _resultValue.dedicatedVmHostInstances = dedicatedVmHostInstances;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return _resultValue;
         }
     }

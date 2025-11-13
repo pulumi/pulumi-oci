@@ -71,6 +71,21 @@ public final class GetInventoryRecordsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * If set to true, inventory details will be returned.
+     * 
+     */
+    @Import(name="isDetailsRequired")
+    private @Nullable Boolean isDetailsRequired;
+
+    /**
+     * @return If set to true, inventory details will be returned.
+     * 
+     */
+    public Optional<Boolean> isDetailsRequired() {
+        return Optional.ofNullable(this.isDetailsRequired);
+    }
+
+    /**
      * Resource Identifier
      * 
      */
@@ -92,6 +107,7 @@ public final class GetInventoryRecordsPlainArgs extends com.pulumi.resources.Inv
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
+        this.isDetailsRequired = $.isDetailsRequired;
         this.resourceId = $.resourceId;
     }
 
@@ -152,6 +168,17 @@ public final class GetInventoryRecordsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder fleetId(@Nullable String fleetId) {
             $.fleetId = fleetId;
+            return this;
+        }
+
+        /**
+         * @param isDetailsRequired If set to true, inventory details will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDetailsRequired(@Nullable Boolean isDetailsRequired) {
+            $.isDetailsRequired = isDetailsRequired;
             return this;
         }
 

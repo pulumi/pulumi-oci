@@ -32,6 +32,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = inventoryRecordCompartmentIdInSubtree,
         ///         FleetId = testFleet.Id,
+        ///         IsDetailsRequired = inventoryRecordIsDetailsRequired,
         ///         ResourceId = testResource.Id,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = inventoryRecordCompartmentIdInSubtree,
         ///         FleetId = testFleet.Id,
+        ///         IsDetailsRequired = inventoryRecordIsDetailsRequired,
         ///         ResourceId = testResource.Id,
         ///     });
         /// 
@@ -92,6 +94,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = inventoryRecordCompartmentIdInSubtree,
         ///         FleetId = testFleet.Id,
+        ///         IsDetailsRequired = inventoryRecordIsDetailsRequired,
         ///         ResourceId = testResource.Id,
         ///     });
         /// 
@@ -130,6 +133,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Input("fleetId")]
         public string? FleetId { get; set; }
+
+        /// <summary>
+        /// If set to true, inventory details will be returned.
+        /// </summary>
+        [Input("isDetailsRequired")]
+        public bool? IsDetailsRequired { get; set; }
 
         /// <summary>
         /// Resource Identifier
@@ -172,6 +181,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? FleetId { get; set; }
 
         /// <summary>
+        /// If set to true, inventory details will be returned.
+        /// </summary>
+        [Input("isDetailsRequired")]
+        public Input<bool>? IsDetailsRequired { get; set; }
+
+        /// <summary>
         /// Resource Identifier
         /// </summary>
         [Input("resourceId")]
@@ -202,6 +217,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The list of inventory_record_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInventoryRecordsInventoryRecordCollectionResult> InventoryRecordCollections;
+        public readonly bool? IsDetailsRequired;
         public readonly string? ResourceId;
 
         [OutputConstructor]
@@ -218,6 +234,8 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             ImmutableArray<Outputs.GetInventoryRecordsInventoryRecordCollectionResult> inventoryRecordCollections,
 
+            bool? isDetailsRequired,
+
             string? resourceId)
         {
             CompartmentId = compartmentId;
@@ -226,6 +244,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             FleetId = fleetId;
             Id = id;
             InventoryRecordCollections = inventoryRecordCollections;
+            IsDetailsRequired = isDetailsRequired;
             ResourceId = resourceId;
         }
     }

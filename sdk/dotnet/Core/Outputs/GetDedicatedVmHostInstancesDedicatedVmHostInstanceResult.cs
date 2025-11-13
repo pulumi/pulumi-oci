@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        public readonly bool IsMemoryEncryptionEnabled;
+        /// <summary>
         /// The shape of the VM instance.
         /// </summary>
         public readonly string Shape;
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceId,
 
+            bool isMemoryEncryptionEnabled,
+
             string shape,
 
             string timeCreated)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             InstanceId = instanceId;
+            IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             Shape = shape;
             TimeCreated = timeCreated;
         }

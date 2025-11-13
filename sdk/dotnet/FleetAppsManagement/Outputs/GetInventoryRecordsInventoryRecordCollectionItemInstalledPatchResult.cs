@@ -22,6 +22,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string PatchId;
         /// <summary>
+        /// Patch Level.
+        /// </summary>
+        public readonly string PatchLevel;
+        /// <summary>
         /// Name of the installed patch
         /// </summary>
         public readonly string PatchName;
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// Date on which the patch was applied to the target
         /// </summary>
         public readonly string TimeApplied;
+        /// <summary>
+        /// The date on which patch was released.
+        /// </summary>
+        public readonly string TimeReleased;
 
         [OutputConstructor]
         private GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchResult(
@@ -40,17 +48,23 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string patchId,
 
+            string patchLevel,
+
             string patchName,
 
             string patchType,
 
-            string timeApplied)
+            string timeApplied,
+
+            string timeReleased)
         {
             PatchDescription = patchDescription;
             PatchId = patchId;
+            PatchLevel = patchLevel;
             PatchName = patchName;
             PatchType = patchType;
             TimeApplied = timeApplied;
+            TimeReleased = timeReleased;
         }
     }
 }

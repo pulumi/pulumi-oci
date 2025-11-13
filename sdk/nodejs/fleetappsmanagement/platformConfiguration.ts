@@ -52,7 +52,13 @@ import * as utilities from "../utilities";
  *         versions: platformConfigurationConfigCategoryDetailsVersions,
  *     },
  *     displayName: platformConfigurationDisplayName,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
  *     description: platformConfigurationDescription,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
  * });
  * ```
  *
@@ -101,25 +107,25 @@ export class PlatformConfiguration extends pulumi.CustomResource {
      */
     declare public readonly configCategoryDetails: pulumi.Output<outputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetails>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+     */
+    declare public readonly displayName: pulumi.Output<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly displayName: pulumi.Output<string>;
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-     */
-    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -188,10 +194,10 @@ export class PlatformConfiguration extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["configCategoryDetails"] = args?.configCategoryDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
-            resourceInputs["definedTags"] = undefined /*out*/;
-            resourceInputs["freeformTags"] = undefined /*out*/;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -218,7 +224,7 @@ export interface PlatformConfigurationState {
      */
     configCategoryDetails?: pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetails>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -226,15 +232,15 @@ export interface PlatformConfigurationState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+     */
+    displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
-    displayName?: pulumi.Input<string>;
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -280,15 +286,23 @@ export interface PlatformConfigurationArgs {
      */
     configCategoryDetails: pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetails>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource` 
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+     */
+    displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    displayName: pulumi.Input<string>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

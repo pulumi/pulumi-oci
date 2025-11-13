@@ -164,6 +164,21 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArg
     }
 
     /**
+     * The list of system variables.
+     * 
+     */
+    @Import(name="systemVariables")
+    private @Nullable Output<List<String>> systemVariables;
+
+    /**
+     * @return The list of system variables.
+     * 
+     */
+    public Optional<Output<List<String>>> systemVariables() {
+        return Optional.ofNullable(this.systemVariables);
+    }
+
+    /**
      * OCID of the compartment to which the resource belongs to.
      * 
      */
@@ -206,6 +221,7 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArg
         this.isExecutableContent = $.isExecutableContent;
         this.isLocked = $.isLocked;
         this.isReadOutputVariableEnabled = $.isReadOutputVariableEnabled;
+        this.systemVariables = $.systemVariables;
         this.targetCompartmentId = $.targetCompartmentId;
         this.variables = $.variables;
     }
@@ -434,6 +450,37 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArg
          */
         public Builder isReadOutputVariableEnabled(Boolean isReadOutputVariableEnabled) {
             return isReadOutputVariableEnabled(Output.of(isReadOutputVariableEnabled));
+        }
+
+        /**
+         * @param systemVariables The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(@Nullable Output<List<String>> systemVariables) {
+            $.systemVariables = systemVariables;
+            return this;
+        }
+
+        /**
+         * @param systemVariables The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(List<String> systemVariables) {
+            return systemVariables(Output.of(systemVariables));
+        }
+
+        /**
+         * @param systemVariables The list of system variables.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVariables(String... systemVariables) {
+            return systemVariables(List.of(systemVariables));
         }
 
         /**

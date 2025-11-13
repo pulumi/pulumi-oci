@@ -140,6 +140,7 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
     def __init__(__self__, *,
                  are_quotas_supported: _builtins.bool,
                  description: _builtins.str,
+                 external_location_supported_subscriptions: Sequence[_builtins.str],
                  is_deprecated: _builtins.bool,
                  is_dynamic: _builtins.bool,
                  is_eligible_for_limit_increase: _builtins.bool,
@@ -152,6 +153,7 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         """
         :param _builtins.bool are_quotas_supported: If true, quota policies can be created on top of this resource limit.
         :param _builtins.str description: The limit description.
+        :param Sequence[_builtins.str] external_location_supported_subscriptions: An array of subscription types that support ExternalLocations.
         :param _builtins.bool is_deprecated: Indicates if the limit has been deprecated.
         :param _builtins.bool is_dynamic: The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
         :param _builtins.bool is_eligible_for_limit_increase: Indicates if the customer can request a limit increase for this resource.
@@ -160,10 +162,11 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         :param _builtins.str scope_type: Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
         :param _builtins.str service_name: The target service name.
         :param Sequence[_builtins.str] supported_quota_families: Supported quota family names for creation of quota policy.
-        :param Sequence[_builtins.str] supported_subscriptions: An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        :param Sequence[_builtins.str] supported_subscriptions: An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
         """
         pulumi.set(__self__, "are_quotas_supported", are_quotas_supported)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "external_location_supported_subscriptions", external_location_supported_subscriptions)
         pulumi.set(__self__, "is_deprecated", is_deprecated)
         pulumi.set(__self__, "is_dynamic", is_dynamic)
         pulumi.set(__self__, "is_eligible_for_limit_increase", is_eligible_for_limit_increase)
@@ -189,6 +192,14 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         The limit description.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocationSupportedSubscriptions")
+    def external_location_supported_subscriptions(self) -> Sequence[_builtins.str]:
+        """
+        An array of subscription types that support ExternalLocations.
+        """
+        return pulumi.get(self, "external_location_supported_subscriptions")
 
     @_builtins.property
     @pulumi.getter(name="isDeprecated")
@@ -258,7 +269,7 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
     @pulumi.getter(name="supportedSubscriptions")
     def supported_subscriptions(self) -> Sequence[_builtins.str]:
         """
-        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
         """
         return pulumi.get(self, "supported_subscriptions")
 
@@ -648,7 +659,7 @@ class GetServicesServiceResult(dict):
         """
         :param _builtins.str description: The friendly service name.
         :param _builtins.str name: The service name. Use this when calling other APIs.
-        :param Sequence[_builtins.str] supported_subscriptions: An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        :param Sequence[_builtins.str] supported_subscriptions: An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
@@ -674,7 +685,7 @@ class GetServicesServiceResult(dict):
     @pulumi.getter(name="supportedSubscriptions")
     def supported_subscriptions(self) -> Sequence[_builtins.str]:
         """
-        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
         """
         return pulumi.get(self, "supported_subscriptions")
 

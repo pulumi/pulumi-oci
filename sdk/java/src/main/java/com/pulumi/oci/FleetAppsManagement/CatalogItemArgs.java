@@ -37,18 +37,12 @@ public final class CatalogItemArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="cloneCatalogItemTrigger")
     private @Nullable Output<Integer> cloneCatalogItemTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> cloneCatalogItemTrigger() {
@@ -296,9 +290,6 @@ public final class CatalogItemArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param cloneCatalogItemTrigger (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -309,9 +300,6 @@ public final class CatalogItemArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cloneCatalogItemTrigger (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

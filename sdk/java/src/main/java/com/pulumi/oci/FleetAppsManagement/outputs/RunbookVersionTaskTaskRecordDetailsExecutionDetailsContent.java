@@ -19,8 +19,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent {
     private @Nullable String bucket;
     private @Nullable String catalogId;
     /**
-     * @return (Updatable) md5 checksum of the
-     * artifact.
+     * @return (Updatable) md5 checksum of the artifact.
      * 
      */
     private @Nullable String checksum;
@@ -52,8 +51,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent {
         return Optional.ofNullable(this.catalogId);
     }
     /**
-     * @return (Updatable) md5 checksum of the
-     * artifact.
+     * @return (Updatable) md5 checksum of the artifact.
      * 
      */
     public Optional<String> checksum() {

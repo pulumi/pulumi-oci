@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -16,7 +18,12 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
      */
     private String availabilityDomain;
     /**
-     * @return The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
+     * @return A list of capacity configs that are supported by this dedicated VM host shape.
+     * 
+     */
+    private List<GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig> capacityConfigs;
+    /**
+     * @return The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes).
      * 
      */
     private String dedicatedVmHostShape;
@@ -30,7 +37,14 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
         return this.availabilityDomain;
     }
     /**
-     * @return The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
+     * @return A list of capacity configs that are supported by this dedicated VM host shape.
+     * 
+     */
+    public List<GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig> capacityConfigs() {
+        return this.capacityConfigs;
+    }
+    /**
+     * @return The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes).
      * 
      */
     public String dedicatedVmHostShape() {
@@ -47,11 +61,13 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private List<GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig> capacityConfigs;
         private String dedicatedVmHostShape;
         public Builder() {}
         public Builder(GetDedicatedVmHostShapesDedicatedVmHostShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.capacityConfigs = defaults.capacityConfigs;
     	      this.dedicatedVmHostShape = defaults.dedicatedVmHostShape;
         }
 
@@ -64,6 +80,17 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
             return this;
         }
         @CustomType.Setter
+        public Builder capacityConfigs(List<GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig> capacityConfigs) {
+            if (capacityConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostShapesDedicatedVmHostShape", "capacityConfigs");
+            }
+            this.capacityConfigs = capacityConfigs;
+            return this;
+        }
+        public Builder capacityConfigs(GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfig... capacityConfigs) {
+            return capacityConfigs(List.of(capacityConfigs));
+        }
+        @CustomType.Setter
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
             if (dedicatedVmHostShape == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostShapesDedicatedVmHostShape", "dedicatedVmHostShape");
@@ -74,6 +101,7 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
         public GetDedicatedVmHostShapesDedicatedVmHostShape build() {
             final var _resultValue = new GetDedicatedVmHostShapesDedicatedVmHostShape();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityConfigs = capacityConfigs;
             _resultValue.dedicatedVmHostShape = dedicatedVmHostShape;
             return _resultValue;
         }

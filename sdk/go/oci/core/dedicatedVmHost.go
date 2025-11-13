@@ -30,6 +30,7 @@ import (
 //				AvailabilityDomain:   pulumi.Any(dedicatedVmHostAvailabilityDomain),
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DedicatedVmHostShape: pulumi.Any(dedicatedVmHostDedicatedVmHostShape),
+//				CapacityConfig:       pulumi.Any(dedicatedVmHostCapacityConfig),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -38,6 +39,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				IsMemoryEncryptionEnabled: pulumi.Any(dedicatedVmHostIsMemoryEncryptionEnabled),
 //				PlacementConstraintDetails: &core.DedicatedVmHostPlacementConstraintDetailsArgs{
 //					Type:                   pulumi.Any(dedicatedVmHostPlacementConstraintDetailsType),
 //					ComputeBareMetalHostId: pulumi.Any(testComputeBareMetalHost.Id),
@@ -64,11 +66,13 @@ type DedicatedVmHost struct {
 
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// A list of total and remaining CPU & memory per capacity bucket.
+	// A list of total and remaining CPU and memory per capacity bucket.
 	CapacityBins DedicatedVmHostCapacityBinArrayOutput `pulumi:"capacityBins"`
+	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+	CapacityConfig pulumi.StringOutput `pulumi:"capacityConfig"`
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The OCID of the compute bare metal host.
+	// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 	ComputeBareMetalHostId pulumi.StringOutput `pulumi:"computeBareMetalHostId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape pulumi.StringOutput `pulumi:"dedicatedVmHostShape"`
@@ -84,7 +88,9 @@ type DedicatedVmHost struct {
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled pulumi.BoolOutput `pulumi:"isMemoryEncryptionEnabled"`
+	// The details for providing placement constraints.
 	PlacementConstraintDetails DedicatedVmHostPlacementConstraintDetailsOutput `pulumi:"placementConstraintDetails"`
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs pulumi.Float64Output `pulumi:"remainingMemoryInGbs"`
@@ -141,11 +147,13 @@ func GetDedicatedVmHost(ctx *pulumi.Context,
 type dedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// A list of total and remaining CPU & memory per capacity bucket.
+	// A list of total and remaining CPU and memory per capacity bucket.
 	CapacityBins []DedicatedVmHostCapacityBin `pulumi:"capacityBins"`
+	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+	CapacityConfig *string `pulumi:"capacityConfig"`
 	// (Updatable) The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The OCID of the compute bare metal host.
+	// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 	ComputeBareMetalHostId *string `pulumi:"computeBareMetalHostId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape *string `pulumi:"dedicatedVmHostShape"`
@@ -161,7 +169,9 @@ type dedicatedVmHostState struct {
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
+	// The details for providing placement constraints.
 	PlacementConstraintDetails *DedicatedVmHostPlacementConstraintDetails `pulumi:"placementConstraintDetails"`
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs *float64 `pulumi:"remainingMemoryInGbs"`
@@ -180,11 +190,13 @@ type dedicatedVmHostState struct {
 type DedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
-	// A list of total and remaining CPU & memory per capacity bucket.
+	// A list of total and remaining CPU and memory per capacity bucket.
 	CapacityBins DedicatedVmHostCapacityBinArrayInput
+	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+	CapacityConfig pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// The OCID of the compute bare metal host.
+	// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 	ComputeBareMetalHostId pulumi.StringPtrInput
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape pulumi.StringPtrInput
@@ -200,7 +212,9 @@ type DedicatedVmHostState struct {
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled pulumi.BoolPtrInput
+	// The details for providing placement constraints.
 	PlacementConstraintDetails DedicatedVmHostPlacementConstraintDetailsPtrInput
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs pulumi.Float64PtrInput
@@ -223,6 +237,8 @@ func (DedicatedVmHostState) ElementType() reflect.Type {
 type dedicatedVmHostArgs struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+	CapacityConfig *string `pulumi:"capacityConfig"`
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
@@ -239,7 +255,9 @@ type dedicatedVmHostArgs struct {
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
+	// The details for providing placement constraints.
 	PlacementConstraintDetails *DedicatedVmHostPlacementConstraintDetails `pulumi:"placementConstraintDetails"`
 }
 
@@ -247,6 +265,8 @@ type dedicatedVmHostArgs struct {
 type DedicatedVmHostArgs struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
+	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+	CapacityConfig pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
@@ -263,7 +283,9 @@ type DedicatedVmHostArgs struct {
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+	IsMemoryEncryptionEnabled pulumi.BoolPtrInput
+	// The details for providing placement constraints.
 	PlacementConstraintDetails DedicatedVmHostPlacementConstraintDetailsPtrInput
 }
 
@@ -359,9 +381,14 @@ func (o DedicatedVmHostOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// A list of total and remaining CPU & memory per capacity bucket.
+// A list of total and remaining CPU and memory per capacity bucket.
 func (o DedicatedVmHostOutput) CapacityBins() DedicatedVmHostCapacityBinArrayOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) DedicatedVmHostCapacityBinArrayOutput { return v.CapacityBins }).(DedicatedVmHostCapacityBinArrayOutput)
+}
+
+// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+func (o DedicatedVmHostOutput) CapacityConfig() pulumi.StringOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.CapacityConfig }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the compartment.
@@ -369,7 +396,7 @@ func (o DedicatedVmHostOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The OCID of the compute bare metal host.
+// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 func (o DedicatedVmHostOutput) ComputeBareMetalHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.ComputeBareMetalHostId }).(pulumi.StringOutput)
 }
@@ -403,7 +430,12 @@ func (o DedicatedVmHostOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+func (o DedicatedVmHostOutput) IsMemoryEncryptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.BoolOutput { return v.IsMemoryEncryptionEnabled }).(pulumi.BoolOutput)
+}
+
+// The details for providing placement constraints.
 func (o DedicatedVmHostOutput) PlacementConstraintDetails() DedicatedVmHostPlacementConstraintDetailsOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) DedicatedVmHostPlacementConstraintDetailsOutput {
 		return v.PlacementConstraintDetails

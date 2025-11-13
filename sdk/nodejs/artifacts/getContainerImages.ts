@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
  *     displayName: containerImageDisplayName,
+ *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
  *     isVersioned: containerImageIsVersioned,
  *     repositoryId: testRepository.id,
@@ -37,6 +38,7 @@ export function getContainerImages(args: GetContainerImagesArgs, opts?: pulumi.I
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "imageDigest": args.imageDigest,
         "imageId": args.imageId,
         "isVersioned": args.isVersioned,
         "repositoryId": args.repositoryId,
@@ -63,6 +65,10 @@ export interface GetContainerImagesArgs {
      */
     displayName?: string;
     filters?: inputs.Artifacts.GetContainerImagesFilter[];
+    /**
+     * The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+     */
+    imageDigest?: string;
     /**
      * A filter to return a container image summary only for the specified container image OCID.
      */
@@ -111,6 +117,7 @@ export interface GetContainerImagesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly imageDigest?: string;
     readonly imageId?: string;
     readonly isVersioned?: boolean;
     /**
@@ -145,6 +152,7 @@ export interface GetContainerImagesResult {
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
  *     displayName: containerImageDisplayName,
+ *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
  *     isVersioned: containerImageIsVersioned,
  *     repositoryId: testRepository.id,
@@ -161,6 +169,7 @@ export function getContainerImagesOutput(args: GetContainerImagesOutputArgs, opt
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "imageDigest": args.imageDigest,
         "imageId": args.imageId,
         "isVersioned": args.isVersioned,
         "repositoryId": args.repositoryId,
@@ -187,6 +196,10 @@ export interface GetContainerImagesOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerImagesFilterArgs>[]>;
+    /**
+     * The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+     */
+    imageDigest?: pulumi.Input<string>;
     /**
      * A filter to return a container image summary only for the specified container image OCID.
      */

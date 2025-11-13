@@ -31,7 +31,13 @@ import (
 //				DisplayName:   pulumi.Any(propertyDisplayName),
 //				Selection:     pulumi.Any(propertySelection),
 //				ValueType:     pulumi.Any(propertyValueType),
-//				Values:        pulumi.Any(propertyValues),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				Values: pulumi.Any(propertyValues),
 //			})
 //			if err != nil {
 //				return err
@@ -54,11 +60,11 @@ type Property struct {
 
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -131,11 +137,11 @@ func GetProperty(ctx *pulumi.Context,
 type propertyState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -167,11 +173,11 @@ type propertyState struct {
 type PropertyState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -207,8 +213,12 @@ func (PropertyState) ElementType() reflect.Type {
 type propertyArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Text selection of the property.
 	Selection string `pulumi:"selection"`
 	// (Updatable) Format of the value.
@@ -224,8 +234,12 @@ type propertyArgs struct {
 type PropertyArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringInput
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Text selection of the property.
 	Selection pulumi.StringInput
 	// (Updatable) Format of the value.
@@ -329,7 +343,7 @@ func (o PropertyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o PropertyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -339,7 +353,7 @@ func (o PropertyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o PropertyOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }

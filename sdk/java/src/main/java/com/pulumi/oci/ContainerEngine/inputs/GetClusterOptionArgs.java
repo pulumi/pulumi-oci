@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -46,11 +47,27 @@ public final class GetClusterOptionArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * Option to show all kubernetes patch versions
+     * 
+     */
+    @Import(name="shouldListAllPatchVersions")
+    private @Nullable Output<Boolean> shouldListAllPatchVersions;
+
+    /**
+     * @return Option to show all kubernetes patch versions
+     * 
+     */
+    public Optional<Output<Boolean>> shouldListAllPatchVersions() {
+        return Optional.ofNullable(this.shouldListAllPatchVersions);
+    }
+
     private GetClusterOptionArgs() {}
 
     private GetClusterOptionArgs(GetClusterOptionArgs $) {
         this.clusterOptionId = $.clusterOptionId;
         this.compartmentId = $.compartmentId;
+        this.shouldListAllPatchVersions = $.shouldListAllPatchVersions;
     }
 
     public static Builder builder() {
@@ -111,6 +128,27 @@ public final class GetClusterOptionArgs extends com.pulumi.resources.InvokeArgs 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param shouldListAllPatchVersions Option to show all kubernetes patch versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldListAllPatchVersions(@Nullable Output<Boolean> shouldListAllPatchVersions) {
+            $.shouldListAllPatchVersions = shouldListAllPatchVersions;
+            return this;
+        }
+
+        /**
+         * @param shouldListAllPatchVersions Option to show all kubernetes patch versions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldListAllPatchVersions(Boolean shouldListAllPatchVersions) {
+            return shouldListAllPatchVersions(Output.of(shouldListAllPatchVersions));
         }
 
         public GetClusterOptionArgs build() {

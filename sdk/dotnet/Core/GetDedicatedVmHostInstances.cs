@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         DedicatedVmHostId = testDedicatedVmHost.Id,
         ///         AvailabilityDomain = dedicatedVmHostsInstanceAvailabilityDomain,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
         ///     });
         /// 
         /// });
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         DedicatedVmHostId = testDedicatedVmHost.Id,
         ///         AvailabilityDomain = dedicatedVmHostsInstanceAvailabilityDomain,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
         ///     });
         /// 
         /// });
@@ -90,6 +92,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         DedicatedVmHostId = testDedicatedVmHost.Id,
         ///         AvailabilityDomain = dedicatedVmHostsInstanceAvailabilityDomain,
+        ///         IsMemoryEncryptionEnabled = dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
         ///     });
         /// 
         /// });
@@ -128,6 +131,12 @@ namespace Pulumi.Oci.Core
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public bool? IsMemoryEncryptionEnabled { get; set; }
+
         public GetDedicatedVmHostInstancesArgs()
         {
         }
@@ -162,6 +171,12 @@ namespace Pulumi.Oci.Core
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        [Input("isMemoryEncryptionEnabled")]
+        public Input<bool>? IsMemoryEncryptionEnabled { get; set; }
+
         public GetDedicatedVmHostInstancesInvokeArgs()
         {
         }
@@ -190,6 +205,10 @@ namespace Pulumi.Oci.Core
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Specifies whether the VM instance is confidential.
+        /// </summary>
+        public readonly bool? IsMemoryEncryptionEnabled;
 
         [OutputConstructor]
         private GetDedicatedVmHostInstancesResult(
@@ -203,7 +222,9 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetDedicatedVmHostInstancesFilterResult> filters,
 
-            string id)
+            string id,
+
+            bool? isMemoryEncryptionEnabled)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
@@ -211,6 +232,7 @@ namespace Pulumi.Oci.Core
             DedicatedVmHostInstances = dedicatedVmHostInstances;
             Filters = filters;
             Id = id;
+            IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
         }
     }
 }

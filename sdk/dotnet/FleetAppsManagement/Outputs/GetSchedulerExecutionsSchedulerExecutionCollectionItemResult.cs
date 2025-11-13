@@ -22,6 +22,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Name of the compartment in which resource exist.
+        /// </summary>
+        public readonly string CompartmentName;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -46,7 +50,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Resource DsiplayName associated with the Schedule.
+        /// Display Name of the Fleet associated with the Schedule.
         /// </summary>
         public readonly string ResourceDisplayName;
         /// <summary>
@@ -54,7 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ResourceId;
         /// <summary>
-        /// DsiplayName of Runbook associated with the Schedule.
+        /// Display name of Runbook associated with the Schedule.
         /// </summary>
         public readonly string RunbookDisplayName;
         /// <summary>
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string compartmentId,
 
+            string compartmentName,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -150,6 +156,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         {
             ActivityId = activityId;
             CompartmentId = compartmentId;
+            CompartmentName = compartmentName;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;

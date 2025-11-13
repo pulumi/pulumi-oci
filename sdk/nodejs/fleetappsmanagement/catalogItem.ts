@@ -9,48 +9,6 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCatalogItem = new oci.fleetappsmanagement.CatalogItem("test_catalog_item", {
- *     compartmentId: compartmentId,
- *     configSourceType: catalogItemConfigSourceType,
- *     description: catalogItemDescription,
- *     displayName: catalogItemDisplayName,
- *     packageType: catalogItemPackageType,
- *     catalogSourcePayload: {
- *         configSourceType: catalogItemCatalogSourcePayloadConfigSourceType,
- *         accessUri: catalogItemCatalogSourcePayloadAccessUri,
- *         branchName: catalogItemCatalogSourcePayloadBranchName,
- *         bucket: catalogItemCatalogSourcePayloadBucket,
- *         configurationSourceProviderId: testConfigurationSourceProvider.id,
- *         description: catalogItemCatalogSourcePayloadDescription,
- *         listingId: testListing.id,
- *         longDescription: catalogItemCatalogSourcePayloadLongDescription,
- *         namespace: catalogItemCatalogSourcePayloadNamespace,
- *         object: catalogItemCatalogSourcePayloadObject,
- *         repositoryUrl: catalogItemCatalogSourcePayloadRepositoryUrl,
- *         templateDisplayName: catalogItemCatalogSourcePayloadTemplateDisplayName,
- *         timeExpires: catalogItemCatalogSourcePayloadTimeExpires,
- *         version: catalogItemCatalogSourcePayloadVersion,
- *         workingDirectory: catalogItemCatalogSourcePayloadWorkingDirectory,
- *         zipFileBase64encoded: catalogItemCatalogSourcePayloadZipFileBase64encoded,
- *     },
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     listingId: testListing.id,
- *     listingVersion: catalogItemListingVersion,
- *     shortDescription: catalogItemShortDescription,
- *     timeReleased: catalogItemTimeReleased,
- *     versionDescription: catalogItemVersionDescription,
- * });
- * ```
- *
  * ## Import
  *
  * CatalogItems can be imported using the `id`, e.g.
@@ -97,10 +55,6 @@ export class CatalogItem extends pulumi.CustomResource {
     declare public readonly catalogSourcePayload: pulumi.Output<outputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly cloneCatalogItemTrigger: pulumi.Output<number | undefined>;
     /**
@@ -280,10 +234,6 @@ export interface CatalogItemState {
     catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     cloneCatalogItemTrigger?: pulumi.Input<number>;
     /**
@@ -378,10 +328,6 @@ export interface CatalogItemArgs {
     catalogSourcePayload?: pulumi.Input<inputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     cloneCatalogItemTrigger?: pulumi.Input<number>;
     /**

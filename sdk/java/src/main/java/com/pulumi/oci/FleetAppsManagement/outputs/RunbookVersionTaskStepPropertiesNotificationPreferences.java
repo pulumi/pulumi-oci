@@ -17,8 +17,7 @@ public final class RunbookVersionTaskStepPropertiesNotificationPreferences {
      */
     private @Nullable Boolean shouldNotifyOnPause;
     /**
-     * @return (Updatable) Enables or disables notification on Task
-     * Failures.
+     * @return (Updatable) Enables or disables notification on Task Failures.
      * 
      */
     private @Nullable Boolean shouldNotifyOnTaskFailure;
@@ -37,8 +36,7 @@ public final class RunbookVersionTaskStepPropertiesNotificationPreferences {
         return Optional.ofNullable(this.shouldNotifyOnPause);
     }
     /**
-     * @return (Updatable) Enables or disables notification on Task
-     * Failures.
+     * @return (Updatable) Enables or disables notification on Task Failures.
      * 
      */
     public Optional<Boolean> shouldNotifyOnTaskFailure() {

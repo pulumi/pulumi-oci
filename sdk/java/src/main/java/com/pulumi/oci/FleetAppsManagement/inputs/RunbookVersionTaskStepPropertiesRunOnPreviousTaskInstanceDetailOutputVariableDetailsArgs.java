@@ -16,16 +16,14 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
     public static final RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs Empty = new RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs();
 
     /**
-     * (Updatable) The name of the
-     * output variable whose value has to be mapped.
+     * (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     @Import(name="outputVariableName")
     private @Nullable Output<String> outputVariableName;
 
     /**
-     * @return (Updatable) The name of the
-     * output variable whose value has to be mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     public Optional<Output<String>> outputVariableName() {
@@ -33,16 +31,14 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
     }
 
     /**
-     * (Updatable) The name of the task step
-     * the output variable belongs to.
+     * (Updatable) The name of the task step the output variable belongs to.
      * 
      */
     @Import(name="stepName")
     private @Nullable Output<String> stepName;
 
     /**
-     * @return (Updatable) The name of the task step
-     * the output variable belongs to.
+     * @return (Updatable) The name of the task step the output variable belongs to.
      * 
      */
     public Optional<Output<String>> stepName() {
@@ -75,8 +71,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param outputVariableName (Updatable) The name of the
-         * output variable whose value has to be mapped.
+         * @param outputVariableName (Updatable) The name of the output variable whose value has to be mapped.
          * 
          * @return builder
          * 
@@ -87,8 +82,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param outputVariableName (Updatable) The name of the
-         * output variable whose value has to be mapped.
+         * @param outputVariableName (Updatable) The name of the output variable whose value has to be mapped.
          * 
          * @return builder
          * 
@@ -98,8 +92,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param stepName (Updatable) The name of the task step
-         * the output variable belongs to.
+         * @param stepName (Updatable) The name of the task step the output variable belongs to.
          * 
          * @return builder
          * 
@@ -110,8 +103,7 @@ public final class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDeta
         }
 
         /**
-         * @param stepName (Updatable) The name of the task step
-         * the output variable belongs to.
+         * @param stepName (Updatable) The name of the task step the output variable belongs to.
          * 
          * @return builder
          * 

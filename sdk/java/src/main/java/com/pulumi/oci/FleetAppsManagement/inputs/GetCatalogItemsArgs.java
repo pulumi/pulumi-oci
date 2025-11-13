@@ -102,6 +102,21 @@ public final class GetCatalogItemsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter to return only resources that match the given package type. The state value is case-insensitive.
+     * 
+     */
+    @Import(name="packageType")
+    private @Nullable Output<String> packageType;
+
+    /**
+     * @return A filter to return only resources that match the given package type. The state value is case-insensitive.
+     * 
+     */
+    public Optional<Output<String>> packageType() {
+        return Optional.ofNullable(this.packageType);
+    }
+
+    /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      * 
      */
@@ -140,6 +155,7 @@ public final class GetCatalogItemsArgs extends com.pulumi.resources.InvokeArgs {
         this.configSourceType = $.configSourceType;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.packageType = $.packageType;
         this.shouldListPublicItems = $.shouldListPublicItems;
         this.state = $.state;
     }
@@ -278,6 +294,27 @@ public final class GetCatalogItemsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetCatalogItemsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param packageType A filter to return only resources that match the given package type. The state value is case-insensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packageType(@Nullable Output<String> packageType) {
+            $.packageType = packageType;
+            return this;
+        }
+
+        /**
+         * @param packageType A filter to return only resources that match the given package type. The state value is case-insensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packageType(String packageType) {
+            return packageType(Output.of(packageType));
         }
 
         /**

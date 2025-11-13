@@ -9,9 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
- * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
- * compartment level.
+ * Includes a list of resource limits that are currently supported.
+ * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+ * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
  *
  * ## Example Usage
  *
@@ -56,7 +56,7 @@ export interface GetLimitDefinitionsArgs {
      */
     serviceName?: string;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: string;
 }
@@ -88,9 +88,9 @@ export interface GetLimitDefinitionsResult {
 /**
  * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
- * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
- * compartment level.
+ * Includes a list of resource limits that are currently supported.
+ * If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+ * If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
  *
  * ## Example Usage
  *
@@ -135,7 +135,7 @@ export interface GetLimitDefinitionsOutputArgs {
      */
     serviceName?: pulumi.Input<string>;
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      */
     subscriptionId?: pulumi.Input<string>;
 }

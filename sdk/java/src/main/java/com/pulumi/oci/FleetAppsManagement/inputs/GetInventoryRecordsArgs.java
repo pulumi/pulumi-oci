@@ -72,6 +72,21 @@ public final class GetInventoryRecordsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * If set to true, inventory details will be returned.
+     * 
+     */
+    @Import(name="isDetailsRequired")
+    private @Nullable Output<Boolean> isDetailsRequired;
+
+    /**
+     * @return If set to true, inventory details will be returned.
+     * 
+     */
+    public Optional<Output<Boolean>> isDetailsRequired() {
+        return Optional.ofNullable(this.isDetailsRequired);
+    }
+
+    /**
      * Resource Identifier
      * 
      */
@@ -93,6 +108,7 @@ public final class GetInventoryRecordsArgs extends com.pulumi.resources.InvokeAr
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
+        this.isDetailsRequired = $.isDetailsRequired;
         this.resourceId = $.resourceId;
     }
 
@@ -188,6 +204,27 @@ public final class GetInventoryRecordsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder fleetId(String fleetId) {
             return fleetId(Output.of(fleetId));
+        }
+
+        /**
+         * @param isDetailsRequired If set to true, inventory details will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDetailsRequired(@Nullable Output<Boolean> isDetailsRequired) {
+            $.isDetailsRequired = isDetailsRequired;
+            return this;
+        }
+
+        /**
+         * @param isDetailsRequired If set to true, inventory details will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDetailsRequired(Boolean isDetailsRequired) {
+            return isDetailsRequired(Output.of(isDetailsRequired));
         }
 
         /**

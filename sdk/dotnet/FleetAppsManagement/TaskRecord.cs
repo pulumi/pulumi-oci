@@ -52,6 +52,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     ///                 IsExecutableContent = taskRecordDetailsExecutionDetailsIsExecutableContent,
     ///                 IsLocked = taskRecordDetailsExecutionDetailsIsLocked,
     ///                 IsReadOutputVariableEnabled = taskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+    ///                 SystemVariables = taskRecordDetailsExecutionDetailsSystemVariables,
     ///                 TargetCompartmentId = testCompartment.Id,
     ///                 Variables = new Oci.FleetAppsManagement.Inputs.TaskRecordDetailsExecutionDetailsVariablesArgs
     ///                 {

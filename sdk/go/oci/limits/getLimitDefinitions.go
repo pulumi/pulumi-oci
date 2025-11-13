@@ -13,9 +13,9 @@ import (
 
 // This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 //
-// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
-// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
-// compartment level.
+// Includes a list of resource limits that are currently supported.
+// If the subscription ID is provided, then only resource limits supported by the subscription will be returned.
+// If the `areQuotasSupported` property is true, you can create quota policies on top of this limit at the compartment level.
 //
 // ## Example Usage
 //
@@ -64,7 +64,7 @@ type GetLimitDefinitionsArgs struct {
 	Name *string `pulumi:"name"`
 	// The target service name.
 	ServiceName *string `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
@@ -101,7 +101,7 @@ type GetLimitDefinitionsOutputArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The target service name.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 

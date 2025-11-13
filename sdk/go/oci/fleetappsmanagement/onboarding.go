@@ -14,32 +14,6 @@ import (
 
 // ## Example Usage
 //
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/fleetappsmanagement"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := fleetappsmanagement.NewOnboarding(ctx, "test_onboarding", &fleetappsmanagement.OnboardingArgs{
-//				CompartmentId:            pulumi.Any(compartmentId),
-//				IsCostTrackingTagEnabled: pulumi.Any(onboardingIsCostTrackingTagEnabled),
-//				IsFamsTagEnabled:         pulumi.Any(onboardingIsFamsTagEnabled),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Onboardings can be imported using the `id`, e.g.
@@ -53,20 +27,20 @@ type Onboarding struct {
 	// Summary of the Fleet Application Management Onboard Policy.
 	AppliedPolicies OnboardingAppliedPolicyArrayOutput `pulumi:"appliedPolicies"`
 	// Tenancy OCID
+	// <<<<<<< ours
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-	// `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Provide discovery frequency.
 	DiscoveryFrequency pulumi.StringOutput `pulumi:"discoveryFrequency"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-	// cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A value determining if the cost tracking tag is enabled or not. Allow
 	// Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolOutput `pulumi:"isCostTrackingTagEnabled"`
 	// A value determining if the Fleet Application Management tagging is enabled or not.
 	// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+	// > > > > > > > theirs
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -123,20 +97,20 @@ type onboardingState struct {
 	// Summary of the Fleet Application Management Onboard Policy.
 	AppliedPolicies []OnboardingAppliedPolicy `pulumi:"appliedPolicies"`
 	// Tenancy OCID
+	// <<<<<<< ours
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-	// `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Provide discovery frequency.
 	DiscoveryFrequency *string `pulumi:"discoveryFrequency"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-	// cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A value determining if the cost tracking tag is enabled or not. Allow
 	// Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled *bool `pulumi:"isCostTrackingTagEnabled"`
 	// A value determining if the Fleet Application Management tagging is enabled or not.
 	// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+	// > > > > > > > theirs
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -161,20 +135,20 @@ type OnboardingState struct {
 	// Summary of the Fleet Application Management Onboard Policy.
 	AppliedPolicies OnboardingAppliedPolicyArrayInput
 	// Tenancy OCID
+	// <<<<<<< ours
 	CompartmentId pulumi.StringPtrInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-	// `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// Provide discovery frequency.
 	DiscoveryFrequency pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-	// cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// A value determining if the cost tracking tag is enabled or not. Allow
 	// Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolPtrInput
 	// A value determining if the Fleet Application Management tagging is enabled or not.
 	// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+	// > > > > > > > theirs
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -201,12 +175,18 @@ func (OnboardingState) ElementType() reflect.Type {
 
 type onboardingArgs struct {
 	// Tenancy OCID
+	// <<<<<<< ours
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A value determining if the cost tracking tag is enabled or not. Allow
 	// Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled *bool `pulumi:"isCostTrackingTagEnabled"`
 	// A value determining if the Fleet Application Management tagging is enabled or not.
 	// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+	// > > > > > > > theirs
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -217,12 +197,18 @@ type onboardingArgs struct {
 // The set of arguments for constructing a Onboarding resource.
 type OnboardingArgs struct {
 	// Tenancy OCID
+	// <<<<<<< ours
 	CompartmentId pulumi.StringInput
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
 	// A value determining if the cost tracking tag is enabled or not. Allow
 	// Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
 	IsCostTrackingTagEnabled pulumi.BoolPtrInput
 	// A value determining if the Fleet Application Management tagging is enabled or not.
 	// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+	// > > > > > > > theirs
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -323,12 +309,12 @@ func (o OnboardingOutput) AppliedPolicies() OnboardingAppliedPolicyArrayOutput {
 }
 
 // Tenancy OCID
+// <<<<<<< ours
 func (o OnboardingOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-// `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o OnboardingOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -338,8 +324,7 @@ func (o OnboardingOutput) DiscoveryFrequency() pulumi.StringOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringOutput { return v.DiscoveryFrequency }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-// cross-compatibility only. Example: `{"bar-key": "value"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o OnboardingOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Onboarding) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -352,6 +337,7 @@ func (o OnboardingOutput) IsCostTrackingTagEnabled() pulumi.BoolOutput {
 
 // A value determining if the Fleet Application Management tagging is enabled or not.
 // Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+// > > > > > > > theirs
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the

@@ -189,6 +189,7 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails(dict):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
     def password(self) -> Optional[_builtins.str]:
         """
         The password for the administrator.

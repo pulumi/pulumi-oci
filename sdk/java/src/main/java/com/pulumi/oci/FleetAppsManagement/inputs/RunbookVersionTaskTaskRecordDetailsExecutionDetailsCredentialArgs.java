@@ -16,18 +16,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential
     public static final RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs Empty = new RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs();
 
     /**
-     * (Updatable) A user-friendly name. Does not
-     * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-     * `My new resource`
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not
-     * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-     * `My new resource`
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -75,9 +71,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not
-         * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-         * `My new resource`
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
          * 
          * @return builder
          * 
@@ -88,9 +82,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not
-         * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-         * `My new resource`
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
          * 
          * @return builder
          * 

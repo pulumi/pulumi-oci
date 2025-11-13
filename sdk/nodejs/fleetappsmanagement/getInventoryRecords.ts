@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired,
  *     resourceId: testResource.id,
  * });
  * ```
@@ -32,6 +33,7 @@ export function getInventoryRecords(args: GetInventoryRecordsArgs, opts?: pulumi
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "fleetId": args.fleetId,
+        "isDetailsRequired": args.isDetailsRequired,
         "resourceId": args.resourceId,
     }, opts);
 }
@@ -53,6 +55,10 @@ export interface GetInventoryRecordsArgs {
      * unique Fleet identifier
      */
     fleetId?: string;
+    /**
+     * If set to true, inventory details will be returned.
+     */
+    isDetailsRequired?: boolean;
     /**
      * Resource Identifier
      */
@@ -78,6 +84,7 @@ export interface GetInventoryRecordsResult {
      * The list of inventory_record_collection.
      */
     readonly inventoryRecordCollections: outputs.FleetAppsManagement.GetInventoryRecordsInventoryRecordCollection[];
+    readonly isDetailsRequired?: boolean;
     readonly resourceId?: string;
 }
 /**
@@ -95,6 +102,7 @@ export interface GetInventoryRecordsResult {
  *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired,
  *     resourceId: testResource.id,
  * });
  * ```
@@ -106,6 +114,7 @@ export function getInventoryRecordsOutput(args: GetInventoryRecordsOutputArgs, o
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "fleetId": args.fleetId,
+        "isDetailsRequired": args.isDetailsRequired,
         "resourceId": args.resourceId,
     }, opts);
 }
@@ -127,6 +136,10 @@ export interface GetInventoryRecordsOutputArgs {
      * unique Fleet identifier
      */
     fleetId?: pulumi.Input<string>;
+    /**
+     * If set to true, inventory details will be returned.
+     */
+    isDetailsRequired?: pulumi.Input<boolean>;
     /**
      * Resource Identifier
      */

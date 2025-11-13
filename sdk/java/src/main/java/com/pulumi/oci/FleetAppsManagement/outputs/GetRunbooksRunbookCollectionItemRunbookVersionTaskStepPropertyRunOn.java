@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOn {
     /**
-     * @return Build control flow conditions that determine the relevance of the task execution.
+     * @return Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     private String condition;
@@ -35,7 +35,7 @@ public final class GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropert
 
     private GetRunbooksRunbookCollectionItemRunbookVersionTaskStepPropertyRunOn() {}
     /**
-     * @return Build control flow conditions that determine the relevance of the task execution.
+     * @return Build control flow conditions that determine the relevance of the task execution against targets.
      * 
      */
     public String condition() {

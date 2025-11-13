@@ -251,6 +251,8 @@ type GetLimitDefinitionsLimitDefinition struct {
 	AreQuotasSupported bool `pulumi:"areQuotasSupported"`
 	// The limit description.
 	Description string `pulumi:"description"`
+	// An array of subscription types that support ExternalLocations.
+	ExternalLocationSupportedSubscriptions []string `pulumi:"externalLocationSupportedSubscriptions"`
 	// Indicates if the limit has been deprecated.
 	IsDeprecated bool `pulumi:"isDeprecated"`
 	// The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
@@ -267,7 +269,7 @@ type GetLimitDefinitionsLimitDefinition struct {
 	ServiceName string `pulumi:"serviceName"`
 	// Supported quota family names for creation of quota policy.
 	SupportedQuotaFamilies []string `pulumi:"supportedQuotaFamilies"`
-	// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	// An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
 	SupportedSubscriptions []string `pulumi:"supportedSubscriptions"`
 }
 
@@ -287,6 +289,8 @@ type GetLimitDefinitionsLimitDefinitionArgs struct {
 	AreQuotasSupported pulumi.BoolInput `pulumi:"areQuotasSupported"`
 	// The limit description.
 	Description pulumi.StringInput `pulumi:"description"`
+	// An array of subscription types that support ExternalLocations.
+	ExternalLocationSupportedSubscriptions pulumi.StringArrayInput `pulumi:"externalLocationSupportedSubscriptions"`
 	// Indicates if the limit has been deprecated.
 	IsDeprecated pulumi.BoolInput `pulumi:"isDeprecated"`
 	// The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
@@ -303,7 +307,7 @@ type GetLimitDefinitionsLimitDefinitionArgs struct {
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
 	// Supported quota family names for creation of quota policy.
 	SupportedQuotaFamilies pulumi.StringArrayInput `pulumi:"supportedQuotaFamilies"`
-	// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	// An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
 	SupportedSubscriptions pulumi.StringArrayInput `pulumi:"supportedSubscriptions"`
 }
 
@@ -368,6 +372,11 @@ func (o GetLimitDefinitionsLimitDefinitionOutput) Description() pulumi.StringOut
 	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// An array of subscription types that support ExternalLocations.
+func (o GetLimitDefinitionsLimitDefinitionOutput) ExternalLocationSupportedSubscriptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) []string { return v.ExternalLocationSupportedSubscriptions }).(pulumi.StringArrayOutput)
+}
+
 // Indicates if the limit has been deprecated.
 func (o GetLimitDefinitionsLimitDefinitionOutput) IsDeprecated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) bool { return v.IsDeprecated }).(pulumi.BoolOutput)
@@ -408,7 +417,7 @@ func (o GetLimitDefinitionsLimitDefinitionOutput) SupportedQuotaFamilies() pulum
 	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) []string { return v.SupportedQuotaFamilies }).(pulumi.StringArrayOutput)
 }
 
-// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+// An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
 func (o GetLimitDefinitionsLimitDefinitionOutput) SupportedSubscriptions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) []string { return v.SupportedSubscriptions }).(pulumi.StringArrayOutput)
 }
@@ -1321,7 +1330,7 @@ type GetServicesService struct {
 	Description string `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
 	Name string `pulumi:"name"`
-	// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	// An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
 	SupportedSubscriptions []string `pulumi:"supportedSubscriptions"`
 }
 
@@ -1341,7 +1350,7 @@ type GetServicesServiceArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	// An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
 	SupportedSubscriptions pulumi.StringArrayInput `pulumi:"supportedSubscriptions"`
 }
 
@@ -1406,7 +1415,7 @@ func (o GetServicesServiceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServicesService) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+// An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
 func (o GetServicesServiceOutput) SupportedSubscriptions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetServicesService) []string { return v.SupportedSubscriptions }).(pulumi.StringArrayOutput)
 }

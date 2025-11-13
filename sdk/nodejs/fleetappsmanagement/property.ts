@@ -16,6 +16,12 @@ import * as utilities from "../utilities";
  *     displayName: propertyDisplayName,
  *     selection: propertySelection,
  *     valueType: propertyValueType,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
  *     values: propertyValues,
  * });
  * ```
@@ -61,17 +67,17 @@ export class Property extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -164,12 +170,12 @@ export class Property extends pulumi.CustomResource {
                 throw new Error("Missing required property 'valueType'");
             }
             resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["selection"] = args?.selection;
             resourceInputs["valueType"] = args?.valueType;
             resourceInputs["values"] = args?.values;
-            resourceInputs["definedTags"] = undefined /*out*/;
-            resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["scope"] = undefined /*out*/;
@@ -193,7 +199,7 @@ export interface PropertyState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -201,7 +207,7 @@ export interface PropertyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -263,9 +269,17 @@ export interface PropertyArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Text selection of the property.
      */

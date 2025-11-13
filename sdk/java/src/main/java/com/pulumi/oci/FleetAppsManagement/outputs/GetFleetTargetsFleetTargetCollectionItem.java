@@ -50,7 +50,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
      */
     private List<GetFleetTargetsFleetTargetCollectionItemResource> resources;
     /**
-     * @return The current state of the FleetTarget.
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
@@ -126,7 +126,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         return this.resources;
     }
     /**
-     * @return The current state of the FleetTarget.
+     * @return A filter to return fleets whose lifecycleState matches the given lifecycleState.
      * 
      */
     public String state() {

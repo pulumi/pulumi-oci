@@ -34,6 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CatalogListingVersionCriteria = catalogItemCatalogListingVersionCriteria,
         ///         ConfigSourceType = catalogItemConfigSourceType,
         ///         DisplayName = catalogItemDisplayName,
+        ///         PackageType = catalogItemPackageType,
         ///         ShouldListPublicItems = catalogItemShouldListPublicItems,
         ///         State = catalogItemState,
         ///     });
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CatalogListingVersionCriteria = catalogItemCatalogListingVersionCriteria,
         ///         ConfigSourceType = catalogItemConfigSourceType,
         ///         DisplayName = catalogItemDisplayName,
+        ///         PackageType = catalogItemPackageType,
         ///         ShouldListPublicItems = catalogItemShouldListPublicItems,
         ///         State = catalogItemState,
         ///     });
@@ -100,6 +102,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         CatalogListingVersionCriteria = catalogItemCatalogListingVersionCriteria,
         ///         ConfigSourceType = catalogItemConfigSourceType,
         ///         DisplayName = catalogItemDisplayName,
+        ///         PackageType = catalogItemPackageType,
         ///         ShouldListPublicItems = catalogItemShouldListPublicItems,
         ///         State = catalogItemState,
         ///     });
@@ -151,6 +154,12 @@ namespace Pulumi.Oci.FleetAppsManagement
             get => _filters ?? (_filters = new List<Inputs.GetCatalogItemsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources that match the given package type. The state value is case-insensitive.
+        /// </summary>
+        [Input("packageType")]
+        public string? PackageType { get; set; }
 
         /// <summary>
         /// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
@@ -211,6 +220,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
+        /// A filter to return only resources that match the given package type. The state value is case-insensitive.
+        /// </summary>
+        [Input("packageType")]
+        public Input<string>? PackageType { get; set; }
+
+        /// <summary>
         /// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
         /// </summary>
         [Input("shouldListPublicItems")]
@@ -256,6 +271,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
+        /// </summary>
+        public readonly string? PackageType;
+        /// <summary>
         /// The indicator to append Public Items from the root compartment to any query, when set to TRUE.
         /// </summary>
         public readonly bool? ShouldListPublicItems;
@@ -282,6 +301,8 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string id,
 
+            string? packageType,
+
             bool? shouldListPublicItems,
 
             string? state)
@@ -294,6 +315,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            PackageType = packageType;
             ShouldListPublicItems = shouldListPublicItems;
             State = state;
         }

@@ -411,6 +411,7 @@ class TaskRecord(pulumi.CustomResource):
                     "is_executable_content": task_record_details_execution_details_is_executable_content,
                     "is_locked": task_record_details_execution_details_is_locked,
                     "is_read_output_variable_enabled": task_record_details_execution_details_is_read_output_variable_enabled,
+                    "system_variables": task_record_details_execution_details_system_variables,
                     "target_compartment_id": test_compartment["id"],
                     "variables": {
                         "input_variables": [{
@@ -500,6 +501,7 @@ class TaskRecord(pulumi.CustomResource):
                     "is_executable_content": task_record_details_execution_details_is_executable_content,
                     "is_locked": task_record_details_execution_details_is_locked,
                     "is_read_output_variable_enabled": task_record_details_execution_details_is_read_output_variable_enabled,
+                    "system_variables": task_record_details_execution_details_system_variables,
                     "target_compartment_id": test_compartment["id"],
                     "variables": {
                         "input_variables": [{

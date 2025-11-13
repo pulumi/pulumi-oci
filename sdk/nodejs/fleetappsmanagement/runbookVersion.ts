@@ -9,158 +9,6 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testRunbookVersion = new oci.fleetappsmanagement.RunbookVersion("test_runbook_version", {
- *     executionWorkflowDetails: {
- *         workflows: [{
- *             groupName: testGroup.name,
- *             steps: [{
- *                 type: runbookVersionExecutionWorkflowDetailsWorkflowStepsType,
- *                 groupName: testGroup.name,
- *                 stepName: runbookVersionExecutionWorkflowDetailsWorkflowStepsStepName,
- *                 steps: runbookVersionExecutionWorkflowDetailsWorkflowStepsSteps,
- *             }],
- *             type: runbookVersionExecutionWorkflowDetailsWorkflowType,
- *         }],
- *     },
- *     groups: [{
- *         name: runbookVersionGroupsName,
- *         type: runbookVersionGroupsType,
- *         properties: {
- *             actionOnFailure: runbookVersionGroupsPropertiesActionOnFailure,
- *             notificationPreferences: {
- *                 shouldNotifyOnPause: runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                 shouldNotifyOnTaskFailure: runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                 shouldNotifyOnTaskSuccess: runbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
- *             },
- *             pauseDetails: {
- *                 kind: runbookVersionGroupsPropertiesPauseDetailsKind,
- *                 durationInMinutes: runbookVersionGroupsPropertiesPauseDetailsDurationInMinutes,
- *             },
- *             preCondition: runbookVersionGroupsPropertiesPreCondition,
- *             runOn: {
- *                 kind: runbookVersionGroupsPropertiesRunOnKind,
- *                 condition: runbookVersionGroupsPropertiesRunOnCondition,
- *                 host: runbookVersionGroupsPropertiesRunOnHost,
- *                 previousTaskInstanceDetails: [{
- *                     outputVariableDetails: {
- *                         outputVariableName: runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName,
- *                         stepName: runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName,
- *                     },
- *                     resourceId: testResource.id,
- *                     resourceType: runbookVersionGroupsPropertiesRunOnPreviousTaskInstanceDetailsResourceType,
- *                 }],
- *             },
- *         },
- *     }],
- *     runbookId: testRunbook.id,
- *     tasks: [{
- *         stepName: runbookVersionTasksStepName,
- *         taskRecordDetails: {
- *             scope: runbookVersionTasksTaskRecordDetailsScope,
- *             description: runbookVersionTasksTaskRecordDetailsDescription,
- *             executionDetails: {
- *                 executionType: runbookVersionTasksTaskRecordDetailsExecutionDetailsExecutionType,
- *                 catalogId: testCatalog.id,
- *                 command: runbookVersionTasksTaskRecordDetailsExecutionDetailsCommand,
- *                 configFile: runbookVersionTasksTaskRecordDetailsExecutionDetailsConfigFile,
- *                 content: {
- *                     sourceType: runbookVersionTasksTaskRecordDetailsExecutionDetailsContentSourceType,
- *                     bucket: runbookVersionTasksTaskRecordDetailsExecutionDetailsContentBucket,
- *                     catalogId: testCatalog.id,
- *                     checksum: runbookVersionTasksTaskRecordDetailsExecutionDetailsContentChecksum,
- *                     namespace: runbookVersionTasksTaskRecordDetailsExecutionDetailsContentNamespace,
- *                     object: runbookVersionTasksTaskRecordDetailsExecutionDetailsContentObject,
- *                 },
- *                 credentials: [{
- *                     displayName: runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsDisplayName,
- *                     id: runbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId,
- *                 }],
- *                 endpoint: runbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint,
- *                 isExecutableContent: runbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent,
- *                 isLocked: runbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked,
- *                 isReadOutputVariableEnabled: runbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
- *                 targetCompartmentId: testCompartment.id,
- *                 variables: {
- *                     inputVariables: [{
- *                         description: runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesDescription,
- *                         name: runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesName,
- *                         type: runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesType,
- *                     }],
- *                     outputVariables: runbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables,
- *                 },
- *             },
- *             isApplySubjectTask: runbookVersionTasksTaskRecordDetailsIsApplySubjectTask,
- *             isCopyToLibraryEnabled: runbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled,
- *             isDiscoveryOutputTask: runbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask,
- *             name: runbookVersionTasksTaskRecordDetailsName,
- *             osType: runbookVersionTasksTaskRecordDetailsOsType,
- *             platform: runbookVersionTasksTaskRecordDetailsPlatform,
- *             properties: {
- *                 numRetries: runbookVersionTasksTaskRecordDetailsPropertiesNumRetries,
- *                 timeoutInSeconds: runbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds,
- *             },
- *             taskRecordId: testTaskRecord.id,
- *         },
- *         outputVariableMappings: [{
- *             name: runbookVersionTasksOutputVariableMappingsName,
- *             outputVariableDetails: {
- *                 outputVariableName: runbookVersionTasksOutputVariableMappingsOutputVariableDetailsOutputVariableName,
- *                 stepName: runbookVersionTasksOutputVariableMappingsOutputVariableDetailsStepName,
- *             },
- *         }],
- *         stepProperties: {
- *             actionOnFailure: runbookVersionTasksStepPropertiesActionOnFailure,
- *             notificationPreferences: {
- *                 shouldNotifyOnPause: runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                 shouldNotifyOnTaskFailure: runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                 shouldNotifyOnTaskSuccess: runbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
- *             },
- *             pauseDetails: {
- *                 kind: runbookVersionTasksStepPropertiesPauseDetailsKind,
- *                 durationInMinutes: runbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes,
- *             },
- *             preCondition: runbookVersionTasksStepPropertiesPreCondition,
- *             runOn: {
- *                 kind: runbookVersionTasksStepPropertiesRunOnKind,
- *                 condition: runbookVersionTasksStepPropertiesRunOnCondition,
- *                 host: runbookVersionTasksStepPropertiesRunOnHost,
- *                 previousTaskInstanceDetails: [{
- *                     outputVariableDetails: {
- *                         outputVariableName: runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsOutputVariableName,
- *                         stepName: runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsOutputVariableDetailsStepName,
- *                     },
- *                     resourceId: testResource.id,
- *                     resourceType: runbookVersionTasksStepPropertiesRunOnPreviousTaskInstanceDetailsResourceType,
- *                 }],
- *             },
- *         },
- *     }],
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     rollbackWorkflowDetails: {
- *         scope: runbookVersionRollbackWorkflowDetailsScope,
- *         workflows: [{
- *             groupName: testGroup.name,
- *             steps: [{
- *                 type: runbookVersionRollbackWorkflowDetailsWorkflowStepsType,
- *                 groupName: testGroup.name,
- *                 stepName: runbookVersionRollbackWorkflowDetailsWorkflowStepsStepName,
- *                 steps: runbookVersionRollbackWorkflowDetailsWorkflowStepsSteps,
- *             }],
- *             type: runbookVersionRollbackWorkflowDetailsWorkflowType,
- *         }],
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * RunbookVersions can be imported using the `id`, e.g.
@@ -205,6 +53,7 @@ export class RunbookVersion extends pulumi.CustomResource {
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Execution Workflow details.
+     * <<<<<<< ours
      */
     declare public readonly executionWorkflowDetails: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
     /**
@@ -245,6 +94,7 @@ export class RunbookVersion extends pulumi.CustomResource {
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A set of tasks to execute in the runbook.
+     * <<<<<<< ours
      */
     declare public readonly tasks: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionTask[]>;
     /**
@@ -331,6 +181,7 @@ export interface RunbookVersionState {
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Execution Workflow details.
+     * <<<<<<< ours
      */
     executionWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
     /**
@@ -371,6 +222,7 @@ export interface RunbookVersionState {
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A set of tasks to execute in the runbook.
+     * <<<<<<< ours
      */
     tasks?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTask>[]>;
     /**
@@ -394,6 +246,7 @@ export interface RunbookVersionArgs {
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Execution Workflow details.
+     * <<<<<<< ours
      */
     executionWorkflowDetails: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
     /**
@@ -415,6 +268,7 @@ export interface RunbookVersionArgs {
     runbookId: pulumi.Input<string>;
     /**
      * (Updatable) A set of tasks to execute in the runbook.
+     * <<<<<<< ours
      */
     tasks: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTask>[]>;
 }

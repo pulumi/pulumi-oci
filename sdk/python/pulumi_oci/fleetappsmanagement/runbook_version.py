@@ -31,9 +31,11 @@ class RunbookVersionArgs:
         """
         The set of arguments for constructing a RunbookVersion resource.
         :param pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs'] execution_workflow_details: (Updatable) Execution Workflow details.
+               <<<<<<< ours
         :param pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]] groups: (Updatable) The groups of the runbook.
         :param pulumi.Input[_builtins.str] runbook_id: The OCID of the resource.
         :param pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]] tasks: (Updatable) A set of tasks to execute in the runbook.
+               <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
@@ -56,6 +58,7 @@ class RunbookVersionArgs:
     def execution_workflow_details(self) -> pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs']:
         """
         (Updatable) Execution Workflow details.
+        <<<<<<< ours
         """
         return pulumi.get(self, "execution_workflow_details")
 
@@ -92,6 +95,7 @@ class RunbookVersionArgs:
     def tasks(self) -> pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]:
         """
         (Updatable) A set of tasks to execute in the runbook.
+        <<<<<<< ours
         """
         return pulumi.get(self, "tasks")
 
@@ -161,6 +165,7 @@ class _RunbookVersionState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs'] execution_workflow_details: (Updatable) Execution Workflow details.
+               <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
                for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]] groups: (Updatable) The groups of the runbook.
@@ -173,6 +178,7 @@ class _RunbookVersionState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]] tasks: (Updatable) A set of tasks to execute in the runbook.
+               <<<<<<< ours
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -234,6 +240,7 @@ class _RunbookVersionState:
     def execution_workflow_details(self) -> Optional[pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs']]:
         """
         (Updatable) Execution Workflow details.
+        <<<<<<< ours
         """
         return pulumi.get(self, "execution_workflow_details")
 
@@ -354,6 +361,7 @@ class _RunbookVersionState:
     def tasks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]]:
         """
         (Updatable) A set of tasks to execute in the runbook.
+        <<<<<<< ours
         """
         return pulumi.get(self, "tasks")
 
@@ -403,157 +411,6 @@ class RunbookVersion(pulumi.CustomResource):
         """
         ## Example Usage
 
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_runbook_version = oci.fleetappsmanagement.RunbookVersion("test_runbook_version",
-            execution_workflow_details={
-                "workflows": [{
-                    "group_name": test_group["name"],
-                    "steps": [{
-                        "type": runbook_version_execution_workflow_details_workflow_steps_type,
-                        "group_name": test_group["name"],
-                        "step_name": runbook_version_execution_workflow_details_workflow_steps_step_name,
-                        "steps": runbook_version_execution_workflow_details_workflow_steps_steps,
-                    }],
-                    "type": runbook_version_execution_workflow_details_workflow_type,
-                }],
-            },
-            groups=[{
-                "name": runbook_version_groups_name,
-                "type": runbook_version_groups_type,
-                "properties": {
-                    "action_on_failure": runbook_version_groups_properties_action_on_failure,
-                    "notification_preferences": {
-                        "should_notify_on_pause": runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                        "should_notify_on_task_failure": runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                        "should_notify_on_task_success": runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
-                    },
-                    "pause_details": {
-                        "kind": runbook_version_groups_properties_pause_details_kind,
-                        "duration_in_minutes": runbook_version_groups_properties_pause_details_duration_in_minutes,
-                    },
-                    "pre_condition": runbook_version_groups_properties_pre_condition,
-                    "run_on": {
-                        "kind": runbook_version_groups_properties_run_on_kind,
-                        "condition": runbook_version_groups_properties_run_on_condition,
-                        "host": runbook_version_groups_properties_run_on_host,
-                        "previous_task_instance_details": [{
-                            "output_variable_details": {
-                                "output_variable_name": runbook_version_groups_properties_run_on_previous_task_instance_details_output_variable_details_output_variable_name,
-                                "step_name": runbook_version_groups_properties_run_on_previous_task_instance_details_output_variable_details_step_name,
-                            },
-                            "resource_id": test_resource["id"],
-                            "resource_type": runbook_version_groups_properties_run_on_previous_task_instance_details_resource_type,
-                        }],
-                    },
-                },
-            }],
-            runbook_id=test_runbook["id"],
-            tasks=[{
-                "step_name": runbook_version_tasks_step_name,
-                "task_record_details": {
-                    "scope": runbook_version_tasks_task_record_details_scope,
-                    "description": runbook_version_tasks_task_record_details_description,
-                    "execution_details": {
-                        "execution_type": runbook_version_tasks_task_record_details_execution_details_execution_type,
-                        "catalog_id": test_catalog["id"],
-                        "command": runbook_version_tasks_task_record_details_execution_details_command,
-                        "config_file": runbook_version_tasks_task_record_details_execution_details_config_file,
-                        "content": {
-                            "source_type": runbook_version_tasks_task_record_details_execution_details_content_source_type,
-                            "bucket": runbook_version_tasks_task_record_details_execution_details_content_bucket,
-                            "catalog_id": test_catalog["id"],
-                            "checksum": runbook_version_tasks_task_record_details_execution_details_content_checksum,
-                            "namespace": runbook_version_tasks_task_record_details_execution_details_content_namespace,
-                            "object": runbook_version_tasks_task_record_details_execution_details_content_object,
-                        },
-                        "credentials": [{
-                            "display_name": runbook_version_tasks_task_record_details_execution_details_credentials_display_name,
-                            "id": runbook_version_tasks_task_record_details_execution_details_credentials_id,
-                        }],
-                        "endpoint": runbook_version_tasks_task_record_details_execution_details_endpoint,
-                        "is_executable_content": runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                        "is_locked": runbook_version_tasks_task_record_details_execution_details_is_locked,
-                        "is_read_output_variable_enabled": runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
-                        "target_compartment_id": test_compartment["id"],
-                        "variables": {
-                            "input_variables": [{
-                                "description": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_description,
-                                "name": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_name,
-                                "type": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_type,
-                            }],
-                            "output_variables": runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
-                        },
-                    },
-                    "is_apply_subject_task": runbook_version_tasks_task_record_details_is_apply_subject_task,
-                    "is_copy_to_library_enabled": runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                    "is_discovery_output_task": runbook_version_tasks_task_record_details_is_discovery_output_task,
-                    "name": runbook_version_tasks_task_record_details_name,
-                    "os_type": runbook_version_tasks_task_record_details_os_type,
-                    "platform": runbook_version_tasks_task_record_details_platform,
-                    "properties": {
-                        "num_retries": runbook_version_tasks_task_record_details_properties_num_retries,
-                        "timeout_in_seconds": runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
-                    },
-                    "task_record_id": test_task_record["id"],
-                },
-                "output_variable_mappings": [{
-                    "name": runbook_version_tasks_output_variable_mappings_name,
-                    "output_variable_details": {
-                        "output_variable_name": runbook_version_tasks_output_variable_mappings_output_variable_details_output_variable_name,
-                        "step_name": runbook_version_tasks_output_variable_mappings_output_variable_details_step_name,
-                    },
-                }],
-                "step_properties": {
-                    "action_on_failure": runbook_version_tasks_step_properties_action_on_failure,
-                    "notification_preferences": {
-                        "should_notify_on_pause": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                        "should_notify_on_task_failure": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                        "should_notify_on_task_success": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
-                    },
-                    "pause_details": {
-                        "kind": runbook_version_tasks_step_properties_pause_details_kind,
-                        "duration_in_minutes": runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
-                    },
-                    "pre_condition": runbook_version_tasks_step_properties_pre_condition,
-                    "run_on": {
-                        "kind": runbook_version_tasks_step_properties_run_on_kind,
-                        "condition": runbook_version_tasks_step_properties_run_on_condition,
-                        "host": runbook_version_tasks_step_properties_run_on_host,
-                        "previous_task_instance_details": [{
-                            "output_variable_details": {
-                                "output_variable_name": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_output_variable_details_output_variable_name,
-                                "step_name": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_output_variable_details_step_name,
-                            },
-                            "resource_id": test_resource["id"],
-                            "resource_type": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_resource_type,
-                        }],
-                    },
-                },
-            }],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            rollback_workflow_details={
-                "scope": runbook_version_rollback_workflow_details_scope,
-                "workflows": [{
-                    "group_name": test_group["name"],
-                    "steps": [{
-                        "type": runbook_version_rollback_workflow_details_workflow_steps_type,
-                        "group_name": test_group["name"],
-                        "step_name": runbook_version_rollback_workflow_details_workflow_steps_step_name,
-                        "steps": runbook_version_rollback_workflow_details_workflow_steps_steps,
-                    }],
-                    "type": runbook_version_rollback_workflow_details_workflow_type,
-                }],
-            })
-        ```
-
         ## Import
 
         RunbookVersions can be imported using the `id`, e.g.
@@ -567,12 +424,14 @@ class RunbookVersion(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']] execution_workflow_details: (Updatable) Execution Workflow details.
+               <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
                for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]] groups: (Updatable) The groups of the runbook.
         :param pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']] rollback_workflow_details: (Updatable) Rollback Workflow details.
         :param pulumi.Input[_builtins.str] runbook_id: The OCID of the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
+               <<<<<<< ours
         """
         ...
     @overload
@@ -582,157 +441,6 @@ class RunbookVersion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_runbook_version = oci.fleetappsmanagement.RunbookVersion("test_runbook_version",
-            execution_workflow_details={
-                "workflows": [{
-                    "group_name": test_group["name"],
-                    "steps": [{
-                        "type": runbook_version_execution_workflow_details_workflow_steps_type,
-                        "group_name": test_group["name"],
-                        "step_name": runbook_version_execution_workflow_details_workflow_steps_step_name,
-                        "steps": runbook_version_execution_workflow_details_workflow_steps_steps,
-                    }],
-                    "type": runbook_version_execution_workflow_details_workflow_type,
-                }],
-            },
-            groups=[{
-                "name": runbook_version_groups_name,
-                "type": runbook_version_groups_type,
-                "properties": {
-                    "action_on_failure": runbook_version_groups_properties_action_on_failure,
-                    "notification_preferences": {
-                        "should_notify_on_pause": runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                        "should_notify_on_task_failure": runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                        "should_notify_on_task_success": runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
-                    },
-                    "pause_details": {
-                        "kind": runbook_version_groups_properties_pause_details_kind,
-                        "duration_in_minutes": runbook_version_groups_properties_pause_details_duration_in_minutes,
-                    },
-                    "pre_condition": runbook_version_groups_properties_pre_condition,
-                    "run_on": {
-                        "kind": runbook_version_groups_properties_run_on_kind,
-                        "condition": runbook_version_groups_properties_run_on_condition,
-                        "host": runbook_version_groups_properties_run_on_host,
-                        "previous_task_instance_details": [{
-                            "output_variable_details": {
-                                "output_variable_name": runbook_version_groups_properties_run_on_previous_task_instance_details_output_variable_details_output_variable_name,
-                                "step_name": runbook_version_groups_properties_run_on_previous_task_instance_details_output_variable_details_step_name,
-                            },
-                            "resource_id": test_resource["id"],
-                            "resource_type": runbook_version_groups_properties_run_on_previous_task_instance_details_resource_type,
-                        }],
-                    },
-                },
-            }],
-            runbook_id=test_runbook["id"],
-            tasks=[{
-                "step_name": runbook_version_tasks_step_name,
-                "task_record_details": {
-                    "scope": runbook_version_tasks_task_record_details_scope,
-                    "description": runbook_version_tasks_task_record_details_description,
-                    "execution_details": {
-                        "execution_type": runbook_version_tasks_task_record_details_execution_details_execution_type,
-                        "catalog_id": test_catalog["id"],
-                        "command": runbook_version_tasks_task_record_details_execution_details_command,
-                        "config_file": runbook_version_tasks_task_record_details_execution_details_config_file,
-                        "content": {
-                            "source_type": runbook_version_tasks_task_record_details_execution_details_content_source_type,
-                            "bucket": runbook_version_tasks_task_record_details_execution_details_content_bucket,
-                            "catalog_id": test_catalog["id"],
-                            "checksum": runbook_version_tasks_task_record_details_execution_details_content_checksum,
-                            "namespace": runbook_version_tasks_task_record_details_execution_details_content_namespace,
-                            "object": runbook_version_tasks_task_record_details_execution_details_content_object,
-                        },
-                        "credentials": [{
-                            "display_name": runbook_version_tasks_task_record_details_execution_details_credentials_display_name,
-                            "id": runbook_version_tasks_task_record_details_execution_details_credentials_id,
-                        }],
-                        "endpoint": runbook_version_tasks_task_record_details_execution_details_endpoint,
-                        "is_executable_content": runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                        "is_locked": runbook_version_tasks_task_record_details_execution_details_is_locked,
-                        "is_read_output_variable_enabled": runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
-                        "target_compartment_id": test_compartment["id"],
-                        "variables": {
-                            "input_variables": [{
-                                "description": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_description,
-                                "name": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_name,
-                                "type": runbook_version_tasks_task_record_details_execution_details_variables_input_variables_type,
-                            }],
-                            "output_variables": runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
-                        },
-                    },
-                    "is_apply_subject_task": runbook_version_tasks_task_record_details_is_apply_subject_task,
-                    "is_copy_to_library_enabled": runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                    "is_discovery_output_task": runbook_version_tasks_task_record_details_is_discovery_output_task,
-                    "name": runbook_version_tasks_task_record_details_name,
-                    "os_type": runbook_version_tasks_task_record_details_os_type,
-                    "platform": runbook_version_tasks_task_record_details_platform,
-                    "properties": {
-                        "num_retries": runbook_version_tasks_task_record_details_properties_num_retries,
-                        "timeout_in_seconds": runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
-                    },
-                    "task_record_id": test_task_record["id"],
-                },
-                "output_variable_mappings": [{
-                    "name": runbook_version_tasks_output_variable_mappings_name,
-                    "output_variable_details": {
-                        "output_variable_name": runbook_version_tasks_output_variable_mappings_output_variable_details_output_variable_name,
-                        "step_name": runbook_version_tasks_output_variable_mappings_output_variable_details_step_name,
-                    },
-                }],
-                "step_properties": {
-                    "action_on_failure": runbook_version_tasks_step_properties_action_on_failure,
-                    "notification_preferences": {
-                        "should_notify_on_pause": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                        "should_notify_on_task_failure": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                        "should_notify_on_task_success": runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
-                    },
-                    "pause_details": {
-                        "kind": runbook_version_tasks_step_properties_pause_details_kind,
-                        "duration_in_minutes": runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
-                    },
-                    "pre_condition": runbook_version_tasks_step_properties_pre_condition,
-                    "run_on": {
-                        "kind": runbook_version_tasks_step_properties_run_on_kind,
-                        "condition": runbook_version_tasks_step_properties_run_on_condition,
-                        "host": runbook_version_tasks_step_properties_run_on_host,
-                        "previous_task_instance_details": [{
-                            "output_variable_details": {
-                                "output_variable_name": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_output_variable_details_output_variable_name,
-                                "step_name": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_output_variable_details_step_name,
-                            },
-                            "resource_id": test_resource["id"],
-                            "resource_type": runbook_version_tasks_step_properties_run_on_previous_task_instance_details_resource_type,
-                        }],
-                    },
-                },
-            }],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            rollback_workflow_details={
-                "scope": runbook_version_rollback_workflow_details_scope,
-                "workflows": [{
-                    "group_name": test_group["name"],
-                    "steps": [{
-                        "type": runbook_version_rollback_workflow_details_workflow_steps_type,
-                        "group_name": test_group["name"],
-                        "step_name": runbook_version_rollback_workflow_details_workflow_steps_step_name,
-                        "steps": runbook_version_rollback_workflow_details_workflow_steps_steps,
-                    }],
-                    "type": runbook_version_rollback_workflow_details_workflow_type,
-                }],
-            })
-        ```
 
         ## Import
 
@@ -831,6 +539,7 @@ class RunbookVersion(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']] execution_workflow_details: (Updatable) Execution Workflow details.
+               <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
                for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]] groups: (Updatable) The groups of the runbook.
@@ -843,6 +552,7 @@ class RunbookVersion(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
+               <<<<<<< ours
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -886,6 +596,7 @@ class RunbookVersion(pulumi.CustomResource):
     def execution_workflow_details(self) -> pulumi.Output['outputs.RunbookVersionExecutionWorkflowDetails']:
         """
         (Updatable) Execution Workflow details.
+        <<<<<<< ours
         """
         return pulumi.get(self, "execution_workflow_details")
 
@@ -966,6 +677,7 @@ class RunbookVersion(pulumi.CustomResource):
     def tasks(self) -> pulumi.Output[Sequence['outputs.RunbookVersionTask']]:
         """
         (Updatable) A set of tasks to execute in the runbook.
+        <<<<<<< ours
         """
         return pulumi.get(self, "tasks")
 

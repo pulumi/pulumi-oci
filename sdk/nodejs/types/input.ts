@@ -13642,11 +13642,11 @@ export namespace Core {
 
     export interface DedicatedVmHostPlacementConstraintDetails {
         /**
-         * The OCID of the compute bare metal host.
+         * The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
          */
         computeBareMetalHostId?: pulumi.Input<string>;
         /**
-         * Determines the type of targeted launch.
+         * The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
          *
          *
          * ** IMPORTANT **
@@ -43962,9 +43962,25 @@ export namespace FleetAppsManagement {
 
     export interface FleetNotificationPreferencePreferences {
         /**
+         * (Updatable) Enables or disables notification on job canceled.
+         */
+        onJobCanceled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Enables or disables notification on Job Failures.
          */
         onJobFailure?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables or disables notification on job schedule change.
+         */
+        onJobScheduleChange?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables or disables notification on job start.
+         */
+        onJobStart?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables or disables notification on job success.
+         */
+        onJobSuccess?: pulumi.Input<boolean>;
         /**
          * (Updatable) Enables or disables notification when fleet resource becomes non compliant.
          */
@@ -44084,9 +44100,17 @@ export namespace FleetAppsManagement {
          */
         compartmentId?: pulumi.Input<string>;
         /**
+         * (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+         */
+        compartmentIdInSubtree?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Rule Conditions
          */
         conditions?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetResourceSelectionRuleSelectionCriteriaRuleCondition>[]>;
+        /**
+         * (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+         */
+        matchCondition?: pulumi.Input<string>;
         /**
          * (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
          */
@@ -44264,6 +44288,18 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetInstalledPatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInstalledPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetInventoryRecordsFilter {
         /**
          * Name of the inventory target property.
@@ -44402,6 +44438,60 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetRecommendedPatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRecommendedPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetReportMetadataFilter {
+        /**
+         * Name of Report.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetReportMetadataFilterArgs {
+        /**
+         * Name of Report.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRunbookExportStatusesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRunbookExportStatusesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRunbookImportStatusesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRunbookImportStatusesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetRunbookVersionsFilter {
         /**
          * A filter to return only resources that match the entire name given.
@@ -44511,6 +44601,42 @@ export namespace FleetAppsManagement {
     }
 
     export interface GetSchedulerJobJobActivityStepsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetTargetComponentsFilter {
+        /**
+         * Target Component Name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetTargetComponentsFilterArgs {
+        /**
+         * Target Component Name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetTargetPropertiesFilter {
+        /**
+         * Name of the property.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetTargetPropertiesFilterArgs {
+        /**
+         * Name of the property.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -44852,10 +44978,6 @@ export namespace FleetAppsManagement {
         tasks: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookRunbookVersionTask>[]>;
         /**
          * The version of the runbook.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         version?: pulumi.Input<string>;
     }
@@ -44967,7 +45089,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookRunbookVersionGroupPropertiesRunOn {
         /**
-         * Build control flow conditions that determine the relevance of the task execution.
+         * Build control flow conditions that determine the relevance of the task execution against targets.
          */
         condition?: pulumi.Input<string>;
         /**
@@ -45147,7 +45269,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookRunbookVersionTaskStepPropertiesRunOn {
         /**
-         * Build control flow conditions that determine the relevance of the task execution.
+         * Build control flow conditions that determine the relevance of the task execution against targets.
          */
         condition?: pulumi.Input<string>;
         /**
@@ -45276,6 +45398,10 @@ export namespace FleetAppsManagement {
          */
         isReadOutputVariableEnabled?: pulumi.Input<boolean>;
         /**
+         * The list of system variables.
+         */
+        systemVariables?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * OCID of the compartment to which the resource belongs to.
          */
         targetCompartmentId?: pulumi.Input<string>;
@@ -45374,7 +45500,7 @@ export namespace FleetAppsManagement {
          */
         steps: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetailsWorkflowStep>[]>;
         /**
-         * (Updatable) Workflow Group Details.
+         * (Updatable) Workflow Group  Details.
          */
         type: pulumi.Input<string>;
     }
@@ -45389,8 +45515,7 @@ export namespace FleetAppsManagement {
          */
         stepName?: pulumi.Input<string>;
         /**
-         * (Updatable) Tasks within the Group. Provide the
-         * stepName for all applicable tasks.
+         * (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
          */
         steps?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -45412,6 +45537,7 @@ export namespace FleetAppsManagement {
          * (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
          * inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
          * Executes tasks across resources in a rolling order.
+         * >>>>>>> theirs
          */
         type: pulumi.Input<string>;
     }
@@ -45565,8 +45691,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTask {
         /**
-         * (Updatable) Mapping output variables of previous tasks to the input
-         * variables of the current task.
+         * (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
          */
         outputVariableMappings?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskOutputVariableMapping>[]>;
         /**
@@ -45589,16 +45714,14 @@ export namespace FleetAppsManagement {
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) The details of the output variable that will be used for
-         * mapping.
+         * (Updatable) The details of the output variable that will be used for mapping.
          */
         outputVariableDetails: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskOutputVariableMappingOutputVariableDetails>;
     }
 
     export interface RunbookVersionTaskOutputVariableMappingOutputVariableDetails {
         /**
-         * (Updatable) The name of the output variable whose value has to be
-         * mapped.
+         * (Updatable) The name of the output variable whose value has to be mapped.
          */
         outputVariableName: pulumi.Input<string>;
         /**
@@ -45621,8 +45744,7 @@ export namespace FleetAppsManagement {
          */
         pauseDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskStepPropertiesPauseDetails>;
         /**
-         * (Updatable) Build control flow conditions that determine the relevance of the
-         * task execution.
+         * (Updatable) Build control flow conditions that determine the relevance of the task execution.
          */
         preCondition?: pulumi.Input<string>;
         /**
@@ -45637,8 +45759,7 @@ export namespace FleetAppsManagement {
          */
         shouldNotifyOnPause?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Enables or disables notification on Task
-         * Failures.
+         * (Updatable) Enables or disables notification on Task Failures.
          */
         shouldNotifyOnTaskFailure?: pulumi.Input<boolean>;
         /**
@@ -45660,8 +45781,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTaskStepPropertiesRunOn {
         /**
-         * (Updatable) Build control flow conditions that
-         * determine the relevance of the task execution.
+         * (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
          */
         condition?: pulumi.Input<string>;
         /**
@@ -45673,16 +45793,14 @@ export namespace FleetAppsManagement {
          */
         kind: pulumi.Input<string>;
         /**
-         * (Updatable) Previous Task
-         * Instance Details
+         * (Updatable) Previous Task Instance Details
          */
         previousTaskInstanceDetails?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail>[]>;
     }
 
     export interface RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetail {
         /**
-         * (Updatable) The details of
-         * the output variable that will be used for mapping.
+         * (Updatable) The details of the output variable that will be used for mapping.
          */
         outputVariableDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails>;
         /**
@@ -45697,13 +45815,11 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetails {
         /**
-         * (Updatable) The name of the
-         * output variable whose value has to be mapped.
+         * (Updatable) The name of the output variable whose value has to be mapped.
          */
         outputVariableName?: pulumi.Input<string>;
         /**
-         * (Updatable) The name of the task step
-         * the output variable belongs to.
+         * (Updatable) The name of the task step the output variable belongs to.
          */
         stepName?: pulumi.Input<string>;
     }
@@ -45718,8 +45834,7 @@ export namespace FleetAppsManagement {
          */
         executionDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskTaskRecordDetailsExecutionDetails>;
         /**
-         * (Updatable) Is this an Apply Subject Task? Ex. Patch
-         * Execution Task
+         * (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
          */
         isApplySubjectTask?: pulumi.Input<boolean>;
         /**
@@ -45752,10 +45867,6 @@ export namespace FleetAppsManagement {
         scope: pulumi.Input<string>;
         /**
          * (Updatable) The ID of taskRecord.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-         * new property values
          */
         taskRecordId?: pulumi.Input<string>;
     }
@@ -45763,8 +45874,7 @@ export namespace FleetAppsManagement {
     export interface RunbookVersionTaskTaskRecordDetailsExecutionDetails {
         catalogId?: pulumi.Input<string>;
         /**
-         * (Updatable) Optional command to execute the content.
-         * You can provide any commands/arguments that can't be part of the script.
+         * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
          */
         command?: pulumi.Input<string>;
         /**
@@ -45776,8 +45886,7 @@ export namespace FleetAppsManagement {
          */
         content?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent>;
         /**
-         * (Updatable) Credentials required for executing the
-         * task.
+         * (Updatable) Credentials required for executing the task.
          */
         credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential>[]>;
         /**
@@ -45789,28 +45898,27 @@ export namespace FleetAppsManagement {
          */
         executionType: pulumi.Input<string>;
         /**
-         * (Updatable) Is the Content an executable
-         * file?
+         * (Updatable) Is the Content an executable file?
          */
         isExecutableContent?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Is the script locked to prevent changes
-         * directly in Object Storage?
+         * (Updatable) Is the script locked to prevent changes directly in Object Storage?
          */
         isLocked?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Is read output
-         * variable enabled
+         * (Updatable) Is read output variable enabled
          */
         isReadOutputVariableEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) OCID of the compartment to
-         * which the resource belongs to.
+         * (Updatable) The list of system variables.
+         */
+        systemVariables?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) OCID of the compartment to which the resource belongs to.
          */
         targetCompartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) The variable of the task. At least one
-         * of the dynamicArguments or output needs to be provided.
+         * (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
          */
         variables?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables>;
     }
@@ -45822,8 +45930,7 @@ export namespace FleetAppsManagement {
         bucket?: pulumi.Input<string>;
         catalogId?: pulumi.Input<string>;
         /**
-         * (Updatable) md5 checksum of the
-         * artifact.
+         * (Updatable) md5 checksum of the artifact.
          */
         checksum?: pulumi.Input<string>;
         /**
@@ -45842,9 +45949,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential {
         /**
-         * (Updatable) A user-friendly name. Does not
-         * have to be unique, and it's changeable. Avoid entering confidential information. Example:
-         * `My new resource`
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -45855,8 +45960,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables {
         /**
-         * (Updatable) The input variables for the
-         * task.
+         * (Updatable) The input variables for the task.
          */
         inputVariables?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable>[]>;
         /**
@@ -45867,8 +45971,7 @@ export namespace FleetAppsManagement {
 
     export interface RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable {
         /**
-         * (Updatable) The description of the
-         * argument.
+         * (Updatable) The description of the argument.
          */
         description?: pulumi.Input<string>;
         /**
@@ -46087,6 +46190,10 @@ export namespace FleetAppsManagement {
          * (Updatable) Is read output variable enabled
          */
         isReadOutputVariableEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The list of system variables.
+         */
+        systemVariables?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) OCID of the compartment to which the resource belongs to.
          */
@@ -46852,6 +46959,8 @@ export namespace FusionApps {
         lastName: pulumi.Input<string>;
         /**
          * The password for the administrator.
+         *
+         * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
          */
         password?: pulumi.Input<string>;
         /**

@@ -22,8 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string? StepName;
         /// <summary>
-        /// (Updatable) Tasks within the Group. Provide the
-        /// stepName for all applicable tasks.
+        /// (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
         /// </summary>
         public readonly ImmutableArray<string> Steps;
         /// <summary>

@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsFilter;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -86,6 +87,21 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * @return A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    public Optional<Boolean> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
+    /**
      * The remaining memory of the dedicated VM host, in GBs.
      * 
      */
@@ -138,6 +154,7 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.instanceShapeName = $.instanceShapeName;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
         this.remainingMemoryInGbsGreaterThanOrEqualTo = $.remainingMemoryInGbsGreaterThanOrEqualTo;
         this.remainingOcpusGreaterThanOrEqualTo = $.remainingOcpusGreaterThanOrEqualTo;
         this.state = $.state;
@@ -211,6 +228,17 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder instanceShapeName(@Nullable String instanceShapeName) {
             $.instanceShapeName = instanceShapeName;
+            return this;
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return this;
         }
 

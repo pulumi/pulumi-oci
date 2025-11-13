@@ -31,8 +31,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<Inputs.RunbookVersionTaskStepPropertiesPauseDetailsGetArgs>? PauseDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Build control flow conditions that determine the relevance of the
-        /// task execution.
+        /// (Updatable) Build control flow conditions that determine the relevance of the task execution.
         /// </summary>
         [Input("preCondition")]
         public Input<string>? PreCondition { get; set; }

@@ -17,6 +17,21 @@ public final class FleetNotificationPreferencePreferencesArgs extends com.pulumi
     public static final FleetNotificationPreferencePreferencesArgs Empty = new FleetNotificationPreferencePreferencesArgs();
 
     /**
+     * (Updatable) Enables or disables notification on job canceled.
+     * 
+     */
+    @Import(name="onJobCanceled")
+    private @Nullable Output<Boolean> onJobCanceled;
+
+    /**
+     * @return (Updatable) Enables or disables notification on job canceled.
+     * 
+     */
+    public Optional<Output<Boolean>> onJobCanceled() {
+        return Optional.ofNullable(this.onJobCanceled);
+    }
+
+    /**
      * (Updatable) Enables or disables notification on Job Failures.
      * 
      */
@@ -29,6 +44,51 @@ public final class FleetNotificationPreferencePreferencesArgs extends com.pulumi
      */
     public Optional<Output<Boolean>> onJobFailure() {
         return Optional.ofNullable(this.onJobFailure);
+    }
+
+    /**
+     * (Updatable) Enables or disables notification on job schedule change.
+     * 
+     */
+    @Import(name="onJobScheduleChange")
+    private @Nullable Output<Boolean> onJobScheduleChange;
+
+    /**
+     * @return (Updatable) Enables or disables notification on job schedule change.
+     * 
+     */
+    public Optional<Output<Boolean>> onJobScheduleChange() {
+        return Optional.ofNullable(this.onJobScheduleChange);
+    }
+
+    /**
+     * (Updatable) Enables or disables notification on job start.
+     * 
+     */
+    @Import(name="onJobStart")
+    private @Nullable Output<Boolean> onJobStart;
+
+    /**
+     * @return (Updatable) Enables or disables notification on job start.
+     * 
+     */
+    public Optional<Output<Boolean>> onJobStart() {
+        return Optional.ofNullable(this.onJobStart);
+    }
+
+    /**
+     * (Updatable) Enables or disables notification on job success.
+     * 
+     */
+    @Import(name="onJobSuccess")
+    private @Nullable Output<Boolean> onJobSuccess;
+
+    /**
+     * @return (Updatable) Enables or disables notification on job success.
+     * 
+     */
+    public Optional<Output<Boolean>> onJobSuccess() {
+        return Optional.ofNullable(this.onJobSuccess);
     }
 
     /**
@@ -139,7 +199,11 @@ public final class FleetNotificationPreferencePreferencesArgs extends com.pulumi
     private FleetNotificationPreferencePreferencesArgs() {}
 
     private FleetNotificationPreferencePreferencesArgs(FleetNotificationPreferencePreferencesArgs $) {
+        this.onJobCanceled = $.onJobCanceled;
         this.onJobFailure = $.onJobFailure;
+        this.onJobScheduleChange = $.onJobScheduleChange;
+        this.onJobStart = $.onJobStart;
+        this.onJobSuccess = $.onJobSuccess;
         this.onResourceNonCompliance = $.onResourceNonCompliance;
         this.onRunbookNewerVersion = $.onRunbookNewerVersion;
         this.onTaskFailure = $.onTaskFailure;
@@ -168,6 +232,27 @@ public final class FleetNotificationPreferencePreferencesArgs extends com.pulumi
         }
 
         /**
+         * @param onJobCanceled (Updatable) Enables or disables notification on job canceled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobCanceled(@Nullable Output<Boolean> onJobCanceled) {
+            $.onJobCanceled = onJobCanceled;
+            return this;
+        }
+
+        /**
+         * @param onJobCanceled (Updatable) Enables or disables notification on job canceled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobCanceled(Boolean onJobCanceled) {
+            return onJobCanceled(Output.of(onJobCanceled));
+        }
+
+        /**
          * @param onJobFailure (Updatable) Enables or disables notification on Job Failures.
          * 
          * @return builder
@@ -186,6 +271,69 @@ public final class FleetNotificationPreferencePreferencesArgs extends com.pulumi
          */
         public Builder onJobFailure(Boolean onJobFailure) {
             return onJobFailure(Output.of(onJobFailure));
+        }
+
+        /**
+         * @param onJobScheduleChange (Updatable) Enables or disables notification on job schedule change.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobScheduleChange(@Nullable Output<Boolean> onJobScheduleChange) {
+            $.onJobScheduleChange = onJobScheduleChange;
+            return this;
+        }
+
+        /**
+         * @param onJobScheduleChange (Updatable) Enables or disables notification on job schedule change.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobScheduleChange(Boolean onJobScheduleChange) {
+            return onJobScheduleChange(Output.of(onJobScheduleChange));
+        }
+
+        /**
+         * @param onJobStart (Updatable) Enables or disables notification on job start.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobStart(@Nullable Output<Boolean> onJobStart) {
+            $.onJobStart = onJobStart;
+            return this;
+        }
+
+        /**
+         * @param onJobStart (Updatable) Enables or disables notification on job start.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobStart(Boolean onJobStart) {
+            return onJobStart(Output.of(onJobStart));
+        }
+
+        /**
+         * @param onJobSuccess (Updatable) Enables or disables notification on job success.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobSuccess(@Nullable Output<Boolean> onJobSuccess) {
+            $.onJobSuccess = onJobSuccess;
+            return this;
+        }
+
+        /**
+         * @param onJobSuccess (Updatable) Enables or disables notification on job success.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onJobSuccess(Boolean onJobSuccess) {
+            return onJobSuccess(Output.of(onJobSuccess));
         }
 
         /**

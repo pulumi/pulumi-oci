@@ -34,6 +34,7 @@ public final class GetInventoryRecordsResult {
      * 
      */
     private List<GetInventoryRecordsInventoryRecordCollection> inventoryRecordCollections;
+    private @Nullable Boolean isDetailsRequired;
     private @Nullable String resourceId;
 
     private GetInventoryRecordsResult() {}
@@ -67,6 +68,9 @@ public final class GetInventoryRecordsResult {
     public List<GetInventoryRecordsInventoryRecordCollection> inventoryRecordCollections() {
         return this.inventoryRecordCollections;
     }
+    public Optional<Boolean> isDetailsRequired() {
+        return Optional.ofNullable(this.isDetailsRequired);
+    }
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
@@ -86,6 +90,7 @@ public final class GetInventoryRecordsResult {
         private @Nullable String fleetId;
         private String id;
         private List<GetInventoryRecordsInventoryRecordCollection> inventoryRecordCollections;
+        private @Nullable Boolean isDetailsRequired;
         private @Nullable String resourceId;
         public Builder() {}
         public Builder(GetInventoryRecordsResult defaults) {
@@ -96,6 +101,7 @@ public final class GetInventoryRecordsResult {
     	      this.fleetId = defaults.fleetId;
     	      this.id = defaults.id;
     	      this.inventoryRecordCollections = defaults.inventoryRecordCollections;
+    	      this.isDetailsRequired = defaults.isDetailsRequired;
     	      this.resourceId = defaults.resourceId;
         }
 
@@ -148,6 +154,12 @@ public final class GetInventoryRecordsResult {
             return inventoryRecordCollections(List.of(inventoryRecordCollections));
         }
         @CustomType.Setter
+        public Builder isDetailsRequired(@Nullable Boolean isDetailsRequired) {
+
+            this.isDetailsRequired = isDetailsRequired;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
 
             this.resourceId = resourceId;
@@ -161,6 +173,7 @@ public final class GetInventoryRecordsResult {
             _resultValue.fleetId = fleetId;
             _resultValue.id = id;
             _resultValue.inventoryRecordCollections = inventoryRecordCollections;
+            _resultValue.isDetailsRequired = isDetailsRequired;
             _resultValue.resourceId = resourceId;
             return _resultValue;
         }

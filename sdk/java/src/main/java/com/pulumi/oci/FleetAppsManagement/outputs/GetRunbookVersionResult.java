@@ -66,7 +66,7 @@ public final class GetRunbookVersionResult {
     private String runbookId;
     private String runbookVersionId;
     /**
-     * @return The current state of the FleetResource.
+     * @return The current state of the runbook version.
      * 
      */
     private String state;
@@ -165,7 +165,7 @@ public final class GetRunbookVersionResult {
         return this.runbookVersionId;
     }
     /**
-     * @return The current state of the FleetResource.
+     * @return The current state of the runbook version.
      * 
      */
     public String state() {

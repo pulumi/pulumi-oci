@@ -115,14 +115,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Import(name="environmentType")
     private @Nullable Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * @return (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Optional<Output<String>> environmentType() {
@@ -205,14 +205,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Products associated with the Fleet.
+     * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      * 
      */
     @Import(name="products")
     private @Nullable Output<List<String>> products;
 
     /**
-     * @return (Updatable) Products associated with the Fleet.
+     * @return (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      * 
      */
     public Optional<Output<List<String>>> products() {
@@ -520,7 +520,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+         * @param environmentType (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param environmentType Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+         * @param environmentType (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products (Updatable) Products associated with the Fleet.
+         * @param products (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products (Updatable) Products associated with the Fleet.
+         * @param products (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param products (Updatable) Products associated with the Fleet.
+         * @param products (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
          * 
          * @return builder
          * 

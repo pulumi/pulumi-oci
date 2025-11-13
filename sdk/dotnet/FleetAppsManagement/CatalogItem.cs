@@ -12,58 +12,6 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// ## Example Usage
     /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testCatalogItem = new Oci.FleetAppsManagement.CatalogItem("test_catalog_item", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         ConfigSourceType = catalogItemConfigSourceType,
-    ///         Description = catalogItemDescription,
-    ///         DisplayName = catalogItemDisplayName,
-    ///         PackageType = catalogItemPackageType,
-    ///         CatalogSourcePayload = new Oci.FleetAppsManagement.Inputs.CatalogItemCatalogSourcePayloadArgs
-    ///         {
-    ///             ConfigSourceType = catalogItemCatalogSourcePayloadConfigSourceType,
-    ///             AccessUri = catalogItemCatalogSourcePayloadAccessUri,
-    ///             BranchName = catalogItemCatalogSourcePayloadBranchName,
-    ///             Bucket = catalogItemCatalogSourcePayloadBucket,
-    ///             ConfigurationSourceProviderId = testConfigurationSourceProvider.Id,
-    ///             Description = catalogItemCatalogSourcePayloadDescription,
-    ///             ListingId = testListing.Id,
-    ///             LongDescription = catalogItemCatalogSourcePayloadLongDescription,
-    ///             Namespace = catalogItemCatalogSourcePayloadNamespace,
-    ///             Object = catalogItemCatalogSourcePayloadObject,
-    ///             RepositoryUrl = catalogItemCatalogSourcePayloadRepositoryUrl,
-    ///             TemplateDisplayName = catalogItemCatalogSourcePayloadTemplateDisplayName,
-    ///             TimeExpires = catalogItemCatalogSourcePayloadTimeExpires,
-    ///             Version = catalogItemCatalogSourcePayloadVersion,
-    ///             WorkingDirectory = catalogItemCatalogSourcePayloadWorkingDirectory,
-    ///             ZipFileBase64encoded = catalogItemCatalogSourcePayloadZipFileBase64encoded,
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         ListingId = testListing.Id,
-    ///         ListingVersion = catalogItemListingVersion,
-    ///         ShortDescription = catalogItemShortDescription,
-    ///         TimeReleased = catalogItemTimeReleased,
-    ///         VersionDescription = catalogItemVersionDescription,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// CatalogItems can be imported using the `id`, e.g.
@@ -89,10 +37,6 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("cloneCatalogItemTrigger")]
         public Output<int?> CloneCatalogItemTrigger { get; private set; } = null!;
@@ -271,10 +215,6 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("cloneCatalogItemTrigger")]
         public Input<int>? CloneCatalogItemTrigger { get; set; }
@@ -391,10 +331,6 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("cloneCatalogItemTrigger")]
         public Input<int>? CloneCatalogItemTrigger { get; set; }

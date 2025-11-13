@@ -24,8 +24,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStep {
      */
     private @Nullable String stepName;
     /**
-     * @return (Updatable) Tasks within the Group. Provide the
-     * stepName for all applicable tasks.
+     * @return (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     private @Nullable List<String> steps;
@@ -51,8 +50,7 @@ public final class RunbookVersionExecutionWorkflowDetailsWorkflowStep {
         return Optional.ofNullable(this.stepName);
     }
     /**
-     * @return (Updatable) Tasks within the Group. Provide the
-     * stepName for all applicable tasks.
+     * @return (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
      * 
      */
     public List<String> steps() {

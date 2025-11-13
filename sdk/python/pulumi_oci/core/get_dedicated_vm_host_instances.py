@@ -28,7 +28,7 @@ class GetDedicatedVmHostInstancesResult:
     """
     A collection of values returned by getDedicatedVmHostInstances.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_host_id=None, dedicated_vm_host_instances=None, filters=None, id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_host_id=None, dedicated_vm_host_instances=None, filters=None, id=None, is_memory_encryption_enabled=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -47,6 +47,9 @@ class GetDedicatedVmHostInstancesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_memory_encryption_enabled and not isinstance(is_memory_encryption_enabled, bool):
+            raise TypeError("Expected argument 'is_memory_encryption_enabled' to be a bool")
+        pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -90,6 +93,14 @@ class GetDedicatedVmHostInstancesResult:
         """
         return pulumi.get(self, "id")
 
+    @_builtins.property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Specifies whether the VM instance is confidential.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
 
 class AwaitableGetDedicatedVmHostInstancesResult(GetDedicatedVmHostInstancesResult):
     # pylint: disable=using-constant-test
@@ -102,13 +113,15 @@ class AwaitableGetDedicatedVmHostInstancesResult(GetDedicatedVmHostInstancesResu
             dedicated_vm_host_id=self.dedicated_vm_host_id,
             dedicated_vm_host_instances=self.dedicated_vm_host_instances,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            is_memory_encryption_enabled=self.is_memory_encryption_enabled)
 
 
 def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str] = None,
                                     compartment_id: Optional[_builtins.str] = None,
                                     dedicated_vm_host_id: Optional[_builtins.str] = None,
                                     filters: Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]] = None,
+                                    is_memory_encryption_enabled: Optional[_builtins.bool] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostInstancesResult:
     """
     This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -123,19 +136,22 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
 
     test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
-        availability_domain=dedicated_vm_hosts_instance_availability_domain)
+        availability_domain=dedicated_vm_hosts_instance_availability_domain,
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['dedicatedVmHostId'] = dedicated_vm_host_id
     __args__['filters'] = filters
+    __args__['isMemoryEncryptionEnabled'] = is_memory_encryption_enabled
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances', __args__, opts=opts, typ=GetDedicatedVmHostInstancesResult).value
 
@@ -145,11 +161,13 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
         dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
         dedicated_vm_host_instances=pulumi.get(__ret__, 'dedicated_vm_host_instances'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        is_memory_encryption_enabled=pulumi.get(__ret__, 'is_memory_encryption_enabled'))
 def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                            dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]]]] = None,
+                                           is_memory_encryption_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
     """
     This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -164,19 +182,22 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
 
     test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
-        availability_domain=dedicated_vm_hosts_instance_availability_domain)
+        availability_domain=dedicated_vm_hosts_instance_availability_domain,
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['dedicatedVmHostId'] = dedicated_vm_host_id
     __args__['filters'] = filters
+    __args__['isMemoryEncryptionEnabled'] = is_memory_encryption_enabled
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances', __args__, opts=opts, typ=GetDedicatedVmHostInstancesResult)
     return __ret__.apply(lambda __response__: GetDedicatedVmHostInstancesResult(
@@ -185,4 +206,5 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
         dedicated_vm_host_id=pulumi.get(__response__, 'dedicated_vm_host_id'),
         dedicated_vm_host_instances=pulumi.get(__response__, 'dedicated_vm_host_instances'),
         filters=pulumi.get(__response__, 'filters'),
-        id=pulumi.get(__response__, 'id')))
+        id=pulumi.get(__response__, 'id'),
+        is_memory_encryption_enabled=pulumi.get(__response__, 'is_memory_encryption_enabled')))

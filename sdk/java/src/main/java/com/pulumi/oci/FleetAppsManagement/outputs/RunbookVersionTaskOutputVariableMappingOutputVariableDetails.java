@@ -11,8 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class RunbookVersionTaskOutputVariableMappingOutputVariableDetails {
     /**
-     * @return (Updatable) The name of the output variable whose value has to be
-     * mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     private String outputVariableName;
@@ -24,8 +23,7 @@ public final class RunbookVersionTaskOutputVariableMappingOutputVariableDetails 
 
     private RunbookVersionTaskOutputVariableMappingOutputVariableDetails() {}
     /**
-     * @return (Updatable) The name of the output variable whose value has to be
-     * mapped.
+     * @return (Updatable) The name of the output variable whose value has to be mapped.
      * 
      */
     public String outputVariableName() {

@@ -16,8 +16,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableGetArgs>? _inputVariables;
 
         /// <summary>
-        /// (Updatable) The input variables for the
-        /// task.
+        /// (Updatable) The input variables for the task.
         /// </summary>
         public InputList<Inputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableGetArgs> InputVariables
         {

@@ -57,7 +57,7 @@ type GetServicesArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetServicesFilter `pulumi:"filters"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
@@ -86,7 +86,7 @@ type GetServicesOutputArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput          `pulumi:"compartmentId"`
 	Filters       GetServicesFilterArrayInput `pulumi:"filters"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 

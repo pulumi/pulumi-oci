@@ -82,7 +82,7 @@ type GetRunbookVersionsResult struct {
 	RunbookId *string `pulumi:"runbookId"`
 	// The list of runbook_version_collection.
 	RunbookVersionCollections []GetRunbookVersionsRunbookVersionCollection `pulumi:"runbookVersionCollections"`
-	// The current state of the FleetResource.
+	// The current state of the runbook version.
 	State *string `pulumi:"state"`
 }
 
@@ -163,7 +163,7 @@ func (o GetRunbookVersionsResultOutput) RunbookVersionCollections() GetRunbookVe
 	}).(GetRunbookVersionsRunbookVersionCollectionArrayOutput)
 }
 
-// The current state of the FleetResource.
+// The current state of the runbook version.
 func (o GetRunbookVersionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRunbookVersionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

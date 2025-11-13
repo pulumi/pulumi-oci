@@ -17,13 +17,20 @@ namespace Pulumi.Oci.Core.Outputs
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
+        /// <summary>
+        /// A list of total and remaining CPU and memory per capacity bucket.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult> CapacityBins;
+        /// <summary>
+        /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
+        /// </summary>
+        public readonly string CapacityConfig;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The OCID of the compute bare metal host.
+        /// The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         /// </summary>
         public readonly string ComputeBareMetalHostId;
         /// <summary>
@@ -51,7 +58,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+        /// </summary>
+        public readonly bool IsMemoryEncryptionEnabled;
+        /// <summary>
+        /// The details for providing placement constraints.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult> PlacementConstraintDetails;
         /// <summary>
@@ -85,6 +96,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult> capacityBins,
 
+            string capacityConfig,
+
             string compartmentId,
 
             string computeBareMetalHostId,
@@ -100,6 +113,8 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            bool isMemoryEncryptionEnabled,
 
             ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult> placementConstraintDetails,
 
@@ -117,6 +132,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             AvailabilityDomain = availabilityDomain;
             CapacityBins = capacityBins;
+            CapacityConfig = capacityConfig;
             CompartmentId = compartmentId;
             ComputeBareMetalHostId = computeBareMetalHostId;
             DedicatedVmHostShape = dedicatedVmHostShape;
@@ -125,6 +141,7 @@ namespace Pulumi.Oci.Core.Outputs
             FaultDomain = faultDomain;
             FreeformTags = freeformTags;
             Id = id;
+            IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             PlacementConstraintDetails = placementConstraintDetails;
             RemainingMemoryInGbs = remainingMemoryInGbs;
             RemainingOcpus = remainingOcpus;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of all Fleets that are scheduled.
+ * Returns a list of all executions that are scheduled.
  *
  * ## Example Usage
  *
@@ -19,7 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
  *     displayName: schedulerExecutionDisplayName,
+ *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
  *     runbookId: testRunbook.id,
  *     runbookVersionName: testRunbookVersion.name,
@@ -36,8 +38,10 @@ export function getSchedulerExecutions(args?: GetSchedulerExecutionsArgs, opts?:
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetAppsManagement/getSchedulerExecutions:getSchedulerExecutions", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "lifecycleOperation": args.lifecycleOperation,
         "resourceId": args.resourceId,
         "runbookId": args.runbookId,
         "runbookVersionName": args.runbookVersionName,
@@ -58,10 +62,18 @@ export interface GetSchedulerExecutionsArgs {
      */
     compartmentId?: string;
     /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: boolean;
+    /**
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetSchedulerExecutionsFilter[];
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     */
+    lifecycleOperation?: string;
     /**
      * ResourceId filter (Example FleetId)
      */
@@ -104,6 +116,7 @@ export interface GetSchedulerExecutionsResult {
      * Compartment OCID
      */
     readonly compartmentId?: string;
+    readonly compartmentIdInSubtree?: boolean;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
@@ -113,8 +126,9 @@ export interface GetSchedulerExecutionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly lifecycleOperation?: string;
     /**
-     * ResourceId associated with the Schedule.
+     * FleetId associated with the Schedule.
      */
     readonly resourceId?: string;
     /**
@@ -131,7 +145,7 @@ export interface GetSchedulerExecutionsResult {
      */
     readonly schedulerExecutionCollections: outputs.FleetAppsManagement.GetSchedulerExecutionsSchedulerExecutionCollection[];
     /**
-     * jobId associated with the Schedule.
+     * SchedulerJobId associated with the Schedule.
      */
     readonly schedulerJobId?: string;
     readonly substate?: string;
@@ -141,7 +155,7 @@ export interface GetSchedulerExecutionsResult {
 /**
  * This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of all Fleets that are scheduled.
+ * Returns a list of all executions that are scheduled.
  *
  * ## Example Usage
  *
@@ -151,7 +165,9 @@ export interface GetSchedulerExecutionsResult {
  *
  * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
  *     displayName: schedulerExecutionDisplayName,
+ *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
  *     runbookId: testRunbook.id,
  *     runbookVersionName: testRunbookVersion.name,
@@ -168,8 +184,10 @@ export function getSchedulerExecutionsOutput(args?: GetSchedulerExecutionsOutput
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getSchedulerExecutions:getSchedulerExecutions", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "lifecycleOperation": args.lifecycleOperation,
         "resourceId": args.resourceId,
         "runbookId": args.runbookId,
         "runbookVersionName": args.runbookVersionName,
@@ -190,10 +208,18 @@ export interface GetSchedulerExecutionsOutputArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    /**
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerExecutionsFilterArgs>[]>;
+    /**
+     * A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+     */
+    lifecycleOperation?: pulumi.Input<string>;
     /**
      * ResourceId filter (Example FleetId)
      */

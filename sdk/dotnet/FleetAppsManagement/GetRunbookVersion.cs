@@ -163,7 +163,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public readonly string RunbookId;
         public readonly string RunbookVersionId;
         /// <summary>
-        /// The current state of the FleetResource.
+        /// The current state of the runbook version.
         /// </summary>
         public readonly string State;
         /// <summary>

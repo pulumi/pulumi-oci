@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Returns a list of all Fleets that are scheduled.
+// Returns a list of all executions that are scheduled.
 //
 // ## Example Usage
 //
@@ -31,7 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := fleetappsmanagement.GetSchedulerExecutions(ctx, &fleetappsmanagement.GetSchedulerExecutionsArgs{
 //				CompartmentId:                     pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(schedulerExecutionCompartmentIdInSubtree),
 //				DisplayName:                       pulumi.StringRef(schedulerExecutionDisplayName),
+//				LifecycleOperation:                pulumi.StringRef(schedulerExecutionLifecycleOperation),
 //				ResourceId:                        pulumi.StringRef(testResource.Id),
 //				RunbookId:                         pulumi.StringRef(testRunbook.Id),
 //				RunbookVersionName:                pulumi.StringRef(testRunbookVersion.Name),
@@ -63,9 +65,13 @@ func GetSchedulerExecutions(ctx *pulumi.Context, args *GetSchedulerExecutionsArg
 type GetSchedulerExecutionsArgs struct {
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSchedulerExecutionsFilter `pulumi:"filters"`
+	// A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+	LifecycleOperation *string `pulumi:"lifecycleOperation"`
 	// ResourceId filter (Example FleetId)
 	ResourceId *string `pulumi:"resourceId"`
 	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
@@ -87,13 +93,15 @@ type GetSchedulerExecutionsArgs struct {
 // A collection of values returned by getSchedulerExecutions.
 type GetSchedulerExecutionsResult struct {
 	// Compartment OCID
-	CompartmentId *string `pulumi:"compartmentId"`
+	CompartmentId          *string `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSchedulerExecutionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// ResourceId associated with the Schedule.
+	Id                 string  `pulumi:"id"`
+	LifecycleOperation *string `pulumi:"lifecycleOperation"`
+	// FleetId associated with the Schedule.
 	ResourceId *string `pulumi:"resourceId"`
 	// RunbookId associated with the Schedule.
 	RunbookId *string `pulumi:"runbookId"`
@@ -102,7 +110,7 @@ type GetSchedulerExecutionsResult struct {
 	SchedulerDefintionId *string `pulumi:"schedulerDefintionId"`
 	// The list of scheduler_execution_collection.
 	SchedulerExecutionCollections []GetSchedulerExecutionsSchedulerExecutionCollection `pulumi:"schedulerExecutionCollections"`
-	// jobId associated with the Schedule.
+	// SchedulerJobId associated with the Schedule.
 	SchedulerJobId                    *string `pulumi:"schedulerJobId"`
 	Substate                          *string `pulumi:"substate"`
 	TimeScheduledGreaterThanOrEqualTo *string `pulumi:"timeScheduledGreaterThanOrEqualTo"`
@@ -122,9 +130,13 @@ func GetSchedulerExecutionsOutput(ctx *pulumi.Context, args GetSchedulerExecutio
 type GetSchedulerExecutionsOutputArgs struct {
 	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                  `pulumi:"displayName"`
 	Filters     GetSchedulerExecutionsFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
+	LifecycleOperation pulumi.StringPtrInput `pulumi:"lifecycleOperation"`
 	// ResourceId filter (Example FleetId)
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
@@ -167,6 +179,10 @@ func (o GetSchedulerExecutionsResultOutput) CompartmentId() pulumi.StringPtrOutp
 	return o.ApplyT(func(v GetSchedulerExecutionsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
+func (o GetSchedulerExecutionsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulerExecutionsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 func (o GetSchedulerExecutionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -181,7 +197,11 @@ func (o GetSchedulerExecutionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// ResourceId associated with the Schedule.
+func (o GetSchedulerExecutionsResultOutput) LifecycleOperation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulerExecutionsResult) *string { return v.LifecycleOperation }).(pulumi.StringPtrOutput)
+}
+
+// FleetId associated with the Schedule.
 func (o GetSchedulerExecutionsResultOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
@@ -207,7 +227,7 @@ func (o GetSchedulerExecutionsResultOutput) SchedulerExecutionCollections() GetS
 	}).(GetSchedulerExecutionsSchedulerExecutionCollectionArrayOutput)
 }
 
-// jobId associated with the Schedule.
+// SchedulerJobId associated with the Schedule.
 func (o GetSchedulerExecutionsResultOutput) SchedulerJobId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerExecutionsResult) *string { return v.SchedulerJobId }).(pulumi.StringPtrOutput)
 }

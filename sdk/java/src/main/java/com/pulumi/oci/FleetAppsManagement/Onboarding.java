@@ -20,39 +20,6 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.FleetAppsManagement.Onboarding;
- * import com.pulumi.oci.FleetAppsManagement.OnboardingArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testOnboarding = new Onboarding("testOnboarding", OnboardingArgs.builder()
- *             .compartmentId(compartmentId)
- *             .isCostTrackingTagEnabled(onboardingIsCostTrackingTagEnabled)
- *             .isFamsTagEnabled(onboardingIsFamsTagEnabled)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * 
  * ## Import
  * 
  * Onboardings can be imported using the `id`, e.g.
@@ -80,6 +47,7 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
     }
     /**
      * Tenancy OCID
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
@@ -87,22 +55,21 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Tenancy OCID
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
@@ -123,16 +90,14 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
         return this.discoveryFrequency;
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,String>> freeformTags() {
@@ -157,6 +122,7 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -169,6 +135,7 @@ public class Onboarding extends com.pulumi.resources.CustomResource {
     /**
      * @return A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using &#34;Oracle$FAMS-Tags.FleetName&#34; tag.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the

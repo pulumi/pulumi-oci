@@ -16,7 +16,7 @@ import (
 // For a given compartmentId, resource limit name, and scope, returns the following:
 //   - The number of available resources associated with the given limit.
 //   - The usage in the selected compartment for the given limit.
-//     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+//     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
 //     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 //
 // ## Example Usage
@@ -38,7 +38,8 @@ import (
 //				LimitName:          resourceAvailabilityLimitName,
 //				ServiceName:        testService.Name,
 //				AvailabilityDomain: pulumi.StringRef(resourceAvailabilityAvailabilityDomain),
-//				SubscriptionId:     pulumi.StringRef(subscriptionOcid),
+//				ExternalLocation:   pulumi.StringRef(resourceAvailabilityExternalLocation),
+//				SubscriptionId:     pulumi.StringRef(testSubscription.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -64,11 +65,13 @@ type GetResourceAvailabilityArgs struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment for which data is being fetched.
 	CompartmentId string `pulumi:"compartmentId"`
+	// External cloud provider location
+	ExternalLocation *string `pulumi:"externalLocation"`
 	// The limit name for which to fetch the data.
 	LimitName string `pulumi:"limitName"`
 	// The service name of the target quota.
 	ServiceName string `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
@@ -80,6 +83,7 @@ type GetResourceAvailabilityResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
 	EffectiveQuotaValue float64 `pulumi:"effectiveQuotaValue"`
+	ExternalLocation    *string `pulumi:"externalLocation"`
 	// The most accurate count of available resources.
 	FractionalAvailability float64 `pulumi:"fractionalAvailability"`
 	// The current most accurate usage in the given compartment.
@@ -108,11 +112,13 @@ type GetResourceAvailabilityOutputArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The OCID of the compartment for which data is being fetched.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// External cloud provider location
+	ExternalLocation pulumi.StringPtrInput `pulumi:"externalLocation"`
 	// The limit name for which to fetch the data.
 	LimitName pulumi.StringInput `pulumi:"limitName"`
 	// The service name of the target quota.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
-	// The OCID of the subscription assigned to tenant
+	// The subscription OCID assigned to the tenant.
 	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
@@ -151,6 +157,10 @@ func (o GetResourceAvailabilityResultOutput) CompartmentId() pulumi.StringOutput
 // The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
 func (o GetResourceAvailabilityResultOutput) EffectiveQuotaValue() pulumi.Float64Output {
 	return o.ApplyT(func(v GetResourceAvailabilityResult) float64 { return v.EffectiveQuotaValue }).(pulumi.Float64Output)
+}
+
+func (o GetResourceAvailabilityResultOutput) ExternalLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.ExternalLocation }).(pulumi.StringPtrOutput)
 }
 
 // The most accurate count of available resources.

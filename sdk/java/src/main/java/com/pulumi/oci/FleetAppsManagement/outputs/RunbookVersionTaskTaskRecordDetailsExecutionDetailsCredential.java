@@ -12,9 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential {
     /**
-     * @return (Updatable) A user-friendly name. Does not
-     * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-     * `My new resource`
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
     private @Nullable String displayName;
@@ -26,9 +24,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential
 
     private RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredential() {}
     /**
-     * @return (Updatable) A user-friendly name. Does not
-     * have to be unique, and it&#39;s changeable. Avoid entering confidential information. Example:
-     * `My new resource`
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
     public Optional<String> displayName() {

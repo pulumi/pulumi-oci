@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -70,6 +71,21 @@ public final class GetDedicatedVmHostInstancesArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Output<Boolean> isMemoryEncryptionEnabled;
+
+    /**
+     * @return A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+     * 
+     */
+    public Optional<Output<Boolean>> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
     private GetDedicatedVmHostInstancesArgs() {}
 
     private GetDedicatedVmHostInstancesArgs(GetDedicatedVmHostInstancesArgs $) {
@@ -77,6 +93,7 @@ public final class GetDedicatedVmHostInstancesArgs extends com.pulumi.resources.
         this.compartmentId = $.compartmentId;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
         this.filters = $.filters;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
     }
 
     public static Builder builder() {
@@ -171,6 +188,27 @@ public final class GetDedicatedVmHostInstancesArgs extends com.pulumi.resources.
 
         public Builder filters(GetDedicatedVmHostInstancesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Output<Boolean> isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            return isMemoryEncryptionEnabled(Output.of(isMemoryEncryptionEnabled));
         }
 
         public GetDedicatedVmHostInstancesArgs build() {

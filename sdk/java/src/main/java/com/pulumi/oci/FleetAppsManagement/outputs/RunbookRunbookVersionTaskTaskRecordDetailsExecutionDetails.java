@@ -64,6 +64,11 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
      */
     private @Nullable Boolean isReadOutputVariableEnabled;
     /**
+     * @return The list of system variables.
+     * 
+     */
+    private @Nullable List<String> systemVariables;
+    /**
      * @return OCID of the compartment to which the resource belongs to.
      * 
      */
@@ -142,6 +147,13 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
         return Optional.ofNullable(this.isReadOutputVariableEnabled);
     }
     /**
+     * @return The list of system variables.
+     * 
+     */
+    public List<String> systemVariables() {
+        return this.systemVariables == null ? List.of() : this.systemVariables;
+    }
+    /**
      * @return OCID of the compartment to which the resource belongs to.
      * 
      */
@@ -175,6 +187,7 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
         private @Nullable Boolean isExecutableContent;
         private @Nullable Boolean isLocked;
         private @Nullable Boolean isReadOutputVariableEnabled;
+        private @Nullable List<String> systemVariables;
         private @Nullable String targetCompartmentId;
         private @Nullable RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables variables;
         public Builder() {}
@@ -190,6 +203,7 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
     	      this.isExecutableContent = defaults.isExecutableContent;
     	      this.isLocked = defaults.isLocked;
     	      this.isReadOutputVariableEnabled = defaults.isReadOutputVariableEnabled;
+    	      this.systemVariables = defaults.systemVariables;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.variables = defaults.variables;
         }
@@ -260,6 +274,15 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder systemVariables(@Nullable List<String> systemVariables) {
+
+            this.systemVariables = systemVariables;
+            return this;
+        }
+        public Builder systemVariables(String... systemVariables) {
+            return systemVariables(List.of(systemVariables));
+        }
+        @CustomType.Setter
         public Builder targetCompartmentId(@Nullable String targetCompartmentId) {
 
             this.targetCompartmentId = targetCompartmentId;
@@ -283,6 +306,7 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
             _resultValue.isExecutableContent = isExecutableContent;
             _resultValue.isLocked = isLocked;
             _resultValue.isReadOutputVariableEnabled = isReadOutputVariableEnabled;
+            _resultValue.systemVariables = systemVariables;
             _resultValue.targetCompartmentId = targetCompartmentId;
             _resultValue.variables = variables;
             return _resultValue;

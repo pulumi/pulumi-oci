@@ -24,6 +24,11 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return Name of the compartment in which resource exist.
+     * 
+     */
+    private String compartmentName;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -54,7 +59,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Resource DsiplayName associated with the Schedule.
+     * @return Display Name of the Fleet associated with the Schedule.
      * 
      */
     private String resourceDisplayName;
@@ -64,7 +69,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
      */
     private String resourceId;
     /**
-     * @return DsiplayName of Runbook associated with the Schedule.
+     * @return Display name of Runbook associated with the Schedule.
      * 
      */
     private String runbookDisplayName;
@@ -140,6 +145,13 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
         return this.compartmentId;
     }
     /**
+     * @return Name of the compartment in which resource exist.
+     * 
+     */
+    public String compartmentName() {
+        return this.compartmentName;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -182,7 +194,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Resource DsiplayName associated with the Schedule.
+     * @return Display Name of the Fleet associated with the Schedule.
      * 
      */
     public String resourceDisplayName() {
@@ -196,7 +208,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
         return this.resourceId;
     }
     /**
-     * @return DsiplayName of Runbook associated with the Schedule.
+     * @return Display name of Runbook associated with the Schedule.
      * 
      */
     public String runbookDisplayName() {
@@ -291,6 +303,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
     public static final class Builder {
         private String activityId;
         private String compartmentId;
+        private String compartmentName;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
@@ -316,6 +329,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.activityId = defaults.activityId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentName = defaults.compartmentName;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -352,6 +366,14 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
               throw new MissingRequiredPropertyException("GetSchedulerExecutionsSchedulerExecutionCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentName(String compartmentName) {
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetSchedulerExecutionsSchedulerExecutionCollectionItem", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
@@ -521,6 +543,7 @@ public final class GetSchedulerExecutionsSchedulerExecutionCollectionItem {
             final var _resultValue = new GetSchedulerExecutionsSchedulerExecutionCollectionItem();
             _resultValue.activityId = activityId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

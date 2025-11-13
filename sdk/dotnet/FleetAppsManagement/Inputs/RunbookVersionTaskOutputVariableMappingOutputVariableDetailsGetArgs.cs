@@ -13,8 +13,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
     public sealed class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the output variable whose value has to be
-        /// mapped.
+        /// (Updatable) The name of the output variable whose value has to be mapped.
         /// </summary>
         [Input("outputVariableName", required: true)]
         public Input<string> OutputVariableName { get; set; } = null!;

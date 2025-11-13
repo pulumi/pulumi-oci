@@ -47,6 +47,21 @@ public final class GetLimitValuesPlainArgs extends com.pulumi.resources.InvokeAr
         return this.compartmentId;
     }
 
+    /**
+     * External cloud provider location
+     * 
+     */
+    @Import(name="externalLocation")
+    private @Nullable String externalLocation;
+
+    /**
+     * @return External cloud provider location
+     * 
+     */
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetLimitValuesFilter> filters;
 
@@ -100,14 +115,14 @@ public final class GetLimitValuesPlainArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * The OCID of the subscription assigned to tenant
+     * The subscription OCID assigned to the tenant.
      * 
      */
     @Import(name="subscriptionId")
     private @Nullable String subscriptionId;
 
     /**
-     * @return The OCID of the subscription assigned to tenant
+     * @return The subscription OCID assigned to the tenant.
      * 
      */
     public Optional<String> subscriptionId() {
@@ -119,6 +134,7 @@ public final class GetLimitValuesPlainArgs extends com.pulumi.resources.InvokeAr
     private GetLimitValuesPlainArgs(GetLimitValuesPlainArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.externalLocation = $.externalLocation;
         this.filters = $.filters;
         this.name = $.name;
         this.scopeType = $.scopeType;
@@ -166,6 +182,17 @@ public final class GetLimitValuesPlainArgs extends com.pulumi.resources.InvokeAr
             return this;
         }
 
+        /**
+         * @param externalLocation External cloud provider location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(@Nullable String externalLocation) {
+            $.externalLocation = externalLocation;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetLimitValuesFilter> filters) {
             $.filters = filters;
             return this;
@@ -209,7 +236,7 @@ public final class GetLimitValuesPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * @param subscriptionId The subscription OCID assigned to the tenant.
          * 
          * @return builder
          * 

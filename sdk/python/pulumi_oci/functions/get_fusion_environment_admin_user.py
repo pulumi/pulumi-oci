@@ -97,6 +97,7 @@ class GetFusionEnvironmentAdminUserResult:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
     def password(self) -> _builtins.str:
         return pulumi.get(self, "password")
 

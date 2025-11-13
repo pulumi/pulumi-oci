@@ -13,10 +13,30 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FleetNotificationPreferencePreferences {
     /**
+     * @return (Updatable) Enables or disables notification on job canceled.
+     * 
+     */
+    private @Nullable Boolean onJobCanceled;
+    /**
      * @return (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     private @Nullable Boolean onJobFailure;
+    /**
+     * @return (Updatable) Enables or disables notification on job schedule change.
+     * 
+     */
+    private @Nullable Boolean onJobScheduleChange;
+    /**
+     * @return (Updatable) Enables or disables notification on job start.
+     * 
+     */
+    private @Nullable Boolean onJobStart;
+    /**
+     * @return (Updatable) Enables or disables notification on job success.
+     * 
+     */
+    private @Nullable Boolean onJobSuccess;
     /**
      * @return (Updatable) Enables or disables notification when fleet resource becomes non compliant.
      * 
@@ -55,11 +75,39 @@ public final class FleetNotificationPreferencePreferences {
 
     private FleetNotificationPreferencePreferences() {}
     /**
+     * @return (Updatable) Enables or disables notification on job canceled.
+     * 
+     */
+    public Optional<Boolean> onJobCanceled() {
+        return Optional.ofNullable(this.onJobCanceled);
+    }
+    /**
      * @return (Updatable) Enables or disables notification on Job Failures.
      * 
      */
     public Optional<Boolean> onJobFailure() {
         return Optional.ofNullable(this.onJobFailure);
+    }
+    /**
+     * @return (Updatable) Enables or disables notification on job schedule change.
+     * 
+     */
+    public Optional<Boolean> onJobScheduleChange() {
+        return Optional.ofNullable(this.onJobScheduleChange);
+    }
+    /**
+     * @return (Updatable) Enables or disables notification on job start.
+     * 
+     */
+    public Optional<Boolean> onJobStart() {
+        return Optional.ofNullable(this.onJobStart);
+    }
+    /**
+     * @return (Updatable) Enables or disables notification on job success.
+     * 
+     */
+    public Optional<Boolean> onJobSuccess() {
+        return Optional.ofNullable(this.onJobSuccess);
     }
     /**
      * @return (Updatable) Enables or disables notification when fleet resource becomes non compliant.
@@ -120,7 +168,11 @@ public final class FleetNotificationPreferencePreferences {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean onJobCanceled;
         private @Nullable Boolean onJobFailure;
+        private @Nullable Boolean onJobScheduleChange;
+        private @Nullable Boolean onJobStart;
+        private @Nullable Boolean onJobSuccess;
         private @Nullable Boolean onResourceNonCompliance;
         private @Nullable Boolean onRunbookNewerVersion;
         private @Nullable Boolean onTaskFailure;
@@ -131,7 +183,11 @@ public final class FleetNotificationPreferencePreferences {
         public Builder() {}
         public Builder(FleetNotificationPreferencePreferences defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.onJobCanceled = defaults.onJobCanceled;
     	      this.onJobFailure = defaults.onJobFailure;
+    	      this.onJobScheduleChange = defaults.onJobScheduleChange;
+    	      this.onJobStart = defaults.onJobStart;
+    	      this.onJobSuccess = defaults.onJobSuccess;
     	      this.onResourceNonCompliance = defaults.onResourceNonCompliance;
     	      this.onRunbookNewerVersion = defaults.onRunbookNewerVersion;
     	      this.onTaskFailure = defaults.onTaskFailure;
@@ -142,9 +198,33 @@ public final class FleetNotificationPreferencePreferences {
         }
 
         @CustomType.Setter
+        public Builder onJobCanceled(@Nullable Boolean onJobCanceled) {
+
+            this.onJobCanceled = onJobCanceled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder onJobFailure(@Nullable Boolean onJobFailure) {
 
             this.onJobFailure = onJobFailure;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobScheduleChange(@Nullable Boolean onJobScheduleChange) {
+
+            this.onJobScheduleChange = onJobScheduleChange;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobStart(@Nullable Boolean onJobStart) {
+
+            this.onJobStart = onJobStart;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onJobSuccess(@Nullable Boolean onJobSuccess) {
+
+            this.onJobSuccess = onJobSuccess;
             return this;
         }
         @CustomType.Setter
@@ -191,7 +271,11 @@ public final class FleetNotificationPreferencePreferences {
         }
         public FleetNotificationPreferencePreferences build() {
             final var _resultValue = new FleetNotificationPreferencePreferences();
+            _resultValue.onJobCanceled = onJobCanceled;
             _resultValue.onJobFailure = onJobFailure;
+            _resultValue.onJobScheduleChange = onJobScheduleChange;
+            _resultValue.onJobStart = onJobStart;
+            _resultValue.onJobSuccess = onJobSuccess;
             _resultValue.onResourceNonCompliance = onResourceNonCompliance;
             _resultValue.onRunbookNewerVersion = onRunbookNewerVersion;
             _resultValue.onTaskFailure = onTaskFailure;

@@ -121,14 +121,14 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     @Export(name="environmentType", refs={String.class}, tree="[0]")
     private Output<String> environmentType;
 
     /**
-     * @return Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * @return (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      * 
      */
     public Output<String> environmentType() {
@@ -205,14 +205,14 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.parentFleetId;
     }
     /**
-     * (Updatable) Products associated with the Fleet.
+     * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      * 
      */
     @Export(name="products", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> products;
 
     /**
-     * @return (Updatable) Products associated with the Fleet.
+     * @return (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      * 
      */
     public Output<List<String>> products() {

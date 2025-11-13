@@ -27,7 +27,7 @@ class GetNodePoolOptionResult:
     """
     A collection of values returned by getNodePoolOption.
     """
-    def __init__(__self__, compartment_id=None, id=None, images=None, kubernetes_versions=None, node_pool_option_id=None, shapes=None, sources=None):
+    def __init__(__self__, compartment_id=None, id=None, images=None, kubernetes_versions=None, node_pool_k8s_version=None, node_pool_option_id=None, node_pool_os_arch=None, node_pool_os_type=None, shapes=None, should_list_all_patch_versions=None, sources=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,12 +40,24 @@ class GetNodePoolOptionResult:
         if kubernetes_versions and not isinstance(kubernetes_versions, list):
             raise TypeError("Expected argument 'kubernetes_versions' to be a list")
         pulumi.set(__self__, "kubernetes_versions", kubernetes_versions)
+        if node_pool_k8s_version and not isinstance(node_pool_k8s_version, str):
+            raise TypeError("Expected argument 'node_pool_k8s_version' to be a str")
+        pulumi.set(__self__, "node_pool_k8s_version", node_pool_k8s_version)
         if node_pool_option_id and not isinstance(node_pool_option_id, str):
             raise TypeError("Expected argument 'node_pool_option_id' to be a str")
         pulumi.set(__self__, "node_pool_option_id", node_pool_option_id)
+        if node_pool_os_arch and not isinstance(node_pool_os_arch, str):
+            raise TypeError("Expected argument 'node_pool_os_arch' to be a str")
+        pulumi.set(__self__, "node_pool_os_arch", node_pool_os_arch)
+        if node_pool_os_type and not isinstance(node_pool_os_type, str):
+            raise TypeError("Expected argument 'node_pool_os_type' to be a str")
+        pulumi.set(__self__, "node_pool_os_type", node_pool_os_type)
         if shapes and not isinstance(shapes, list):
             raise TypeError("Expected argument 'shapes' to be a list")
         pulumi.set(__self__, "shapes", shapes)
+        if should_list_all_patch_versions and not isinstance(should_list_all_patch_versions, bool):
+            raise TypeError("Expected argument 'should_list_all_patch_versions' to be a bool")
+        pulumi.set(__self__, "should_list_all_patch_versions", should_list_all_patch_versions)
         if sources and not isinstance(sources, list):
             raise TypeError("Expected argument 'sources' to be a list")
         pulumi.set(__self__, "sources", sources)
@@ -80,9 +92,24 @@ class GetNodePoolOptionResult:
         return pulumi.get(self, "kubernetes_versions")
 
     @_builtins.property
+    @pulumi.getter(name="nodePoolK8sVersion")
+    def node_pool_k8s_version(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "node_pool_k8s_version")
+
+    @_builtins.property
     @pulumi.getter(name="nodePoolOptionId")
     def node_pool_option_id(self) -> _builtins.str:
         return pulumi.get(self, "node_pool_option_id")
+
+    @_builtins.property
+    @pulumi.getter(name="nodePoolOsArch")
+    def node_pool_os_arch(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "node_pool_os_arch")
+
+    @_builtins.property
+    @pulumi.getter(name="nodePoolOsType")
+    def node_pool_os_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "node_pool_os_type")
 
     @_builtins.property
     @pulumi.getter
@@ -91,6 +118,11 @@ class GetNodePoolOptionResult:
         Available shapes for nodes.
         """
         return pulumi.get(self, "shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldListAllPatchVersions")
+    def should_list_all_patch_versions(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_list_all_patch_versions")
 
     @_builtins.property
     @pulumi.getter
@@ -111,13 +143,21 @@ class AwaitableGetNodePoolOptionResult(GetNodePoolOptionResult):
             id=self.id,
             images=self.images,
             kubernetes_versions=self.kubernetes_versions,
+            node_pool_k8s_version=self.node_pool_k8s_version,
             node_pool_option_id=self.node_pool_option_id,
+            node_pool_os_arch=self.node_pool_os_arch,
+            node_pool_os_type=self.node_pool_os_type,
             shapes=self.shapes,
+            should_list_all_patch_versions=self.should_list_all_patch_versions,
             sources=self.sources)
 
 
 def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
+                         node_pool_k8s_version: Optional[_builtins.str] = None,
                          node_pool_option_id: Optional[_builtins.str] = None,
+                         node_pool_os_arch: Optional[_builtins.str] = None,
+                         node_pool_os_type: Optional[_builtins.str] = None,
+                         should_list_all_patch_versions: Optional[_builtins.bool] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolOptionResult:
     """
     This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -131,16 +171,28 @@ def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
-        compartment_id=compartment_id)
+        compartment_id=compartment_id,
+        node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
+        node_pool_os_arch=node_pool_option_node_pool_os_arch,
+        node_pool_os_type=node_pool_option_node_pool_os_type,
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
     ```
 
 
     :param _builtins.str compartment_id: The OCID of the compartment.
+    :param _builtins.str node_pool_k8s_version: Filter node pool options by Kubernetes version.
     :param _builtins.str node_pool_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
+    :param _builtins.str node_pool_os_arch: Filter node pool options by OS architecture.
+    :param _builtins.str node_pool_os_type: Filter node pool options by OS type.
+    :param _builtins.bool should_list_all_patch_versions: Option to show all kubernetes patch versions
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['nodePoolK8sVersion'] = node_pool_k8s_version
     __args__['nodePoolOptionId'] = node_pool_option_id
+    __args__['nodePoolOsArch'] = node_pool_os_arch
+    __args__['nodePoolOsType'] = node_pool_os_type
+    __args__['shouldListAllPatchVersions'] = should_list_all_patch_versions
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getNodePoolOption:getNodePoolOption', __args__, opts=opts, typ=GetNodePoolOptionResult).value
 
@@ -149,11 +201,19 @@ def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         images=pulumi.get(__ret__, 'images'),
         kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'),
+        node_pool_k8s_version=pulumi.get(__ret__, 'node_pool_k8s_version'),
         node_pool_option_id=pulumi.get(__ret__, 'node_pool_option_id'),
+        node_pool_os_arch=pulumi.get(__ret__, 'node_pool_os_arch'),
+        node_pool_os_type=pulumi.get(__ret__, 'node_pool_os_type'),
         shapes=pulumi.get(__ret__, 'shapes'),
+        should_list_all_patch_versions=pulumi.get(__ret__, 'should_list_all_patch_versions'),
         sources=pulumi.get(__ret__, 'sources'))
 def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                node_pool_k8s_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 node_pool_option_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                node_pool_os_arch: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                node_pool_os_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                should_list_all_patch_versions: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolOptionResult]:
     """
     This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -167,16 +227,28 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi_oci as oci
 
     test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
-        compartment_id=compartment_id)
+        compartment_id=compartment_id,
+        node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
+        node_pool_os_arch=node_pool_option_node_pool_os_arch,
+        node_pool_os_type=node_pool_option_node_pool_os_type,
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
     ```
 
 
     :param _builtins.str compartment_id: The OCID of the compartment.
+    :param _builtins.str node_pool_k8s_version: Filter node pool options by Kubernetes version.
     :param _builtins.str node_pool_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
+    :param _builtins.str node_pool_os_arch: Filter node pool options by OS architecture.
+    :param _builtins.str node_pool_os_type: Filter node pool options by OS type.
+    :param _builtins.bool should_list_all_patch_versions: Option to show all kubernetes patch versions
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['nodePoolK8sVersion'] = node_pool_k8s_version
     __args__['nodePoolOptionId'] = node_pool_option_id
+    __args__['nodePoolOsArch'] = node_pool_os_arch
+    __args__['nodePoolOsType'] = node_pool_os_type
+    __args__['shouldListAllPatchVersions'] = should_list_all_patch_versions
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePoolOption:getNodePoolOption', __args__, opts=opts, typ=GetNodePoolOptionResult)
     return __ret__.apply(lambda __response__: GetNodePoolOptionResult(
@@ -184,6 +256,10 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[_
         id=pulumi.get(__response__, 'id'),
         images=pulumi.get(__response__, 'images'),
         kubernetes_versions=pulumi.get(__response__, 'kubernetes_versions'),
+        node_pool_k8s_version=pulumi.get(__response__, 'node_pool_k8s_version'),
         node_pool_option_id=pulumi.get(__response__, 'node_pool_option_id'),
+        node_pool_os_arch=pulumi.get(__response__, 'node_pool_os_arch'),
+        node_pool_os_type=pulumi.get(__response__, 'node_pool_os_type'),
         shapes=pulumi.get(__response__, 'shapes'),
+        should_list_all_patch_versions=pulumi.get(__response__, 'should_list_all_patch_versions'),
         sources=pulumi.get(__response__, 'sources')))

@@ -18,16 +18,14 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesA
     public static final RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs Empty = new RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs();
 
     /**
-     * (Updatable) The input variables for the
-     * task.
+     * (Updatable) The input variables for the task.
      * 
      */
     @Import(name="inputVariables")
     private @Nullable Output<List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs>> inputVariables;
 
     /**
-     * @return (Updatable) The input variables for the
-     * task.
+     * @return (Updatable) The input variables for the task.
      * 
      */
     public Optional<Output<List<RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs>>> inputVariables() {
@@ -75,8 +73,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesA
         }
 
         /**
-         * @param inputVariables (Updatable) The input variables for the
-         * task.
+         * @param inputVariables (Updatable) The input variables for the task.
          * 
          * @return builder
          * 
@@ -87,8 +84,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesA
         }
 
         /**
-         * @param inputVariables (Updatable) The input variables for the
-         * task.
+         * @param inputVariables (Updatable) The input variables for the task.
          * 
          * @return builder
          * 
@@ -98,8 +94,7 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesA
         }
 
         /**
-         * @param inputVariables (Updatable) The input variables for the
-         * task.
+         * @param inputVariables (Updatable) The input variables for the task.
          * 
          * @return builder
          * 

@@ -38,7 +38,7 @@ class RunbookArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[_builtins.str] operation: (Updatable) The lifecycle operation performed by the task.
-        :param pulumi.Input['RunbookRunbookVersionArgs'] runbook_version: Version for the runbook.
+        :param pulumi.Input['RunbookRunbookVersionArgs'] runbook_version: Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] estimated_time: (Updatable) Estimated time to successfully complete the runbook execution.
@@ -109,7 +109,7 @@ class RunbookArgs:
     @pulumi.getter(name="runbookVersion")
     def runbook_version(self) -> pulumi.Input['RunbookRunbookVersionArgs']:
         """
-        Version for the runbook.
+        Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         return pulumi.get(self, "runbook_version")
 
@@ -249,13 +249,13 @@ class _RunbookState:
         :param pulumi.Input[_builtins.bool] has_draft_version: Does this runbook has draft versions?
         :param pulumi.Input[_builtins.bool] is_default: (Updatable) Is the runbook default?
         :param pulumi.Input[_builtins.bool] is_sudo_access_needed: (Updatable) Does this runbook need SUDO access to execute?
-        :param pulumi.Input[_builtins.str] latest_version: Latest runbook version
+        :param pulumi.Input[_builtins.str] latest_version: Latest runbook version.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] operation: (Updatable) The lifecycle operation performed by the task.
         :param pulumi.Input[_builtins.str] os_type: (Updatable) The OS type for the runbook.
         :param pulumi.Input[_builtins.str] platform: (Updatable) The platform of the runbook.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
-        :param pulumi.Input['RunbookRunbookVersionArgs'] runbook_version: Version for the runbook.
+        :param pulumi.Input['RunbookRunbookVersionArgs'] runbook_version: Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         :param pulumi.Input[_builtins.str] state: The current state of the runbook.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
@@ -417,7 +417,7 @@ class _RunbookState:
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Latest runbook version
+        Latest runbook version.
         """
         return pulumi.get(self, "latest_version")
 
@@ -489,7 +489,7 @@ class _RunbookState:
     @pulumi.getter(name="runbookVersion")
     def runbook_version(self) -> Optional[pulumi.Input['RunbookRunbookVersionArgs']]:
         """
-        Version for the runbook.
+        Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         return pulumi.get(self, "runbook_version")
 
@@ -657,6 +657,7 @@ class Runbook(pulumi.CustomResource):
                             "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
                             "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
                             "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
                                 "input_variables": [{
@@ -764,7 +765,7 @@ class Runbook(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] operation: (Updatable) The lifecycle operation performed by the task.
         :param pulumi.Input[_builtins.str] os_type: (Updatable) The OS type for the runbook.
         :param pulumi.Input[_builtins.str] platform: (Updatable) The platform of the runbook.
-        :param pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']] runbook_version: Version for the runbook.
+        :param pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']] runbook_version: Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         ...
     @overload
@@ -852,6 +853,7 @@ class Runbook(pulumi.CustomResource):
                             "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
                             "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
                             "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
                                 "input_variables": [{
@@ -1058,13 +1060,13 @@ class Runbook(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] has_draft_version: Does this runbook has draft versions?
         :param pulumi.Input[_builtins.bool] is_default: (Updatable) Is the runbook default?
         :param pulumi.Input[_builtins.bool] is_sudo_access_needed: (Updatable) Does this runbook need SUDO access to execute?
-        :param pulumi.Input[_builtins.str] latest_version: Latest runbook version
+        :param pulumi.Input[_builtins.str] latest_version: Latest runbook version.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] operation: (Updatable) The lifecycle operation performed by the task.
         :param pulumi.Input[_builtins.str] os_type: (Updatable) The OS type for the runbook.
         :param pulumi.Input[_builtins.str] platform: (Updatable) The platform of the runbook.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
-        :param pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']] runbook_version: Version for the runbook.
+        :param pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']] runbook_version: Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         :param pulumi.Input[_builtins.str] state: The current state of the runbook.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
@@ -1174,7 +1176,7 @@ class Runbook(pulumi.CustomResource):
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Latest runbook version
+        Latest runbook version.
         """
         return pulumi.get(self, "latest_version")
 
@@ -1222,7 +1224,7 @@ class Runbook(pulumi.CustomResource):
     @pulumi.getter(name="runbookVersion")
     def runbook_version(self) -> pulumi.Output['outputs.RunbookRunbookVersion']:
         """
-        Version for the runbook.
+        Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         return pulumi.get(self, "runbook_version")
 

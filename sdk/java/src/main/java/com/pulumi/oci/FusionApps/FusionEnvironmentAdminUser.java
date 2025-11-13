@@ -138,7 +138,11 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
     /**
      * The password for the administrator.
      * 
+     * @deprecated
+     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
+     * 
      */
+    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 

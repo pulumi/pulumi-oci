@@ -211,7 +211,7 @@ class GetFleetResult:
     @pulumi.getter
     def products(self) -> Sequence[_builtins.str]:
         """
-        Products associated with the Fleet.
+        Products associated with the Fleet. PlatformConfiguration Ids corresponding to the Products.
         """
         return pulumi.get(self, "products")
 

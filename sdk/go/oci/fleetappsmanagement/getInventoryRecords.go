@@ -33,6 +33,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(inventoryRecordCompartmentIdInSubtree),
 //				FleetId:                pulumi.StringRef(testFleet.Id),
+//				IsDetailsRequired:      pulumi.BoolRef(inventoryRecordIsDetailsRequired),
 //				ResourceId:             pulumi.StringRef(testResource.Id),
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetInventoryRecordsArgs struct {
 	Filters                []GetInventoryRecordsFilter `pulumi:"filters"`
 	// unique Fleet identifier
 	FleetId *string `pulumi:"fleetId"`
+	// If set to true, inventory details will be returned.
+	IsDetailsRequired *bool `pulumi:"isDetailsRequired"`
 	// Resource Identifier
 	ResourceId *string `pulumi:"resourceId"`
 }
@@ -77,6 +80,7 @@ type GetInventoryRecordsResult struct {
 	Id string `pulumi:"id"`
 	// The list of inventory_record_collection.
 	InventoryRecordCollections []GetInventoryRecordsInventoryRecordCollection `pulumi:"inventoryRecordCollections"`
+	IsDetailsRequired          *bool                                          `pulumi:"isDetailsRequired"`
 	ResourceId                 *string                                        `pulumi:"resourceId"`
 }
 
@@ -98,6 +102,8 @@ type GetInventoryRecordsOutputArgs struct {
 	Filters                GetInventoryRecordsFilterArrayInput `pulumi:"filters"`
 	// unique Fleet identifier
 	FleetId pulumi.StringPtrInput `pulumi:"fleetId"`
+	// If set to true, inventory details will be returned.
+	IsDetailsRequired pulumi.BoolPtrInput `pulumi:"isDetailsRequired"`
 	// Resource Identifier
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 }
@@ -148,6 +154,10 @@ func (o GetInventoryRecordsResultOutput) InventoryRecordCollections() GetInvento
 	return o.ApplyT(func(v GetInventoryRecordsResult) []GetInventoryRecordsInventoryRecordCollection {
 		return v.InventoryRecordCollections
 	}).(GetInventoryRecordsInventoryRecordCollectionArrayOutput)
+}
+
+func (o GetInventoryRecordsResultOutput) IsDetailsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInventoryRecordsResult) *bool { return v.IsDetailsRequired }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetInventoryRecordsResultOutput) ResourceId() pulumi.StringPtrOutput {

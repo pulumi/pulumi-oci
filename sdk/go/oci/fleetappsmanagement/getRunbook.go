@@ -77,7 +77,7 @@ type LookupRunbookResult struct {
 	IsDefault bool `pulumi:"isDefault"`
 	// Does this runbook need SUDO access to execute?
 	IsSudoAccessNeeded bool `pulumi:"isSudoAccessNeeded"`
-	// Latest runbook version
+	// Latest runbook version.
 	LatestVersion string `pulumi:"latestVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -90,7 +90,7 @@ type LookupRunbookResult struct {
 	// Associated region
 	ResourceRegion string `pulumi:"resourceRegion"`
 	RunbookId      string `pulumi:"runbookId"`
-	// Version for the runbook.
+	// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 	RunbookVersions []GetRunbookRunbookVersion `pulumi:"runbookVersions"`
 	// The current state of the runbook.
 	State string `pulumi:"state"`
@@ -187,7 +187,7 @@ func (o LookupRunbookResultOutput) IsSudoAccessNeeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupRunbookResult) bool { return v.IsSudoAccessNeeded }).(pulumi.BoolOutput)
 }
 
-// Latest runbook version
+// Latest runbook version.
 func (o LookupRunbookResultOutput) LatestVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRunbookResult) string { return v.LatestVersion }).(pulumi.StringOutput)
 }
@@ -221,7 +221,7 @@ func (o LookupRunbookResultOutput) RunbookId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRunbookResult) string { return v.RunbookId }).(pulumi.StringOutput)
 }
 
-// Version for the runbook.
+// Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
 func (o LookupRunbookResultOutput) RunbookVersions() GetRunbookRunbookVersionArrayOutput {
 	return o.ApplyT(func(v LookupRunbookResult) []GetRunbookRunbookVersion { return v.RunbookVersions }).(GetRunbookRunbookVersionArrayOutput)
 }

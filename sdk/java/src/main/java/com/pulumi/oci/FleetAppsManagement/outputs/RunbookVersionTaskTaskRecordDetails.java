@@ -26,8 +26,7 @@ public final class RunbookVersionTaskTaskRecordDetails {
      */
     private @Nullable RunbookVersionTaskTaskRecordDetailsExecutionDetails executionDetails;
     /**
-     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch
-     * Execution Task
+     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
      * 
      */
     private @Nullable Boolean isApplySubjectTask;
@@ -69,10 +68,6 @@ public final class RunbookVersionTaskTaskRecordDetails {
     /**
      * @return (Updatable) The ID of taskRecord.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-     * new property values
-     * 
      */
     private @Nullable String taskRecordId;
 
@@ -92,8 +87,7 @@ public final class RunbookVersionTaskTaskRecordDetails {
         return Optional.ofNullable(this.executionDetails);
     }
     /**
-     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch
-     * Execution Task
+     * @return (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
      * 
      */
     public Optional<Boolean> isApplySubjectTask() {
@@ -150,10 +144,6 @@ public final class RunbookVersionTaskTaskRecordDetails {
     }
     /**
      * @return (Updatable) The ID of taskRecord.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the
-     * new property values
      * 
      */
     public Optional<String> taskRecordId() {

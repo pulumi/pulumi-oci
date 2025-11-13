@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostPlacementConstraintDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -31,6 +32,21 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+
+    /**
+     * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    @Import(name="capacityConfig")
+    private @Nullable Output<String> capacityConfig;
+
+    /**
+     * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+     * 
+     */
+    public Optional<Output<String>> capacityConfig() {
+        return Optional.ofNullable(this.capacityConfig);
     }
 
     /**
@@ -132,14 +148,29 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    @Import(name="isMemoryEncryptionEnabled")
+    private @Nullable Output<Boolean> isMemoryEncryptionEnabled;
+
+    /**
+     * @return Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+     * 
+     */
+    public Optional<Output<Boolean>> isMemoryEncryptionEnabled() {
+        return Optional.ofNullable(this.isMemoryEncryptionEnabled);
+    }
+
+    /**
+     * The details for providing placement constraints.
      * 
      */
     @Import(name="placementConstraintDetails")
     private @Nullable Output<DedicatedVmHostPlacementConstraintDetailsArgs> placementConstraintDetails;
 
     /**
-     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * @return The details for providing placement constraints.
      * 
      */
     public Optional<Output<DedicatedVmHostPlacementConstraintDetailsArgs>> placementConstraintDetails() {
@@ -150,12 +181,14 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
 
     private DedicatedVmHostArgs(DedicatedVmHostArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.capacityConfig = $.capacityConfig;
         this.compartmentId = $.compartmentId;
         this.dedicatedVmHostShape = $.dedicatedVmHostShape;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
+        this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
         this.placementConstraintDetails = $.placementConstraintDetails;
     }
 
@@ -196,6 +229,27 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param capacityConfig The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityConfig(@Nullable Output<String> capacityConfig) {
+            $.capacityConfig = capacityConfig;
+            return this;
+        }
+
+        /**
+         * @param capacityConfig The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityConfig(String capacityConfig) {
+            return capacityConfig(Output.of(capacityConfig));
         }
 
         /**
@@ -333,7 +387,28 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * @param isMemoryEncryptionEnabled Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(@Nullable Output<Boolean> isMemoryEncryptionEnabled) {
+            $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMemoryEncryptionEnabled Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            return isMemoryEncryptionEnabled(Output.of(isMemoryEncryptionEnabled));
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
          * 
          * @return builder
          * 
@@ -344,7 +419,7 @@ public final class DedicatedVmHostArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * @param placementConstraintDetails The details for providing placement constraints.
          * 
          * @return builder
          * 

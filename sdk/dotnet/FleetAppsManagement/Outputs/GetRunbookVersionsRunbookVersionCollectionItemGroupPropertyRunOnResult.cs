@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetRunbookVersionsRunbookVersionCollectionItemGroupPropertyRunOnResult
     {
         /// <summary>
-        /// Build control flow conditions that determine the relevance of the task execution.
+        /// Build control flow conditions that determine the relevance of the task execution against targets.
         /// </summary>
         public readonly string Condition;
         /// <summary>

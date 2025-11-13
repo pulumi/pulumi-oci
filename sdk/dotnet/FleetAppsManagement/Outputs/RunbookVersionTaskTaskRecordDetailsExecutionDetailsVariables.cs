@@ -14,8 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables
     {
         /// <summary>
-        /// (Updatable) The input variables for the
-        /// task.
+        /// (Updatable) The input variables for the task.
         /// </summary>
         public readonly ImmutableArray<Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable> InputVariables;
         /// <summary>

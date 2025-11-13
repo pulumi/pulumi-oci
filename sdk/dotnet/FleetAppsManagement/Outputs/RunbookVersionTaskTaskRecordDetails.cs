@@ -22,8 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly Outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetails? ExecutionDetails;
         /// <summary>
-        /// (Updatable) Is this an Apply Subject Task? Ex. Patch
-        /// Execution Task
+        /// (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
         /// </summary>
         public readonly bool? IsApplySubjectTask;
         /// <summary>
@@ -56,10 +55,6 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         public readonly string Scope;
         /// <summary>
         /// (Updatable) The ID of taskRecord.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
-        /// new property values
         /// </summary>
         public readonly string? TaskRecordId;
 

@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -20,6 +22,11 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
      * 
      */
     private String instanceShapeName;
+    /**
+     * @return Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+     * 
+     */
+    private List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability> supportedCapabilities;
 
     private GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape() {}
     /**
@@ -36,6 +43,13 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
     public String instanceShapeName() {
         return this.instanceShapeName;
     }
+    /**
+     * @return Specifies the capabilities that the Dedicated Virtual Machine Host (DVMH) Shape or Virtual Machine Instance Shape could support.
+     * 
+     */
+    public List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability> supportedCapabilities() {
+        return this.supportedCapabilities;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +62,13 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
     public static final class Builder {
         private String availabilityDomain;
         private String instanceShapeName;
+        private List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability> supportedCapabilities;
         public Builder() {}
         public Builder(GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.instanceShapeName = defaults.instanceShapeName;
+    	      this.supportedCapabilities = defaults.supportedCapabilities;
         }
 
         @CustomType.Setter
@@ -71,10 +87,22 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
             this.instanceShapeName = instanceShapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder supportedCapabilities(List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability> supportedCapabilities) {
+            if (supportedCapabilities == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape", "supportedCapabilities");
+            }
+            this.supportedCapabilities = supportedCapabilities;
+            return this;
+        }
+        public Builder supportedCapabilities(GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeSupportedCapability... supportedCapabilities) {
+            return supportedCapabilities(List.of(supportedCapabilities));
+        }
         public GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape build() {
             final var _resultValue = new GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.instanceShapeName = instanceShapeName;
+            _resultValue.supportedCapabilities = supportedCapabilities;
             return _resultValue;
         }
     }

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The OCID of the Inventory target.
+        /// The id of the Inventory target.
         /// </summary>
         public readonly string TargetId;
         /// <summary>

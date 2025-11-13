@@ -90,7 +90,7 @@ export interface GetRunbookVersionsResult {
      */
     readonly runbookVersionCollections: outputs.FleetAppsManagement.GetRunbookVersionsRunbookVersionCollection[];
     /**
-     * The current state of the FleetResource.
+     * The current state of the runbook version.
      */
     readonly state?: string;
 }

@@ -30,8 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := containerengine.GetNodePoolOption(ctx, &containerengine.GetNodePoolOptionArgs{
-//				NodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.Id,
-//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				NodePoolOptionId:           testNodePoolOptionOciContainerengineNodePoolOption.Id,
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				NodePoolK8sVersion:         pulumi.StringRef(nodePoolOptionNodePoolK8sVersion),
+//				NodePoolOsArch:             pulumi.StringRef(nodePoolOptionNodePoolOsArch),
+//				NodePoolOsType:             pulumi.StringRef(nodePoolOptionNodePoolOsType),
+//				ShouldListAllPatchVersions: pulumi.BoolRef(nodePoolOptionShouldListAllPatchVersions),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,8 +59,16 @@ func GetNodePoolOption(ctx *pulumi.Context, args *GetNodePoolOptionArgs, opts ..
 type GetNodePoolOptionArgs struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Filter node pool options by Kubernetes version.
+	NodePoolK8sVersion *string `pulumi:"nodePoolK8sVersion"`
 	// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
 	NodePoolOptionId string `pulumi:"nodePoolOptionId"`
+	// Filter node pool options by OS architecture.
+	NodePoolOsArch *string `pulumi:"nodePoolOsArch"`
+	// Filter node pool options by OS type.
+	NodePoolOsType *string `pulumi:"nodePoolOsType"`
+	// Option to show all kubernetes patch versions
+	ShouldListAllPatchVersions *bool `pulumi:"shouldListAllPatchVersions"`
 }
 
 // A collection of values returned by getNodePoolOption.
@@ -68,9 +80,13 @@ type GetNodePoolOptionResult struct {
 	Images []string `pulumi:"images"`
 	// Available Kubernetes versions.
 	KubernetesVersions []string `pulumi:"kubernetesVersions"`
+	NodePoolK8sVersion *string  `pulumi:"nodePoolK8sVersion"`
 	NodePoolOptionId   string   `pulumi:"nodePoolOptionId"`
+	NodePoolOsArch     *string  `pulumi:"nodePoolOsArch"`
+	NodePoolOsType     *string  `pulumi:"nodePoolOsType"`
 	// Available shapes for nodes.
-	Shapes []string `pulumi:"shapes"`
+	Shapes                     []string `pulumi:"shapes"`
+	ShouldListAllPatchVersions *bool    `pulumi:"shouldListAllPatchVersions"`
 	// Available source of the node.
 	Sources []GetNodePoolOptionSource `pulumi:"sources"`
 }
@@ -88,8 +104,16 @@ func GetNodePoolOptionOutput(ctx *pulumi.Context, args GetNodePoolOptionOutputAr
 type GetNodePoolOptionOutputArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Filter node pool options by Kubernetes version.
+	NodePoolK8sVersion pulumi.StringPtrInput `pulumi:"nodePoolK8sVersion"`
 	// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
 	NodePoolOptionId pulumi.StringInput `pulumi:"nodePoolOptionId"`
+	// Filter node pool options by OS architecture.
+	NodePoolOsArch pulumi.StringPtrInput `pulumi:"nodePoolOsArch"`
+	// Filter node pool options by OS type.
+	NodePoolOsType pulumi.StringPtrInput `pulumi:"nodePoolOsType"`
+	// Option to show all kubernetes patch versions
+	ShouldListAllPatchVersions pulumi.BoolPtrInput `pulumi:"shouldListAllPatchVersions"`
 }
 
 func (GetNodePoolOptionOutputArgs) ElementType() reflect.Type {
@@ -130,13 +154,29 @@ func (o GetNodePoolOptionResultOutput) KubernetesVersions() pulumi.StringArrayOu
 	return o.ApplyT(func(v GetNodePoolOptionResult) []string { return v.KubernetesVersions }).(pulumi.StringArrayOutput)
 }
 
+func (o GetNodePoolOptionResultOutput) NodePoolK8sVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionResult) *string { return v.NodePoolK8sVersion }).(pulumi.StringPtrOutput)
+}
+
 func (o GetNodePoolOptionResultOutput) NodePoolOptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolOptionResult) string { return v.NodePoolOptionId }).(pulumi.StringOutput)
+}
+
+func (o GetNodePoolOptionResultOutput) NodePoolOsArch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionResult) *string { return v.NodePoolOsArch }).(pulumi.StringPtrOutput)
+}
+
+func (o GetNodePoolOptionResultOutput) NodePoolOsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionResult) *string { return v.NodePoolOsType }).(pulumi.StringPtrOutput)
 }
 
 // Available shapes for nodes.
 func (o GetNodePoolOptionResultOutput) Shapes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolOptionResult) []string { return v.Shapes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNodePoolOptionResultOutput) ShouldListAllPatchVersions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionResult) *bool { return v.ShouldListAllPatchVersions }).(pulumi.BoolPtrOutput)
 }
 
 // Available source of the node.

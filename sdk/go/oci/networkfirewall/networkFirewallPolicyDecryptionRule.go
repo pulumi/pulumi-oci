@@ -14,6 +14,47 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkfirewall.NewNetworkFirewallPolicyDecryptionRule(ctx, "test_network_firewall_policy_decryption_rule", &networkfirewall.NetworkFirewallPolicyDecryptionRuleArgs{
+//				Lifecycle: map[string]interface{}{
+//					"ignoreChanges": []interface{}{
+//						position,
+//					},
+//				},
+//				Name:   pulumi.Any(networkFirewallPolicyDecryptionRuleName),
+//				Action: pulumi.Any(networkFirewallPolicyDecryptionRuleAction),
+//				Condition: &networkfirewall.NetworkFirewallPolicyDecryptionRuleConditionArgs{
+//					DestinationAddresses: pulumi.Any(networkFirewallPolicyDecryptionRuleConditionDestinationAddress),
+//					SourceAddresses:      pulumi.Any(networkFirewallPolicyDecryptionRuleConditionSourceAddress),
+//				},
+//				Position: &networkfirewall.NetworkFirewallPolicyDecryptionRulePositionArgs{
+//					AfterRule:  pulumi.Any(networkFirewallPolicyDecryptionRulePositionAfterRule),
+//					BeforeRule: pulumi.Any(networkFirewallPolicyDecryptionRulePositionBeforeRule),
+//				},
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				DecryptionProfile:       pulumi.Any(networkFirewallPolicyDecryptionRuleDecryptionProfile),
+//				Secret:                  pulumi.Any(networkFirewallPolicyDecryptionRuleSecret),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.

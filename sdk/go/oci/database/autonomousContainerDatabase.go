@@ -14,6 +14,127 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewAutonomousContainerDatabase(ctx, "test_autonomous_container_database", &database.AutonomousContainerDatabaseArgs{
+//				DisplayName:                         pulumi.Any(autonomousContainerDatabaseDisplayName),
+//				PatchModel:                          pulumi.Any(autonomousContainerDatabasePatchModel),
+//				AutonomousContainerDatabaseBackupId: pulumi.Any(testAutonomousContainerDatabaseBackup.Id),
+//				AutonomousExadataInfrastructureId:   pulumi.Any(testAutonomousExadataInfrastructure.Id),
+//				AutonomousVmClusterId:               pulumi.Any(testAutonomousVmCluster.Id),
+//				BackupConfig: &database.AutonomousContainerDatabaseBackupConfigArgs{
+//					BackupDestinationDetails: &database.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{
+//						Type:                             pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
+//						BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
+//						DbrsPolicyId:                     testPolicy.Id,
+//						Id:                               pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
+//						InternetProxy:                    pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
+//						IsRemote:                         pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
+//						IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
+//						RemoteRegion:                     pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
+//						VpcPassword:                      pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
+//						VpcUser:                          pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
+//					},
+//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
+//				},
+//				CloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
+//				CompartmentId:              pulumi.Any(compartmentId),
+//				CustomerContacts: database.AutonomousContainerDatabaseCustomerContactArray{
+//					&database.AutonomousContainerDatabaseCustomerContactArgs{
+//						Email: pulumi.Any(autonomousContainerDatabaseCustomerContactsEmail),
+//					},
+//				},
+//				DatabaseSoftwareImageId: pulumi.Any(testDatabaseSoftwareImage.Id),
+//				DbName:                  pulumi.Any(autonomousContainerDatabaseDbName),
+//				DbSplitThreshold:        pulumi.Any(autonomousContainerDatabaseDbSplitThreshold),
+//				DbUniqueName:            pulumi.Any(autonomousContainerDatabaseDbUniqueName),
+//				DbVersion:               pulumi.Any(autonomousContainerDatabaseDbVersion),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DistributionAffinity:               pulumi.Any(autonomousContainerDatabaseDistributionAffinity),
+//				FastStartFailOverLagLimitInSeconds: pulumi.Any(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				IsAutomaticFailoverEnabled: pulumi.Any(autonomousContainerDatabaseIsAutomaticFailoverEnabled),
+//				IsDstFileUpdateEnabled:     pulumi.Any(autonomousContainerDatabaseIsDstFileUpdateEnabled),
+//				KeyStoreId:                 pulumi.Any(testKeyStore.Id),
+//				KmsKeyId:                   pulumi.Any(testKey.Id),
+//				KmsKeyVersionId:            testKeyVersion.Id,
+//				MaintenanceWindowDetails: &database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{
+//					CustomActionTimeoutInMins: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins),
+//					DaysOfWeeks: database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{
+//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{
+//							Name: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName),
+//						},
+//					},
+//					HoursOfDays:                  pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled),
+//					LeadTimeInWeeks:              pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks),
+//					Months: database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{
+//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{
+//							Name: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName),
+//						},
+//					},
+//					PatchingMode:  pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode),
+//					Preference:    pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsPreference),
+//					SkipRus:       pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu),
+//					WeeksOfMonths: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth),
+//				},
+//				NetServicesArchitecture: pulumi.Any(autonomousContainerDatabaseNetServicesArchitecture),
+//				OkvEndPointGroupName:    pulumi.Any(testGroup.Name),
+//				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{
+//					BackupDestinationDetails: database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
+//						&database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
+//							Type:                             pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
+//							BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
+//							DbrsPolicyId:                     testPolicy.Id,
+//							Id:                               pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
+//							InternetProxy:                    pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
+//							IsRemote:                         pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
+//							IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
+//							RemoteRegion:                     pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
+//							VpcPassword:                      pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
+//							VpcUser:                          pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
+//						},
+//					},
+//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
+//				},
+//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(testCompartment.Id),
+//				PeerAutonomousContainerDatabaseDisplayName:   pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName),
+//				PeerAutonomousExadataInfrastructureId:        pulumi.Any(testAutonomousExadataInfrastructure.Id),
+//				PeerAutonomousVmClusterId:                    pulumi.Any(testAutonomousVmCluster.Id),
+//				PeerCloudAutonomousVmClusterId:               pulumi.Any(testCloudAutonomousVmCluster.Id),
+//				PeerDbUniqueName:                             pulumi.Any(autonomousContainerDatabasePeerDbUniqueName),
+//				ProtectionMode:                               pulumi.Any(autonomousContainerDatabaseProtectionMode),
+//				ServiceLevelAgreementType:                    pulumi.Any(autonomousContainerDatabaseServiceLevelAgreementType),
+//				Source:                                       pulumi.Any(autonomousContainerDatabaseSource),
+//				StandbyMaintenanceBufferInDays:               pulumi.Any(autonomousContainerDatabaseStandbyMaintenanceBufferInDays),
+//				VaultId:                                      pulumi.Any(testVault.Id),
+//				VersionPreference:                            pulumi.Any(autonomousContainerDatabaseVersionPreference),
+//				VmFailoverReservation:                        pulumi.Any(autonomousContainerDatabaseVmFailoverReservation),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AutonomousContainerDatabases can be imported using the `id`, e.g.

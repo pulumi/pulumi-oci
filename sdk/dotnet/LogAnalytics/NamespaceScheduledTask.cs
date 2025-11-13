@@ -12,6 +12,73 @@ namespace Pulumi.Oci.LogAnalytics
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testNamespaceScheduledTask = new Oci.LogAnalytics.NamespaceScheduledTask("test_namespace_scheduled_task", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         Kind = namespaceScheduledTaskKind,
+    ///         Namespace = namespaceScheduledTaskNamespace,
+    ///         Action = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionArgs
+    ///         {
+    ///             Type = namespaceScheduledTaskActionType,
+    ///             CompartmentIdInSubtree = namespaceScheduledTaskActionCompartmentIdInSubtree,
+    ///             DataType = namespaceScheduledTaskActionDataType,
+    ///             MetricExtraction = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionMetricExtractionArgs
+    ///             {
+    ///                 CompartmentId = compartmentId,
+    ///                 MetricName = testMetric.Name,
+    ///                 Namespace = namespaceScheduledTaskActionMetricExtractionNamespace,
+    ///                 ResourceGroup = namespaceScheduledTaskActionMetricExtractionResourceGroup,
+    ///             },
+    ///             PurgeCompartmentId = testCompartment.Id,
+    ///             PurgeDuration = namespaceScheduledTaskActionPurgeDuration,
+    ///             QueryString = namespaceScheduledTaskActionQueryString,
+    ///             SavedSearchId = testSavedSearch.Id,
+    ///             TemplateDetails = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionTemplateDetailsArgs
+    ///             {
+    ///                 TemplateId = testTemplate.Id,
+    ///                 TemplateParams = new[]
+    ///                 {
+    ///                     new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs
+    ///                     {
+    ///                         KeyField = namespaceScheduledTaskActionTemplateDetailsTemplateParamsKeyField,
+    ///                         ValueField = namespaceScheduledTaskActionTemplateDetailsTemplateParamsValueField,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = namespaceScheduledTaskDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         SavedSearchId = testSavedSearch.Id,
+    ///         Schedules = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskSchedulesArgs
+    ///         {
+    ///             Type = namespaceScheduledTaskSchedulesType,
+    ///             Expression = namespaceScheduledTaskSchedulesExpression,
+    ///             MisfirePolicy = namespaceScheduledTaskSchedulesMisfirePolicy,
+    ///             RecurringInterval = namespaceScheduledTaskSchedulesRecurringInterval,
+    ///             RepeatCount = namespaceScheduledTaskSchedulesRepeatCount,
+    ///             TimeZone = namespaceScheduledTaskSchedulesTimeZone,
+    ///         },
+    ///         TaskType = namespaceScheduledTaskTaskType,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// NamespaceScheduledTasks can be imported using the `id`, e.g.

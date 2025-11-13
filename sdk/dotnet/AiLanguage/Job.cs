@@ -16,6 +16,66 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testJob = new Oci.AiLanguage.Job("test_job", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         InputLocation = new Oci.AiLanguage.Inputs.JobInputLocationArgs
+    ///         {
+    ///             Bucket = jobInputLocationBucket,
+    ///             LocationType = jobInputLocationLocationType,
+    ///             Namespace = jobInputLocationNamespace,
+    ///             ObjectNames = jobInputLocationObjectNames,
+    ///             Prefix = jobInputLocationPrefix,
+    ///         },
+    ///         ModelMetadataDetails = new[]
+    ///         {
+    ///             new Oci.AiLanguage.Inputs.JobModelMetadataDetailArgs
+    ///             {
+    ///                 Configuration = new[]
+    ///                 {
+    ///                     
+    ///                     {
+    ///                         { "configurationMap", jobModelMetadataDetailsConfigurationConfigurationMap },
+    ///                     },
+    ///                 },
+    ///                 EndpointId = testEndpoint.Id,
+    ///                 LanguageCode = jobModelMetadataDetailsLanguageCode,
+    ///                 ModelId = testModel.Id,
+    ///                 ModelType = jobModelMetadataDetailsModelType,
+    ///             },
+    ///         },
+    ///         OutputLocation = new Oci.AiLanguage.Inputs.JobOutputLocationArgs
+    ///         {
+    ///             Bucket = jobOutputLocationBucket,
+    ///             Namespace = jobOutputLocationNamespace,
+    ///             Prefix = jobOutputLocationPrefix,
+    ///         },
+    ///         Description = jobDescription,
+    ///         DisplayName = jobDisplayName,
+    ///         InputConfiguration = new Oci.AiLanguage.Inputs.JobInputConfigurationArgs
+    ///         {
+    ///             Configuration = new[]
+    ///             {
+    ///                 
+    ///                 {
+    ///                     { "config", jobInputConfigurationConfigurationConfig },
+    ///                 },
+    ///             },
+    ///             DocumentTypes = jobInputConfigurationDocumentTypes,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Jobs can be imported using the `id`, e.g.

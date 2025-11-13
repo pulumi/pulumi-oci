@@ -268,6 +268,20 @@ class Sign(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_sign = oci.kms.Sign("test_sign",
+            crypto_endpoint=sign_message_crypto_endpoint,
+            key_id=test_key["id"],
+            message=sign_message,
+            signing_algorithm=sign_signing_algorithm,
+            key_version_id=test_key_version["id"],
+            logging_context=sign_logging_context,
+            message_type=sign_message_type)
+        ```
+
         ## Import
 
         Sign can be imported using the `id`, e.g.
@@ -297,6 +311,20 @@ class Sign(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_sign = oci.kms.Sign("test_sign",
+            crypto_endpoint=sign_message_crypto_endpoint,
+            key_id=test_key["id"],
+            message=sign_message,
+            signing_algorithm=sign_signing_algorithm,
+            key_version_id=test_key_version["id"],
+            logging_context=sign_logging_context,
+            message_type=sign_message_type)
+        ```
 
         ## Import
 

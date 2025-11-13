@@ -9,6 +9,102 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstance = new oci.bigdataservice.BdsInstance("test_bds_instance", {
+ *     clusterAdminPassword: bdsInstanceClusterAdminPassword,
+ *     clusterPublicKey: bdsInstanceClusterPublicKey,
+ *     clusterVersion: bdsInstanceClusterVersion,
+ *     compartmentId: compartmentId,
+ *     displayName: bdsInstanceDisplayName,
+ *     isHighAvailability: bdsInstanceIsHighAvailability,
+ *     isSecure: bdsInstanceIsSecure,
+ *     masterNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     utilNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     workerNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     computeOnlyWorkerNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     edgeNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     kafkaBrokerNode: {
+ *         shape: bdsInstanceNodesShape,
+ *         subnetId: testSubnet.id,
+ *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
+ *         shapeConfig: {
+ *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
+ *             nvmes: bdsInstanceNodesShapeConfigNvmes,
+ *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *         },
+ *     },
+ *     bdsClusterVersionSummary: {
+ *         bdsVersion: bdsInstanceBdsClusterVersionSummaryBdsVersion,
+ *         odhVersion: bdsInstanceBdsClusterVersionSummaryOdhVersion,
+ *     },
+ *     bootstrapScriptUrl: bdsInstanceBootstrapScriptUrl,
+ *     clusterProfile: bdsInstanceClusterProfile,
+ *     definedTags: bdsInstanceDefinedTags,
+ *     freeformTags: bdsInstanceFreeformTags,
+ *     kerberosRealmName: bdsInstanceKerberosRealmName,
+ *     kmsKeyId: bdsInstanceKmsKeyId,
+ *     ignoreExistingNodesShapes: ignoreExistingNodesShape,
+ *     networkConfig: {
+ *         cidrBlock: bdsInstanceNetworkConfigCidrBlock,
+ *         isNatGatewayRequired: bdsInstanceNetworkConfigIsNatGatewayRequired,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * BdsInstances can be imported using the `id`, e.g.

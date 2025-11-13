@@ -18,6 +18,65 @@ import (
 //
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/ailanguage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ailanguage.NewJob(ctx, "test_job", &ailanguage.JobArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				InputLocation: &ailanguage.JobInputLocationArgs{
+//					Bucket:       pulumi.Any(jobInputLocationBucket),
+//					LocationType: pulumi.Any(jobInputLocationLocationType),
+//					Namespace:    pulumi.Any(jobInputLocationNamespace),
+//					ObjectNames:  pulumi.Any(jobInputLocationObjectNames),
+//					Prefix:       jobInputLocationPrefix,
+//				},
+//				ModelMetadataDetails: ailanguage.JobModelMetadataDetailArray{
+//					&ailanguage.JobModelMetadataDetailArgs{
+//						Configuration: pulumi.StringMapMap{
+//							pulumi.StringMap{
+//								"configurationMap": pulumi.Any(jobModelMetadataDetailsConfigurationConfigurationMap),
+//							},
+//						},
+//						EndpointId:   pulumi.Any(testEndpoint.Id),
+//						LanguageCode: pulumi.Any(jobModelMetadataDetailsLanguageCode),
+//						ModelId:      pulumi.Any(testModel.Id),
+//						ModelType:    pulumi.Any(jobModelMetadataDetailsModelType),
+//					},
+//				},
+//				OutputLocation: &ailanguage.JobOutputLocationArgs{
+//					Bucket:    pulumi.Any(jobOutputLocationBucket),
+//					Namespace: pulumi.Any(jobOutputLocationNamespace),
+//					Prefix:    pulumi.Any(jobOutputLocationPrefix),
+//				},
+//				Description: pulumi.Any(jobDescription),
+//				DisplayName: pulumi.Any(jobDisplayName),
+//				InputConfiguration: &ailanguage.JobInputConfigurationArgs{
+//					Configuration: pulumi.StringMapMap{
+//						pulumi.StringMap{
+//							"config": pulumi.Any(jobInputConfigurationConfigurationConfig),
+//						},
+//					},
+//					DocumentTypes: pulumi.Any(jobInputConfigurationDocumentTypes),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Jobs can be imported using the `id`, e.g.

@@ -14,6 +14,87 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/certificatesmanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := certificatesmanagement.NewCertificate(ctx, "test_certificate", &certificatesmanagement.CertificateArgs{
+//				CertificateConfig: &certificatesmanagement.CertificateCertificateConfigArgs{
+//					ConfigType:                   pulumi.Any(certificateCertificateConfigConfigType),
+//					CertChainPem:                 certificateCertificateConfigCertChainPem,
+//					CertificatePem:               certificateCertificateConfigCertificatePem,
+//					CertificateProfileType:       pulumi.Any(certificateCertificateConfigCertificateProfileType),
+//					CsrPem:                       pulumi.Any(certificateCertificateConfigCsrPem),
+//					IssuerCertificateAuthorityId: pulumi.Any(testCertificateAuthority.Id),
+//					KeyAlgorithm:                 pulumi.Any(certificateCertificateConfigKeyAlgorithm),
+//					PrivateKeyPem:                certificateCertificateConfigPrivateKeyPem,
+//					PrivateKeyPemPassphrase:      certificateCertificateConfigPrivateKeyPemPassphrase,
+//					SignatureAlgorithm:           pulumi.Any(certificateCertificateConfigSignatureAlgorithm),
+//					Subject: &certificatesmanagement.CertificateCertificateConfigSubjectArgs{
+//						CommonName:                 pulumi.Any(certificateCertificateConfigSubjectCommonName),
+//						Country:                    pulumi.Any(certificateCertificateConfigSubjectCountry),
+//						DistinguishedNameQualifier: pulumi.Any(certificateCertificateConfigSubjectDistinguishedNameQualifier),
+//						DomainComponent:            pulumi.Any(certificateCertificateConfigSubjectDomainComponent),
+//						GenerationQualifier:        pulumi.Any(certificateCertificateConfigSubjectGenerationQualifier),
+//						GivenName:                  pulumi.Any(certificateCertificateConfigSubjectGivenName),
+//						Initials:                   pulumi.Any(certificateCertificateConfigSubjectInitials),
+//						LocalityName:               pulumi.Any(certificateCertificateConfigSubjectLocalityName),
+//						Organization:               pulumi.Any(certificateCertificateConfigSubjectOrganization),
+//						OrganizationalUnit:         pulumi.Any(certificateCertificateConfigSubjectOrganizationalUnit),
+//						Pseudonym:                  pulumi.Any(certificateCertificateConfigSubjectPseudonym),
+//						SerialNumber:               pulumi.Any(certificateCertificateConfigSubjectSerialNumber),
+//						StateOrProvinceName:        pulumi.Any(certificateCertificateConfigSubjectStateOrProvinceName),
+//						Street:                     pulumi.Any(certificateCertificateConfigSubjectStreet),
+//						Surname:                    pulumi.Any(certificateCertificateConfigSubjectSurname),
+//						Title:                      pulumi.Any(certificateCertificateConfigSubjectTitle),
+//						UserId:                     pulumi.Any(testUser.Id),
+//					},
+//					SubjectAlternativeNames: certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArray{
+//						&certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArgs{
+//							Type:  pulumi.Any(certificateCertificateConfigSubjectAlternativeNamesType),
+//							Value: pulumi.Any(certificateCertificateConfigSubjectAlternativeNamesValue),
+//						},
+//					},
+//					Validity: &certificatesmanagement.CertificateCertificateConfigValidityArgs{
+//						TimeOfValidityNotAfter:  pulumi.Any(certificateCertificateConfigValidityTimeOfValidityNotAfter),
+//						TimeOfValidityNotBefore: pulumi.Any(certificateCertificateConfigValidityTimeOfValidityNotBefore),
+//					},
+//					VersionName: pulumi.Any(certificateCertificateConfigVersionName),
+//				},
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(certificateName),
+//				CertificateRules: certificatesmanagement.CertificateCertificateRuleArray{
+//					&certificatesmanagement.CertificateCertificateRuleArgs{
+//						AdvanceRenewalPeriod: pulumi.Any(certificateCertificateRulesAdvanceRenewalPeriod),
+//						RenewalInterval:      pulumi.Any(certificateCertificateRulesRenewalInterval),
+//						RuleType:             pulumi.Any(certificateCertificateRulesRuleType),
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(certificateDescription),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Certificates can be imported using the `id`, e.g.

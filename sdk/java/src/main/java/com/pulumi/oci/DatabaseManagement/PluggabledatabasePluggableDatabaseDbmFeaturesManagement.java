@@ -19,6 +19,73 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement;
+ * import com.pulumi.oci.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new PluggabledatabasePluggableDatabaseDbmFeaturesManagement("testPluggabledatabasePluggableDatabaseDbmFeaturesManagement", PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs.builder()
+ *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .enablePluggableDatabaseDbmFeature(enablePluggableDatabaseDbmFeature)
+ *             .featureDetails(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs.builder()
+ *                 .feature(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature)
+ *                 .enablePluggableDatabaseDbmFeature(enablePluggableDatabaseDbmFeature)
+ *                 .connectorDetails(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
+ *                     .connectorType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
+ *                     .databaseConnectorId(testDatabaseConnector.id())
+ *                     .managementAgentId(testManagementAgent.id())
+ *                     .privateEndPointId(testPrivateEndPoint.id())
+ *                     .build())
+ *                 .databaseConnectionDetails(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs.builder()
+ *                     .connectionCredentials(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs.builder()
+ *                         .credentialName(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName)
+ *                         .credentialType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType)
+ *                         .namedCredentialId(testNamedCredential.id())
+ *                         .passwordSecretId(testSecret.id())
+ *                         .role(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole)
+ *                         .sslSecretId(testSecret.id())
+ *                         .userName(testUser.name())
+ *                         .build())
+ *                     .connectionString(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs.builder()
+ *                         .connectionType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType)
+ *                         .port(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort)
+ *                         .protocol(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol)
+ *                         .service(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService)
+ *                         .build())
+ *                     .build())
+ *                 .canEnableAllCurrentPdbs(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs)
+ *                 .isAutoEnablePluggableDatabase(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase)
+ *                 .managementType(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement")
 public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

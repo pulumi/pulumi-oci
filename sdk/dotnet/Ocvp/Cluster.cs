@@ -12,6 +12,65 @@ namespace Pulumi.Oci.Ocvp
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCluster = new Oci.Ocvp.Cluster("test_cluster", new()
+    ///     {
+    ///         ComputeAvailabilityDomain = clusterComputeAvailabilityDomain,
+    ///         EsxiHostsCount = clusterEsxiHostsCount,
+    ///         NetworkConfiguration = new Oci.Ocvp.Inputs.ClusterNetworkConfigurationArgs
+    ///         {
+    ///             NsxEdgeVtepVlanId = testVlan.Id,
+    ///             NsxVtepVlanId = testVlan.Id,
+    ///             ProvisioningSubnetId = testSubnet.Id,
+    ///             VmotionVlanId = testVlan.Id,
+    ///             VsanVlanId = testVlan.Id,
+    ///             HcxVlanId = testVlan.Id,
+    ///             NsxEdgeUplink1vlanId = testNsxEdgeUplink1vlan.Id,
+    ///             NsxEdgeUplink2vlanId = testNsxEdgeUplink2vlan.Id,
+    ///             ProvisioningVlanId = testVlan.Id,
+    ///             ReplicationVlanId = testVlan.Id,
+    ///             VsphereVlanId = testVlan.Id,
+    ///         },
+    ///         SddcId = testSddc.Id,
+    ///         CapacityReservationId = testCapacityReservation.Id,
+    ///         DatastoreClusterIds = clusterDatastoreClusterIds,
+    ///         Datastores = new[]
+    ///         {
+    ///             new Oci.Ocvp.Inputs.ClusterDatastoreArgs
+    ///             {
+    ///                 BlockVolumeIds = clusterDatastoresBlockVolumeIds,
+    ///                 DatastoreType = clusterDatastoresDatastoreType,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = clusterDisplayName,
+    ///         EsxiSoftwareVersion = clusterEsxiSoftwareVersion,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         InitialCommitment = clusterInitialCommitment,
+    ///         InitialHostOcpuCount = clusterInitialHostOcpuCount,
+    ///         InitialHostShapeName = testShape.Name,
+    ///         InstanceDisplayNamePrefix = clusterInstanceDisplayNamePrefix,
+    ///         IsShieldedInstanceEnabled = clusterIsShieldedInstanceEnabled,
+    ///         VmwareSoftwareVersion = clusterVmwareSoftwareVersion,
+    ///         WorkloadNetworkCidr = clusterWorkloadNetworkCidr,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Clusters can be imported using the `id`, e.g.

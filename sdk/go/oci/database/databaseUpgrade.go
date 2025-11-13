@@ -14,6 +14,38 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewDatabaseUpgrade(ctx, "test_database_upgrade", &database.DatabaseUpgradeArgs{
+//				Action:     pulumi.Any(databaseUpgradeAction),
+//				DatabaseId: pulumi.Any(testDatabase.Id),
+//				DatabaseUpgradeSourceDetails: &database.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{
+//					DatabaseSoftwareImageId: pulumi.Any(testDatabaseSoftwareImage.Id),
+//					DbHomeId:                testDbHome.Id,
+//					DbVersion:               pulumi.Any(databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion),
+//					Options:                 pulumi.Any(databaseUpgradeDatabaseUpgradeSourceDetailsOptions),
+//					Source:                  pulumi.Any(databaseUpgradeDatabaseUpgradeSourceDetailsSource),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Import is not supported for this resource.

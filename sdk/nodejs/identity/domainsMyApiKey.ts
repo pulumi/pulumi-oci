@@ -9,6 +9,30 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMyApiKey = new oci.identity.DomainsMyApiKey("test_my_api_key", {
+ *     idcsEndpoint: testDomain.url,
+ *     key: myApiKeyKey,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:apikey"],
+ *     authorization: myApiKeyAuthorization,
+ *     description: myApiKeyDescription,
+ *     id: myApiKeyId,
+ *     ocid: myApiKeyOcid,
+ *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: myApiKeyTagsKey,
+ *         value: myApiKeyTagsValue,
+ *     }],
+ *     user: {
+ *         ocid: myApiKeyUserOcid,
+ *         value: myApiKeyUserValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MyApiKeys can be imported using the `id`, e.g.

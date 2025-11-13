@@ -13,6 +13,41 @@ import (
 )
 
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(ctx, "test_externalpluggabledatabase_external_pluggable_dbm_features_management", &databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs{
+//				ExternalPluggableDatabaseId:       pulumi.Any(testExternalPluggableDatabase.Id),
+//				EnableExternalPluggableDbmFeature: pulumi.Any(enableExternalPluggableDbmFeature),
+//				FeatureDetails: &databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs{
+//					Feature:                           pulumi.Any(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsFeature),
+//					EnableExternalPluggableDbmFeature: enableExternalPluggableDbmFeature,
+//					ConnectorDetails: &databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs{
+//						ConnectorType:       pulumi.Any(externalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType),
+//						DatabaseConnectorId: pulumi.Any(testDatabaseConnector.Id),
+//						ManagementAgentId:   pulumi.Any(testManagementAgent.Id),
+//						PrivateEndPointId:   pulumi.Any(testPrivateEndPoint.Id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

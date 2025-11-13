@@ -12,6 +12,83 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testPasswordPolicy = new Oci.Identity.DomainsPasswordPolicy("test_password_policy", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = passwordPolicyName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy",
+    ///         },
+    ///         AllowedChars = passwordPolicyAllowedChars,
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = passwordPolicyAuthorization,
+    ///         Description = passwordPolicyDescription,
+    ///         DictionaryDelimiter = passwordPolicyDictionaryDelimiter,
+    ///         DictionaryLocation = passwordPolicyDictionaryLocation,
+    ///         DictionaryWordDisallowed = passwordPolicyDictionaryWordDisallowed,
+    ///         DisallowedChars = passwordPolicyDisallowedChars,
+    ///         DisallowedSubstrings = passwordPolicyDisallowedSubstrings,
+    ///         DisallowedUserAttributeValues = passwordPolicyDisallowedUserAttributeValues,
+    ///         DistinctCharacters = passwordPolicyDistinctCharacters,
+    ///         ExternalId = "externalId",
+    ///         FirstNameDisallowed = passwordPolicyFirstNameDisallowed,
+    ///         ForcePasswordReset = passwordPolicyForcePasswordReset,
+    ///         Groups = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsPasswordPolicyGroupArgs
+    ///             {
+    ///                 Value = testGroup.Id,
+    ///             },
+    ///         },
+    ///         Id = passwordPolicyId,
+    ///         LastNameDisallowed = passwordPolicyLastNameDisallowed,
+    ///         LockoutDuration = passwordPolicyLockoutDuration,
+    ///         MaxIncorrectAttempts = passwordPolicyMaxIncorrectAttempts,
+    ///         MaxLength = passwordPolicyMaxLength,
+    ///         MaxRepeatedChars = passwordPolicyMaxRepeatedChars,
+    ///         MaxSpecialChars = passwordPolicyMaxSpecialChars,
+    ///         MinAlphaNumerals = passwordPolicyMinAlphaNumerals,
+    ///         MinAlphas = passwordPolicyMinAlphas,
+    ///         MinLength = passwordPolicyMinLength,
+    ///         MinLowerCase = passwordPolicyMinLowerCase,
+    ///         MinNumerals = passwordPolicyMinNumerals,
+    ///         MinPasswordAge = passwordPolicyMinPasswordAge,
+    ///         MinSpecialChars = passwordPolicyMinSpecialChars,
+    ///         MinUniqueChars = passwordPolicyMinUniqueChars,
+    ///         MinUpperCase = passwordPolicyMinUpperCase,
+    ///         NumPasswordsInHistory = passwordPolicyNumPasswordsInHistory,
+    ///         Ocid = passwordPolicyOcid,
+    ///         PasswordExpireWarning = passwordPolicyPasswordExpireWarning,
+    ///         PasswordExpiresAfter = passwordPolicyPasswordExpiresAfter,
+    ///         PasswordStrength = passwordPolicyPasswordStrength,
+    ///         Priority = passwordPolicyPriority,
+    ///         RequiredChars = passwordPolicyRequiredChars,
+    ///         ResourceTypeSchemaVersion = passwordPolicyResourceTypeSchemaVersion,
+    ///         StartsWithAlphabet = passwordPolicyStartsWithAlphabet,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsPasswordPolicyTagArgs
+    ///             {
+    ///                 Key = passwordPolicyTagsKey,
+    ///                 Value = passwordPolicyTagsValue,
+    ///             },
+    ///         },
+    ///         UserNameDisallowed = passwordPolicyUserNameDisallowed,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// PasswordPolicies can be imported using the `id`, e.g.

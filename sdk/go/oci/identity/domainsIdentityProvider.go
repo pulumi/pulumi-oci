@@ -14,6 +14,152 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsIdentityProvider(ctx, "test_identity_provider", &identity.DomainsIdentityProviderArgs{
+//				Enabled:      pulumi.Bool(false),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				PartnerName:  pulumi.Any(identityProviderPartnerName),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider"),
+//				},
+//				AssertionAttribute:  pulumi.Any(identityProviderAssertionAttribute),
+//				AttributeSets:       pulumi.StringArray{},
+//				Attributes:          pulumi.String(""),
+//				AuthnRequestBinding: pulumi.Any(identityProviderAuthnRequestBinding),
+//				Authorization:       pulumi.Any(identityProviderAuthorization),
+//				CorrelationPolicy: &identity.DomainsIdentityProviderCorrelationPolicyArgs{
+//					Type:    pulumi.Any(identityProviderCorrelationPolicyType),
+//					Value:   pulumi.Any(identityProviderCorrelationPolicyValue),
+//					Display: pulumi.Any(identityProviderCorrelationPolicyDisplay),
+//				},
+//				Description:                   pulumi.Any(identityProviderDescription),
+//				EncryptionCertificate:         pulumi.Any(identityProviderEncryptionCertificate),
+//				ExternalId:                    pulumi.String("externalId"),
+//				IconUrl:                       pulumi.Any(identityProviderIconUrl),
+//				Id:                            identityProviderId,
+//				IdpSsoUrl:                     pulumi.Any(identityProviderIdpSsoUrl),
+//				IncludeSigningCertInSignature: pulumi.Any(identityProviderIncludeSigningCertInSignature),
+//				JitUserProvAssignedGroups: identity.DomainsIdentityProviderJitUserProvAssignedGroupArray{
+//					&identity.DomainsIdentityProviderJitUserProvAssignedGroupArgs{
+//						Value: pulumi.Any(identityProviderJitUserProvAssignedGroupsValue),
+//					},
+//				},
+//				JitUserProvAttributeUpdateEnabled: pulumi.Any(identityProviderJitUserProvAttributeUpdateEnabled),
+//				JitUserProvAttributes: &identity.DomainsIdentityProviderJitUserProvAttributesArgs{
+//					Value: pulumi.Any(identityProviderJitUserProvAttributesValue),
+//				},
+//				JitUserProvCreateUserEnabled:              pulumi.Any(identityProviderJitUserProvCreateUserEnabled),
+//				JitUserProvEnabled:                        pulumi.Any(identityProviderJitUserProvEnabled),
+//				JitUserProvGroupAssertionAttributeEnabled: pulumi.Any(identityProviderJitUserProvGroupAssertionAttributeEnabled),
+//				JitUserProvGroupAssignmentMethod:          pulumi.Any(identityProviderJitUserProvGroupAssignmentMethod),
+//				JitUserProvGroupMappingMode:               pulumi.Any(identityProviderJitUserProvGroupMappingMode),
+//				JitUserProvGroupMappings: identity.DomainsIdentityProviderJitUserProvGroupMappingArray{
+//					&identity.DomainsIdentityProviderJitUserProvGroupMappingArgs{
+//						IdpGroup: pulumi.Any(identityProviderJitUserProvGroupMappingsIdpGroup),
+//						Value:    pulumi.Any(identityProviderJitUserProvGroupMappingsValue),
+//					},
+//				},
+//				JitUserProvGroupSamlAttributeName:    pulumi.Any(identityProviderJitUserProvGroupSamlAttributeName),
+//				JitUserProvGroupStaticListEnabled:    pulumi.Any(identityProviderJitUserProvGroupStaticListEnabled),
+//				JitUserProvIgnoreErrorOnAbsentGroups: pulumi.Any(identityProviderJitUserProvIgnoreErrorOnAbsentGroups),
+//				LogoutBinding:                        pulumi.Any(identityProviderLogoutBinding),
+//				LogoutEnabled:                        pulumi.Any(identityProviderLogoutEnabled),
+//				LogoutRequestUrl:                     pulumi.Any(identityProviderLogoutRequestUrl),
+//				LogoutResponseUrl:                    pulumi.Any(identityProviderLogoutResponseUrl),
+//				Metadata:                             pulumi.Any(identityProviderMetadata),
+//				NameIdFormat:                         pulumi.Any(identityProviderNameIdFormat),
+//				Ocid:                                 pulumi.Any(identityProviderOcid),
+//				PartnerProviderId:                    pulumi.Any(identityProviderPartnerProviderId),
+//				RequestedAuthenticationContexts:      pulumi.Any(identityProviderRequestedAuthenticationContext),
+//				RequireForceAuthn:                    pulumi.Any(identityProviderRequireForceAuthn),
+//				RequiresEncryptedAssertion:           pulumi.Any(identityProviderRequiresEncryptedAssertion),
+//				ResourceTypeSchemaVersion:            pulumi.Any(identityProviderResourceTypeSchemaVersion),
+//				SamlHoKrequired:                      pulumi.Any(identityProviderSamlHoKrequired),
+//				ServiceInstanceIdentifier:            pulumi.Any(identityProviderServiceInstanceIdentifier),
+//				ShownOnLoginPage:                     pulumi.Any(identityProviderShownOnLoginPage),
+//				SignatureHashAlgorithm:               pulumi.Any(identityProviderSignatureHashAlgorithm),
+//				SigningCertificate:                   pulumi.Any(identityProviderSigningCertificate),
+//				SuccinctId:                           pulumi.String("succinctId"),
+//				Tags: identity.DomainsIdentityProviderTagArray{
+//					&identity.DomainsIdentityProviderTagArgs{
+//						Key:   pulumi.Any(identityProviderTagsKey),
+//						Value: pulumi.Any(identityProviderTagsValue),
+//					},
+//				},
+//				Type: pulumi.Any(identityProviderType),
+//				UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider: &identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs{
+//					AccountLinkingEnabled:     pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderAccountLinkingEnabled),
+//					ConsumerKey:               pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerKey),
+//					ConsumerSecret:            pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerSecret),
+//					RegistrationEnabled:       pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderRegistrationEnabled),
+//					ServiceProviderName:       pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderServiceProviderName),
+//					AccessTokenUrl:            pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAccessTokenUrl),
+//					AdminScopes:               pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAdminScope),
+//					AppleDevId:                pulumi.Any(testAppleDev.Id),
+//					AppleKeyId:                pulumi.Any(testKey.Id),
+//					AuthzUrl:                  pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAuthzUrl),
+//					AutoRedirectEnabled:       pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAutoRedirectEnabled),
+//					ClientCredentialInPayload: pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClientCredentialInPayload),
+//					ClockSkewInSeconds:        pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClockSkewInSeconds),
+//					DiscoveryUrl:              pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderDiscoveryUrl),
+//					IdAttribute:               pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderIdAttribute),
+//					JitProvAssignedGroups: identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArray{
+//						&identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs{
+//							Value:   pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsValue),
+//							Display: pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsDisplay),
+//						},
+//					},
+//					JitProvGroupStaticListEnabled: pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvGroupStaticListEnabled),
+//					ProfileUrl:                    pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderProfileUrl),
+//					RedirectUrl:                   pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderRedirectUrl),
+//					Scopes:                        pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderScope),
+//					SocialJitProvisioningEnabled:  pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderSocialJitProvisioningEnabled),
+//					Status:                        pulumi.Any(identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderStatus),
+//				},
+//				Urnietfparamsscimschemasoracleidcsextensionx509identityProvider: &identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs{
+//					CertMatchAttribute: pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCertMatchAttribute),
+//					SigningCertificateChains: pulumi.StringArray{
+//						pulumi.String("signingCertificateChain"),
+//					},
+//					UserMatchAttribute:             pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderUserMatchAttribute),
+//					CrlCheckOnOcspFailureEnabled:   pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled),
+//					CrlEnabled:                     pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled),
+//					CrlLocation:                    pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlLocation),
+//					CrlReloadDuration:              pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlReloadDuration),
+//					EkuValidationEnabled:           pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValidationEnabled),
+//					EkuValues:                      pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValues),
+//					OcspAllowUnknownResponseStatus: pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspAllowUnknownResponseStatus),
+//					OcspEnableSignedResponse:       pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnableSignedResponse),
+//					OcspEnabled:                    pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnabled),
+//					OcspResponderUrl:               pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspResponderUrl),
+//					OcspRevalidateTime:             pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspRevalidateTime),
+//					OcspServerName:                 pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspServerName),
+//					OcspTrustCertChains:            pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspTrustCertChain),
+//					OtherCertMatchAttribute:        pulumi.Any(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOtherCertMatchAttribute),
+//				},
+//				UserMappingMethod:         pulumi.Any(identityProviderUserMappingMethod),
+//				UserMappingStoreAttribute: pulumi.Any(identityProviderUserMappingStoreAttribute),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // IdentityProviders can be imported using the `id`, e.g.

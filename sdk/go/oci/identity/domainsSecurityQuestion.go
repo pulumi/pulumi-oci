@@ -14,6 +14,57 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsSecurityQuestion(ctx, "test_security_question", &identity.DomainsSecurityQuestionArgs{
+//				Active:       pulumi.Any(securityQuestionActive),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				QuestionTexts: identity.DomainsSecurityQuestionQuestionTextArray{
+//					&identity.DomainsSecurityQuestionQuestionTextArgs{
+//						Locale:  pulumi.String("en"),
+//						Value:   pulumi.Any(securityQuestionQuestionTextValue),
+//						Default: pulumi.Bool(true),
+//					},
+//				},
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion"),
+//				},
+//				Type: pulumi.String("custom"),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(securityQuestionAuthorization),
+//				ExternalId:                pulumi.String("externalId"),
+//				Id:                        securityQuestionId,
+//				Ocid:                      pulumi.Any(securityQuestionOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(securityQuestionResourceTypeSchemaVersion),
+//				Tags: identity.DomainsSecurityQuestionTagArray{
+//					&identity.DomainsSecurityQuestionTagArgs{
+//						Key:   pulumi.Any(securityQuestionTagsKey),
+//						Value: pulumi.Any(securityQuestionTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // SecurityQuestions can be imported using the `id`, e.g.

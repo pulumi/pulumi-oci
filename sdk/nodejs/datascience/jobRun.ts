@@ -9,6 +9,118 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobRun = new oci.datascience.JobRun("test_job_run", {
+ *     compartmentId: compartmentId,
+ *     jobId: testJob.id,
+ *     projectId: testProject.id,
+ *     asynchronous: asynchronous,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: jobRunDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     jobConfigurationOverrideDetails: {
+ *         jobType: jobRunJobConfigurationOverrideDetailsJobType,
+ *         commandLineArguments: jobRunJobConfigurationOverrideDetailsCommandLineArguments,
+ *         environmentVariables: jobRunJobConfigurationOverrideDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+ *         startupProbeDetails: {
+ *             commands: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand,
+ *             jobProbeCheckType: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType,
+ *             failureThreshold: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold,
+ *             initialDelayInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *             periodInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds,
+ *         },
+ *     },
+ *     jobEnvironmentConfigurationOverrideDetails: {
+ *         image: jobRunJobEnvironmentConfigurationOverrideDetailsImage,
+ *         jobEnvironmentType: jobRunJobEnvironmentConfigurationOverrideDetailsJobEnvironmentType,
+ *         cmds: jobRunJobEnvironmentConfigurationOverrideDetailsCmd,
+ *         entrypoints: jobRunJobEnvironmentConfigurationOverrideDetailsEntrypoint,
+ *         imageDigest: jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest,
+ *         imageSignatureId: testImageSignature.id,
+ *     },
+ *     jobInfrastructureConfigurationOverrideDetails: {
+ *         jobInfrastructureType: jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
+ *         blockStorageSizeInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         jobShapeConfigDetails: {
+ *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
+ *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
+ *         },
+ *         shapeName: testShape.name,
+ *         subnetId: testSubnet.id,
+ *     },
+ *     jobLogConfigurationOverrideDetails: {
+ *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
+ *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
+ *     },
+ *     jobNodeConfigurationOverrideDetails: {
+ *         jobNodeType: jobRunJobNodeConfigurationOverrideDetailsJobNodeType,
+ *         jobNetworkConfiguration: {
+ *             jobNetworkType: jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType,
+ *             subnetId: testSubnet.id,
+ *         },
+ *         jobNodeGroupConfigurationDetailsLists: [{
+ *             name: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName,
+ *             jobConfigurationDetails: {
+ *                 jobType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType,
+ *                 commandLineArguments: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments,
+ *                 environmentVariables: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables,
+ *                 maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes,
+ *                 startupProbeDetails: {
+ *                     commands: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
+ *                     jobProbeCheckType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+ *                     failureThreshold: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+ *                     initialDelayInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *                     periodInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                 },
+ *             },
+ *             jobEnvironmentConfigurationDetails: {
+ *                 image: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage,
+ *                 jobEnvironmentType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType,
+ *                 cmds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd,
+ *                 entrypoints: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint,
+ *                 imageDigest: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest,
+ *                 imageSignatureId: testImageSignature.id,
+ *             },
+ *             jobInfrastructureConfigurationDetails: {
+ *                 jobInfrastructureType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
+ *                 blockStorageSizeInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 jobShapeConfigDetails: {
+ *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+ *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *                 },
+ *                 shapeName: testShape.name,
+ *                 subnetId: testSubnet.id,
+ *             },
+ *             minimumSuccessReplicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
+ *             replicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *         }],
+ *         maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+ *         startupOrder: jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
+ *     },
+ *     jobStorageMountConfigurationOverrideDetailsList: [{
+ *         destinationDirectoryName: jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
+ *         storageType: jobRunJobStorageMountConfigurationOverrideDetailsListStorageType,
+ *         bucket: jobRunJobStorageMountConfigurationOverrideDetailsListBucket,
+ *         destinationPath: jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath,
+ *         exportId: testExport.id,
+ *         mountTargetId: testMountTarget.id,
+ *         namespace: jobRunJobStorageMountConfigurationOverrideDetailsListNamespace,
+ *         prefix: jobRunJobStorageMountConfigurationOverrideDetailsListPrefix,
+ *     }],
+ *     opcParentRptUrl: jobRunOpcParentRptUrl,
+ * });
+ * ```
+ *
  * ## Import
  *
  * JobRuns can be imported using the `id`, e.g.

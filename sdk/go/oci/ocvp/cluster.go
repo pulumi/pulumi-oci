@@ -14,6 +14,68 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ocvp.NewCluster(ctx, "test_cluster", &ocvp.ClusterArgs{
+//				ComputeAvailabilityDomain: pulumi.Any(clusterComputeAvailabilityDomain),
+//				EsxiHostsCount:            pulumi.Any(clusterEsxiHostsCount),
+//				NetworkConfiguration: &ocvp.ClusterNetworkConfigurationArgs{
+//					NsxEdgeVtepVlanId:    pulumi.Any(testVlan.Id),
+//					NsxVtepVlanId:        pulumi.Any(testVlan.Id),
+//					ProvisioningSubnetId: pulumi.Any(testSubnet.Id),
+//					VmotionVlanId:        pulumi.Any(testVlan.Id),
+//					VsanVlanId:           pulumi.Any(testVlan.Id),
+//					HcxVlanId:            pulumi.Any(testVlan.Id),
+//					NsxEdgeUplink1vlanId: pulumi.Any(testNsxEdgeUplink1vlan.Id),
+//					NsxEdgeUplink2vlanId: pulumi.Any(testNsxEdgeUplink2vlan.Id),
+//					ProvisioningVlanId:   pulumi.Any(testVlan.Id),
+//					ReplicationVlanId:    pulumi.Any(testVlan.Id),
+//					VsphereVlanId:        pulumi.Any(testVlan.Id),
+//				},
+//				SddcId:                pulumi.Any(testSddc.Id),
+//				CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
+//				DatastoreClusterIds:   clusterDatastoreClusterIds,
+//				Datastores: ocvp.ClusterDatastoreArray{
+//					&ocvp.ClusterDatastoreArgs{
+//						BlockVolumeIds: pulumi.Any(clusterDatastoresBlockVolumeIds),
+//						DatastoreType:  pulumi.Any(clusterDatastoresDatastoreType),
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName:         pulumi.Any(clusterDisplayName),
+//				EsxiSoftwareVersion: pulumi.Any(clusterEsxiSoftwareVersion),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				InitialCommitment:         pulumi.Any(clusterInitialCommitment),
+//				InitialHostOcpuCount:      pulumi.Any(clusterInitialHostOcpuCount),
+//				InitialHostShapeName:      pulumi.Any(testShape.Name),
+//				InstanceDisplayNamePrefix: pulumi.Any(clusterInstanceDisplayNamePrefix),
+//				IsShieldedInstanceEnabled: pulumi.Any(clusterIsShieldedInstanceEnabled),
+//				VmwareSoftwareVersion:     pulumi.Any(clusterVmwareSoftwareVersion),
+//				WorkloadNetworkCidr:       pulumi.Any(clusterWorkloadNetworkCidr),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Clusters can be imported using the `id`, e.g.

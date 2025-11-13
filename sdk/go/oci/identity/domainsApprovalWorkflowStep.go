@@ -14,6 +14,58 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsApprovalWorkflowStep(ctx, "test_approval_workflow_step", &identity.DomainsApprovalWorkflowStepArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Order:        pulumi.Any(approvalWorkflowStepOrder),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"),
+//				},
+//				Type: pulumi.Any(approvalWorkflowStepType),
+//				Approvers: identity.DomainsApprovalWorkflowStepApproverArray{
+//					&identity.DomainsApprovalWorkflowStepApproverArgs{
+//						Type:  pulumi.Any(approvalWorkflowStepApproversType),
+//						Value: pulumi.Any(approvalWorkflowStepApproversValue),
+//						Ocid:  pulumi.Any(approvalWorkflowStepApproversOcid),
+//					},
+//				},
+//				ApproversExpressions: pulumi.Any(approvalWorkflowStepApproversExpressions),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(approvalWorkflowStepAuthorization),
+//				Id:                        approvalWorkflowStepId,
+//				MinimumApprovals:          pulumi.Any(approvalWorkflowStepMinimumApprovals),
+//				Ocid:                      pulumi.Any(approvalWorkflowStepOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(approvalWorkflowStepResourceTypeSchemaVersion),
+//				Tags: identity.DomainsApprovalWorkflowStepTagArray{
+//					&identity.DomainsApprovalWorkflowStepTagArgs{
+//						Key:   pulumi.Any(approvalWorkflowStepTagsKey),
+//						Value: pulumi.Any(approvalWorkflowStepTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ApprovalWorkflowSteps can be imported using the `id`, e.g.

@@ -14,6 +14,51 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMyCustomerSecretKey(ctx, "test_my_customer_secret_key", &identity.DomainsMyCustomerSecretKeyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"),
+//				},
+//				Authorization:             pulumi.Any(myCustomerSecretKeyAuthorization),
+//				Description:               pulumi.Any(myCustomerSecretKeyDescription),
+//				DisplayName:               pulumi.Any(myCustomerSecretKeyDisplayName),
+//				ExpiresOn:                 pulumi.Any(myCustomerSecretKeyExpiresOn),
+//				Id:                        myCustomerSecretKeyId,
+//				Ocid:                      pulumi.Any(myCustomerSecretKeyOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(myCustomerSecretKeyResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(myCustomerSecretKeyStatus),
+//				Tags: identity.DomainsMyCustomerSecretKeyTagArray{
+//					&identity.DomainsMyCustomerSecretKeyTagArgs{
+//						Key:   pulumi.Any(myCustomerSecretKeyTagsKey),
+//						Value: pulumi.Any(myCustomerSecretKeyTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMyCustomerSecretKeyUserArgs{
+//					Ocid:  pulumi.Any(myCustomerSecretKeyUserOcid),
+//					Value: pulumi.Any(myCustomerSecretKeyUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MyCustomerSecretKeys can be imported using the `id`, e.g.

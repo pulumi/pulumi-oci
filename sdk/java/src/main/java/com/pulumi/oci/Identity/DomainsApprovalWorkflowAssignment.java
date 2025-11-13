@@ -25,6 +25,62 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsApprovalWorkflowAssignment;
+ * import com.pulumi.oci.Identity.DomainsApprovalWorkflowAssignmentArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentAssignedToArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowAssignmentTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApprovalWorkflowAssignment = new DomainsApprovalWorkflowAssignment("testApprovalWorkflowAssignment", DomainsApprovalWorkflowAssignmentArgs.builder()
+ *             .approvalWorkflow(DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs.builder()
+ *                 .type(approvalWorkflowAssignmentApprovalWorkflowType)
+ *                 .value(approvalWorkflowAssignmentApprovalWorkflowValue)
+ *                 .ocid(approvalWorkflowAssignmentApprovalWorkflowOcid)
+ *                 .build())
+ *             .assignedTo(DomainsApprovalWorkflowAssignmentAssignedToArgs.builder()
+ *                 .type(approvalWorkflowAssignmentAssignedToType)
+ *                 .value(approvalWorkflowAssignmentAssignedToValue)
+ *                 .ocid(approvalWorkflowAssignmentAssignedToOcid)
+ *                 .build())
+ *             .assignmentType(approvalWorkflowAssignmentAssignmentType)
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment")
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(approvalWorkflowAssignmentAuthorization)
+ *             .id(approvalWorkflowAssignmentId)
+ *             .ocid(approvalWorkflowAssignmentOcid)
+ *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
+ *             .tags(DomainsApprovalWorkflowAssignmentTagArgs.builder()
+ *                 .key(approvalWorkflowAssignmentTagsKey)
+ *                 .value(approvalWorkflowAssignmentTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * ApprovalWorkflowAssignments can be imported using the `id`, e.g.

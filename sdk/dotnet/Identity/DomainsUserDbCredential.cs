@@ -12,6 +12,53 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testUserDbCredential = new Oci.Identity.DomainsUserDbCredential("test_user_db_credential", new()
+    ///     {
+    ///         DbPassword = userDbCredentialDbPassword,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = userDbCredentialAuthorization,
+    ///         Description = userDbCredentialDescription,
+    ///         ExpiresOn = userDbCredentialExpiresOn,
+    ///         Id = userDbCredentialId,
+    ///         Ocid = userDbCredentialOcid,
+    ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
+    ///         Status = userDbCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserDbCredentialTagArgs
+    ///             {
+    ///                 Key = userDbCredentialTagsKey,
+    ///                 Value = userDbCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsUserDbCredentialUserArgs
+    ///         {
+    ///             Value = testUser.Id,
+    ///             Ocid = testUser.Ocid,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// UserDbCredentials can be imported using the `id`, e.g.

@@ -382,6 +382,24 @@ class Datastore(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_datastore = oci.ocvp.Datastore("test_datastore",
+            availability_domain=datastore_availability_domain,
+            block_volume_ids=datastore_block_volume_ids,
+            compartment_id=compartment_id,
+            display_name=datastore_display_name,
+            datastore_cluster_id=test_datastore_cluster["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+
         ## Import
 
         Datastores can be imported using the `id`, e.g.
@@ -411,6 +429,24 @@ class Datastore(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_datastore = oci.ocvp.Datastore("test_datastore",
+            availability_domain=datastore_availability_domain,
+            block_volume_ids=datastore_block_volume_ids,
+            compartment_id=compartment_id,
+            display_name=datastore_display_name,
+            datastore_cluster_id=test_datastore_cluster["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
 
         ## Import
 

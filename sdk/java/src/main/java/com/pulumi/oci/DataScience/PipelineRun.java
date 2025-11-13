@@ -28,6 +28,152 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.PipelineRun;
+ * import com.pulumi.oci.DataScience.PipelineRunArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPipelineRun = new PipelineRun("testPipelineRun", PipelineRunArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .pipelineId(testPipeline.id())
+ *             .configurationOverrideDetails(PipelineRunConfigurationOverrideDetailsArgs.builder()
+ *                 .type(pipelineRunConfigurationOverrideDetailsType)
+ *                 .commandLineArguments(pipelineRunConfigurationOverrideDetailsCommandLineArguments)
+ *                 .environmentVariables(pipelineRunConfigurationOverrideDetailsEnvironmentVariables)
+ *                 .maximumRuntimeInMinutes(pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes)
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(pipelineRunDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .infrastructureConfigurationOverrideDetails(PipelineRunInfrastructureConfigurationOverrideDetailsArgs.builder()
+ *                 .blockStorageSizeInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs)
+ *                 .shapeName(testShape.name())
+ *                 .blockStorageSizeInGbsParameterized(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbsParameterized)
+ *                 .shapeConfigDetails(PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs)
+ *                     .memoryInGbsParameterized(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbsParameterized)
+ *                     .ocpus(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus)
+ *                     .ocpusParameterized(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpusParameterized)
+ *                     .build())
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
+ *             .logConfigurationOverrideDetails(PipelineRunLogConfigurationOverrideDetailsArgs.builder()
+ *                 .enableAutoLogCreation(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation)
+ *                 .enableLogging(pipelineRunLogConfigurationOverrideDetailsEnableLogging)
+ *                 .logGroupId(testLogGroup.id())
+ *                 .logId(testLog.id())
+ *                 .build())
+ *             .opcParentRptUrl(pipelineRunOpcParentRptUrl)
+ *             .parametersOverride(pipelineRunParametersOverride)
+ *             .projectId(testProject.id())
+ *             .stepOverrideDetails(PipelineRunStepOverrideDetailArgs.builder()
+ *                 .stepConfigurationDetails(PipelineRunStepOverrideDetailStepConfigurationDetailsArgs.builder()
+ *                     .commandLineArguments(pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments)
+ *                     .environmentVariables(pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables)
+ *                     .maximumRuntimeInMinutes(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes)
+ *                     .build())
+ *                 .stepName(pipelineRunStepOverrideDetailsStepName)
+ *                 .stepContainerConfigurationDetails(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs.builder()
+ *                     .containerType(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType)
+ *                     .image(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage)
+ *                     .cmds(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd)
+ *                     .entrypoints(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint)
+ *                     .imageDigest(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest)
+ *                     .imageSignatureId(testImageSignature.id())
+ *                     .build())
+ *                 .stepDataflowConfigurationDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs.builder()
+ *                     .configuration(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration)
+ *                     .driverShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape)
+ *                     .driverShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs.builder()
+ *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline)
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs)
+ *                         .memoryInGbsParameterized(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbsParameterized)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus)
+ *                         .ocpusParameterized(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpusParameterized)
+ *                         .build())
+ *                     .executorShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape)
+ *                     .executorShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs.builder()
+ *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline)
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs)
+ *                         .memoryInGbsParameterized(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbsParameterized)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus)
+ *                         .ocpusParameterized(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpusParameterized)
+ *                         .build())
+ *                     .logsBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri)
+ *                     .numExecutors(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors)
+ *                     .warehouseBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri)
+ *                     .build())
+ *                 .stepInfrastructureConfigurationDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs.builder()
+ *                     .blockStorageSizeInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                     .shapeName(testShape.name())
+ *                     .blockStorageSizeInGbsParameterized(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbsParameterized)
+ *                     .shapeConfigDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
+ *                         .memoryInGbsParameterized(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbsParameterized)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
+ *                         .ocpusParameterized(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpusParameterized)
+ *                         .build())
+ *                     .subnetId(testSubnet.id())
+ *                     .build())
+ *                 .stepStorageMountConfigurationDetailsLists(PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs.builder()
+ *                     .destinationDirectoryName(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationDirectoryName)
+ *                     .storageType(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListStorageType)
+ *                     .bucket(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListBucket)
+ *                     .destinationPath(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListDestinationPath)
+ *                     .exportId(testExport.id())
+ *                     .mountTargetId(testMountTarget.id())
+ *                     .namespace(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListNamespace)
+ *                     .prefix(pipelineRunStepOverrideDetailsStepStorageMountConfigurationDetailsListPrefix)
+ *                     .build())
+ *                 .build())
+ *             .storageMountConfigurationOverrideDetailsLists(PipelineRunStorageMountConfigurationOverrideDetailsListArgs.builder()
+ *                 .destinationDirectoryName(pipelineRunStorageMountConfigurationOverrideDetailsListDestinationDirectoryName)
+ *                 .storageType(pipelineRunStorageMountConfigurationOverrideDetailsListStorageType)
+ *                 .bucket(pipelineRunStorageMountConfigurationOverrideDetailsListBucket)
+ *                 .destinationPath(pipelineRunStorageMountConfigurationOverrideDetailsListDestinationPath)
+ *                 .exportId(testExport.id())
+ *                 .mountTargetId(testMountTarget.id())
+ *                 .namespace(pipelineRunStorageMountConfigurationOverrideDetailsListNamespace)
+ *                 .prefix(pipelineRunStorageMountConfigurationOverrideDetailsListPrefix)
+ *                 .build())
+ *             .systemTags(pipelineRunSystemTags)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * PipelineRuns can be imported using the `id`, e.g.

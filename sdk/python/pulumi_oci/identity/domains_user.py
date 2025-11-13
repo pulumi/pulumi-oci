@@ -3159,6 +3159,271 @@ class DomainsUser(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_user = oci.identity.DomainsUser("test_user",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:core:2.0:User"],
+            user_name="userName",
+            active=user_active,
+            addresses=[{
+                "type": user_addresses_type,
+                "country": user_addresses_country,
+                "formatted": user_addresses_formatted,
+                "locality": user_addresses_locality,
+                "postal_code": user_addresses_postal_code,
+                "primary": user_addresses_primary,
+                "region": user_addresses_region,
+                "street_address": user_addresses_street_address,
+            }],
+            attribute_sets=[],
+            attributes="",
+            authorization=user_authorization,
+            description=user_description,
+            display_name=user_display_name,
+            emails=[
+                {
+                    "type": user_emails_type,
+                    "value": user_emails_value,
+                    "primary": True,
+                    "secondary": user_emails_secondary,
+                    "verified": user_emails_verified,
+                },
+                {
+                    "type": "recovery",
+                    "value": user_emails_value,
+                },
+            ],
+            entitlements=[{
+                "type": user_entitlements_type,
+                "value": user_entitlements_value,
+                "display": user_entitlements_display,
+                "primary": user_entitlements_primary,
+            }],
+            external_id="externalId",
+            force_delete=user_force_delete,
+            id=user_id,
+            ims=[{
+                "type": user_ims_type,
+                "value": user_ims_value,
+                "display": user_ims_display,
+                "primary": user_ims_primary,
+            }],
+            locale=user_locale,
+            name={
+                "family_name": user_name_family_name,
+                "formatted": user_name_formatted,
+                "given_name": user_name_given_name,
+                "honorific_prefix": user_name_honorific_prefix,
+                "honorific_suffix": user_name_honorific_suffix,
+                "middle_name": user_name_middle_name,
+            },
+            nick_name=user_nick_name,
+            ocid=user_ocid,
+            password=user_password,
+            phone_numbers=[{
+                "type": user_phone_numbers_type,
+                "value": user_phone_numbers_value,
+                "primary": user_phone_numbers_primary,
+            }],
+            photos=[{
+                "type": user_photos_type,
+                "value": user_photos_value,
+                "display": user_photos_display,
+                "primary": user_photos_primary,
+            }],
+            preferred_language=user_preferred_language,
+            profile_url=user_profile_url,
+            resource_type_schema_version=user_resource_type_schema_version,
+            roles=[{
+                "type": user_roles_type,
+                "value": user_roles_value,
+                "display": user_roles_display,
+                "primary": user_roles_primary,
+            }],
+            tags=[{
+                "key": user_tags_key,
+                "value": user_tags_value,
+            }],
+            timezone=user_timezone,
+            title=user_title,
+            urnietfparamsscimschemasextensionenterprise20user={
+                "cost_center": user_urnietfparamsscimschemasextensionenterprise20user_cost_center,
+                "department": user_urnietfparamsscimschemasextensionenterprise20user_department,
+                "division": user_urnietfparamsscimschemasextensionenterprise20user_division,
+                "employee_number": user_urnietfparamsscimschemasextensionenterprise20user_employee_number,
+                "manager": {
+                    "value": user_urnietfparamsscimschemasextensionenterprise20user_manager_value,
+                },
+                "organization": user_urnietfparamsscimschemasextensionenterprise20user_organization,
+            },
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user={
+                "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_level,
+                "risk_scores": [{
+                    "last_update_timestamp": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_last_update_timestamp,
+                    "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_risk_level,
+                    "score": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_value,
+                    "source": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_source,
+                    "status": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_status,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user={
+                "can_use_api_keys": True,
+                "can_use_auth_tokens": True,
+                "can_use_console_password": True,
+                "can_use_customer_secret_keys": True,
+                "can_use_db_credentials": True,
+                "can_use_oauth2client_credentials": True,
+                "can_use_smtp_credentials": True,
+            },
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user={
+                "db_user_name": "dbUserName",
+            },
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user={
+                "realm_users": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_value,
+                    "principal_name": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_principal_name,
+                    "realm_name": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_realm_name,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionmfa_user={
+                "bypass_codes": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_bypass_codes_value,
+                }],
+                "devices": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_value,
+                    "authentication_method": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_authentication_method,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_display,
+                    "factor_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_factor_status,
+                    "factor_type": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_factor_type,
+                    "last_sync_time": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_last_sync_time,
+                    "status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_status,
+                    "third_party_vendor_name": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_third_party_vendor_name,
+                }],
+                "login_attempts": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts,
+                "mfa_enabled_on": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_enabled_on,
+                "mfa_ignored_apps": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_ignored_apps,
+                "mfa_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_status,
+                "preferred_authentication_factor": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_authentication_factor,
+                "preferred_authentication_method": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_authentication_method,
+                "preferred_device": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_device_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_device_display,
+                },
+                "preferred_third_party_vendor": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_third_party_vendor,
+                "trusted_user_agents": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_trusted_user_agents_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_trusted_user_agents_display,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user={
+                "factor_identifier": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_identifier_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_identifier_display,
+                },
+                "factor_method": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_method,
+                "factor_type": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_type,
+            },
+            urnietfparamsscimschemasoracleidcsextensionposix_user={
+                "gecos": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gecos,
+                "gid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number,
+                "home_directory": user_urnietfparamsscimschemasoracleidcsextensionposix_user_home_directory,
+                "login_shell": user_urnietfparamsscimschemasoracleidcsextensionposix_user_login_shell,
+                "uid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user={
+                "sec_questions": [{
+                    "answer": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_answer,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_value,
+                    "hint_text": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_hint_text,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user={
+                "self_registration_profile": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_display,
+                },
+                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted,
+                "user_token": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_user_token,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsff_user={
+                "sff_auth_keys": user_urnietfparamsscimschemasoracleidcsextensionsff_user_sff_auth_keys,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user={
+                "social_accounts": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionsocial_account_user_social_accounts_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionsocial_account_user_social_accounts_display,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user={
+                "terms_of_use_consents": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionterms_of_use_user_terms_of_use_consents_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user={
+                "locked": {
+                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired,
+                    "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_lock_date,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on,
+                    "reason": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason,
+                },
+                "max_concurrent_sessions": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions,
+                "recovery_locked": {
+                    "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_lock_date,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on,
+                },
+            },
+            urnietfparamsscimschemasoracleidcsextensionuser_user={
+                "user_provider": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_provider,
+                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required,
+                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification,
+                "creation_mechanism": user_urnietfparamsscimschemasoracleidcsextensionuser_user_creation_mechanism,
+                "delegated_authentication_target_app": {
+                    "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_type,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_display,
+                },
+                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started,
+                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated,
+                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user,
+                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized,
+                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups,
+                "notification_email_template_id": test_notification_email_template["id"],
+                "preferred_ui_landing_page": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_preferred_ui_landing_page,
+                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user,
+                "synced_from_app": {
+                    "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_display,
+                },
+                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client,
+            },
+            user_type=user_user_type,
+            x509certificates=[{
+                "value": user_x509certificates_value,
+                "display": user_x509certificates_display,
+                "primary": user_x509certificates_primary,
+                "type": user_x509certificates_type,
+            }])
+        ```
+
         ## Import
 
         Users can be imported using the `id`, e.g.
@@ -3511,6 +3776,271 @@ class DomainsUser(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_user = oci.identity.DomainsUser("test_user",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:core:2.0:User"],
+            user_name="userName",
+            active=user_active,
+            addresses=[{
+                "type": user_addresses_type,
+                "country": user_addresses_country,
+                "formatted": user_addresses_formatted,
+                "locality": user_addresses_locality,
+                "postal_code": user_addresses_postal_code,
+                "primary": user_addresses_primary,
+                "region": user_addresses_region,
+                "street_address": user_addresses_street_address,
+            }],
+            attribute_sets=[],
+            attributes="",
+            authorization=user_authorization,
+            description=user_description,
+            display_name=user_display_name,
+            emails=[
+                {
+                    "type": user_emails_type,
+                    "value": user_emails_value,
+                    "primary": True,
+                    "secondary": user_emails_secondary,
+                    "verified": user_emails_verified,
+                },
+                {
+                    "type": "recovery",
+                    "value": user_emails_value,
+                },
+            ],
+            entitlements=[{
+                "type": user_entitlements_type,
+                "value": user_entitlements_value,
+                "display": user_entitlements_display,
+                "primary": user_entitlements_primary,
+            }],
+            external_id="externalId",
+            force_delete=user_force_delete,
+            id=user_id,
+            ims=[{
+                "type": user_ims_type,
+                "value": user_ims_value,
+                "display": user_ims_display,
+                "primary": user_ims_primary,
+            }],
+            locale=user_locale,
+            name={
+                "family_name": user_name_family_name,
+                "formatted": user_name_formatted,
+                "given_name": user_name_given_name,
+                "honorific_prefix": user_name_honorific_prefix,
+                "honorific_suffix": user_name_honorific_suffix,
+                "middle_name": user_name_middle_name,
+            },
+            nick_name=user_nick_name,
+            ocid=user_ocid,
+            password=user_password,
+            phone_numbers=[{
+                "type": user_phone_numbers_type,
+                "value": user_phone_numbers_value,
+                "primary": user_phone_numbers_primary,
+            }],
+            photos=[{
+                "type": user_photos_type,
+                "value": user_photos_value,
+                "display": user_photos_display,
+                "primary": user_photos_primary,
+            }],
+            preferred_language=user_preferred_language,
+            profile_url=user_profile_url,
+            resource_type_schema_version=user_resource_type_schema_version,
+            roles=[{
+                "type": user_roles_type,
+                "value": user_roles_value,
+                "display": user_roles_display,
+                "primary": user_roles_primary,
+            }],
+            tags=[{
+                "key": user_tags_key,
+                "value": user_tags_value,
+            }],
+            timezone=user_timezone,
+            title=user_title,
+            urnietfparamsscimschemasextensionenterprise20user={
+                "cost_center": user_urnietfparamsscimschemasextensionenterprise20user_cost_center,
+                "department": user_urnietfparamsscimschemasextensionenterprise20user_department,
+                "division": user_urnietfparamsscimschemasextensionenterprise20user_division,
+                "employee_number": user_urnietfparamsscimschemasextensionenterprise20user_employee_number,
+                "manager": {
+                    "value": user_urnietfparamsscimschemasextensionenterprise20user_manager_value,
+                },
+                "organization": user_urnietfparamsscimschemasextensionenterprise20user_organization,
+            },
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": user_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user={
+                "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_level,
+                "risk_scores": [{
+                    "last_update_timestamp": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_last_update_timestamp,
+                    "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_risk_level,
+                    "score": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_value,
+                    "source": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_source,
+                    "status": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_status,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user={
+                "can_use_api_keys": True,
+                "can_use_auth_tokens": True,
+                "can_use_console_password": True,
+                "can_use_customer_secret_keys": True,
+                "can_use_db_credentials": True,
+                "can_use_oauth2client_credentials": True,
+                "can_use_smtp_credentials": True,
+            },
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user={
+                "db_user_name": "dbUserName",
+            },
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user={
+                "realm_users": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_value,
+                    "principal_name": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_principal_name,
+                    "realm_name": user_urnietfparamsscimschemasoracleidcsextensionkerberos_user_user_realm_users_realm_name,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionmfa_user={
+                "bypass_codes": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_bypass_codes_value,
+                }],
+                "devices": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_value,
+                    "authentication_method": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_authentication_method,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_display,
+                    "factor_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_factor_status,
+                    "factor_type": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_factor_type,
+                    "last_sync_time": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_last_sync_time,
+                    "status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_status,
+                    "third_party_vendor_name": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_third_party_vendor_name,
+                }],
+                "login_attempts": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts,
+                "mfa_enabled_on": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_enabled_on,
+                "mfa_ignored_apps": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_ignored_apps,
+                "mfa_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_status,
+                "preferred_authentication_factor": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_authentication_factor,
+                "preferred_authentication_method": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_authentication_method,
+                "preferred_device": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_device_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_device_display,
+                },
+                "preferred_third_party_vendor": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_preferred_third_party_vendor,
+                "trusted_user_agents": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_trusted_user_agents_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_trusted_user_agents_display,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user={
+                "factor_identifier": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_identifier_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_identifier_display,
+                },
+                "factor_method": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_method,
+                "factor_type": user_urnietfparamsscimschemasoracleidcsextensionpasswordless_user_factor_type,
+            },
+            urnietfparamsscimschemasoracleidcsextensionposix_user={
+                "gecos": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gecos,
+                "gid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number,
+                "home_directory": user_urnietfparamsscimschemasoracleidcsextensionposix_user_home_directory,
+                "login_shell": user_urnietfparamsscimschemasoracleidcsextensionposix_user_login_shell,
+                "uid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user={
+                "sec_questions": [{
+                    "answer": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_answer,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_value,
+                    "hint_text": user_urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user_sec_questions_hint_text,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user={
+                "self_registration_profile": {
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_display,
+                },
+                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted,
+                "user_token": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_user_token,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsff_user={
+                "sff_auth_keys": user_urnietfparamsscimschemasoracleidcsextensionsff_user_sff_auth_keys,
+            },
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user={
+                "social_accounts": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionsocial_account_user_social_accounts_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionsocial_account_user_social_accounts_display,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user={
+                "terms_of_use_consents": [{
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionterms_of_use_user_terms_of_use_consents_value,
+                }],
+            },
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user={
+                "locked": {
+                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired,
+                    "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_lock_date,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on,
+                    "reason": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason,
+                },
+                "max_concurrent_sessions": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions,
+                "recovery_locked": {
+                    "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_lock_date,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on,
+                },
+            },
+            urnietfparamsscimschemasoracleidcsextensionuser_user={
+                "user_provider": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_provider,
+                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required,
+                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification,
+                "creation_mechanism": user_urnietfparamsscimschemasoracleidcsextensionuser_user_creation_mechanism,
+                "delegated_authentication_target_app": {
+                    "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_type,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_display,
+                },
+                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started,
+                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated,
+                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user,
+                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized,
+                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups,
+                "notification_email_template_id": test_notification_email_template["id"],
+                "preferred_ui_landing_page": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_preferred_ui_landing_page,
+                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user,
+                "synced_from_app": {
+                    "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type,
+                    "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value,
+                    "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_display,
+                },
+                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client,
+            },
+            user_type=user_user_type,
+            x509certificates=[{
+                "value": user_x509certificates_value,
+                "display": user_x509certificates_display,
+                "primary": user_x509certificates_primary,
+                "type": user_x509certificates_type,
+            }])
+        ```
 
         ## Import
 

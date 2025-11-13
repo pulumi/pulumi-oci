@@ -12,6 +12,56 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testApprovalWorkflowStep = new Oci.Identity.DomainsApprovalWorkflowStep("test_approval_workflow_step", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Order = approvalWorkflowStepOrder,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep",
+    ///         },
+    ///         Type = approvalWorkflowStepType,
+    ///         Approvers = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApprovalWorkflowStepApproverArgs
+    ///             {
+    ///                 Type = approvalWorkflowStepApproversType,
+    ///                 Value = approvalWorkflowStepApproversValue,
+    ///                 Ocid = approvalWorkflowStepApproversOcid,
+    ///             },
+    ///         },
+    ///         ApproversExpressions = approvalWorkflowStepApproversExpressions,
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = approvalWorkflowStepAuthorization,
+    ///         Id = approvalWorkflowStepId,
+    ///         MinimumApprovals = approvalWorkflowStepMinimumApprovals,
+    ///         Ocid = approvalWorkflowStepOcid,
+    ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApprovalWorkflowStepTagArgs
+    ///             {
+    ///                 Key = approvalWorkflowStepTagsKey,
+    ///                 Value = approvalWorkflowStepTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ApprovalWorkflowSteps can be imported using the `id`, e.g.

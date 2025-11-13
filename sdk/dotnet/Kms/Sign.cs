@@ -12,6 +12,28 @@ namespace Pulumi.Oci.Kms
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSign = new Oci.Kms.Sign("test_sign", new()
+    ///     {
+    ///         CryptoEndpoint = signMessageCryptoEndpoint,
+    ///         KeyId = testKey.Id,
+    ///         Message = signMessage,
+    ///         SigningAlgorithm = signSigningAlgorithm,
+    ///         KeyVersionId = testKeyVersion.Id,
+    ///         LoggingContext = signLoggingContext,
+    ///         MessageType = signMessageType,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Sign can be imported using the `id`, e.g.

@@ -9,6 +9,65 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPasswordPolicy = new oci.identity.DomainsPasswordPolicy("test_password_policy", {
+ *     idcsEndpoint: testDomain.url,
+ *     name: passwordPolicyName,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy"],
+ *     allowedChars: passwordPolicyAllowedChars,
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: passwordPolicyAuthorization,
+ *     description: passwordPolicyDescription,
+ *     dictionaryDelimiter: passwordPolicyDictionaryDelimiter,
+ *     dictionaryLocation: passwordPolicyDictionaryLocation,
+ *     dictionaryWordDisallowed: passwordPolicyDictionaryWordDisallowed,
+ *     disallowedChars: passwordPolicyDisallowedChars,
+ *     disallowedSubstrings: passwordPolicyDisallowedSubstrings,
+ *     disallowedUserAttributeValues: passwordPolicyDisallowedUserAttributeValues,
+ *     distinctCharacters: passwordPolicyDistinctCharacters,
+ *     externalId: "externalId",
+ *     firstNameDisallowed: passwordPolicyFirstNameDisallowed,
+ *     forcePasswordReset: passwordPolicyForcePasswordReset,
+ *     groups: [{
+ *         value: testGroup.id,
+ *     }],
+ *     id: passwordPolicyId,
+ *     lastNameDisallowed: passwordPolicyLastNameDisallowed,
+ *     lockoutDuration: passwordPolicyLockoutDuration,
+ *     maxIncorrectAttempts: passwordPolicyMaxIncorrectAttempts,
+ *     maxLength: passwordPolicyMaxLength,
+ *     maxRepeatedChars: passwordPolicyMaxRepeatedChars,
+ *     maxSpecialChars: passwordPolicyMaxSpecialChars,
+ *     minAlphaNumerals: passwordPolicyMinAlphaNumerals,
+ *     minAlphas: passwordPolicyMinAlphas,
+ *     minLength: passwordPolicyMinLength,
+ *     minLowerCase: passwordPolicyMinLowerCase,
+ *     minNumerals: passwordPolicyMinNumerals,
+ *     minPasswordAge: passwordPolicyMinPasswordAge,
+ *     minSpecialChars: passwordPolicyMinSpecialChars,
+ *     minUniqueChars: passwordPolicyMinUniqueChars,
+ *     minUpperCase: passwordPolicyMinUpperCase,
+ *     numPasswordsInHistory: passwordPolicyNumPasswordsInHistory,
+ *     ocid: passwordPolicyOcid,
+ *     passwordExpireWarning: passwordPolicyPasswordExpireWarning,
+ *     passwordExpiresAfter: passwordPolicyPasswordExpiresAfter,
+ *     passwordStrength: passwordPolicyPasswordStrength,
+ *     priority: passwordPolicyPriority,
+ *     requiredChars: passwordPolicyRequiredChars,
+ *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
+ *     startsWithAlphabet: passwordPolicyStartsWithAlphabet,
+ *     tags: [{
+ *         key: passwordPolicyTagsKey,
+ *         value: passwordPolicyTagsValue,
+ *     }],
+ *     userNameDisallowed: passwordPolicyUserNameDisallowed,
+ * });
+ * ```
+ *
  * ## Import
  *
  * PasswordPolicies can be imported using the `id`, e.g.

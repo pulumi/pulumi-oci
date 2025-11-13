@@ -14,6 +14,86 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsPasswordPolicy(ctx, "test_password_policy", &identity.DomainsPasswordPolicyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Name:         pulumi.Any(passwordPolicyName),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy"),
+//				},
+//				AllowedChars:                  pulumi.Any(passwordPolicyAllowedChars),
+//				AttributeSets:                 pulumi.StringArray{},
+//				Attributes:                    pulumi.String(""),
+//				Authorization:                 pulumi.Any(passwordPolicyAuthorization),
+//				Description:                   pulumi.Any(passwordPolicyDescription),
+//				DictionaryDelimiter:           pulumi.Any(passwordPolicyDictionaryDelimiter),
+//				DictionaryLocation:            pulumi.Any(passwordPolicyDictionaryLocation),
+//				DictionaryWordDisallowed:      pulumi.Any(passwordPolicyDictionaryWordDisallowed),
+//				DisallowedChars:               pulumi.Any(passwordPolicyDisallowedChars),
+//				DisallowedSubstrings:          pulumi.Any(passwordPolicyDisallowedSubstrings),
+//				DisallowedUserAttributeValues: pulumi.Any(passwordPolicyDisallowedUserAttributeValues),
+//				DistinctCharacters:            pulumi.Any(passwordPolicyDistinctCharacters),
+//				ExternalId:                    pulumi.String("externalId"),
+//				FirstNameDisallowed:           pulumi.Any(passwordPolicyFirstNameDisallowed),
+//				ForcePasswordReset:            pulumi.Any(passwordPolicyForcePasswordReset),
+//				Groups: identity.DomainsPasswordPolicyGroupArray{
+//					&identity.DomainsPasswordPolicyGroupArgs{
+//						Value: pulumi.Any(testGroup.Id),
+//					},
+//				},
+//				Id:                        passwordPolicyId,
+//				LastNameDisallowed:        pulumi.Any(passwordPolicyLastNameDisallowed),
+//				LockoutDuration:           pulumi.Any(passwordPolicyLockoutDuration),
+//				MaxIncorrectAttempts:      pulumi.Any(passwordPolicyMaxIncorrectAttempts),
+//				MaxLength:                 pulumi.Any(passwordPolicyMaxLength),
+//				MaxRepeatedChars:          pulumi.Any(passwordPolicyMaxRepeatedChars),
+//				MaxSpecialChars:           pulumi.Any(passwordPolicyMaxSpecialChars),
+//				MinAlphaNumerals:          pulumi.Any(passwordPolicyMinAlphaNumerals),
+//				MinAlphas:                 pulumi.Any(passwordPolicyMinAlphas),
+//				MinLength:                 pulumi.Any(passwordPolicyMinLength),
+//				MinLowerCase:              pulumi.Any(passwordPolicyMinLowerCase),
+//				MinNumerals:               pulumi.Any(passwordPolicyMinNumerals),
+//				MinPasswordAge:            pulumi.Any(passwordPolicyMinPasswordAge),
+//				MinSpecialChars:           pulumi.Any(passwordPolicyMinSpecialChars),
+//				MinUniqueChars:            pulumi.Any(passwordPolicyMinUniqueChars),
+//				MinUpperCase:              pulumi.Any(passwordPolicyMinUpperCase),
+//				NumPasswordsInHistory:     pulumi.Any(passwordPolicyNumPasswordsInHistory),
+//				Ocid:                      pulumi.Any(passwordPolicyOcid),
+//				PasswordExpireWarning:     pulumi.Any(passwordPolicyPasswordExpireWarning),
+//				PasswordExpiresAfter:      pulumi.Any(passwordPolicyPasswordExpiresAfter),
+//				PasswordStrength:          pulumi.Any(passwordPolicyPasswordStrength),
+//				Priority:                  pulumi.Any(passwordPolicyPriority),
+//				RequiredChars:             pulumi.Any(passwordPolicyRequiredChars),
+//				ResourceTypeSchemaVersion: pulumi.Any(passwordPolicyResourceTypeSchemaVersion),
+//				StartsWithAlphabet:        pulumi.Any(passwordPolicyStartsWithAlphabet),
+//				Tags: identity.DomainsPasswordPolicyTagArray{
+//					&identity.DomainsPasswordPolicyTagArgs{
+//						Key:   pulumi.Any(passwordPolicyTagsKey),
+//						Value: pulumi.Any(passwordPolicyTagsValue),
+//					},
+//				},
+//				UserNameDisallowed: pulumi.Any(passwordPolicyUserNameDisallowed),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // PasswordPolicies can be imported using the `id`, e.g.

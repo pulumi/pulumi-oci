@@ -9,6 +9,36 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuthToken = new oci.identity.DomainsAuthToken("test_auth_token", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:authToken"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: authTokenAuthorization,
+ *     description: authTokenDescription,
+ *     expiresOn: authTokenExpiresOn,
+ *     id: authTokenId,
+ *     ocid: authTokenOcid,
+ *     resourceTypeSchemaVersion: authTokenResourceTypeSchemaVersion,
+ *     status: authTokenStatus,
+ *     tags: [{
+ *         key: authTokenTagsKey,
+ *         value: authTokenTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
+ *         allowSelfChange: authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *     },
+ *     user: {
+ *         ocid: testUser.ocid,
+ *         value: testUser.id,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * AuthTokens can be imported using the `id`, e.g.

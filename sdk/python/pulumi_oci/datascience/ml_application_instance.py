@@ -498,6 +498,37 @@ class MlApplicationInstance(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_ml_application_instance = oci.datascience.MlApplicationInstance("test_ml_application_instance",
+            compartment_id=compartment_id,
+            ml_application_id=test_ml_application["id"],
+            ml_application_implementation_id=test_ml_application_implementation["id"],
+            auth_configuration={
+                "type": ml_application_instance_auth_configuration_type,
+                "access_token": ml_application_instance_auth_configuration_access_token,
+                "application_name": test_application["name"],
+                "audience": ml_application_instance_auth_configuration_audience,
+                "domain_id": test_domain["id"],
+                "role_name": ml_application_instance_auth_configuration_role_name,
+                "scope": ml_application_instance_auth_configuration_scope,
+            },
+            configurations=[{
+                "key": ml_application_instance_configuration_key,
+                "value": ml_application_instance_configuration_value,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=ml_application_instance_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_enabled=ml_application_instance_is_enabled)
+        ```
+
         ## Import
 
         MlApplicationInstances can be imported using the `id`, e.g.
@@ -530,6 +561,37 @@ class MlApplicationInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_ml_application_instance = oci.datascience.MlApplicationInstance("test_ml_application_instance",
+            compartment_id=compartment_id,
+            ml_application_id=test_ml_application["id"],
+            ml_application_implementation_id=test_ml_application_implementation["id"],
+            auth_configuration={
+                "type": ml_application_instance_auth_configuration_type,
+                "access_token": ml_application_instance_auth_configuration_access_token,
+                "application_name": test_application["name"],
+                "audience": ml_application_instance_auth_configuration_audience,
+                "domain_id": test_domain["id"],
+                "role_name": ml_application_instance_auth_configuration_role_name,
+                "scope": ml_application_instance_auth_configuration_scope,
+            },
+            configurations=[{
+                "key": ml_application_instance_configuration_key,
+                "value": ml_application_instance_configuration_value,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=ml_application_instance_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_enabled=ml_application_instance_is_enabled)
+        ```
 
         ## Import
 

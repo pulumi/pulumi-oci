@@ -12,6 +12,62 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testOauth2clientCredential = new Oci.Identity.DomainsOauth2clientCredential("test_oauth2client_credential", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = oauth2clientCredentialName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential",
+    ///         },
+    ///         Scopes = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsOauth2clientCredentialScopeArgs
+    ///             {
+    ///                 Audience = oauth2clientCredentialScopesAudience,
+    ///                 Scope = oauth2clientCredentialScopesScope,
+    ///             },
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = oauth2clientCredentialAuthorization,
+    ///         Description = oauth2clientCredentialDescription,
+    ///         ExpiresOn = oauth2clientCredentialExpiresOn,
+    ///         Id = oauth2clientCredentialId,
+    ///         IsResetSecret = oauth2clientCredentialIsResetSecret,
+    ///         Ocid = oauth2clientCredentialOcid,
+    ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
+    ///         Status = oauth2clientCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsOauth2clientCredentialTagArgs
+    ///             {
+    ///                 Key = oauth2clientCredentialTagsKey,
+    ///                 Value = oauth2clientCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsOauth2clientCredentialUserArgs
+    ///         {
+    ///             Ocid = testUser.Ocid,
+    ///             Value = testUser.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// OAuth2ClientCredentials can be imported using the `id`, e.g.

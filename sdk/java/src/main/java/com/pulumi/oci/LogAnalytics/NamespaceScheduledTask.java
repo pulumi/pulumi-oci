@@ -19,6 +19,78 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTask;
+ * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTaskArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionMetricExtractionArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionTemplateDetailsArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskSchedulesArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNamespaceScheduledTask = new NamespaceScheduledTask("testNamespaceScheduledTask", NamespaceScheduledTaskArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .kind(namespaceScheduledTaskKind)
+ *             .namespace(namespaceScheduledTaskNamespace)
+ *             .action(NamespaceScheduledTaskActionArgs.builder()
+ *                 .type(namespaceScheduledTaskActionType)
+ *                 .compartmentIdInSubtree(namespaceScheduledTaskActionCompartmentIdInSubtree)
+ *                 .dataType(namespaceScheduledTaskActionDataType)
+ *                 .metricExtraction(NamespaceScheduledTaskActionMetricExtractionArgs.builder()
+ *                     .compartmentId(compartmentId)
+ *                     .metricName(testMetric.name())
+ *                     .namespace(namespaceScheduledTaskActionMetricExtractionNamespace)
+ *                     .resourceGroup(namespaceScheduledTaskActionMetricExtractionResourceGroup)
+ *                     .build())
+ *                 .purgeCompartmentId(testCompartment.id())
+ *                 .purgeDuration(namespaceScheduledTaskActionPurgeDuration)
+ *                 .queryString(namespaceScheduledTaskActionQueryString)
+ *                 .savedSearchId(testSavedSearch.id())
+ *                 .templateDetails(NamespaceScheduledTaskActionTemplateDetailsArgs.builder()
+ *                     .templateId(testTemplate.id())
+ *                     .templateParams(NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs.builder()
+ *                         .keyField(namespaceScheduledTaskActionTemplateDetailsTemplateParamsKeyField)
+ *                         .valueField(namespaceScheduledTaskActionTemplateDetailsTemplateParamsValueField)
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .displayName(namespaceScheduledTaskDisplayName)
+ *             .freeformTags(Map.of("bar-key", "value"))
+ *             .savedSearchId(testSavedSearch.id())
+ *             .schedules(NamespaceScheduledTaskSchedulesArgs.builder()
+ *                 .type(namespaceScheduledTaskSchedulesType)
+ *                 .expression(namespaceScheduledTaskSchedulesExpression)
+ *                 .misfirePolicy(namespaceScheduledTaskSchedulesMisfirePolicy)
+ *                 .recurringInterval(namespaceScheduledTaskSchedulesRecurringInterval)
+ *                 .repeatCount(namespaceScheduledTaskSchedulesRepeatCount)
+ *                 .timeZone(namespaceScheduledTaskSchedulesTimeZone)
+ *                 .build())
+ *             .taskType(namespaceScheduledTaskTaskType)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * NamespaceScheduledTasks can be imported using the `id`, e.g.

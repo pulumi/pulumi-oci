@@ -481,6 +481,67 @@ class Certificate(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_certificate = oci.certificatesmanagement.Certificate("test_certificate",
+            certificate_config={
+                "config_type": certificate_certificate_config_config_type,
+                "cert_chain_pem": certificate_certificate_config_cert_chain_pem,
+                "certificate_pem": certificate_certificate_config_certificate_pem,
+                "certificate_profile_type": certificate_certificate_config_certificate_profile_type,
+                "csr_pem": certificate_certificate_config_csr_pem,
+                "issuer_certificate_authority_id": test_certificate_authority["id"],
+                "key_algorithm": certificate_certificate_config_key_algorithm,
+                "private_key_pem": certificate_certificate_config_private_key_pem,
+                "private_key_pem_passphrase": certificate_certificate_config_private_key_pem_passphrase,
+                "signature_algorithm": certificate_certificate_config_signature_algorithm,
+                "subject": {
+                    "common_name": certificate_certificate_config_subject_common_name,
+                    "country": certificate_certificate_config_subject_country,
+                    "distinguished_name_qualifier": certificate_certificate_config_subject_distinguished_name_qualifier,
+                    "domain_component": certificate_certificate_config_subject_domain_component,
+                    "generation_qualifier": certificate_certificate_config_subject_generation_qualifier,
+                    "given_name": certificate_certificate_config_subject_given_name,
+                    "initials": certificate_certificate_config_subject_initials,
+                    "locality_name": certificate_certificate_config_subject_locality_name,
+                    "organization": certificate_certificate_config_subject_organization,
+                    "organizational_unit": certificate_certificate_config_subject_organizational_unit,
+                    "pseudonym": certificate_certificate_config_subject_pseudonym,
+                    "serial_number": certificate_certificate_config_subject_serial_number,
+                    "state_or_province_name": certificate_certificate_config_subject_state_or_province_name,
+                    "street": certificate_certificate_config_subject_street,
+                    "surname": certificate_certificate_config_subject_surname,
+                    "title": certificate_certificate_config_subject_title,
+                    "user_id": test_user["id"],
+                },
+                "subject_alternative_names": [{
+                    "type": certificate_certificate_config_subject_alternative_names_type,
+                    "value": certificate_certificate_config_subject_alternative_names_value,
+                }],
+                "validity": {
+                    "time_of_validity_not_after": certificate_certificate_config_validity_time_of_validity_not_after,
+                    "time_of_validity_not_before": certificate_certificate_config_validity_time_of_validity_not_before,
+                },
+                "version_name": certificate_certificate_config_version_name,
+            },
+            compartment_id=compartment_id,
+            name=certificate_name,
+            certificate_rules=[{
+                "advance_renewal_period": certificate_certificate_rules_advance_renewal_period,
+                "renewal_interval": certificate_certificate_rules_renewal_interval,
+                "rule_type": certificate_certificate_rules_rule_type,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=certificate_description,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+
         ## Import
 
         Certificates can be imported using the `id`, e.g.
@@ -511,6 +572,67 @@ class Certificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_certificate = oci.certificatesmanagement.Certificate("test_certificate",
+            certificate_config={
+                "config_type": certificate_certificate_config_config_type,
+                "cert_chain_pem": certificate_certificate_config_cert_chain_pem,
+                "certificate_pem": certificate_certificate_config_certificate_pem,
+                "certificate_profile_type": certificate_certificate_config_certificate_profile_type,
+                "csr_pem": certificate_certificate_config_csr_pem,
+                "issuer_certificate_authority_id": test_certificate_authority["id"],
+                "key_algorithm": certificate_certificate_config_key_algorithm,
+                "private_key_pem": certificate_certificate_config_private_key_pem,
+                "private_key_pem_passphrase": certificate_certificate_config_private_key_pem_passphrase,
+                "signature_algorithm": certificate_certificate_config_signature_algorithm,
+                "subject": {
+                    "common_name": certificate_certificate_config_subject_common_name,
+                    "country": certificate_certificate_config_subject_country,
+                    "distinguished_name_qualifier": certificate_certificate_config_subject_distinguished_name_qualifier,
+                    "domain_component": certificate_certificate_config_subject_domain_component,
+                    "generation_qualifier": certificate_certificate_config_subject_generation_qualifier,
+                    "given_name": certificate_certificate_config_subject_given_name,
+                    "initials": certificate_certificate_config_subject_initials,
+                    "locality_name": certificate_certificate_config_subject_locality_name,
+                    "organization": certificate_certificate_config_subject_organization,
+                    "organizational_unit": certificate_certificate_config_subject_organizational_unit,
+                    "pseudonym": certificate_certificate_config_subject_pseudonym,
+                    "serial_number": certificate_certificate_config_subject_serial_number,
+                    "state_or_province_name": certificate_certificate_config_subject_state_or_province_name,
+                    "street": certificate_certificate_config_subject_street,
+                    "surname": certificate_certificate_config_subject_surname,
+                    "title": certificate_certificate_config_subject_title,
+                    "user_id": test_user["id"],
+                },
+                "subject_alternative_names": [{
+                    "type": certificate_certificate_config_subject_alternative_names_type,
+                    "value": certificate_certificate_config_subject_alternative_names_value,
+                }],
+                "validity": {
+                    "time_of_validity_not_after": certificate_certificate_config_validity_time_of_validity_not_after,
+                    "time_of_validity_not_before": certificate_certificate_config_validity_time_of_validity_not_before,
+                },
+                "version_name": certificate_certificate_config_version_name,
+            },
+            compartment_id=compartment_id,
+            name=certificate_name,
+            certificate_rules=[{
+                "advance_renewal_period": certificate_certificate_rules_advance_renewal_period,
+                "renewal_interval": certificate_certificate_rules_renewal_interval,
+                "rule_type": certificate_certificate_rules_rule_type,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=certificate_description,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
 
         ## Import
 

@@ -1045,6 +1045,33 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_question = oci.identity.DomainsSecurityQuestion("test_security_question",
+            active=security_question_active,
+            idcs_endpoint=test_domain["url"],
+            question_texts=[{
+                "locale": "en",
+                "value": security_question_question_text_value,
+                "default": True,
+            }],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion"],
+            type="custom",
+            attribute_sets=["all"],
+            attributes="",
+            authorization=security_question_authorization,
+            external_id="externalId",
+            id=security_question_id,
+            ocid=security_question_ocid,
+            resource_type_schema_version=security_question_resource_type_schema_version,
+            tags=[{
+                "key": security_question_tags_key,
+                "value": security_question_tags_value,
+            }])
+        ```
+
         ## Import
 
         SecurityQuestions can be imported using the `id`, e.g.
@@ -1150,6 +1177,33 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_question = oci.identity.DomainsSecurityQuestion("test_security_question",
+            active=security_question_active,
+            idcs_endpoint=test_domain["url"],
+            question_texts=[{
+                "locale": "en",
+                "value": security_question_question_text_value,
+                "default": True,
+            }],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion"],
+            type="custom",
+            attribute_sets=["all"],
+            attributes="",
+            authorization=security_question_authorization,
+            external_id="externalId",
+            id=security_question_id,
+            ocid=security_question_ocid,
+            resource_type_schema_version=security_question_resource_type_schema_version,
+            tags=[{
+                "key": security_question_tags_key,
+                "value": security_question_tags_value,
+            }])
+        ```
 
         ## Import
 

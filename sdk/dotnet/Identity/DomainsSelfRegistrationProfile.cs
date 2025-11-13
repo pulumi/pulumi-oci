@@ -12,6 +12,120 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSelfRegistrationProfile = new Oci.Identity.DomainsSelfRegistrationProfile("test_self_registration_profile", new()
+    ///     {
+    ///         ActivationEmailRequired = selfRegistrationProfileActivationEmailRequired,
+    ///         ConsentTextPresent = selfRegistrationProfileConsentTextPresent,
+    ///         DisplayNames = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileDisplayNameArgs
+    ///             {
+    ///                 Locale = selfRegistrationProfileDisplayNameLocale,
+    ///                 Value = selfRegistrationProfileDisplayNameValue,
+    ///                 Default = selfRegistrationProfileDisplayNameDefault,
+    ///             },
+    ///         },
+    ///         EmailTemplate = new Oci.Identity.Inputs.DomainsSelfRegistrationProfileEmailTemplateArgs
+    ///         {
+    ///             Value = selfRegistrationProfileEmailTemplateValue,
+    ///         },
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = selfRegistrationProfileName,
+    ///         NumberOfDaysRedirectUrlIsValid = selfRegistrationProfileNumberOfDaysRedirectUrlIsValid,
+    ///         RedirectUrl = selfRegistrationProfileRedirectUrl,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile",
+    ///         },
+    ///         ShowOnLoginPage = selfRegistrationProfileShowOnLoginPage,
+    ///         Active = selfRegistrationProfileActive,
+    ///         AfterSubmitTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileAfterSubmitTextArgs
+    ///             {
+    ///                 Locale = selfRegistrationProfileAfterSubmitTextLocale,
+    ///                 Value = selfRegistrationProfileAfterSubmitTextValue,
+    ///                 Default = selfRegistrationProfileAfterSubmitTextDefault,
+    ///             },
+    ///         },
+    ///         AllowedEmailDomains = selfRegistrationProfileAllowedEmailDomains,
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = selfRegistrationProfileAuthorization,
+    ///         ConsentTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileConsentTextArgs
+    ///             {
+    ///                 Locale = selfRegistrationProfileConsentTextLocale,
+    ///                 Value = selfRegistrationProfileConsentTextValue,
+    ///                 Default = selfRegistrationProfileConsentTextDefault,
+    ///             },
+    ///         },
+    ///         DefaultGroups = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileDefaultGroupArgs
+    ///             {
+    ///                 Value = selfRegistrationProfileDefaultGroupsValue,
+    ///             },
+    ///         },
+    ///         DisallowedEmailDomains = selfRegistrationProfileDisallowedEmailDomains,
+    ///         ExternalId = "externalId",
+    ///         FooterLogo = selfRegistrationProfileFooterLogo,
+    ///         FooterTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileFooterTextArgs
+    ///             {
+    ///                 Locale = selfRegistrationProfileFooterTextLocale,
+    ///                 Value = selfRegistrationProfileFooterTextValue,
+    ///                 Default = selfRegistrationProfileFooterTextDefault,
+    ///             },
+    ///         },
+    ///         HeaderLogo = selfRegistrationProfileHeaderLogo,
+    ///         HeaderTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileHeaderTextArgs
+    ///             {
+    ///                 Locale = selfRegistrationProfileHeaderTextLocale,
+    ///                 Value = selfRegistrationProfileHeaderTextValue,
+    ///                 Default = selfRegistrationProfileHeaderTextDefault,
+    ///             },
+    ///         },
+    ///         Id = selfRegistrationProfileId,
+    ///         Ocid = selfRegistrationProfileOcid,
+    ///         ResourceTypeSchemaVersion = selfRegistrationProfileResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileTagArgs
+    ///             {
+    ///                 Key = selfRegistrationProfileTagsKey,
+    ///                 Value = selfRegistrationProfileTagsValue,
+    ///             },
+    ///         },
+    ///         UserAttributes = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSelfRegistrationProfileUserAttributeArgs
+    ///             {
+    ///                 SeqNumber = selfRegistrationProfileUserAttributesSeqNumber,
+    ///                 Value = selfRegistrationProfileUserAttributesValue,
+    ///                 FullyQualifiedAttributeName = selfRegistrationProfileUserAttributesFullyQualifiedAttributeName,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// SelfRegistrationProfiles can be imported using the `id`, e.g.

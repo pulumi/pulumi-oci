@@ -645,6 +645,48 @@ class CatalogItem(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_catalog_item = oci.fleetappsmanagement.CatalogItem("test_catalog_item",
+            compartment_id=compartment_id,
+            config_source_type=catalog_item_config_source_type,
+            description=catalog_item_description,
+            display_name=catalog_item_display_name,
+            package_type=catalog_item_package_type,
+            catalog_source_payload={
+                "config_source_type": catalog_item_catalog_source_payload_config_source_type,
+                "access_uri": catalog_item_catalog_source_payload_access_uri,
+                "branch_name": catalog_item_catalog_source_payload_branch_name,
+                "bucket": catalog_item_catalog_source_payload_bucket,
+                "configuration_source_provider_id": test_configuration_source_provider["id"],
+                "description": catalog_item_catalog_source_payload_description,
+                "listing_id": test_listing["id"],
+                "long_description": catalog_item_catalog_source_payload_long_description,
+                "namespace": catalog_item_catalog_source_payload_namespace,
+                "object": catalog_item_catalog_source_payload_object,
+                "repository_url": catalog_item_catalog_source_payload_repository_url,
+                "template_display_name": catalog_item_catalog_source_payload_template_display_name,
+                "time_expires": catalog_item_catalog_source_payload_time_expires,
+                "version": catalog_item_catalog_source_payload_version,
+                "working_directory": catalog_item_catalog_source_payload_working_directory,
+                "zip_file_base64encoded": catalog_item_catalog_source_payload_zip_file_base64encoded,
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            freeform_tags={
+                "bar-key": "value",
+            },
+            is_item_locked=catalog_item_is_item_locked,
+            listing_id=test_listing["id"],
+            listing_version=catalog_item_listing_version,
+            short_description=catalog_item_short_description,
+            time_released=catalog_item_time_released,
+            version_description=catalog_item_version_description)
+        ```
+
         ## Import
 
         CatalogItems can be imported using the `id`, e.g.
@@ -678,6 +720,48 @@ class CatalogItem(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_catalog_item = oci.fleetappsmanagement.CatalogItem("test_catalog_item",
+            compartment_id=compartment_id,
+            config_source_type=catalog_item_config_source_type,
+            description=catalog_item_description,
+            display_name=catalog_item_display_name,
+            package_type=catalog_item_package_type,
+            catalog_source_payload={
+                "config_source_type": catalog_item_catalog_source_payload_config_source_type,
+                "access_uri": catalog_item_catalog_source_payload_access_uri,
+                "branch_name": catalog_item_catalog_source_payload_branch_name,
+                "bucket": catalog_item_catalog_source_payload_bucket,
+                "configuration_source_provider_id": test_configuration_source_provider["id"],
+                "description": catalog_item_catalog_source_payload_description,
+                "listing_id": test_listing["id"],
+                "long_description": catalog_item_catalog_source_payload_long_description,
+                "namespace": catalog_item_catalog_source_payload_namespace,
+                "object": catalog_item_catalog_source_payload_object,
+                "repository_url": catalog_item_catalog_source_payload_repository_url,
+                "template_display_name": catalog_item_catalog_source_payload_template_display_name,
+                "time_expires": catalog_item_catalog_source_payload_time_expires,
+                "version": catalog_item_catalog_source_payload_version,
+                "working_directory": catalog_item_catalog_source_payload_working_directory,
+                "zip_file_base64encoded": catalog_item_catalog_source_payload_zip_file_base64encoded,
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            freeform_tags={
+                "bar-key": "value",
+            },
+            is_item_locked=catalog_item_is_item_locked,
+            listing_id=test_listing["id"],
+            listing_version=catalog_item_listing_version,
+            short_description=catalog_item_short_description,
+            time_released=catalog_item_time_released,
+            version_description=catalog_item_version_description)
+        ```
 
         ## Import
 

@@ -19,6 +19,53 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement;
+ * import com.pulumi.oci.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs.builder()
+ *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+ *             .enableExternalContainerDbmFeature(enableExternalContainerDbmFeature)
+ *             .featureDetails(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs.builder()
+ *                 .feature(externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsFeature)
+ *                 .enableExternalContainerDbmFeature(enableExternalContainerDbmFeature)
+ *                 .connectorDetails(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
+ *                     .connectorType(externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
+ *                     .databaseConnectorId(testDatabaseConnector.id())
+ *                     .managementAgentId(testManagementAgent.id())
+ *                     .privateEndPointId(testPrivateEndPoint.id())
+ *                     .build())
+ *                 .canEnableAllCurrentPdbs(externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs)
+ *                 .isAutoEnablePluggableDatabase(externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase)
+ *                 .licenseModel(externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsLicenseModel)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")
 public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

@@ -1008,6 +1008,30 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_smtp_credential = oci.identity.DomainsMySmtpCredential("test_my_smtp_credential",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential"],
+            authorization=my_smtp_credential_authorization,
+            description=my_smtp_credential_description,
+            expires_on=my_smtp_credential_expires_on,
+            id=my_smtp_credential_id,
+            ocid=my_smtp_credential_ocid,
+            resource_type_schema_version=my_smtp_credential_resource_type_schema_version,
+            status=my_smtp_credential_status,
+            tags=[{
+                "key": my_smtp_credential_tags_key,
+                "value": my_smtp_credential_tags_value,
+            }],
+            user={
+                "ocid": my_smtp_credential_user_ocid,
+                "value": my_smtp_credential_user_value,
+            })
+        ```
+
         ## Import
 
         MySmtpCredentials can be imported using the `id`, e.g.
@@ -1108,6 +1132,30 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_smtp_credential = oci.identity.DomainsMySmtpCredential("test_my_smtp_credential",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential"],
+            authorization=my_smtp_credential_authorization,
+            description=my_smtp_credential_description,
+            expires_on=my_smtp_credential_expires_on,
+            id=my_smtp_credential_id,
+            ocid=my_smtp_credential_ocid,
+            resource_type_schema_version=my_smtp_credential_resource_type_schema_version,
+            status=my_smtp_credential_status,
+            tags=[{
+                "key": my_smtp_credential_tags_key,
+                "value": my_smtp_credential_tags_value,
+            }],
+            user={
+                "ocid": my_smtp_credential_user_ocid,
+                "value": my_smtp_credential_user_value,
+            })
+        ```
 
         ## Import
 

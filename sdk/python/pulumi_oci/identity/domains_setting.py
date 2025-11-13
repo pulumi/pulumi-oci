@@ -4046,6 +4046,105 @@ class DomainsSetting(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_setting = oci.identity.DomainsSetting("test_setting",
+            csr_access=setting_csr_access,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
+            setting_id="Settings",
+            account_always_trust_scope=setting_account_always_trust_scope,
+            allowed_domains=["test.com"],
+            allowed_forgot_password_flow_return_urls=setting_allowed_forgot_password_flow_return_urls,
+            allowed_notification_redirect_urls=setting_allowed_notification_redirect_urls,
+            attribute_sets=["all"],
+            attributes="",
+            audit_event_retention_period=setting_audit_event_retention_period,
+            authorization=setting_authorization,
+            certificate_validation={
+                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled,
+                "crl_enabled": setting_certificate_validation_crl_enabled,
+                "crl_location": setting_certificate_validation_crl_location,
+                "crl_refresh_interval": setting_certificate_validation_crl_refresh_interval,
+                "ocsp_enabled": setting_certificate_validation_ocsp_enabled,
+                "ocsp_responder_url": setting_certificate_validation_ocsp_responder_url,
+                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred,
+                "ocsp_signing_certificate_alias": setting_certificate_validation_ocsp_signing_certificate_alias,
+                "ocsp_timeout_duration": setting_certificate_validation_ocsp_timeout_duration,
+                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed,
+            },
+            cloud_gate_cors_settings={
+                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin,
+                "cloud_gate_cors_allowed_origins": ["https://test.com"],
+                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled,
+                "cloud_gate_cors_exposed_headers": setting_cloud_gate_cors_settings_cloud_gate_cors_exposed_headers,
+                "cloud_gate_cors_max_age": setting_cloud_gate_cors_settings_cloud_gate_cors_max_age,
+            },
+            cloud_migration_custom_url=setting_cloud_migration_custom_url,
+            cloud_migration_url_enabled=setting_cloud_migration_url_enabled,
+            company_names=[{
+                "locale": setting_company_names_locale,
+                "value": setting_company_names_value,
+            }],
+            contact_emails=["contactEmails@test.com"],
+            custom_branding=setting_custom_branding,
+            custom_css_location=setting_custom_css_location,
+            custom_html_location=setting_custom_html_location,
+            custom_translation=setting_custom_translation,
+            default_trust_scope=setting_default_trust_scope,
+            diagnostic_level=setting_diagnostic_level,
+            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources,
+            enable_terms_of_use=setting_enable_terms_of_use,
+            external_id="externalId",
+            iam_upst_session_expiry=setting_iam_upst_session_expiry,
+            id=setting_id,
+            images=[{
+                "type": setting_images_type,
+                "value": setting_images_value,
+                "display": setting_images_display,
+            }],
+            is_hosted_page=setting_is_hosted_page,
+            issuer=setting_issuer,
+            locale=setting_locale,
+            login_texts=[{
+                "locale": setting_login_texts_locale,
+                "value": setting_login_texts_value,
+            }],
+            max_no_of_app_cmva_to_return=setting_max_no_of_app_cmva_to_return,
+            max_no_of_app_role_members_to_return=setting_max_no_of_app_role_members_to_return,
+            ocid=setting_ocid,
+            preferred_language=setting_preferred_language,
+            prev_issuer=setting_prev_issuer,
+            privacy_policy_url=setting_privacy_policy_url,
+            purge_configs=[{
+                "resource_name": "resourceName",
+                "retention_period": setting_purge_configs_retention_period,
+            }],
+            re_auth_factors=["password"],
+            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors,
+            resource_type_schema_version=setting_resource_type_schema_version,
+            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users,
+            signing_cert_public_access=setting_signing_cert_public_access,
+            sub_mapping_attr=setting_sub_mapping_attr,
+            tags=[{
+                "key": setting_tags_key,
+                "value": setting_tags_value,
+            }],
+            tenant_custom_claims=[{
+                "all_scopes": setting_tenant_custom_claims_all_scopes,
+                "expression": setting_tenant_custom_claims_expression,
+                "mode": setting_tenant_custom_claims_mode,
+                "name": setting_tenant_custom_claims_name,
+                "token_type": setting_tenant_custom_claims_token_type,
+                "value": setting_tenant_custom_claims_value,
+                "scopes": ["scopes"],
+            }],
+            terms_of_use_url=setting_terms_of_use_url,
+            timezone=setting_timezone)
+        ```
+
         ## Import
 
         Settings can be imported using the `id`, e.g.
@@ -4561,6 +4660,105 @@ class DomainsSetting(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_setting = oci.identity.DomainsSetting("test_setting",
+            csr_access=setting_csr_access,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
+            setting_id="Settings",
+            account_always_trust_scope=setting_account_always_trust_scope,
+            allowed_domains=["test.com"],
+            allowed_forgot_password_flow_return_urls=setting_allowed_forgot_password_flow_return_urls,
+            allowed_notification_redirect_urls=setting_allowed_notification_redirect_urls,
+            attribute_sets=["all"],
+            attributes="",
+            audit_event_retention_period=setting_audit_event_retention_period,
+            authorization=setting_authorization,
+            certificate_validation={
+                "crl_check_on_ocsp_failure_enabled": setting_certificate_validation_crl_check_on_ocsp_failure_enabled,
+                "crl_enabled": setting_certificate_validation_crl_enabled,
+                "crl_location": setting_certificate_validation_crl_location,
+                "crl_refresh_interval": setting_certificate_validation_crl_refresh_interval,
+                "ocsp_enabled": setting_certificate_validation_ocsp_enabled,
+                "ocsp_responder_url": setting_certificate_validation_ocsp_responder_url,
+                "ocsp_settings_responder_url_preferred": setting_certificate_validation_ocsp_settings_responder_url_preferred,
+                "ocsp_signing_certificate_alias": setting_certificate_validation_ocsp_signing_certificate_alias,
+                "ocsp_timeout_duration": setting_certificate_validation_ocsp_timeout_duration,
+                "ocsp_unknown_response_status_allowed": setting_certificate_validation_ocsp_unknown_response_status_allowed,
+            },
+            cloud_gate_cors_settings={
+                "cloud_gate_cors_allow_null_origin": setting_cloud_gate_cors_settings_cloud_gate_cors_allow_null_origin,
+                "cloud_gate_cors_allowed_origins": ["https://test.com"],
+                "cloud_gate_cors_enabled": setting_cloud_gate_cors_settings_cloud_gate_cors_enabled,
+                "cloud_gate_cors_exposed_headers": setting_cloud_gate_cors_settings_cloud_gate_cors_exposed_headers,
+                "cloud_gate_cors_max_age": setting_cloud_gate_cors_settings_cloud_gate_cors_max_age,
+            },
+            cloud_migration_custom_url=setting_cloud_migration_custom_url,
+            cloud_migration_url_enabled=setting_cloud_migration_url_enabled,
+            company_names=[{
+                "locale": setting_company_names_locale,
+                "value": setting_company_names_value,
+            }],
+            contact_emails=["contactEmails@test.com"],
+            custom_branding=setting_custom_branding,
+            custom_css_location=setting_custom_css_location,
+            custom_html_location=setting_custom_html_location,
+            custom_translation=setting_custom_translation,
+            default_trust_scope=setting_default_trust_scope,
+            diagnostic_level=setting_diagnostic_level,
+            diagnostic_record_for_search_identifies_returned_resources=setting_diagnostic_record_for_search_identifies_returned_resources,
+            enable_terms_of_use=setting_enable_terms_of_use,
+            external_id="externalId",
+            iam_upst_session_expiry=setting_iam_upst_session_expiry,
+            id=setting_id,
+            images=[{
+                "type": setting_images_type,
+                "value": setting_images_value,
+                "display": setting_images_display,
+            }],
+            is_hosted_page=setting_is_hosted_page,
+            issuer=setting_issuer,
+            locale=setting_locale,
+            login_texts=[{
+                "locale": setting_login_texts_locale,
+                "value": setting_login_texts_value,
+            }],
+            max_no_of_app_cmva_to_return=setting_max_no_of_app_cmva_to_return,
+            max_no_of_app_role_members_to_return=setting_max_no_of_app_role_members_to_return,
+            ocid=setting_ocid,
+            preferred_language=setting_preferred_language,
+            prev_issuer=setting_prev_issuer,
+            privacy_policy_url=setting_privacy_policy_url,
+            purge_configs=[{
+                "resource_name": "resourceName",
+                "retention_period": setting_purge_configs_retention_period,
+            }],
+            re_auth_factors=["password"],
+            re_auth_when_changing_my_authentication_factors=setting_re_auth_when_changing_my_authentication_factors,
+            resource_type_schema_version=setting_resource_type_schema_version,
+            service_admin_cannot_list_other_users=setting_service_admin_cannot_list_other_users,
+            signing_cert_public_access=setting_signing_cert_public_access,
+            sub_mapping_attr=setting_sub_mapping_attr,
+            tags=[{
+                "key": setting_tags_key,
+                "value": setting_tags_value,
+            }],
+            tenant_custom_claims=[{
+                "all_scopes": setting_tenant_custom_claims_all_scopes,
+                "expression": setting_tenant_custom_claims_expression,
+                "mode": setting_tenant_custom_claims_mode,
+                "name": setting_tenant_custom_claims_name,
+                "token_type": setting_tenant_custom_claims_token_type,
+                "value": setting_tenant_custom_claims_value,
+                "scopes": ["scopes"],
+            }],
+            terms_of_use_url=setting_terms_of_use_url,
+            timezone=setting_timezone)
+        ```
 
         ## Import
 

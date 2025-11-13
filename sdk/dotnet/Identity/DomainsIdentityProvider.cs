@@ -12,6 +12,158 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testIdentityProvider = new Oci.Identity.DomainsIdentityProvider("test_identity_provider", new()
+    ///     {
+    ///         Enabled = false,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         PartnerName = identityProviderPartnerName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider",
+    ///         },
+    ///         AssertionAttribute = identityProviderAssertionAttribute,
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         AuthnRequestBinding = identityProviderAuthnRequestBinding,
+    ///         Authorization = identityProviderAuthorization,
+    ///         CorrelationPolicy = new Oci.Identity.Inputs.DomainsIdentityProviderCorrelationPolicyArgs
+    ///         {
+    ///             Type = identityProviderCorrelationPolicyType,
+    ///             Value = identityProviderCorrelationPolicyValue,
+    ///             Display = identityProviderCorrelationPolicyDisplay,
+    ///         },
+    ///         Description = identityProviderDescription,
+    ///         EncryptionCertificate = identityProviderEncryptionCertificate,
+    ///         ExternalId = "externalId",
+    ///         IconUrl = identityProviderIconUrl,
+    ///         Id = identityProviderId,
+    ///         IdpSsoUrl = identityProviderIdpSsoUrl,
+    ///         IncludeSigningCertInSignature = identityProviderIncludeSigningCertInSignature,
+    ///         JitUserProvAssignedGroups = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsIdentityProviderJitUserProvAssignedGroupArgs
+    ///             {
+    ///                 Value = identityProviderJitUserProvAssignedGroupsValue,
+    ///             },
+    ///         },
+    ///         JitUserProvAttributeUpdateEnabled = identityProviderJitUserProvAttributeUpdateEnabled,
+    ///         JitUserProvAttributes = new Oci.Identity.Inputs.DomainsIdentityProviderJitUserProvAttributesArgs
+    ///         {
+    ///             Value = identityProviderJitUserProvAttributesValue,
+    ///         },
+    ///         JitUserProvCreateUserEnabled = identityProviderJitUserProvCreateUserEnabled,
+    ///         JitUserProvEnabled = identityProviderJitUserProvEnabled,
+    ///         JitUserProvGroupAssertionAttributeEnabled = identityProviderJitUserProvGroupAssertionAttributeEnabled,
+    ///         JitUserProvGroupAssignmentMethod = identityProviderJitUserProvGroupAssignmentMethod,
+    ///         JitUserProvGroupMappingMode = identityProviderJitUserProvGroupMappingMode,
+    ///         JitUserProvGroupMappings = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsIdentityProviderJitUserProvGroupMappingArgs
+    ///             {
+    ///                 IdpGroup = identityProviderJitUserProvGroupMappingsIdpGroup,
+    ///                 Value = identityProviderJitUserProvGroupMappingsValue,
+    ///             },
+    ///         },
+    ///         JitUserProvGroupSamlAttributeName = identityProviderJitUserProvGroupSamlAttributeName,
+    ///         JitUserProvGroupStaticListEnabled = identityProviderJitUserProvGroupStaticListEnabled,
+    ///         JitUserProvIgnoreErrorOnAbsentGroups = identityProviderJitUserProvIgnoreErrorOnAbsentGroups,
+    ///         LogoutBinding = identityProviderLogoutBinding,
+    ///         LogoutEnabled = identityProviderLogoutEnabled,
+    ///         LogoutRequestUrl = identityProviderLogoutRequestUrl,
+    ///         LogoutResponseUrl = identityProviderLogoutResponseUrl,
+    ///         Metadata = identityProviderMetadata,
+    ///         NameIdFormat = identityProviderNameIdFormat,
+    ///         Ocid = identityProviderOcid,
+    ///         PartnerProviderId = identityProviderPartnerProviderId,
+    ///         RequestedAuthenticationContexts = identityProviderRequestedAuthenticationContext,
+    ///         RequireForceAuthn = identityProviderRequireForceAuthn,
+    ///         RequiresEncryptedAssertion = identityProviderRequiresEncryptedAssertion,
+    ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
+    ///         SamlHoKrequired = identityProviderSamlHoKrequired,
+    ///         ServiceInstanceIdentifier = identityProviderServiceInstanceIdentifier,
+    ///         ShownOnLoginPage = identityProviderShownOnLoginPage,
+    ///         SignatureHashAlgorithm = identityProviderSignatureHashAlgorithm,
+    ///         SigningCertificate = identityProviderSigningCertificate,
+    ///         SuccinctId = "succinctId",
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsIdentityProviderTagArgs
+    ///             {
+    ///                 Key = identityProviderTagsKey,
+    ///                 Value = identityProviderTagsValue,
+    ///             },
+    ///         },
+    ///         Type = identityProviderType,
+    ///         UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider = new Oci.Identity.Inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs
+    ///         {
+    ///             AccountLinkingEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderAccountLinkingEnabled,
+    ///             ConsumerKey = identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerKey,
+    ///             ConsumerSecret = identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderConsumerSecret,
+    ///             RegistrationEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderRegistrationEnabled,
+    ///             ServiceProviderName = identityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderServiceProviderName,
+    ///             AccessTokenUrl = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAccessTokenUrl,
+    ///             AdminScopes = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAdminScope,
+    ///             AppleDevId = testAppleDev.Id,
+    ///             AppleKeyId = testKey.Id,
+    ///             AuthzUrl = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAuthzUrl,
+    ///             AutoRedirectEnabled = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderAutoRedirectEnabled,
+    ///             ClientCredentialInPayload = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClientCredentialInPayload,
+    ///             ClockSkewInSeconds = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderClockSkewInSeconds,
+    ///             DiscoveryUrl = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderDiscoveryUrl,
+    ///             IdAttribute = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderIdAttribute,
+    ///             JitProvAssignedGroups = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs
+    ///                 {
+    ///                     Value = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsValue,
+    ///                     Display = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvAssignedGroupsDisplay,
+    ///                 },
+    ///             },
+    ///             JitProvGroupStaticListEnabled = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderJitProvGroupStaticListEnabled,
+    ///             ProfileUrl = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderProfileUrl,
+    ///             RedirectUrl = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderRedirectUrl,
+    ///             Scopes = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderScope,
+    ///             SocialJitProvisioningEnabled = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderSocialJitProvisioningEnabled,
+    ///             Status = identityProviderUrnIetfParamsScimSchemasOracleIdcsExtensionSocialIdentityProviderStatus,
+    ///         },
+    ///         Urnietfparamsscimschemasoracleidcsextensionx509identityProvider = new Oci.Identity.Inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs
+    ///         {
+    ///             CertMatchAttribute = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCertMatchAttribute,
+    ///             SigningCertificateChains = new[]
+    ///             {
+    ///                 "signingCertificateChain",
+    ///             },
+    ///             UserMatchAttribute = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderUserMatchAttribute,
+    ///             CrlCheckOnOcspFailureEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled,
+    ///             CrlEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled,
+    ///             CrlLocation = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlLocation,
+    ///             CrlReloadDuration = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlReloadDuration,
+    ///             EkuValidationEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValidationEnabled,
+    ///             EkuValues = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderEkuValues,
+    ///             OcspAllowUnknownResponseStatus = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspAllowUnknownResponseStatus,
+    ///             OcspEnableSignedResponse = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnableSignedResponse,
+    ///             OcspEnabled = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspEnabled,
+    ///             OcspResponderUrl = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspResponderUrl,
+    ///             OcspRevalidateTime = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspRevalidateTime,
+    ///             OcspServerName = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspServerName,
+    ///             OcspTrustCertChains = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOcspTrustCertChain,
+    ///             OtherCertMatchAttribute = identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOtherCertMatchAttribute,
+    ///         },
+    ///         UserMappingMethod = identityProviderUserMappingMethod,
+    ///         UserMappingStoreAttribute = identityProviderUserMappingStoreAttribute,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// IdentityProviders can be imported using the `id`, e.g.

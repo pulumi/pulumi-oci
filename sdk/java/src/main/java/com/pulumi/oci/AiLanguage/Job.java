@@ -26,6 +26,66 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AiLanguage.Job;
+ * import com.pulumi.oci.AiLanguage.JobArgs;
+ * import com.pulumi.oci.AiLanguage.inputs.JobInputLocationArgs;
+ * import com.pulumi.oci.AiLanguage.inputs.JobModelMetadataDetailArgs;
+ * import com.pulumi.oci.AiLanguage.inputs.JobOutputLocationArgs;
+ * import com.pulumi.oci.AiLanguage.inputs.JobInputConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testJob = new Job("testJob", JobArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .inputLocation(JobInputLocationArgs.builder()
+ *                 .bucket(jobInputLocationBucket)
+ *                 .locationType(jobInputLocationLocationType)
+ *                 .namespace(jobInputLocationNamespace)
+ *                 .objectNames(jobInputLocationObjectNames)
+ *                 .prefix(jobInputLocationPrefix)
+ *                 .build())
+ *             .modelMetadataDetails(JobModelMetadataDetailArgs.builder()
+ *                 .configuration(Map.of("configurationMap", jobModelMetadataDetailsConfigurationConfigurationMap))
+ *                 .endpointId(testEndpoint.id())
+ *                 .languageCode(jobModelMetadataDetailsLanguageCode)
+ *                 .modelId(testModel.id())
+ *                 .modelType(jobModelMetadataDetailsModelType)
+ *                 .build())
+ *             .outputLocation(JobOutputLocationArgs.builder()
+ *                 .bucket(jobOutputLocationBucket)
+ *                 .namespace(jobOutputLocationNamespace)
+ *                 .prefix(jobOutputLocationPrefix)
+ *                 .build())
+ *             .description(jobDescription)
+ *             .displayName(jobDisplayName)
+ *             .inputConfiguration(JobInputConfigurationArgs.builder()
+ *                 .configuration(Map.of("config", jobInputConfigurationConfigurationConfig))
+ *                 .documentTypes(jobInputConfigurationDocumentTypes)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Jobs can be imported using the `id`, e.g.

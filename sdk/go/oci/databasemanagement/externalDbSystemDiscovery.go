@@ -14,6 +14,46 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewExternalDbSystemDiscovery(ctx, "test_external_db_system_discovery", &databasemanagement.ExternalDbSystemDiscoveryArgs{
+//				AgentId:                     pulumi.Any(testAgent.Id),
+//				CompartmentId:               pulumi.Any(compartmentId),
+//				ExternalDbSystemDiscoveryId: externalDbSystemDiscoveryExternalDbSystemDiscoveryId,
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(externalDbSystemDiscoveryDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				PatchOperations: databasemanagement.ExternalDbSystemDiscoveryPatchOperationArray{
+//					&databasemanagement.ExternalDbSystemDiscoveryPatchOperationArgs{
+//						Operation: pulumi.Any(externalDbSystemDiscoveryPatchOperationsOperation),
+//						Selection: pulumi.Any(externalDbSystemDiscoveryPatchOperationsSelection),
+//						Value:     pulumi.Any(externalDbSystemDiscoveryPatchOperationsValue[0]),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ExternalDbSystemDiscoveries can be imported using the `id`, e.g.

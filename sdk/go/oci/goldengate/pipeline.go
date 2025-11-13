@@ -14,6 +14,67 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/goldengate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := goldengate.NewPipeline(ctx, "test_pipeline", &goldengate.PipelineArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(pipelineDisplayName),
+//				LicenseModel:  pulumi.Any(pipelineLicenseModel),
+//				RecipeType:    pulumi.Any(pipelineRecipeType),
+//				SourceConnectionDetails: &goldengate.PipelineSourceConnectionDetailsArgs{
+//					ConnectionId: pulumi.Any(testConnection.Id),
+//				},
+//				TargetConnectionDetails: &goldengate.PipelineTargetConnectionDetailsArgs{
+//					ConnectionId: pulumi.Any(testConnection.Id),
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				Description: pulumi.Any(pipelineDescription),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				Locks: goldengate.PipelineLockArray{
+//					&goldengate.PipelineLockArgs{
+//						Type:              pulumi.Any(pipelineLocksType),
+//						Message:           pulumi.Any(pipelineLocksMessage),
+//						RelatedResourceId: testResource.Id,
+//						TimeCreated:       pipelineLocksTimeCreated,
+//					},
+//				},
+//				ProcessOptions: &goldengate.PipelineProcessOptionsArgs{
+//					InitialDataLoad: &goldengate.PipelineProcessOptionsInitialDataLoadArgs{
+//						IsInitialLoad:         pulumi.Any(pipelineProcessOptionsInitialDataLoadIsInitialLoad),
+//						ActionOnExistingTable: pulumi.Any(pipelineProcessOptionsInitialDataLoadActionOnExistingTable),
+//					},
+//					ReplicateSchemaChange: &goldengate.PipelineProcessOptionsReplicateSchemaChangeArgs{
+//						CanReplicateSchemaChange: pulumi.Any(pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange),
+//						ActionOnDdlError:         pulumi.Any(pipelineProcessOptionsReplicateSchemaChangeActionOnDdlError),
+//						ActionOnDmlError:         pulumi.Any(pipelineProcessOptionsReplicateSchemaChangeActionOnDmlError),
+//					},
+//					ShouldRestartOnFailure:   pulumi.Any(pipelineProcessOptionsShouldRestartOnFailure),
+//					StartUsingDefaultMapping: pulumi.Any(pipelineProcessOptionsStartUsingDefaultMapping),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Pipelines can be imported using the `id`, e.g.

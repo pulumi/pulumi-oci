@@ -9,6 +9,106 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSetting = new oci.identity.DomainsSetting("test_setting", {
+ *     csrAccess: settingCsrAccess,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
+ *     settingId: "Settings",
+ *     accountAlwaysTrustScope: settingAccountAlwaysTrustScope,
+ *     allowedDomains: ["test.com"],
+ *     allowedForgotPasswordFlowReturnUrls: settingAllowedForgotPasswordFlowReturnUrls,
+ *     allowedNotificationRedirectUrls: settingAllowedNotificationRedirectUrls,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     auditEventRetentionPeriod: settingAuditEventRetentionPeriod,
+ *     authorization: settingAuthorization,
+ *     certificateValidation: {
+ *         crlCheckOnOcspFailureEnabled: settingCertificateValidationCrlCheckOnOcspFailureEnabled,
+ *         crlEnabled: settingCertificateValidationCrlEnabled,
+ *         crlLocation: settingCertificateValidationCrlLocation,
+ *         crlRefreshInterval: settingCertificateValidationCrlRefreshInterval,
+ *         ocspEnabled: settingCertificateValidationOcspEnabled,
+ *         ocspResponderUrl: settingCertificateValidationOcspResponderUrl,
+ *         ocspSettingsResponderUrlPreferred: settingCertificateValidationOcspSettingsResponderUrlPreferred,
+ *         ocspSigningCertificateAlias: settingCertificateValidationOcspSigningCertificateAlias,
+ *         ocspTimeoutDuration: settingCertificateValidationOcspTimeoutDuration,
+ *         ocspUnknownResponseStatusAllowed: settingCertificateValidationOcspUnknownResponseStatusAllowed,
+ *     },
+ *     cloudGateCorsSettings: {
+ *         cloudGateCorsAllowNullOrigin: settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin,
+ *         cloudGateCorsAllowedOrigins: ["https://test.com"],
+ *         cloudGateCorsEnabled: settingCloudGateCorsSettingsCloudGateCorsEnabled,
+ *         cloudGateCorsExposedHeaders: settingCloudGateCorsSettingsCloudGateCorsExposedHeaders,
+ *         cloudGateCorsMaxAge: settingCloudGateCorsSettingsCloudGateCorsMaxAge,
+ *     },
+ *     cloudMigrationCustomUrl: settingCloudMigrationCustomUrl,
+ *     cloudMigrationUrlEnabled: settingCloudMigrationUrlEnabled,
+ *     companyNames: [{
+ *         locale: settingCompanyNamesLocale,
+ *         value: settingCompanyNamesValue,
+ *     }],
+ *     contactEmails: ["contactEmails@test.com"],
+ *     customBranding: settingCustomBranding,
+ *     customCssLocation: settingCustomCssLocation,
+ *     customHtmlLocation: settingCustomHtmlLocation,
+ *     customTranslation: settingCustomTranslation,
+ *     defaultTrustScope: settingDefaultTrustScope,
+ *     diagnosticLevel: settingDiagnosticLevel,
+ *     diagnosticRecordForSearchIdentifiesReturnedResources: settingDiagnosticRecordForSearchIdentifiesReturnedResources,
+ *     enableTermsOfUse: settingEnableTermsOfUse,
+ *     externalId: "externalId",
+ *     iamUpstSessionExpiry: settingIamUpstSessionExpiry,
+ *     id: settingId,
+ *     images: [{
+ *         type: settingImagesType,
+ *         value: settingImagesValue,
+ *         display: settingImagesDisplay,
+ *     }],
+ *     isHostedPage: settingIsHostedPage,
+ *     issuer: settingIssuer,
+ *     locale: settingLocale,
+ *     loginTexts: [{
+ *         locale: settingLoginTextsLocale,
+ *         value: settingLoginTextsValue,
+ *     }],
+ *     maxNoOfAppCmvaToReturn: settingMaxNoOfAppCmvaToReturn,
+ *     maxNoOfAppRoleMembersToReturn: settingMaxNoOfAppRoleMembersToReturn,
+ *     ocid: settingOcid,
+ *     preferredLanguage: settingPreferredLanguage,
+ *     prevIssuer: settingPrevIssuer,
+ *     privacyPolicyUrl: settingPrivacyPolicyUrl,
+ *     purgeConfigs: [{
+ *         resourceName: "resourceName",
+ *         retentionPeriod: settingPurgeConfigsRetentionPeriod,
+ *     }],
+ *     reAuthFactors: ["password"],
+ *     reAuthWhenChangingMyAuthenticationFactors: settingReAuthWhenChangingMyAuthenticationFactors,
+ *     resourceTypeSchemaVersion: settingResourceTypeSchemaVersion,
+ *     serviceAdminCannotListOtherUsers: settingServiceAdminCannotListOtherUsers,
+ *     signingCertPublicAccess: settingSigningCertPublicAccess,
+ *     subMappingAttr: settingSubMappingAttr,
+ *     tags: [{
+ *         key: settingTagsKey,
+ *         value: settingTagsValue,
+ *     }],
+ *     tenantCustomClaims: [{
+ *         allScopes: settingTenantCustomClaimsAllScopes,
+ *         expression: settingTenantCustomClaimsExpression,
+ *         mode: settingTenantCustomClaimsMode,
+ *         name: settingTenantCustomClaimsName,
+ *         tokenType: settingTenantCustomClaimsTokenType,
+ *         value: settingTenantCustomClaimsValue,
+ *         scopes: ["scopes"],
+ *     }],
+ *     termsOfUseUrl: settingTermsOfUseUrl,
+ *     timezone: settingTimezone,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Settings can be imported using the `id`, e.g.

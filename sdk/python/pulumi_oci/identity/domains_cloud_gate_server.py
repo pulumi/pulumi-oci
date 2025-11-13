@@ -1302,6 +1302,34 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_gate_server = oci.identity.DomainsCloudGateServer("test_cloud_gate_server",
+            cloud_gate={
+                "value": cloud_gate_server_cloud_gate_value,
+            },
+            display_name=cloud_gate_server_display_name,
+            host_name=cloud_gate_server_host_name,
+            idcs_endpoint=test_domain["url"],
+            port=cloud_gate_server_port,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer"],
+            ssl=cloud_gate_server_ssl,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=cloud_gate_server_authorization,
+            description=cloud_gate_server_description,
+            id=cloud_gate_server_id,
+            nginx_settings=cloud_gate_server_nginx_settings,
+            ocid=cloud_gate_server_ocid,
+            resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
+            tags=[{
+                "key": cloud_gate_server_tags_key,
+                "value": cloud_gate_server_tags_value,
+            }])
+        ```
+
         ## Import
 
         CloudGateServers can be imported using the `id`, e.g.
@@ -1438,6 +1466,34 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_gate_server = oci.identity.DomainsCloudGateServer("test_cloud_gate_server",
+            cloud_gate={
+                "value": cloud_gate_server_cloud_gate_value,
+            },
+            display_name=cloud_gate_server_display_name,
+            host_name=cloud_gate_server_host_name,
+            idcs_endpoint=test_domain["url"],
+            port=cloud_gate_server_port,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer"],
+            ssl=cloud_gate_server_ssl,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=cloud_gate_server_authorization,
+            description=cloud_gate_server_description,
+            id=cloud_gate_server_id,
+            nginx_settings=cloud_gate_server_nginx_settings,
+            ocid=cloud_gate_server_ocid,
+            resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
+            tags=[{
+                "key": cloud_gate_server_tags_key,
+                "value": cloud_gate_server_tags_value,
+            }])
+        ```
 
         ## Import
 

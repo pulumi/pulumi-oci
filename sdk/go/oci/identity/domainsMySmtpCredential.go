@@ -14,6 +14,50 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMySmtpCredential(ctx, "test_my_smtp_credential", &identity.DomainsMySmtpCredentialArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential"),
+//				},
+//				Authorization:             pulumi.Any(mySmtpCredentialAuthorization),
+//				Description:               pulumi.Any(mySmtpCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(mySmtpCredentialExpiresOn),
+//				Id:                        mySmtpCredentialId,
+//				Ocid:                      pulumi.Any(mySmtpCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(mySmtpCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(mySmtpCredentialStatus),
+//				Tags: identity.DomainsMySmtpCredentialTagArray{
+//					&identity.DomainsMySmtpCredentialTagArgs{
+//						Key:   pulumi.Any(mySmtpCredentialTagsKey),
+//						Value: pulumi.Any(mySmtpCredentialTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMySmtpCredentialUserArgs{
+//					Ocid:  pulumi.Any(mySmtpCredentialUserOcid),
+//					Value: pulumi.Any(mySmtpCredentialUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MySmtpCredentials can be imported using the `id`, e.g.

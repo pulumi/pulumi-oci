@@ -24,6 +24,56 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsMyUserDbCredential;
+ * import com.pulumi.oci.Identity.DomainsMyUserDbCredentialArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyUserDbCredentialTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyUserDbCredentialUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMyUserDbCredential = new DomainsMyUserDbCredential("testMyUserDbCredential", DomainsMyUserDbCredentialArgs.builder()
+ *             .dbPassword(myUserDbCredentialDbPassword)
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials")
+ *             .authorization(myUserDbCredentialAuthorization)
+ *             .description(myUserDbCredentialDescription)
+ *             .expiresOn(myUserDbCredentialExpiresOn)
+ *             .id(myUserDbCredentialId)
+ *             .ocid(myUserDbCredentialOcid)
+ *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
+ *             .status(myUserDbCredentialStatus)
+ *             .tags(DomainsMyUserDbCredentialTagArgs.builder()
+ *                 .key(myUserDbCredentialTagsKey)
+ *                 .value(myUserDbCredentialTagsValue)
+ *                 .build())
+ *             .user(DomainsMyUserDbCredentialUserArgs.builder()
+ *                 .value(myUserDbCredentialUserValue)
+ *                 .ocid(myUserDbCredentialUserOcid)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * MyUserDbCredentials can be imported using the `id`, e.g.

@@ -9,6 +9,68 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificate = new oci.certificatesmanagement.Certificate("test_certificate", {
+ *     certificateConfig: {
+ *         configType: certificateCertificateConfigConfigType,
+ *         certChainPem: certificateCertificateConfigCertChainPem,
+ *         certificatePem: certificateCertificateConfigCertificatePem,
+ *         certificateProfileType: certificateCertificateConfigCertificateProfileType,
+ *         csrPem: certificateCertificateConfigCsrPem,
+ *         issuerCertificateAuthorityId: testCertificateAuthority.id,
+ *         keyAlgorithm: certificateCertificateConfigKeyAlgorithm,
+ *         privateKeyPem: certificateCertificateConfigPrivateKeyPem,
+ *         privateKeyPemPassphrase: certificateCertificateConfigPrivateKeyPemPassphrase,
+ *         signatureAlgorithm: certificateCertificateConfigSignatureAlgorithm,
+ *         subject: {
+ *             commonName: certificateCertificateConfigSubjectCommonName,
+ *             country: certificateCertificateConfigSubjectCountry,
+ *             distinguishedNameQualifier: certificateCertificateConfigSubjectDistinguishedNameQualifier,
+ *             domainComponent: certificateCertificateConfigSubjectDomainComponent,
+ *             generationQualifier: certificateCertificateConfigSubjectGenerationQualifier,
+ *             givenName: certificateCertificateConfigSubjectGivenName,
+ *             initials: certificateCertificateConfigSubjectInitials,
+ *             localityName: certificateCertificateConfigSubjectLocalityName,
+ *             organization: certificateCertificateConfigSubjectOrganization,
+ *             organizationalUnit: certificateCertificateConfigSubjectOrganizationalUnit,
+ *             pseudonym: certificateCertificateConfigSubjectPseudonym,
+ *             serialNumber: certificateCertificateConfigSubjectSerialNumber,
+ *             stateOrProvinceName: certificateCertificateConfigSubjectStateOrProvinceName,
+ *             street: certificateCertificateConfigSubjectStreet,
+ *             surname: certificateCertificateConfigSubjectSurname,
+ *             title: certificateCertificateConfigSubjectTitle,
+ *             userId: testUser.id,
+ *         },
+ *         subjectAlternativeNames: [{
+ *             type: certificateCertificateConfigSubjectAlternativeNamesType,
+ *             value: certificateCertificateConfigSubjectAlternativeNamesValue,
+ *         }],
+ *         validity: {
+ *             timeOfValidityNotAfter: certificateCertificateConfigValidityTimeOfValidityNotAfter,
+ *             timeOfValidityNotBefore: certificateCertificateConfigValidityTimeOfValidityNotBefore,
+ *         },
+ *         versionName: certificateCertificateConfigVersionName,
+ *     },
+ *     compartmentId: compartmentId,
+ *     name: certificateName,
+ *     certificateRules: [{
+ *         advanceRenewalPeriod: certificateCertificateRulesAdvanceRenewalPeriod,
+ *         renewalInterval: certificateCertificateRulesRenewalInterval,
+ *         ruleType: certificateCertificateRulesRuleType,
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: certificateDescription,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Certificates can be imported using the `id`, e.g.

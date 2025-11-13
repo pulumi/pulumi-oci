@@ -12,6 +12,70 @@ namespace Pulumi.Oci.DataFlow
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSqlEndpoint = new Oci.DataFlow.SqlEndpoint("test_sql_endpoint", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = sqlEndpointDisplayName,
+    ///         DriverShape = sqlEndpointDriverShape,
+    ///         ExecutorShape = sqlEndpointExecutorShape,
+    ///         LakeId = testLake.Id,
+    ///         MaxExecutorCount = sqlEndpointMaxExecutorCount,
+    ///         MetastoreId = testMetastore.Id,
+    ///         MinExecutorCount = sqlEndpointMinExecutorCount,
+    ///         NetworkConfiguration = new Oci.DataFlow.Inputs.SqlEndpointNetworkConfigurationArgs
+    ///         {
+    ///             NetworkType = sqlEndpointNetworkConfigurationNetworkType,
+    ///             AccessControlRules = new[]
+    ///             {
+    ///                 new Oci.DataFlow.Inputs.SqlEndpointNetworkConfigurationAccessControlRuleArgs
+    ///                 {
+    ///                     IpNotation = sqlEndpointNetworkConfigurationAccessControlRulesIpNotation,
+    ///                     Value = sqlEndpointNetworkConfigurationAccessControlRulesValue,
+    ///                     VcnIps = sqlEndpointNetworkConfigurationAccessControlRulesVcnIps,
+    ///                 },
+    ///             },
+    ///             HostNamePrefix = sqlEndpointNetworkConfigurationHostNamePrefix,
+    ///             NsgIds = sqlEndpointNetworkConfigurationNsgIds,
+    ///             PrivateEndpointIp = sqlEndpointNetworkConfigurationPrivateEndpointIp,
+    ///             PublicEndpointIp = sqlEndpointNetworkConfigurationPublicEndpointIp,
+    ///             SubnetId = testSubnet.Id,
+    ///             VcnId = testVcn.Id,
+    ///         },
+    ///         SqlEndpointVersion = sqlEndpointSqlEndpointVersion,
+    ///         WarehouseBucketUri = sqlEndpointWarehouseBucketUri,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = sqlEndpointDescription,
+    ///         DriverShapeConfig = new Oci.DataFlow.Inputs.SqlEndpointDriverShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = sqlEndpointDriverShapeConfigMemoryInGbs,
+    ///             Ocpus = sqlEndpointDriverShapeConfigOcpus,
+    ///         },
+    ///         ExecutorShapeConfig = new Oci.DataFlow.Inputs.SqlEndpointExecutorShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = sqlEndpointExecutorShapeConfigMemoryInGbs,
+    ///             Ocpus = sqlEndpointExecutorShapeConfigOcpus,
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         SparkAdvancedConfigurations = sqlEndpointSparkAdvancedConfigurations,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// SqlEndpoints can be imported using the `id`, e.g.

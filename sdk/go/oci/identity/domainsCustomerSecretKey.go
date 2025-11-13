@@ -14,6 +14,56 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsCustomerSecretKey(ctx, "test_customer_secret_key", &identity.DomainsCustomerSecretKeyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(customerSecretKeyAuthorization),
+//				Description:               pulumi.Any(customerSecretKeyDescription),
+//				DisplayName:               pulumi.Any(customerSecretKeyDisplayName),
+//				ExpiresOn:                 pulumi.Any(customerSecretKeyExpiresOn),
+//				Id:                        customerSecretKeyId,
+//				Ocid:                      pulumi.Any(customerSecretKeyOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(customerSecretKeyResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(customerSecretKeyStatus),
+//				Tags: identity.DomainsCustomerSecretKeyTagArray{
+//					&identity.DomainsCustomerSecretKeyTagArgs{
+//						Key:   pulumi.Any(customerSecretKeyTagsKey),
+//						Value: pulumi.Any(customerSecretKeyTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsCustomerSecretKeyUserArgs{
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//					Value: pulumi.Any(testUser.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CustomerSecretKeys can be imported using the `id`, e.g.

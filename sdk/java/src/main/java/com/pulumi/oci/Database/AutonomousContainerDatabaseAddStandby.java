@@ -27,6 +27,62 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseAddStandby;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseAddStandbyArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousContainerDatabaseAddStandby = new AutonomousContainerDatabaseAddStandby("testAutonomousContainerDatabaseAddStandby", AutonomousContainerDatabaseAddStandbyArgs.builder()
+ *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+ *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds)
+ *             .isAutomaticFailoverEnabled(autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled)
+ *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
+ *                     .type(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
+ *                     .dbrsPolicyId(testPolicy.id())
+ *                     .id(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
+ *                     .internetProxy(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
+ *                     .isRemote(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .isRetentionLockEnabled(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
+ *                     .remoteRegion(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
+ *                     .vpcPassword(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
+ *                     .vpcUser(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
+ *                     .build())
+ *                 .recoveryWindowInDays(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.id())
+ *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName)
+ *             .peerAutonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .peerDbUniqueName(autonomousContainerDatabaseAddStandbyPeerDbUniqueName)
+ *             .protectionMode(autonomousContainerDatabaseAddStandbyProtectionMode)
+ *             .standbyMaintenanceBufferInDays(autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * AutonomousContainerDatabaseAddStandby can be imported using the `id`, e.g.

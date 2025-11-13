@@ -12,6 +12,52 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAuthToken = new Oci.Identity.DomainsAuthToken("test_auth_token", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:authToken",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = authTokenAuthorization,
+    ///         Description = authTokenDescription,
+    ///         ExpiresOn = authTokenExpiresOn,
+    ///         Id = authTokenId,
+    ///         Ocid = authTokenOcid,
+    ///         ResourceTypeSchemaVersion = authTokenResourceTypeSchemaVersion,
+    ///         Status = authTokenStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAuthTokenTagArgs
+    ///             {
+    ///                 Key = authTokenTagsKey,
+    ///                 Value = authTokenTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsAuthTokenUserArgs
+    ///         {
+    ///             Ocid = testUser.Ocid,
+    ///             Value = testUser.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AuthTokens can be imported using the `id`, e.g.

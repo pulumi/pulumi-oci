@@ -14,6 +14,54 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsApiKey(ctx, "test_api_key", &identity.DomainsApiKeyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Key:          pulumi.Any(apiKeyKey),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:apikey"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(apiKeyAuthorization),
+//				Description:               pulumi.Any(apiKeyDescription),
+//				Id:                        apiKeyId,
+//				Ocid:                      pulumi.Any(apiKeyOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(apiKeyResourceTypeSchemaVersion),
+//				Tags: identity.DomainsApiKeyTagArray{
+//					&identity.DomainsApiKeyTagArgs{
+//						Key:   pulumi.Any(apiKeyTagsKey),
+//						Value: pulumi.Any(apiKeyTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsApiKeyUserArgs{
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//					Value: pulumi.Any(testUser.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ApiKeys can be imported using the `id`, e.g.

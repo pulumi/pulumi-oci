@@ -22,6 +22,53 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousDatabaseBackup;
+ * import com.pulumi.oci.Database.AutonomousDatabaseBackupArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .backupDestinationDetails(AutonomousDatabaseBackupBackupDestinationDetailsArgs.builder()
+ *                 .type(autonomousDatabaseBackupBackupDestinationDetailsType)
+ *                 .backupRetentionPolicyOnTerminate(autonomousDatabaseBackupBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
+ *                 .dbrsPolicyId(testPolicy.id())
+ *                 .id(autonomousDatabaseBackupBackupDestinationDetailsId)
+ *                 .internetProxy(autonomousDatabaseBackupBackupDestinationDetailsInternetProxy)
+ *                 .isRemote(autonomousDatabaseBackupBackupDestinationDetailsIsRemote)
+ *                 .isRetentionLockEnabled(autonomousDatabaseBackupBackupDestinationDetailsIsRetentionLockEnabled)
+ *                 .remoteRegion(autonomousDatabaseBackupBackupDestinationDetailsRemoteRegion)
+ *                 .vpcPassword(autonomousDatabaseBackupBackupDestinationDetailsVpcPassword)
+ *                 .vpcUser(autonomousDatabaseBackupBackupDestinationDetailsVpcUser)
+ *                 .build())
+ *             .displayName(autonomousDatabaseBackupDisplayName)
+ *             .isLongTermBackup(autonomousDatabaseBackupIsLongTermBackup)
+ *             .retentionPeriodInDays(autonomousDatabaseBackupRetentionPeriodInDays)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * AutonomousDatabaseBackups can be imported using the `id`, e.g.

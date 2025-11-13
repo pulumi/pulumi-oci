@@ -12,6 +12,55 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSecurityQuestion = new Oci.Identity.DomainsSecurityQuestion("test_security_question", new()
+    ///     {
+    ///         Active = securityQuestionActive,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         QuestionTexts = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSecurityQuestionQuestionTextArgs
+    ///             {
+    ///                 Locale = "en",
+    ///                 Value = securityQuestionQuestionTextValue,
+    ///                 Default = true,
+    ///             },
+    ///         },
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion",
+    ///         },
+    ///         Type = "custom",
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = securityQuestionAuthorization,
+    ///         ExternalId = "externalId",
+    ///         Id = securityQuestionId,
+    ///         Ocid = securityQuestionOcid,
+    ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSecurityQuestionTagArgs
+    ///             {
+    ///                 Key = securityQuestionTagsKey,
+    ///                 Value = securityQuestionTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// SecurityQuestions can be imported using the `id`, e.g.

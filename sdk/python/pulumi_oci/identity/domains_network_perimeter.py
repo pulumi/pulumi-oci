@@ -1035,6 +1035,33 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_network_perimeter = oci.identity.DomainsNetworkPerimeter("test_network_perimeter",
+            idcs_endpoint=test_domain["url"],
+            ip_addresses=[{
+                "value": network_perimeter_ip_addresses_value,
+                "type": network_perimeter_ip_addresses_type,
+                "version": network_perimeter_ip_addresses_version,
+            }],
+            name=network_perimeter_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter"],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=network_perimeter_authorization,
+            description=network_perimeter_description,
+            external_id="externalId",
+            id=network_perimeter_id,
+            ocid=network_perimeter_ocid,
+            resource_type_schema_version=network_perimeter_resource_type_schema_version,
+            tags=[{
+                "key": network_perimeter_tags_key,
+                "value": network_perimeter_tags_value,
+            }])
+        ```
+
         ## Import
 
         NetworkPerimeters can be imported using the `id`, e.g.
@@ -1135,6 +1162,33 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_network_perimeter = oci.identity.DomainsNetworkPerimeter("test_network_perimeter",
+            idcs_endpoint=test_domain["url"],
+            ip_addresses=[{
+                "value": network_perimeter_ip_addresses_value,
+                "type": network_perimeter_ip_addresses_type,
+                "version": network_perimeter_ip_addresses_version,
+            }],
+            name=network_perimeter_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter"],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=network_perimeter_authorization,
+            description=network_perimeter_description,
+            external_id="externalId",
+            id=network_perimeter_id,
+            ocid=network_perimeter_ocid,
+            resource_type_schema_version=network_perimeter_resource_type_schema_version,
+            tags=[{
+                "key": network_perimeter_tags_key,
+                "value": network_perimeter_tags_value,
+            }])
+        ```
 
         ## Import
 

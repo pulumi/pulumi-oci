@@ -12,6 +12,99 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testGroup = new Oci.Identity.DomainsGroup("test_group", new()
+    ///     {
+    ///         DisplayName = groupDisplayName,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:core:2.0:Group",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = groupAuthorization,
+    ///         ExternalId = "externalId",
+    ///         ForceDelete = groupForceDelete,
+    ///         Id = groupId,
+    ///         Members = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsGroupMemberArgs
+    ///             {
+    ///                 Type = groupMembersType,
+    ///                 Value = groupMembersValue,
+    ///                 Ocid = groupMembersOcid,
+    ///             },
+    ///         },
+    ///         NonUniqueDisplayName = groupNonUniqueDisplayName,
+    ///         Ocid = groupOcid,
+    ///         ResourceTypeSchemaVersion = groupResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsGroupTagArgs
+    ///             {
+    ///                 Key = groupTagsKey,
+    ///                 Value = groupTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionOciTags = new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs
+    ///         {
+    ///             DefinedTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
+    ///                 {
+    ///                     Key = groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+    ///                     Namespace = groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+    ///                     Value = groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+    ///                 },
+    ///             },
+    ///             FreeformTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs
+    ///                 {
+    ///                     Key = groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+    ///                     Value = groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensiondynamicGroup = new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs
+    ///         {
+    ///             MembershipRule = groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipRule,
+    ///             MembershipType = groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipType,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensiongroupGroup = new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs
+    ///         {
+    ///             CreationMechanism = groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupCreationMechanism,
+    ///             Description = groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupDescription,
+    ///             Owners = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs
+    ///                 {
+    ///                     Type = groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersType,
+    ///                     Value = groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionposixGroup = new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs
+    ///         {
+    ///             GidNumber = groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionrequestableGroup = new Oci.Identity.Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs
+    ///         {
+    ///             Requestable = groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Groups can be imported using the `id`, e.g.

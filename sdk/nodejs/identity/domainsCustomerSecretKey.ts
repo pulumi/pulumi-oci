@@ -9,6 +9,37 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCustomerSecretKey = new oci.identity.DomainsCustomerSecretKey("test_customer_secret_key", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: customerSecretKeyAuthorization,
+ *     description: customerSecretKeyDescription,
+ *     displayName: customerSecretKeyDisplayName,
+ *     expiresOn: customerSecretKeyExpiresOn,
+ *     id: customerSecretKeyId,
+ *     ocid: customerSecretKeyOcid,
+ *     resourceTypeSchemaVersion: customerSecretKeyResourceTypeSchemaVersion,
+ *     status: customerSecretKeyStatus,
+ *     tags: [{
+ *         key: customerSecretKeyTagsKey,
+ *         value: customerSecretKeyTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
+ *         allowSelfChange: customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *     },
+ *     user: {
+ *         ocid: testUser.ocid,
+ *         value: testUser.id,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * CustomerSecretKeys can be imported using the `id`, e.g.

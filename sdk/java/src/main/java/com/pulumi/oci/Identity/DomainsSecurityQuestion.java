@@ -24,6 +24,58 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsSecurityQuestion;
+ * import com.pulumi.oci.Identity.DomainsSecurityQuestionArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSecurityQuestionQuestionTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSecurityQuestionTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSecurityQuestion = new DomainsSecurityQuestion("testSecurityQuestion", DomainsSecurityQuestionArgs.builder()
+ *             .active(securityQuestionActive)
+ *             .idcsEndpoint(testDomain.url())
+ *             .questionTexts(DomainsSecurityQuestionQuestionTextArgs.builder()
+ *                 .locale("en")
+ *                 .value(securityQuestionQuestionTextValue)
+ *                 .default_(true)
+ *                 .build())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion")
+ *             .type("custom")
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(securityQuestionAuthorization)
+ *             .externalId("externalId")
+ *             .id(securityQuestionId)
+ *             .ocid(securityQuestionOcid)
+ *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
+ *             .tags(DomainsSecurityQuestionTagArgs.builder()
+ *                 .key(securityQuestionTagsKey)
+ *                 .value(securityQuestionTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * SecurityQuestions can be imported using the `id`, e.g.

@@ -14,6 +14,404 @@ import (
 
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsApp(ctx, "test_app", &identity.DomainsAppArgs{
+//				BasedOnTemplate: &identity.DomainsAppBasedOnTemplateArgs{
+//					Value:       pulumi.Any(appBasedOnTemplateValue),
+//					WellKnownId: pulumi.String("CustomWebAppTemplateId"),
+//				},
+//				DisplayName:  pulumi.Any(appDisplayName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:App"),
+//				},
+//				AccessTokenExpiry: pulumi.Any(appAccessTokenExpiry),
+//				Active:            pulumi.Any(appActive),
+//				AliasApps: identity.DomainsAppAliasAppArray{
+//					&identity.DomainsAppAliasAppArgs{
+//						Value: pulumi.Any(appAliasAppsValue),
+//					},
+//				},
+//				AllUrlSchemesAllowed: pulumi.Any(appAllUrlSchemesAllowed),
+//				AllowAccessControl:   pulumi.Any(appAllowAccessControl),
+//				AllowOffline:         pulumi.Any(appAllowOffline),
+//				AllowedGrants:        pulumi.Any(appAllowedGrants),
+//				AllowedOperations:    pulumi.Any(appAllowedOperations),
+//				AllowedScopes: identity.DomainsAppAllowedScopeArray{
+//					&identity.DomainsAppAllowedScopeArgs{
+//						Fqs: pulumi.Any(appAllowedScopesFqs),
+//					},
+//				},
+//				AllowedTags: identity.DomainsAppAllowedTagArray{
+//					&identity.DomainsAppAllowedTagArgs{
+//						Key:   pulumi.Any(appAllowedTagsKey),
+//						Value: pulumi.Any(appAllowedTagsValue),
+//					},
+//				},
+//				AppIcon: pulumi.Any(appAppIcon),
+//				AppSignonPolicy: &identity.DomainsAppAppSignonPolicyArgs{
+//					Value: pulumi.Any(appAppSignonPolicyValue),
+//				},
+//				AppThumbnail: pulumi.Any(appAppThumbnail),
+//				AppsNetworkPerimeters: identity.DomainsAppAppsNetworkPerimeterArray{
+//					&identity.DomainsAppAppsNetworkPerimeterArgs{
+//						Value: pulumi.Any(appAppsNetworkPerimetersValue),
+//					},
+//				},
+//				AsOpcService: &identity.DomainsAppAsOpcServiceArgs{
+//					Value: pulumi.Any(appAsOpcServiceValue),
+//				},
+//				AttrRenderingMetadatas: identity.DomainsAppAttrRenderingMetadataArray{
+//					&identity.DomainsAppAttrRenderingMetadataArgs{
+//						Name:      pulumi.Any(appAttrRenderingMetadataName),
+//						Datatype:  pulumi.Any(appAttrRenderingMetadataDatatype),
+//						Helptext:  pulumi.Any(appAttrRenderingMetadataHelptext),
+//						Label:     pulumi.Any(appAttrRenderingMetadataLabel),
+//						MaxLength: pulumi.Any(appAttrRenderingMetadataMaxLength),
+//						MaxSize:   pulumi.Any(appAttrRenderingMetadataMaxSize),
+//						MinLength: pulumi.Any(appAttrRenderingMetadataMinLength),
+//						MinSize:   pulumi.Any(appAttrRenderingMetadataMinSize),
+//						Order:     pulumi.Any(appAttrRenderingMetadataOrder),
+//						ReadOnly:  pulumi.Any(appAttrRenderingMetadataReadOnly),
+//						Regexp:    pulumi.Any(appAttrRenderingMetadataRegexp),
+//						Required:  pulumi.Any(appAttrRenderingMetadataRequired),
+//						Section:   pulumi.Any(appAttrRenderingMetadataSection),
+//						Visible:   pulumi.Any(appAttrRenderingMetadataVisible),
+//						Widget:    pulumi.Any(appAttrRenderingMetadataWidget),
+//					},
+//				},
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:    pulumi.String(""),
+//				Audience:      pulumi.Any(appAudience),
+//				Authorization: pulumi.Any(appAuthorization),
+//				BypassConsent: pulumi.Any(appBypassConsent),
+//				Certificates: identity.DomainsAppCertificateArray{
+//					&identity.DomainsAppCertificateArgs{
+//						CertAlias: pulumi.Any(appCertificatesCertAlias),
+//					},
+//				},
+//				ClientIpChecking:               pulumi.Any(appClientIpChecking),
+//				ClientType:                     pulumi.Any(appClientType),
+//				ContactEmailAddress:            pulumi.Any(appContactEmailAddress),
+//				DelegatedServiceNames:          pulumi.Any(appDelegatedServiceNames),
+//				Description:                    pulumi.Any(appDescription),
+//				DisableKmsiTokenAuthentication: pulumi.Any(appDisableKmsiTokenAuthentication),
+//				ErrorPageUrl:                   pulumi.Any(appErrorPageUrl),
+//				ForceDelete:                    pulumi.Any(appForceDelete),
+//				HomePageUrl:                    pulumi.Any(appHomePageUrl),
+//				Icon:                           pulumi.Any(appIcon),
+//				Id:                             appId,
+//				IdTokenEncAlgo:                 pulumi.Any(appIdTokenEncAlgo),
+//				IdentityProviders: identity.DomainsAppIdentityProviderArray{
+//					&identity.DomainsAppIdentityProviderArgs{
+//						Value: pulumi.Any(appIdentityProvidersValue),
+//					},
+//				},
+//				IdpPolicy: &identity.DomainsAppIdpPolicyArgs{
+//					Value: pulumi.Any(appIdpPolicyValue),
+//				},
+//				IsAliasApp:             pulumi.Any(appIsAliasApp),
+//				IsEnterpriseApp:        pulumi.Any(appIsEnterpriseApp),
+//				IsFormFill:             pulumi.Any(appIsFormFill),
+//				IsKerberosRealm:        pulumi.Any(appIsKerberosRealm),
+//				IsLoginTarget:          pulumi.Any(appIsLoginTarget),
+//				IsMobileTarget:         pulumi.Any(appIsMobileTarget),
+//				IsMulticloudServiceApp: pulumi.Any(appIsMulticloudServiceApp),
+//				IsOauthClient:          pulumi.Any(appIsOauthClient),
+//				IsOauthResource:        pulumi.Any(appIsOauthResource),
+//				IsObligationCapable:    pulumi.Any(appIsObligationCapable),
+//				IsRadiusApp:            pulumi.Any(appIsRadiusApp),
+//				IsSamlServiceProvider:  pulumi.Any(appIsSamlServiceProvider),
+//				IsUnmanagedApp:         pulumi.Any(appIsUnmanagedApp),
+//				IsWebTierPolicy:        pulumi.Any(appIsWebTierPolicy),
+//				LandingPageUrl:         pulumi.Any(appLandingPageUrl),
+//				LinkingCallbackUrl:     pulumi.Any(appLinkingCallbackUrl),
+//				LoginMechanism:         pulumi.Any(appLoginMechanism),
+//				LoginPageUrl:           pulumi.Any(appLoginPageUrl),
+//				LogoutPageUrl:          pulumi.Any(appLogoutPageUrl),
+//				LogoutUri:              pulumi.Any(appLogoutUri),
+//				Name:                   pulumi.Any(appName),
+//				Ocid:                   pulumi.Any(appOcid),
+//				PostLogoutRedirectUris: pulumi.Any(appPostLogoutRedirectUris),
+//				PrivacyPolicyUrl:       pulumi.Any(appPrivacyPolicyUrl),
+//				ProductLogoUrl:         pulumi.Any(appProductLogoUrl),
+//				ProductName:            pulumi.Any(appProductName),
+//				ProtectableSecondaryAudiences: identity.DomainsAppProtectableSecondaryAudienceArray{
+//					&identity.DomainsAppProtectableSecondaryAudienceArgs{
+//						Value: pulumi.Any(appProtectableSecondaryAudiencesValue),
+//					},
+//				},
+//				RadiusPolicy: &identity.DomainsAppRadiusPolicyArgs{
+//					Value: pulumi.Any(appRadiusPolicyValue),
+//				},
+//				RedirectUris:              pulumi.Any(appRedirectUris),
+//				RefreshTokenExpiry:        pulumi.Any(appRefreshTokenExpiry),
+//				ResourceTypeSchemaVersion: pulumi.Any(appResourceTypeSchemaVersion),
+//				SamlServiceProvider: &identity.DomainsAppSamlServiceProviderArgs{
+//					Value: pulumi.Any(appSamlServiceProviderValue),
+//				},
+//				Scopes: identity.DomainsAppScopeArray{
+//					&identity.DomainsAppScopeArgs{
+//						Value:           pulumi.Any(appScopesValue),
+//						Description:     pulumi.Any(appScopesDescription),
+//						DisplayName:     pulumi.Any(appScopesDisplayName),
+//						RequiresConsent: pulumi.Any(appScopesRequiresConsent),
+//					},
+//				},
+//				SecondaryAudiences: pulumi.StringArray{
+//					pulumi.String("secondaryAudiences"),
+//				},
+//				ServiceParams: identity.DomainsAppServiceParamArray{
+//					&identity.DomainsAppServiceParamArgs{
+//						Name:  pulumi.Any(appServiceParamsName),
+//						Value: pulumi.Any(appServiceParamsValue),
+//					},
+//				},
+//				ServiceTypeUrn:     pulumi.Any(appServiceTypeUrn),
+//				ServiceTypeVersion: pulumi.Any(appServiceTypeVersion),
+//				ShowInMyApps:       pulumi.Any(appShowInMyApps),
+//				SignonPolicy: &identity.DomainsAppSignonPolicyArgs{
+//					Value: pulumi.Any(appSignonPolicyValue),
+//				},
+//				Tags: identity.DomainsAppTagArray{
+//					&identity.DomainsAppTagArgs{
+//						Key:   pulumi.Any(appTagsKey),
+//						Value: pulumi.Any(appTagsValue),
+//					},
+//				},
+//				TermsOfServiceUrl: pulumi.Any(appTermsOfServiceUrl),
+//				TermsOfUse: &identity.DomainsAppTermsOfUseArgs{
+//					Value: pulumi.Any(appTermsOfUseValue),
+//				},
+//				TrustPolicies: identity.DomainsAppTrustPolicyArray{
+//					&identity.DomainsAppTrustPolicyArgs{
+//						Value: pulumi.Any(appTrustPoliciesValue),
+//					},
+//				},
+//				TrustScope: pulumi.Any(appTrustScope),
+//				UrnietfparamsscimschemasoracleidcsextensionOciTags: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs{
+//					DefinedTags: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs{
+//							Key:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey),
+//							Namespace: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace),
+//							Value:     pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue),
+//						},
+//					},
+//					FreeformTags: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs{
+//							Key:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey),
+//							Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensiondbcsApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs{
+//					DomainApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs{
+//						Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppValue),
+//					},
+//					DomainName: pulumi.String("domainName"),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs{
+//					AllowAuthzDecisionTtl: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl),
+//					AllowAuthzPolicy: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs{
+//						Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyValue),
+//					},
+//					AppResources: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs{
+//							Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourcesValue),
+//						},
+//					},
+//					DenyAuthzDecisionTtl: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzDecisionTtl),
+//					DenyAuthzPolicy: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs{
+//						Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionformFillAppApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs{
+//					Configuration:                pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppConfiguration),
+//					FormCredMethod:               pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredMethod),
+//					FormCredentialSharingGroupId: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredentialSharingGroupId),
+//					FormFillUrlMatches: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs{
+//							FormUrl:          pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrl),
+//							FormUrlMatchType: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrlMatchType),
+//						},
+//					},
+//					FormType:               pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormType),
+//					RevealPasswordOnForm:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppRevealPasswordOnForm),
+//					UserNameFormExpression: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormExpression),
+//					UserNameFormTemplate:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormTemplate),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs{
+//					Configuration:                pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateConfiguration),
+//					FormCredMethod:               pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredMethod),
+//					FormCredentialSharingGroupId: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredentialSharingGroupId),
+//					FormFillUrlMatches: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs{
+//							FormUrl:          pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrl),
+//							FormUrlMatchType: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrlMatchType),
+//						},
+//					},
+//					FormType:               pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormType),
+//					RevealPasswordOnForm:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateRevealPasswordOnForm),
+//					SyncFromTemplate:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateSyncFromTemplate),
+//					UserNameFormExpression: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormExpression),
+//					UserNameFormTemplate:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormTemplate),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs{
+//					DefaultEncryptionSaltType:    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppDefaultEncryptionSaltType),
+//					MasterKey:                    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMasterKey),
+//					MaxRenewableAge:              pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxRenewableAge),
+//					MaxTicketLife:                pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxTicketLife),
+//					RealmName:                    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppRealmName),
+//					SupportedEncryptionSaltTypes: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppSupportedEncryptionSaltTypes),
+//					TicketFlags:                  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppTicketFlags),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionmanagedappApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs{
+//					AdminConsentGranted: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppAdminConsentGranted),
+//					BundleConfigurationProperties: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs{
+//							IcfType:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesIcfType),
+//							Name:         pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesName),
+//							Required:     pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesRequired),
+//							Confidential: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesConfidential),
+//							DisplayName:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesDisplayName),
+//							HelpMessage:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesHelpMessage),
+//							Order:        pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesOrder),
+//							Values:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesValue),
+//						},
+//					},
+//					BundlePoolConfiguration: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs{
+//						MaxIdle:                    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxIdle),
+//						MaxObjects:                 pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxObjects),
+//						MaxWait:                    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxWait),
+//						MinEvictableIdleTimeMillis: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinEvictableIdleTimeMillis),
+//						MinIdle:                    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinIdle),
+//					},
+//					Connected:                           pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnected),
+//					EnableAuthSyncNewUserNotification:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableAuthSyncNewUserNotification),
+//					EnableSync:                          pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSync),
+//					EnableSyncSummaryReportNotification: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSyncSummaryReportNotification),
+//					FlatFileBundleConfigurationProperties: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs{
+//							IcfType:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesIcfType),
+//							Name:         pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesName),
+//							Required:     pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesRequired),
+//							Confidential: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesConfidential),
+//							DisplayName:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesDisplayName),
+//							HelpMessage:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesHelpMessage),
+//							Order:        pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesOrder),
+//							Values:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesValue),
+//						},
+//					},
+//					FlatFileConnectorBundle: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs{
+//						Value:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleValue),
+//						Display:     pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleDisplay),
+//						WellKnownId: pulumi.Any(testWellKnown.Id),
+//					},
+//					IsAuthoritative: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIsAuthoritative),
+//					ThreeLeggedOauthCredential: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs{
+//						AccessToken:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessToken),
+//						AccessTokenExpiry: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessTokenExpiry),
+//						RefreshToken:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialRefreshToken),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs{
+//					MulticloudServiceType: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudServiceType),
+//					MulticloudPlatformUrl: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudPlatformUrl),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionopcServiceApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs{
+//					ServiceInstanceIdentifier: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionopcServiceAppServiceInstanceIdentifier),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionradiusAppApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs{
+//					ClientIp:                       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppClientIp),
+//					IncludeGroupInResponse:         pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppIncludeGroupInResponse),
+//					Port:                           pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPort),
+//					SecretKey:                      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppSecretKey),
+//					CaptureClientIp:                pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp),
+//					CountryCodeResponseAttributeId: pulumi.String("1"),
+//					EndUserIpAttribute:             pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppEndUserIpAttribute),
+//					GroupMembershipRadiusAttribute: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipRadiusAttribute),
+//					GroupMembershipToReturns: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs{
+//							Value: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnValue),
+//						},
+//					},
+//					GroupNameFormat:         pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupNameFormat),
+//					PasswordAndOtpTogether:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether),
+//					RadiusVendorSpecificId:  pulumi.String("radiusVendorSpecificId"),
+//					ResponseFormat:          pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormat),
+//					ResponseFormatDelimiter: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormatDelimiter),
+//					TypeOfRadiusApp:         pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppTypeOfRadiusApp),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionrequestableApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs{
+//					Requestable: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionrequestableAppRequestable),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs{
+//					AssertionConsumerUrl:  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppAssertionConsumerUrl),
+//					EncryptAssertion:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion),
+//					EncryptionAlgorithm:   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptionAlgorithm),
+//					EncryptionCertificate: pulumi.String("encryptionCertificate"),
+//					FederationProtocol:    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppFederationProtocol),
+//					GroupAssertionAttributes: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs{
+//							Name:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesName),
+//							Condition: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesCondition),
+//							Format:    pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesFormat),
+//							GroupName: pulumi.String("groupName"),
+//						},
+//					},
+//					HokAcsUrl:                     pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokAcsUrl),
+//					HokRequired:                   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired),
+//					IncludeSigningCertInSignature: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppIncludeSigningCertInSignature),
+//					KeyEncryptionAlgorithm:        pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppKeyEncryptionAlgorithm),
+//					LogoutBinding:                 pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutBinding),
+//					LogoutEnabled:                 pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled),
+//					LogoutRequestUrl:              pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutRequestUrl),
+//					LogoutResponseUrl:             pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutResponseUrl),
+//					Metadata:                      pulumi.String("metadata"),
+//					NameIdFormat:                  pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdFormat),
+//					NameIdUserstoreAttribute:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdUserstoreAttribute),
+//					PartnerProviderId:             pulumi.String("partnerProviderId"),
+//					PartnerProviderPattern:        pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPartnerProviderPattern),
+//					SignResponseOrAssertion:       pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignResponseOrAssertion),
+//					SignatureHashAlgorithm:        pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignatureHashAlgorithm),
+//					SigningCertificate:            pulumi.String("signingCertificate"),
+//					SuccinctId:                    pulumi.String("succinctId"),
+//					UserAssertionAttributes: identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArray{
+//						&identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs{
+//							Name:                   pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesName),
+//							UserStoreAttributeName: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesUserStoreAttributeName),
+//							Format:                 pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesFormat),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp: &identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs{
+//					ResourceRef:            pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResourceRef),
+//					WebTierPolicyAzControl: pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyAzControl),
+//					WebTierPolicyJson:      pulumi.Any(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyJson),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Apps can be imported using the `id`, e.g.

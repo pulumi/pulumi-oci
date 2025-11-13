@@ -7,6 +7,17 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalContainerDatabaseManagement = new oci.database.ExternalContainerDatabaseManagement("test_external_container_database_management", {
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     externalDatabaseConnectorId: testExternalDatabaseConnector.id,
+ *     licenseMode: externalNonContainerDatabaseManagementLicenseModel,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Import is not supported for this resource.

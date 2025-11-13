@@ -12,6 +12,133 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// ## Example Usage
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousContainerDatabase = new Oci.Database.AutonomousContainerDatabase("test_autonomous_container_database", new()
+    ///     {
+    ///         DisplayName = autonomousContainerDatabaseDisplayName,
+    ///         PatchModel = autonomousContainerDatabasePatchModel,
+    ///         AutonomousContainerDatabaseBackupId = testAutonomousContainerDatabaseBackup.Id,
+    ///         AutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
+    ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         BackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs
+    ///             {
+    ///                 Type = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                 BackupRetentionPolicyOnTerminate = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+    ///                 DbrsPolicyId = testPolicy.Id,
+    ///                 Id = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                 InternetProxy = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                 IsRemote = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                 IsRetentionLockEnabled = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+    ///                 RemoteRegion = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+    ///                 VpcPassword = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                 VpcUser = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+    ///             },
+    ///             RecoveryWindowInDays = autonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+    ///         },
+    ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         CompartmentId = compartmentId,
+    ///         CustomerContacts = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.AutonomousContainerDatabaseCustomerContactArgs
+    ///             {
+    ///                 Email = autonomousContainerDatabaseCustomerContactsEmail,
+    ///             },
+    ///         },
+    ///         DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
+    ///         DbName = autonomousContainerDatabaseDbName,
+    ///         DbSplitThreshold = autonomousContainerDatabaseDbSplitThreshold,
+    ///         DbUniqueName = autonomousContainerDatabaseDbUniqueName,
+    ///         DbVersion = autonomousContainerDatabaseDbVersion,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DistributionAffinity = autonomousContainerDatabaseDistributionAffinity,
+    ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAutomaticFailoverEnabled = autonomousContainerDatabaseIsAutomaticFailoverEnabled,
+    ///         IsDstFileUpdateEnabled = autonomousContainerDatabaseIsDstFileUpdateEnabled,
+    ///         KeyStoreId = testKeyStore.Id,
+    ///         KmsKeyId = testKey.Id,
+    ///         KmsKeyVersionId = testKeyVersion.Id,
+    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
+    ///         {
+    ///             CustomActionTimeoutInMins = autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins,
+    ///             DaysOfWeeks = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs
+    ///                 {
+    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName,
+    ///                 },
+    ///             },
+    ///             HoursOfDays = autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay,
+    ///             IsCustomActionTimeoutEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+    ///             IsMonthlyPatchingEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+    ///             LeadTimeInWeeks = autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks,
+    ///             Months = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs
+    ///                 {
+    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName,
+    ///                 },
+    ///             },
+    ///             PatchingMode = autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode,
+    ///             Preference = autonomousContainerDatabaseMaintenanceWindowDetailsPreference,
+    ///             SkipRus = autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu,
+    ///             WeeksOfMonths = autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth,
+    ///         },
+    ///         NetServicesArchitecture = autonomousContainerDatabaseNetServicesArchitecture,
+    ///         OkvEndPointGroupName = testGroup.Name,
+    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
+    ///                 {
+    ///                     Type = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                     BackupRetentionPolicyOnTerminate = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
+    ///                     DbrsPolicyId = testPolicy.Id,
+    ///                     Id = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                     InternetProxy = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                     IsRemote = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                     IsRetentionLockEnabled = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+    ///                     RemoteRegion = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+    ///                     VpcPassword = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                     VpcUser = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+    ///                 },
+    ///             },
+    ///             RecoveryWindowInDays = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseCompartmentId = testCompartment.Id,
+    ///         PeerAutonomousContainerDatabaseDisplayName = autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName,
+    ///         PeerAutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
+    ///         PeerAutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         PeerDbUniqueName = autonomousContainerDatabasePeerDbUniqueName,
+    ///         ProtectionMode = autonomousContainerDatabaseProtectionMode,
+    ///         ServiceLevelAgreementType = autonomousContainerDatabaseServiceLevelAgreementType,
+    ///         Source = autonomousContainerDatabaseSource,
+    ///         StandbyMaintenanceBufferInDays = autonomousContainerDatabaseStandbyMaintenanceBufferInDays,
+    ///         VaultId = testVault.Id,
+    ///         VersionPreference = autonomousContainerDatabaseVersionPreference,
+    ///         VmFailoverReservation = autonomousContainerDatabaseVmFailoverReservation,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AutonomousContainerDatabases can be imported using the `id`, e.g.

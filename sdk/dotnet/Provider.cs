@@ -63,6 +63,12 @@ namespace Pulumi.Oci
         public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
+        /// (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        /// </summary>
+        [Output("retriesConfigFile")]
+        public Output<string?> RetriesConfigFile { get; private set; } = null!;
+
+        /// <summary>
         /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("tenancyOcid")]
@@ -206,6 +212,12 @@ namespace Pulumi.Oci
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
+
+        /// <summary>
+        /// (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        /// </summary>
+        [Input("retriesConfigFile")]
+        public Input<string>? RetriesConfigFile { get; set; }
 
         /// <summary>
         /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.

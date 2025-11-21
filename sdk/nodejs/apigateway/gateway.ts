@@ -30,6 +30,14 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     ipMode: gatewayIpMode,
+ *     ipv4addressConfiguration: {
+ *         reservedIpIds: gatewayIpv4addressConfigurationReservedIpIds,
+ *     },
+ *     ipv6addressConfiguration: {
+ *         addresses: gatewayIpv6addressConfigurationAddresses,
+ *         subnetCidrs: gatewayIpv6addressConfigurationSubnetCidrs,
+ *     },
  *     locks: [{
  *         type: gatewayLocksType,
  *         message: gatewayLocksMessage,
@@ -124,6 +132,18 @@ export class Gateway extends pulumi.CustomResource {
      * An array of IP addresses associated with the gateway.
      */
     declare public /*out*/ readonly ipAddresses: pulumi.Output<outputs.ApiGateway.GatewayIpAddress[]>;
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     */
+    declare public readonly ipMode: pulumi.Output<string>;
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     */
+    declare public readonly ipv4addressConfiguration: pulumi.Output<outputs.ApiGateway.GatewayIpv4addressConfiguration>;
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     */
+    declare public readonly ipv6addressConfiguration: pulumi.Output<outputs.ApiGateway.GatewayIpv6addressConfiguration>;
     declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -188,6 +208,9 @@ export class Gateway extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["ipMode"] = state?.ipMode;
+            resourceInputs["ipv4addressConfiguration"] = state?.ipv4addressConfiguration;
+            resourceInputs["ipv6addressConfiguration"] = state?.ipv6addressConfiguration;
             resourceInputs["isLockOverride"] = state?.isLockOverride;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["locks"] = state?.locks;
@@ -216,6 +239,9 @@ export class Gateway extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["endpointType"] = args?.endpointType;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipMode"] = args?.ipMode;
+            resourceInputs["ipv4addressConfiguration"] = args?.ipv4addressConfiguration;
+            resourceInputs["ipv6addressConfiguration"] = args?.ipv6addressConfiguration;
             resourceInputs["isLockOverride"] = args?.isLockOverride;
             resourceInputs["locks"] = args?.locks;
             resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
@@ -274,6 +300,18 @@ export interface GatewayState {
      * An array of IP addresses associated with the gateway.
      */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayIpAddress>[]>;
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     */
+    ipMode?: pulumi.Input<string>;
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     */
+    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration>;
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     */
+    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration>;
     isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -349,6 +387,18 @@ export interface GatewayArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     */
+    ipMode?: pulumi.Input<string>;
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     */
+    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration>;
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     */
+    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration>;
     isLockOverride?: pulumi.Input<boolean>;
     /**
      * Locks associated with this resource.

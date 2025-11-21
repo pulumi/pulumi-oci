@@ -158,7 +158,7 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        :param pulumi.Input[_builtins.str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param pulumi.Input[_builtins.str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[_builtins.str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
         :param pulumi.Input[_builtins.str] core_site_xml: (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -169,10 +169,11 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        :param pulumi.Input[_builtins.str] host: (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+               
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[_builtins.str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[_builtins.str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -250,11 +251,6 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
@@ -264,7 +260,11 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_type", connection_type)
@@ -745,7 +745,7 @@ class ConnectionArgs:
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -877,7 +877,7 @@ class ConnectionArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
         """
         return pulumi.get(self, "endpoint")
 
@@ -889,7 +889,7 @@ class ConnectionArgs:
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -913,7 +913,8 @@ class ConnectionArgs:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+
         For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
@@ -1714,13 +1715,6 @@ class ConnectionArgs:
     @_builtins.property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "trigger_refresh")
 
     @trigger_refresh.setter
@@ -1839,7 +1833,11 @@ class ConnectionArgs:
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -1991,7 +1989,7 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        :param pulumi.Input[_builtins.str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The connection type.
         :param pulumi.Input[_builtins.str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[_builtins.str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
@@ -2004,10 +2002,11 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        :param pulumi.Input[_builtins.str] host: (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+               
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
@@ -2092,11 +2091,6 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
@@ -2106,7 +2100,11 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
@@ -2567,7 +2565,7 @@ class _ConnectionState:
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -2723,7 +2721,7 @@ class _ConnectionState:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
         """
         return pulumi.get(self, "endpoint")
 
@@ -2735,7 +2733,7 @@ class _ConnectionState:
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -2759,7 +2757,8 @@ class _ConnectionState:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+
         For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
@@ -3644,13 +3643,6 @@ class _ConnectionState:
     @_builtins.property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "trigger_refresh")
 
     @trigger_refresh.setter
@@ -3769,7 +3761,11 @@ class _ConnectionState:
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -3971,8 +3967,8 @@ class Connection(pulumi.CustomResource):
             key_id=test_key["id"],
             key_store=connection_key_store,
             key_store_password=connection_key_store_password,
-            key_store_secret_id=test_secret["id"],
             key_store_password_secret_id=test_secret["id"],
+            key_store_secret_id=test_secret["id"],
             locks=[{
                 "type": connection_locks_type,
                 "message": connection_locks_message,
@@ -4051,8 +4047,7 @@ class Connection(pulumi.CustomResource):
             username=connection_username,
             vault_id=test_vault["id"],
             wallet=connection_wallet,
-            wallet_secret_id=test_secret["id"],
-            trigger_refresh=True)
+            wallet_secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -4085,7 +4080,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        :param pulumi.Input[_builtins.str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The connection type.
         :param pulumi.Input[_builtins.str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[_builtins.str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
@@ -4098,10 +4093,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        :param pulumi.Input[_builtins.str] host: (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+               
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[_builtins.str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[_builtins.str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -4180,11 +4176,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
@@ -4194,7 +4185,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -4276,8 +4271,8 @@ class Connection(pulumi.CustomResource):
             key_id=test_key["id"],
             key_store=connection_key_store,
             key_store_password=connection_key_store_password,
-            key_store_secret_id=test_secret["id"],
             key_store_password_secret_id=test_secret["id"],
+            key_store_secret_id=test_secret["id"],
             locks=[{
                 "type": connection_locks_type,
                 "message": connection_locks_message,
@@ -4356,8 +4351,7 @@ class Connection(pulumi.CustomResource):
             username=connection_username,
             vault_id=test_vault["id"],
             wallet=connection_wallet,
-            wallet_secret_id=test_secret["id"],
-            trigger_refresh=True)
+            wallet_secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -4787,7 +4781,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        :param pulumi.Input[_builtins.str] connection_string: (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The connection type.
         :param pulumi.Input[_builtins.str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param pulumi.Input[_builtins.str] consumer_properties: (Updatable) The base64 encoded content of the consumer.properties file.
@@ -4800,10 +4794,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        :param pulumi.Input[_builtins.str] host: (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+               
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
@@ -4888,11 +4883,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] tls_certificate_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.bool] trigger_refresh: (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password: (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] trust_store_password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
@@ -4902,7 +4892,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -5178,7 +5172,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -5282,7 +5276,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
         """
         return pulumi.get(self, "endpoint")
 
@@ -5290,7 +5284,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def fingerprint(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -5306,7 +5300,8 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def host(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+
         For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
@@ -5899,13 +5894,6 @@ class Connection(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> pulumi.Output[Optional[_builtins.bool]]:
-        """
-        (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "trigger_refresh")
 
     @_builtins.property
@@ -5984,7 +5972,11 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "wallet_secret_id")
 

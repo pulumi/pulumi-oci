@@ -80,8 +80,8 @@ import * as utilities from "../utilities";
  *     keyId: testKey.id,
  *     keyStore: connectionKeyStore,
  *     keyStorePassword: connectionKeyStorePassword,
- *     keyStoreSecretId: testSecret.id,
  *     keyStorePasswordSecretId: testSecret.id,
+ *     keyStoreSecretId: testSecret.id,
  *     locks: [{
  *         type: connectionLocksType,
  *         message: connectionLocksMessage,
@@ -161,7 +161,6 @@ import * as utilities from "../utilities";
  *     vaultId: testVault.id,
  *     wallet: connectionWallet,
  *     walletSecretId: testSecret.id,
- *     triggerRefresh: true,
  * });
  * ```
  *
@@ -276,7 +275,7 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly connectionFactory: pulumi.Output<string>;
     /**
-     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     declare public readonly connectionString: pulumi.Output<string>;
     /**
@@ -328,11 +327,11 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly doesUseSecretIds: pulumi.Output<boolean>;
     /**
-     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
      */
     declare public readonly endpoint: pulumi.Output<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     declare public readonly fingerprint: pulumi.Output<string>;
     /**
@@ -340,7 +339,8 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+     *
      * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     declare public readonly host: pulumi.Output<string>;
@@ -641,13 +641,6 @@ export class Connection extends pulumi.CustomResource {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     declare public readonly tlsCertificateKeyFileSecretId: pulumi.Output<string>;
-    /**
-     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     declare public readonly triggerRefresh: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -686,7 +679,11 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly wallet: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly walletSecretId: pulumi.Output<string | undefined>;
 
@@ -1040,7 +1037,7 @@ export interface ConnectionState {
      */
     connectionFactory?: pulumi.Input<string>;
     /**
-     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     connectionString?: pulumi.Input<string>;
     /**
@@ -1092,11 +1089,11 @@ export interface ConnectionState {
      */
     doesUseSecretIds?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     fingerprint?: pulumi.Input<string>;
     /**
@@ -1104,7 +1101,8 @@ export interface ConnectionState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+     *
      * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     host?: pulumi.Input<string>;
@@ -1405,13 +1403,6 @@ export interface ConnectionState {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     tlsCertificateKeyFileSecretId?: pulumi.Input<string>;
-    /**
-     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     triggerRefresh?: pulumi.Input<boolean>;
     /**
      * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -1450,7 +1441,11 @@ export interface ConnectionState {
      */
     wallet?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     walletSecretId?: pulumi.Input<string>;
 }
@@ -1534,7 +1529,7 @@ export interface ConnectionArgs {
      */
     connectionFactory?: pulumi.Input<string>;
     /**
-     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     connectionString?: pulumi.Input<string>;
     /**
@@ -1586,11 +1581,11 @@ export interface ConnectionArgs {
      */
     doesUseSecretIds?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     fingerprint?: pulumi.Input<string>;
     /**
@@ -1598,7 +1593,8 @@ export interface ConnectionArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+     *
      * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     host?: pulumi.Input<string>;
@@ -1875,13 +1871,6 @@ export interface ConnectionArgs {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     tlsCertificateKeyFileSecretId?: pulumi.Input<string>;
-    /**
-     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     triggerRefresh?: pulumi.Input<boolean>;
     /**
      * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -1920,7 +1909,11 @@ export interface ConnectionArgs {
      */
     wallet?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     walletSecretId?: pulumi.Input<string>;
 }

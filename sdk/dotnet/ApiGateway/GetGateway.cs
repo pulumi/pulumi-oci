@@ -164,6 +164,18 @@ namespace Pulumi.Oci.ApiGateway
         /// An array of IP addresses associated with the gateway.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayIpAddressResult> IpAddresses;
+        /// <summary>
+        /// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        /// </summary>
+        public readonly string IpMode;
+        /// <summary>
+        /// IPv4 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGatewayIpv4addressConfigurationResult> Ipv4addressConfigurations;
+        /// <summary>
+        /// IPv6 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGatewayIpv6addressConfigurationResult> Ipv6addressConfigurations;
         public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -226,6 +238,12 @@ namespace Pulumi.Oci.ApiGateway
 
             ImmutableArray<Outputs.GetGatewayIpAddressResult> ipAddresses,
 
+            string ipMode,
+
+            ImmutableArray<Outputs.GetGatewayIpv4addressConfigurationResult> ipv4addressConfigurations,
+
+            ImmutableArray<Outputs.GetGatewayIpv6addressConfigurationResult> ipv6addressConfigurations,
+
             bool isLockOverride,
 
             string lifecycleDetails,
@@ -257,6 +275,9 @@ namespace Pulumi.Oci.ApiGateway
             Hostname = hostname;
             Id = id;
             IpAddresses = ipAddresses;
+            IpMode = ipMode;
+            Ipv4addressConfigurations = ipv4addressConfigurations;
+            Ipv6addressConfigurations = ipv6addressConfigurations;
             IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;

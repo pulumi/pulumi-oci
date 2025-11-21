@@ -218,6 +218,9 @@ export class Deployment extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
     declare public readonly sourceDeploymentId: pulumi.Output<string>;
+    /**
+     * Possible lifecycle states.
+     */
     declare public readonly state: pulumi.Output<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -229,6 +232,10 @@ export class Deployment extends pulumi.CustomResource {
     declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly subscriptionId: pulumi.Output<string>;
     /**
@@ -589,6 +596,9 @@ export interface DeploymentState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
     sourceDeploymentId?: pulumi.Input<string>;
+    /**
+     * Possible lifecycle states.
+     */
     state?: pulumi.Input<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -600,6 +610,10 @@ export interface DeploymentState {
     subnetId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionId?: pulumi.Input<string>;
     /**
@@ -757,6 +771,9 @@ export interface DeploymentArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
     sourceDeploymentId?: pulumi.Input<string>;
+    /**
+     * Possible lifecycle states.
+     */
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
@@ -764,6 +781,10 @@ export interface DeploymentArgs {
     subnetId: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionId?: pulumi.Input<string>;
 }

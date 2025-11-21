@@ -117,8 +117,8 @@ import javax.annotation.Nullable;
  *             .keyId(testKey.id())
  *             .keyStore(connectionKeyStore)
  *             .keyStorePassword(connectionKeyStorePassword)
- *             .keyStoreSecretId(testSecret.id())
  *             .keyStorePasswordSecretId(testSecret.id())
+ *             .keyStoreSecretId(testSecret.id())
  *             .locks(ConnectionLockArgs.builder()
  *                 .type(connectionLocksType)
  *                 .message(connectionLocksMessage)
@@ -198,7 +198,6 @@ import javax.annotation.Nullable;
  *             .vaultId(testVault.id())
  *             .wallet(connectionWallet)
  *             .walletSecretId(testSecret.id())
- *             .triggerRefresh(true)
  *             .build());
  * 
  *     }
@@ -474,14 +473,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.connectionFactory;
     }
     /**
-     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * @return (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     public Output<String> connectionString() {
@@ -656,28 +655,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.doesUseSecretIds;
     }
     /**
-     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
-     * @return (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * @return (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
      * 
      */
     public Output<String> endpoint() {
         return this.endpoint;
     }
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
-     * @return (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * @return (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     public Output<String> fingerprint() {
@@ -698,7 +697,8 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * 
      * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
@@ -706,7 +706,8 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output<String> host;
 
     /**
-     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * @return (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * 
      * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
@@ -1737,23 +1738,9 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<String> tlsCertificateKeyFileSecretId() {
         return this.tlsCertificateKeyFileSecretId;
     }
-    /**
-     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Export(name="triggerRefresh", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> triggerRefresh;
 
-    /**
-     * @return (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Output<Optional<Boolean>> triggerRefresh() {
         return Codegen.optional(this.triggerRefresh);
     }
@@ -1886,12 +1873,18 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="walletSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> walletSecretId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<String>> walletSecretId() {

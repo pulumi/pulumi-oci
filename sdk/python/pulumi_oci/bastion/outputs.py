@@ -206,6 +206,7 @@ class GetBastionsBastionResult(dict):
                  name: _builtins.str,
                  phone_book_entry: _builtins.str,
                  private_endpoint_ip_address: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  static_jump_host_ip_addresses: Sequence[_builtins.str],
                  system_tags: Mapping[str, _builtins.str],
@@ -227,6 +228,7 @@ class GetBastionsBastionResult(dict):
         :param _builtins.str name: A filter to return only resources that match the entire name given.
         :param _builtins.str phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param _builtins.str private_endpoint_ip_address: The private IP address of the created private endpoint.
+        :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param _builtins.str state: The current state of the bastion.
         :param Sequence[_builtins.str] static_jump_host_ip_addresses: A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -248,6 +250,7 @@ class GetBastionsBastionResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "phone_book_entry", phone_book_entry)
         pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -359,6 +362,14 @@ class GetBastionsBastionResult(dict):
         The private IP address of the created private endpoint.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

@@ -652,6 +652,8 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks []GetCatalogPrivateEndpointsCatalogPrivateEndpointLock `pulumi:"locks"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// Subnet Identifier
@@ -694,6 +696,8 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput `pulumi:"locks"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// Subnet Identifier
@@ -802,6 +806,13 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) Locks() GetCatal
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) []GetCatalogPrivateEndpointsCatalogPrivateEndpointLock {
 		return v.Locks
 	}).(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.

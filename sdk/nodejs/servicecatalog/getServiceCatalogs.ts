@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: serviceCatalogDisplayName,
  *     serviceCatalogId: testServiceCatalog.id,
+ *     status: serviceCatalogStatus,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getServiceCatalogs(args: GetServiceCatalogsArgs, opts?: pulumi.I
         "displayName": args.displayName,
         "filters": args.filters,
         "serviceCatalogId": args.serviceCatalogId,
+        "status": args.status,
     }, opts);
 }
 
@@ -51,6 +53,10 @@ export interface GetServiceCatalogsArgs {
      * The unique identifier for the service catalog.
      */
     serviceCatalogId?: string;
+    /**
+     * Status of the service catalog, use as a filter to filter out all active catalogs.
+     */
+    status?: string;
 }
 
 /**
@@ -75,6 +81,10 @@ export interface GetServiceCatalogsResult {
      */
     readonly serviceCatalogCollections: outputs.ServiceCatalog.GetServiceCatalogsServiceCatalogCollection[];
     readonly serviceCatalogId?: string;
+    /**
+     * The status of a service catalog.
+     */
+    readonly status?: string;
 }
 /**
  * This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
@@ -91,6 +101,7 @@ export interface GetServiceCatalogsResult {
  *     compartmentId: compartmentId,
  *     displayName: serviceCatalogDisplayName,
  *     serviceCatalogId: testServiceCatalog.id,
+ *     status: serviceCatalogStatus,
  * });
  * ```
  */
@@ -101,6 +112,7 @@ export function getServiceCatalogsOutput(args: GetServiceCatalogsOutputArgs, opt
         "displayName": args.displayName,
         "filters": args.filters,
         "serviceCatalogId": args.serviceCatalogId,
+        "status": args.status,
     }, opts);
 }
 
@@ -121,4 +133,8 @@ export interface GetServiceCatalogsOutputArgs {
      * The unique identifier for the service catalog.
      */
     serviceCatalogId?: pulumi.Input<string>;
+    /**
+     * Status of the service catalog, use as a filter to filter out all active catalogs.
+     */
+    status?: pulumi.Input<string>;
 }

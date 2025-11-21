@@ -31,6 +31,7 @@ namespace Pulumi.Oci.ServiceCatalog
         ///         CompartmentId = compartmentId,
         ///         DisplayName = serviceCatalogDisplayName,
         ///         ServiceCatalogId = testServiceCatalog.Id,
+        ///         Status = serviceCatalogStatus,
         ///     });
         /// 
         /// });
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.ServiceCatalog
         ///         CompartmentId = compartmentId,
         ///         DisplayName = serviceCatalogDisplayName,
         ///         ServiceCatalogId = testServiceCatalog.Id,
+        ///         Status = serviceCatalogStatus,
         ///     });
         /// 
         /// });
@@ -87,6 +89,7 @@ namespace Pulumi.Oci.ServiceCatalog
         ///         CompartmentId = compartmentId,
         ///         DisplayName = serviceCatalogDisplayName,
         ///         ServiceCatalogId = testServiceCatalog.Id,
+        ///         Status = serviceCatalogStatus,
         ///     });
         /// 
         /// });
@@ -125,6 +128,12 @@ namespace Pulumi.Oci.ServiceCatalog
         [Input("serviceCatalogId")]
         public string? ServiceCatalogId { get; set; }
 
+        /// <summary>
+        /// Status of the service catalog, use as a filter to filter out all active catalogs.
+        /// </summary>
+        [Input("status")]
+        public string? Status { get; set; }
+
         public GetServiceCatalogsArgs()
         {
         }
@@ -159,6 +168,12 @@ namespace Pulumi.Oci.ServiceCatalog
         [Input("serviceCatalogId")]
         public Input<string>? ServiceCatalogId { get; set; }
 
+        /// <summary>
+        /// Status of the service catalog, use as a filter to filter out all active catalogs.
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
+
         public GetServiceCatalogsInvokeArgs()
         {
         }
@@ -187,6 +202,10 @@ namespace Pulumi.Oci.ServiceCatalog
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceCatalogsServiceCatalogCollectionResult> ServiceCatalogCollections;
         public readonly string? ServiceCatalogId;
+        /// <summary>
+        /// The status of a service catalog.
+        /// </summary>
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetServiceCatalogsResult(
@@ -200,7 +219,9 @@ namespace Pulumi.Oci.ServiceCatalog
 
             ImmutableArray<Outputs.GetServiceCatalogsServiceCatalogCollectionResult> serviceCatalogCollections,
 
-            string? serviceCatalogId)
+            string? serviceCatalogId,
+
+            string? status)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -208,6 +229,7 @@ namespace Pulumi.Oci.ServiceCatalog
             Id = id;
             ServiceCatalogCollections = serviceCatalogCollections;
             ServiceCatalogId = serviceCatalogId;
+            Status = status;
         }
     }
 }

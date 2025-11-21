@@ -82,11 +82,11 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
      */
     declare public readonly digitalTwinAdapterId: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      */
     declare public readonly digitalTwinModelId: pulumi.Output<string>;
     /**
-     * The URI of the digital twin model specification.
+     * (Updatable) The URI of the digital twin model specification.
      */
     declare public readonly digitalTwinModelSpecUri: pulumi.Output<string>;
     /**
@@ -199,11 +199,11 @@ export interface IotDigitalTwinInstanceState {
      */
     digitalTwinAdapterId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      */
     digitalTwinModelId?: pulumi.Input<string>;
     /**
-     * The URI of the digital twin model specification.
+     * (Updatable) The URI of the digital twin model specification.
      */
     digitalTwinModelSpecUri?: pulumi.Input<string>;
     /**
@@ -265,11 +265,11 @@ export interface IotDigitalTwinInstanceArgs {
      */
     digitalTwinAdapterId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      */
     digitalTwinModelId?: pulumi.Input<string>;
     /**
-     * The URI of the digital twin model specification.
+     * (Updatable) The URI of the digital twin model specification.
      */
     digitalTwinModelSpecUri?: pulumi.Input<string>;
     /**

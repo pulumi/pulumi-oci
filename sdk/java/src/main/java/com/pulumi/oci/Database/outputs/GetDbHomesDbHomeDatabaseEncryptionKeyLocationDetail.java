@@ -10,13 +10,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
+    private String awsEncryptionKeyId;
     private String azureEncryptionKeyId;
+    private String googleCloudProviderEncryptionKeyId;
     private String hsmPassword;
     private String providerType;
 
     private GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail() {}
+    public String awsEncryptionKeyId() {
+        return this.awsEncryptionKeyId;
+    }
     public String azureEncryptionKeyId() {
         return this.azureEncryptionKeyId;
+    }
+    public String googleCloudProviderEncryptionKeyId() {
+        return this.googleCloudProviderEncryptionKeyId;
     }
     public String hsmPassword() {
         return this.hsmPassword;
@@ -34,23 +42,43 @@ public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String awsEncryptionKeyId;
         private String azureEncryptionKeyId;
+        private String googleCloudProviderEncryptionKeyId;
         private String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.awsEncryptionKeyId = defaults.awsEncryptionKeyId;
     	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
+    	      this.googleCloudProviderEncryptionKeyId = defaults.googleCloudProviderEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
+        @CustomType.Setter
+        public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
+            if (awsEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail", "awsEncryptionKeyId");
+            }
+            this.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
             if (azureEncryptionKeyId == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail", "azureEncryptionKeyId");
             }
             this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder googleCloudProviderEncryptionKeyId(String googleCloudProviderEncryptionKeyId) {
+            if (googleCloudProviderEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail", "googleCloudProviderEncryptionKeyId");
+            }
+            this.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             return this;
         }
         @CustomType.Setter
@@ -71,7 +99,9 @@ public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
         }
         public GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail build() {
             final var _resultValue = new GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail();
+            _resultValue.awsEncryptionKeyId = awsEncryptionKeyId;
             _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
+            _resultValue.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

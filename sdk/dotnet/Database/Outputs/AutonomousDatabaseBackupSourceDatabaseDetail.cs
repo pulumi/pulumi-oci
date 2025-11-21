@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? AutonomousContainerDatabaseName;
         /// <summary>
-        /// Customer Contacts for the Autonomous database.
+        /// Customer Contacts for the Autonomous Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact> AutonomousDatabaseCustomerContacts;
         /// <summary>

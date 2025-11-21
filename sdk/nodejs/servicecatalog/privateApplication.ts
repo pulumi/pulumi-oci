@@ -118,6 +118,10 @@ export class PrivateApplication extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -150,6 +154,7 @@ export class PrivateApplication extends pulumi.CustomResource {
             resourceInputs["packageType"] = state?.packageType;
             resourceInputs["shortDescription"] = state?.shortDescription;
             resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
@@ -177,6 +182,7 @@ export class PrivateApplication extends pulumi.CustomResource {
             resourceInputs["logos"] = undefined /*out*/;
             resourceInputs["packageType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -237,6 +243,10 @@ export interface PrivateApplicationState {
      * The lifecycle state of the private application.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */

@@ -18,6 +18,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? Message;
         /// <summary>
+        /// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        /// </summary>
+        public readonly string? RelatedResourceId;
+        /// <summary>
+        /// When the lock was created.
+        /// </summary>
+        public readonly string? TimeCreated;
+        /// <summary>
         /// Type of the lock.
         /// </summary>
         public readonly string Type;
@@ -26,9 +34,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         private PipelineLock(
             string? message,
 
+            string? relatedResourceId,
+
+            string? timeCreated,
+
             string type)
         {
             Message = message;
+            RelatedResourceId = relatedResourceId;
+            TimeCreated = timeCreated;
             Type = type;
         }
     }

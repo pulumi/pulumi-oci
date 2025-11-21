@@ -11,28 +11,52 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupsBackupEncryptionKeyLocationDetail {
     /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    private String awsEncryptionKeyId;
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
     private String azureEncryptionKeyId;
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    private String googleCloudProviderEncryptionKeyId;
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
     private String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     private String providerType;
 
     private GetBackupsBackupEncryptionKeyLocationDetail() {}
     /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    public String awsEncryptionKeyId() {
+        return this.awsEncryptionKeyId;
+    }
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
     public String azureEncryptionKeyId() {
         return this.azureEncryptionKeyId;
+    }
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    public String googleCloudProviderEncryptionKeyId() {
+        return this.googleCloudProviderEncryptionKeyId;
     }
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
@@ -42,7 +66,7 @@ public final class GetBackupsBackupEncryptionKeyLocationDetail {
         return this.hsmPassword;
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     public String providerType() {
@@ -58,23 +82,43 @@ public final class GetBackupsBackupEncryptionKeyLocationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String awsEncryptionKeyId;
         private String azureEncryptionKeyId;
+        private String googleCloudProviderEncryptionKeyId;
         private String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(GetBackupsBackupEncryptionKeyLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.awsEncryptionKeyId = defaults.awsEncryptionKeyId;
     	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
+    	      this.googleCloudProviderEncryptionKeyId = defaults.googleCloudProviderEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
+        @CustomType.Setter
+        public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
+            if (awsEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupEncryptionKeyLocationDetail", "awsEncryptionKeyId");
+            }
+            this.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
             if (azureEncryptionKeyId == null) {
               throw new MissingRequiredPropertyException("GetBackupsBackupEncryptionKeyLocationDetail", "azureEncryptionKeyId");
             }
             this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder googleCloudProviderEncryptionKeyId(String googleCloudProviderEncryptionKeyId) {
+            if (googleCloudProviderEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupEncryptionKeyLocationDetail", "googleCloudProviderEncryptionKeyId");
+            }
+            this.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             return this;
         }
         @CustomType.Setter
@@ -95,7 +139,9 @@ public final class GetBackupsBackupEncryptionKeyLocationDetail {
         }
         public GetBackupsBackupEncryptionKeyLocationDetail build() {
             final var _resultValue = new GetBackupsBackupEncryptionKeyLocationDetail();
+            _resultValue.awsEncryptionKeyId = awsEncryptionKeyId;
             _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
+            _resultValue.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

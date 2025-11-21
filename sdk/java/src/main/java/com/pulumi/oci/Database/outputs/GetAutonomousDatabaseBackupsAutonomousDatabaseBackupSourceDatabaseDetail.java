@@ -34,7 +34,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDat
      */
     private String autonomousContainerDatabaseName;
     /**
-     * @return Customer Contacts for the Autonomous database.
+     * @return Customer Contacts for the Autonomous Database.
      * 
      */
     private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact> autonomousDatabaseCustomerContacts;
@@ -88,7 +88,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDat
         return this.autonomousContainerDatabaseName;
     }
     /**
-     * @return Customer Contacts for the Autonomous database.
+     * @return Customer Contacts for the Autonomous Database.
      * 
      */
     public List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact> autonomousDatabaseCustomerContacts() {

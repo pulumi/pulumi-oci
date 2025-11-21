@@ -3438,6 +3438,24 @@ export namespace ApiGateway {
         ipAddress?: pulumi.Input<string>;
     }
 
+    export interface GatewayIpv4addressConfiguration {
+        /**
+         * List of Reserved IP OCIDs created in VCN service.
+         */
+        reservedIpIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GatewayIpv6addressConfiguration {
+        /**
+         * List of IPv6 addresses that will be assigned to the gateway during creation.
+         */
+        addresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+         */
+        subnetCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GatewayLock {
         /**
          * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -13465,6 +13483,21 @@ export namespace Core {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
          */
         compartmentId?: pulumi.Input<string>;
+    }
+
+    export interface ComputeGpuMemoryFabricMemoryFabricPreferences {
+        /**
+         * (Updatable) The desired firmware bundle id on the GPU memory fabric.
+         */
+        customerDesiredFirmwareBundleId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The recycle level of GPU memory fabric. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        fabricRecycleLevel?: pulumi.Input<string>;
     }
 
     export interface ComputeHostConfigurationData {
@@ -28916,7 +28949,7 @@ export namespace Database {
          */
         autonomousContainerDatabaseName?: pulumi.Input<string>;
         /**
-         * Customer Contacts for the Autonomous database.
+         * Customer Contacts for the Autonomous Database.
          */
         autonomousDatabaseCustomerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact>[]>;
         /**
@@ -29767,15 +29800,23 @@ export namespace Database {
 
     export interface BackupEncryptionKeyLocationDetail {
         /**
-         * The key OCID of a registered Azure key.
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId?: pulumi.Input<string>;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
         hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
          */
         providerType?: pulumi.Input<string>;
     }
@@ -30295,6 +30336,10 @@ export namespace Database {
          */
         applyRate?: pulumi.Input<string>;
         /**
+         * The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+         */
+        dataLossExposure?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
          */
         databaseId?: pulumi.Input<string>;
@@ -30303,6 +30348,14 @@ export namespace Database {
          */
         dbSystemId?: pulumi.Input<string>;
         /**
+         * The failover readiness status of the Data Guard member.
+         */
+        failoverReadiness?: pulumi.Input<string>;
+        /**
+         * The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+         */
+        failoverReadinessMessage?: pulumi.Input<string>;
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean>;
@@ -30310,6 +30363,18 @@ export namespace Database {
          * The role of the reporting database in this Data Guard association.
          */
         role?: pulumi.Input<string>;
+        /**
+         * The switchover readiness status of the Data Guard member.
+         */
+        switchoverReadiness?: pulumi.Input<string>;
+        /**
+         * The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+         */
+        switchoverReadinessMessage?: pulumi.Input<string>;
+        /**
+         * The date and time when the last successful Data Guard refresh occurred.
+         */
+        timeUpdated?: pulumi.Input<string>;
         /**
          * The rate at which redo logs are transported between the associated databases.  Example: `1 second`
          */
@@ -30525,15 +30590,23 @@ export namespace Database {
 
     export interface DatabaseDatabaseEncryptionKeyLocationDetails {
         /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId?: pulumi.Input<string>;
+        /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId?: pulumi.Input<string>;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
         hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
          */
         providerType: pulumi.Input<string>;
     }
@@ -30553,20 +30626,20 @@ export namespace Database {
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
-        hsmPassword: pulumi.Input<string>;
+        hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
          */
         providerType: pulumi.Input<string>;
     }
 
     export interface DatabaseDatabaseStorageSizeDetails {
         /**
-         * (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+         * The DATA storage size, in gigabytes, that is applicable for the database.
          */
         dataStorageSizeInGb: pulumi.Input<number>;
         /**
-         * (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+         * The RECO storage size, in gigabytes, that is applicable for the database.
          */
         recoStorageSizeInGbs: pulumi.Input<number>;
         /**
@@ -30740,7 +30813,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -30835,6 +30908,10 @@ export namespace Database {
          */
         applyRate?: pulumi.Input<string>;
         /**
+         * The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+         */
+        dataLossExposure?: pulumi.Input<string>;
+        /**
          * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         databaseId?: pulumi.Input<string>;
@@ -30843,6 +30920,14 @@ export namespace Database {
          */
         dbSystemId?: pulumi.Input<string>;
         /**
+         * The failover readiness status of the Data Guard member.
+         */
+        failoverReadiness?: pulumi.Input<string>;
+        /**
+         * The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+         */
+        failoverReadinessMessage?: pulumi.Input<string>;
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean>;
@@ -30850,6 +30935,18 @@ export namespace Database {
          * The role of the reporting database in this Data Guard association.
          */
         role?: pulumi.Input<string>;
+        /**
+         * The switchover readiness status of the Data Guard member.
+         */
+        switchoverReadiness?: pulumi.Input<string>;
+        /**
+         * The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+         */
+        switchoverReadinessMessage?: pulumi.Input<string>;
+        /**
+         * The date and time when the last successful Data Guard refresh occurred.
+         */
+        timeUpdated?: pulumi.Input<string>;
         /**
          * The rate at which redo logs are transported between the associated databases.  Example: `1 second`
          */
@@ -31168,10 +31265,12 @@ export namespace Database {
     }
 
     export interface DbHomeDatabaseEncryptionKeyLocationDetails {
+        awsEncryptionKeyId?: pulumi.Input<string>;
         /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId?: pulumi.Input<string>;
+        googleCloudProviderEncryptionKeyId?: pulumi.Input<string>;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
@@ -48432,7 +48531,7 @@ export namespace GoldenGate {
 
     export interface DeploymentOggData {
         /**
-         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+         * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
          */
         adminPassword?: pulumi.Input<string>;
         /**
@@ -48755,11 +48854,26 @@ export namespace GoldenGate {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface PipelineIngressIp {
+        /**
+         * A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+         */
+        ingressIp?: pulumi.Input<string>;
+    }
+
     export interface PipelineLock {
         /**
          * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
          */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
         /**
          * Type of the lock.
          */
@@ -91538,6 +91652,18 @@ export namespace SecurityAttribute {
 }
 
 export namespace ServiceCatalog {
+    export interface GetAllApplicationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAllApplicationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetPrivateApplicationPackagesFilter {
         name: string;
         regex?: boolean;
@@ -91610,7 +91736,7 @@ export namespace ServiceCatalog {
          * The package version.
          */
         version: pulumi.Input<string>;
-        zipFileBase64encoded?: pulumi.Input<string>;
+        zipFileBase64encoded: pulumi.Input<string>;
     }
 }
 
@@ -96149,6 +96275,52 @@ export namespace oci {
         type?: pulumi.Input<string>;
     }
 
+    export interface DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail {
+        /**
+         * Assume role  status.
+         */
+        assumeRoleStatus?: pulumi.Input<string>;
+        /**
+         * List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+         */
+        awsNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode>[]>;
+        /**
+         * (Updatable) Amazon resource name AWSof the IAM role.
+         */
+        roleArn: pulumi.Input<string>;
+        /**
+         * (Updatable) Private endpoint of the AWS service.
+         */
+        servicePrivateEndpoint: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of service.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        serviceType: pulumi.Input<string>;
+    }
+
+    export interface DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode {
+        /**
+         * AWS host ID.
+         */
+        hostId?: pulumi.Input<string>;
+        /**
+         * AWS Host name or Identity Connector name.
+         */
+        hostName?: pulumi.Input<string>;
+        /**
+         * The current status of the AWS Identity Connector resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+         */
+        timeLastChecked?: pulumi.Input<string>;
+    }
+
     export interface DbmulticloudOracleDbAzureConnectorArcAgentNode {
         /**
          * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
@@ -96726,6 +96898,30 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDbmulticloudOracleDbAwsIdentityConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDbmulticloudOracleDbAzureBlobContainersFilter {
         name: string;
         regex?: boolean;
@@ -97003,6 +97199,66 @@ export namespace oci {
     }
 
     export interface GetMulticloudResourceAnchorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPsaPrivateServiceAccessesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPsaPrivateServiceAccessesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPsaPsaServicesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPsaPsaServicesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPsaPsaWorkRequestErrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPsaPsaWorkRequestErrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPsaPsaWorkRequestLogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPsaPsaWorkRequestLogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPsaPsaWorkRequestsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPsaPsaWorkRequestsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

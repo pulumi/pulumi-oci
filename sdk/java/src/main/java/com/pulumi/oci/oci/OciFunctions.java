@@ -35,6 +35,14 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArg
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
@@ -133,6 +141,20 @@ import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaServicesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestErrorsArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestErrorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestLogsArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestLogsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
@@ -192,6 +214,10 @@ import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeyResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeysResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobContainerResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobContainersResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobMountResult;
@@ -241,6 +267,13 @@ import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudsMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorsResult;
+import com.pulumi.oci.oci.outputs.GetPsaPrivateServiceAccessResult;
+import com.pulumi.oci.oci.outputs.GetPsaPrivateServiceAccessesResult;
+import com.pulumi.oci.oci.outputs.GetPsaPsaServicesResult;
+import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestErrorsResult;
+import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestLogsResult;
+import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestResult;
+import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestsResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionsResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceResult;
@@ -3691,6 +3724,881 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscoveryPlain(GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudMultiCloudResourceDiscovery:getDbmulticloudMultiCloudResourceDiscovery", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorResult> getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs args) {
+        return getDbmulticloudOracleDbAwsIdentityConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsIdentityConnectorResult> getDbmulticloudOracleDbAwsIdentityConnectorPlain(GetDbmulticloudOracleDbAwsIdentityConnectorPlainArgs args) {
+        return getDbmulticloudOracleDbAwsIdentityConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorResult> getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsIdentityConnector:getDbmulticloudOracleDbAwsIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorResult> getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsIdentityConnector:getDbmulticloudOracleDbAwsIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsIdentityConnectorResult> getDbmulticloudOracleDbAwsIdentityConnectorPlain(GetDbmulticloudOracleDbAwsIdentityConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsIdentityConnector:getDbmulticloudOracleDbAwsIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbAwsIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorsResult> getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs args) {
+        return getDbmulticloudOracleDbAwsIdentityConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbAwsIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsIdentityConnectorsResult> getDbmulticloudOracleDbAwsIdentityConnectorsPlain(GetDbmulticloudOracleDbAwsIdentityConnectorsPlainArgs args) {
+        return getDbmulticloudOracleDbAwsIdentityConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbAwsIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorsResult> getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsIdentityConnectors:getDbmulticloudOracleDbAwsIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbAwsIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsIdentityConnectorsResult> getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsIdentityConnectors:getDbmulticloudOracleDbAwsIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbAwsIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsIdentityConnectorsResult> getDbmulticloudOracleDbAwsIdentityConnectorsPlain(GetDbmulticloudOracleDbAwsIdentityConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsIdentityConnectors:getDbmulticloudOracleDbAwsIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbAwsIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyResult> getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs args) {
+        return getDbmulticloudOracleDbAwsKey(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyResult> getDbmulticloudOracleDbAwsKeyPlain(GetDbmulticloudOracleDbAwsKeyPlainArgs args) {
+        return getDbmulticloudOracleDbAwsKeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyResult> getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey", TypeShape.of(GetDbmulticloudOracleDbAwsKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyResult> getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey", TypeShape.of(GetDbmulticloudOracleDbAwsKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyResult> getDbmulticloudOracleDbAwsKeyPlain(GetDbmulticloudOracleDbAwsKeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey", TypeShape.of(GetDbmulticloudOracleDbAwsKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyDisplayName)
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .state(oracleDbAwsKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeysResult> getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs args) {
+        return getDbmulticloudOracleDbAwsKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyDisplayName)
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .state(oracleDbAwsKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeysResult> getDbmulticloudOracleDbAwsKeysPlain(GetDbmulticloudOracleDbAwsKeysPlainArgs args) {
+        return getDbmulticloudOracleDbAwsKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyDisplayName)
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .state(oracleDbAwsKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeysResult> getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys", TypeShape.of(GetDbmulticloudOracleDbAwsKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyDisplayName)
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .state(oracleDbAwsKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeysResult> getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys", TypeShape.of(GetDbmulticloudOracleDbAwsKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyDisplayName)
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .state(oracleDbAwsKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeysResult> getDbmulticloudOracleDbAwsKeysPlain(GetDbmulticloudOracleDbAwsKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys", TypeShape.of(GetDbmulticloudOracleDbAwsKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -14786,6 +15694,1123 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchorsPlain(GetMulticloudResourceAnchorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", TypeShape.of(GetMulticloudResourceAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the private service accesses in the specified compartment. You can optionally filter the list by
+     * specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer&#39;s VCN.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateServiceAccesses = OciFunctions.getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateServiceAccesDisplayName)
+     *             .id(privateServiceAccesId)
+     *             .serviceId(testPsaService.id())
+     *             .state(privateServiceAccesState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPrivateServiceAccessResult> getPsaPrivateServiceAccess(GetPsaPrivateServiceAccessArgs args) {
+        return getPsaPrivateServiceAccess(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the private service accesses in the specified compartment. You can optionally filter the list by
+     * specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer&#39;s VCN.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateServiceAccesses = OciFunctions.getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateServiceAccesDisplayName)
+     *             .id(privateServiceAccesId)
+     *             .serviceId(testPsaService.id())
+     *             .state(privateServiceAccesState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPrivateServiceAccessResult> getPsaPrivateServiceAccessPlain(GetPsaPrivateServiceAccessPlainArgs args) {
+        return getPsaPrivateServiceAccessPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the private service accesses in the specified compartment. You can optionally filter the list by
+     * specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer&#39;s VCN.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateServiceAccesses = OciFunctions.getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateServiceAccesDisplayName)
+     *             .id(privateServiceAccesId)
+     *             .serviceId(testPsaService.id())
+     *             .state(privateServiceAccesState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPrivateServiceAccessResult> getPsaPrivateServiceAccess(GetPsaPrivateServiceAccessArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPrivateServiceAccess:getPsaPrivateServiceAccess", TypeShape.of(GetPsaPrivateServiceAccessResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the private service accesses in the specified compartment. You can optionally filter the list by
+     * specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer&#39;s VCN.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateServiceAccesses = OciFunctions.getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateServiceAccesDisplayName)
+     *             .id(privateServiceAccesId)
+     *             .serviceId(testPsaService.id())
+     *             .state(privateServiceAccesState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPrivateServiceAccessResult> getPsaPrivateServiceAccess(GetPsaPrivateServiceAccessArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPrivateServiceAccess:getPsaPrivateServiceAccess", TypeShape.of(GetPsaPrivateServiceAccessResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Service Access in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the private service accesses in the specified compartment. You can optionally filter the list by
+     * specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer&#39;s VCN.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateServiceAccesses = OciFunctions.getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateServiceAccesDisplayName)
+     *             .id(privateServiceAccesId)
+     *             .serviceId(testPsaService.id())
+     *             .state(privateServiceAccesState)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPrivateServiceAccessResult> getPsaPrivateServiceAccessPlain(GetPsaPrivateServiceAccessPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPrivateServiceAccess:getPsaPrivateServiceAccess", TypeShape.of(GetPsaPrivateServiceAccessResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccesses() {
+        return getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccessesPlain() {
+        return getPsaPrivateServiceAccessesPlain(GetPsaPrivateServiceAccessesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs args) {
+        return getPsaPrivateServiceAccesses(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccessesPlain(GetPsaPrivateServiceAccessesPlainArgs args) {
+        return getPsaPrivateServiceAccessesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPrivateServiceAccesses:getPsaPrivateServiceAccesses", TypeShape.of(GetPsaPrivateServiceAccessesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccesses(GetPsaPrivateServiceAccessesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPrivateServiceAccesses:getPsaPrivateServiceAccesses", TypeShape.of(GetPsaPrivateServiceAccessesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPsaPrivateServiceAccessesResult> getPsaPrivateServiceAccessesPlain(GetPsaPrivateServiceAccessesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPrivateServiceAccesses:getPsaPrivateServiceAccesses", TypeShape.of(GetPsaPrivateServiceAccessesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaServicesResult> getPsaPsaServices() {
+        return getPsaPsaServices(GetPsaPsaServicesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaServicesResult> getPsaPsaServicesPlain() {
+        return getPsaPsaServicesPlain(GetPsaPsaServicesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaServicesResult> getPsaPsaServices(GetPsaPsaServicesArgs args) {
+        return getPsaPsaServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaServicesResult> getPsaPsaServicesPlain(GetPsaPsaServicesPlainArgs args) {
+        return getPsaPsaServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaServicesResult> getPsaPsaServices(GetPsaPsaServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaServices:getPsaPsaServices", TypeShape.of(GetPsaPsaServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaServicesResult> getPsaPsaServices(GetPsaPsaServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaServices:getPsaPsaServices", TypeShape.of(GetPsaPsaServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
+     * 
+     * List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
+     *             .displayName(psaServiceDisplayName)
+     *             .serviceId(testPsaService.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaServicesResult> getPsaPsaServicesPlain(GetPsaPsaServicesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaServices:getPsaPsaServices", TypeShape.of(GetPsaPsaServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Gets the details of a PrivateServiceAccess work request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestResult> getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs args) {
+        return getPsaPsaWorkRequest(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Gets the details of a PrivateServiceAccess work request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaWorkRequestResult> getPsaPsaWorkRequestPlain(GetPsaPsaWorkRequestPlainArgs args) {
+        return getPsaPsaWorkRequestPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Gets the details of a PrivateServiceAccess work request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestResult> getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequest:getPsaPsaWorkRequest", TypeShape.of(GetPsaPsaWorkRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Gets the details of a PrivateServiceAccess work request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestResult> getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequest:getPsaPsaWorkRequest", TypeShape.of(GetPsaPsaWorkRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Gets the details of a PrivateServiceAccess work request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaWorkRequestResult> getPsaPsaWorkRequestPlain(GetPsaPsaWorkRequestPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaWorkRequest:getPsaPsaWorkRequest", TypeShape.of(GetPsaPsaWorkRequestResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPsaWorkRequestErrorsResult> getPsaPsaWorkRequestErrors(GetPsaPsaWorkRequestErrorsArgs args) {
+        return getPsaPsaWorkRequestErrors(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPsaPsaWorkRequestErrorsResult> getPsaPsaWorkRequestErrorsPlain(GetPsaPsaWorkRequestErrorsPlainArgs args) {
+        return getPsaPsaWorkRequestErrorsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPsaPsaWorkRequestErrorsResult> getPsaPsaWorkRequestErrors(GetPsaPsaWorkRequestErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequestErrors:getPsaPsaWorkRequestErrors", TypeShape.of(GetPsaPsaWorkRequestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPsaWorkRequestErrorsResult> getPsaPsaWorkRequestErrors(GetPsaPsaWorkRequestErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequestErrors:getPsaPsaWorkRequestErrors", TypeShape.of(GetPsaPsaWorkRequestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPsaPsaWorkRequestErrorsResult> getPsaPsaWorkRequestErrorsPlain(GetPsaPsaWorkRequestErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaWorkRequestErrors:getPsaPsaWorkRequestErrors", TypeShape.of(GetPsaPsaWorkRequestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPsaWorkRequestLogsResult> getPsaPsaWorkRequestLogs(GetPsaPsaWorkRequestLogsArgs args) {
+        return getPsaPsaWorkRequestLogs(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPsaPsaWorkRequestLogsResult> getPsaPsaWorkRequestLogsPlain(GetPsaPsaWorkRequestLogsPlainArgs args) {
+        return getPsaPsaWorkRequestLogsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPsaPsaWorkRequestLogsResult> getPsaPsaWorkRequestLogs(GetPsaPsaWorkRequestLogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequestLogs:getPsaPsaWorkRequestLogs", TypeShape.of(GetPsaPsaWorkRequestLogsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPsaPsaWorkRequestLogsResult> getPsaPsaWorkRequestLogs(GetPsaPsaWorkRequestLogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequestLogs:getPsaPsaWorkRequestLogs", TypeShape.of(GetPsaPsaWorkRequestLogsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPsaPsaWorkRequestLogsResult> getPsaPsaWorkRequestLogsPlain(GetPsaPsaWorkRequestLogsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaWorkRequestLogs:getPsaPsaWorkRequestLogs", TypeShape.of(GetPsaPsaWorkRequestLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequests() {
+        return getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequestsPlain() {
+        return getPsaPsaWorkRequestsPlain(GetPsaPsaWorkRequestsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs args) {
+        return getPsaPsaWorkRequests(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequestsPlain(GetPsaPsaWorkRequestsPlainArgs args) {
+        return getPsaPsaWorkRequestsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequests:getPsaPsaWorkRequests", TypeShape.of(GetPsaPsaWorkRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPsaPsaWorkRequests:getPsaPsaWorkRequests", TypeShape.of(GetPsaPsaWorkRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
+     * 
+     * Lists the PrivateServiceAccess work requests in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .resourceId(testResource.id())
+     *             .status(psaWorkRequestStatus)
+     *             .workRequestId(testPsaWorkRequest.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequestsPlain(GetPsaPsaWorkRequestsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaWorkRequests:getPsaPsaWorkRequests", TypeShape.of(GetPsaPsaWorkRequestsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.

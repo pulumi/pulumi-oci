@@ -84,6 +84,18 @@ export interface GetGatewayResult {
      * An array of IP addresses associated with the gateway.
      */
     readonly ipAddresses: outputs.ApiGateway.GetGatewayIpAddress[];
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     */
+    readonly ipMode: string;
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     */
+    readonly ipv4addressConfigurations: outputs.ApiGateway.GetGatewayIpv4addressConfiguration[];
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     */
+    readonly ipv6addressConfigurations: outputs.ApiGateway.GetGatewayIpv6addressConfiguration[];
     readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.

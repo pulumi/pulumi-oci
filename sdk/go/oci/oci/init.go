@@ -31,6 +31,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApiaccesscontrolPrivilegedApiRequest{}
 	case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
 		r = &DbmulticloudMultiCloudResourceDiscovery{}
+	case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
+		r = &DbmulticloudOracleDbAwsIdentityConnector{}
+	case "oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey":
+		r = &DbmulticloudOracleDbAwsKey{}
 	case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
 		r = &DbmulticloudOracleDbAzureBlobContainer{}
 	case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
@@ -51,20 +55,30 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IotDigitalTwinAdapter{}
 	case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
 		r = &IotDigitalTwinInstance{}
+	case "oci:oci/iotDigitalTwinInstanceInvokeRawCommand:IotDigitalTwinInstanceInvokeRawCommand":
+		r = &IotDigitalTwinInstanceInvokeRawCommand{}
 	case "oci:oci/iotDigitalTwinModel:IotDigitalTwinModel":
 		r = &IotDigitalTwinModel{}
 	case "oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship":
 		r = &IotDigitalTwinRelationship{}
 	case "oci:oci/iotIotDomain:IotIotDomain":
 		r = &IotIotDomain{}
+	case "oci:oci/iotIotDomainChangeDataRetentionPeriod:IotIotDomainChangeDataRetentionPeriod":
+		r = &IotIotDomainChangeDataRetentionPeriod{}
+	case "oci:oci/iotIotDomainConfigureDataAccess:IotIotDomainConfigureDataAccess":
+		r = &IotIotDomainConfigureDataAccess{}
 	case "oci:oci/iotIotDomainGroup:IotIotDomainGroup":
 		r = &IotIotDomainGroup{}
+	case "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess":
+		r = &IotIotDomainGroupConfigureDataAccess{}
 	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
 		r = &ManagedKafkaKafkaCluster{}
 	case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
 		r = &ManagedKafkaKafkaClusterConfig{}
 	case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
 		r = &ManagedKafkaKafkaClusterSuperusersManagement{}
+	case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
+		r = &PsaPrivateServiceAccess{}
 	case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
 		r = &ResourceAnalyticsMonitoredRegion{}
 	case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
@@ -109,6 +123,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/dbmulticloudMultiCloudResourceDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAwsIdentityConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAwsKey",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -163,6 +187,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"oci/iotDigitalTwinInstanceInvokeRawCommand",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"oci/iotDigitalTwinModel",
 		&module{version},
 	)
@@ -178,7 +207,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"oci/iotIotDomainChangeDataRetentionPeriod",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotDomainConfigureDataAccess",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"oci/iotIotDomainGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotDomainGroupConfigureDataAccess",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -194,6 +238,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/managedKafkaKafkaClusterSuperusersManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/psaPrivateServiceAccess",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

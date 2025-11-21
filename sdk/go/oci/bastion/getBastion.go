@@ -85,6 +85,8 @@ type LookupBastionResult struct {
 	PhoneBookEntry string `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
 	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
+	// (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the bastion.
 	State string `pulumi:"state"`
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -202,6 +204,11 @@ func (o LookupBastionResultOutput) PhoneBookEntry() pulumi.StringOutput {
 // The private IP address of the created private endpoint.
 func (o LookupBastionResultOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBastionResult) string { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+func (o LookupBastionResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBastionResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the bastion.

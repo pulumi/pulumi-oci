@@ -95,6 +95,8 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgsDict',
     'ComputeCapacityTopologyCapacitySourceArgs',
     'ComputeCapacityTopologyCapacitySourceArgsDict',
+    'ComputeGpuMemoryFabricMemoryFabricPreferencesArgs',
+    'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict',
     'ComputeHostConfigurationDataArgs',
     'ComputeHostConfigurationDataArgsDict',
     'ComputeHostConfigurationDataCheckDetailArgs',
@@ -3881,6 +3883,70 @@ class ComputeCapacityTopologyCapacitySourceArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+
+if not MYPY:
+    class ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict(TypedDict):
+        customer_desired_firmware_bundle_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The desired firmware bundle id on the GPU memory fabric.
+        """
+        fabric_recycle_level: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The recycle level of GPU memory fabric. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ComputeGpuMemoryFabricMemoryFabricPreferencesArgs:
+    def __init__(__self__, *,
+                 customer_desired_firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 fabric_recycle_level: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] customer_desired_firmware_bundle_id: (Updatable) The desired firmware bundle id on the GPU memory fabric.
+        :param pulumi.Input[_builtins.str] fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if customer_desired_firmware_bundle_id is not None:
+            pulumi.set(__self__, "customer_desired_firmware_bundle_id", customer_desired_firmware_bundle_id)
+        if fabric_recycle_level is not None:
+            pulumi.set(__self__, "fabric_recycle_level", fabric_recycle_level)
+
+    @_builtins.property
+    @pulumi.getter(name="customerDesiredFirmwareBundleId")
+    def customer_desired_firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The desired firmware bundle id on the GPU memory fabric.
+        """
+        return pulumi.get(self, "customer_desired_firmware_bundle_id")
+
+    @customer_desired_firmware_bundle_id.setter
+    def customer_desired_firmware_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "customer_desired_firmware_bundle_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fabricRecycleLevel")
+    def fabric_recycle_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The recycle level of GPU memory fabric. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "fabric_recycle_level")
+
+    @fabric_recycle_level.setter
+    def fabric_recycle_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fabric_recycle_level", value)
 
 
 if not MYPY:

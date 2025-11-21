@@ -146,7 +146,7 @@ def get_dbmulticloud_oracle_db_gcp_identity_connectors(compartment_id: Optional[
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
-    :param _builtins.str resource_id: A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str resource_id: A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -192,7 +192,7 @@ def get_dbmulticloud_oracle_db_gcp_identity_connectors_output(compartment_id: Op
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
-    :param _builtins.str resource_id: A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str resource_id: A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

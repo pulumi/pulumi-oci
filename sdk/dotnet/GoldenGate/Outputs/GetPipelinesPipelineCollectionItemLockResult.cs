@@ -18,6 +18,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Message;
         /// <summary>
+        /// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        /// </summary>
+        public readonly string RelatedResourceId;
+        /// <summary>
+        /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeCreated;
+        /// <summary>
         /// Type of the lock.
         /// </summary>
         public readonly string Type;
@@ -26,9 +34,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         private GetPipelinesPipelineCollectionItemLockResult(
             string message,
 
+            string relatedResourceId,
+
+            string timeCreated,
+
             string type)
         {
             Message = message;
+            RelatedResourceId = relatedResourceId;
+            TimeCreated = timeCreated;
             Type = type;
         }
     }

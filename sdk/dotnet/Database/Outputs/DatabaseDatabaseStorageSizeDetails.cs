@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DatabaseDatabaseStorageSizeDetails
     {
         /// <summary>
-        /// (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        /// The DATA storage size, in gigabytes, that is applicable for the database.
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
-        /// (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        /// The RECO storage size, in gigabytes, that is applicable for the database.
         /// </summary>
         public readonly int RecoStorageSizeInGbs;
         /// <summary>

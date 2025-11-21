@@ -78,8 +78,14 @@ type LookupGatewayResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id string `pulumi:"id"`
 	// An array of IP addresses associated with the gateway.
-	IpAddresses    []GetGatewayIpAddress `pulumi:"ipAddresses"`
-	IsLockOverride bool                  `pulumi:"isLockOverride"`
+	IpAddresses []GetGatewayIpAddress `pulumi:"ipAddresses"`
+	// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+	IpMode string `pulumi:"ipMode"`
+	// IPv4 address configuration details that should be used when creating the gateway.
+	Ipv4addressConfigurations []GetGatewayIpv4addressConfiguration `pulumi:"ipv4addressConfigurations"`
+	// IPv6 address configuration details that should be used when creating the gateway.
+	Ipv6addressConfigurations []GetGatewayIpv6addressConfiguration `pulumi:"ipv6addressConfigurations"`
+	IsLockOverride            bool                                 `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -186,6 +192,21 @@ func (o LookupGatewayResultOutput) Id() pulumi.StringOutput {
 // An array of IP addresses associated with the gateway.
 func (o LookupGatewayResultOutput) IpAddresses() GetGatewayIpAddressArrayOutput {
 	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayIpAddress { return v.IpAddresses }).(GetGatewayIpAddressArrayOutput)
+}
+
+// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+func (o LookupGatewayResultOutput) IpMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGatewayResult) string { return v.IpMode }).(pulumi.StringOutput)
+}
+
+// IPv4 address configuration details that should be used when creating the gateway.
+func (o LookupGatewayResultOutput) Ipv4addressConfigurations() GetGatewayIpv4addressConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayIpv4addressConfiguration { return v.Ipv4addressConfigurations }).(GetGatewayIpv4addressConfigurationArrayOutput)
+}
+
+// IPv6 address configuration details that should be used when creating the gateway.
+func (o LookupGatewayResultOutput) Ipv6addressConfigurations() GetGatewayIpv6addressConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayIpv6addressConfiguration { return v.Ipv6addressConfigurations }).(GetGatewayIpv6addressConfigurationArrayOutput)
 }
 
 func (o LookupGatewayResultOutput) IsLockOverride() pulumi.BoolOutput {

@@ -66,6 +66,12 @@ namespace Pulumi.Oci.Core
         public Output<string> ComputeNetworkBlockId { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        /// </summary>
+        [Output("currentFirmwareBundleId")]
+        public Output<string> CurrentFirmwareBundleId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
@@ -84,11 +90,19 @@ namespace Pulumi.Oci.Core
         public Output<string> FabricHealth { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The reason for updating firmware bundle version of the GPU memory fabric.
+        /// </summary>
+        [Output("firmwareUpdateReason")]
+        public Output<string> FirmwareUpdateReason { get; private set; } = null!;
+
+        /// <summary>
+        /// The state of Memory Fabric Firmware update
+        /// </summary>
+        [Output("firmwareUpdateState")]
+        public Output<string> FirmwareUpdateState { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -100,16 +114,40 @@ namespace Pulumi.Oci.Core
         public Output<string> HealthyHostCount { get; private set; } = null!;
 
         /// <summary>
+        /// The host platform identifier used for bundle queries
+        /// </summary>
+        [Output("hostPlatformName")]
+        public Output<string> HostPlatformName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        /// </summary>
+        [Output("memoryFabricPreferences")]
+        public Output<Outputs.ComputeGpuMemoryFabricMemoryFabricPreferences> MemoryFabricPreferences { get; private set; } = null!;
+
+        /// <summary>
         /// The lifecycle state of the GPU memory fabric
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// The switch platform identifier used for bundle queries
+        /// </summary>
+        [Output("switchPlatformName")]
+        public Output<string> SwitchPlatformName { get; private set; } = null!;
+
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        /// </summary>
+        [Output("targetFirmwareBundleId")]
+        public Output<string> TargetFirmwareBundleId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -203,17 +241,19 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        /// </summary>
+        [Input("memoryFabricPreferences")]
+        public Input<Inputs.ComputeGpuMemoryFabricMemoryFabricPreferencesArgs>? MemoryFabricPreferences { get; set; }
 
         public ComputeGpuMemoryFabricArgs()
         {
@@ -271,6 +311,12 @@ namespace Pulumi.Oci.Core
         [Input("computeNetworkBlockId")]
         public Input<string>? ComputeNetworkBlockId { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        /// </summary>
+        [Input("currentFirmwareBundleId")]
+        public Input<string>? CurrentFirmwareBundleId { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -295,15 +341,23 @@ namespace Pulumi.Oci.Core
         [Input("fabricHealth")]
         public Input<string>? FabricHealth { get; set; }
 
+        /// <summary>
+        /// The reason for updating firmware bundle version of the GPU memory fabric.
+        /// </summary>
+        [Input("firmwareUpdateReason")]
+        public Input<string>? FirmwareUpdateReason { get; set; }
+
+        /// <summary>
+        /// The state of Memory Fabric Firmware update
+        /// </summary>
+        [Input("firmwareUpdateState")]
+        public Input<string>? FirmwareUpdateState { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -318,10 +372,28 @@ namespace Pulumi.Oci.Core
         public Input<string>? HealthyHostCount { get; set; }
 
         /// <summary>
+        /// The host platform identifier used for bundle queries
+        /// </summary>
+        [Input("hostPlatformName")]
+        public Input<string>? HostPlatformName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        /// </summary>
+        [Input("memoryFabricPreferences")]
+        public Input<Inputs.ComputeGpuMemoryFabricMemoryFabricPreferencesGetArgs>? MemoryFabricPreferences { get; set; }
+
+        /// <summary>
         /// The lifecycle state of the GPU memory fabric
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The switch platform identifier used for bundle queries
+        /// </summary>
+        [Input("switchPlatformName")]
+        public Input<string>? SwitchPlatformName { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
@@ -334,6 +406,12 @@ namespace Pulumi.Oci.Core
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        /// </summary>
+        [Input("targetFirmwareBundleId")]
+        public Input<string>? TargetFirmwareBundleId { get; set; }
 
         /// <summary>
         /// The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

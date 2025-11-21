@@ -56,6 +56,10 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly region: pulumi.Output<string | undefined>;
     /**
+     * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     */
+    declare public readonly retriesConfigFile: pulumi.Output<string | undefined>;
+    /**
      * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     declare public readonly tenancyOcid: pulumi.Output<string | undefined>;
@@ -87,6 +91,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["privateKeyPath"] = args?.privateKeyPath;
             resourceInputs["realmSpecificServiceEndpointTemplateEnabled"] = pulumi.output(args?.realmSpecificServiceEndpointTemplateEnabled).apply(JSON.stringify);
             resourceInputs["region"] = args?.region;
+            resourceInputs["retriesConfigFile"] = args?.retriesConfigFile;
             resourceInputs["retryDurationSeconds"] = pulumi.output(args?.retryDurationSeconds).apply(JSON.stringify);
             resourceInputs["tenancyOcid"] = args?.tenancyOcid;
             resourceInputs["testTimeMaintenanceRebootDue"] = args?.testTimeMaintenanceRebootDue;
@@ -156,6 +161,10 @@ export interface ProviderArgs {
      * (Required) The region for API connections (e.g. us-ashburn-1).
      */
     region?: pulumi.Input<string>;
+    /**
+     * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     */
+    retriesConfigFile?: pulumi.Input<string>;
     /**
      * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
      * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.

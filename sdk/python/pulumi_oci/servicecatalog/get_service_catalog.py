@@ -26,7 +26,7 @@ class GetServiceCatalogResult:
     """
     A collection of values returned by getServiceCatalog.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, service_catalog_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, service_catalog_id=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +48,12 @@ class GetServiceCatalogResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if status and not isinstance(status, str):
+            raise TypeError("Expected argument 'status' to be a str")
+        pulumi.set(__self__, "status", status)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -109,6 +115,22 @@ class GetServiceCatalogResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of a service catalog.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -138,6 +160,8 @@ class AwaitableGetServiceCatalogResult(GetServiceCatalogResult):
             id=self.id,
             service_catalog_id=self.service_catalog_id,
             state=self.state,
+            status=self.status,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -174,6 +198,8 @@ def get_service_catalog(service_catalog_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
         state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -207,5 +233,7 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[_builti
         id=pulumi.get(__response__, 'id'),
         service_catalog_id=pulumi.get(__response__, 'service_catalog_id'),
         state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

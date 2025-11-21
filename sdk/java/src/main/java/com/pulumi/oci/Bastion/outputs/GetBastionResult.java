@@ -80,6 +80,11 @@ public final class GetBastionResult {
      */
     private String privateEndpointIpAddress;
     /**
+     * @return (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The current state of the bastion.
      * 
      */
@@ -211,6 +216,13 @@ public final class GetBastionResult {
         return this.privateEndpointIpAddress;
     }
     /**
+     * @return (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The current state of the bastion.
      * 
      */
@@ -283,6 +295,7 @@ public final class GetBastionResult {
         private String name;
         private String phoneBookEntry;
         private String privateEndpointIpAddress;
+        private Map<String,String> securityAttributes;
         private String state;
         private List<String> staticJumpHostIpAddresses;
         private Map<String,String> systemTags;
@@ -307,6 +320,7 @@ public final class GetBastionResult {
     	      this.name = defaults.name;
     	      this.phoneBookEntry = defaults.phoneBookEntry;
     	      this.privateEndpointIpAddress = defaults.privateEndpointIpAddress;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.staticJumpHostIpAddresses = defaults.staticJumpHostIpAddresses;
     	      this.systemTags = defaults.systemTags;
@@ -432,6 +446,14 @@ public final class GetBastionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetBastionResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBastionResult", "state");
@@ -506,6 +528,7 @@ public final class GetBastionResult {
             _resultValue.name = name;
             _resultValue.phoneBookEntry = phoneBookEntry;
             _resultValue.privateEndpointIpAddress = privateEndpointIpAddress;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
             _resultValue.systemTags = systemTags;

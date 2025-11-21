@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
-        /// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string ResourceId;
         /// <summary>

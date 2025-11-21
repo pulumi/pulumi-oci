@@ -35,7 +35,7 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetail {
      */
     private @Nullable String autonomousContainerDatabaseName;
     /**
-     * @return Customer Contacts for the Autonomous database.
+     * @return Customer Contacts for the Autonomous Database.
      * 
      */
     private @Nullable List<AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact> autonomousDatabaseCustomerContacts;
@@ -89,7 +89,7 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetail {
         return Optional.ofNullable(this.autonomousContainerDatabaseName);
     }
     /**
-     * @return Customer Contacts for the Autonomous database.
+     * @return Customer Contacts for the Autonomous Database.
      * 
      */
     public List<AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact> autonomousDatabaseCustomerContacts() {

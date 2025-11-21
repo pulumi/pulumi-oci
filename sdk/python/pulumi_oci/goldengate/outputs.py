@@ -32,6 +32,7 @@ __all__ = [
     'DeploymentOggData',
     'DeploymentOggDataGroupToRolesMapping',
     'DeploymentPlacement',
+    'PipelineIngressIp',
     'PipelineLock',
     'PipelineMappingRule',
     'PipelinePipelineDiagnosticData',
@@ -110,6 +111,7 @@ __all__ = [
     'GetMessagesDeploymentMessagesCollectionResult',
     'GetMessagesDeploymentMessagesCollectionItemResult',
     'GetMessagesFilterResult',
+    'GetPipelineIngressIpResult',
     'GetPipelineLockResult',
     'GetPipelineMappingRuleResult',
     'GetPipelinePipelineDiagnosticDataResult',
@@ -130,6 +132,7 @@ __all__ = [
     'GetPipelinesFilterResult',
     'GetPipelinesPipelineCollectionResult',
     'GetPipelinesPipelineCollectionItemResult',
+    'GetPipelinesPipelineCollectionItemIngressIpResult',
     'GetPipelinesPipelineCollectionItemLockResult',
     'GetPipelinesPipelineCollectionItemMappingRuleResult',
     'GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult',
@@ -1239,7 +1242,7 @@ class DeploymentOggData(dict):
                  password_secret_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param _builtins.str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param _builtins.str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param _builtins.str admin_username: (Updatable) The GoldenGate deployment console username.
         :param _builtins.str certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param _builtins.str credential_store: (Updatable) The type of credential store for OGG.
@@ -1281,7 +1284,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         return pulumi.get(self, "admin_password")
 
@@ -1478,17 +1481,80 @@ class DeploymentPlacement(dict):
 
 
 @pulumi.output_type
+class PipelineIngressIp(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ingressIp":
+            suggest = "ingress_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineIngressIp. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineIngressIp.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineIngressIp.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ingress_ip: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[_builtins.str]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
 class PipelineLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineLock.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  type: _builtins.str,
-                 message: Optional[_builtins.str] = None):
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: Type of the lock.
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
         """
         pulumi.set(__self__, "type", type)
         if message is not None:
             pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @_builtins.property
     @pulumi.getter
@@ -1505,6 +1571,22 @@ class PipelineLock(dict):
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -8058,15 +8140,39 @@ class GetMessagesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetPipelineIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: _builtins.str):
+        """
+        :param _builtins.str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> _builtins.str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
 class GetPipelineLockResult(dict):
     def __init__(__self__, *,
                  message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
                  type: _builtins.str):
         """
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "type", type)
 
     @_builtins.property
@@ -8076,6 +8182,22 @@ class GetPipelineLockResult(dict):
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter
@@ -8676,6 +8798,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 ingress_ips: Sequence['outputs.GetPipelinesPipelineCollectionItemIngressIpResult'],
                  is_auto_scaling_enabled: _builtins.bool,
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -8687,6 +8810,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
                  recipe_type: _builtins.str,
                  source_connection_details: Sequence['outputs.GetPipelinesPipelineCollectionItemSourceConnectionDetailResult'],
                  state: _builtins.str,
+                 subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  target_connection_details: Sequence['outputs.GetPipelinesPipelineCollectionItemTargetConnectionDetailResult'],
                  time_created: _builtins.str,
@@ -8700,6 +8824,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+        :param Sequence['GetPipelinesPipelineCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param _builtins.str license_model: The Oracle license model that applies to a Deployment.
         :param _builtins.str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -8711,6 +8836,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         :param _builtins.str recipe_type: The type of the recipe
         :param Sequence['GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs'] source_connection_details: The source connection details for creating a pipeline.
         :param _builtins.str state: A filtered list of pipelines to return for a given lifecycleState.
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param Sequence['GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs'] target_connection_details: The target connection details for creating a pipeline.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -8724,6 +8850,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -8735,6 +8862,7 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         pulumi.set(__self__, "recipe_type", recipe_type)
         pulumi.set(__self__, "source_connection_details", source_connection_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_connection_details", target_connection_details)
         pulumi.set(__self__, "time_created", time_created)
@@ -8796,6 +8924,14 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemIngressIpResult']:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
@@ -8886,6 +9022,14 @@ class GetPipelinesPipelineCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -8927,15 +9071,39 @@ class GetPipelinesPipelineCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetPipelinesPipelineCollectionItemIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: _builtins.str):
+        """
+        :param _builtins.str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> _builtins.str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
 class GetPipelinesPipelineCollectionItemLockResult(dict):
     def __init__(__self__, *,
                  message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
                  type: _builtins.str):
         """
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "type", type)
 
     @_builtins.property
@@ -8945,6 +9113,22 @@ class GetPipelinesPipelineCollectionItemLockResult(dict):
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter

@@ -60,6 +60,11 @@ public final class GetCatalogPrivateEndpointResult {
      */
     private List<GetCatalogPrivateEndpointLock> locks;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The current state of the private endpoint resource.
      * 
      */
@@ -153,6 +158,13 @@ public final class GetCatalogPrivateEndpointResult {
         return this.locks;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The current state of the private endpoint resource.
      * 
      */
@@ -207,6 +219,7 @@ public final class GetCatalogPrivateEndpointResult {
         private String id;
         private String lifecycleDetails;
         private List<GetCatalogPrivateEndpointLock> locks;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -225,6 +238,7 @@ public final class GetCatalogPrivateEndpointResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -322,6 +336,14 @@ public final class GetCatalogPrivateEndpointResult {
             return locks(List.of(locks));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointResult", "state");
@@ -373,6 +395,7 @@ public final class GetCatalogPrivateEndpointResult {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

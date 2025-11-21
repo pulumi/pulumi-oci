@@ -34,6 +34,7 @@ namespace Pulumi.Oci.DataCatalog
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         SecurityAttributes = catalogPrivateEndpointSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -97,6 +98,12 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         [Output("locks")]
         public Output<ImmutableArray<Outputs.CatalogPrivateEndpointLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the private endpoint resource.
@@ -226,6 +233,18 @@ namespace Pulumi.Oci.DataCatalog
             set => _freeformTags = value;
         }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// The OCID of subnet to which the reverse connection is to be created 
         /// 
@@ -320,6 +339,18 @@ namespace Pulumi.Oci.DataCatalog
         {
             get => _locks ?? (_locks = new InputList<Inputs.CatalogPrivateEndpointLockGetArgs>());
             set => _locks = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

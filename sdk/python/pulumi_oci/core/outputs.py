@@ -56,6 +56,7 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigClusterConfig',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig',
     'ComputeCapacityTopologyCapacitySource',
+    'ComputeGpuMemoryFabricMemoryFabricPreferences',
     'ComputeHostConfigurationData',
     'ComputeHostConfigurationDataCheckDetail',
     'ComputeHostGroupConfiguration',
@@ -356,8 +357,10 @@ __all__ = [
     'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionResult',
     'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult',
     'GetComputeGpuMemoryClustersFilterResult',
+    'GetComputeGpuMemoryFabricMemoryFabricPreferenceResult',
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult',
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult',
+    'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemMemoryFabricPreferenceResult',
     'GetComputeGpuMemoryFabricsFilterResult',
     'GetComputeHostConfigurationDataResult',
     'GetComputeHostConfigurationDataCheckDetailResult',
@@ -3408,6 +3411,64 @@ class ComputeCapacityTopologyCapacitySource(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
         """
         return pulumi.get(self, "compartment_id")
+
+
+@pulumi.output_type
+class ComputeGpuMemoryFabricMemoryFabricPreferences(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customerDesiredFirmwareBundleId":
+            suggest = "customer_desired_firmware_bundle_id"
+        elif key == "fabricRecycleLevel":
+            suggest = "fabric_recycle_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeGpuMemoryFabricMemoryFabricPreferences. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeGpuMemoryFabricMemoryFabricPreferences.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeGpuMemoryFabricMemoryFabricPreferences.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 customer_desired_firmware_bundle_id: Optional[_builtins.str] = None,
+                 fabric_recycle_level: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str customer_desired_firmware_bundle_id: (Updatable) The desired firmware bundle id on the GPU memory fabric.
+        :param _builtins.str fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if customer_desired_firmware_bundle_id is not None:
+            pulumi.set(__self__, "customer_desired_firmware_bundle_id", customer_desired_firmware_bundle_id)
+        if fabric_recycle_level is not None:
+            pulumi.set(__self__, "fabric_recycle_level", fabric_recycle_level)
+
+    @_builtins.property
+    @pulumi.getter(name="customerDesiredFirmwareBundleId")
+    def customer_desired_firmware_bundle_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The desired firmware bundle id on the GPU memory fabric.
+        """
+        return pulumi.get(self, "customer_desired_firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="fabricRecycleLevel")
+    def fabric_recycle_level(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The recycle level of GPU memory fabric. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "fabric_recycle_level")
 
 
 @pulumi.output_type
@@ -24423,6 +24484,35 @@ class GetComputeGpuMemoryClustersFilterResult(dict):
 
 
 @pulumi.output_type
+class GetComputeGpuMemoryFabricMemoryFabricPreferenceResult(dict):
+    def __init__(__self__, *,
+                 customer_desired_firmware_bundle_id: _builtins.str,
+                 fabric_recycle_level: _builtins.str):
+        """
+        :param _builtins.str customer_desired_firmware_bundle_id: The desired firmware bundle id on the GPU memory fabric.
+        :param _builtins.str fabric_recycle_level: The recycle level of GPU memory fabric.
+        """
+        pulumi.set(__self__, "customer_desired_firmware_bundle_id", customer_desired_firmware_bundle_id)
+        pulumi.set(__self__, "fabric_recycle_level", fabric_recycle_level)
+
+    @_builtins.property
+    @pulumi.getter(name="customerDesiredFirmwareBundleId")
+    def customer_desired_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The desired firmware bundle id on the GPU memory fabric.
+        """
+        return pulumi.get(self, "customer_desired_firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="fabricRecycleLevel")
+    def fabric_recycle_level(self) -> _builtins.str:
+        """
+        The recycle level of GPU memory fabric.
+        """
+        return pulumi.get(self, "fabric_recycle_level")
+
+
+@pulumi.output_type
 class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult']):
@@ -24444,14 +24534,21 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
                  compute_hpc_island_id: _builtins.str,
                  compute_local_block_id: _builtins.str,
                  compute_network_block_id: _builtins.str,
+                 current_firmware_bundle_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  fabric_health: _builtins.str,
+                 firmware_update_reason: _builtins.str,
+                 firmware_update_state: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  healthy_host_count: _builtins.str,
+                 host_platform_name: _builtins.str,
                  id: _builtins.str,
+                 memory_fabric_preferences: Sequence['outputs.GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemMemoryFabricPreferenceResult'],
                  state: _builtins.str,
+                 switch_platform_name: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
+                 target_firmware_bundle_id: _builtins.str,
                  time_created: _builtins.str,
                  total_host_count: _builtins.str):
         """
@@ -24462,14 +24559,21 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         :param _builtins.str compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
         :param _builtins.str compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param _builtins.str compute_network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute network block.
+        :param _builtins.str current_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str fabric_health: The health state of the GPU memory fabric
+        :param _builtins.str firmware_update_reason: The reason for updating firmware bundle version of the GPU memory fabric.
+        :param _builtins.str firmware_update_state: The state of Memory Fabric Firmware update
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str healthy_host_count: The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+        :param _builtins.str host_platform_name: The host platform identifier used for bundle queries
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
+        :param Sequence['GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemMemoryFabricPreferenceArgs'] memory_fabric_preferences: The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         :param _builtins.str state: The lifecycle state of the GPU memory fabric
+        :param _builtins.str switch_platform_name: The switch platform identifier used for bundle queries
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
         :param _builtins.str time_created: The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str total_host_count: The total number of bare metal hosts located in this compute GPU memory fabric.
         """
@@ -24480,14 +24584,21 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         pulumi.set(__self__, "compute_hpc_island_id", compute_hpc_island_id)
         pulumi.set(__self__, "compute_local_block_id", compute_local_block_id)
         pulumi.set(__self__, "compute_network_block_id", compute_network_block_id)
+        pulumi.set(__self__, "current_firmware_bundle_id", current_firmware_bundle_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fabric_health", fabric_health)
+        pulumi.set(__self__, "firmware_update_reason", firmware_update_reason)
+        pulumi.set(__self__, "firmware_update_state", firmware_update_state)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "healthy_host_count", healthy_host_count)
+        pulumi.set(__self__, "host_platform_name", host_platform_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "memory_fabric_preferences", memory_fabric_preferences)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "switch_platform_name", switch_platform_name)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_firmware_bundle_id", target_firmware_bundle_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "total_host_count", total_host_count)
 
@@ -24548,6 +24659,14 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         return pulumi.get(self, "compute_network_block_id")
 
     @_builtins.property
+    @pulumi.getter(name="currentFirmwareBundleId")
+    def current_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        """
+        return pulumi.get(self, "current_firmware_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -24572,6 +24691,22 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         return pulumi.get(self, "fabric_health")
 
     @_builtins.property
+    @pulumi.getter(name="firmwareUpdateReason")
+    def firmware_update_reason(self) -> _builtins.str:
+        """
+        The reason for updating firmware bundle version of the GPU memory fabric.
+        """
+        return pulumi.get(self, "firmware_update_reason")
+
+    @_builtins.property
+    @pulumi.getter(name="firmwareUpdateState")
+    def firmware_update_state(self) -> _builtins.str:
+        """
+        The state of Memory Fabric Firmware update
+        """
+        return pulumi.get(self, "firmware_update_state")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -24588,12 +24723,28 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         return pulumi.get(self, "healthy_host_count")
 
     @_builtins.property
+    @pulumi.getter(name="hostPlatformName")
+    def host_platform_name(self) -> _builtins.str:
+        """
+        The host platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "host_platform_name")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryFabricPreferences")
+    def memory_fabric_preferences(self) -> Sequence['outputs.GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemMemoryFabricPreferenceResult']:
+        """
+        The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        """
+        return pulumi.get(self, "memory_fabric_preferences")
 
     @_builtins.property
     @pulumi.getter
@@ -24604,12 +24755,28 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="switchPlatformName")
+    def switch_platform_name(self) -> _builtins.str:
+        """
+        The switch platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "switch_platform_name")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetFirmwareBundleId")
+    def target_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        """
+        return pulumi.get(self, "target_firmware_bundle_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -24626,6 +24793,35 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         The total number of bare metal hosts located in this compute GPU memory fabric.
         """
         return pulumi.get(self, "total_host_count")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemMemoryFabricPreferenceResult(dict):
+    def __init__(__self__, *,
+                 customer_desired_firmware_bundle_id: _builtins.str,
+                 fabric_recycle_level: _builtins.str):
+        """
+        :param _builtins.str customer_desired_firmware_bundle_id: The desired firmware bundle id on the GPU memory fabric.
+        :param _builtins.str fabric_recycle_level: The recycle level of GPU memory fabric.
+        """
+        pulumi.set(__self__, "customer_desired_firmware_bundle_id", customer_desired_firmware_bundle_id)
+        pulumi.set(__self__, "fabric_recycle_level", fabric_recycle_level)
+
+    @_builtins.property
+    @pulumi.getter(name="customerDesiredFirmwareBundleId")
+    def customer_desired_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The desired firmware bundle id on the GPU memory fabric.
+        """
+        return pulumi.get(self, "customer_desired_firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="fabricRecycleLevel")
+    def fabric_recycle_level(self) -> _builtins.str:
+        """
+        The recycle level of GPU memory fabric.
+        """
+        return pulumi.get(self, "fabric_recycle_level")
 
 
 @pulumi.output_type

@@ -173,6 +173,21 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
      * The target connection details for creating a pipeline.
      * 
      */
@@ -200,6 +215,7 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
         this.processOptions = $.processOptions;
         this.recipeType = $.recipeType;
         this.sourceConnectionDetails = $.sourceConnectionDetails;
+        this.subnetId = $.subnetId;
         this.targetConnectionDetails = $.targetConnectionDetails;
     }
 
@@ -439,6 +455,27 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sourceConnectionDetails(PipelineSourceConnectionDetailsArgs sourceConnectionDetails) {
             return sourceConnectionDetails(Output.of(sourceConnectionDetails));
+        }
+
+        /**
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         /**

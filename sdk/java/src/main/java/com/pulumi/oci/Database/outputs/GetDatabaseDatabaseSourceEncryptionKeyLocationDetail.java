@@ -16,7 +16,7 @@ public final class GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
      */
     private String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     private String providerType;
@@ -30,7 +30,7 @@ public final class GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
         return this.hsmPassword;
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     public String providerType() {

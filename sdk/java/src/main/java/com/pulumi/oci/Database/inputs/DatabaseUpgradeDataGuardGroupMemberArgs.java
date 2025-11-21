@@ -47,6 +47,21 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
     }
 
     /**
+     * The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+     * 
+     */
+    @Import(name="dataLossExposure")
+    private @Nullable Output<String> dataLossExposure;
+
+    /**
+     * @return The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+     * 
+     */
+    public Optional<Output<String>> dataLossExposure() {
+        return Optional.ofNullable(this.dataLossExposure);
+    }
+
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -77,6 +92,36 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
     }
 
     /**
+     * The failover readiness status of the Data Guard member.
+     * 
+     */
+    @Import(name="failoverReadiness")
+    private @Nullable Output<String> failoverReadiness;
+
+    /**
+     * @return The failover readiness status of the Data Guard member.
+     * 
+     */
+    public Optional<Output<String>> failoverReadiness() {
+        return Optional.ofNullable(this.failoverReadiness);
+    }
+
+    /**
+     * The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+     * 
+     */
+    @Import(name="failoverReadinessMessage")
+    private @Nullable Output<String> failoverReadinessMessage;
+
+    /**
+     * @return The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+     * 
+     */
+    public Optional<Output<String>> failoverReadinessMessage() {
+        return Optional.ofNullable(this.failoverReadinessMessage);
+    }
+
+    /**
      * True if active Data Guard is enabled.
      * 
      */
@@ -104,6 +149,51 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
      */
     public Optional<Output<String>> role() {
         return Optional.ofNullable(this.role);
+    }
+
+    /**
+     * The switchover readiness status of the Data Guard member.
+     * 
+     */
+    @Import(name="switchoverReadiness")
+    private @Nullable Output<String> switchoverReadiness;
+
+    /**
+     * @return The switchover readiness status of the Data Guard member.
+     * 
+     */
+    public Optional<Output<String>> switchoverReadiness() {
+        return Optional.ofNullable(this.switchoverReadiness);
+    }
+
+    /**
+     * The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+     * 
+     */
+    @Import(name="switchoverReadinessMessage")
+    private @Nullable Output<String> switchoverReadinessMessage;
+
+    /**
+     * @return The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+     * 
+     */
+    public Optional<Output<String>> switchoverReadinessMessage() {
+        return Optional.ofNullable(this.switchoverReadinessMessage);
+    }
+
+    /**
+     * The date and time when the last successful Data Guard refresh occurred.
+     * 
+     */
+    @Import(name="timeUpdated")
+    private @Nullable Output<String> timeUpdated;
+
+    /**
+     * @return The date and time when the last successful Data Guard refresh occurred.
+     * 
+     */
+    public Optional<Output<String>> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     /**
@@ -162,10 +252,16 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
     private DatabaseUpgradeDataGuardGroupMemberArgs(DatabaseUpgradeDataGuardGroupMemberArgs $) {
         this.applyLag = $.applyLag;
         this.applyRate = $.applyRate;
+        this.dataLossExposure = $.dataLossExposure;
         this.databaseId = $.databaseId;
         this.dbSystemId = $.dbSystemId;
+        this.failoverReadiness = $.failoverReadiness;
+        this.failoverReadinessMessage = $.failoverReadinessMessage;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
         this.role = $.role;
+        this.switchoverReadiness = $.switchoverReadiness;
+        this.switchoverReadinessMessage = $.switchoverReadinessMessage;
+        this.timeUpdated = $.timeUpdated;
         this.transportLag = $.transportLag;
         this.transportLagRefresh = $.transportLagRefresh;
         this.transportType = $.transportType;
@@ -232,6 +328,27 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         }
 
         /**
+         * @param dataLossExposure The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataLossExposure(@Nullable Output<String> dataLossExposure) {
+            $.dataLossExposure = dataLossExposure;
+            return this;
+        }
+
+        /**
+         * @param dataLossExposure The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataLossExposure(String dataLossExposure) {
+            return dataLossExposure(Output.of(dataLossExposure));
+        }
+
+        /**
          * @param databaseId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -274,6 +391,48 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         }
 
         /**
+         * @param failoverReadiness The failover readiness status of the Data Guard member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverReadiness(@Nullable Output<String> failoverReadiness) {
+            $.failoverReadiness = failoverReadiness;
+            return this;
+        }
+
+        /**
+         * @param failoverReadiness The failover readiness status of the Data Guard member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverReadiness(String failoverReadiness) {
+            return failoverReadiness(Output.of(failoverReadiness));
+        }
+
+        /**
+         * @param failoverReadinessMessage The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverReadinessMessage(@Nullable Output<String> failoverReadinessMessage) {
+            $.failoverReadinessMessage = failoverReadinessMessage;
+            return this;
+        }
+
+        /**
+         * @param failoverReadinessMessage The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverReadinessMessage(String failoverReadinessMessage) {
+            return failoverReadinessMessage(Output.of(failoverReadinessMessage));
+        }
+
+        /**
          * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
          * 
          * @return builder
@@ -313,6 +472,69 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
          */
         public Builder role(String role) {
             return role(Output.of(role));
+        }
+
+        /**
+         * @param switchoverReadiness The switchover readiness status of the Data Guard member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverReadiness(@Nullable Output<String> switchoverReadiness) {
+            $.switchoverReadiness = switchoverReadiness;
+            return this;
+        }
+
+        /**
+         * @param switchoverReadiness The switchover readiness status of the Data Guard member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverReadiness(String switchoverReadiness) {
+            return switchoverReadiness(Output.of(switchoverReadiness));
+        }
+
+        /**
+         * @param switchoverReadinessMessage The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverReadinessMessage(@Nullable Output<String> switchoverReadinessMessage) {
+            $.switchoverReadinessMessage = switchoverReadinessMessage;
+            return this;
+        }
+
+        /**
+         * @param switchoverReadinessMessage The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchoverReadinessMessage(String switchoverReadinessMessage) {
+            return switchoverReadinessMessage(Output.of(switchoverReadinessMessage));
+        }
+
+        /**
+         * @param timeUpdated The date and time when the last successful Data Guard refresh occurred.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(@Nullable Output<String> timeUpdated) {
+            $.timeUpdated = timeUpdated;
+            return this;
+        }
+
+        /**
+         * @param timeUpdated The date and time when the last successful Data Guard refresh occurred.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(String timeUpdated) {
+            return timeUpdated(Output.of(timeUpdated));
         }
 
         /**

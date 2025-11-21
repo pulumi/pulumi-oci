@@ -26,7 +26,7 @@ class GetBastionResult:
     """
     A collection of values returned by getBastion.
     """
-    def __init__(__self__, bastion_id=None, bastion_type=None, client_cidr_block_allow_lists=None, compartment_id=None, defined_tags=None, dns_proxy_status=None, freeform_tags=None, id=None, lifecycle_details=None, max_session_ttl_in_seconds=None, max_sessions_allowed=None, name=None, phone_book_entry=None, private_endpoint_ip_address=None, state=None, static_jump_host_ip_addresses=None, system_tags=None, target_subnet_id=None, target_vcn_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, bastion_id=None, bastion_type=None, client_cidr_block_allow_lists=None, compartment_id=None, defined_tags=None, dns_proxy_status=None, freeform_tags=None, id=None, lifecycle_details=None, max_session_ttl_in_seconds=None, max_sessions_allowed=None, name=None, phone_book_entry=None, private_endpoint_ip_address=None, security_attributes=None, state=None, static_jump_host_ip_addresses=None, system_tags=None, target_subnet_id=None, target_vcn_id=None, time_created=None, time_updated=None):
         if bastion_id and not isinstance(bastion_id, str):
             raise TypeError("Expected argument 'bastion_id' to be a str")
         pulumi.set(__self__, "bastion_id", bastion_id)
@@ -69,6 +69,9 @@ class GetBastionResult:
         if private_endpoint_ip_address and not isinstance(private_endpoint_ip_address, str):
             raise TypeError("Expected argument 'private_endpoint_ip_address' to be a str")
         pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -201,6 +204,14 @@ class GetBastionResult:
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -277,6 +288,7 @@ class AwaitableGetBastionResult(GetBastionResult):
             name=self.name,
             phone_book_entry=self.phone_book_entry,
             private_endpoint_ip_address=self.private_endpoint_ip_address,
+            security_attributes=self.security_attributes,
             state=self.state,
             static_jump_host_ip_addresses=self.static_jump_host_ip_addresses,
             system_tags=self.system_tags,
@@ -325,6 +337,7 @@ def get_bastion(bastion_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         phone_book_entry=pulumi.get(__ret__, 'phone_book_entry'),
         private_endpoint_ip_address=pulumi.get(__ret__, 'private_endpoint_ip_address'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         static_jump_host_ip_addresses=pulumi.get(__ret__, 'static_jump_host_ip_addresses'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -370,6 +383,7 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         phone_book_entry=pulumi.get(__response__, 'phone_book_entry'),
         private_endpoint_ip_address=pulumi.get(__response__, 'private_endpoint_ip_address'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         static_jump_host_ip_addresses=pulumi.get(__response__, 'static_jump_host_ip_addresses'),
         system_tags=pulumi.get(__response__, 'system_tags'),

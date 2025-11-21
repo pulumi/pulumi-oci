@@ -7394,6 +7394,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAwsIdentityConnector",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector": "DbmulticloudOracleDbAwsIdentityConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAwsKey",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey": "DbmulticloudOracleDbAwsKey"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/dbmulticloudOracleDbAzureBlobContainer",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -7474,6 +7490,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/iotDigitalTwinInstanceInvokeRawCommand",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotDigitalTwinInstanceInvokeRawCommand:IotDigitalTwinInstanceInvokeRawCommand": "IotDigitalTwinInstanceInvokeRawCommand"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/iotDigitalTwinModel",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -7498,10 +7522,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/iotIotDomainChangeDataRetentionPeriod",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotDomainChangeDataRetentionPeriod:IotIotDomainChangeDataRetentionPeriod": "IotIotDomainChangeDataRetentionPeriod"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotDomainConfigureDataAccess",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotDomainConfigureDataAccess:IotIotDomainConfigureDataAccess": "IotIotDomainConfigureDataAccess"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/iotIotDomainGroup",
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/iotIotDomainGroup:IotIotDomainGroup": "IotIotDomainGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotDomainGroupConfigureDataAccess",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess": "IotIotDomainGroupConfigureDataAccess"
   }
  },
  {
@@ -7526,6 +7574,14 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement": "ManagedKafkaKafkaClusterSuperusersManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/psaPrivateServiceAccess",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess": "PsaPrivateServiceAccess"
   }
  },
  {

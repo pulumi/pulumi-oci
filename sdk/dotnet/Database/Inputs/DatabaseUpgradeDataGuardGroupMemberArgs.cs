@@ -25,6 +25,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? ApplyRate { get; set; }
 
         /// <summary>
+        /// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        /// </summary>
+        [Input("dataLossExposure")]
+        public Input<string>? DataLossExposure { get; set; }
+
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("databaseId")]
@@ -37,6 +43,18 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DbSystemId { get; set; }
 
         /// <summary>
+        /// The failover readiness status of the Data Guard member.
+        /// </summary>
+        [Input("failoverReadiness")]
+        public Input<string>? FailoverReadiness { get; set; }
+
+        /// <summary>
+        /// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        /// </summary>
+        [Input("failoverReadinessMessage")]
+        public Input<string>? FailoverReadinessMessage { get; set; }
+
+        /// <summary>
         /// True if active Data Guard is enabled.
         /// </summary>
         [Input("isActiveDataGuardEnabled")]
@@ -47,6 +65,24 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
+
+        /// <summary>
+        /// The switchover readiness status of the Data Guard member.
+        /// </summary>
+        [Input("switchoverReadiness")]
+        public Input<string>? SwitchoverReadiness { get; set; }
+
+        /// <summary>
+        /// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        /// </summary>
+        [Input("switchoverReadinessMessage")]
+        public Input<string>? SwitchoverReadinessMessage { get; set; }
+
+        /// <summary>
+        /// The date and time when the last successful Data Guard refresh occurred.
+        /// </summary>
+        [Input("timeUpdated")]
+        public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
         /// The rate at which redo logs are transported between the associated databases.  Example: `1 second`

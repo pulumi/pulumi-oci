@@ -50,6 +50,10 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointLockResult> Locks;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
         public readonly string State;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             ImmutableArray<Outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointLockResult> locks,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -109,6 +115,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

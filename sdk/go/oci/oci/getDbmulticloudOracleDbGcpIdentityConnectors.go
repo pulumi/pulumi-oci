@@ -60,7 +60,7 @@ type GetDbmulticloudOracleDbGcpIdentityConnectorsArgs struct {
 	// A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
 	DisplayName *string                                              `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbGcpIdentityConnectorsFilter `pulumi:"filters"`
-	// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId *string `pulumi:"resourceId"`
 	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -99,7 +99,7 @@ type GetDbmulticloudOracleDbGcpIdentityConnectorsOutputArgs struct {
 	// A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                                        `pulumi:"displayName"`
 	Filters     GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArrayInput `pulumi:"filters"`
-	// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`

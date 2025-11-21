@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -67,6 +69,10 @@ export interface GetComputeGpuMemoryFabricResult {
      */
     readonly computeNetworkBlockId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     */
+    readonly currentFirmwareBundleId: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
@@ -79,6 +85,14 @@ export interface GetComputeGpuMemoryFabricResult {
      */
     readonly fabricHealth: string;
     /**
+     * The reason for updating firmware bundle version of the GPU memory fabric.
+     */
+    readonly firmwareUpdateReason: string;
+    /**
+     * The state of Memory Fabric Firmware update
+     */
+    readonly firmwareUpdateState: string;
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -87,17 +101,33 @@ export interface GetComputeGpuMemoryFabricResult {
      */
     readonly healthyHostCount: string;
     /**
+     * The host platform identifier used for bundle queries
+     */
+    readonly hostPlatformName: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
      */
     readonly id: string;
+    /**
+     * The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     */
+    readonly memoryFabricPreferences: outputs.Core.GetComputeGpuMemoryFabricMemoryFabricPreference[];
     /**
      * The lifecycle state of the GPU memory fabric
      */
     readonly state: string;
     /**
+     * The switch platform identifier used for bundle queries
+     */
+    readonly switchPlatformName: string;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     */
+    readonly targetFirmwareBundleId: string;
     /**
      * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

@@ -155,6 +155,21 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
@@ -202,6 +217,7 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
         this.maxSessionTtlInSeconds = $.maxSessionTtlInSeconds;
         this.name = $.name;
         this.phoneBookEntry = $.phoneBookEntry;
+        this.securityAttributes = $.securityAttributes;
         this.staticJumpHostIpAddresses = $.staticJumpHostIpAddresses;
         this.targetSubnetId = $.targetSubnetId;
     }
@@ -421,6 +437,27 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder phoneBookEntry(String phoneBookEntry) {
             return phoneBookEntry(Output.of(phoneBookEntry));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

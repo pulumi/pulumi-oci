@@ -37,6 +37,11 @@ public final class GetServiceCatalogsResult {
      */
     private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
     private @Nullable String serviceCatalogId;
+    /**
+     * @return The status of a service catalog.
+     * 
+     */
+    private @Nullable String status;
 
     private GetServiceCatalogsResult() {}
     /**
@@ -73,6 +78,13 @@ public final class GetServiceCatalogsResult {
     public Optional<String> serviceCatalogId() {
         return Optional.ofNullable(this.serviceCatalogId);
     }
+    /**
+     * @return The status of a service catalog.
+     * 
+     */
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,6 +101,7 @@ public final class GetServiceCatalogsResult {
         private String id;
         private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
         private @Nullable String serviceCatalogId;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetServiceCatalogsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,6 +111,7 @@ public final class GetServiceCatalogsResult {
     	      this.id = defaults.id;
     	      this.serviceCatalogCollections = defaults.serviceCatalogCollections;
     	      this.serviceCatalogId = defaults.serviceCatalogId;
+    	      this.status = defaults.status;
         }
 
         @CustomType.Setter
@@ -148,6 +162,12 @@ public final class GetServiceCatalogsResult {
             this.serviceCatalogId = serviceCatalogId;
             return this;
         }
+        @CustomType.Setter
+        public Builder status(@Nullable String status) {
+
+            this.status = status;
+            return this;
+        }
         public GetServiceCatalogsResult build() {
             final var _resultValue = new GetServiceCatalogsResult();
             _resultValue.compartmentId = compartmentId;
@@ -156,6 +176,7 @@ public final class GetServiceCatalogsResult {
             _resultValue.id = id;
             _resultValue.serviceCatalogCollections = serviceCatalogCollections;
             _resultValue.serviceCatalogId = serviceCatalogId;
+            _resultValue.status = status;
             return _resultValue;
         }
     }

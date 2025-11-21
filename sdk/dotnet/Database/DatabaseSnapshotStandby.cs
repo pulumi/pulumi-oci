@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
+    /// 
+    /// Performs transition from standby database into a snapshot standby and vice versa.
+    /// The transition performed based on the current role of the database, if the current role is standby then this operation will convert it to snapshot standby and if the current role is snapshot standby then this operation will convert it to standby.
+    /// 
+    /// This operation should be performed on respective standby/snapshot standby database.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDatabaseStorageSizeDetails {
     /**
-     * @return (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+     * @return The DATA storage size, in gigabytes, that is applicable for the database.
      * 
      */
     private Integer dataStorageSizeInGb;
     /**
-     * @return (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+     * @return The RECO storage size, in gigabytes, that is applicable for the database.
      * 
      */
     private Integer recoStorageSizeInGbs;
@@ -30,14 +30,14 @@ public final class DatabaseDatabaseStorageSizeDetails {
 
     private DatabaseDatabaseStorageSizeDetails() {}
     /**
-     * @return (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+     * @return The DATA storage size, in gigabytes, that is applicable for the database.
      * 
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
     }
     /**
-     * @return (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+     * @return The RECO storage size, in gigabytes, that is applicable for the database.
      * 
      */
     public Integer recoStorageSizeInGbs() {

@@ -239,14 +239,26 @@ type GetDatabaseDataGuardGroupMember struct {
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
 	ApplyRate string `pulumi:"applyRate"`
+	// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+	DataLossExposure string `pulumi:"dataLossExposure"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId string `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// The failover readiness status of the Data Guard member.
+	FailoverReadiness string `pulumi:"failoverReadiness"`
+	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+	FailoverReadinessMessage string `pulumi:"failoverReadinessMessage"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
 	// The role of the reporting database in this Data Guard association.
 	Role string `pulumi:"role"`
+	// The switchover readiness status of the Data Guard member.
+	SwitchoverReadiness string `pulumi:"switchoverReadiness"`
+	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+	SwitchoverReadinessMessage string `pulumi:"switchoverReadinessMessage"`
+	// The date and time when the last successful Data Guard refresh occurred.
+	TimeUpdated string `pulumi:"timeUpdated"`
 	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
 	TransportLag string `pulumi:"transportLag"`
 	// The date and time when last redo transport has been done.
@@ -274,14 +286,26 @@ type GetDatabaseDataGuardGroupMemberArgs struct {
 	ApplyLag pulumi.StringInput `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
 	ApplyRate pulumi.StringInput `pulumi:"applyRate"`
+	// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+	DataLossExposure pulumi.StringInput `pulumi:"dataLossExposure"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The failover readiness status of the Data Guard member.
+	FailoverReadiness pulumi.StringInput `pulumi:"failoverReadiness"`
+	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+	FailoverReadinessMessage pulumi.StringInput `pulumi:"failoverReadinessMessage"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringInput `pulumi:"role"`
+	// The switchover readiness status of the Data Guard member.
+	SwitchoverReadiness pulumi.StringInput `pulumi:"switchoverReadiness"`
+	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+	SwitchoverReadinessMessage pulumi.StringInput `pulumi:"switchoverReadinessMessage"`
+	// The date and time when the last successful Data Guard refresh occurred.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
 	TransportLag pulumi.StringInput `pulumi:"transportLag"`
 	// The date and time when last redo transport has been done.
@@ -354,6 +378,11 @@ func (o GetDatabaseDataGuardGroupMemberOutput) ApplyRate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.ApplyRate }).(pulumi.StringOutput)
 }
 
+// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+func (o GetDatabaseDataGuardGroupMemberOutput) DataLossExposure() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DataLossExposure }).(pulumi.StringOutput)
+}
+
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetDatabaseDataGuardGroupMemberOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DatabaseId }).(pulumi.StringOutput)
@@ -364,6 +393,16 @@ func (o GetDatabaseDataGuardGroupMemberOutput) DbSystemId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// The failover readiness status of the Data Guard member.
+func (o GetDatabaseDataGuardGroupMemberOutput) FailoverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.FailoverReadiness }).(pulumi.StringOutput)
+}
+
+// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+func (o GetDatabaseDataGuardGroupMemberOutput) FailoverReadinessMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.FailoverReadinessMessage }).(pulumi.StringOutput)
+}
+
 // True if active Data Guard is enabled.
 func (o GetDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
@@ -372,6 +411,21 @@ func (o GetDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi
 // The role of the reporting database in this Data Guard association.
 func (o GetDatabaseDataGuardGroupMemberOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The switchover readiness status of the Data Guard member.
+func (o GetDatabaseDataGuardGroupMemberOutput) SwitchoverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.SwitchoverReadiness }).(pulumi.StringOutput)
+}
+
+// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+func (o GetDatabaseDataGuardGroupMemberOutput) SwitchoverReadinessMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.SwitchoverReadinessMessage }).(pulumi.StringOutput)
+}
+
+// The date and time when the last successful Data Guard refresh occurred.
+func (o GetDatabaseDataGuardGroupMemberOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -1069,11 +1123,15 @@ func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Ind
 }
 
 type GetDatabaseDatabaseEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType string `pulumi:"providerType"`
 }
 
@@ -1089,11 +1147,15 @@ type GetDatabaseDatabaseEncryptionKeyLocationDetailInput interface {
 }
 
 type GetDatabaseDatabaseEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType pulumi.StringInput `pulumi:"providerType"`
 }
 
@@ -1148,9 +1210,21 @@ func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetDatabaseDatab
 	return o
 }
 
+// Provide the key OCID of a registered AWS key.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
 // Provide the key OCID of a registered Azure key.
 func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 // Provide the HSM password as you would in RDBMS for External HSM.
@@ -1158,7 +1232,7 @@ func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) HsmPassword() pulu
 	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
 }
 
-// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
 }
@@ -1292,7 +1366,7 @@ func (o GetDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput)
 type GetDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType string `pulumi:"providerType"`
 }
 
@@ -1310,7 +1384,7 @@ type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interface {
 type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType pulumi.StringInput `pulumi:"providerType"`
 }
 
@@ -1370,7 +1444,7 @@ func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) HsmPassword(
 	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
 }
 
-// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
 }
@@ -7224,14 +7298,26 @@ type GetDatabasesDatabaseDataGuardGroupMember struct {
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
 	ApplyRate string `pulumi:"applyRate"`
+	// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+	DataLossExposure string `pulumi:"dataLossExposure"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId string `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// The failover readiness status of the Data Guard member.
+	FailoverReadiness string `pulumi:"failoverReadiness"`
+	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+	FailoverReadinessMessage string `pulumi:"failoverReadinessMessage"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
 	// The role of the reporting database in this Data Guard association.
 	Role string `pulumi:"role"`
+	// The switchover readiness status of the Data Guard member.
+	SwitchoverReadiness string `pulumi:"switchoverReadiness"`
+	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+	SwitchoverReadinessMessage string `pulumi:"switchoverReadinessMessage"`
+	// The date and time when the last successful Data Guard refresh occurred.
+	TimeUpdated string `pulumi:"timeUpdated"`
 	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
 	TransportLag string `pulumi:"transportLag"`
 	// The date and time when last redo transport has been done.
@@ -7259,14 +7345,26 @@ type GetDatabasesDatabaseDataGuardGroupMemberArgs struct {
 	ApplyLag pulumi.StringInput `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
 	ApplyRate pulumi.StringInput `pulumi:"applyRate"`
+	// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+	DataLossExposure pulumi.StringInput `pulumi:"dataLossExposure"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The failover readiness status of the Data Guard member.
+	FailoverReadiness pulumi.StringInput `pulumi:"failoverReadiness"`
+	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+	FailoverReadinessMessage pulumi.StringInput `pulumi:"failoverReadinessMessage"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringInput `pulumi:"role"`
+	// The switchover readiness status of the Data Guard member.
+	SwitchoverReadiness pulumi.StringInput `pulumi:"switchoverReadiness"`
+	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+	SwitchoverReadinessMessage pulumi.StringInput `pulumi:"switchoverReadinessMessage"`
+	// The date and time when the last successful Data Guard refresh occurred.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
 	TransportLag pulumi.StringInput `pulumi:"transportLag"`
 	// The date and time when last redo transport has been done.
@@ -7339,6 +7437,11 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) ApplyRate() pulumi.Strin
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.ApplyRate }).(pulumi.StringOutput)
 }
 
+// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) DataLossExposure() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.DataLossExposure }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.DatabaseId }).(pulumi.StringOutput)
@@ -7349,6 +7452,16 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) DbSystemId() pulumi.Stri
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// The failover readiness status of the Data Guard member.
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) FailoverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.FailoverReadiness }).(pulumi.StringOutput)
+}
+
+// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) FailoverReadinessMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.FailoverReadinessMessage }).(pulumi.StringOutput)
+}
+
 // True if active Data Guard is enabled.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
@@ -7357,6 +7470,21 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled
 // The role of the reporting database in this Data Guard association.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The switchover readiness status of the Data Guard member.
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) SwitchoverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.SwitchoverReadiness }).(pulumi.StringOutput)
+}
+
+// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) SwitchoverReadinessMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.SwitchoverReadinessMessage }).(pulumi.StringOutput)
+}
+
+// The date and time when the last successful Data Guard refresh occurred.
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -8061,11 +8189,15 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOu
 }
 
 type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType string `pulumi:"providerType"`
 }
 
@@ -8081,11 +8213,15 @@ type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailInput interface {
 }
 
 type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType pulumi.StringInput `pulumi:"providerType"`
 }
 
@@ -8140,9 +8276,21 @@ func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetData
 	return o
 }
 
+// Provide the key OCID of a registered AWS key.
+func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
 // Provide the key OCID of a registered Azure key.
 func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 // Provide the HSM password as you would in RDBMS for External HSM.
@@ -8150,7 +8298,7 @@ func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) HsmPasswo
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
 }
 
-// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
 }
@@ -8284,7 +8432,7 @@ func (o GetDatabasesDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.
 type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType string `pulumi:"providerType"`
 }
 
@@ -8302,7 +8450,7 @@ type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interfac
 type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 	ProviderType pulumi.StringInput `pulumi:"providerType"`
 }
 
@@ -8362,7 +8510,7 @@ func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) Hsm
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
 }
 
-// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
 func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
 }
@@ -9741,9 +9889,11 @@ func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index
 }
 
 type GetDbHomeDatabaseEncryptionKeyLocationDetail struct {
-	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
-	HsmPassword          string `pulumi:"hsmPassword"`
-	ProviderType         string `pulumi:"providerType"`
+	AwsEncryptionKeyId                 string `pulumi:"awsEncryptionKeyId"`
+	AzureEncryptionKeyId               string `pulumi:"azureEncryptionKeyId"`
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
+	HsmPassword                        string `pulumi:"hsmPassword"`
+	ProviderType                       string `pulumi:"providerType"`
 }
 
 // GetDbHomeDatabaseEncryptionKeyLocationDetailInput is an input type that accepts GetDbHomeDatabaseEncryptionKeyLocationDetailArgs and GetDbHomeDatabaseEncryptionKeyLocationDetailOutput values.
@@ -9758,9 +9908,11 @@ type GetDbHomeDatabaseEncryptionKeyLocationDetailInput interface {
 }
 
 type GetDbHomeDatabaseEncryptionKeyLocationDetailArgs struct {
-	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
-	HsmPassword          pulumi.StringInput `pulumi:"hsmPassword"`
-	ProviderType         pulumi.StringInput `pulumi:"providerType"`
+	AwsEncryptionKeyId                 pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	AzureEncryptionKeyId               pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
+	HsmPassword                        pulumi.StringInput `pulumi:"hsmPassword"`
+	ProviderType                       pulumi.StringInput `pulumi:"providerType"`
 }
 
 func (GetDbHomeDatabaseEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
@@ -9814,8 +9966,18 @@ func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomeDatabaseE
 	return o
 }
 
+func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
 func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomeDatabaseEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
@@ -11459,9 +11621,11 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
 }
 
 type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail struct {
-	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
-	HsmPassword          string `pulumi:"hsmPassword"`
-	ProviderType         string `pulumi:"providerType"`
+	AwsEncryptionKeyId                 string `pulumi:"awsEncryptionKeyId"`
+	AzureEncryptionKeyId               string `pulumi:"azureEncryptionKeyId"`
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
+	HsmPassword                        string `pulumi:"hsmPassword"`
+	ProviderType                       string `pulumi:"providerType"`
 }
 
 // GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs and GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput values.
@@ -11476,9 +11640,11 @@ type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput interface {
 }
 
 type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs struct {
-	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
-	HsmPassword          pulumi.StringInput `pulumi:"hsmPassword"`
-	ProviderType         pulumi.StringInput `pulumi:"providerType"`
+	AwsEncryptionKeyId                 pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	AzureEncryptionKeyId               pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
+	HsmPassword                        pulumi.StringInput `pulumi:"hsmPassword"`
+	ProviderType                       pulumi.StringInput `pulumi:"providerType"`
 }
 
 func (GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
@@ -11532,8 +11698,18 @@ func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomesD
 	return o
 }
 
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
 func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {

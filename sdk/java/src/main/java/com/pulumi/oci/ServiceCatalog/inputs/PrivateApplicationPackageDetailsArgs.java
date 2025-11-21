@@ -8,8 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -46,11 +44,11 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
         return this.version;
     }
 
-    @Import(name="zipFileBase64encoded")
-    private @Nullable Output<String> zipFileBase64encoded;
+    @Import(name="zipFileBase64encoded", required=true)
+    private Output<String> zipFileBase64encoded;
 
-    public Optional<Output<String>> zipFileBase64encoded() {
-        return Optional.ofNullable(this.zipFileBase64encoded);
+    public Output<String> zipFileBase64encoded() {
+        return this.zipFileBase64encoded;
     }
 
     private PrivateApplicationPackageDetailsArgs() {}
@@ -121,7 +119,7 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
             return version(Output.of(version));
         }
 
-        public Builder zipFileBase64encoded(@Nullable Output<String> zipFileBase64encoded) {
+        public Builder zipFileBase64encoded(Output<String> zipFileBase64encoded) {
             $.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }
@@ -136,6 +134,9 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
             }
             if ($.version == null) {
                 throw new MissingRequiredPropertyException("PrivateApplicationPackageDetailsArgs", "version");
+            }
+            if ($.zipFileBase64encoded == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationPackageDetailsArgs", "zipFileBase64encoded");
             }
             return $;
         }

@@ -69,6 +69,7 @@ namespace Pulumi.Oci.GoldenGate
     ///             ShouldRestartOnFailure = pipelineProcessOptionsShouldRestartOnFailure,
     ///             StartUsingDefaultMapping = pipelineProcessOptionsStartUsingDefaultMapping,
     ///         },
+    ///         SubnetId = testSubnet.Id,
     ///     });
     /// 
     /// });
@@ -120,6 +121,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        /// </summary>
+        [Output("ingressIps")]
+        public Output<ImmutableArray<Outputs.PipelineIngressIp>> IngressIps { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -186,6 +193,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        /// </summary>
+        [Output("subnetId")]
+        public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -342,6 +355,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<Inputs.PipelineSourceConnectionDetailsArgs> SourceConnectionDetails { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
         /// The target connection details for creating a pipeline.
         /// </summary>
         [Input("targetConnectionDetails", required: true)]
@@ -401,6 +420,18 @@ namespace Pulumi.Oci.GoldenGate
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
+        }
+
+        [Input("ingressIps")]
+        private InputList<Inputs.PipelineIngressIpGetArgs>? _ingressIps;
+
+        /// <summary>
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        /// </summary>
+        public InputList<Inputs.PipelineIngressIpGetArgs> IngressIps
+        {
+            get => _ingressIps ?? (_ingressIps = new InputList<Inputs.PipelineIngressIpGetArgs>());
+            set => _ingressIps = value;
         }
 
         /// <summary>
@@ -486,6 +517,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

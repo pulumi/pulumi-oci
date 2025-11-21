@@ -177,6 +177,10 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         public readonly string PrivateEndpointIpAddress;
         /// <summary>
+        /// (Optional) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the bastion.
         /// </summary>
         public readonly string State;
@@ -235,6 +239,8 @@ namespace Pulumi.Oci.Bastion
 
             string privateEndpointIpAddress,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             ImmutableArray<string> staticJumpHostIpAddresses,
@@ -263,6 +269,7 @@ namespace Pulumi.Oci.Bastion
             Name = name;
             PhoneBookEntry = phoneBookEntry;
             PrivateEndpointIpAddress = privateEndpointIpAddress;
+            SecurityAttributes = securityAttributes;
             State = state;
             StaticJumpHostIpAddresses = staticJumpHostIpAddresses;
             SystemTags = systemTags;

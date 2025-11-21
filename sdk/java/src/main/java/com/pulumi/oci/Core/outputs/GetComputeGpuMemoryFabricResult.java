@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricMemoryFabricPreference;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -43,6 +45,11 @@ public final class GetComputeGpuMemoryFabricResult {
      */
     private String computeNetworkBlockId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     * 
+     */
+    private String currentFirmwareBundleId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -58,6 +65,16 @@ public final class GetComputeGpuMemoryFabricResult {
      */
     private String fabricHealth;
     /**
+     * @return The reason for updating firmware bundle version of the GPU memory fabric.
+     * 
+     */
+    private String firmwareUpdateReason;
+    /**
+     * @return The state of Memory Fabric Firmware update
+     * 
+     */
+    private String firmwareUpdateState;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -68,20 +85,40 @@ public final class GetComputeGpuMemoryFabricResult {
      */
     private String healthyHostCount;
     /**
+     * @return The host platform identifier used for bundle queries
+     * 
+     */
+    private String hostPlatformName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
      * 
      */
     private String id;
+    /**
+     * @return The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     * 
+     */
+    private List<GetComputeGpuMemoryFabricMemoryFabricPreference> memoryFabricPreferences;
     /**
      * @return The lifecycle state of the GPU memory fabric
      * 
      */
     private String state;
     /**
+     * @return The switch platform identifier used for bundle queries
+     * 
+     */
+    private String switchPlatformName;
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     * 
+     */
+    private String targetFirmwareBundleId;
     /**
      * @return The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -140,6 +177,13 @@ public final class GetComputeGpuMemoryFabricResult {
         return this.computeNetworkBlockId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     * 
+     */
+    public String currentFirmwareBundleId() {
+        return this.currentFirmwareBundleId;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -161,6 +205,20 @@ public final class GetComputeGpuMemoryFabricResult {
         return this.fabricHealth;
     }
     /**
+     * @return The reason for updating firmware bundle version of the GPU memory fabric.
+     * 
+     */
+    public String firmwareUpdateReason() {
+        return this.firmwareUpdateReason;
+    }
+    /**
+     * @return The state of Memory Fabric Firmware update
+     * 
+     */
+    public String firmwareUpdateState() {
+        return this.firmwareUpdateState;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -175,11 +233,25 @@ public final class GetComputeGpuMemoryFabricResult {
         return this.healthyHostCount;
     }
     /**
+     * @return The host platform identifier used for bundle queries
+     * 
+     */
+    public String hostPlatformName() {
+        return this.hostPlatformName;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     * 
+     */
+    public List<GetComputeGpuMemoryFabricMemoryFabricPreference> memoryFabricPreferences() {
+        return this.memoryFabricPreferences;
     }
     /**
      * @return The lifecycle state of the GPU memory fabric
@@ -189,11 +261,25 @@ public final class GetComputeGpuMemoryFabricResult {
         return this.state;
     }
     /**
+     * @return The switch platform identifier used for bundle queries
+     * 
+     */
+    public String switchPlatformName() {
+        return this.switchPlatformName;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     * 
+     */
+    public String targetFirmwareBundleId() {
+        return this.targetFirmwareBundleId;
     }
     /**
      * @return The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -226,14 +312,21 @@ public final class GetComputeGpuMemoryFabricResult {
         private String computeHpcIslandId;
         private String computeLocalBlockId;
         private String computeNetworkBlockId;
+        private String currentFirmwareBundleId;
         private Map<String,String> definedTags;
         private String displayName;
         private String fabricHealth;
+        private String firmwareUpdateReason;
+        private String firmwareUpdateState;
         private Map<String,String> freeformTags;
         private String healthyHostCount;
+        private String hostPlatformName;
         private String id;
+        private List<GetComputeGpuMemoryFabricMemoryFabricPreference> memoryFabricPreferences;
         private String state;
+        private String switchPlatformName;
         private Map<String,String> systemTags;
+        private String targetFirmwareBundleId;
         private String timeCreated;
         private String totalHostCount;
         public Builder() {}
@@ -246,14 +339,21 @@ public final class GetComputeGpuMemoryFabricResult {
     	      this.computeHpcIslandId = defaults.computeHpcIslandId;
     	      this.computeLocalBlockId = defaults.computeLocalBlockId;
     	      this.computeNetworkBlockId = defaults.computeNetworkBlockId;
+    	      this.currentFirmwareBundleId = defaults.currentFirmwareBundleId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.fabricHealth = defaults.fabricHealth;
+    	      this.firmwareUpdateReason = defaults.firmwareUpdateReason;
+    	      this.firmwareUpdateState = defaults.firmwareUpdateState;
     	      this.freeformTags = defaults.freeformTags;
     	      this.healthyHostCount = defaults.healthyHostCount;
+    	      this.hostPlatformName = defaults.hostPlatformName;
     	      this.id = defaults.id;
+    	      this.memoryFabricPreferences = defaults.memoryFabricPreferences;
     	      this.state = defaults.state;
+    	      this.switchPlatformName = defaults.switchPlatformName;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetFirmwareBundleId = defaults.targetFirmwareBundleId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.totalHostCount = defaults.totalHostCount;
         }
@@ -315,6 +415,14 @@ public final class GetComputeGpuMemoryFabricResult {
             return this;
         }
         @CustomType.Setter
+        public Builder currentFirmwareBundleId(String currentFirmwareBundleId) {
+            if (currentFirmwareBundleId == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "currentFirmwareBundleId");
+            }
+            this.currentFirmwareBundleId = currentFirmwareBundleId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "definedTags");
@@ -339,6 +447,22 @@ public final class GetComputeGpuMemoryFabricResult {
             return this;
         }
         @CustomType.Setter
+        public Builder firmwareUpdateReason(String firmwareUpdateReason) {
+            if (firmwareUpdateReason == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "firmwareUpdateReason");
+            }
+            this.firmwareUpdateReason = firmwareUpdateReason;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder firmwareUpdateState(String firmwareUpdateState) {
+            if (firmwareUpdateState == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "firmwareUpdateState");
+            }
+            this.firmwareUpdateState = firmwareUpdateState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "freeformTags");
@@ -355,12 +479,31 @@ public final class GetComputeGpuMemoryFabricResult {
             return this;
         }
         @CustomType.Setter
+        public Builder hostPlatformName(String hostPlatformName) {
+            if (hostPlatformName == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "hostPlatformName");
+            }
+            this.hostPlatformName = hostPlatformName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "id");
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder memoryFabricPreferences(List<GetComputeGpuMemoryFabricMemoryFabricPreference> memoryFabricPreferences) {
+            if (memoryFabricPreferences == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "memoryFabricPreferences");
+            }
+            this.memoryFabricPreferences = memoryFabricPreferences;
+            return this;
+        }
+        public Builder memoryFabricPreferences(GetComputeGpuMemoryFabricMemoryFabricPreference... memoryFabricPreferences) {
+            return memoryFabricPreferences(List.of(memoryFabricPreferences));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -371,11 +514,27 @@ public final class GetComputeGpuMemoryFabricResult {
             return this;
         }
         @CustomType.Setter
+        public Builder switchPlatformName(String switchPlatformName) {
+            if (switchPlatformName == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "switchPlatformName");
+            }
+            this.switchPlatformName = switchPlatformName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetFirmwareBundleId(String targetFirmwareBundleId) {
+            if (targetFirmwareBundleId == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "targetFirmwareBundleId");
+            }
+            this.targetFirmwareBundleId = targetFirmwareBundleId;
             return this;
         }
         @CustomType.Setter
@@ -403,14 +562,21 @@ public final class GetComputeGpuMemoryFabricResult {
             _resultValue.computeHpcIslandId = computeHpcIslandId;
             _resultValue.computeLocalBlockId = computeLocalBlockId;
             _resultValue.computeNetworkBlockId = computeNetworkBlockId;
+            _resultValue.currentFirmwareBundleId = currentFirmwareBundleId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.fabricHealth = fabricHealth;
+            _resultValue.firmwareUpdateReason = firmwareUpdateReason;
+            _resultValue.firmwareUpdateState = firmwareUpdateState;
             _resultValue.freeformTags = freeformTags;
             _resultValue.healthyHostCount = healthyHostCount;
+            _resultValue.hostPlatformName = hostPlatformName;
             _resultValue.id = id;
+            _resultValue.memoryFabricPreferences = memoryFabricPreferences;
             _resultValue.state = state;
+            _resultValue.switchPlatformName = switchPlatformName;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetFirmwareBundleId = targetFirmwareBundleId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.totalHostCount = totalHostCount;
             return _resultValue;

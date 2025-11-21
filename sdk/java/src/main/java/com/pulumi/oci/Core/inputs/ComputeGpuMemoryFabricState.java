@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ComputeGpuMemoryFabricMemoryFabricPreferencesArgs;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -122,6 +123,21 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     * 
+     */
+    @Import(name="currentFirmwareBundleId")
+    private @Nullable Output<String> currentFirmwareBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     * 
+     */
+    public Optional<Output<String>> currentFirmwareBundleId() {
+        return Optional.ofNullable(this.currentFirmwareBundleId);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -167,10 +183,37 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * The reason for updating firmware bundle version of the GPU memory fabric.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="firmwareUpdateReason")
+    private @Nullable Output<String> firmwareUpdateReason;
+
+    /**
+     * @return The reason for updating firmware bundle version of the GPU memory fabric.
+     * 
+     */
+    public Optional<Output<String>> firmwareUpdateReason() {
+        return Optional.ofNullable(this.firmwareUpdateReason);
+    }
+
+    /**
+     * The state of Memory Fabric Firmware update
+     * 
+     */
+    @Import(name="firmwareUpdateState")
+    private @Nullable Output<String> firmwareUpdateState;
+
+    /**
+     * @return The state of Memory Fabric Firmware update
+     * 
+     */
+    public Optional<Output<String>> firmwareUpdateState() {
+        return Optional.ofNullable(this.firmwareUpdateState);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
@@ -178,9 +221,6 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -203,6 +243,36 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
     }
 
     /**
+     * The host platform identifier used for bundle queries
+     * 
+     */
+    @Import(name="hostPlatformName")
+    private @Nullable Output<String> hostPlatformName;
+
+    /**
+     * @return The host platform identifier used for bundle queries
+     * 
+     */
+    public Optional<Output<String>> hostPlatformName() {
+        return Optional.ofNullable(this.hostPlatformName);
+    }
+
+    /**
+     * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     * 
+     */
+    @Import(name="memoryFabricPreferences")
+    private @Nullable Output<ComputeGpuMemoryFabricMemoryFabricPreferencesArgs> memoryFabricPreferences;
+
+    /**
+     * @return (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     * 
+     */
+    public Optional<Output<ComputeGpuMemoryFabricMemoryFabricPreferencesArgs>> memoryFabricPreferences() {
+        return Optional.ofNullable(this.memoryFabricPreferences);
+    }
+
+    /**
      * The lifecycle state of the GPU memory fabric
      * 
      */
@@ -218,6 +288,21 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
     }
 
     /**
+     * The switch platform identifier used for bundle queries
+     * 
+     */
+    @Import(name="switchPlatformName")
+    private @Nullable Output<String> switchPlatformName;
+
+    /**
+     * @return The switch platform identifier used for bundle queries
+     * 
+     */
+    public Optional<Output<String>> switchPlatformName() {
+        return Optional.ofNullable(this.switchPlatformName);
+    }
+
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -230,6 +315,21 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
      */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     * 
+     */
+    @Import(name="targetFirmwareBundleId")
+    private @Nullable Output<String> targetFirmwareBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     * 
+     */
+    public Optional<Output<String>> targetFirmwareBundleId() {
+        return Optional.ofNullable(this.targetFirmwareBundleId);
     }
 
     /**
@@ -272,13 +372,20 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         this.computeHpcIslandId = $.computeHpcIslandId;
         this.computeLocalBlockId = $.computeLocalBlockId;
         this.computeNetworkBlockId = $.computeNetworkBlockId;
+        this.currentFirmwareBundleId = $.currentFirmwareBundleId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.fabricHealth = $.fabricHealth;
+        this.firmwareUpdateReason = $.firmwareUpdateReason;
+        this.firmwareUpdateState = $.firmwareUpdateState;
         this.freeformTags = $.freeformTags;
         this.healthyHostCount = $.healthyHostCount;
+        this.hostPlatformName = $.hostPlatformName;
+        this.memoryFabricPreferences = $.memoryFabricPreferences;
         this.state = $.state;
+        this.switchPlatformName = $.switchPlatformName;
         this.systemTags = $.systemTags;
+        this.targetFirmwareBundleId = $.targetFirmwareBundleId;
         this.timeCreated = $.timeCreated;
         this.totalHostCount = $.totalHostCount;
     }
@@ -449,6 +556,27 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param currentFirmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentFirmwareBundleId(@Nullable Output<String> currentFirmwareBundleId) {
+            $.currentFirmwareBundleId = currentFirmwareBundleId;
+            return this;
+        }
+
+        /**
+         * @param currentFirmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentFirmwareBundleId(String currentFirmwareBundleId) {
+            return currentFirmwareBundleId(Output.of(currentFirmwareBundleId));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
@@ -512,10 +640,49 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param firmwareUpdateReason The reason for updating firmware bundle version of the GPU memory fabric.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder firmwareUpdateReason(@Nullable Output<String> firmwareUpdateReason) {
+            $.firmwareUpdateReason = firmwareUpdateReason;
+            return this;
+        }
+
+        /**
+         * @param firmwareUpdateReason The reason for updating firmware bundle version of the GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firmwareUpdateReason(String firmwareUpdateReason) {
+            return firmwareUpdateReason(Output.of(firmwareUpdateReason));
+        }
+
+        /**
+         * @param firmwareUpdateState The state of Memory Fabric Firmware update
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firmwareUpdateState(@Nullable Output<String> firmwareUpdateState) {
+            $.firmwareUpdateState = firmwareUpdateState;
+            return this;
+        }
+
+        /**
+         * @param firmwareUpdateState The state of Memory Fabric Firmware update
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firmwareUpdateState(String firmwareUpdateState) {
+            return firmwareUpdateState(Output.of(firmwareUpdateState));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -527,9 +694,6 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -560,6 +724,48 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param hostPlatformName The host platform identifier used for bundle queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostPlatformName(@Nullable Output<String> hostPlatformName) {
+            $.hostPlatformName = hostPlatformName;
+            return this;
+        }
+
+        /**
+         * @param hostPlatformName The host platform identifier used for bundle queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostPlatformName(String hostPlatformName) {
+            return hostPlatformName(Output.of(hostPlatformName));
+        }
+
+        /**
+         * @param memoryFabricPreferences (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryFabricPreferences(@Nullable Output<ComputeGpuMemoryFabricMemoryFabricPreferencesArgs> memoryFabricPreferences) {
+            $.memoryFabricPreferences = memoryFabricPreferences;
+            return this;
+        }
+
+        /**
+         * @param memoryFabricPreferences (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryFabricPreferences(ComputeGpuMemoryFabricMemoryFabricPreferencesArgs memoryFabricPreferences) {
+            return memoryFabricPreferences(Output.of(memoryFabricPreferences));
+        }
+
+        /**
          * @param state The lifecycle state of the GPU memory fabric
          * 
          * @return builder
@@ -581,6 +787,27 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param switchPlatformName The switch platform identifier used for bundle queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchPlatformName(@Nullable Output<String> switchPlatformName) {
+            $.switchPlatformName = switchPlatformName;
+            return this;
+        }
+
+        /**
+         * @param switchPlatformName The switch platform identifier used for bundle queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchPlatformName(String switchPlatformName) {
+            return switchPlatformName(Output.of(switchPlatformName));
+        }
+
+        /**
          * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
@@ -599,6 +826,27 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param targetFirmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetFirmwareBundleId(@Nullable Output<String> targetFirmwareBundleId) {
+            $.targetFirmwareBundleId = targetFirmwareBundleId;
+            return this;
+        }
+
+        /**
+         * @param targetFirmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetFirmwareBundleId(String targetFirmwareBundleId) {
+            return targetFirmwareBundleId(Output.of(targetFirmwareBundleId));
         }
 
         /**

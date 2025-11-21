@@ -440,6 +440,8 @@ type GetBastionsBastion struct {
 	PhoneBookEntry string `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
 	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the bastion.
 	State string `pulumi:"state"`
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -494,6 +496,8 @@ type GetBastionsBastionArgs struct {
 	PhoneBookEntry pulumi.StringInput `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
 	PrivateEndpointIpAddress pulumi.StringInput `pulumi:"privateEndpointIpAddress"`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The current state of the bastion.
 	State pulumi.StringInput `pulumi:"state"`
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -624,6 +628,11 @@ func (o GetBastionsBastionOutput) PhoneBookEntry() pulumi.StringOutput {
 // The private IP address of the created private endpoint.
 func (o GetBastionsBastionOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBastionsBastion) string { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+func (o GetBastionsBastionOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBastionsBastion) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the bastion.

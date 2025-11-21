@@ -21,7 +21,7 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// The package version.
         /// </summary>
         public readonly string Version;
-        public readonly string? ZipFileBase64encoded;
+        public readonly string ZipFileBase64encoded;
 
         [OutputConstructor]
         private PrivateApplicationPackageDetails(
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
 
             string version,
 
-            string? zipFileBase64encoded)
+            string zipFileBase64encoded)
         {
             PackageType = packageType;
             Version = version;

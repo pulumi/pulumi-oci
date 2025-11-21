@@ -30,6 +30,7 @@ class ProviderArgs:
                  private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
                  realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  region: Optional[pulumi.Input[_builtins.str]] = None,
+                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
@@ -49,6 +50,7 @@ class ProviderArgs:
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[_builtins.str] region: (Required) The region for API connections (e.g. us-ashburn-1).
+        :param pulumi.Input[_builtins.str] retries_config_file: (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
         :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
                The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
@@ -76,6 +78,8 @@ class ProviderArgs:
             pulumi.set(__self__, "realm_specific_service_endpoint_template_enabled", realm_specific_service_endpoint_template_enabled)
         if region is not None:
             pulumi.set(__self__, "region", region)
+        if retries_config_file is not None:
+            pulumi.set(__self__, "retries_config_file", retries_config_file)
         if retry_duration_seconds is not None:
             pulumi.set(__self__, "retry_duration_seconds", retry_duration_seconds)
         if tenancy_ocid is not None:
@@ -218,6 +222,18 @@ class ProviderArgs:
         pulumi.set(self, "region", value)
 
     @_builtins.property
+    @pulumi.getter(name="retriesConfigFile")
+    def retries_config_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        """
+        return pulumi.get(self, "retries_config_file")
+
+    @retries_config_file.setter
+    def retries_config_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "retries_config_file", value)
+
+    @_builtins.property
     @pulumi.getter(name="retryDurationSeconds")
     def retry_duration_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -281,6 +297,7 @@ class Provider(pulumi.ProviderResource):
                  private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
                  realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  region: Optional[pulumi.Input[_builtins.str]] = None,
+                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
@@ -307,6 +324,7 @@ class Provider(pulumi.ProviderResource):
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[_builtins.str] region: (Required) The region for API connections (e.g. us-ashburn-1).
+        :param pulumi.Input[_builtins.str] retries_config_file: (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
         :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
                The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
@@ -350,6 +368,7 @@ class Provider(pulumi.ProviderResource):
                  private_key_path: Optional[pulumi.Input[_builtins.str]] = None,
                  realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  region: Optional[pulumi.Input[_builtins.str]] = None,
+                 retries_config_file: Optional[pulumi.Input[_builtins.str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: Optional[pulumi.Input[_builtins.str]] = None,
@@ -374,6 +393,7 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["private_key_path"] = private_key_path
             __props__.__dict__["realm_specific_service_endpoint_template_enabled"] = pulumi.Output.from_input(realm_specific_service_endpoint_template_enabled).apply(pulumi.runtime.to_json) if realm_specific_service_endpoint_template_enabled is not None else None
             __props__.__dict__["region"] = region
+            __props__.__dict__["retries_config_file"] = retries_config_file
             __props__.__dict__["retry_duration_seconds"] = pulumi.Output.from_input(retry_duration_seconds).apply(pulumi.runtime.to_json) if retry_duration_seconds is not None else None
             __props__.__dict__["tenancy_ocid"] = tenancy_ocid
             __props__.__dict__["test_time_maintenance_reboot_due"] = test_time_maintenance_reboot_due
@@ -443,6 +463,14 @@ class Provider(pulumi.ProviderResource):
         (Required) The region for API connections (e.g. us-ashburn-1).
         """
         return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="retriesConfigFile")
+    def retries_config_file(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        """
+        return pulumi.get(self, "retries_config_file")
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")

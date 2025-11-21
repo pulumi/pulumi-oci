@@ -40,8 +40,8 @@ class IotDigitalTwinInstanceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
-        :param pulumi.Input[_builtins.str] digital_twin_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
-        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
+        :param pulumi.Input[_builtins.str] digital_twin_model_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: (Updatable) The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -134,7 +134,7 @@ class IotDigitalTwinInstanceArgs:
     @pulumi.getter(name="digitalTwinModelId")
     def digital_twin_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         """
         return pulumi.get(self, "digital_twin_model_id")
 
@@ -146,7 +146,7 @@ class IotDigitalTwinInstanceArgs:
     @pulumi.getter(name="digitalTwinModelSpecUri")
     def digital_twin_model_spec_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URI of the digital twin model specification.
+        (Updatable) The URI of the digital twin model specification.
         """
         return pulumi.get(self, "digital_twin_model_spec_uri")
 
@@ -214,8 +214,8 @@ class _IotDigitalTwinInstanceState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
-        :param pulumi.Input[_builtins.str] digital_twin_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
-        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
+        :param pulumi.Input[_builtins.str] digital_twin_model_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: (Updatable) The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -310,7 +310,7 @@ class _IotDigitalTwinInstanceState:
     @pulumi.getter(name="digitalTwinModelId")
     def digital_twin_model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         """
         return pulumi.get(self, "digital_twin_model_id")
 
@@ -322,7 +322,7 @@ class _IotDigitalTwinInstanceState:
     @pulumi.getter(name="digitalTwinModelSpecUri")
     def digital_twin_model_spec_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URI of the digital twin model specification.
+        (Updatable) The URI of the digital twin model specification.
         """
         return pulumi.get(self, "digital_twin_model_spec_uri")
 
@@ -486,8 +486,8 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
-        :param pulumi.Input[_builtins.str] digital_twin_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
-        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
+        :param pulumi.Input[_builtins.str] digital_twin_model_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: (Updatable) The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -620,8 +620,8 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
-        :param pulumi.Input[_builtins.str] digital_twin_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
-        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
+        :param pulumi.Input[_builtins.str] digital_twin_model_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: (Updatable) The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -691,7 +691,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
     @pulumi.getter(name="digitalTwinModelId")
     def digital_twin_model_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         """
         return pulumi.get(self, "digital_twin_model_id")
 
@@ -699,7 +699,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
     @pulumi.getter(name="digitalTwinModelSpecUri")
     def digital_twin_model_spec_uri(self) -> pulumi.Output[_builtins.str]:
         """
-        The URI of the digital twin model specification.
+        (Updatable) The URI of the digital twin model specification.
         """
         return pulumi.get(self, "digital_twin_model_spec_uri")
 

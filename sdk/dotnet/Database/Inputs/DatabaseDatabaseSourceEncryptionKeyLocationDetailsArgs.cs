@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("hsmPassword", required: true)]
+        [Input("hsmPassword")]
         private Input<string>? _hsmPassword;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         /// </summary>
         [Input("providerType", required: true)]
         public Input<string> ProviderType { get; set; } = null!;

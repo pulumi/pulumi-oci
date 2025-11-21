@@ -13,28 +13,52 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDatabaseEncryptionKeyLocationDetails {
     /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    private @Nullable String awsEncryptionKeyId;
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
     private @Nullable String azureEncryptionKeyId;
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    private @Nullable String googleCloudProviderEncryptionKeyId;
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
     private @Nullable String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     private String providerType;
 
     private DatabaseDatabaseEncryptionKeyLocationDetails() {}
     /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    public Optional<String> awsEncryptionKeyId() {
+        return Optional.ofNullable(this.awsEncryptionKeyId);
+    }
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
     public Optional<String> azureEncryptionKeyId() {
         return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    public Optional<String> googleCloudProviderEncryptionKeyId() {
+        return Optional.ofNullable(this.googleCloudProviderEncryptionKeyId);
     }
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
@@ -44,7 +68,7 @@ public final class DatabaseDatabaseEncryptionKeyLocationDetails {
         return Optional.ofNullable(this.hsmPassword);
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     public String providerType() {
@@ -60,21 +84,37 @@ public final class DatabaseDatabaseEncryptionKeyLocationDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String awsEncryptionKeyId;
         private @Nullable String azureEncryptionKeyId;
+        private @Nullable String googleCloudProviderEncryptionKeyId;
         private @Nullable String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(DatabaseDatabaseEncryptionKeyLocationDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.awsEncryptionKeyId = defaults.awsEncryptionKeyId;
     	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
+    	      this.googleCloudProviderEncryptionKeyId = defaults.googleCloudProviderEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
         @CustomType.Setter
+        public Builder awsEncryptionKeyId(@Nullable String awsEncryptionKeyId) {
+
+            this.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder azureEncryptionKeyId(@Nullable String azureEncryptionKeyId) {
 
             this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder googleCloudProviderEncryptionKeyId(@Nullable String googleCloudProviderEncryptionKeyId) {
+
+            this.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             return this;
         }
         @CustomType.Setter
@@ -93,7 +133,9 @@ public final class DatabaseDatabaseEncryptionKeyLocationDetails {
         }
         public DatabaseDatabaseEncryptionKeyLocationDetails build() {
             final var _resultValue = new DatabaseDatabaseEncryptionKeyLocationDetails();
+            _resultValue.awsEncryptionKeyId = awsEncryptionKeyId;
             _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
+            _resultValue.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

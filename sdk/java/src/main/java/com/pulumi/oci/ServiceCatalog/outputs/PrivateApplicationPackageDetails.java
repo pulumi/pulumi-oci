@@ -7,8 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class PrivateApplicationPackageDetails {
@@ -22,7 +20,7 @@ public final class PrivateApplicationPackageDetails {
      * 
      */
     private String version;
-    private @Nullable String zipFileBase64encoded;
+    private String zipFileBase64encoded;
 
     private PrivateApplicationPackageDetails() {}
     /**
@@ -39,8 +37,8 @@ public final class PrivateApplicationPackageDetails {
     public String version() {
         return this.version;
     }
-    public Optional<String> zipFileBase64encoded() {
-        return Optional.ofNullable(this.zipFileBase64encoded);
+    public String zipFileBase64encoded() {
+        return this.zipFileBase64encoded;
     }
 
     public static Builder builder() {
@@ -54,7 +52,7 @@ public final class PrivateApplicationPackageDetails {
     public static final class Builder {
         private String packageType;
         private String version;
-        private @Nullable String zipFileBase64encoded;
+        private String zipFileBase64encoded;
         public Builder() {}
         public Builder(PrivateApplicationPackageDetails defaults) {
     	      Objects.requireNonNull(defaults);
@@ -80,8 +78,10 @@ public final class PrivateApplicationPackageDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder zipFileBase64encoded(@Nullable String zipFileBase64encoded) {
-
+        public Builder zipFileBase64encoded(String zipFileBase64encoded) {
+            if (zipFileBase64encoded == null) {
+              throw new MissingRequiredPropertyException("PrivateApplicationPackageDetails", "zipFileBase64encoded");
+            }
             this.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }

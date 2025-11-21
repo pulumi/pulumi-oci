@@ -300,14 +300,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     @Import(name="connectionString")
     private @Nullable Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * @return (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     public Optional<Output<String>> connectionString() {
@@ -495,14 +495,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
      * 
      */
     @Import(name="endpoint")
     private @Nullable Output<String> endpoint;
 
     /**
-     * @return (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+     * @return (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
      * 
      */
     public Optional<Output<String>> endpoint() {
@@ -510,14 +510,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     @Import(name="fingerprint")
     private @Nullable Output<String> fingerprint;
 
     /**
-     * @return (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * @return (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     public Optional<Output<String>> fingerprint() {
@@ -540,7 +540,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * 
      * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
@@ -548,7 +549,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> host;
 
     /**
-     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * @return (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * 
      * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
@@ -1652,23 +1654,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.tlsCertificateKeyFileSecretId);
     }
 
-    /**
-     * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Import(name="triggerRefresh")
     private @Nullable Output<Boolean> triggerRefresh;
 
-    /**
-     * @return (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Optional<Output<Boolean>> triggerRefresh() {
         return Optional.ofNullable(this.triggerRefresh);
     }
@@ -1811,12 +1799,18 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="walletSecretId")
     private @Nullable Output<String> walletSecretId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> walletSecretId() {
@@ -2367,7 +2361,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionString (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+         * @param connectionString (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
          * 
          * @return builder
          * 
@@ -2378,7 +2372,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionString (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+         * @param connectionString (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
          * 
          * @return builder
          * 
@@ -2640,7 +2634,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+         * @param endpoint (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
          * 
          * @return builder
          * 
@@ -2651,7 +2645,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
+         * @param endpoint (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
          * 
          * @return builder
          * 
@@ -2661,7 +2655,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
          * 
          * @return builder
          * 
@@ -2672,7 +2666,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
          * 
          * @return builder
          * 
@@ -2703,7 +2697,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * @param host (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * 
          * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
          * 
          * @return builder
@@ -2715,7 +2710,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * @param host (Updatable) Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * 
          * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
          * 
          * @return builder
@@ -4279,29 +4275,11 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
             return tlsCertificateKeyFileSecretId(Output.of(tlsCertificateKeyFileSecretId));
         }
 
-        /**
-         * @param triggerRefresh (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder triggerRefresh(@Nullable Output<Boolean> triggerRefresh) {
             $.triggerRefresh = triggerRefresh;
             return this;
         }
 
-        /**
-         * @param triggerRefresh (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the &#34;update&#34; plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder triggerRefresh(Boolean triggerRefresh) {
             return triggerRefresh(Output.of(triggerRefresh));
         }
@@ -4498,6 +4476,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param walletSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -4508,6 +4489,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param walletSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

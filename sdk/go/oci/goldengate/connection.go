@@ -97,8 +97,8 @@ import (
 //				KeyId:                           pulumi.Any(testKey.Id),
 //				KeyStore:                        pulumi.Any(connectionKeyStore),
 //				KeyStorePassword:                pulumi.Any(connectionKeyStorePassword),
-//				KeyStoreSecretId:                pulumi.Any(testSecret.Id),
 //				KeyStorePasswordSecretId:        pulumi.Any(testSecret.Id),
+//				KeyStoreSecretId:                pulumi.Any(testSecret.Id),
 //				Locks: goldengate.ConnectionLockArray{
 //					&goldengate.ConnectionLockArgs{
 //						Type:    pulumi.Any(connectionLocksType),
@@ -180,7 +180,6 @@ import (
 //				VaultId:                               pulumi.Any(testVault.Id),
 //				Wallet:                                pulumi.Any(connectionWallet),
 //				WalletSecretId:                        pulumi.Any(testSecret.Id),
-//				TriggerRefresh:                        pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
@@ -239,7 +238,7 @@ type Connection struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory pulumi.StringOutput `pulumi:"connectionFactory"`
-	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// (Updatable) The connection type.
 	ConnectionType pulumi.StringOutput `pulumi:"connectionType"`
@@ -265,13 +264,14 @@ type Connection struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolOutput `pulumi:"doesUseSecretIds"`
-	// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+	// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
-	// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+	//
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringOutput `pulumi:"host"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -428,12 +428,8 @@ type Connection struct {
 	TlsCertificateKeyFilePasswordSecretId pulumi.StringOutput `pulumi:"tlsCertificateKeyFilePasswordSecretId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-	TlsCertificateKeyFileSecretId pulumi.StringOutput `pulumi:"tlsCertificateKeyFileSecretId"`
-	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TriggerRefresh pulumi.BoolPtrOutput `pulumi:"triggerRefresh"`
+	TlsCertificateKeyFileSecretId pulumi.StringOutput  `pulumi:"tlsCertificateKeyFileSecretId"`
+	TriggerRefresh                pulumi.BoolPtrOutput `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
 	TrustStore pulumi.StringPtrOutput `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -453,6 +449,9 @@ type Connection struct {
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
 	Wallet pulumi.StringPtrOutput `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WalletSecretId pulumi.StringPtrOutput `pulumi:"walletSecretId"`
 }
 
@@ -619,7 +618,7 @@ type connectionState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory *string `pulumi:"connectionFactory"`
-	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) The connection type.
 	ConnectionType *string `pulumi:"connectionType"`
@@ -645,13 +644,14 @@ type connectionState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
-	// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+	// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 	Endpoint *string `pulumi:"endpoint"`
-	// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+	//
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host *string `pulumi:"host"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -809,11 +809,7 @@ type connectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 	TlsCertificateKeyFileSecretId *string `pulumi:"tlsCertificateKeyFileSecretId"`
-	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TriggerRefresh *bool `pulumi:"triggerRefresh"`
+	TriggerRefresh                *bool   `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
 	TrustStore *string `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -833,6 +829,9 @@ type connectionState struct {
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
 	Wallet *string `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
@@ -875,7 +874,7 @@ type ConnectionState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory pulumi.StringPtrInput
-	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) The connection type.
 	ConnectionType pulumi.StringPtrInput
@@ -901,13 +900,14 @@ type ConnectionState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolPtrInput
-	// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+	// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 	Endpoint pulumi.StringPtrInput
-	// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+	//
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringPtrInput
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1065,11 +1065,7 @@ type ConnectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 	TlsCertificateKeyFileSecretId pulumi.StringPtrInput
-	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TriggerRefresh pulumi.BoolPtrInput
+	TriggerRefresh                pulumi.BoolPtrInput
 	// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
 	TrustStore pulumi.StringPtrInput
 	// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -1089,6 +1085,9 @@ type ConnectionState struct {
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
 	Wallet pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WalletSecretId pulumi.StringPtrInput
 }
 
@@ -1135,7 +1134,7 @@ type connectionArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory *string `pulumi:"connectionFactory"`
-	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) The connection type.
 	ConnectionType string `pulumi:"connectionType"`
@@ -1161,13 +1160,14 @@ type connectionArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
-	// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+	// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 	Endpoint *string `pulumi:"endpoint"`
-	// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+	//
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host           *string `pulumi:"host"`
 	IsLockOverride *bool   `pulumi:"isLockOverride"`
@@ -1313,11 +1313,7 @@ type connectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 	TlsCertificateKeyFileSecretId *string `pulumi:"tlsCertificateKeyFileSecretId"`
-	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TriggerRefresh *bool `pulumi:"triggerRefresh"`
+	TriggerRefresh                *bool   `pulumi:"triggerRefresh"`
 	// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
 	TrustStore *string `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -1337,6 +1333,9 @@ type connectionArgs struct {
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
 	Wallet *string `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
@@ -1380,7 +1379,7 @@ type ConnectionArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory pulumi.StringPtrInput
-	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) The connection type.
 	ConnectionType pulumi.StringInput
@@ -1406,13 +1405,14 @@ type ConnectionArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolPtrInput
-	// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+	// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 	Endpoint pulumi.StringPtrInput
-	// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+	//
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host           pulumi.StringPtrInput
 	IsLockOverride pulumi.BoolPtrInput
@@ -1558,11 +1558,7 @@ type ConnectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 	TlsCertificateKeyFileSecretId pulumi.StringPtrInput
-	// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TriggerRefresh pulumi.BoolPtrInput
+	TriggerRefresh                pulumi.BoolPtrInput
 	// (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
 	TrustStore pulumi.StringPtrInput
 	// (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -1582,6 +1578,9 @@ type ConnectionArgs struct {
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
 	Wallet pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WalletSecretId pulumi.StringPtrInput
 }
 
@@ -1764,7 +1763,7 @@ func (o ConnectionOutput) ConnectionFactory() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConnectionFactory }).(pulumi.StringOutput)
 }
 
-// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 func (o ConnectionOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -1829,12 +1828,12 @@ func (o ConnectionOutput) DoesUseSecretIds() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.<region>.amazonaws.com'.
 func (o ConnectionOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
 }
 
-// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 func (o ConnectionOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
 }
@@ -1844,7 +1843,8 @@ func (o ConnectionOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+//
 // For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o ConnectionOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
@@ -2221,10 +2221,6 @@ func (o ConnectionOutput) TlsCertificateKeyFileSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TlsCertificateKeyFileSecretId }).(pulumi.StringOutput)
 }
 
-// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionOutput) TriggerRefresh() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.BoolPtrOutput { return v.TriggerRefresh }).(pulumi.BoolPtrOutput)
 }
@@ -2275,6 +2271,9 @@ func (o ConnectionOutput) Wallet() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }

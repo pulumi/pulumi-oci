@@ -18,6 +18,11 @@ from . import outputs
 __all__ = [
     'PrivateApplicationLogo',
     'PrivateApplicationPackageDetails',
+    'GetAllApplicationsApplicationCollectionResult',
+    'GetAllApplicationsApplicationCollectionItemResult',
+    'GetAllApplicationsApplicationCollectionItemLogoResult',
+    'GetAllApplicationsApplicationCollectionItemPublisherResult',
+    'GetAllApplicationsFilterResult',
     'GetPrivateApplicationLogoResult',
     'GetPrivateApplicationPackageDetailResult',
     'GetPrivateApplicationPackagesFilterResult',
@@ -124,15 +129,14 @@ class PrivateApplicationPackageDetails(dict):
     def __init__(__self__, *,
                  package_type: _builtins.str,
                  version: _builtins.str,
-                 zip_file_base64encoded: Optional[_builtins.str] = None):
+                 zip_file_base64encoded: _builtins.str):
         """
         :param _builtins.str package_type: The package's type.
         :param _builtins.str version: The package version.
         """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
-        if zip_file_base64encoded is not None:
-            pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @_builtins.property
     @pulumi.getter(name="packageType")
@@ -152,8 +156,250 @@ class PrivateApplicationPackageDetails(dict):
 
     @_builtins.property
     @pulumi.getter(name="zipFileBase64encoded")
-    def zip_file_base64encoded(self) -> Optional[_builtins.str]:
+    def zip_file_base64encoded(self) -> _builtins.str:
         return pulumi.get(self, "zip_file_base64encoded")
+
+
+@pulumi.output_type
+class GetAllApplicationsApplicationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAllApplicationsApplicationCollectionItemResult']):
+        """
+        :param Sequence['GetAllApplicationsApplicationCollectionItemArgs'] items: Collection of service catalog applications.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAllApplicationsApplicationCollectionItemResult']:
+        """
+        Collection of service catalog applications.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAllApplicationsApplicationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 categories: Sequence[_builtins.str],
+                 display_name: _builtins.str,
+                 entity_id: _builtins.str,
+                 entity_type: _builtins.str,
+                 is_featured: _builtins.bool,
+                 logos: Sequence['outputs.GetAllApplicationsApplicationCollectionItemLogoResult'],
+                 package_type: _builtins.str,
+                 pricing_type: _builtins.str,
+                 publishers: Sequence['outputs.GetAllApplicationsApplicationCollectionItemPublisherResult'],
+                 short_description: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Sequence[_builtins.str] categories: Product categories that the application belongs to.
+        :param _builtins.str display_name: Exact match name filter.
+        :param _builtins.str entity_id: The unique identifier of the entity associated with service catalog.
+        :param _builtins.str entity_type: The type of the application in the service catalog.
+        :param _builtins.bool is_featured: Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+        :param Sequence['GetAllApplicationsApplicationCollectionItemLogoArgs'] logos: The model for uploaded binary data, like logos and images.
+        :param _builtins.str package_type: Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
+        :param _builtins.str pricing_type: Summary of the pricing types available across all packages in the application.
+        :param Sequence['GetAllApplicationsApplicationCollectionItemPublisherArgs'] publishers: Summary details about the publisher of the resource.
+        :param _builtins.str short_description: A short description of the application.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "categories", categories)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "is_featured", is_featured)
+        pulumi.set(__self__, "logos", logos)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+        pulumi.set(__self__, "publishers", publishers)
+        pulumi.set(__self__, "short_description", short_description)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def categories(self) -> Sequence[_builtins.str]:
+        """
+        Product categories that the application belongs to.
+        """
+        return pulumi.get(self, "categories")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Exact match name filter.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> _builtins.str:
+        """
+        The unique identifier of the entity associated with service catalog.
+        """
+        return pulumi.get(self, "entity_id")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        The type of the application in the service catalog.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter(name="isFeatured")
+    def is_featured(self) -> _builtins.bool:
+        """
+        Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+        """
+        return pulumi.get(self, "is_featured")
+
+    @_builtins.property
+    @pulumi.getter
+    def logos(self) -> Sequence['outputs.GetAllApplicationsApplicationCollectionItemLogoResult']:
+        """
+        The model for uploaded binary data, like logos and images.
+        """
+        return pulumi.get(self, "logos")
+
+    @_builtins.property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> _builtins.str:
+        """
+        Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
+        """
+        return pulumi.get(self, "package_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> _builtins.str:
+        """
+        Summary of the pricing types available across all packages in the application.
+        """
+        return pulumi.get(self, "pricing_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def publishers(self) -> Sequence['outputs.GetAllApplicationsApplicationCollectionItemPublisherResult']:
+        """
+        Summary details about the publisher of the resource.
+        """
+        return pulumi.get(self, "publishers")
+
+    @_builtins.property
+    @pulumi.getter(name="shortDescription")
+    def short_description(self) -> _builtins.str:
+        """
+        A short description of the application.
+        """
+        return pulumi.get(self, "short_description")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetAllApplicationsApplicationCollectionItemLogoResult(dict):
+    def __init__(__self__, *,
+                 content_url: _builtins.str,
+                 display_name: _builtins.str,
+                 mime_type: _builtins.str):
+        """
+        :param _builtins.str content_url: The content URL of the uploaded data.
+        :param _builtins.str display_name: Exact match name filter.
+        :param _builtins.str mime_type: The MIME type of the uploaded data.
+        """
+        pulumi.set(__self__, "content_url", content_url)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "mime_type", mime_type)
+
+    @_builtins.property
+    @pulumi.getter(name="contentUrl")
+    def content_url(self) -> _builtins.str:
+        """
+        The content URL of the uploaded data.
+        """
+        return pulumi.get(self, "content_url")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Exact match name filter.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="mimeType")
+    def mime_type(self) -> _builtins.str:
+        """
+        The MIME type of the uploaded data.
+        """
+        return pulumi.get(self, "mime_type")
+
+
+@pulumi.output_type
+class GetAllApplicationsApplicationCollectionItemPublisherResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: Exact match name filter.
+        :param _builtins.str id: The unique identifier for the publisher.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Exact match name filter.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The unique identifier for the publisher.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetAllApplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -408,6 +654,7 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
                  package_type: _builtins.str,
                  short_description: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -421,6 +668,7 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
         :param _builtins.str package_type: Type of packages within this private application.
         :param _builtins.str short_description: A short description of the private application.
         :param _builtins.str state: The lifecycle state of the private application.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
@@ -436,6 +684,7 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "short_description", short_description)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -528,6 +777,14 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
         The lifecycle state of the private application.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -767,6 +1024,8 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  state: _builtins.str,
+                 status: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -776,6 +1035,8 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The unique identifier for the Service catalog.
         :param _builtins.str state: The lifecycle state of the service catalog.
+        :param _builtins.str status: Status of the service catalog, use as a filter to filter out all active catalogs.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
@@ -785,6 +1046,8 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -835,6 +1098,22 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
         The lifecycle state of the service catalog.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the service catalog, use as a filter to filter out all active catalogs.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

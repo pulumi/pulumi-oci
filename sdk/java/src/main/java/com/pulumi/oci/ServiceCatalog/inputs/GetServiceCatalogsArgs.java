@@ -70,6 +70,21 @@ public final class GetServiceCatalogsArgs extends com.pulumi.resources.InvokeArg
         return Optional.ofNullable(this.serviceCatalogId);
     }
 
+    /**
+     * Status of the service catalog, use as a filter to filter out all active catalogs.
+     * 
+     */
+    @Import(name="status")
+    private @Nullable Output<String> status;
+
+    /**
+     * @return Status of the service catalog, use as a filter to filter out all active catalogs.
+     * 
+     */
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
+    }
+
     private GetServiceCatalogsArgs() {}
 
     private GetServiceCatalogsArgs(GetServiceCatalogsArgs $) {
@@ -77,6 +92,7 @@ public final class GetServiceCatalogsArgs extends com.pulumi.resources.InvokeArg
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.serviceCatalogId = $.serviceCatalogId;
+        this.status = $.status;
     }
 
     public static Builder builder() {
@@ -171,6 +187,27 @@ public final class GetServiceCatalogsArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder serviceCatalogId(String serviceCatalogId) {
             return serviceCatalogId(Output.of(serviceCatalogId));
+        }
+
+        /**
+         * @param status Status of the service catalog, use as a filter to filter out all active catalogs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        /**
+         * @param status Status of the service catalog, use as a filter to filter out all active catalogs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(String status) {
+            return status(Output.of(status));
         }
 
         public GetServiceCatalogsArgs build() {

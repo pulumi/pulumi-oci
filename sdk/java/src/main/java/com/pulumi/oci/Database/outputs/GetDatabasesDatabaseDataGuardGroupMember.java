@@ -22,6 +22,11 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
      */
     private String applyRate;
     /**
+     * @return The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+     * 
+     */
+    private String dataLossExposure;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      * 
      */
@@ -32,6 +37,16 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
      */
     private String dbSystemId;
     /**
+     * @return The failover readiness status of the Data Guard member.
+     * 
+     */
+    private String failoverReadiness;
+    /**
+     * @return The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+     * 
+     */
+    private String failoverReadinessMessage;
+    /**
      * @return True if active Data Guard is enabled.
      * 
      */
@@ -41,6 +56,21 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
      * 
      */
     private String role;
+    /**
+     * @return The switchover readiness status of the Data Guard member.
+     * 
+     */
+    private String switchoverReadiness;
+    /**
+     * @return The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+     * 
+     */
+    private String switchoverReadinessMessage;
+    /**
+     * @return The date and time when the last successful Data Guard refresh occurred.
+     * 
+     */
+    private String timeUpdated;
     /**
      * @return The rate at which redo logs are transported between the associated databases.  Example: `1 second`
      * 
@@ -76,6 +106,13 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
         return this.applyRate;
     }
     /**
+     * @return The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+     * 
+     */
+    public String dataLossExposure() {
+        return this.dataLossExposure;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      * 
      */
@@ -90,6 +127,20 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
         return this.dbSystemId;
     }
     /**
+     * @return The failover readiness status of the Data Guard member.
+     * 
+     */
+    public String failoverReadiness() {
+        return this.failoverReadiness;
+    }
+    /**
+     * @return The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+     * 
+     */
+    public String failoverReadinessMessage() {
+        return this.failoverReadinessMessage;
+    }
+    /**
      * @return True if active Data Guard is enabled.
      * 
      */
@@ -102,6 +153,27 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
      */
     public String role() {
         return this.role;
+    }
+    /**
+     * @return The switchover readiness status of the Data Guard member.
+     * 
+     */
+    public String switchoverReadiness() {
+        return this.switchoverReadiness;
+    }
+    /**
+     * @return The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+     * 
+     */
+    public String switchoverReadinessMessage() {
+        return this.switchoverReadinessMessage;
+    }
+    /**
+     * @return The date and time when the last successful Data Guard refresh occurred.
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
     }
     /**
      * @return The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -139,10 +211,16 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
     public static final class Builder {
         private String applyLag;
         private String applyRate;
+        private String dataLossExposure;
         private String databaseId;
         private String dbSystemId;
+        private String failoverReadiness;
+        private String failoverReadinessMessage;
         private Boolean isActiveDataGuardEnabled;
         private String role;
+        private String switchoverReadiness;
+        private String switchoverReadinessMessage;
+        private String timeUpdated;
         private String transportLag;
         private String transportLagRefresh;
         private String transportType;
@@ -151,10 +229,16 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
     	      Objects.requireNonNull(defaults);
     	      this.applyLag = defaults.applyLag;
     	      this.applyRate = defaults.applyRate;
+    	      this.dataLossExposure = defaults.dataLossExposure;
     	      this.databaseId = defaults.databaseId;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.failoverReadiness = defaults.failoverReadiness;
+    	      this.failoverReadinessMessage = defaults.failoverReadinessMessage;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.role = defaults.role;
+    	      this.switchoverReadiness = defaults.switchoverReadiness;
+    	      this.switchoverReadinessMessage = defaults.switchoverReadinessMessage;
+    	      this.timeUpdated = defaults.timeUpdated;
     	      this.transportLag = defaults.transportLag;
     	      this.transportLagRefresh = defaults.transportLagRefresh;
     	      this.transportType = defaults.transportType;
@@ -177,6 +261,14 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder dataLossExposure(String dataLossExposure) {
+            if (dataLossExposure == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "dataLossExposure");
+            }
+            this.dataLossExposure = dataLossExposure;
+            return this;
+        }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             if (databaseId == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "databaseId");
@@ -193,6 +285,22 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder failoverReadiness(String failoverReadiness) {
+            if (failoverReadiness == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "failoverReadiness");
+            }
+            this.failoverReadiness = failoverReadiness;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder failoverReadinessMessage(String failoverReadinessMessage) {
+            if (failoverReadinessMessage == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "failoverReadinessMessage");
+            }
+            this.failoverReadinessMessage = failoverReadinessMessage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             if (isActiveDataGuardEnabled == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "isActiveDataGuardEnabled");
@@ -206,6 +314,30 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "role");
             }
             this.role = role;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder switchoverReadiness(String switchoverReadiness) {
+            if (switchoverReadiness == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "switchoverReadiness");
+            }
+            this.switchoverReadiness = switchoverReadiness;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder switchoverReadinessMessage(String switchoverReadinessMessage) {
+            if (switchoverReadinessMessage == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "switchoverReadinessMessage");
+            }
+            this.switchoverReadinessMessage = switchoverReadinessMessage;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDataGuardGroupMember", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
@@ -236,10 +368,16 @@ public final class GetDatabasesDatabaseDataGuardGroupMember {
             final var _resultValue = new GetDatabasesDatabaseDataGuardGroupMember();
             _resultValue.applyLag = applyLag;
             _resultValue.applyRate = applyRate;
+            _resultValue.dataLossExposure = dataLossExposure;
             _resultValue.databaseId = databaseId;
             _resultValue.dbSystemId = dbSystemId;
+            _resultValue.failoverReadiness = failoverReadiness;
+            _resultValue.failoverReadinessMessage = failoverReadinessMessage;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.role = role;
+            _resultValue.switchoverReadiness = switchoverReadiness;
+            _resultValue.switchoverReadinessMessage = switchoverReadinessMessage;
+            _resultValue.timeUpdated = timeUpdated;
             _resultValue.transportLag = transportLag;
             _resultValue.transportLagRefresh = transportLagRefresh;
             _resultValue.transportType = transportType;

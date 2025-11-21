@@ -221,6 +221,10 @@ __all__ = [
     'GatewayCaBundleArgsDict',
     'GatewayIpAddressArgs',
     'GatewayIpAddressArgsDict',
+    'GatewayIpv4addressConfigurationArgs',
+    'GatewayIpv4addressConfigurationArgsDict',
+    'GatewayIpv6addressConfigurationArgs',
+    'GatewayIpv6addressConfigurationArgsDict',
     'GatewayLockArgs',
     'GatewayLockArgsDict',
     'GatewayResponseCacheDetailsArgs',
@@ -8900,6 +8904,90 @@ class GatewayIpAddressArgs:
     @ip_address.setter
     def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
+
+
+if not MYPY:
+    class GatewayIpv4addressConfigurationArgsDict(TypedDict):
+        reserved_ip_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of Reserved IP OCIDs created in VCN service.
+        """
+elif False:
+    GatewayIpv4addressConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayIpv4addressConfigurationArgs:
+    def __init__(__self__, *,
+                 reserved_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserved_ip_ids: List of Reserved IP OCIDs created in VCN service.
+        """
+        if reserved_ip_ids is not None:
+            pulumi.set(__self__, "reserved_ip_ids", reserved_ip_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedIpIds")
+    def reserved_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of Reserved IP OCIDs created in VCN service.
+        """
+        return pulumi.get(self, "reserved_ip_ids")
+
+    @reserved_ip_ids.setter
+    def reserved_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "reserved_ip_ids", value)
+
+
+if not MYPY:
+    class GatewayIpv6addressConfigurationArgsDict(TypedDict):
+        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of IPv6 addresses that will be assigned to the gateway during creation.
+        """
+        subnet_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+elif False:
+    GatewayIpv6addressConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayIpv6addressConfigurationArgs:
+    def __init__(__self__, *,
+                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: List of IPv6 addresses that will be assigned to the gateway during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_cidrs: List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if subnet_cidrs is not None:
+            pulumi.set(__self__, "subnet_cidrs", subnet_cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IPv6 addresses that will be assigned to the gateway during creation.
+        """
+        return pulumi.get(self, "addresses")
+
+    @addresses.setter
+    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidrs")
+    def subnet_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        return pulumi.get(self, "subnet_cidrs")
+
+    @subnet_cidrs.setter
+    def subnet_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "subnet_cidrs", value)
 
 
 if not MYPY:

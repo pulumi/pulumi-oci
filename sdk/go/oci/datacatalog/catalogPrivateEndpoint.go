@@ -37,6 +37,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				SecurityAttributes: pulumi.Any(catalogPrivateEndpointSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -73,6 +74,8 @@ type CatalogPrivateEndpoint struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks CatalogPrivateEndpointLockArrayOutput `pulumi:"locks"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the private endpoint resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
@@ -143,6 +146,8 @@ type catalogPrivateEndpointState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks []CatalogPrivateEndpointLock `pulumi:"locks"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the private endpoint resource.
 	State *string `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
@@ -175,6 +180,8 @@ type CatalogPrivateEndpointState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks CatalogPrivateEndpointLockArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the private endpoint resource.
 	State pulumi.StringPtrInput
 	// The OCID of subnet to which the reverse connection is to be created
@@ -205,6 +212,8 @@ type catalogPrivateEndpointArgs struct {
 	DnsZones []string `pulumi:"dnsZones"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The OCID of subnet to which the reverse connection is to be created
 	//
 	// ** IMPORTANT **
@@ -224,6 +233,8 @@ type CatalogPrivateEndpointArgs struct {
 	DnsZones pulumi.StringArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The OCID of subnet to which the reverse connection is to be created
 	//
 	// ** IMPORTANT **
@@ -356,6 +367,11 @@ func (o CatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
 // Locks associated with this resource.
 func (o CatalogPrivateEndpointOutput) Locks() CatalogPrivateEndpointLockArrayOutput {
 	return o.ApplyT(func(v *CatalogPrivateEndpoint) CatalogPrivateEndpointLockArrayOutput { return v.Locks }).(CatalogPrivateEndpointLockArrayOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o CatalogPrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the private endpoint resource.

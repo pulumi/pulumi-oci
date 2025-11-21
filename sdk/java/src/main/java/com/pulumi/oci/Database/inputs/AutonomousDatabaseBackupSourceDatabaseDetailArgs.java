@@ -79,14 +79,14 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetailArgs extends com.
     }
 
     /**
-     * Customer Contacts for the Autonomous database.
+     * Customer Contacts for the Autonomous Database.
      * 
      */
     @Import(name="autonomousDatabaseCustomerContacts")
     private @Nullable Output<List<AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs>> autonomousDatabaseCustomerContacts;
 
     /**
-     * @return Customer Contacts for the Autonomous database.
+     * @return Customer Contacts for the Autonomous Database.
      * 
      */
     public Optional<Output<List<AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs>>> autonomousDatabaseCustomerContacts() {
@@ -272,7 +272,7 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetailArgs extends com.
         }
 
         /**
-         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous database.
+         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous Database.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetailArgs extends com.
         }
 
         /**
-         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous database.
+         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous Database.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class AutonomousDatabaseBackupSourceDatabaseDetailArgs extends com.
         }
 
         /**
-         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous database.
+         * @param autonomousDatabaseCustomerContacts Customer Contacts for the Autonomous Database.
          * 
          * @return builder
          * 

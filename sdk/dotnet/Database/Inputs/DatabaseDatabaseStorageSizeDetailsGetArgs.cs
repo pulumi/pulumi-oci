@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class DatabaseDatabaseStorageSizeDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        /// The DATA storage size, in gigabytes, that is applicable for the database.
         /// </summary>
         [Input("dataStorageSizeInGb", required: true)]
         public Input<int> DataStorageSizeInGb { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        /// The RECO storage size, in gigabytes, that is applicable for the database.
         /// </summary>
         [Input("recoStorageSizeInGbs", required: true)]
         public Input<int> RecoStorageSizeInGbs { get; set; } = null!;

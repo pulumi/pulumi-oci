@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Bastion
     ///         MaxSessionTtlInSeconds = bastionMaxSessionTtlInSeconds,
     ///         Name = bastionName,
     ///         PhoneBookEntry = bastionPhoneBookEntry,
+    ///         SecurityAttributes = bastionSecurityAttributes,
     ///         StaticJumpHostIpAddresses = bastionStaticJumpHostIpAddresses,
     ///     });
     /// 
@@ -126,6 +127,12 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         [Output("privateEndpointIpAddress")]
         public Output<string> PrivateEndpointIpAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the bastion.
@@ -291,6 +298,18 @@ namespace Pulumi.Oci.Bastion
         [Input("phoneBookEntry")]
         public Input<string>? PhoneBookEntry { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         [Input("staticJumpHostIpAddresses")]
         private InputList<string>? _staticJumpHostIpAddresses;
 
@@ -410,6 +429,18 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         [Input("privateEndpointIpAddress")]
         public Input<string>? PrivateEndpointIpAddress { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The current state of the bastion.

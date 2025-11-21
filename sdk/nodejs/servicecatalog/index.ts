@@ -15,6 +15,16 @@ export type CatalogAssociation = import("./catalogAssociation").CatalogAssociati
 export const CatalogAssociation: typeof import("./catalogAssociation").CatalogAssociation = null as any;
 utilities.lazyLoad(exports, ["CatalogAssociation"], () => require("./catalogAssociation"));
 
+export { GetAllApplicationsArgs, GetAllApplicationsResult, GetAllApplicationsOutputArgs } from "./getAllApplications";
+export const getAllApplications: typeof import("./getAllApplications").getAllApplications = null as any;
+export const getAllApplicationsOutput: typeof import("./getAllApplications").getAllApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAllApplications","getAllApplicationsOutput"], () => require("./getAllApplications"));
+
+export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
+export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
+export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getConfiguration","getConfigurationOutput"], () => require("./getConfiguration"));
+
 export { GetPrivateApplicationArgs, GetPrivateApplicationResult, GetPrivateApplicationOutputArgs } from "./getPrivateApplication";
 export const getPrivateApplication: typeof import("./getPrivateApplication").getPrivateApplication = null as any;
 export const getPrivateApplicationOutput: typeof import("./getPrivateApplication").getPrivateApplicationOutput = null as any;

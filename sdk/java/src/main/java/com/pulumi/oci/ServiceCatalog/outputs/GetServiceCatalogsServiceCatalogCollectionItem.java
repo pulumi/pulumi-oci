@@ -42,6 +42,16 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
      */
     private String state;
     /**
+     * @return Status of the service catalog, use as a filter to filter out all active catalogs.
+     * 
+     */
+    private String status;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      * 
      */
@@ -96,6 +106,20 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
         return this.state;
     }
     /**
+     * @return Status of the service catalog, use as a filter to filter out all active catalogs.
+     * 
+     */
+    public String status() {
+        return this.status;
+    }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      * 
      */
@@ -125,6 +149,8 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private String state;
+        private String status;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -136,6 +162,8 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.status = defaults.status;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -189,6 +217,22 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder status(String status) {
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogsServiceCatalogCollectionItem", "status");
+            }
+            this.status = status;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogsServiceCatalogCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetServiceCatalogsServiceCatalogCollectionItem", "timeCreated");
@@ -212,6 +256,8 @@ public final class GetServiceCatalogsServiceCatalogCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

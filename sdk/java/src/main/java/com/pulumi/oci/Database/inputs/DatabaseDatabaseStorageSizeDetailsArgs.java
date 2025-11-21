@@ -17,14 +17,14 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
     public static final DatabaseDatabaseStorageSizeDetailsArgs Empty = new DatabaseDatabaseStorageSizeDetailsArgs();
 
     /**
-     * (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+     * The DATA storage size, in gigabytes, that is applicable for the database.
      * 
      */
     @Import(name="dataStorageSizeInGb", required=true)
     private Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+     * @return The DATA storage size, in gigabytes, that is applicable for the database.
      * 
      */
     public Output<Integer> dataStorageSizeInGb() {
@@ -32,14 +32,14 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+     * The RECO storage size, in gigabytes, that is applicable for the database.
      * 
      */
     @Import(name="recoStorageSizeInGbs", required=true)
     private Output<Integer> recoStorageSizeInGbs;
 
     /**
-     * @return (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+     * @return The RECO storage size, in gigabytes, that is applicable for the database.
      * 
      */
     public Output<Integer> recoStorageSizeInGbs() {
@@ -88,7 +88,7 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param dataStorageSizeInGb (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+         * @param dataStorageSizeInGb The DATA storage size, in gigabytes, that is applicable for the database.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param dataStorageSizeInGb (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+         * @param dataStorageSizeInGb The DATA storage size, in gigabytes, that is applicable for the database.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param recoStorageSizeInGbs (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+         * @param recoStorageSizeInGbs The RECO storage size, in gigabytes, that is applicable for the database.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DatabaseDatabaseStorageSizeDetailsArgs extends com.pulumi.res
         }
 
         /**
-         * @param recoStorageSizeInGbs (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+         * @param recoStorageSizeInGbs The RECO storage size, in gigabytes, that is applicable for the database.
          * 
          * @return builder
          * 

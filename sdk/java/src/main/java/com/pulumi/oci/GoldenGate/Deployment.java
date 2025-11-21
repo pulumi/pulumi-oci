@@ -647,9 +647,17 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<String> sourceDeploymentId() {
         return this.sourceDeploymentId;
     }
+    /**
+     * Possible lifecycle states.
+     * 
+     */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
+    /**
+     * @return Possible lifecycle states.
+     * 
+     */
     public Output<String> state() {
         return this.state;
     }
@@ -684,12 +692,18 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="subscriptionId", refs={String.class}, tree="[0]")
     private Output<String> subscriptionId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> subscriptionId() {

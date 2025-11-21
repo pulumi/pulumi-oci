@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionIpAddress;
+import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionIpv4addressConfiguration;
+import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionIpv6addressConfiguration;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionLock;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionResponseCacheDetail;
 import java.lang.Boolean;
@@ -67,6 +69,21 @@ public final class GetGatewaysGatewayCollection {
      * 
      */
     private List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    private String ipMode;
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    private List<GetGatewaysGatewayCollectionIpv4addressConfiguration> ipv4addressConfigurations;
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    private List<GetGatewaysGatewayCollectionIpv6addressConfiguration> ipv6addressConfigurations;
     private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -185,6 +202,27 @@ public final class GetGatewaysGatewayCollection {
     public List<GetGatewaysGatewayCollectionIpAddress> ipAddresses() {
         return this.ipAddresses;
     }
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    public String ipMode() {
+        return this.ipMode;
+    }
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public List<GetGatewaysGatewayCollectionIpv4addressConfiguration> ipv4addressConfigurations() {
+        return this.ipv4addressConfigurations;
+    }
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public List<GetGatewaysGatewayCollectionIpv6addressConfiguration> ipv6addressConfigurations() {
+        return this.ipv6addressConfigurations;
+    }
     public Boolean isLockOverride() {
         return this.isLockOverride;
     }
@@ -271,6 +309,9 @@ public final class GetGatewaysGatewayCollection {
         private String hostname;
         private String id;
         private List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
+        private String ipMode;
+        private List<GetGatewaysGatewayCollectionIpv4addressConfiguration> ipv4addressConfigurations;
+        private List<GetGatewaysGatewayCollectionIpv6addressConfiguration> ipv6addressConfigurations;
         private Boolean isLockOverride;
         private String lifecycleDetails;
         private List<GetGatewaysGatewayCollectionLock> locks;
@@ -294,6 +335,9 @@ public final class GetGatewaysGatewayCollection {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.ipAddresses = defaults.ipAddresses;
+    	      this.ipMode = defaults.ipMode;
+    	      this.ipv4addressConfigurations = defaults.ipv4addressConfigurations;
+    	      this.ipv6addressConfigurations = defaults.ipv6addressConfigurations;
     	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
@@ -391,6 +435,36 @@ public final class GetGatewaysGatewayCollection {
         }
         public Builder ipAddresses(GetGatewaysGatewayCollectionIpAddress... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
+        }
+        @CustomType.Setter
+        public Builder ipMode(String ipMode) {
+            if (ipMode == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "ipMode");
+            }
+            this.ipMode = ipMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv4addressConfigurations(List<GetGatewaysGatewayCollectionIpv4addressConfiguration> ipv4addressConfigurations) {
+            if (ipv4addressConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "ipv4addressConfigurations");
+            }
+            this.ipv4addressConfigurations = ipv4addressConfigurations;
+            return this;
+        }
+        public Builder ipv4addressConfigurations(GetGatewaysGatewayCollectionIpv4addressConfiguration... ipv4addressConfigurations) {
+            return ipv4addressConfigurations(List.of(ipv4addressConfigurations));
+        }
+        @CustomType.Setter
+        public Builder ipv6addressConfigurations(List<GetGatewaysGatewayCollectionIpv6addressConfiguration> ipv6addressConfigurations) {
+            if (ipv6addressConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "ipv6addressConfigurations");
+            }
+            this.ipv6addressConfigurations = ipv6addressConfigurations;
+            return this;
+        }
+        public Builder ipv6addressConfigurations(GetGatewaysGatewayCollectionIpv6addressConfiguration... ipv6addressConfigurations) {
+            return ipv6addressConfigurations(List.of(ipv6addressConfigurations));
         }
         @CustomType.Setter
         public Builder isLockOverride(Boolean isLockOverride) {
@@ -493,6 +567,9 @@ public final class GetGatewaysGatewayCollection {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.ipAddresses = ipAddresses;
+            _resultValue.ipMode = ipMode;
+            _resultValue.ipv4addressConfigurations = ipv4addressConfigurations;
+            _resultValue.ipv6addressConfigurations = ipv6addressConfigurations;
             _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;

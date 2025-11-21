@@ -13,6 +13,474 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState string `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name string `pulumi:"name"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState pulumi.StringInput `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
+	return o
+}
+
+// Whether the plugin should be enabled or disabled.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig) string {
+		return v.DesiredState
+	}).(pulumi.StringOutput)
+}
+
+// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+	RecoveryAction string `pulumi:"recoveryAction"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
+	return o
+}
+
+// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) IsLiveMigrationPreferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig) bool {
+		return v.IsLiveMigrationPreferred
+	}).(pulumi.BoolOutput)
+}
+
+// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig) string {
+		return v.RecoveryAction
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail struct {
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPrivateDnsRecord bool `pulumi:"assignPrivateDnsRecord"`
+	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPublicIp bool `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	HostnameLabel string `pulumi:"hostnameLabel"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds []string `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIp string `pulumi:"privateIp"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr string `pulumi:"subnetCidr"`
+	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs struct {
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPrivateDnsRecord pulumi.BoolInput `pulumi:"assignPrivateDnsRecord"`
+	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
+	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
+	return o
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
+		return v.AssignIpv6ip
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
+		return v.AssignPrivateDnsRecord
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
+		return v.AssignPublicIp
+	}).(pulumi.BoolOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.HostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.PrivateIp
+	}).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
+		return v.SkipSourceDestCheck
+	}).(pulumi.BoolOutput)
+}
+
+// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.SubnetCidr
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput)
+}
+
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
@@ -40695,6 +41163,12 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{})
@@ -41277,6 +41751,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput{})

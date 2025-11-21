@@ -44,6 +44,16 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IpMode = gatewayIpMode,
+    ///         Ipv4addressConfiguration = new Oci.ApiGateway.Inputs.GatewayIpv4addressConfigurationArgs
+    ///         {
+    ///             ReservedIpIds = gatewayIpv4addressConfigurationReservedIpIds,
+    ///         },
+    ///         Ipv6addressConfiguration = new Oci.ApiGateway.Inputs.GatewayIpv6addressConfigurationArgs
+    ///         {
+    ///             Addresses = gatewayIpv6addressConfigurationAddresses,
+    ///             SubnetCidrs = gatewayIpv6addressConfigurationSubnetCidrs,
+    ///         },
     ///         Locks = new[]
     ///         {
     ///             new Oci.ApiGateway.Inputs.GatewayLockArgs
@@ -141,6 +151,24 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Output("ipAddresses")]
         public Output<ImmutableArray<Outputs.GatewayIpAddress>> IpAddresses { get; private set; } = null!;
+
+        /// <summary>
+        /// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        /// </summary>
+        [Output("ipMode")]
+        public Output<string> IpMode { get; private set; } = null!;
+
+        /// <summary>
+        /// IPv4 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Output("ipv4addressConfiguration")]
+        public Output<Outputs.GatewayIpv4addressConfiguration> Ipv4addressConfiguration { get; private set; } = null!;
+
+        /// <summary>
+        /// IPv6 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Output("ipv6addressConfiguration")]
+        public Output<Outputs.GatewayIpv6addressConfiguration> Ipv6addressConfiguration { get; private set; } = null!;
 
         [Output("isLockOverride")]
         public Output<bool> IsLockOverride { get; private set; } = null!;
@@ -309,6 +337,24 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        /// </summary>
+        [Input("ipMode")]
+        public Input<string>? IpMode { get; set; }
+
+        /// <summary>
+        /// IPv4 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Input("ipv4addressConfiguration")]
+        public Input<Inputs.GatewayIpv4addressConfigurationArgs>? Ipv4addressConfiguration { get; set; }
+
+        /// <summary>
+        /// IPv6 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Input("ipv6addressConfiguration")]
+        public Input<Inputs.GatewayIpv6addressConfigurationArgs>? Ipv6addressConfiguration { get; set; }
+
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
 
@@ -437,6 +483,24 @@ namespace Pulumi.Oci.ApiGateway
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.GatewayIpAddressGetArgs>());
             set => _ipAddresses = value;
         }
+
+        /// <summary>
+        /// Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        /// </summary>
+        [Input("ipMode")]
+        public Input<string>? IpMode { get; set; }
+
+        /// <summary>
+        /// IPv4 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Input("ipv4addressConfiguration")]
+        public Input<Inputs.GatewayIpv4addressConfigurationGetArgs>? Ipv4addressConfiguration { get; set; }
+
+        /// <summary>
+        /// IPv6 address configuration details that should be used when creating the gateway.
+        /// </summary>
+        [Input("ipv6addressConfiguration")]
+        public Input<Inputs.GatewayIpv6addressConfigurationGetArgs>? Ipv6addressConfiguration { get; set; }
 
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }

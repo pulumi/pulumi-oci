@@ -91,7 +91,7 @@ version = "1.2.4"
 backend = "vfox-pulumi:pulumi/pulumi-converter-terraform"
 
 [[tools."vfox-pulumi:pulumi/pulumi-github"]]
-version = "6.9.0"
+version = "6.9.1"
 backend = "vfox-pulumi:pulumi/pulumi-github"
 
 [[tools."vfox-pulumi:pulumi/pulumi-kubernetes"]]
